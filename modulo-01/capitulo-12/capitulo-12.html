@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 12</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+   <h1>Capítulo 12</h1>
+<h1>Iniciando CSS3</h1>
+    <h2>Estilo InLine</h2>
+    <p>O estilo inline é utilizado para modificar o estilo linha por linha, esse estilo é utilizado é raros  casos onde você precisará de uma modificação muito pontual, como destacar um trecho específico de um texto.
+        <br>
+        Exemplo: <br>
+        <p style="background-color: antiquewhite; text-align: center; -webkit-text-fill-color: rgba(158, 44, 24, 0.945);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veniam rem, qui rerum corrupti nobis dignissimos incidunt, quos nesciunt minima iure maxime alias? Nihil accusamus cupiditate ad commodi velit numquam!</p>
+        </p>
+
+    <h2>Estilo CSS3 Interno</h2>
+    <p>
+        O estilo CSS3 interno invés de ser feito linha por linha ele é feito na parte head da página. Assim o estilo modifica a parte inteiras da página.
+        <br>
+        Parte inteiras são todos os &lt;h1&gt; &lt;h1/&gt; ficam com o mesmo determinada estilo, todo &lt;h2&gt; &lt;h2/&gt; em outro  todo &lt;p&gt; &lt;/p&gt; em outro e assim por diante.
+    <br>
+    O Exemplo será  aplicado nesse <a href="exemplo-capitulo-12.html" target="_blank">link.</a>
+    
+    </p>
+
+<p>
+    <h2>Estilo CSS3 Externo</h2>
+    O link externo funciona como o uso de variáveis do tipo C para identificar cada porta por função assim caso precisa-se trocar alguma fio de porta você não precisaria trocar as portas no programa inteiro, basta trocar a porta na variável.
+    <br>
+    A ideia de trabalhar com uma CSS externa é essa, caso precisa trocar alguma formatação você não precisará trocar página por página. <br>
+    Basta criar o link para o arquivo CSS no head do HTML e colocar o link ,para esse arquivo, em todas as páginas do site para que fiquem sempre com a mesma formatação.
+</p>
+
+<h3>Criando o link CSS</h3>
+Va em alguma área de head escreva link e selecione link:css na lista, imediatamente aparecerá o code abaixo <br>
+Exemplo: 
+<br>
+&lt;link rel="stylesheet" href="style.css"&gt;
+<br>
+<p style="background-color: rgba(255, 255, 0, 1 );">
+    
+        Atalho: <br>
+        Para criar um arquivo dentro do Code basta ir na área de destino do arquivo no código e pressional "CTRL+Click na área" assim o VS Code irá criar um arquivo na pasta onde está o arquivo atual OBS.:Deve lembrar sempre de por também a extenção do arquivo
+    
+</p>
+<p>
+    Abra esse arquivo com o VS Code e escreva @(@ significa regra): <br>
+     <code>@charset "UTF-8";</code>
+     <br>
+     e logo abaixo basta escrever os elementos que deseja editar: <br>
+     Exemplo:
+     <br>
+     <pre>
+        body {
+            background-color: rgba(0, 255, 135, 0.03);
+            font-size: large;
+            margin-inline-start: 5%;
+            margin-block-end: 10%;
+            margin-block-start: 5%;
+            margin-inline-end: 5%;
+            
+        }
+        h1 {
+            background-color: rgb(0, 255, 255, 0.2);
+            font-size: 25px;
+            text-align: center;
+        }
+        
+        h2 {
+            background-color: rgba(0, 235, 255, 0.1);
+            font-size: 20px;}
+     </pre>
+</p>
+<h2>Hierarquia de Estilos</h2>
+Como vimos existem 3 formas de aplicar estilos ao site. Porém é possível usar os 3 simultaneamente e por isso existe um Hierarquia entre eles. No caso o HTML prioriza do mais específico para o mas generalizado. <br>
+Veja o exemplo abaixo na ordem de prioridade:
+<ol>
+    <li>Estilo InLine</li> 
+    <li>Estilo CSS3 Interno</li>
+    <li>Estilo CSS3 Externo</li>
+</ol>
+
+<p>
+    <hr>
+    <h1>FIM DO MÓDULO 01</h1>
+</p>
+
+
+
+
+
+
+    <hr> <h1>Materiais utilizados</h1>
+    <strong><a href="../../../material-de-apoio/12 - Trabalhando com estilos.pdf" target="_blank"> Material em PDF</a></strong>
+    <h2>Vídeos</h2>
+
+    <p><a href="https://youtu.be/byqhpuVpvEI?si=pOwxXeQnyZjXHJF2" target="_blank">Estilo CSS3 InLine</a></p>
+
+    <p><a href="https://youtu.be/fzyab4P2pn8?si=qLmcBvbmPKlPb-9c" target="_blank">Estilo CSS3 Interno</a></p>
+    
+    
+    <p><a href="https://youtu.be/-i1JVMspDJQ?si=A1Jz0NZcAUSTZO-B" target="_blank">Estilo CSS3 Externos</a></p>
+
+
+<hr>
+<p><a href="../../indice de links .html">Voltar para o Índice</a> </p>
+<p><a href="../../index.html"> Resumo completo</a></p>
+</body>
+</html>

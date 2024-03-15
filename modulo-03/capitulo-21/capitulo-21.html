@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 21</title>
+
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+
+
+    <style>
+        table{
+            border-collapse: collapse;
+            position: relative;
+
+        }
+        thead, tfoot{
+            background-color: rgb(145, 145, 145);
+        }
+        td, th{
+            border:solid;
+            padding: 1px 1em;
+        }
+        tbody>tr:nth-child(even){
+            background-color: rgba(117, 117, 117, 0.363);
+        }
+       thead>tr>th{
+            position:sticky;
+            top:-3px;
+            background-color:rgb(145, 145, 145);
+        }
+        col.A{
+            background-color: aquamarine;
+        }
+        col.B{
+            background-color: blueviolet;
+        }
+        col.C{
+            background-color: rgb(103, 134, 201);
+        }
+
+        col.D{
+            background-color: rgb(206, 214, 157);
+        }
+        div.responsiva{
+            width: 500px;
+            overflow-x: auto;
+            margin: auto;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+<h1 id="capitulo"> Capitulo 21</h1>
+    </header>
+    <main>
+<h1>Tabelas</h1>
+<p>
+    Tabelas em html são 100% desenhada por comandos, porém de forma muito parecida com as listas.
+</p>
+<p> 
+    O comando  usado para fazer tabela é o table assim como o ul de lista. Porém temos ainda o tr e o td. 
+</p>
+    <ul>
+        <li> <strong>tr:</strong> o tr representa a linha da tabela cada tr equivale a uma linha e dentro do tr vai o td (fica igual a lista)</li>
+        <li><strong>td:</strong> Cada td representa uma coluna da linha que ele está incluso e esse td é como o li da lista. Nele vai conter os dados da célula</li>
+    </ul>
+<p>
+    O que define a quantidade de linha é a quantidade de tr e o que define a quantidade de coluna é o tr que possuir mais td.
+</p>
+<p>Exemplo:</p>
+<table style="margin: auto;">
+    <tr>
+        <td>A1</td>
+        <td>B1</td>
+        <td>C1</td>
+        <td>C1</td>
+    </tr>
+    <tr>
+        <td>A2</td>
+        <td>B2</td>
+        <td>C2</td>
+        <td>C2</td>
+    </tr>
+    <tr>
+        <td>A3</td>
+        <td>B3</td>
+        <td>C3</td>
+        <td>C3</td>
+    </tr>
+    <tr>
+        <td>A4</td>
+        <td>B4</td>
+        <td>C4</td>
+        <td>C4</td>
+    </tr>
+</table>
+<p>
+    O comando fica assim:
+</p>
+<pre>
+&lt;table>    
+    &lt;tr>
+        &lt;td>A1&lt;/td>
+        &lt;td>B1&lt;/td>
+        &lt;td>C1&lt;/td>
+        &lt;td>C1&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>A2&lt;/td>
+        &lt;td>B2&lt;/td>
+        &lt;td>C2&lt;/td>
+        &lt;td>C2&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>A3&lt;/td>
+        &lt;td>B3&lt;/td>
+        &lt;td>C3&lt;/td>
+        &lt;td>C3&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>A4&lt;/td>
+        &lt;td>B4&lt;/td>
+        &lt;td>C4&lt;/td>
+        &lt;td>C4&lt;/td>
+    &lt;/tr>
+&lt;/table>
+</pre>
+<p class="mark">
+    A w3c permite que não encerre a tag tr com &lt;/tr> nem e td com &lt;/td>. Porém é melhor encerrar para evitar erros.
+</p>
+<h2> Estilos para Tabelas</h2>
+ <h3>Style border-collapse</h3>
+<ul>
+    <li><strong>border-collapse: collapse</strong></li>
+    <table>
+        <tr>
+            <td>collapse</td>
+            <td>collapse</td>
+        </tr>
+        <tr>
+            <td>collapse</td>
+            <td>collapse</td>
+        </tr>
+    </table>
+    <li><strong>border-collapse: separate</strong></li>
+    <table style=" border-collapse: separate;">
+        <tr>
+            <td>separate</td>
+            <td>separate</td>
+        </tr>
+        <tr>
+            <td>separate</td>
+            <td>separate</td>
+        </tr>
+    </table>
+    <li><strong>Tabela sem estilo aplicado</strong> Uma tabela é natural sem borda e sem collapse</li>
+    <table style=" border: solid;">
+        <tr>
+            <td style=" border: hidden;">separate</td>
+            <td style=" border: hidden;">separate</td>
+        </tr>
+        <tr>
+            <td style=" border: hidden;">separate</td>
+            <td style=" border: hidden;">separate</td>
+        </tr>
+    </table>
+
+</ul>
+<h2> Alinhamentos em tabela</h2>
+<p>
+    Exitem duas formas de alinhar texto em um célula horizontal e vertical. Veja os exemplos abaixo:
+</p>
+
+
+
+<ul>
+    <li><strong>text-align</strong></li>
+    <table style="height: 350px; width: 350px;">
+        <tr>
+            <td style="text-align: center;">center</td>
+            <td style="text-align: right;">right</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">left</td>
+            <td>nada</td>
+        </tr>
+    </table>
+    <li><strong>vertical-align</strong></li>
+    <table style="height: 350px;width: 350px;">
+        <tr>
+            <td style="vertical-align: top;">top</td>
+            <td style="vertical-align: midle;">midle</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: bottom;">bottom</td>
+            <td style="vertical-align: bottom; text-align: right;"> 2 estilos</td>
+        </tr>
+    </table>
+</ul>
+
+
+<h1>Tabela Semântica</h1>
+    <p>
+        O objetivo de trabalhar com trabalhar com tabelas semânticas é organizar melhor sua tabela. A w3c recomenda o uso desse tipo sempre que for usar tabelas grandes, com muitos dados. No entanto é bom usar essa tipo de tabela sempre que possível, pois o google valoriza essa Semântica.
+    </p>
+    <p>
+        São poucas diferenças entre esta e a anterior. Esta possui thead(cabeçalho), tbody(corpo) tfoot(Rodapé). Essa diferença serve apenas para que o programa não misture informação de dados com tiítulos e compilados.
+    </p>
+    <p>
+        Outro elemento que devems mencionar é o capition. Esse funciona como o título da tabela. (OBS.: Ele fica acima do thead pois no thead fica o título da coluna, já o caption é o título da tabela)
+    </p>
+    <p>
+        Temos ainda o th, esse vai no lugar de td em locais de Títulos:
+        <ul>
+            <li><strong>th:</strong> table head(Títulos da tabela)</li>
+            <span class="mark"> O th não precisa estar somente em thead, avezes ele poderá estar também em tbody ocupando a primeira coluna.</span>
+            <li><strong>td:</strong> table data(Dados da tabela)</li>
+        </ul>
+    <h3>Scope</h3>
+        <p>
+            Scope é um atributo semântico, ele serve apenas para informar se o th (título) é de uma informação da linha ou da coluna. É muito importante esse tipo de informação para um  SEO melhor.
+        </p>
+        <ul>
+            <li><strong>scope="col"</strong> usado para th  de coluna</li>
+            <li><strong>scope="colgroup"</strong> usado quando o th está mesclado e abrange mais de uma coluna</li>
+            <li><strong>scope="row"</strong> usado para th  de linha</li>
+            <li><strong>scope="rowgroup"</strong> usado quando o th está mesclado e abrange mais de uma linha</li>
+        </ul>
+            
+
+    <p>
+    Exemplo: de tabela semântica:
+</p>
+<table>
+    <caption>Caption</caption>
+    <thead>
+        <tr>
+            <th scope="col">Peixe</th>
+            <th scope="col">PH min</th>
+            <th scope="col">PH max</th>
+            <th scope="col">Valor</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Neon</td>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Acará Bandeira</td>
+            <td>4,0</td>
+            <td>7,2</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Rodostumus</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Ramirezi</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>20</td>
+        </tr>
+
+    </tbody>
+
+
+    <tfoot>
+        <tr>
+            <th  scope="row">PH Limite</th>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>41</td>
+        </tr>
+
+    </tfoot>
+</table>
+
+<p>
+    Comando:
+</p>
+<pre>
+&lt;table>
+        &lt;caption>Caption&lt;/caption>
+        &lt;thead>
+            &lt;tr>
+                &lt;th scope="col">Peixe&lt;/th>
+                &lt;th scope="col">PH min&lt;/th>
+                &lt;th scope="col">PH max&lt;/th>
+                &lt;th scope="col">Valor&lt;/th>
+            &lt;/tr>
+
+        &lt;/thead>
+
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>Neon&lt;/td>
+                &lt;&lt;td>4,0&lt;/td>
+                &lt;td>6,5&lt;/td>
+                &lt;td>2&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>Acará Bandeira&lt;/td>
+                &lt;td>4,0&lt;/td>
+                &lt;td>7,2&lt;/td>
+                &lt;td>16&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+
+        &lt;tfoot>
+            &lt;tr>
+                &lt;th  scope="row">PH Limite&lt;/th>
+                &lt;td>4,0&lt;/td>
+                &lt;td>6,5&lt;/td>
+                &lt;td>41&lt;/td>
+            &lt;/tr>
+
+        &lt;/tfoot>
+    &lt;/table>
+
+</pre>
+<h2>Efeito zebrado</h2>
+    <p>
+        O Efeito zebrado é feito pela pseudo-classe ":nth-child". Esse pseudo classe tem muitas opções de configurações veja abaixo:
+    </p>
+
+    <ul>
+        <li><strong>:nth-child(2n)</strong> Assim ela pinta somente a 2ª linha de cada 2, em outras palavras, linha sim linha não. </li>
+        <li><strong>:nth-child(3n)</strong> Assim ela pinta somente a 3ª linha de cada 3 ( Esse n funciona da mesma forma para qualquer valor de n)</li>
+        <li><strong>:nth-child(3n-1)</strong> Assim ela pinta somente a 2ª linha de cada 3 ( Ele separa 3 linha retorna uma e pinta Mas não fica igual o 2n porque ele separa de 3 em 3 logo ficará duas juntas sem pintar e uma pintada). Esse recurso é pouco usado e pode ser aplica com outros valores.</li>
+        <li><strong>:nth-child(ods)</strong> (ods = Impar em inglês) Assim ela pinta somente linhas impares. </li>
+        <li><strong>:nth-child(even)</strong> (even = Par em inglês) Assim ela pinta somente linhas pares. </li>
+
+    </ul>
+    <p>
+        Exemplo:
+    </p>
+    <table>
+        <caption>Caption</caption>
+        <thead>
+            <tr>
+                <th scope="col">Peixe</th>
+                <th scope="col">PH min</th>
+                <th scope="col">PH max</th>
+                <th scope="col">Valor</th>
+            </tr>
+    
+        </thead>
+    
+        <tbody>
+            <tr>
+                <td>Neon</td>
+                <td>4,0</td>
+                <td>6,5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Acará Bandeira</td>
+                <td>4,0</td>
+                <td>7,2</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Rodostumus</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Ramirezi</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Neon</td>
+                <td>4,0</td>
+                <td>6,5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Acará Bandeira</td>
+                <td>4,0</td>
+                <td>7,2</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Rodostumus</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Ramirezi</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Neon</td>
+                <td>4,0</td>
+                <td>6,5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Acará Bandeira</td>
+                <td>4,0</td>
+                <td>7,2</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Rodostumus</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Ramirezi</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Neon</td>
+                <td>4,0</td>
+                <td>6,5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Acará Bandeira</td>
+                <td>4,0</td>
+                <td>7,2</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Rodostumus</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Ramirezi</td>
+                <td>4,0</td>
+                <td>6,8</td>
+                <td>20</td>
+            </tr>
+    
+        </tbody>
+    
+    
+        <tfoot>
+            <tr>
+                <th  scope="row">PH Limite</th>
+                <td>4,0</td>
+                <td>6,5</td>
+                <td>--</td>
+            </tr>
+    
+        </tfoot>
+    </table>
+    <p>
+        O comando no head:
+    </p>
+    <pre>
+        tbody>tr:nth-child(3n-1){
+            background-color: rgba(0, 0, 0, 0.158);
+        }
+    </pre>
+
+<h2> Fixar cabeçalho</h2>
+<p>
+    Assim como usamos o congelar no excel para vermos os títulos de cada coluna aqui nós também fazemos isso mas de forma mais complexa.
+</p>
+<ol>
+    <li><strong>Table</strong> Em table devemos definir a style <strong>position:relative</strong></li>
+    <li><strong>thead>tr>th</strong> Em thead>tr>th devemos definir a style <strong>position:sticky;</strong> + <strong>top:0;</strong> + <strong>background-color: ;(se for o caso)</strong></li>
+</ol>
+
+<table>
+    <caption>Caption</caption>
+    <thead>
+        <tr>
+            <th scope="col">Peixe</th>
+            <th scope="col">PH min</th>
+            <th scope="col">PH max</th>
+            <th scope="col">Valor</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Neon</td>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Acará Bandeira</td>
+            <td>4,0</td>
+            <td>7,2</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Rodostumus</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Ramirezi</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Neon</td>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Acará Bandeira</td>
+            <td>4,0</td>
+            <td>7,2</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Rodostumus</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Ramirezi</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Neon</td>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Acará Bandeira</td>
+            <td>4,0</td>
+            <td>7,2</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Rodostumus</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Ramirezi</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Neon</td>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Acará Bandeira</td>
+            <td>4,0</td>
+            <td>7,2</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Rodostumus</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Ramirezi</td>
+            <td>4,0</td>
+            <td>6,8</td>
+            <td>20</td>
+        </tr>
+
+    </tbody>
+
+
+    <tfoot>
+        <tr>
+            <th  scope="row">PH Limite</th>
+            <td>4,0</td>
+            <td>6,5</td>
+            <td>--</td>
+        </tr>
+
+    </tfoot>
+</table>
+
+
+
+<p>
+    Veja como ficou em head:
+</p>
+<pre>
+    &lt;style>
+        table{
+            border-collapse: collapse;
+            <span class="mark">position: relative;</span>
+
+        }
+        thead, tfoot{
+            background-color: rgb(145, 145, 145);
+        }
+        td, th{
+            border:solid;
+            padding: 1px 1em;
+        }
+        tbody>tr:nth-child(3n-1){
+            background-color: rgba(117, 117, 117, 0.363);
+        }
+       <span class="mark">
+           thead>tr>th{
+                position:sticky;
+                top:0;
+                background-color:rgb(145, 145, 145);
+            }
+       </span>
+
+
+    &lt;/style>
+</pre>
+
+<p class="mark">
+    OBS.: Caso fique espaço entre o navegador o thead você pode substituir o o top:0; por top:-2px; ou mais até sumir o espaço.
+</p>
+
+
+<h2>Mesclagem de células</h2>
+<p>
+    Mesclagem de célula é bem simples, para isso usaremos dois atributos que serão adicionados ao td ou th. Veja os atributos abaixo:
+    <ul>
+        <li><strong>colspan="2"</strong> Nesse atributo ele mesclaria duas colunas , a atual e a próxima a direita. SE quisesse poderia mesclar mais também só aumentar o número</li>
+        <li><strong>rowspan="3"</strong> Nesse atributo ele mesclaria 3 linhas , a atual e as próximas duas abaixo. SE quisesse poderia mesclar mais também só aumentar o número</li>
+    </ul>
+</p>
+<p>
+    Exemplo:
+</p>
+<table style="margin: auto; height: 200px; width: 500px; text-align: center;">
+    <tr>
+        <td colspan="3">A1/B1/C1</td>
+        
+
+        <td>D1</td>
+    </tr>
+    <tr>
+        <td>A2</td>
+        <td>B2</td>
+        <td rowspan="2" style="padding: 0px;">C2/C3</td>
+        <td>D2</td>
+    </tr>
+    <tr>
+        <td>A3</td>
+        <td>B3</td>
+
+        <td>D3</td>
+    </tr>
+    <tr>
+        <td>A4</td>
+        <td>B4</td>
+        <td>C4</td>
+        <td>D4</td>
+    </tr>
+</table>
+
+<p>
+    Comando:
+</p>
+<pre>
+    &lt;table>    
+        &lt;tr>
+            &lt;td colspan="3">A1/B1/C1&lt;/td>
+           
+
+            &lt;td>D1&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>A2&lt;/td>
+            &lt;td>B2&lt;/td>
+            &lt;td rowspan="2">C2/C3&lt;/td>
+            &lt;td>D2&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>A3&lt;/td>
+            &lt;td>B3&lt;/td>
+            
+            &lt;td>D3&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>A4&lt;/td>
+            &lt;td>B4&lt;/td>
+            &lt;td>C4&lt;/td>
+            &lt;td>D4&lt;/td>
+        &lt;/tr>
+    &lt;/table>
+    </pre>
+
+<h3>Desafio 01</h3>
+
+<table style="text-align: center;">
+    <tr>
+        <td colspan="4">A</td>
+        
+
+
+        <td rowspan="4">B</td>
+        
+    </tr>
+    <tr>
+        <td rowspan="4">C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+       
+        
+    </tr>
+    <tr>
+        <td>G</td>
+        <td>H</td>
+        <td>I</td>
+        
+        
+    </tr>
+    <tr>
+        <td>J</td>
+        <td>L</td>
+        <td>M</td>
+        
+        
+    </tr>
+    <tr>
+       
+        <td colspan="4">N</td>
+        
+    </tr>
+</table>
+<h3>Desafio 02</h3>
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td rowspan="2">3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        
+    </tr>
+    <tr>
+        <td colspan="3">8</td>
+        <td>9</td>
+        
+    </tr>
+    <tr>
+        <td rowspan="2">10</td>
+        <td colspan="2">11</td>
+        <td>12</td>
+              
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+    </tr>
+</table>
+
+<h3>Desafio 03</h3>
+<table style="text-align: center;">
+    <thead>
+        <tr>
+            <th rowspan="2" scope="col">Área</th>
+            <th rowspan="2" scope="col">Disciplina</th>
+            <th colspan="2" scope="colgroup">Notas</th>
+            
+            <th rowspan="2" scope="col">Média</th>
+     </tr>
+     <tr>
+        <th scope="col">Nota 1</th>
+        <th scope="col">Nota2</th>
+     </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th rowspan="4" scope="rowgroup">Exatas</th>
+            <td>Matemática</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Física</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Química</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Biologia</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <th colspan="4" scope="row" style="background-color: rgb(150, 150, 150);">Média de Exatas</th>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <th rowspan="2" scope="rowgroup" style="background-color: rgb(250, 248, 244);">Humanas</th>
+            <td>História</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>Geografia</td>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <th colspan="4" scope="row" style="background-color: rgb(150, 150, 150);">Média de Humanas</th>
+            <td>0.0</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<h1>Tag para Colunas</h1>
+<p>
+    Como já vimos anterior é possível criar uma tabela zebrada usando a pseudo-classe :nth-child(even). Ou podemos ainda fazer diretamente na linha usando style na tag tr. Bem simples
+</p>
+<p>
+    Mas quando o assunto é coluna precisamos mudar td por td o que é inviável. Por isso existe a tag <code>&lt;colgroup></code>.
+</p>
+<p>
+    Essa tag funciona da seguinte forma:
+</p>
+<p>
+    
+<p>
+    Comando no body:
+</p>
+    <pre>
+        &lt;table>  
+        <span class="mark">
+            &lt;colgroup>
+                    &lt;col class="A">
+                    &lt;col class="B">
+                    &lt;col class="C">
+                    &lt;col class="D">
+            &lt;/colgroup>
+        </span>
+
+            &lt;tr>
+                &lt;td>A1&lt;/td>
+                &lt;td>B1&lt;/td>
+                &lt;td>C1&lt;/td>
+                &lt;td>C1&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>A2&lt;/td>
+                &lt;td>B2&lt;/td>
+                &lt;td>C2&lt;/td>
+                &lt;td>C2&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>A3&lt;/td>
+                &lt;td>B3&lt;/td>
+                &lt;td>C3&lt;/td>
+                &lt;td>C3&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>A4&lt;/td>
+                &lt;td>B4&lt;/td>
+                &lt;td>C4&lt;/td>
+                &lt;td>C4&lt;/td>
+            &lt;/tr>
+        &lt;/table>
+        </pre>
+<p>
+    Comandono head:
+</p>
+    <pre>
+        <span class="mark">
+            col.A{
+                background-color: aquamarine;
+            }
+            col.B{
+                background-color: blueviolet;
+            }
+            col.C{
+                background-color: rgb(103, 134, 201);
+            }
+            col.D{
+                background-color: rgb(206, 214, 157);
+            }
+        </span>
+    </pre>
+    
+
+<p>
+    Funcionamento:
+</p>
+<table>
+    <colgroup>
+        <col class="A">
+        <col class="B">
+        <col class="C">
+        <col class="D">
+    </colgroup>
+    <tr>
+        <td>A1</td>
+        <td>B1</td>
+        <td>C1</td>
+        <td>C1</td>
+    </tr>
+    <tr>
+        <td>A2</td>
+        <td>B2</td>
+        <td>C2</td>
+        <td>C2</td>
+    </tr>
+    <tr>
+        <td>A3</td>
+        <td>B3</td>
+        <td>C3</td>
+        <td>C3</td>
+    </tr>
+    <tr>
+        <td>A4</td>
+        <td>B4</td>
+        <td>C4</td>
+        <td>C4</td>
+    </tr>
+</table>
+
+<h2>Atributo para col</h2>
+<p>
+    Assim com td e th possuem colspan ou rowspan para mesclar células. Em col temos o atributo span que serve para usar o mesmo efeito em uma ou mais colunas ao lado direito. o comando é simples:
+</p>
+<pre>
+    &lt;table>
+            <span class="mark">
+                &lt;colgroup>
+                        &lt;col class="A">
+                        &lt;col class="B" span="2">
+                        
+                        &lt;col class="D">
+                &lt;/colgroup>
+</pre>
+<p>
+    Nesse caso acima o efeito da coluna "B" expandiu para a "C" com isso foi necessário excluir ela.
+</p>
+<span class="mark">
+    OBS.: Caso esqueça de excluir um ao usar span o programa empurraria todos os estilos e o seu último estilo configurado ficaria sem efeito.
+</span>
+
+<h1>Tabela responsiva</h1>
+<p>
+    Criar tabelas responsivas é bem fácil de fazer. Basicamente precisa por a tabela em uma div e uma class para essa div(normal) e em style no head colocar overflow-x: auto para essa div. Veja um exemplo abaixo:
+</p>
+
+<div class="responsiva">
+    <table>
+            <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+            <td>D1</td>
+            <td>E1</td>
+            <td>F1</td>
+            <td>G1</td>
+            <td>I1</td>
+            <td>J1</td>
+            <td>K1</td>
+            <td>L1</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <td>D2</td>
+            <td>E2</td>
+            <td>F2</td>
+            <td>G2</td>
+            <td>I2</td>
+            <td>J2</td>
+            <td>K2</td>
+            <td>L2</td>
+        </tr>
+        <tr>
+            <td>A3</td>
+            <td>B3</td>
+            <td>C3</td>
+            <td>D3</td>
+            <td>E3</td>
+            <td>F3</td>
+            <td>G3</td>
+            <td>I3</td>
+            <td>J3</td>
+            <td>K3</td>
+            <td>L3</td>
+        </tr>
+        <tr>
+            <td>A4</td>
+            <td>B4</td>
+            <td>C4</td>
+            <td>D4</td>
+            <td>E4</td>
+            <td>F4</td>
+            <td>G4</td>
+            <td>I4</td>
+            <td>J4</td>
+            <td>K4</td>
+            <td>L4</td>
+        </tr>
+    </table>
+</div>
+<p>
+    Comando body:
+</p>
+<pre>
+&lt;div class="responsiva">
+        &lt;table>
+        .
+        .
+        .
+        &lt;/table>
+    &lt;/div>
+</pre>
+<p>
+    Comando Head:
+</p>
+<pre>
+&lt;style>
+            div.responsiva{
+                width: 500px;
+                overflow-x: auto;
+            }
+    &lt;/style>
+</pre>
+ <span class="mark"> 
+    OBS.: Essa width foi só para exemplificar como fica sem precisar reduzir a tela, mas se reduzir ela se adapta.
+ </span>
+
+
+    </main>
+    <footer>
+
+        <h1>Materiais utilizados</h1>
+            
+                <strong>ACABOU O PDF</strong>
+            
+            
+        <h1>Vídeos</h1>
+        
+        <p style="text-transform: capitalize;">
+            <a href="https://youtu.be/lIiZu-94PBk?si=yFsUPUkbn9oKQHHJ" target="_blank" >primeira tabela</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/9IF4xvg5rWI?si=gZDcySKp5LPSKH8A" target="_blank">Tabelas</a>
+        </p>
+        
+        <p>
+            <a href="https://youtu.be/djvX6p9l-Rk?si=1r_6Ca3-OE_wkn1l" target="_blank">Alinhando conteúdos</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/XmrNuqmmckM?si=gN9ctuOwE-enaZ74" target="_blank">Tabelas Grandes</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/ZnjU3PzhGi0?si=4iqnWPoWLmbUrEZq" target="_blank">Scope e Capition</a>
+        </p>            
+        <p>
+            <a href="https://youtu.be/IYUiFRE5hpI?si=qGaocQpdYtVmxf25" target="_blank">Zebrando Tabelas</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/k277B58kC9c?si=u2x1nHCJvbzcAb7d" target="_blank">Cabeçalho Fixo</a>
+        </p>       
+        <p>
+            <a href="https://youtu.be/olZgL09uDAU?si=lAf8Aa8WXjxG1ppe" target="_blank">Mesclar Celula</a>
+        </p>     
+        <p>
+            <a href="https://youtu.be/MnznvoNuy-I?si=J9E_DcfEyqXfSUSb" target="_blank">Desafios</a>
+        </p>     
+        <p>
+            <a href="https://youtu.be/JJXLr02Gx_c?si=VczYegdaI1F46DVI" target="_blank">Exemplo com todo ensinamento até aqui</a>
+        </p>     
+        <p>
+            <a href="https://youtu.be/muKp1-jcs3Q?si=wfQ-P0GTxWL5VSFo" target="_blank">Escopo de grupo</a>
+        </p>     
+        <p>
+            <a href="https://youtu.be/V2gVaqTSRmo?si=hmKBsPjQpDJzfDj5" target="_blank">Desafio 02</a>
+        </p>     
+        <p>
+            <a href="https://youtu.be/1Ro7rjINNb0?si=M3cVjEDiByUaXecz" target="_blank">Colgroup</a>
+        </p>     
+        <p>
+            <a href="https://youtu.be/-0CgGstWMcA?si=N4b_oV6E5B0IneNk" target="_blank">Tabelas Responsivas</a>
+        </p>       
+
+        <p>
+            <a href="XXXXXXXXXXXX" target="_blank">XXXXXXXXXXXX</a>
+        </p>       
+
+
+
+            
+        <hr>
+        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+        
+        </footer>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 15</title>
+
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+
+<style>
+    div{
+        color: blue;
+    }
+    div>p{
+        background-color: rgb(255, 255, 000);
+    }
+    .exafter::after{
+        content: '<<<<';
+
+    }
+    .exhover:hover{
+        background-color: aqua;
+    }
+</style>
+    
+</head>
+<body>
+    <h1 id="capitulo">Capítulo 15</h1>
+<p>
+    Algumas OBS.: <br>
+    <ul>
+       <li>Em HTML é "id". Já em CSS é "#"<br>
+        <li>Em HTML é "class". Já em CSS é "."<br>
+        <li>Em HTML para comentar usamos"&lt;!-- blablabla--&gt;". Já em CSS usamos "/*blablabla*/""
+    </ul>
+
+</p>
+
+<h1>Trabalhando com id&rarr;# e class&rarr;.</h1>
+<h2>id&rarr;# </h2>
+<p>
+    O "id" nada mais é que um identificador. Essa função é utilizada para identificarmos algo específico na página. Por exemplo o Título dessa página atual é Capítulo 15 e está em h1, porém só existe um título assim que nomeia a página inteira,  mas existem muitos outros títulos h1 na página logo podemos identificar esse h1 do Capítulo 15 com id. Assim poderemos dar uma personalização a mais. <br>
+    <strong>Exemplo no HTML:</strong> <br>
+    <code>&lt;h1 id="capitulo">Capítulo 15&lt;/h1></code>
+     <br>
+
+     <strong>Exemplo no CSS3:</strong> <br>
+     <pre>
+        #capitulo
+        {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2.5em;
+            background-image: radial-gradient(circle, #567eb942, #bad5dd);
+        }
+     </pre>
+
+</p>
+<p>
+    OBS.: Se houver personalização conflitante entre o h1 e o id o CSS vai sempre priorizar a personalização de id.</p>
+<p>
+    OBS.: Segundo o W3C Não podemos usar mais de um id no mesmo HTML por mais que funcione, isso não está correto. 
+</p>
+<p class="mark">
+    Atalho: <br>
+    Para selecionar mais de um parte do texto ao mesmo tempo. Basta seguras a tecla "ALT" e clicar ou selecionar com o mouse os locais que deseja editar simultaneamente.
+    
+</p>
+
+<h2>class→.</h2>
+<p>
+    Quando necessário identificar mais de um elemento com a mesma personalização em um mesmo doc HTML ele se torna uma "class". <br>
+    <strong>Exemplo no HTML:</strong> <br>
+    <code>&lt;p class="mark">&lt;/p></code>
+     <br>
+
+     <strong>Exemplo no CSS3:</strong> <br>
+     <pre>
+    .mark
+        {
+            background-color: yellow;
+        }
+     </pre>
+</p>
+<h3>Mais de uma personalização no mesmo item</h3>
+<p>
+    É possível adicionar mais de uma class no mesmo item. Ficaria da seguinte forma: <br>
+    <strong>Exemplo no HTML:</strong> <br>
+    <code>&lt;p class="mark mark2">&lt;/p></code>
+    <br>
+    <strong>Exemplo no CSS3:</strong> <br>
+     <pre>
+    .mark
+        {
+            background-color: yellow;
+        }
+        .mark2
+        {
+            font-size: 2.5em;
+        }
+    </pre>
+</p>
+<p>
+    Também é possivel adicionar id e class no mesmo item. Mas nesse caso as configurações do id se sobrepõe caso haja conflito com a class.
+</p>
+<h3>O que NUNCA fazer!</h3>
+<p>
+    Nunca devemos nomear a class com a caracterísca que ela gera para o elemento. Pois quando se faz isso você perde toda a Semântica do seu HTML. <br>
+    Outro ponto é que, se por acaso quiser mudar a personalização da class um dia. Provavelmente irá acontecer algo do tipo:
+    <strong>Exemplo no CSS3:</strong> <br>
+     <pre>
+    .bgvermelho
+        {
+            background-color: yellow;
+        }
+        .fontgrande
+        {
+            font-color: #7bd768;
+        }
+    </pre>
+    Note que o exemplo acima ficou uma zona!
+</p>
+<h2>Atualização da Hierarquia de Estilos</h2>
+<p>
+    Se houver personalizações conflitantes, a hierarquia de prioridades entre elas fica da seguinte forma:
+    <ol>
+        <li>Estilo InLine</li>
+        <li>id</li>
+        <li>class</li>
+        <li>Estilo CSS3 Interno</li>
+        <li>Estilo CSS3 Externo</li>
+    </ol>
+</p>
+<h1>Pseudo-classes e pseudo-elementos em CSS</h1>
+<h2>Pseudo-classes&rarr;:</h2>
+<p>
+    Uma pseudo-classe CSS é uma palavra-chave adicionada às declarações de um seletor após um sinal de dois pontos (:). Basicamente geram uma dinâmica no site, deixa ele mais intuitivo e mais interativo. <br>
+    Alguns exemplos conhecidos são passar o mouse e abrir uma aba (:hover). Existem as pseudo classes nativas como as de link onde ela ficam roxas depois de visitado (:visited). <br>
+    Veja abaxo alguns exemplos de pseudo classes:
+    <ul>
+        <li><strong>:hover</strong>: Gera uma reação quando o mouse passar em cima;
+        <li> <strong>:visited</strong>: Modifica a forma de um link que já foi visitado;
+        <li> <strong>:link</strong>: Adiciona um estilo especial a um vínculo não visitado ;
+        <li> <strong>:active</strong>: Adiciona um estilo especial a um vínculo selecionado(clicado);
+        <li><strong>:focus</strong>: deixa marcado o último item clicado;
+        <li><strong>:lang</strong>:Permite que o autor especifique uma linguagem a ser usada num elemento específico;
+    </ul>
+
+</p>
+<p>
+        Agora veja exemplos de funcionamento e códigos: 
+</p>
+<p class="mark">
+    Dica extra: <br>
+    Ao usar um pseudo-classe como hover ou active pra gerar uma interação com o usuáurio é possivel escolher um tempo de transição com a seguinte style: <br>
+    <code>trasition-duration: .5s;</code> <br>
+</p>
+    <p>        
+        Pseudo-classe hover: <br>
+        Exemplo de código no head:
+        <pre>
+        &lt;style>
+            .exhover:hover{
+                background-color: aqua;
+             }   
+            &lt;style>
+        </pre>
+        Exemplo de código no body:
+    <pre>
+    &lt;p class="exhover">Passe o mouse aqui&lt;/p>
+    </pre>
+        Exemplo de funcionamento:
+        <p class="exhover"> Passe o mouse aqui</p>
+    </p>
+<h2>Pseudo-elementos &rarr;::</h2>
+<p>
+    Pseudo-elementos são acessório que ficam envolta do elemento principal. É como um personalização, porém invés de modificar cores ou fontes. Essa personalização insere novos elementos como uma seta ou textos para da destaque, ou alertas, vai depender da sua intensão. 
+</p>
+<p>
+    Agora veja exemplos de funcionamento e códigos:
+    <br>
+</p>
+    Exemplo de código no head:
+    <pre>
+&lt;style>
+        .exafter::after{
+            content: '<<<<';
+             }
+    &lt;style>
+        </pre>
+
+    Exemplo de código no body: <br>
+    <pre>
+        &lt;p class="exafter">
+                agora
+            &lt;/p>
+    </pre>
+    Exemplo de funcionamento:
+    <p class="exafter">
+        agora
+    </p>
+    Note que não dá para selecionar o after.
+
+    <h2>Div e </h2>
+    Div é uma espécie de "mini body" é como se fosse um "body" que permite adicionar tag em seu interior. <br>
+    A grande vantagem da div é criar áreas com estilos esclusivos sem precisar classificar tag por tag. <br>
+    Exemplo de código no head:
+
+    <pre>
+        &lt;style>
+            div{
+            color: blue;
+            }
+            &lt;style>
+                </pre>
+    Exemplo de código no body:
+
+    <pre>
+        &lt;div>
+            TESTANDO A TAG DIV
+            &lt;/div>
+    </pre>
+    Exemplo de funcionamento:
+    <div>
+        TESTANDO A TAG DIV
+    </div>
+
+<h2>Children &rarr; ></h2>
+    Children serve para se referir uma tag que está dentro da tag div. Para isso usamos o símbolo de maior que (>). <br>
+    Exemplo de código no head:
+
+    <pre>
+        &lt;style>
+            div>p{
+                background-color: rgb(255, 255, 000);
+            }
+            &lt;style>
+    </pre>
+    Exemplo de código no body:
+
+    <pre>
+        &lt;div>
+             &lt;p> TESTANDO A TAG DIV&lt;/p>
+            &lt;/div>
+    </pre>
+    Exemplo de funcionamento:
+    <div>
+        <p>TESTANDO A TAG DIV</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>
+        <h1>Materiais utilizados</h1>
+        
+            <strong><a href="../../material-de-apoio/15 -Seletores personalizados.pdf" target="_blank"> Material em PDF</a></strong>
+        
+        
+            <h2>Vídeos</h2>
+        
+            <p>
+                <a href="https://youtu.be/TZuVpJmSNSE?si=ulY3NOiXvkFhYBaa" target="_blank">Usando id com CSS</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/zXfTjPrMC_0?si=uxZxjnfMHQVQb6x7" target="_blank">As diferenças entre id e class</a>
+            </p>  
+            <p>
+                <a href="https://youtu.be/WPtRX4n0UJs?si=aTGuOUHkx6By1Nkx" target="_blank">Pseudo-classes em CSS</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/vMlrcOVr7po?si=WnV7-Sw8p9hn_Hwi" target="_blank">Pseudo-elementos em CSS</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/oHj5ez1bSkc?si=p0jjL_cJnWkbuGTj" target="_blank">XXXXXXXXXXXXXXXX</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">XXXXXXXXXXXXXXXX</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <p>
+                    <a href="https://youtu.be/XTtfM0L7Co0?si=04-AhKRJqDaBdzdr" target="_blank">XXXXXXXXXXXXXXXX</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/i_c5Fzk807M?si=_P6bdD4gBAvpgiXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme">XXXXXXXXXXXXXXXX</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme">XXXXXXXXXXXX</a>
+            </p>
+
+            <p>
+                <a href="https://youtu.be/tJTtp4qyqdE?si=09KPGh0Pf6ui60v_">XXXXXXXXXXXXXXXX</a>
+            </p>
+
+            </p>
+        </p>
+        
+        <hr>
+        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+</body>
+</html>

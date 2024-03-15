@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 09</title>
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+</head>
+<body>
+    <h1 id="capitulo">Capítulo 09</h1>
+    <br><a href="../../indice de links .html"> voltar para índice</a><br>
+<h2>Listas</h2>
+<p>
+    Exstem 2 tipos de listagens as ordenadas (como uma lista de tarefas para fazer em sequência) e as que não possuem ordenação específica (como uma lista de compra de supermercado) 
+</p>
+<p>
+    Ao criar uma lista ordanada(1º,2º,3º,4º...) em HTML, é importante utilizar a tag &lt;ol&gt; (ol=ordenade list)seguido da tag &lt;li&gt; (li=list item) pois caso crie um lista muito grande e precise alterar algum item do início, você não precisará vir trocando número por número até o final.
+</p> 
+<p>
+    Para isso usamos a tag da seguinte forma:                       
+</p>
+    &lt;ol&gt; <br>
+    &lt;li&gt; Acordar &lt;/li&gt;<br>
+    &lt;li&gt; Preparar o Café &lt;/li&gt;<br>
+    &lt;li&gt; Tomar Banho &lt;/li&gt;<br>
+    &lt;li&gt; Tomar o café &lt;/li&gt;<br>
+    &lt;li&gt; Etc.. &lt;/li&gt;<br>
+    &lt;/ol&gt;<br>
+
+    Exemplo:
+    <ol>
+    <li>Acordar</li>
+    <li> Preparar o Café</li>
+    <li>Tomar Banho</li>
+    <li>Tomar o café</li>
+    <li>Etc..</li>
+
+    </ol><br>
+
+<p>
+    Já para uma lista sem ordenação específica utilizamos a tag &lt;ul&gt; (ul=unordenade list)seguido da tag &lt;li&gt; (li=list item).
+
+</p>
+<p>
+    Para isso usamos a tag da seguinte forma:
+</p>
+    &lt;ul&gt; <br>
+    &lt;li&gt; Café &lt;/li&gt;<br>
+    &lt;li&gt; Açucar&lt;/li&gt;<br>
+    &lt;li&gt; Cebola &lt;/li&gt;<br>
+    &lt;li&gt; Batata &lt;/li&gt;<br>
+    &lt;li&gt; Etc.. &lt;/li&gt;<br>
+    &lt;/ul&gt;<br>
+<p>
+        Exemplo:
+</p>
+    <ul>
+    <li>Café</li>
+    <li> Açucar</li>
+    <li>Cebola</li>
+    <li>Batata</li>
+    <li>Etc..</li>
+
+    </ul><br>
+
+<p class="mark">
+    Obs.: Em ambos os casos citados acima não é necessário fechar a tag &lt;li&gt; com a tag &lt;/li&gt; ela também pode ser escrita da seguinte forma:
+</p>
+    &lt;ul&gt; <br>
+    &lt;li&gt; Café <br>
+    &lt;li&gt; Açucar<br>
+    &lt;li&gt; Cebola <br>
+    &lt;li&gt; Batata <br>
+    &lt;li&gt; Etc.. <br>
+    &lt;/ul&gt;<br>
+
+<h2>Adicionando estilo "Type"</h2>
+<p>
+    
+    Temos ainda a opção de personalizar a lista trocando o ponto da não ordenada por algum outro formato abaixo:
+</p>
+<p>
+   Podemos usar 3 formatos :
+</p>
+    &lt;ul type="square"&gt; Para quadrado; <br>
+    &lt;ul type="circle"&gt; Para um círculo ou:<br>
+    &lt;ul type="disc"&gt; essa é a padrão <br>
+<p>
+    Exemplo do tipo square:
+</p>
+    <ul type="square">
+    <li>Café</li>
+    <li> Açucar</li>
+    <li>Cebola</li>
+    <li>Batata</li>
+    <li>Etc..</li>
+    </ul>
+
+    Temos também a opção de personalizar a lista trocando o numeral por letras ou algarismos romano, no caso da ordenada e até iniciar a lista apartir de outra ordem que não seja o 1º item.
+    Podemos fazer das seguintes forma:
+    &lt;ol type="I"&gt; Para algarismos Romanos Maiúsculos. <br>
+    &lt;ol type="i"&gt; Para algarismos Romanos Minúsculos. <br>
+    &lt;ol type="A"&gt; Para ordem alfabética Maiúscula. <br>
+    &lt;ol type="a"&gt; Para ordem alfabética Minúscula. <br>
+    Exemplo do tipo algarismos Romanos Maiúsculos: <br>
+    <ol type="I">
+        <li>Acordar</li>
+        <li> Preparar o Café</li>
+        <li>Tomar Banho</li>
+        <li>Tomar o café</li>
+        <li>Etc..</li>
+
+    </ol><br>
+
+<h2>Style, Um pouco de CSS</h2>
+<p>
+    OBS.: Essa parte está no capítulo 17 do módulo 02 no vídeo <a href="https://youtu.be/pdomr7thueI?si=wJTR0SFf6MyPiyJk" target="_blank">Rodpé, conteúdo periféricos e links</a> Minuto 06:40
+</p>
+<p>
+    Agora, vou te mostrar como criar mais personalizações e a criar um ótimo resultado visual.
+</p>
+<h3>Dividindo a lista em 02 colunas</h3>
+<p>
+    Para dividir a lista em mais de um coluna usamos a style columns
+</p>
+<p>
+    Exemplo:
+</p>
+<ol style="columns: 2;" type="I" >
+    <li>Acordar</li>
+    <li> Preparar o Café</li>
+    <li>Tomar Banho</li>
+    <li>Tomar o café</li>
+    <li>Etc..</li>
+</ol>
+<p>
+    Exemplo de código:
+</p>
+<pre>
+&lt;ol style="columns: 2;" type="I" >
+        &lt;li>Acordar&lt;/li>
+        &lt;li> Preparar o Café&lt;/li>
+        &lt;li>Tomar Banho&lt;/li>
+        &lt;li>Tomar o café&lt;/li>
+        &lt;li>Etc..&lt;/li>
+    &lt;/ol>
+</pre>
+<h3> Estilos externo</h3>
+
+    <p>
+        É possível também usar outros marcadores além dos vistos em type, para isso temos que usar o CSS também
+    </p>
+
+    <p>
+        Para isso  usaremos a style: <code>list-style-type: <abbr title="Esse código pega na emoji pedia">'código'</abbr></code>
+    </p>
+    <p>
+        Exemplo:
+    </p>
+    <ol style="list-style-type: '\2714'" >
+        <li>Acordar</li>
+        <li> Preparar o Café</li>
+        <li>Tomar Banho</li>
+        <li>Tomar o café</li>
+        <li>Etc..</li>
+    </ol>
+    <p>
+        Exemplo de código:
+    </p>
+    <pre>
+    &lt;ol style="list-style-type: '\2714'" >
+            &lt;li>Acordar&lt;/li>
+            &lt;li> Preparar o Café&lt;/li>
+            &lt;li>Tomar Banho&lt;/li>
+            &lt;li>Tomar o café&lt;/li>
+            &lt;li>Etc..&lt;/li>
+        &lt;/ol>
+    </pre>
+    <p>
+        Caso não lembre como usar a emoji pedia reveja o <a href="../Capítulo 05/Capítulo 05 .html" target="_blank">Capítulo 05</a>
+    </p>
+
+<h3>Como deixar o marcador mais perto</h3>
+    <p>
+        É possível também deixar os marcadores mais perto dos itens na lista, para isso também temos que usar o CSS também
+    </p>
+
+    <p>
+        Para isso  usaremos a style: <code>list-style-position: inside</code>
+    </p>
+    <p>
+        Exemplo:
+    </p>
+    <ol style="list-style-position: inside" >
+        <li>Acordar</li>
+        <li> Preparar o Café</li>
+        <li>Tomar Banho</li>
+        <li>Tomar o café</li>
+        <li>Etc..</li>
+    </ol>
+    <p>
+        Exemplo de código:
+    </p>
+    <pre>
+    &lt;ol style="list-style-position: inside" >
+            &lt;li>Acordar&lt;/li>
+            &lt;li> Preparar o Café&lt;/li>
+            &lt;li>Tomar Banho&lt;/li>
+            &lt;li>Tomar o café&lt;/li>
+            &lt;li>Etc..&lt;/li>
+        &lt;/ol>
+    </pre>
+
+<h3> Como espaçar o marcador</h3>
+    <p>
+        Se não gostou, achou que ficou muito perto. Então vamos definir a ditância manualmente
+    </p>
+
+    <p>
+        Para isso  usaremos a style: <code>list-style-type: \2714\0020</code>
+    </p>
+    <p>
+        Exemplo:
+    </p>
+    <ol style="list-style-type: '\2714\0020';list-style-position: inside" >
+        <li>Acordar</li>
+        <li> Preparar o Café</li>
+        <li>Tomar Banho</li>
+        <li>Tomar o café</li>
+        <li>Etc..</li>
+    </ol>
+    <p>
+        Exemplo de código:
+    </p>
+    <pre>
+    &lt;ol style="list-style-type: '\2714\0020';list-style-position: inside" >
+            &lt;li>Acordar&lt;/li>
+            &lt;li> Preparar o Café&lt;/li>
+            &lt;li>Tomar Banho&lt;/li>
+            &lt;li>Tomar o café&lt;/li>
+            &lt;li>Etc..&lt;/li>
+        &lt;/ol>
+    </pre>  
+    <p class="mark">
+        OBS.: 0020 é um hexadecimal para espaço assim como o 00A0 também é. 
+    </p>
+    <p class="mark">   
+        OBS 02.: Só é possível aumentar o espaço se usar um estilo externo, caso contrário ele apenas substituirá o marcador por um espaço vazio.
+    </p>
+    <p>
+        Exemplo:
+    </p>
+    <ol style="list-style-type: '\0020';list-style-position: inside" >
+        <li>Acordar</li>
+        <li> Preparar o Café</li>
+        <li>Tomar Banho</li>
+        <li>Tomar o café</li>
+        <li>Etc..</li>
+    </ol>
+
+<h2>Iniciando em outra ordem "Start"</h2>
+    <P>
+        Para começar de outra ordem que não seja a primeira basta fazer da seguinte forma:
+    </P> 
+    <P>
+        &lt;ol type="I" start="3"&gt; Para algarismos Romanos Maiúsculos iniciando da 3ª ordem.
+    </P>
+    <p>
+        Exemplo começando da ordem 3 em romanos:
+    </p>
+    <ol type="I" start="3">
+        <li>Acordar</li>
+        <li> Preparar o Café</li>
+        <li>Tomar Banho</li>
+        <li>Tomar o café</li>
+        <li>Etc..</li>
+    </ol>
+
+
+<h2> Mesclando listas</h2>
+
+            Ainda sobre listas, mais uma possibilidade interessante é mesclar listas uma dentro de outra lista. Para exeplificar vamos criar um ídice desse próprio resumo com títulos e subtítulos e subtítulos de subtítulos.
+            <ol>
+                <li>Módulo</li>
+                    <ol start="5">
+                        <li>Capítulo</li>
+                        <ul>
+                            <li>Caracteres</li>
+                            <li>Parágrafos</li>
+                            <li>Quebras de linha</li>
+                        </ul>
+                        <li>Capítulo</li>
+                        <ul>
+                            <li>Imagens</li>
+                            <li>Favicon</li>
+                        </ul>
+                        <li>Capítulo</li>
+                        <ul>
+                            <li>Semântica</li>
+                            <li>Hierarquia de Títulos</li>
+                        </ul>
+                        <li>Capítulo</li>
+                        <ul>
+                            <li>Formatação de textos</li>
+                        </ul>
+                    </ol>
+            </ol>
+            O comando fica escrito de seguinte forma:
+            <pre>
+                &lt;ol&gt;
+                          <li>Módulo</li>
+                        &lt;ol start="5"&gt;
+                            &lt;li&gt; Capítulo&lt;/li&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;Caracteres&lt;/li&gt;
+                                &lt;li&gt;Parágrafos&lt;/li&gt;
+                                &lt;li&gt;Quebras de linha&lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;li&gt; Capítulo&lt;/li&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;Imagens&lt;/li&gt;
+                                &lt;li&gt;Favicon&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/ol&gt;
+                        etc..
+                &lt;/ol&gt;
+            </pre>
+        <h4>Lista de definições</h4>
+        A lista de definição funciona como se fosse um dicionário, serve para escrever o que significa determinado termo. Essa lista é bem menos usada que as demais, porém ela é útil e caso alguem pesquise no Google a definição de determinado termo ele prioriza mostrar as página que usam essa lista.
+        Para isso usamos as seguinte Tags: <br>
+        &lt;dl&gt; "Definition List" tag que cria a lista <br>
+        &lt;dt&gt; "Definition Term" tag para escrever o termo <br>
+        &lt;dd&gt; "Definition Definition" tag para o sgnificado.<br>
+        &lt;/dl&gt; finaliza a lista <br>
+        <p>Exemplo:
+        <dl>Lista de definição
+            <dt>Termo</dt>
+            <dd>Descrição / significado do termo </dd>
+            <dt>Termo</dt>
+            <dd>Descrição / significado do termo </dd>
+            <dt>Termo</dt>
+            <dd>Descrição / significado do termo </dd>
+        </dl>
+
+        Fim da lista.
+    </p>
+        Código fica da seguinte forma:
+        <pre>
+    &lt;dl&gt;Lista de definição
+            &lt;dt&gt;Termo&lt;/dt&gt;
+            &lt;dd&gt;Descrição / significado do termo &lt;/dd&gt;
+            &lt;dt&gt;Termo&lt;/dt&gt;
+            &lt;dd&gt;Descrição / significado do termo &lt;/dd&gt;
+            &lt;/dl&gt;
+            &lt;dt&gt;Termo&lt;/dt&gt;
+            &lt;dd&gt;Descrição / significado do termo &lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;/dl&gt;
+
+        </pre>
+        <p>
+            Exemplo:
+            
+        </p>
+        Lembra a usabilidade da tag de abreviação só que exposta. <br>
+        &lt;abbr title="significado da sigla" &gt;"Sigla"&lt;/abbr&gt;
+        
+        <hr>
+<h1>Materiais utilizados</h1>
+    <strong><a href="../../../material-de-apoio/09 - Listas HTML.pdf" target="_blank"> Material em PDF</a></strong>
+    <h2>Vídeos</h2>
+    <p><a href="https://youtu.be/JlE0pzESf5g?si=UiruQoeM6362h60D" target="_blank">Listas em HTML5</a></p>
+    
+    <p><a href="https://youtu.be/Ez1kgIyoGuE?si=c0PQJSbDSuJ2eG6E" target="_blank">Listas Mistas e de definição</a></p>
+
+    <hr>
+    <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+</body>
+</html>

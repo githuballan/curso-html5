@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'aqua';
+    src: url('font/Poppins/Poppins-Regular.ttf'), format ('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    margin: 0px;
+    text-indent: 2em;
+    text-align: justify;
+    font-family: aqua,Arial, Helvetica, Tahoma, sans-serif;    
+   
+}
+
+header{
+    
+    margin: 0px;
+    height: 300px;
+    padding: 1px;
+    background-image: linear-gradient(360deg, #7fe5ff6b, #ffffff);
+    font-family: 'aqua';
+    
+}
+
+header>h1{
+    margin: 5px;
+    margin: auto;
+    font-family: 'aqua';
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #00000089;
+}
+
+nav{
+    padding-bottom: 5px;
+    background-color: #7fe5ff6b;
+    margin-top: 0px;
+    height: 30px;
+    box-shadow: 0px 5px 5px 0px #00000050;
+    
+}
+nav>span>a{
+    font-family: 'aqua'; 
+    font-size: 1.3em;
+    padding: 1px 4px 1px 4px ;
+    background-color: rgba(127, 229, 255);
+    box-shadow: 1px 1px 5px black;
+    color: black;
+    margin: 1em;
+    border-radius: 4px;
+    text-decoration: none;
+    
+
+}
+nav{
+    align-items:center;
+}
+
+nav>span>ul
+{
+    display:none;
+}
+nav>span:hover>ul
+{
+    display:block;
+}
+
+nav>span>a:hover{
+    box-shadow: 2px 2px 5px black;
+    background-color: hsl(192, 100%, 77%);
+}
+nav>span>a:active{
+    box-shadow: -2px -2px 5px black;
+    background-color: hsl(192, 54%, 65%);
+}
+header>h1{
+    margin: 5px;
+    margin: auto;
+    font-family: 'aqua';
+    font-size: 50px;
+    text-align: center;
+}
+main{
+    margin: 4em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main>article>aside{
+    margin: 0px;
+    background-color: rgba(218, 250, 215, 0.568);
+}
+footer{
+    padding-top: 5em;
+    align-self: self-end;
+    height: 10em;
+    background-color: #00002d;
+    color:aliceblue;
+    margin: 0px;
+    text-align: center;
+}

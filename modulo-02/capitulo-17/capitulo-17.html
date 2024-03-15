@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 17</title>
+
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+</head>
+<body>
+
+
+
+<h1 id="capitulo">Capítulo 17</h1>
+<h1> Uso de varáveis em css</h1>
+    
+
+<p>
+    Variáveis é a melhor coisa que inventaram para um programador, e apesar de CSS não ser uma linguagem de programação, ela herdou essa técnica.
+</p>
+<p>
+    Em CSS utlizamos as variáveis para facilitar nossa vida em modificações de projetos. Um da formas mais comuns de uso de variáveis em CSS é com cores e fontes. Pois dessa forma, caso queira trocar a fonte ou a paleta de cores de um site, você não precisará sair trocando todas as cores estilo por estilos. Nessa caso basta atualizar as variáveis definidas em :root.
+</p>
+<p>
+    Veja como fica a criação dela no CSS:
+</p>
+<p>
+    <pre>
+        :root{
+            --cor00: #C5EBD6;
+            --cor01: #83E1AD;
+            --cor02: #3DDC84;
+            --fonte00: Arial, Helvetica, sans-serif;
+            --fonte01: 'Times New Roman', Times, serif; 
+        }
+    </pre>
+</p>
+<p>
+    Veja como fica a utilização dela no CSS:
+    <pre>
+        body{
+            font-family: var(--font00)
+            background-color: var(--cor01)
+        }
+    </pre>
+</p>
+<p class="mark">
+    Atalho: 
+    <p>
+        Se não quiser digitar a variável pode apertar "ctrl+espaço", rolar a barra de rolagem, da janela que abrir, até em baixo e selecionar a variável que deseja aplicar.
+    </p>
+</p>
+<p>
+    As variáveis personalizadas em CSS devem ter seus 
+nomes iniciando com dois traços obrigatoriamente.
+
+</p>
+<p>
+    Note que as varáveis estão com nome de cor01, cor00 e nem o nome da fonte. Isso é porque se colocarmos os nomes e percisar mudar futuramente teriamos algo do tipo:
+</p>
+<p>
+    --corverde: #ffffff; (branco)
+    --fontearial: Times New Roman';
+</p>
+<p>
+    Tampouco devemos usar o nome de onde usaremos, pois se usarmos em mais de um elemento ficará uma bagunça.
+</p>
+<h1>Responsividade</h1>
+<p>
+    Responsividade é a capacidade que um site tem de se adaptar a diferentes tamanho de tela como: desde a tela de uma televisão até a tela de um celular.
+</p>
+<p>
+    Uma das técnicas básicas que podem ser utilizadas é deixar algumas caixas estrategicamente um pouco mais flexíveis indicando valores mínimos <strong>(min-width / min-height)</strong> e máximos <strong>(max-width / max-height).</strong>
+</p>
+<p>
+    Esses valore impedem que a box cresça demais e fique ruim de ler em uma tela grande como texto muito espalhado.E impede também que reduza muito a ponto não conseguirmos ler textos de tão curta que é a tela.
+</p>
+<h2> Responsividade de Imagem</h2>
+<p>
+    Já vimos anteriormente o uso da tag <strong>picture</strong> com a tag <strong>source:media </strong>para carregar imagens de acordo com o tamanho da tela. 
+</p>
+<p>
+    Porém, a imagem não ficava perfeita, ela trocava a imagem mas ficava um intervalor entre uma e outra  gerando a barra lateral. para evitar esse tipo de problema podemos usar o estilo: width: 100%;
+</p>
+<p>
+    Exemplo em head:
+    <pre>
+        img{
+            width: 100%;
+        }
+    </pre>
+    Assim todas as imagens ocuparão 100% da largura da tela e ela irão se adaptando.
+</p>
+<p class="obs">
+    OBS.: Box de textos como header, main, p e etc, já fazem isso normalmente. Nesses boxes de textos a única inportância é definirmos as larguras máximas e mínimas. 
+</p>
+<p>
+    Entretanto, ainda assim é necessário usar a tag <strong>picture</strong> com a tag <strong>source:media </strong> para que o site não fique com carregamento lento em aparelhos menores.
+</p>
+<p>
+    Exemplo de imagem Responsiva: <br>
+    <img src="../../imagens/Aqua.jpeg" alt="aqua">
+</p>
+<h3 class="mark">Atenção</h3>
+<p class="mark">
+    É importante sempre definir a larguara máxima e das imagens usando o <strong>style inline</strong>. <br>
+    Pois imagine uma imagem com resolução de 600px de largura, abrindo numa tela de 1080, a imagem ficaria com uma péssima qualidade.
+
+</p>
+<p>
+    É possível aplicar outras técnicas adicionais para dar ainda mais capacidade de adaptação do conteúdo, como as media queries com a regra @media e as caixas flexíveis com as flex boxes. Mais pra frente, abordaremos esses conteúdos no curso.
+</p>
+
+<h2>Uso do seletor "*"</h2>
+<p>
+    Basicamente ele aplica uma configuração padrão para TODOS os elementos do código HTML ao qual o estilo está sendo aplicado.
+</p>
+<p>
+    Por Exemplo pode usar esse seletor para remover todas as margens de todas as boxes. Isso é util para evitar erros em projetos pois dessa forma o site fica inteiro nas nossas mãos. Sem pré configurações nos atrapalhando.
+</p>
+
+<h2>Espaçamento entrelinhas em Textos</h2>
+<p>
+    Outra configuração muito importante que podemos fazer para textos muito longos é o de espaçamento entre as linhas do nosso texto. <br> Usando a propriedade <strong>line-height</strong> podemos dizer qual é o tamanho do espaço entre uma linha e a outra do texto. O valor padrão na maioria dos navegadores é algo próximo ao <b>1.2em</b>
+</p>
+<p>
+    Exemplo comum:
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia culpa recusandae eveniet ad nobis unde molestiae, ut aperiam quisquam beatae in, excepturi nulla! Ut perspiciatis alias id quod? Culpa, qui?
+    </p>
+</p>
+<p>
+    Exemplo com 1.5em:
+    <p style="line-height: 1.5em;">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia culpa recusandae eveniet ad nobis unde molestiae, ut aperiam quisquam beatae in, excepturi nulla! Ut perspiciatis alias id quod? Culpa, qui?
+    </p>
+    
+</p>
+<h2>Sombras em Textos</h2>
+    <p>
+        No capítulo anterior, falamos sobre as sombras em caixas, utilizando a propriedade box-shadow. Pois saiba que também existe uma propriedade específica para criar sombras em textos: o text-shadow. A propriedade text-shadow também pode ter quatro parâmetros principais:
+    </p>
+    <p>
+        1. <strong>Deslocamento horizontal (h-offset):</strong> quanto a sombra vai andar para o lado
+        direito (valores negativos causam deslocamento para a esquerda)
+    </p>
+    <p>
+        <strong>2. Deslocamento vertical (v-offset):</strong> quanto a sombra vai andar para baixo (valores
+        negativos causam deslocamento para cima)
+    </p>
+    <p>
+        <strong>3. Embaçamento (blur):</strong> quanto a sombra vai se espalhar pelo fundo
+
+    </p>
+    <p>
+        <strong>4. Cor (color): cor da sombra.</strong> É possível usar transparência
+    </p>
+    <p>
+        Exemplo:
+        <h3 style="text-shadow: 2px 2px 2px #000000;font-size: 2.5em; background-color: hsl(160, 100%, 30%); margin: 3px; color: #ffffff;">Exemplo de Sombras em Textos</h3>
+    </p>
+<h1 style="margin-top: 3em;">Personalizando ainda mais as listas</h1>
+    <p>
+        No <a href="../../modulo-01/Capítulo 09/Capítulo 09 .html">capítulo 9</a> nós aprendemos a criar listas de vários tipos. Agora, vou te mostrar como criar mais personalizações e a criar um ótimo resultado visual.
+    </p>
+
+<h2>Margem Negativa</h2>
+<p>
+    A margem negativa é usada para puxar os elementos em volta pra dentro dela, fica como uma espécie de buraco negro e pode ser usada para criar encaixes de box. Porém se for apenas estético também pode mos usar o outiline, tudo vai depender do contexto.
+</p>
+<p>
+    Veja o exemplo abaixo:
+</p>
+
+<div style="background-color: aquamarine; padding: 10px;">
+    <p style="background-color: antiquewhite; margin: -10px;">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus laudantium est quam maiores. Atque accusamus molestias repellat deserunt culpa placeat ducimus alias, suscipit autem corporis aut eius quasi sapiente hic?
+    </p>
+</div>
+<p>
+    Veja o código desse exmplo:
+</p>
+<pre>
+&lt;div style="background-color: aquamarine; padding: 10px;">
+        &lt;p style="background-color: antiquewhite; margin: -10px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing
+               elit. Ducimus laudantium est quam maiores. Atque 
+               accusamus molestias repellat deserunt culpa 
+               placeat ducimus alias, suscipit autem corporis aut
+                eius quasi sapiente hic?
+        &lt;/p>
+    &lt;/div>
+
+</pre>
+
+<h1>Vídeo Externo Responsivo</h1>
+
+<p>
+    <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/u9NE0jInb_c?si=A2QRae3AhclXwT_f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+</p>
+<p>
+    Veja o PDF na página 09 e o vídeo minuto 03:50.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>
+        <h1>Materiais utilizados</h1>
+        
+            <strong><a href="../../material-de-apoio/17 - Primeiro mini-projeto.pdf" target="_blank"> Material em PDF</a></strong>
+        
+        
+            <h2>Vídeos</h2>
+
+            <p>
+                <a href="https://youtu.be/cKEA0-MOhOs?si=IJpaSJjEe_QTgFdL" target="_blank">Criando projeto do Zero</a>
+            </p>
+        
+            <p>
+            <p>
+                <a href="https://youtu.be/YB9c1Zg_Ln4?si=cD_h8jwHV4dxtySZ" target="_blank">Navegando pelo projeto pronto</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/Zju-c3YWgSg?si=TWFGbiHgwNZYDwRA" target="_blank">Planejando a Estrutura de site</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/D7jnoo7UHKE?si=26X-uMF0fyrwDJJP" target="_blank">Transformando o Layout em Código</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/I_vi2q6sC1k?si=hbKoArPehONK093O" target="_blank">Organizando o Conteúdo</a>
+            </p>
+
+            <p>
+                <a href="https://youtu.be/3S5ts5bzvzM?si=7KhRJj8SiF2HGGDG" target="_blank">Uso de variáreis em CSS</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/WcGPSeuJDJ0?si=Mbwq8goQ5K9TYvGf" target="_blank">Responsividade para Sites</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/rAdHLNBTCgs?si=MLyIQuuUlz9EPncY" target="_blank">Transformando Layout em Código</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/I_vi2q6sC1k?si=wrJHK9y-y-NfnduT" target="_blank">Responsividade na prática</a>
+            <p>
+                    <a href="https://youtu.be/TrfhQwSYCEk?si=QXVUOwkA754H2C77" target="_blank">Configurando header e Menu do Site</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/WcGPSeuJDJ0?si=fwWJRLR6LEtakZsO" target="_blank" >Responsividade</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/_KglicHxv3g?si=l-cSW3owZuO_pN5X" target="_blank">Melhorando o Formato do Conteúdo</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/pdomr7thueI?si=PpxkTwh7uxX4Leqr" target="_blank">Rodapé, Conteúdo, Priféricos e Links</a>
+            </p>
+            <p>
+                <a href="https://youtu.be/u9NE0jInb_c?si=1KobG2mT5b9GjLbK" target="_blank">Tornando um vídeo externo Responsivo</a>
+            </p>
+            
+            
+
+        
+        </p>
+        
+        <hr>
+        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>Capítulo 08</h2>
+    </center>        
+    <br><a href="../../indice de links .html"> voltar para índice</a><br>
+<h3>Formas de destacar texto em HTML5:</h3>
+    <p><strong>Negrito </strong> Para destacar em negrito de forma semântica usamos o comando &lt;strong&gt;"Texto a ser destacado"&lt;/strong&gt;. <br> Exemplo: <strong>Negrito</strong> </p>
+
+    <p><strong>Itálico </strong> Para destacar em Itálico de forma semântica usamos o comando &lt;em&gt;"Texto a ser destacado"&lt;/em&gt;. <br> Exemplo: <em>Itálico.</em> </p>
+
+    <p><strong>Marca texto </strong> Para destacar em usando efeitio caneta de marca texto de forma semântica usamos o comando &lt;mark&gt;"Texto a ser destacado"&lt;/mark&gt;. <br> Exemplo: <mark>Marca texto</mark> <br>
+
+    Uma breve passagem por CCS Caso queira mudar a cor do marca texto pode-se usar dois comandos diferentes de CCS <br>
+
+    <strong>1º mudança de cor individual:</strong> Escreve &lt;mark style="background-color: lime;"&gt;"Texto a ser destacado"&lt;/mark&gt;. <br> Exemplo: <mark style="background-color: lime;"> Marca texto</mark> <br>
+
+    <strong>2º mudança de cor de todos os marca texto da página:</strong> Na área head em baixo de title escreva: &lt;style&gt; mark{background-color: "Selecione uma cor na lista";} &lt;/style&gt;
+    </p>
+
+    <p><strong>Sublinhado:</strong>Para destacar sublinhando-o de forma semântica usamos o comando &lt;ins&gt;"Texto a ser destacado"&lt;/ins&gt;. <br> Exemplo: <ins>Sublinhado.</ins> </p>
+
+    <p><strong>Tachado:</strong>Para destacar um texto tachando-o de forma semântica usamos o comando &lt;del&gt;"Texto a ser destacado"&lt;/del&gt;. <br> Exemplo: <del>Tachado.</del> </p>
+
+    <p><strong>Texto sobrescrito:</strong>Para escrever um texto ou algo sobrescrito usamos o comando &lt;sup&gt;"Texto a ser sobrescrito"&lt;/sup&gt;. <br> Exemplo: Texto <sup>sobrescrito.</sup> </p>
+
+    <p><strong>Texto subescrito:</strong>Para escrever um texto ou algo subescrito usamos o comando &lt;sub&gt;"Texto a ser subescrito"&lt;/sub&gt;. <br> Exemplo: Texto <sub>subescrito.</sub></p>
+
+    <p><strong>Código fonte:</strong> Comando usado para escrever um texto com uma fonte monoespaçada,( o que isso significa? Isso é um texto onde todas a letras ocupam o mesmo espaçamento). Esse tipo de fonte é ótima para fazer leitura de códigos. Para isso usamos o comando &lt;code&gt;"Texto monoespaçado"&lt;/code&gt;. A seguir veja 2 exemplos onde o primeiro está monoespaçado e o segundo está normal: <br>
+    <code>Texto teste.</code><br>
+    Texto teste.</p>
+
+    <p><strong>Comando pre:</strong> Esse comando faz, a organização de espaçamentos e quebra de linhas de página, ficarem iguais aos feito no Visual Studio. Para isso usamos o comando &lt;pre&gt;"Texto"&lt;/pre&gt;. Exemplo:<br>
+    <pre>
+        Texto escrito no comando pre
+        Esse comando é excelente para ecrever
+        exemplificação de códigos
+        Tanto é que ele já vem com a mesma fonte do comando code.
+        
+    </pre></p>
+
+    <mark>
+        <strong>Atalho:</strong> <br>
+        Para espaçar ou reduzir o espaçamento dos parágrafos de textos inteiros no Visual Studio: <br>
+        Para aumanetar o espaço: selecionar o texto inteiro e pressionar a tecla "Tab" <br>
+        Para remover o espaçamento: Basta selecionar o texto inteiro e pressionar a tecla "Shift" e "Tab"  
+    </mark>
+<!--Atalho: 
+    Para espaçar ou reduzir o espaçamento dos parágrafos de textos inteiros no Visual Studio: 
+
+    Para aumanetar o espaço: selecionar o texto inteiro e pressionar a tecla "Tab" 
+
+    Para remover o espaçamento: Basta selecionar o texto inteiro e pressionar a tecla "Shift" e "Tab"    -->
+
+    <p><strong>Citação Simples:</strong>Para destacar uma citação usamos as famosas aspas, porém para que o programa saiba de se trata de uma citação usamos o comando &lt;q&gt;"Texto citado"&lt;/q&gt;. <br> Exemplo: Como dizia fulano: <q>Blá-Blá-Blá...</q> </p>
+
+    <p><strong>Citação completa:</strong>Para destacar uma citação completa, também usamos as famosas aspas. Porém em uma citação completa ela quebra a linha e abre um espaço depois da margem e ainda podemos referenciar, ou não, o site de onde tiramos essa citação. <br>
+         Para uma citação completa sem referenciar usamos o comando &lt;blockquote&gt;"Texto citado"&lt;/blockquote&gt; <br>
+         Exemplo sem referência: Como dizia fulano: <blockquote>Blá-Blá-Blá...</blockquote> <br>
+
+         Para uma citação referenciada usamos:&lt;blockquote cite="https://rj.olx.com.br/"&gt;"Texto citado"&lt;/blockquote&gt; <br>
+         Exemplo com referência: Como dizia fulano: <blockquote cite="https://rj.olx.com.br/">Blá-Blá-Blá...</blockquote> <br>
+          Como pôde observar o usuário da página não verá diferença alguma entre com e sem essa referência. Isso é apenas para que o programa use para fins de pesquisas do google e afins.            
+        </p>
+
+    <p><strong>Abreviações:</strong>Usamos essa tag para que quando o usuário passe o mouse por cima, ele veja o significado daquela sigla. Para isso usamos o comando &lt;abbr title="significado da sigla" &gt;"Sigla"&lt;/abbr&gt;. <br> Exemplo: <abbr title="Hypertext Markup Language">HTML</abbr> </p>
+
+    <p><strong>Texto invertido:</strong> Usamos essa tag para abosolutamente nada, mas ela existe então está aí. Para isso usamos o comando &lt;bdo dir="rtl" &gt;"Texto invertido"&lt;/bdo&gt;. <br> 
+        Exemplo: <bdo dir="rtl"> Texto invertido</bdo> </p>
+
+        <hr> <h1>Materiais utilizados</h1>
+    <strong><a href="../../../material-de-apoio/08 - Formatação de Textos.pdf" target="_blank"> Material em PDF</a></strong>
+    <h2>Vídeos</h2>
+    <p><a href="https://youtu.be/HaSgt1hK2Fs?si=qRQ8P5ZVcNGZowsn" target="_blank">Semântica da HTML5</a></p>
+    
+    <p><a href="https://youtu.be/T-d_hsO3hUI?si=5mqTrWLITDrNdTye" target="_blank">Negrito e Itálico</a></p>
+    <p><a href="https://youtu.be/4ynvsrkamt8?si=JgW8aQaq2YMrCyxw" target="_blank">Citações e Códigos</a></p>
+
+
+    <hr>
+    <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+    
+</body>
+</html>

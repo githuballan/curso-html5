@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@font-face 
+{
+    font-family: 'star';
+    src: url('../../fonts/twinkle-star/twinklestar-Regular.ttf'), format ('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*---------------------------------CLASS-------------------------------*/
+.mark
+{
+    background-color: #ffff004d;
+}
+/*---------------------------------ID-----------------------------------*/
+#capitulo
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    background-image: radial-gradient(circle, #567eb942, #bad5dd);
+}
+/*---------------------------------BOXES-------------------------------*/
+p{
+    margin: 7px;
+}
+
+a::after{
+        
+        content: '\00A0\1F517';
+}
+iframe.índice{
+    display: block;
+    margin: auto;
+    height:400px;
+    width: 80%;
+
+}
+body 
+{
+    text-indent: 2em;
+    text-align: justify;
+    font-family: Arial, Helvetica, Tahoma, sans-serif;
+    background-color: rgb(216, 191, 143, 0.1);
+    font-size: large;
+    color: rgb(5, 3, 28);
+    max-width: 1300px;
+    margin: auto;
+    padding: 10px;
+    
+}
+code{
+    margin: 15px;
+    font-size: 1.4em;
+}
+pre{
+    font-size: 1.3em;
+}
+strong
+{
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.video
+{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    height: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    padding-bottom: 58%;
+
+}
+div.video>iframe{
+    position:absolute;
+    top: 0%;
+    left:0%;
+    width: 100%;
+    height: 100%;
+
+}
+img
+{
+    max-width: 100%;
+    align-self: center;
+}
+
+h1 
+{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #7bd768;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h2 
+{
+    background-image: linear-gradient(90deg, #567eb942 50%, #7bd7685f);
+    font-size: 1.3em;}
+    h3, h4, h5, h6{
+        font-size: 1.1em;
+}

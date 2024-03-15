@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 19</title>
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+
+
+    <style>
+        
+        div#fora{
+            text-indent: 0px;
+            height: 400px;
+            width: 400px;
+            background-color: yellow;
+            padding: 0px;
+            position: relative;
+
+        }
+        div#interna{
+           
+            height: 150px;
+            width: 150px;
+            background-color: blue;
+            margin: auto;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+        }
+
+        div.q1, div.q2, div.q3{
+            height: 300px;
+            width: 300px;
+            display: inline-block;
+            border-radius: 6px;
+
+
+        }
+        div.q1{
+            background-image: url(imagens/wallpaper001.jpg);
+
+        }
+        div.q2{
+            background-color: aquamarine;
+            
+        }
+        div.q3{ background-color: bisque;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+<h1>Capitulo 19 - Imagens de Fundos</h1>
+    </header>
+  <main>
+<div ></div>
+    <p>
+        Podemos usar imagens como Plano de Fundo em qualquer elemento caixa desde "body" até uma simples "div". Para isso, usamos a Propriedade de Estilo " background-image " (a mesma usada para degradê) com a função " url "... Após isso é só inserir o endereço da imagem dentro dos (parênteses). Exemplo:
+    </p>
+    <pre>
+    
+    div {
+            background-image: url(imagens/pattern003.png);
+        }
+    </pre>
+<p>    
+        Podemos ainda adicionar uma imagem de outro site como plano de fundo do nosso site. Para isso basta adicionar a URL da imagem no local da URL da imagem. Mas cuidado, caso a imagem do link saia do ar e deixe de existir, isso irá prejudicar o visual do seu site, visto que não teremos mais acesso à essa imagem.
+</p>
+<p class="mark">    
+        Lembre-se, muito cuidado com o tamanho das imagens de fundo que você inserir.
+</p>
+<p>
+    Exemplo em Aula:
+</p>
+<div class="q1"></div><div class="q2"></div><div class="q3"></div>
+
+<h2>
+    Funções background-repeat
+</h2>
+<p>
+    De forma PADRÃO, imagens de fundo sempre serão carregadas no seu tamanho/dimensão total. Se a imagem de fundo que inserirmos tiver uma dimensão menor do que o respectivo elemento caixa, ela simplesmente será  introduzida de forma "repetida", em blocos, para conseguir cobrir toda a área. Já se essa imagem tiver uma dimensão muito grande para o elemento caixa, veremos apenas um pedaço da mesma como background.
+</p>
+<p>
+    Entretanto, podemos usar a função no-repeat para que ela não se repita até cobrir toda a página porém ela ficará do tamnho máximo dela canto superior esquerdo da box. por isso é importante sempre deixar a box no tamanho máximo da imagem. 
+</p>
+<p>Exemplo no head:</p>
+<pre>
+    &lt;style>    
+    div {
+            background-image: url(imagens/pattern003.png);
+            background-repeat: no-repeat ;
+        }
+        &lt;/style>
+</pre>
+<p>
+    Temos ainda alguns efeitos menos usados como o repeat-x, que repete as imagens somente na horizontal(eixo x) ou repeat-y que repete somente no sentido vertical (eixo y).
+</p>
+<p>Exemplo no head:</p>
+<pre>
+    &lt;style>    
+    div {
+            background-image: url(imagens/pattern003.png);
+            background-repeat: repeat-x;
+        }
+        &lt;/style>
+</pre>
+<h2>Background-position</h2>
+
+<p>
+    Também podemos mudar a posição de referência de início das repetições. Por padrão, é considerado o canto esquerdo superior (left top), mas podemos ter várias opções. Use a imagem abaixo como referência sempre que precisar definir a posição do fundo com a propriedade background-position no seu código. 
+
+</p>
+<p>Exemplo:</p>
+<div style="padding-inline: 35%; height: 350px">
+<img style="height: 238px; width: 238px" src="imagens/Backgroung-position.png" alt="">
+</div>
+<p>Exemplo no head:</p>
+
+    <pre>
+        &lt;style>    
+        div {
+                background-image: <br>
+                url(imagens/pattern003.png);
+                background-repeat: repeat-x;
+                background-position: center center;
+            }
+            &lt;/style>
+    </pre>
+
+<h2>Background-size</h2>
+<p>
+    Outra coisa que podemos fazer é redimensionar a imagem para forçá-la a caber na caixa. Por padrão, nenhum redimensionamento será aplicado, e a imagem será exibida do seu tamanho natural. Porém, podemos usar a propriedade background-size para alterar esse comportamento. 
+</p>
+<p>
+    Os valores aceitos por essa propriedade são:
+</p>
+<div style="padding-inline: 5%;">
+    <img style="  max-height: 184px; ; 
+    " src="imagens/size.png" alt="">
+    </div>
+    <p>Exemplo no head:</p>
+    <pre>
+    &lt;style>    
+    div {
+            background-image: url(imagens/pattern003.png);
+            background-size: cover;
+        }
+        &lt;/style>
+</pre>
+<h2>Background-attachment</h2>
+<p>
+    A última propriedade que podemos configurar é o vínculo (attachment) da imagem de fundo com o resto do documento, principalmente se o conteúdo for maior do que a altura da página e seja necessário vazar uma rolagem vertical.
+</p>
+<p>
+    A propriedade background-attachment aceita os valores: 
+</p>
+<div style="padding-inline: 5%;">
+    <img style="max-height: 72px;" src="imagens/attachment.png" alt="">
+    </div>
+    <p>Exemplo no head:</p>
+    <pre>
+        &lt;style>    
+        div {
+                background-image:
+                url(imagens/pattern003.png);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &lt;/style>
+    </pre>
+
+<h2>Background Shothands</h2>
+<p>
+    Como percebemos Background tem muita configuração. Sendo assim, existe uma shothand para configuração completa do Background em apenas uma linha. A propriedade abreviada background pode ser declarada agrupando as seguintes configurações e nessa ordem:
+</p>
+<ol>
+    <li>background-color</li>
+    <li>background-color</li>
+    <li>background-position </li>
+    <li>background-repeat </li>
+    <li style="text-decoration:line-through;">background-size</li>
+    <li>background-attachment </li>
+</ol>
+<p mark>
+    Use o background-size separado pois não está funcionando no Shothands.ALERTADO PELO PRÓPRIO GUANBARA EM VÍDEO
+</p>
+<p>Exemplos no head:</p>
+<pre>
+    &lt;style>    
+    div {
+            background: 
+            <abbr title="background-color">black</abbr> <abbr title="background-image">url(imagens/pattern003.png)
+            </abbr> <abbr title="background-position">center center</abbr> <abbr title="background-repeat">no-repeat</abbr> <abbr title="background-attachment">fixed</abbr>; 
+            background-size: cover;
+        }
+        &lt;/style>
+</pre>
+<h1>Centralizando Box vertical e horizontal</h1>
+<p>
+    Como já tentamos o posicionamento de caixas é bem difícil. Poré. existem 2 comandos chaves para isso:
+    <ul>
+        <li><strong>position: relative;</strong> a box externa deve sempre ser mantida com a position: relative; pois ela está avisando para as box interna que o posicionamento delas agora será em relação a ela e não ao body</li>
+        <li><strong>position: absolute;</strong> A box interna deve assumir essa position, pois ess position permite se posicionar de foma absoluta, como os comandos left e top em relação a box relative onde ela se encontra.</li>
+        <li><strong>transform: translate:</strong> Com esse comando transform é possivel faz mil modifiações na box. porém agora usaremos apenas o translate, pois esse permite modificar  o a base da box que naturalmente vem como superior esquerda </li>
+            
+    </ul>
+    <p>
+        O translate modificar a base da box tanto para fora dela como para dentro. Como sempre para dentro os valores são negativos.
+    </p>
+    <p>
+        Logo para puxar a base da box da superior esquerda para o centro basta reduzir 50% da esquerda e 50% de cima ficando assim:
+    </p>
+<p>Exemplo:</p>
+<code>transform: translate(-50%, -50%);</code>
+<p>
+    Veja abaixo todos os comnados usado no head para fazer as box azul centralizar com o centro da amarela:
+</p>
+<pre>
+    div#fora{
+        text-indent: 0px;
+        height: 400px;
+        width: 400px;
+        background-color: yellow;
+        padding: 0px;
+        position: relative;
+
+    }
+    div#interna{
+       
+        height: 150px;
+        width: 150px;
+        background-color: blue;
+        margin: auto;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+    }
+
+</pre>
+   
+    Veja funcionando:
+</p>
+
+<div id="fora">
+    <div id="interna"> </div>
+</div>
+  </main>  
+
+  <footer>
+
+    <h1>Materiais utilizados</h1>
+        
+            <strong><a href="../../material-de-apoio/19 - Imagens de Fundo.pdf" target="_blank"> Material em PDF</a></strong>
+        
+        
+    <h1>Vídeos</h1>
+    
+        <p>
+            <a href="https://youtu.be/sms5H5cKDy4?si=ebdDdfpQeSiYhFmC" target="_blank">Download das imagens do capítulo</a>
+        </p>
+    
+        <p>
+            <a href="https://youtu.be/9hV5oXi80-A?si=AQGxE97hkO2jixlo" target="_blank">Colocando imagem no fundo do site</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/_5KoMUMCTG0?si=l7poKNC25Q2uA9Ks" target="_blank">Imagens que se repetem</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/RpcmGqvzWxQ?si=JqS9ufOKsIjUXetV" target="_blank">Configurando Posição de imagem no fundo do Site</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/lNaoi5AUCsc?si=GKyK2J28iM-414t7" target="_blank">Mudando tamanho da imagem no fundo do Site</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/PzJwwA6LVts?si=eBmYX11oaHBymdHu" target="_blank">Background-attachment e Shothands</a>
+        </p>
+        <p>
+            <a href="https://youtu.be/-w0Qo_qQiRg?si=8L5-zMN2mbkjMf5I" target="_blank">Centralizando Box vertical e horizontal</a>
+        </p>
+        
+              
+        <hr>
+        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+    
+    </footer>
+</body>
+</html>
