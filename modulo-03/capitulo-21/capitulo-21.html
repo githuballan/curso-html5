@@ -210,22 +210,28 @@
     <p>
         O objetivo de trabalhar com trabalhar com tabelas semânticas é organizar melhor sua tabela. A w3c recomenda o uso desse tipo sempre que for usar tabelas grandes, com muitos dados. No entanto é bom usar essa tipo de tabela sempre que possível, pois o google valoriza essa Semântica.
     </p>
+   
+        São poucas diferenças entre esta e a anterior. Esta possui:
+        <ol>
+            <li><strong>capition</strong>: Título da tabela</li>
+            <li><strong>thead</strong>: cabeçalho</li>
+            <li><strong>tbody</strong>: corpo</li>
+            <li><strong>tfoot</strong>: Rodapé</li>            
+        </ol> 
     <p>
-        São poucas diferenças entre esta e a anterior. Esta possui thead(cabeçalho), tbody(corpo) tfoot(Rodapé). Essa diferença serve apenas para que o programa não misture informação de dados com tiítulos e compilados.
+        Essa diferença serve apenas para que o programa não misture informação de dados com títulos e compilados.
     </p>
-    <p>
-        Outro elemento que devems mencionar é o capition. Esse funciona como o título da tabela. (OBS.: Ele fica acima do thead pois no thead fica o título da coluna, já o caption é o título da tabela)
-    </p>
+    
     <p>
         Temos ainda o th, esse vai no lugar de td em locais de Títulos:
         <ul>
-            <li><strong>th:</strong> table head(Títulos da tabela)</li>
-            <span class="mark"> O th não precisa estar somente em thead, avezes ele poderá estar também em tbody ocupando a primeira coluna.</span>
+            <li><strong>th:</strong> table head(Títulos da coluna ou da linha)</li>
+            <span class="mark"> O th não precisa estar somente em thead, avezes ele poderá estar também em tbody ocupando a primeira coluna para ser título da linha.</span>
             <li><strong>td:</strong> table data(Dados da tabela)</li>
         </ul>
     <h3>Scope</h3>
         <p>
-            Scope é um atributo semântico, ele serve apenas para informar se o th (título) é de uma informação da linha ou da coluna. É muito importante esse tipo de informação para um  SEO melhor.
+            Scope é um atributo semântico do th, ele serve apenas para informar se o th é título de uma linha, coluna ou grpuo de linha, ou grupo de colunas. É muito importante esse tipo de informação para um  SEO melhor.
         </p>
         <ul>
             <li><strong>scope="col"</strong> usado para th  de coluna</li>

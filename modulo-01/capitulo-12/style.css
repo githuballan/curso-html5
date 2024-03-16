@@ -12,59 +12,6 @@
 {
     background-color: #ffff004d;
 }
-/*---------------------------------ID-----------------------------------*/
-#capitulo
-{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.5em;
-    background-image: radial-gradient(circle, #567eb942, #bad5dd);
-}
-/*---------------------------------BOXES-------------------------------*/
-p{
-    margin: 7px;
-}
-
-a::after{
-        
-        content: '\00A0\1F517';
-}
-iframe.índice{
-    display: block;
-    margin: auto;
-    height:400px;
-    width: 80%;
-
-}
-body 
-{
-    text-indent: 2em;
-    text-align: justify;
-    font-family: Arial, Helvetica, Tahoma, sans-serif;
-    background-color: rgb(216, 191, 143, 0.1);
-    font-size: large;
-    color: rgb(5, 3, 28);
-    max-width: 1300px;
-    margin: auto;
-    padding: 10px;
-    
-}
-code{
-    margin: 15px;
-    font-size: 1.4em;
-}
-pre{
-    font-size: 1.3em;
-}
-strong
-{
-    font-size: 1.1em;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-h1, h2, h3, h4, h5, h6{
-    font-family: 'Times New Roman', Times, serif;
-}
-
 .video
 {
     position: relative;
@@ -76,20 +23,121 @@ h1, h2, h3, h4, h5, h6{
     padding-bottom: 58%;
 
 }
-div.video>iframe{
+/*---------------------------------ID-----------------------------------*/
+capitulo
+{
+    background-color: rgba(240, 248, 255, 0);
+    margin-top: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    
+}
+/*---------------------------------BOXES-------------------------------*/
+body 
+{ 
+    text-indent: 2em;
+    text-align: justify;
+    font-family: Arial, Helvetica, Tahoma, sans-serif;
+    background-color: rgb(216, 191, 143, 0.1);
+    font-size: large;
+    color: rgb(5, 3, 28);
+    max-width: 1300px;
+    margin: auto;
+    padding: 1px;
+ }
+
+ header
+ {
+     max-width: 1300px;
+     padding: 3%;
+     background-image: radial-gradient(circle, #7bd768, #bad5dd);
+     margin: auto;
+     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.342);
+     border-radius: 0% 0% 2% 2%;
+ }
+
+header>h1
+{
+    background-color: rgba(240, 248, 255, 0);
+    margin-top: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    
+}
+
+main
+{
+    padding-top: 20px;
+    padding: 15px;
+
+}
+
+footer
+{
+    margin-top: 200px;
+    background-color: #ffd3d3;
+
+}
+/*---------------------------------BOXE pequenas--- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+code
+{
+    margin: 15px;
+    font-size: 1.4em;
+}
+
+
+pre{
+    font-size: 1.3em;
+    text-align: left;
+    white-space: pre-wrap;
+ }
+
+strong
+{
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+div.video>iframe
+{
     position:absolute;
     top: 0%;
     left:0%;
     width: 100%;
     height: 100%;
+}
+
+p{
+    margin: 7px;
+}
+
+a::after
+{
+        
+        content: '\00A0\1F517';
+}
+
+iframe#índice
+{
+    display: block;
+    margin: auto;
+    height:400px;
+    width: 80%;
 
 }
+
 img
 {
     max-width: 100%;
     align-self: center;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Times New Roman', Times, serif;
+}
 h1 
 {
     font-family: 'Times New Roman', Times, serif;

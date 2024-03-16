@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 24</title>
+    
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+
+    <style>
+        th, td
+        {
+            border: solid;
+            padding: 3px;
+        }
+        table
+        {
+            text-align: left;
+            border-collapse: collapse; 
+            border: solid;
+            position: relative;
+        }
+        thead>tr>th{
+                position:sticky;
+                top:-2px;
+                background-color:rgb(145, 145, 145);
+               
+            }
+        tbody>tr:nth-child(even)
+        {
+            background-color: rgba(0, 0, 0, 0.158);
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+<header>
+    <h1 id="capitulo"> Capítulo 24</h1>
+    <h1 id="capitulo">Formulários</h1>
+
+</header>
+
+   
+<main>
+    <p>
+        Formulários é tudo que o usuário preencher no site, como login, senha, pesquisas, comentários entre outros. A tag usada em formulário é a tag form &lt;form>&lt;/form>. E dentro dessa tag usamos a tag input. que é a tag que faz abre o campo para o usuário digitar. <br>
+        Veja o exemplo abaixo:
+    </p>
+    <form >
+        <p>Nome:<input type="text"></p>
+        <p>Sobrenome: <input type="text"></p>
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+    <p>
+        O Comando:
+    </p>    
+<pre>
+
+&lt;form >
+
+    &lt;p>Nome:&lt;input type="text">&lt;/p>
+    &lt;p>Sobrenome: &lt;input type="text">&lt;/p>
+    &lt;p>&lt;input type="submit" value="Enviar">&lt;/p>
+
+&lt;/form>
+
+</pre>
+
+    <p>
+        A primeira e a última linhas vão delimitar o formulário. Tudo aquilo que estiver dentro desse par de tags será considerado como conteúdo dos campos. No exemplo acima, temos apenas 2 campos que vão aceitar um texto relativo ao nome e ao sobrenome da pessoa e um botão de submissão, que vai permitir enviar o formulário. 
+    </p>
+    <p>
+        Porém precisamos fazer algumas configurações adicionais para que esse formulário funcione de maneira mais semântica e correta, para isso adicionaremos alguns atributos: 
+    </p>
+<h1>Atributos para tag form</h1>
+    
+    <h2>action</h2>
+        <p>
+            Esse atributo dirá para onde os dados serão enviados e será ativado quando o atributu submit for acionado em &lt;input type="submit" value="Enviar">
+        </p>
+
+
+    <p>Exemplo:</p>
+    <form method="get" action="cadastro.php">
+        Nome: <input type="text">        
+        <input type="submit" value="Enviar">
+    </form>
+    <p>
+        Comando:
+    </p>
+
+<pre>
+
+&lt;form method="get" action="cadastro.php">
+    Nome: &lt;input type="text">        
+    &lt;input type="submit" value="Enviar">
+&lt;/form>
+</pre>
+
+    <p class="mark">
+        Php é uma das linguagens de programação mais usadas na internet ela é que trata os dados digitados pelo usuário. Temos outras, mas as mais utilizadas são PhP e Java Script.
+    </p>
+
+    <h2>method</h2>
+        <p>
+            Basicamente, existem dois métodos para enviar os dados de um formulário: GET e POST. 
+        </p>
+    
+    <h3>GET</h3>
+    <p>
+        Esse método de envio de dados é o padrão, então se preenche nada esse será o método usado. Para exemplificar o método GET, olhe abaixo o site do Google fazendo uma busca por Curso HTML5.
+    </p>
+    <img style="max-height: 186px;" src="Imagens/interface-do-google.png" alt="interface-do-google">
+    <p>
+        Depois de enviar o formulário preste bastante atenção à barra de endereços do navegador e veja a URL que você está acessando: 
+    </p>
+    <img style="max-height: 38px;" src="Imagens/url-google.png" alt="url-google">
+    <p>
+        Note que aquilo que você digitou no formulário apareceu na URL que está sendo apresentada no seu navegador. Isso é uma característica presente nos formulários com método GET, pois ele condensa todos os dados digitados pelo visitante e envia como parte do endereço acessado.
+    </p>
+    <p>
+        Principais características do método GET:
+    </p>
+    <ul>
+        <li><strong>Não pode conter dados sensíveis:</strong> dados como: endereços, números de documentos, senhas e outros devem ser enviados via método post</li>
+        <li><strong>Simplicidade:</strong> Tivermos formulários simples e que possam ser compartilhados facilmente através de uma URL. Por exemplo, o Google usa GET no seu formulário, pois você pode enviar um link para qualquer pessoa, já com a ação da busca embutida, como em http://google.com.br/search?q=Gustavo+Guanabara </li>
+        <li><strong>Máximo 3kb</strong> Os dados a serem enviados nunca poderão ultrapassar 3000 bytes. </li>
+        <li><strong> Somente texto:</strong> Não contenha envio de arquivos como imagens (i.e. fotos de perfil), arquivos PDF, etc. </li>
+    </ul>
+    <h3>POST</h3>
+    <p>
+        Muita gente diz que o método post é o mais seguro. Porém isso não é exatamente verdade, Pois apesar dele não enviar os dados na URL esses dados podem ser facilmente acessados usando a função inspecionar do navegador
+    </p>
+   
+    <p>
+        Principais características do método POST:
+    </p>
+    <ul>
+        <li><strong>Dados não aparecem na URL</strong>: Devemos usar esse método quando precisamos enviar dados sensíveis como os citados nas características do get.</li>
+        <li><strong>Aceita envios acima de 3kb</strong>: Esse método não possui limites de dados para envio</li>
+        <li><strong>Envia diversos tipos de arquivos</strong></li>
+    </ul>
+    <p>
+        Outra discussão que é bastante levantada nas comunidades é em relação à velocidade ou performance de cada método. De forma resumida, um formulário que usa método GET é ligeiramente mais rápido que um formulário que usa o POST. Porém, não use isso como critério para decidir qual método aplicar ao seu formulário. Foque-se primordialmente nos pontos levantados logo acima e sua escolha será muito mais sábia. 
+
+    </p>
+
+    <h2>Tag label</h2>
+    
+    <p>
+        A tag label serve para criar uma ligação semântica entre o  identificador (nome do caixa de texto) e o caixa de texto(input). Essa tag não possui efeito visual apenas semântico e isso auxilia o macanismo de busca. Em outras palavras é importante para ficar bem poscionado em em buscas do Google.
+    </p>
+    <p>
+        Essa tag funiciona da seguinte forma:
+    </p>
+    <p>
+        Comando:
+    </p>
+    <pre>
+
+        &lt;form method="get" action="cadastro.php">
+            &lt;label for="<abbr title="Identificador da label, funciona parecido como o nome da class. Onde aqui seria a folha de estilo">lnome</abbr>">Nome:&lt;/label>
+            &lt;input type="text" id="<abbr title="E aqui o elemento a usar o estilo">lnome</abbr>">
+            &lt;input type="submit" value="Enviar">
+        &lt;/form>
+
+    </pre>
+    <p>
+        Note que a palavra "lnome" é o que faz a ligação entre os dois elementos então ela devem ser iguaias e devem ser usada somente uma para cada label.
+    </p>
+
+    <p>Resultado:</p>
+
+    <form method="get" action="cadastro.php">
+        <label for="lnome">Nome:</label>
+        <input type="text" id="lnome">
+        <input type="submit" value="Enviar">
+    </form>
+    <p>
+        Note que agora ao clicar em nome automaticamente o cursor vai para a caixa de texto correspondente.
+    </p>
+<h2>Atributo name</h2>
+    <p>
+        Esse atributo name , também é usado dentro da tag input. Esse atributo serve para identificar a tag input, porém esse name será o título da coluna do formulário que o usuário preencher. Então esse name pode ser exatamente igual ao identificador da caixa de texto.
+    </p>
+
+    <pre>
+
+        &lt;form method="get" action="cadastro.php">
+            &lt;label for="lnome">Nome:&lt;/label>
+            &lt;input type="text" <abbr title="Título da coluna desse formulário">name="Nome"</abbr> <abbr title="indentificação da label">id="lnome"</abbr> >
+            &lt;input type="submit" value="Enviar">
+        &lt;/form>
+    </pre>
+
+    <h3>Informção EXTRA</h3>
+    <p>
+        Para desativar o aquela aba de autopreenchimento dos formulários basta adicionar o atributo autocomplete e botar off:
+    </p> 
+    <p>
+        OBS.: o ON vem ativado por padrão.
+    </p>
+    <p>
+        O comando é simples:
+    </p>
+    <pre>
+
+        &lt;form method="get" action="cadastro.php" autocomplete="off" >
+            &lt;label for="lnome">Nome:&lt;/label>
+            &lt;input type="text" name="Nome" id="lnome"
+            &lt;input type="submit" value="Enviar">
+        &lt;/form>
+    </pre>
+    <table>
+        <caption style="background-color: rgb(180, 180, 180); border: solid; border-bottom: none; font-size: 1.5em; padding: 10px;"><strong>Resumo de atributo</strong></caption>
+        <thead>
+            <tr>
+            <th scope="col">Tag</th>
+            <th scope="col">Atributo</th>
+            <th scope="col">Funcionalidade</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="rowgroup" rowspan="4">form</th>
+                <th scope="row">action</th>
+                <td>Esse atributo dirá para onde os dados serão enviados e será ativado quando o atributo submit for acionado </td>
+            </tr>
+            <tr>
+                <th scope="row">method="get"</th>
+                <td> Aparece no URL, não pode conter dados sensíveis, máximo 3kb e só envia texto </td>                
+            </tr>
+            <tr>
+                <th scope="row">method="post"</th>
+                <td>Dados não aparecem na URL, Aceita envios acima de 3kb e envia diversos tipos de arquivos.  </td>                
+            </tr>
+            <th scope="row">autocomplete="off"</th>
+                <td>Desliga o texto que auxilia o usuário (por padrão ele fica sempre ativado)</td>                
+            </tr>
+<!-- -- -- -- -- -- -- -- -- -- -- INPUT-- -- -- -- -- -- -- ---->
+            <tr>
+                <th scope="rowgroup" rowspan="15">input</th>
+                <th scope="row">type="input"</th>
+                <td> Cria um botão para enviar o formulário</td>                
+            </tr>
+                <th scope="row">type="password"</th>
+                <td>aparece "*" no lugar do que foi digitado</td>                
+            </tr>
+            <tr>
+                <th scope="row">name="Nome"</th>
+                <td>Esse name será o título da coluna do formulário que o usuário preencher. </td>                
+            </tr>
+            <tr>
+                <th scope="row">type="reste"</th>
+                <td>Cria um botão para apagar tudo que foi escrito no formulário</td>                
+            </tr>
+            <tr>
+                <th scope="row">Value="Enviar"</th>
+                <td>Nome que aparecerá no botão</td>                
+            </tr>
+            <tr>
+                <th scope="row">required</th>
+                <td>Exige que o formulário esteja preenchido para ser enviado</td>                
+            </tr>
+            <tr>
+                <th scope="row">minlength="5</th>
+                <td>Exige que o formulário esteja preenchido com no mínimo 5 caracteres para ser enviado</td>                
+            </tr>
+            <tr>
+                <th scope="row">maxlength="15</th>
+                <td>Exige que o formulário esteja preenchido com no máximo 15 caracteres para ser enviado</td>                
+            </tr>
+            <tr>
+                <th scope="row">size="10"</th>
+                <td>Define o tamanho da caixa para caber até 10 caracteres(a medida padrão da letra X)</td>                
+            </tr>
+            <tr>
+                <th scope="row">placeholder="Digite seu nome aqui"</th>
+                <td>Mostra uma dica dentro da caixa de texto(ela some assim que o usuário começar a digitar na caixa) </td>                
+            </tr>
+            <tr>
+                <th scope="row">autocomplete="username"</th>
+                <td>Guia o navegador para auxiliar o usuário com a sugestão correta, nesse caso seria o nome de Login. Para ver todas as opções basta pressionar"ctrl+espaço" entre as aspas. (Para usar esse autocomplete a tag form deverá estar com o autocomplete="ON")</td>                
+            </tr>
+            <tr>
+                <th scope="row">autocomplete="current-password"</th>
+                <td>O navegador irá sugerir a senha já cadastrada a senha recorrente</td>                
+            </tr>
+            <tr>
+                <th scope="row">autocomplete="new-password"</th>
+                <td>O navegador irá sugerir nada, ou o gerenciador de senha poderá sugerir uma senha forte e salvar nova senha.</td>                
+            </tr>
+
+
+
+
+
+         <!-- PADRÃO 
+              <tr>
+                <th scope="row">Atributo</th>
+                <td>Funcionalidade</td>                
+            </tr>
+        -->
+        </tbody>
+    </table>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+
+        <h1>Materiais utilizados</h1>
+            
+               <a href="../../material-de-apoio/24 - Formulários.pdf" target="_blank">Material de apoio cap 24</a>
+            
+            
+        <h1>Vídeos</h1>
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>       
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>        
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>          
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>         
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>        
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>        
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>      
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>   
+        <p>
+            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+        </p>      
+
+
+
+            
+            <hr>
+            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+           
+        
+        </footer>
+</body>
+</html>
