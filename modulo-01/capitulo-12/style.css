@@ -119,7 +119,7 @@ a::after
         content: '\00A0\1F517';
 }
 
-iframe#índice
+footer>iframe
 {
     display: block;
     margin: auto;

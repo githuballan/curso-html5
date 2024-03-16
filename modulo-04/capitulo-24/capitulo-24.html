@@ -246,25 +246,57 @@
             </tr>
 <!-- -- -- -- -- -- -- -- -- -- -- INPUT-- -- -- -- -- -- -- ---->
             <tr>
-                <th scope="rowgroup" rowspan="15">input</th>
+                <th scope="rowgroup" rowspan="20">input</th>
                 <th scope="row">type="input"</th>
                 <td> Cria um botão para enviar o formulário</td>                
+            
+            <tr>
+                <th scope="row">type="reset"</th>
+                <td>Cria um botão para apagar tudo que foi escrito no formulário inteiro</td>                
             </tr>
-                <th scope="row">type="password"</th>
-                <td>aparece "*" no lugar do que foi digitado</td>                
+            <tr>
+                <th scope="row">Value="Enviar"</th>
+                <td>Nome que aparecerá no botão. Mas esse input também pode ser usado em caixa de texto, nesse caso ele já aparecerá um texto digitado, é muito usado em data já deixando um data atual pro usuário não ter que correr o calendário inteiro.
+                </td>                
             </tr>
+            
+            <tr>
+                <th scope="row" rowspan="4">type="number"</th>
+                <td>Caixa de texto só aceita número. Note que cria um seta para cima e para baixo dentro da caixa de texto para rolar os números </td>                
+            </tr>
+            <tr>
+                <th scope="row">min="0"</th>
+                <td>O VALOR MÍNIMO para enviar o formulário.</td>                
+            </tr>
+            <tr>
+                <th scope="row">max="10"</th>
+                <td>O VALOR MÁXIMO para enviar o formulário.</td>                
+            </tr>
+            <tr>
+                <th scope="row">step="0.5"</th>
+                <td>Só rola os números de 0,5 em 0,5</td>                
+            </tr>   
+            <tr>
+                <th scope="row">type="month"</th>
+                <td>Abre um calendário no navegador para o usuário escolher mês e ano.</td>                
+            </tr>
+            <tr>
+                <th scope="row">type="date"</th>
+                <td>Igual month mas nesse inclui os dias(data completa) É importante sempre usar esse type para validar Informção antes de enviar. Isso evita erros de digitação do usuário.</td>                
+            </tr>
+            <tr>
+                <th scope="row">type="time"</th>
+                <td>Aceita somente horas e minutos</td>                
+            </tr>
+            </tr>
+                 <th scope="row">type="password"</th>
+                  <td>aparece "*" no lugar do que foi digitado</td>                
+             </tr>       
             <tr>
                 <th scope="row">name="Nome"</th>
                 <td>Esse name será o título da coluna do formulário que o usuário preencher. </td>                
             </tr>
-            <tr>
-                <th scope="row">type="reste"</th>
-                <td>Cria um botão para apagar tudo que foi escrito no formulário</td>                
-            </tr>
-            <tr>
-                <th scope="row">Value="Enviar"</th>
-                <td>Nome que aparecerá no botão</td>                
-            </tr>
+            
             <tr>
                 <th scope="row">required</th>
                 <td>Exige que o formulário esteja preenchido para ser enviado</td>                
