@@ -79,7 +79,18 @@
     <p>
         Porém precisamos fazer algumas configurações adicionais para que esse formulário funcione de maneira mais semântica e correta, para isso adicionaremos alguns atributos: 
     </p>
-<h1>Atributos para tag form</h1>
+
+
+
+
+
+<h1>Tag form</h1>
+
+
+
+
+
+
     
     <h2>action</h2>
         <p>
@@ -186,6 +197,20 @@
     <p>
         Note que agora ao clicar em nome automaticamente o cursor vai para a caixa de texto correspondente.
     </p>
+
+
+
+
+
+
+<h1>Tag input</h1>
+
+
+
+
+
+
+
 <h2>Atributo name</h2>
     <p>
         Esse atributo name , também é usado dentro da tag input. Esse atributo serve para identificar a tag input, porém esse name será o título da coluna do formulário que o usuário preencher. Então esse name pode ser exatamente igual ao identificador da caixa de texto.
@@ -200,7 +225,7 @@
         &lt;/form>
     </pre>
 
-    <h3>Informção EXTRA</h3>
+    <h3>Informação EXTRA</h3>
     <p>
         Para desativar o aquela aba de autopreenchimento dos formulários basta adicionar o atributo autocomplete e botar off:
     </p> 
@@ -218,6 +243,241 @@
             &lt;input type="submit" value="Enviar">
         &lt;/form>
     </pre>
+<h2>
+    Fieldset / Legend
+</h2>
+    <p>
+        Fieldset define um grupo de campos na forma de um fieldset. Por padrão, é exibida uma linha em volta do controle (pode ser personalizada via CSS) e permite usar a tag <legend> para descrever qual será o texto que identifica o grupo. 
+    </p>
+    <p>
+        Veja como fica:
+    </p>
+    <fieldset>
+
+    <legend>Ficha de Cadastro</legend>
+        
+    <form method="get" action="cadastro.php">
+        <div>
+            <label for="lnome">Nome:</label>
+            <input type="text" id="lnome" required>
+            
+        </div>
+
+        <div>
+            <label for="lidade">Idade:</label>
+            <input type="number" max="100" min="18" size="3" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+
+    </form>
+    </fieldset>
+    <p>
+        Veja o código:
+    </p>
+
+<pre>
+
+<span class="mark">&lt;fieldset></span>
+
+    <span class="mark">&lt;legend>Ficha de Cadastro&lt;/legend></span>
+        
+&lt;form method="get" action="cadastro.php">
+
+    &lt;div>
+        &lt;label for="lnome">Nome:&lt;/label>
+        &lt;input type="text" id="lnome" required>
+        
+    &lt;/div>
+
+    &lt;div>
+        &lt;label for="lidade">Idade:&lt;/label>
+        &lt;input type="number" max="100" min="18" size="3" required>
+    &lt;/div>
+
+    &lt;div>
+        &lt;input type="submit" value="Enviar">
+    &lt;/div>
+
+&lt;/form>
+<span class="mark">&lt;/fieldset></span>
+
+</pre>
+
+<h2>type="radio"</h2>
+     <p>         
+         Esse atributo de input é uma espécie de multipla escolha que permite apenas uma marcação, mas para isso devemos nos atentar para sempre usar os atributos a seguir corretamente:
+     </p>
+     <ul>
+        <li><strong>name=""</strong>: esse atributo deve ser usado sempre igual em todos os input relacionado(lembre que esse é o título da coluna do de resposta do formulário). Caso fique diferente ele irá marcar mais de umo opção. </li>
+
+        <li><strong>value=""</strong>: esse atributo também não pode faltar pois ele será a resposta que chegará na tabela do formulário.</li>
+
+     </ul>
+     <p>
+        Veja como fica:
+     </p>
+     <fieldset>
+        <legend>Sexo:</legend>
+<form action="cadastro.php" method="get">
+        <p>
+            <label for="lmasculino">Masculino:</label>
+            <input type="radio" name="sexo" id="lmasculino" value="Masculino">
+        </p>
+        <p>
+            <label for="lfeminino">Feminino:</label>
+            <input type="radio" name="sexo" id="lfeminino" value="Feminino">
+        </p>
+        <input type="submit" value="Enviar">
+</form>
+     </fieldset>
+     <p>
+        Veja o código:
+     </p>
+<pre>
+    
+        &lt;fieldset>
+        &lt;legend>Sexo:&lt;/legend>
+&lt;form action="cadastro.php" method="get">
+        &lt;p>
+            &lt;label for="lmasculino">Masculino:&lt;/label>
+            <span class="mark">&lt;input type="radio" name="sexo" id="lmasculino" value="Masculino"></span>
+        &lt;/p>
+        &lt;p>
+            &lt;label for="lfeminino">Feminino:&lt;/label>
+            <span class="mark">&lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"></span>
+        &lt;/p>
+        &lt;input type="submit" value="Enviar">
+&lt;/form>
+        &lt;/fieldset>
+</pre>
+<h2>type="checkbox"</h2>
+    <p>
+        Cria uma multipla escolha que permite mais de uma marcação. Atributo importantes:
+    </p>
+    <ul>
+        <li><strong>value=""</strong>: esse atributo não é obrigatório, mas é sempre bom definir o valor a ser enviado pois caso não defina será enviado o valor on(equivale ao verdadeiro do excel)</li>
+        <li><strong>name=""</strong>: Cada opção dessa checkbox equivale a uma coluna na planilha do formulário e esse coluna precisa ter um tútulo</li>
+    </ul>
+    <p>
+        Veja como fica:
+    </p>
+
+    <fieldset>
+        <legend>Peixes preferidos</legend>
+<form action="cadastro.php" method="get">
+        <div>
+            <input type="checkbox" name="Neon" id="lneon"
+             value="neon">
+             <label for="lneon">Neon</label>
+        </div>
+        <div>
+            <input type="checkbox" name="Betta" id="lbetta" value="betta">
+            <label for="lbetta">Betta</label>
+        </div>
+        <div>
+            <input type="checkbox" name="Rodotumus" id="lrodotumus" value="rodotumus">
+            <label for="lrodotumus">Rodotumus</label>
+        </div>
+        <div>
+            <input type="checkbox" name="Acará" id="lacará"
+             value="acará">
+             <label for="lacará">Acará</label>
+        </div>
+        <div>
+            <input type="checkbox" name="Guppy" id="lguppy" value="guppy">
+            <label for="lguppy">Guppy</label>
+        </div>
+
+        <input type="submit" value="Enviar">
+</form>
+
+    </fieldset>
+
+
+    <p>
+        Veja o código:
+    </p>
+<pre>
+
+&lt;fieldset>
+    &lt;legend>Peixes preferidos&lt;/legend>
+
+&lt;form action="cadastro.php" method="get">
+    &lt;div>
+       &lt;input type="checkbox" name="Neon" id="lneon" value="neon">
+        &lt;label for="lneon">Neon&lt;/label>
+    &lt;/div>
+    &lt;div>
+        &lt;input type="checkbox" name="Betta" id="lbetta" value="betta">
+        &lt;label for="lbetta">Betta&lt;/label>
+    &lt;/div>
+    &lt;div>
+       &lt;input type="checkbox" name="Rodotumus" id="lrodotumus" value="rodotumus">
+        &lt;label for="lrodotumus">Rodotumus&lt;/label>
+    &lt;/div>
+    &lt;div>
+        &lt;input type="checkbox" name="Acará" id="lacará" value="acará">
+        &lt;label for="lacará">Acará&lt;/label>
+    &lt;/div>
+    &lt;div>
+       &lt;input type="checkbox" name="Guppy" id="lguppy" value="guppy">
+        &lt;label for="lguppy">Guppy&lt;/label>
+    &lt;/div>
+
+    &lt;input type="submit" value="Enviar" 
+
+&lt;/form>
+&lt;/fieldset>
+
+</pre>
+<span class="mark">    
+   OBS.: Veja que ao usar checkbox ou radio fica melhor colocar a tag <code>label</code> depois da tag <code>input</code>
+
+</span>
+
+
+<h2>type="range"</h2>
+    <p>
+        Basicamente exibe uma pequena barra horizontal com um controle deslizante. Mas possui atributos que auxiliam nas respotas que recebemos.
+    </p>
+    <p>
+        Veja como fica:
+    </p>
+
+    <fieldset>
+        <legend>Nível de satisfação</legend>
+        <form action="cadastro.php" method="get">
+        <div>
+            <label for="lsat">Escolha seu nível de satisfação:</label>
+            <abbr title="Valor de: 1 a 5"><input type="range" id="lsat" name="Satisfação" min="1" max="5" value="5"></abbr>
+        </div>
+        <input type="submit" value="Enviar">
+</form>
+    </fieldset>
+    <p>
+        Veja o código:
+    </p>
+<pre>
+
+&lt;fieldset>
+&lt;form action="cadastro.php" method="get"> 
+    &lt;legend>Nível de satisfação&lt;/legend>
+
+    &lt;div>
+        &lt;label for="lsat">Escolha seu nível de satisfação:&lt;/label>
+        <abbr title="Tag abbr para o usuário ter uma ideia da nota que está dando">&lt;abbr title="Valor de: 1 a 5"></abbr>
+        &lt;input type="range" id="lsat" name="Satisfação" <abbr title="valor mínimo da barra range">min="1"</abbr> <abbr title="Valor máximo de barra range">max="5"</abbr> <abbr title="Valor que a barra inicia, se não definir esse valor ela iniciará na metade por padrão">value="5"</abbr>>
+        &lt;/abbr>
+    &lt;/div>
+    &lt;input type="submit" value"Enviar">
+&lt;/form>
+&lt;/fieldset>
+
+</pre>
+   
     <table>
         <caption style="background-color: rgb(180, 180, 180); border: solid; border-bottom: none; font-size: 1.5em; padding: 10px;"><strong>Resumo de atributo</strong></caption>
         <thead>
@@ -246,8 +506,8 @@
             </tr>
 <!-- -- -- -- -- -- -- -- -- -- -- INPUT-- -- -- -- -- -- -- ---->
             <tr>
-                <th scope="rowgroup" rowspan="20">input</th>
-                <th scope="row">type="input"</th>
+                <th scope="rowgroup" rowspan="27">input</th>
+                <th scope="row">type="submit"</th>
                 <td> Cria um botão para enviar o formulário</td>                
             
             <tr>
@@ -291,7 +551,39 @@
             </tr>
                  <th scope="row">type="password"</th>
                   <td>aparece "*" no lugar do que foi digitado</td>                
-             </tr>       
+            </tr>       
+            <tr>
+                <th scope="row">type="email"</th>
+                <td>Informa o navegador que ali deverá ter um e-mail mas a validação não funciona tão bem pois ele só exige um @.
+                </td>                
+            </tr>
+            <tr>
+                <th scope="row">type="tel"</th>
+                <td>Informa o navegador que ali deverá ter um telefone mas ele só exige um 8 dígitos e bota um traço depois do quarto número. 
+                </td>                
+            </tr>
+            <tr>
+                <th scope="row">type="radio"</th>
+                <td>Abre uma multipla escolha que permite só uma marcação. *Possui atributo obrigatório!
+                </td>                
+            </tr>
+            <tr>
+                <th scope="row">type="checkbox"</th>
+                <td>Cria uma multipla escolha que permite mais de uma marcação. *Possui atributo obrigatório!</td>                
+            </tr>
+            <tr>
+                <th scope="row">type="color"</th>
+                <td>Abre uma caixa para seleção de cores e envia a cor usando código hexadecimal</td>                
+            </tr>
+            <tr>
+                <th scope="row">type="range"</th>
+                <td>Exibe como uma pequena barra horizontal com um controle deslizante. Pode usar os mesmos atributos da type="number" para melhorar as respostas.</td>                
+            </tr>
+            <tr>
+                <th scope="row">pattern="estudar"</th>
+                <td>Estudar mais sobre pattern pois é uma forma de validação em HTML. veja o <a href="../../material-de-apoio/24 - Formulários.pdf" target="_blank">pdf</a> nas páginas 8 e 9
+                </td>                
+            </tr>
             <tr>
                 <th scope="row">name="Nome"</th>
                 <td>Esse name será o título da coluna do formulário que o usuário preencher. </td>                
@@ -311,7 +603,7 @@
             </tr>
             <tr>
                 <th scope="row">size="10"</th>
-                <td>Define o tamanho da caixa para caber até 10 caracteres(a medida padrão da letra X)</td>                
+                <td>Define o tamanho da caixa para caber até 10 caracteres</td>                
             </tr>
             <tr>
                 <th scope="row">placeholder="Digite seu nome aqui"</th>
@@ -330,11 +622,7 @@
                 <td>O navegador irá sugerir nada, ou o gerenciador de senha poderá sugerir uma senha forte e salvar nova senha.</td>                
             </tr>
 
-
-
-
-
-         <!-- PADRÃO 
+        <!-- PADRÃO 
               <tr>
                 <th scope="row">Atributo</th>
                 <td>Funcionalidade</td>                
@@ -342,6 +630,277 @@
         -->
         </tbody>
     </table>
+
+
+    <p class="mark">
+        Estudar mais expressões regulares, pesquisar por RegEx.Expressões regulares é para melhorar a validação dos dados enviados pelo usuário.
+    </p>
+
+
+
+
+
+<h1>Tag select</h1>
+    <p> 
+        Essa tag funiciona mais ou menos parecido com a type="radio" a diferença é que nessa as opções ficam recolhidas, por isso só é interessante usar a type="radio" quando tem até duas opções.
+    </p>
+    <p>
+        Essa tag utiliza os elementos a seguir 
+    </p>
+    <ul type="circle">
+        <li><strong>option</strong>: são as opções que apareceram para o usuário, Essa opção entra junto com o atributo value que é o que será enviado para o formulário.</li>
+        <li><strong>optgroup</strong> divide a lista em grupos para facilitar a busca para o usuário e para isso temos que  usar obrigatoriamente os seguintes atributos: 
+            <ul type="square">
+                <li><strong>Value=""</strong>: É importante botar value="" vazio, caso não coloque o usuário poderá selecionar essa opção.</li>
+                <li><strong>label="xxx"</strong>: Nesse elemento a label é usada como atributo. E nesse caso o xxx será o nome que aparecerá para o usuário na lista</li>
+            </ul>
+
+    </ul>
+    <p>
+        Veja seu funcionamento abaixo:
+    </p>
+<fieldset>
+    <legend>Cadastro</legend>
+<form method="get" action= "cadastro.php" autocomplete="on" >
+    
+    <div>
+        <label for="lestado">Selecione seu Estado:</label> <br>
+        <select name="Estado" id="lestado" required>
+            <option value="" selected>Selecione um Estado</option>
+            <optgroup value="" label="---Região Sudeste---">
+                <option value="RJ" >Rio de Janeiro</option>
+                <option value="SP">São Paulo</option>
+                <option value="MG">Minas Gerais</option>
+            </optgroup>
+            <optgroup value="" label="---Região Sul---">
+                <option  value="PR">Paraná</option>
+                <option value="SC">Santa Catarina</option>
+                <option  value="RS">Rio Grande do Sul</option>
+            </optgroup>
+        </select>
+    </div>
+            
+    <input type="submit" value="Enviar">
+    
+</form>
+</fieldset>
+<p>
+    Veja o código:
+</p>
+<pre>
+
+&lt;fieldset>
+    &lt;legend>Cadastro&lt;/legend>
+&lt;form method="get" action= "cadastro.php" autocomplete="on" >
+    
+    &lt;div>
+        &lt;label for="lestado">Selecione seu Estado:&lt;/label> &lt;br>
+        &lt;select name="Estado" id="lestado" required>
+            &lt;option <abbr title="value vazio para que o required funcione">value=""</abbr> selected>Selecione um Estado&lt;/option>
+            &lt;optgroup <abbr title="value vazio para evitar que algum navegador aceite selecionar o grupo">value=""</abbr> label="---Região Sudeste---">
+                &lt;option value="RJ" >Rio de Janeiro&lt;/option>
+                &lt;option value="SP">São Paulo&lt;/option>
+                &lt;option value="MG">Minas Gerais&lt;/option>
+            &lt;/optgroup>
+            &lt;optgroup value="" label="---Região Sul---">
+                &lt;option  value="PR">Paraná&lt;/option>
+                &lt;option value="SC">Santa Catarina&lt;/option>
+                &lt;option  value="RS">Rio Grande do Sul&lt;/option>
+            &lt;/optgroup>
+        &lt;/select>
+    &lt;/div>
+            
+    &lt;input type="submit" value="Enviar">
+    
+&lt;/form>
+&lt;/fieldset>
+
+</pre>
+
+<h2>input com atributo list</h2>
+    <p>
+        O input com esse atributo funciona de forma parecida com a tag select com uma pequena diferença, o input aceita que o usuário escreva uma opção que não esteja listada.
+    </p>
+    <p>
+        Para isso usaremos o seguintes atributo:
+    </p>
+    <ul>
+        <li><strong>list="lstxxx"</strong>: Esse atributo não só  faz o input trabalhar com uma lista como também faz o link com a lista que será usada por ele <span class="mark"> OBS.: o nome não pode ser o mesmo da tag label pois ele não consegue fazer o link. Um boa prática é sempre iniciar com lst</span></li>
+
+    </ul>
+    <h3>Tag datalist</h3>
+    <p>
+        Nessa tag é onde fica armazenada todas as opções que serão exposta para o usuário. Para isso ele usa o seguinte atributo e elemento:
+    </p>
+    <ul>
+        <li><strong>id="lstxxx"</strong> Esse atributo é o que faz o link com o list do input, por isso esse nomes devem ser exatamente iguais.</li>
+        <li><strong>option</strong>: Esse elemento funciona identificamente ao da tag select a única diferença é que aqui o value aparece para o usuário. o que estraga a apresentação. Porém como ainda não sei como o cadastro chega no php vou continuar usando dessa forma.</li>
+        <li><strong>optgroup</strong>: O optgroup deveria funcionar, segundo a w3c. No entanto não funciona, então não use.</li>
+    </ul>
+    <!--
+         <li><strong></strong></li>
+    -->
+    <p>
+        Veja seu funcionamento abaixo:
+    </p>
+    <fieldset>
+        <legend>  Cadastro do aquário</legend>
+    <form action="cadastro.php" method="get">
+    
+            <label for="lpeixe">Escolha um peixe:</label> <br>
+            <input type="text" name="peixe" id="lpeixe" list="lstpeixe">
+                <datalist id="lstpeixe">
+                    <option value="neon">Neon</option>
+                    <option value="betta">Betta</option>
+                    <option value="guppy">Lebsite</option>    
+                </datalist>
+    
+
+        <input type="submit" value="Enviar">
+    </form>
+    </fieldset>
+    <p>
+        Veja o código:
+    </p>
+<pre>
+
+    &lt;fieldset>
+        &lt;legend>  Cadastro do aquário&lt;/legend>
+
+    &lt;form action="cadastro.php" method="get">
+    
+        &lt;label for="lpeixe">Escolha um peixe:&lt;/label> &lt;br>
+        &lt;input type="text" name="peixe" id="lpeixe" list="lstpeixe">
+            &lt;datalist id="lstpeixe">
+                &lt;option value="neon">Neon&lt;/option>
+                &lt;option value="betta">Betta&lt;/option>
+                &lt;option value="guppy">Lebsite&lt;/option>    
+            &lt;/datalist>
+    
+        &lt;input type="submit" value="Enviar">
+
+    &lt;/form>
+    &lt;/fieldset>
+</pre>
+
+<h1>Tag textarea</h1>
+    <p>
+        Essa tag cria um campo grande de mensagem, a grande diferença para o input type="text" é que aqui não tem limite de tamanho da mensagem. <span class="mark"> É importante por um max lengh mesmo que com o valor alto para que algum engraçadinho não derrube o site por causa de um texto gigante</span> O usuário ainda pode ajustar o tamanho da área que está digitando o texto.
+    </p>
+    <p>
+        Veja um exemplo abaixo:
+    </p>
+    <fieldset>
+        <legend>Avaliação do Produto</legend>
+    <form action="avaliacoes.php" method="post">
+        <div>
+            <p>
+                <label for="lnota">Nota:</label>
+                <abbr title="Nota de 1 a 5"><input type="range" name="Nota" id="lnota" min="1" max="5" value="5" ></abbr>
+            </p>
+        </div>
+        <div>
+            <p><label for="ltitulo">Título:</label></p>
+            <p><input type="text" id="ltitulo" name="titulo" maxlength="25" size="25"></p>
+        </div>
+        <div>
+            <p><label for="ldescricao">Descreva sua experiência:</label></p>
+            <p><textarea name="descricao" id="ldescricao" cols="30" rows="10" maxlength="1000"></textarea></p>
+        </div>
+        <p><input type="submit" value="Enviar"></p>
+
+    </form>
+
+    </fieldset>
+    <p>
+        Veja o código:
+    </p>
+
+    <pre>
+
+        &lt;fieldset>
+            &lt;legend>Avaliação do Produto&lt;/legend>
+        &lt;form action="avaliacoes.php" method="post">
+            &lt;div>
+                &lt;p>
+                    &lt;label for="lnota">Nota:&lt;/label>
+                    &lt;abbr title="Nota de 1 a 5">&lt;input type="range" name="Nota" id="lnota" min="1" max="5" value="5" >&lt;/abbr>
+                &lt;/p>
+            &lt;/div>
+            &lt;div>
+                &lt;p>&lt;label for="ltitulo">Título:&lt;/label>&lt;/p>
+                &lt;p>&lt;input type="text" id="ltitulo" name="titulo">&lt;/p>
+            &lt;/div>
+            &lt;div>
+                &lt;p>&lt;label for="ldescricao">Descreva sua experiência:&lt;/label>&lt;/p>
+                &lt;p>&lt;textarea name="descricao" id="ldescricao" cols="30" rows="10" maxlength="1000">&lt;/textarea>&lt;/p>
+            &lt;/div>
+            &lt;p>&lt;input type="submit" value="Enviar">&lt;/p>
+    
+        &lt;/form>
+    
+        &lt;/fieldset>
+    </pre>
+<h1>Output</h1>
+    <p>
+        Como já é de imaginar a tag output não recebe a Informação do usuáio, mas ela envia informação para tela do usuário. Para isso precisamos usar um pouco de JavaScript, pois sem isso não tem como enviar alguma informção útil.
+    </p>
+    <p>
+        Veja abaixo um exemplo bem básico de output usando JavaScript onde ele mostra a nota que está sendo gerada pelo input range.
+    </p>
+    <fieldset>
+        <legend>Avaliação do Produto</legend>
+    <form action="avaliacoes.php" method="post" oninput="inota.value=Number(lnota.value)">
+        
+        <div>
+            <p>
+                <label for="lnota">Nota:</label>
+                <abbr title="Nota de 1 a 5"><input type="range" name="Nota" id="lnota" min="1" max="5" value="5" ></abbr>
+            
+                <output name="nota" id="inota">5</output>
+            </p>
+        </div>
+    </form>
+    </fieldset>
+    
+    <p>
+        O comando:
+    </p>
+    <pre>
+
+&lt;fieldset>
+    &lt;legend>Avaliação do Produto&lt;/legend>
+&lt;form action="avaliacoes.php" method="post" <abbr title="Parte em java JavaScript">oninput="inota.value=Number(lnota.value)"</abbr>>
+    
+    &lt;div>
+        &lt;p>
+            &lt;label for="lnota">Nota:&lt;/label>
+            &lt;abbr title="Nota de 1 a 5">&lt;input type="range" name="Nota" id="lnota" min="1" max="5" value="5" >&lt;/abbr>
+        
+            <span class="mark">&lt;output name="nota" <abbr title="Note que esse id é usado pelo JavaScript para receber o valor de lnota">id="inota"</abbr>>5&lt;/output></span>
+        &lt;/p>
+        &lt;/div>
+
+&lt;/form>
+&lt;/fieldset>
+
+    </pre>
+    <p>
+        Note a importâcia do identificador id, todo id deve ser semântico para evitar confusões.
+    </p>
+
+<p class="mark">
+    Para mais informções consulte o <a href="../../material-de-apoio/24 - Formulários.pdf" target="_blank">Material de apoio cap 24</a> na página 14.
+
+</p>
+
+<p class="mark">
+    AS SAÍDAS NÃO SÃO ENVIADAS! O valor gerado dentro de um elemento <output> não será enviado quando pressionarmos o botão de submissão. Ele serve apenas para mostrar saídas ao seu visitante. Caso queira enviar os dados, pesquise mais sobre como funcionam os elementos do tipo hidden
+</p>
+
+<p class="mark">
+    Para aprender mais de JavaScript assista a playlist de <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1" target="_blank">JavaScript</a>
+</p>
 
 </main>
 
@@ -365,36 +924,39 @@
             
         <h1>Vídeos</h1>
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/Wa1Ji2t2gmc?si=ImYWdgmDFwpfYfrY" target="_blank">Como criar formulários</a>
         </p>       
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/MqdSffM1HZc?si=_5TLDRBBgWFAuSee" target="_blank">Usando Label</a>
         </p>        
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/rcaXavXsWGA?si=Z4btxtZsSpSZ_Mof" target="_blank">Método get e post</a>
         </p>          
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/SinNyasc-zU?si=bXWNe4YBNp0tqgZB" target="_blank">Criando Caixa de Texto e Senha</a>
         </p>         
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/7P22zubU6i8?si=JE4Hj6y1naZlAAOL" target="_blank">Elementos number, month, date e time</a>
         </p>        
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/jX7v3lFdnvg?si=6-UCjSl7y57-oDRJ" target="_blank">Compatibilidade com navegadores</a>
         </p>        
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="XXXXXhttps://youtu.be/SRMEHklQC4M?si=2hTvhOOuYMO9fJIbXXXXXXXXX" target="_blank">Formulário com telefone e e-mail</a>
         </p>      
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/iGDHFa4znHE?si=qJygQ1u1olV7QEQM" target="_blank">Checkbox e radio</a>
         </p>   
         <p>
-            <a href="XXXXXXXXXXXXXX" target="_blank">XXXXXXXXXXXXXXXX</a>
+            <a href="https://youtu.be/acOURIAlB1Q?si=OJEUdTqXLeLzJ36k" target="_blank">Color, range e file</a>
         </p>      
-
-
-
-            
+        <p>
+            <a href="https://youtu.be/PFGmSEj2wIo?si=5dyYqy1b2-Dp6dMU" target="_blank">Select, datalist e textarea</a>
+        </p>    
+        <p>
+            <a href="https://youtu.be/8b6K4UQDm7w?si=sXPa8SGRFLjxgs1u" target="_blank">Output e um pouco de JavaScript</a>
+        </p>    
+                   
             <hr>
             <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
            
