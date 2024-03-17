@@ -10,14 +10,48 @@
     <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
 </head>
 <body>
-    <header>
-        <h1 id="capitulo"> Capítulo 25</h1>
-        <h1 id="capitulo">Media Queries</h1>
+<header>
+    <h1 id="capitulo"> Capítulo 25</h1>
+    <h1 id="capitulo">Media Queries</h1>
+
+</header>
+<main>
+    <p>
+        Media Query é a capacidade do site de alterna entre diferenetes folhas de estilo dependendo do dispositivo que está visualizado, e de algumas outras caractiriscas que veremos no decorrer do capítulo. Pelo que entendi é como se fosse uma picture e source media das folhas de estilos.
+    </p>
+        Como já vimos anteriormente, as folhas de estilos são criadas a em arquivo CSS e são linkadas no  head com o comando:
+    <p>
+
+    <pre>
+
+&lt;link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    </pre>
+    <p>
+        Porém quando usamos media query, essas folhas são usadas de acordo com a tela ou modo saída da página. Veja algumas configurações disponíveis abaixo:
+    </p>
+        Existem as seguintes configurações de folha de estilo:
+    </p>
+    <ul>
+        <li><strong>media="print"</strong>: Modo impressora. Desse modo podemos ocultar alguns menus e outros itens da página desnecessários para impressão. Veja o comando abaixo:</li>
+            <pre>
+&lt;link rel="stylesheet" href="estilos/impressora.css" media="print">
+            </pre>
+        <li><strong>media="screen"</strong>: Modo Tela. Esse modo se divide em outros modo como tela modo paisagem e modo retrato. Mas veremos isso mais a frente. No geral serve para monitores de computadores, tablets e smartphones. Veja o código do screen abaixo:</li>
+            <pre>
+&lt;link rel="stylesheet" href="estilos/tela.css" media="screen">
+            </pre>
+            <li><strong>media="handheld"</strong>: Modo dispositivos de mão</li>
+            <li><strong>media="all"</strong> Configuração geral que se aplica a todos os didpositivos. É como se fosse a folha de CSS vs a style feita no head do html </li>
+
+
+    </ul>
+
     
-    </header>
-    <main>
-
-
+		
+		
+    <!--
+            <li><strong></strong></li>
+    -->
 
 
 
@@ -41,7 +75,7 @@
 
         <h1>Materiais utilizados</h1>
             
-               <h3>Sem PDF</h3>
+               <a href="../../material-de-apoio/25 - Media Queries.pdf">Material de apoio</a>
             
             
         <h1>Vídeos</h1>

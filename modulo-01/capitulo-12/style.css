@@ -67,8 +67,12 @@ header>h1
 
 main
 {
+    text-align: justify;
     padding-top: 20px;
     padding: 15px;
+    max-width: 800px;
+    width: 85vw;
+    margin: auto;
 
 }
 
@@ -87,10 +91,12 @@ code
 
 
 pre{
+   
     font-size: 1.3em;
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+   
  }
 
 strong

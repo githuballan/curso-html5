@@ -34,6 +34,8 @@
         }
         div.responsiva
         {
+            margin: auto;
+            max-width: 800px;
             width: 80vw;
             overflow-x: auto;
             height: 80vh;
@@ -493,45 +495,45 @@
             <tr>
             <th scope="col">Tag</th>
             <th scope="col">Atributo</th>
-            <th scope="col">Funcionalidade</th>
+            <th scope="col" colspan="2">Funcionalidade</th>
         </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="rowgroup" rowspan="4">form</th>
                 <th scope="row">action</th>
-                <td>Esse atributo dirá para onde os dados serão enviados e será ativado quando o atributo submit for acionado </td>
+                <td colspan="2">Esse atributo dirá para onde os dados serão enviados e será ativado quando o atributo submit for acionado </td>
             </tr>
             <tr>
                 <th scope="row">method="get"</th>
-                <td> Aparece no URL, não pode conter dados sensíveis, máximo 3kb e só envia texto </td>                
+                <td colspan="2"> Aparece no URL, não pode conter dados sensíveis, máximo 3kb e só envia texto </td>                
             </tr>
             <tr>
                 <th scope="row">method="post"</th>
-                <td>Dados não aparecem na URL, Aceita envios acima de 3kb e envia diversos tipos de arquivos.  </td>                
+                <td colspan="2">Dados não aparecem na URL, Aceita envios acima de 3kb e envia diversos tipos de arquivos.  </td>                
             </tr>
             <th scope="row">autocomplete="off"</th>
-                <td>Desliga o texto que auxilia o usuário (por padrão ele fica sempre ativado)</td>                
+                <td colspan="2">Desliga o texto que auxilia o usuário (por padrão ele fica sempre ativado)</td>                
             </tr>
 <!-- -- -- -- -- -- -- -- -- -- -- INPUT-- -- -- -- -- -- -- ---->
             <tr>
                 <th scope="rowgroup" rowspan="27">input</th>
                 <th scope="row">type="submit"</th>
-                <td> Cria um botão para enviar o formulário</td>                
+                <td colspan="2"> Cria um botão para enviar o formulário</td>                
             
             <tr>
                 <th scope="row">type="reset"</th>
-                <td>Cria um botão para apagar tudo que foi escrito no formulário inteiro</td>                
+                <td colspan="2">Cria um botão para apagar tudo que foi escrito no formulário inteiro</td>                
             </tr>
             <tr>
                 <th scope="row">Value="Enviar"</th>
-                <td>Nome que aparecerá no botão. Mas esse input também pode ser usado em caixa de texto, nesse caso ele já aparecerá um texto digitado, é muito usado em data já deixando um data atual pro usuário não ter que correr o calendário inteiro.
+                <td colspan="2">Nome que aparecerá no botão. Mas esse input também pode ser usado em caixa de texto, nesse caso ele já aparecerá um texto digitado, é muito usado em data já deixando um data atual pro usuário não ter que correr o calendário inteiro.
                 </td>                
             </tr>
             
             <tr>
                 <th scope="row" rowspan="4">type="number"</th>
-                <td>Caixa de texto só aceita número. Note que cria um seta para cima e para baixo dentro da caixa de texto para rolar os números </td>                
+                <td colspan="2">Caixa de texto só aceita número. Note que cria um seta para cima e para baixo dentro da caixa de texto para rolar os números </td>                
             </tr>
             <tr>
                 <th scope="row">min="0"</th>
@@ -547,88 +549,88 @@
             </tr>   
             <tr>
                 <th scope="row">type="month"</th>
-                <td>Abre um calendário no navegador para o usuário escolher mês e ano.</td>                
+                <td colspan="2">Abre um calendário no navegador para o usuário escolher mês e ano.</td>                
             </tr>
             <tr>
                 <th scope="row">type="date"</th>
-                <td>Igual month mas nesse inclui os dias(data completa) É importante sempre usar esse type para validar Informção antes de enviar. Isso evita erros de digitação do usuário.</td>                
+                <td colspan="2">Igual month mas nesse inclui os dias(data completa) É importante sempre usar esse type para validar Informção antes de enviar. Isso evita erros de digitação do usuário.</td>                
             </tr>
             <tr>
                 <th scope="row">type="time"</th>
-                <td>Aceita somente horas e minutos</td>                
+                <td colspan="2">Aceita somente horas e minutos</td>                
             </tr>
             </tr>
                  <th scope="row">type="password"</th>
-                  <td>aparece "*" no lugar do que foi digitado</td>                
+                  <td colspan="2">aparece "*" no lugar do que foi digitado</td>                
             </tr>       
             <tr>
                 <th scope="row">type="email"</th>
-                <td>Informa o navegador que ali deverá ter um e-mail mas a validação não funciona tão bem pois ele só exige um @.
+                <td colspan="2">Informa o navegador que ali deverá ter um e-mail mas a validação não funciona tão bem pois ele só exige um @.
                 </td>                
             </tr>
             <tr>
                 <th scope="row">type="tel"</th>
-                <td>Informa o navegador que ali deverá ter um telefone mas ele só exige um 8 dígitos e bota um traço depois do quarto número. 
+                <td colspan="2">Informa o navegador que ali deverá ter um telefone mas ele só exige um 8 dígitos e bota um traço depois do quarto número. 
                 </td>                
             </tr>
             <tr>
                 <th scope="row">type="radio"</th>
-                <td>Abre uma multipla escolha que permite só uma marcação. *Possui atributo obrigatório!
+                <td colspan="2">Abre uma multipla escolha que permite só uma marcação. *Possui atributo obrigatório!
                 </td>                
             </tr>
             <tr>
                 <th scope="row">type="checkbox"</th>
-                <td>Cria uma multipla escolha que permite mais de uma marcação. *Possui atributo obrigatório!</td>                
+                <td colspan="2">Cria uma multipla escolha que permite mais de uma marcação. *Possui atributo obrigatório!</td>                
             </tr>
             <tr>
                 <th scope="row">type="color"</th>
-                <td>Abre uma caixa para seleção de cores e envia a cor usando código hexadecimal</td>                
+                <td colspan="2">Abre uma caixa para seleção de cores e envia a cor usando código hexadecimal</td>                
             </tr>
             <tr>
                 <th scope="row">type="range"</th>
-                <td>Exibe como uma pequena barra horizontal com um controle deslizante. Pode usar os mesmos atributos da type="number" para melhorar as respostas.</td>                
+                <td colspan="2">Exibe como uma pequena barra horizontal com um controle deslizante. Pode usar os mesmos atributos da type="number" para melhorar as respostas.</td>                
             </tr>
             <tr>
                 <th scope="row">pattern="estudar"</th>
-                <td>Estudar mais sobre pattern pois é uma forma de validação em HTML. veja o <a href="../../material-de-apoio/24 - Formulários.pdf" target="_blank">pdf</a> nas páginas 8 e 9
+                <td colspan="2">Estudar mais sobre pattern pois é uma forma de validação em HTML. veja o <a href="../../material-de-apoio/24 - Formulários.pdf" target="_blank">pdf</a> nas páginas 8 e 9
                 </td>                
             </tr>
             <tr>
                 <th scope="row">name="Nome"</th>
-                <td>Esse name será o título da coluna do formulário que o usuário preencher. </td>                
+                <td colspan="2">Esse name será o título da coluna do formulário que o usuário preencher. </td>                
             </tr>
             
             <tr>
                 <th scope="row">required</th>
-                <td>Exige que o formulário esteja preenchido para ser enviado</td>                
+                <td colspan="2">Exige que o formulário esteja preenchido para ser enviado</td>                
             </tr>
             <tr>
                 <th scope="row">minlength="5</th>
-                <td>Exige que o formulário esteja preenchido com no mínimo 5 caracteres para ser enviado</td>                
+                <td colspan="2">Exige que o formulário esteja preenchido com no mínimo 5 caracteres para ser enviado</td>                
             </tr>
             <tr>
                 <th scope="row">maxlength="15</th>
-                <td>Exige que o formulário esteja preenchido com no máximo 15 caracteres para ser enviado</td>                
+                <td colspan="2">Exige que o formulário esteja preenchido com no máximo 15 caracteres para ser enviado</td>                
             </tr>
             <tr>
                 <th scope="row">size="10"</th>
-                <td>Define o tamanho da caixa para caber até 10 caracteres</td>                
+                <td colspan="2">Define o tamanho da caixa para caber até 10 caracteres</td>                
             </tr>
             <tr>
                 <th scope="row">placeholder="Digite seu nome aqui"</th>
-                <td>Mostra uma dica dentro da caixa de texto(ela some assim que o usuário começar a digitar na caixa) </td>                
+                <td colspan="2">Mostra uma dica dentro da caixa de texto(ela some assim que o usuário começar a digitar na caixa) </td>                
             </tr>
             <tr>
                 <th scope="row">autocomplete="username"</th>
-                <td>Guia o navegador para auxiliar o usuário com a sugestão correta, nesse caso seria o nome de Login. Para ver todas as opções basta pressionar"ctrl+espaço" entre as aspas. (Para usar esse autocomplete a tag form deverá estar com o autocomplete="ON")</td>                
+                <td colspan="2">Guia o navegador para auxiliar o usuário com a sugestão correta, nesse caso seria o nome de Login. Para ver todas as opções basta pressionar"ctrl+espaço" entre as aspas. (Para usar esse autocomplete a tag form deverá estar com o autocomplete="ON")</td>                
             </tr>
             <tr>
                 <th scope="row">autocomplete="current-password"</th>
-                <td>O navegador irá sugerir a senha já cadastrada a senha recorrente</td>                
+                <td colspan="2">O navegador irá sugerir a senha já cadastrada a senha recorrente</td>                
             </tr>
             <tr>
                 <th scope="row">autocomplete="new-password"</th>
-                <td>O navegador irá sugerir nada, ou o gerenciador de senha poderá sugerir uma senha forte e salvar nova senha.</td>                
+                <td colspan="2">O navegador irá sugerir nada, ou o gerenciador de senha poderá sugerir uma senha forte e salvar nova senha.</td>                
             </tr>
 
         <!-- PADRÃO 

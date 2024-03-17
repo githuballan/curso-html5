@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+
+
+*
+{ /*Resetando configurações iniciais*/
+    margin: 0px;
+    padding: 0px;
+}
+
+html
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+}
+
+header
+{
+    background-color: #bbbbbb;
+    position: relative;
+    
+}
+
+header>h1
+{
+
+    text-align: center;
+}
+
+menu
+{
+    position: relative;
+
+
+    background-color: #888888;
+    color: #ffffff;
+    height: 70px;
+}
+menu>ul
+{
+    position: absolute;
+    bottom: 5%;
+    list-style-type: none;
+
+}
+
+menu>ul>li
+{
+    background-color: #555555;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left:10px ;
+    margin-top: 0px;
+    
+}
+
+menu>ul>li:hover
+{
+    box-shadow: 5px 5px 5px 2px #000000aa;
+    background-color: #666666;
+   
+    
+}
