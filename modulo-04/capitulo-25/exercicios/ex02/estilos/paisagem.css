@@ -1,0 +1,19 @@
+@charset "UTF-8";
+h1.Retrato
+{
+    
+    display: none;
+}
+h1
+{
+    text-align: center;
+}
+img
+{
+    max-width: 100%;
+    align-self: center;
+}
+img.Retrato
+{
+    display: none;
+}

@@ -40,12 +40,29 @@
             <pre>
 &lt;link rel="stylesheet" href="estilos/tela.css" media="screen">
             </pre>
-            <li><strong>media="handheld"</strong>: Modo dispositivos de mão</li>
             <li><strong>media="all"</strong> Configuração geral que se aplica a todos os didpositivos. É como se fosse a folha de CSS vs a style feita no head do html </li>
-
-
+           
+            <li><strong>media="handheld"</strong>: Modo dispositivos de mão</li>
     </ul>
 
+    <a href="exercicios/ex01/ex01.html"> Exemplo de media="print"</a>
+
+    <h2>media="screen"</h2>
+    <p>
+        O media screen ainda tem mais 2 adicionais que são os formatos de tela se são modo paisagem (como um notebook) ou modo retrato, como um celular ou tablet (nesse caso as tela também deitam mas gralmente a pessoas consomem conteúdo com a tela em pé mesmo)
+    </p>
+    <p>
+        Para cada um desses dois formatos de tela nós iremos usar um arquivo de CSS. E para referenciarmos cada um informando qual usar de acordo com o foramato da tela do usuário usaremos os seguintes comandos:
+    </p>
+    <ul>
+        <li><strong>Modo retrato:</strong> Veja o código abaixo</li>
+        &lt;link rel="stylesheet" href="estilos/retrato.css" media="screen<span class="mark"> and (orientaion: <abbr title="Retrato em inglês">portrait</abbr>)</span>">
+        <li><strong>Modo paisagem:</strong> Veja o código abaixo</li>
+        &lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen<span class="mark"> and (orientation: <abbr title="Paisagem em inglês">landscape</abbr>)</span>">
+
+    </ul>
+    
+   
     
 		
 		

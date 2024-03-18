@@ -12,6 +12,7 @@
 {
     background-color: #ffff004d;
 }
+
 .video
 {
     position: relative;
@@ -82,21 +83,25 @@ footer
     background-color: #ffd3d3;
 
 }
-/*---------------------------------BOXE pequenas--- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+/*-------------BOXE pequenas--- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
 code
 {
     margin: 15px;
     font-size: 1.4em;
 }
 
-
-pre{
-   
+pre
+{
     font-size: 1.3em;
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
-   
+    margin-bottom: -10px;
+ }
+
+ li
+ {
+    margin-top: 15px;
  }
 
 strong
@@ -104,8 +109,6 @@ strong
     font-size: 1.1em;
     font-family: 'Times New Roman', Times, serif;
 }
-
-
 
 div.video>iframe
 {
@@ -116,14 +119,15 @@ div.video>iframe
     height: 100%;
 }
 
-p{
+p
+{
     margin: 7px;
 }
 
 a::after
 {
         
-        content: '\00A0\1F517';
+    content: '\00A0\1F517';
 }
 
 footer>iframe
@@ -158,5 +162,5 @@ h2
     background-image: linear-gradient(90deg, #567eb942 50%, #7bd7685f);
     font-size: 1.3em;}
     h3, h4, h5, h6{
-        font-size: 1.1em;
+    font-size: 1.1em;
 }
