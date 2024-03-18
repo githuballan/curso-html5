@@ -24,7 +24,7 @@
 
     <pre>
 
-&lt;link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+&lt;link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
     </pre>
     <p>
         Porém quando usamos media query, essas folhas são usadas de acordo com a tela ou modo saída da página. Veja algumas configurações disponíveis abaixo:
@@ -40,7 +40,7 @@
             <pre>
 &lt;link rel="stylesheet" href="estilos/tela.css" media="screen">
             </pre>
-            <li><strong>media="all"</strong> Configuração geral que se aplica a todos os didpositivos. É como se fosse a folha de CSS vs a style feita no head do html </li>
+            <li><strong>media="all"</strong> Configuração geral que se aplica a todos os didpositivos. Hierarquicamente é como se o all fosse a folha de CSS e o screen fosse a style feita no head do html </li>
            
             <li><strong>media="handheld"</strong>: Modo dispositivos de mão</li>
     </ul>
@@ -57,16 +57,39 @@
     <ul>
         <li><strong>Modo retrato:</strong> Veja o código abaixo</li>
         &lt;link rel="stylesheet" href="estilos/retrato.css" media="screen<span class="mark"> and (orientaion: <abbr title="Retrato em inglês">portrait</abbr>)</span>">
+
         <li><strong>Modo paisagem:</strong> Veja o código abaixo</li>
         &lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen<span class="mark"> and (orientation: <abbr title="Paisagem em inglês">landscape</abbr>)</span>">
 
     </ul>
-    <a href="exercicios/ex02/ex02.html"> Site de Maya</a>
+    <p>
+        Veja o exemplo no link abaixo:
+    </p>
+    <p><a href="exercicios/ex02/ex02.html"> Site de Maya</a></p>
     
-   
+   <h2> Modo tudo em uma folha de css</h2>
+   <p>Além dessa forma de criar várias folhas de de css temos ums opção de fazer tudo em apenas uma folha ou até mesmo no head do html usando style. </p>
+   <p>
+    Para isso basta criar a regra (@) em style escrevendo tudo de media para frente de declaração que fazemos para link as folhas separadas. WHAT'S? . Veja o exemplo abaixo:
+   </p>
     
-		
-		
+   <pre>
+
+&lt;link rel="stylesheet" href="estilos/paisagem.css" <span class="mark">media="screen and (orientation: landscape)"></span>
+    </pre>
+		<p>
+            Agora basta por @ seguido dessa parte marcada e em uma folha de estilo única ou em style no head do html.
+        </p>
+        <p>
+            Mas qual opção é melhor?
+        </p>
+        <p>
+            Tudo vai depender do tamanho do projeto. Basicamente quanto maior o projeto maior a folha então nessa caso é melhor deixar separado para não ficar muito bagunçado. Já projetos menores dá pra fazer até no próprio head.
+        </p>
+        <p>Veja o exemplo:</p>
+        <p>
+            <a href="exercicios/ex03/ex03.html" target="_blank"> Exemplo no head</a>
+        </p>
     <!--
             <li><strong></strong></li>
     -->
