@@ -6,6 +6,8 @@
     <title>ex01</title>
     <link rel="stylesheet" href="estilos/tela.css" media="screen">
     <link rel="stylesheet" href="estilos/impressora.css" media="print">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
         
     </style>
@@ -14,11 +16,16 @@
 <body>
     <header>
         <h1>Notícias</h1>
-        <menu>
+        <span class="material-symbols-outlined" onclick="clickMenu()">
+            menu
+            </span>
+        <menu id="itens">
             <ul>
                 <li>Esportes</li>
                 <li>Política</li>
                 <li>Tecnologia</li>
+                <li>Empregos</li>
+                <li>Ciências</li>
             </ul>
         </menu>
     </header>
@@ -30,5 +37,10 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure dicta soluta, quas beatae velit a corrupti incidunt, rerum optio dolorum vitae voluptatem, eligendi nisi nesciunt pariatur doloribus repudiandae nulla molestiae?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure dicta soluta, quas beatae velit a corrupti incidunt, rerum optio dolorum vitae voluptatem, eligendi nisi nesciunt pariatur doloribus repudiandae nulla molestiae?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure dicta soluta, quas beatae velit a corrupti incidunt, rerum optio dolorum vitae voluptatem, eligendi nisi nesciunt pariatur doloribus repudiandae nulla molestiae?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure dicta soluta, quas beatae velit a corrupti incidunt, rerum optio dolorum vitae voluptatem, eligendi nisi nesciunt pariatur doloribus repudiandae nulla molestiae?</p>
         </article>
     </main>
+    <script>
+        function clickMenu(){
+            if (itens.style.display == 'block') {itens.style.display = 'none'} else {itens.style.display= 'block' }
+        }
+    </script>
 </body>
 </html>

@@ -14,6 +14,11 @@ html
     font-size: 1.1em;
 }
 
+body
+{
+
+}
+
 header
 {
     background-color: #bbbbbb;
@@ -36,6 +41,7 @@ menu
     color: #ffffff;
     height: 70px;
 }
+
 menu>ul
 {
     position: absolute;
@@ -60,5 +66,67 @@ menu>ul>li:hover
     box-shadow: 5px 5px 5px 2px #000000aa;
     background-color: #666666;
    
+    
+}
+
+main
+{
+    
+    padding: 5px;
+    max-width: 600px;
+    width: 80vw;
+    margin: auto;
+    line-height: 30px;
+
+}
+
+span.material-symbols-outlined{
+    cursor: pointer;    
+}
+
+p
+{
+    text-align: justify;
+}
+
+@media screen and (orientation: landscape)
+{
+   
+span.material-symbols-outlined{
+    display: none;    
+}
+menu{
+    display: block;
+}
+
+}
+@media screen and (orientation: portrait){
+    menu{
+        display: none;
+    }
+
+    span.material-symbols-outlined{
+        margin: 7px;
+        
+        
+
+    }
+
+   span.material-symbols-outlined:hover{
+        background-color: #cccccc;
+        color: #000000;
+        border-radius: 5%;
+        box-shadow: 2px 2px 2px 0px #00000088;
+        
+
+    }
+    span.material-symbols-outlined:active{
+        background-color: #aaaaaa;
+        color: #000000;
+        border-radius: 5%;
+        box-shadow:-2px -2px 2px 0px #00000077;
+        
+
+    }
     
 }
