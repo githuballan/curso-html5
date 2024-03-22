@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo Extra</title>
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+</head>
+<body>
+    <header>
+        <h1>Html 50% mais Rápido-Código Fonte</h1>
+        
+    </header>
+    <main>
+        
+       
+        <p>
+            Atalhos para abreviar o códigos
+            <ul>
+                <li><strong>Uma tag dentro da outra:</strong> Para adicionar tags em sequência uma dentro da outra basta escreve a tag mais externa seguida do sinal de &gt; e interna, veja o exemplo abaixo</li>
+                <pre>
+                    main>div>p
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;main>
+                        &lt;div>
+                            &lt;p>&lt;/p>
+                        &lt;/div>
+                    &lt;/main>
+                </pre>
+                <li><strong>Digitando na tag </strong> Para abreviar o comando e já digitar o texto basta abrir chave na tag que deseja inserir o texto. Exemplo: </li>
+                <pre>
+
+                    main>div>p{texto texto texto}
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;main>
+                        &lt;div>
+                            &lt;p>texto texto texto&lt;/p>
+                        &lt;/div>
+                    &lt;/main>
+                </pre>
+                <li><strong>Adicionando tag de mesmo nível semântico:</strong> para isso basta usar o sinal de + invés do >. Exemplo</li>
+                <pre>
+
+                    div>h1{título título}+p{texto texto texto}
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;div>
+                        &lt;h1>título título&lt;/h1>
+                        &lt;p>texto texto texto&lt;/p>
+                    &lt;/div>
+                </pre>
+
+                <li><strong>Adicionar class:</strong> Para isso basta usar "." e o nome da class após a tag que deseja aplicar a class. Exemplo:</li>
+                <pre>
+
+                    div>h1{título título}+p.mark{texto texto texto}
+                </pre>
+
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;div>
+                        &lt;h1>título título&lt;/h1>
+                        &lt;p class="mark">texto texto texto&lt;/p>
+                    &lt;/div>
+                </pre>
+
+                <li><strong>Adicionar id:</strong> Igual a class porém invés de ponto bota "#". Exemplo:</li>
+                <pre>
+
+                    div>h1#capitulo{título título}+p{texto texto texto}
+                </pre>
+
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;div>
+                        &lt;h1 id="capitulo">título título&lt;/h1>
+                        &lt;p>texto texto texto&lt;/p>
+                    &lt;/div>
+                </pre>
+                <li><strong>Lista:</strong> è possível criar vários itens da mesma tag usando "*" seguido do número de vezes que desja repetir. Exemplo:</li>
+                <pre>
+                    div>ul>li*5
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;div>
+                        &lt;ul>
+                            &lt;li>&lt;/li>
+                            &lt;li>&lt;/li>
+                            &lt;li>&lt;/li>
+                            &lt;li>&lt;/li>
+                            &lt;li>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                </pre>
+                <li><strong>Multiplicar com subtag:</strong> Caso queira criar uma varias tag com sub tag basta multiplicar a tag e acrescentar sub tag a ela. Exemplo:</li>
+                <pre>
+                    div>ul>li*5>strong
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;div>
+                        &lt;ul>
+                            &lt;li>&lt;strong>&lt;/strong>&lt;/li>
+                            &lt;li>&lt;strong>&lt;/strong>&lt;/li>
+                            &lt;li>&lt;strong>&lt;/strong>&lt;/li>
+                            &lt;li>&lt;strong>&lt;/strong>&lt;/li>
+                            &lt;li>&lt;strong>&lt;/strong>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                </pre>
+                <li><strong>Criando várias id</strong> É possível ainda criar várias id usando o "$" para que o vs code entenda que está enumerando, é como arrastar no excel. Exemplo:  </li>
+                <pre>
+
+                    ul>li#item$*5>strong
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;ul>
+                        &lt;li id="item1">&lt;strong>&lt;/strong>&lt;/li>
+                        &lt;li id="item2">&lt;strong>&lt;/strong>&lt;/li>
+                        &lt;li id="item3">&lt;strong>&lt;/strong>&lt;/li>
+                        &lt;li id="item4">&lt;strong>&lt;/strong>&lt;/li>
+                        &lt;li id="item5">&lt;strong>&lt;/strong>&lt;/li>
+                    &lt;/ul>
+                </pre>
+                <li><strong>Comentário:</strong> Para adicionar comentários basta usar |c. Porém isso é usado somente para identificar onde terminar as tag com class ou id. Isso serve para não confundir as finalizações de tag quando a página é grande. Exemplo:</li>
+                <pre>
+
+                    section#secao$*2>article.artigo*3>h1{Título}+p{Argumentos}*5|c
+                </pre>
+                <p>ficaria da segunite forma:</p>
+                <pre>
+
+                    &lt;section id="secao1">
+                        &lt;article class="artigo">
+                            &lt;h1>Título&lt;/h1>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                        &lt;/article>
+                        &lt;!-- /.artigo --&gt;
+                        &lt;article class="artigo">
+                            &lt;h1>Título&lt;/h1>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                        &lt;/article>
+                        &lt;!-- /.artigo --&gt;
+                        &lt;article class="artigo">
+                            &lt;h1>Título&lt;/h1>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                        &lt;/article>
+                        &lt;!-- /.artigo --&gt;
+                    &lt;/section>
+                    &lt;!-- /#secao1 --&gt;
+                    &lt;section id="secao2">
+                        &lt;article class="artigo">
+                            &lt;h1>Título&lt;/h1>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                        &lt;/article>
+                        &lt;!-- /.artigo --&gt;
+                        &lt;article class="artigo">
+                            &lt;h1>Título&lt;/h1>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                        &lt;/article>
+                        &lt;!-- /.artigo --&gt;
+                        &lt;article class="artigo">
+                            &lt;h1>Título&lt;/h1>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                            &lt;p>Argumentos&lt;/p>
+                        &lt;/article>
+                        &lt;!-- /.artigo --&gt;
+                    &lt;/section>
+                    &lt;!-- /#secao2 --&gt;
+
+
+                </pre>
+               
+            </ul>
+        </p>
+
+
+
+
+
+    </main>
+<footer>
+    <h1>Vídeos</h1>
+        
+    <p>
+        <a href="https://youtu.be/8jLfTDn3_TM?si=iPfoECp6l-BaB7Tm" target="_blank">Segredo de como escrever HTML 50% mais rápido - Código fonte TV</a>
+    </p>    
+
+    <hr>
+    <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+</footer>
+   
+</body>
+</html>

@@ -14,10 +14,7 @@ html
     font-size: 1.1em;
 }
 
-body
-{
 
-}
 
 header
 {
@@ -33,10 +30,7 @@ header>h1
 }
 
 menu
-{
-    position: relative;
-
-
+{ 
     background-color: #888888;
     color: #ffffff;
     height: 70px;
@@ -45,7 +39,12 @@ menu
 menu>ul
 {
     position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 600px;
+    left: 50%;
     bottom: 5%;
+
     list-style-type: none;
 
 }
@@ -103,6 +102,7 @@ menu{
     span.material-symbols-outlined{
         display: inline;    
     }
+    /**/
     menu{
         display: none;
     }

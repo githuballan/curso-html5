@@ -81,6 +81,7 @@ footer
 {
     margin-top: 200px;
     background-color: #ffd3d3;
+    padding-bottom: 100px;
 
 }
 /*-------------BOXE pequenas--- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
@@ -134,8 +135,9 @@ footer>iframe
 {
     display: block;
     margin: auto;
-    height:400px;
+    height:500px;
     width: 80%;
+    margin-top: 50px;
 
 }
 

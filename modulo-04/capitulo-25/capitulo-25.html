@@ -17,6 +17,9 @@
 </header>
 <main>
     <p>
+        Para estudar esse cáptulo será necessário utilizar uma extensão do google chrome que simula a tela de um celular no navegador.
+    </p>
+    <p>
         Media Query é a capacidade do site de alterna entre diferenetes folhas de estilo dependendo do tipo de dispositivo com as Media types que está visualizado, e de algumas outras caractiriscas que veremos no decorrer do capítulo. Pelo que entendi é como se fosse uma picture e source media das folhas de estilos.
     </p>
         Como já vimos anteriormente, as folhas de estilos são criadas a em arquivo CSS e são linkadas no  head com o comando:
@@ -36,18 +39,18 @@
             <pre>
 &lt;link rel="stylesheet" href="estilos/impressora.css" media="print">
             </pre>
-        <li><strong>media="screen"</strong>: Modo Tela. Esse modo se divide em outros. Mas veremos isso mais a frente. No geral serve para monitores de computadores, tablets e smartphones. Veja o código do screen abaixo:</li>
+        <li><strong>media="screen"</strong>: Modo Tela. Esse modo posui mais funções, mas veremos isso mais a frente. Veja o código do screen abaixo:</li>
             <pre>
 &lt;link rel="stylesheet" href="estilos/tela.css" media="screen">
             </pre>
-            <li><strong>media="all"</strong> Configuração geral que se aplica a todos os didpositivos. Hierarquicamente é como se o all fosse a folha de CSS e o screen fosse a style feita no head do html </li>
+            <li><strong>media="all"</strong> Configuração geral que se aplica a todos os dispositivos. Hierarquicamente é como se o all fosse a folha de CSS e o screen fosse a style feita no head do html </li>
            
             <li><strong>media="handheld"</strong>: Modo dispositivos de mão</li>
     </ul>
 
     <a href="exercicios/ex01/ex01.html"> Exemplo de media="print"</a>
     <br>
-    <a href="exercicios/ex01/ex01.html" target="_blank">ex01</a>
+    
 
     <h2>media="screen"</h2>
     <p>
@@ -61,14 +64,23 @@
         &lt;link rel="stylesheet" href="estilos/retrato.css" media="screen<span class="mark"> and (orientaion: <abbr title="Retrato em inglês">portrait</abbr>)</span>">
 
         <li><strong>Modo paisagem:</strong> Veja o código abaixo</li>
-        &lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen<span class="mark"> and (orientation: <abbr title="Paisagem em inglês">landscape</abbr>)</span>">
-
-    </ul>
+        &lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen<span class="mark"> and (orientation: <abbr title="Paisagem em inglês">landscape</abbr>)</span>"> 
     <p>
         Veja o exemplo no link abaixo:
     </p>
     <p><a href="exercicios/ex02/ex02.html"> Site de Maya</a></p>
-    
+    <li><strong> Pela largura da tela: </strong>Veja o código abaixo:</li>
+    <pre>
+@media screen and (max-width: 550px)
+    </pre>
+    <p>
+        Veja o exemplo no link abaixo:
+    </p>
+
+    <p>
+        <a href="exercicios/ex01/ex01.html" target="_blank">Exemplo media width</a>
+    </p>
+</ul>
    <h2> Modo tudo em uma folha de css</h2>
    <p>Além dessa forma de criar várias folhas de de css temos ums opção de fazer tudo em apenas uma folha ou até mesmo no head do html usando style. </p>
    <p>
@@ -78,10 +90,19 @@
    <pre>
 
 &lt;link rel="stylesheet" href="estilos/paisagem.css" <span class="mark">media="screen and (orientation: landscape)"></span>
+
     </pre>
 		<p>
-            Agora basta por @ seguido dessa parte marcada e em uma folha de estilo única ou em style no head do html.
+            Agora basta por @, remover o sinal de igual e a aspas, dessa parte marcada e por em uma folha de estilo única ou em style no head do html.
         </p>
+        <p>
+            Exemplo na style:
+        </p>
+        <pre>
+
+    @media screen and (orientation: landscape)
+
+        </pre>
         <p>
             Mas qual opção é melhor?
         </p>
@@ -92,10 +113,62 @@
         <p>
             <a href="exercicios/ex03/ex03.html" target="_blank"> Exemplo no head</a>
         </p>
-    <!--
-            <li><strong></strong></li>
-    -->
 
+    <article>
+        
+        <h2>
+            Conceito Mobile First
+        </h2>
+        <section>
+            
+            <p>
+            Mobile First foi um Conceito criado visando priorizar a visualisação de sites em dispositivos móveis. Isso não é a mesma coisa que criar um site responsivo para celular, isso significa criar um site para celular e deixa-lo responsivo para notebook e outra telas. Por isso o nome Mobile First.
+            </p>
+            
+        </section>
+        <section>
+            <h3>
+                Google
+            </h3>
+            <p>
+                O criador desse conceito foi o chefe de produtos Google,(Luke Wroblewski) em 2009. Apartir de 2018 a Google passou a priorizar sites que aplicam esse conceito Mobile First, pois a quantidade de acessos por smartphones é muito superior aos acessos por notebook e outros dispositivos.
+            </p>
+           
+        </section>
+        <section>
+            <h3>
+                Principais Vantagens do Mobile First
+            </h3>
+            <ul>
+                <li>
+                    <strong>Maior divulgação do site: </strong>pois como vimos anteriormente, ferramentas de busca vão valorizá-lo. 
+                </li>
+                <li>
+                    <strong>Melhor experiência do usuário: </strong>que vai ter acesso ao conteúdo que foi pensado para que pudesse ser consumido de forma mais confortável e sem confusões.
+                </li>
+                <li>
+                    <strong>Aumento na credibilidade: </strong>os visitantes vão ter a percepção (ainda que inconsciente) de que quem criou o site se preocupou com a sua experiência.
+                </li>
+                <li>
+                    <strong>Otimização do carregamento: </strong>uma vez que sofremos com conexões lentas e dispositivos populares sem tanto poder de processamento.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>
+                Mudança na prática
+            </h3>
+            <p>
+                As principais diferenças de trabalhar usando o conceito Mobile First são:
+            </p>
+            <ul>
+                <li><strong>Teste em celular: </strong> Toda página que criamos no VS Code vamos escrevendo o Código em verificando como ficou no navegador, mas apartir de agora faremos isso usando a tela de um celular através de alguma extensão no navegador que faça essa simulação </li>
+                <li><strong>Media Query: </strong> Até aqui usamos o media query para adaptar o conteúdo do site para o celular e o "ALL" era baseado na tela de um notebook. Apartir de agora o "ALL" será baseado no celular e outros media query para outras telas</li>
+            </ul>
+        </section>
+    </article>
+
+    
 
 
 

@@ -13,10 +13,10 @@
     </style>
 
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Notícias</h1>
-        <span class="material-symbols-outlined" onclick="clickMenu()">
+        <span id="menu" class="material-symbols-outlined" onclick="clickMenu()">
             menu
             </span>
         <menu id="itens">
@@ -38,8 +38,26 @@
         </article>
     </main>
     <script>
+    
+        
+    
+        function mudouTamanho(){
+        if (window.innerWidth >549){
+            menu.style.display = 'none'
+            } else {
+            menu.style.display= 'block' 
+        }
+        if (window.innerWidth >549){
+            itens.style.display = 'block'
+            } else {
+            itens.style.display= 'none' 
+        }
+    }
         function clickMenu(){
-            if (itens.style.display == 'block') {itens.style.display = 'none'} else {itens.style.display= 'block' }
+            if (itens.style.display == 'block'){
+                itens.style.display = 'none'
+                } else {
+                itens.style.display= 'block' }
         }
     </script>
 </body>
