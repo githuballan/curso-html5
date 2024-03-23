@@ -54,28 +54,35 @@
 </strong>
 
 <h1>Imagens responsivas com CSS (Matéria adiantada)</h1>
-A melhor forma de tornar imagens responsivas é difinindo a style com:
-<ul>
-    <li><strong>max-width: 100%;</strong> Pode ficar definido na folha de estilo geral do site;</li>
-    <li><strong>max-height:(altura da imagem)</strong> deve ser difinido individualmente na própria imagem </li>
-    <li>strong</li>
-</ul>
- <p>
-    Dessa forma a imagem cresce até o height máxima pra ela não destorcer e o max-width faz ela reduzir de acordo com o tamanho de tela. 
- </p>
-    <p>
-        Se colocar o height fixo quando a tela for menor a imagem vai ficar esticada.
-    </p>
-    <p>
-        O max-width: 100%; Pode ficar definido na folha de estilo geral do site, mas o max-height deve ser difinido individualmente na própria imagem  
+        A melhor forma de tornar imagens responsivas é difinindo a style com:
+        <ul>
+            <li><strong>max-width: 100%;</strong> Pode ficar definido na folha de estilo geral do site;</li>
+            <li><strong>max-height:(altura da imagem)</strong> deve ser difinido individualmente na própria imagem </li>
+            <li>strong</li>
+        </ul>
+        <p>
+            Dessa forma a imagem cresce até o height máxima pra ela não destorcer e o max-width faz ela reduzir de acordo com o tamanho de tela. 
+        </p>
+            <p>
+                Se colocar o height fixo quando a tela for menor a imagem vai ficar esticada.
+            </p>
+            <p>
+                O max-width: 100%; Pode ficar definido na folha de estilo geral do site, mas o max-height deve ser difinido individualmente na própria imagem  
 
-    </p>
+            </p>
 
-    <picture>
-        <source media="(max-width: 300px)" srcset="imagens/foto-p.png" type="image/png">
-        <source media="(max-width: 700px)" srcset="imagens/foto-m.png" type="image/png">
-        <img src="imagens/foto-g.png" alt="Foto Teste">
-    </picture>
+            <picture>
+                <source media="(max-width: 300px)" srcset="imagens/foto-p.png" type="image/png">
+                <source media="(max-width: 700px)" srcset="imagens/foto-m.png" type="image/png">
+                <img src="imagens/foto-g.png" alt="Foto Teste">
+            </picture>
+
+    <h2>
+        Centralização de imagens
+    </h2>
+    <p class="mark">
+        Para centralizar imagens em CSS é necessário aplicar display: block; e depois margin: auto;
+    </p>
 <h1>Áudios</h1>
     
         <h2>Direitos autorais</h2>

@@ -91,6 +91,12 @@ code
     font-size: 1.4em;
 }
 
+ul
+{
+    padding-inline-start: 25px;
+
+}
+
 pre
 {
     font-size: 1.3em;
@@ -165,4 +171,9 @@ h2
     font-size: 1.3em;}
     h3, h4, h5, h6{
     font-size: 1.1em;
+}
+
+h3
+{
+    font-size: 1.3em;    
 }

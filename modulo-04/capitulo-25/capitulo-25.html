@@ -168,6 +168,57 @@
         </section>
     </article>
 
+    <article>
+        <h2> Tipical Device Breakpoint</h2>
+        <section>
+            <p>
+                Tipical Device Breakpoint é sobre a largura em pixels de cada dispositivo como: Tv, Celular, Tablet, Desktop e outros.O problema é que medir em pixel fica defesado muito rápido, pois conforme vai passando o tempo o px vão diminuindo e um tela de celular com 4k tem tanto pixel quanto a tela de um dispositivo 4 vezes maior com a tela em hd.
+            </p>
+            <p>
+                Para nos matermos sempre atualizados em relação a esses tamanhos devemos acessar o site da <a href="https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp">w3schools</a> para vermos quais temanhos de tela usar para configurar para cada dispositivo.
+            </p>
+        </section>
+        <section>
+            <h3>
+                Tamanhos de tela atuais
+            </h3>
+            <p>
+                Os tamanhos de telas atuais para cada dispositivo segundo a W3C são:
+            </p>
+            <ul>
+                <li><strong>Celulares e menores</strong>: 600px</li>
+                <pre>
+@media only screen and (max-width: 600px) {...}
+
+                </pre>
+                <li><strong> Tablet em pé e celulares grandes: </strong> 601px</li>
+                <pre>
+
+@media only screen and (min-width: 601px) {...}
+
+                </pre>
+                <li><strong> Tablet em deitado: </strong> 768px</li>
+                <pre>
+
+@media only screen and (min-width: 768px) {...}
+
+                </pre>
+                <li><strong>Desktop: </strong> 992px</li>
+                <pre>
+
+@media only screen and (min-width: 992px) {...}
+
+                </pre>
+                <li><strong>Telas extra grandes: </strong> 1200px</li>
+                <pre>
+
+@media only screen and (min-width: 1200px) {...}
+
+                </pre>
+            </ul>
+        </section>
+    </article>
+
     
 
 

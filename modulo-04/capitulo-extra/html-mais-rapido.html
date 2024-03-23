@@ -18,7 +18,7 @@
        
         <p>
             Atalhos para abreviar o códigos
-            <ul>
+            <ul> <!--Lista de abreviaturas-->
                 <li><strong>Uma tag dentro da outra:</strong> Para adicionar tags em sequência uma dentro da outra basta escreve a tag mais externa seguida do sinal de &gt; e interna, veja o exemplo abaixo</li>
                 <pre>
                     main>div>p
@@ -210,8 +210,29 @@
 
 
                 </pre>
-               
-            </ul>
+                <li><strong>Tag com subtag de mesmo nível: </strong>Explicar é complicado mas imagina o seguinte exemplo onde você precisa criar um header com um h1, um main com h1 e p e um footer com h2 e p. Nesse caso as tag header main e footer são de mesmo nível e se usar o + não vai dar para usar subtag. Nesse caso precisamos usar os () parenteses. É como uma expressão matemática onde o que está entre parenteses é feito primeiro. Exemplo:</li>
+               <pre>
+
+(header>h1{Capítulo})+(main>h2{Matéria}+p{lorem})+footer>p{rodapé}
+               </pre>
+               <p>ficaria da segunite forma:</p>
+
+               <pre>
+
+&lt;header>
+&lt;h1>Capítulo&lt;/h1>
+&lt;/header>
+
+&lt;main>
+&lt;h2>Matéria&lt;/h2>
+&lt;p>lorem&lt;/p>
+&lt;/main>
+
+&lt;footer>
+&lt;p>rodapé&lt;/p>
+&lt;/footer>
+               </pre>
+            </ul> <!--Fim da lista de abreviaturas-->
         </p>
 
 
