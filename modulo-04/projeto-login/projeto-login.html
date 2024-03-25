@@ -17,38 +17,48 @@
 
 <body>
 <main>
-    <article id="login">
-        <h2></h2>
-        <section id="imagem">
-          
-          
-        </section>
-        <section id="formu">
-            <h3> Login</h3>
+<article id="login">
+       
+    <section id="imagem"></section>
 
+    <section id="formu">
+            
+        <fieldset>
+            <legend><h3> Login</h3></legend>
+    
             <p>Seja Bem Vindo(a) novamente</p>
 
             <form action="login.php" method="post">
-                <p style=" text-align: justify;">
-                    <label for="lusuario"> <img src="imagens/person.svg" alt=""></label>
-                    <input id="lusuario" type="email" required autocomplete="email" minlength="7" placeholder="Digite seu e-mail">
-                    <label for="lusuario">Login</label>
-                </p>
 
-                <p style=" text-align: justify;">
-                    <label for="lsenha"><img src="imagens/encrypted.svg" alt=""></label>
-                    <input type="password" id="lsenha" required autocomplete="current-password" placeholder="Digite sua Senha" minlength="8" maxlength="16">
-                    <label for="lsenha"> Senha</label>
+
+                <p>
+                    
+                        <label for="lusuario"> <img src="imagens/person.svg" alt=""></label>
+                        <input id="lusuario" type="email" required autocomplete="email" minlength="7" placeholder="Digite seu e-mail">
+                    
                 </p>
-                <input type="submit">
-                <input type="reset" value="Limpar">
                 
-                <p style="margin-top: 10px;"><input type="submit" value="Esqueceu sua senha"></p>
 
+                <p>
+                    
+                        <label for="lsenha"><img src="imagens/encrypted.svg" alt=""></label>
+                        <input type="password" id="lsenha" required autocomplete="current-password" placeholder="Digite sua Senha" minlength="8" maxlength="16">
+                    
+                </p>
+                
+                <input  class="botao" type="submit" value="Entrar">
+                <input style="float: right"class="botao" type="reset" value="Limpar">
 
+                    
+    
+    
+    
             </form>
-        </section>
-    </article>
+        </fieldset>
+
+        <p><a href="#">Esqueci minha senha</a></p>
+    </section>
+</article>
     
 
 </main>

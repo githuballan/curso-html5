@@ -20,23 +20,26 @@ main
     position: relative;
     height: 100vh;
     width: 100vw;
+    
 }
 
 article#login{
     background-color: #ffffff;
     width:250px;
+    max-width: 1200px;
     height:500px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 0px 10px #00000099;
 
     position: absolute; 
-    transform: translate(-50%, -50%);    
     left: 50%;
     top: 50%;
-
+    transform: translate(-50%, -50%);  
     transition: width .5s, heigth .5s; /* A tela não pisca de uma vez qd troca o tamanho*/
     transition-timing-function: ease; /* Mudou PN*/
+
+    font-size: 0.8em;
 }
 
 article#login>section#imagem{
@@ -45,25 +48,64 @@ article#login>section#imagem{
     height: 150px;
     background-size: cover;
     background-position: center;
+    
 
 }
 
 article#login>section#formu{
-    display: block;
-    padding: 10px;
+   margin:2.5%;
+   padding:0px;
+   height: 95%;
+   width: 95%;
+   float: center;
+  
+
+   
 
 }
 
-section#formu{
+label>img{
+    margin: 0px;
+    padding: 0px;
+    transform: translateY(30%);
+    height: 2em;
+}
+
+label>img:hover{
+    cursor: pointer;
+}
+
+input{
+    height: 2em;
+    border-radius: 8px;
+}
+
+input:hover{
+   box-shadow: 1px 1px 2px 1px #00000066;    
+}
+
+
+fieldset{
+    padding: 15px 5px 15px 5px ;
     text-align: center;
+    font-size: 1.3em;
+}
+
+input.botao{
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
 }
 
 
 @media screen and (orientation: landscape) and (max-width: 900px){
     article#login{
+        height: 90vh;
 
-        width: 80vw;    
-        height: 80vh;
+
+        width: 80vw;
+         
+        
     }
     
     article#login>section#imagem{/* Por algum motivo quando coloca apenas section#imagem a imagem não vai até o final da artilcle#login. Mas quando coloca a section#imagem como filha da article#login ele vai até o final da article... ESTUDAR*/
@@ -71,6 +113,24 @@ section#formu{
         float:left;
         height: 100%;
         width: 30%;
+    }
+    article#login>section#formu{
+       
+
+        display: block;
+        margin: 0px;
+        padding: 2%;
+        
+        
+       height:1000%;
+       width:70%;
+       float:left;
+
+    }
+    fieldset{
+        padding: 5px 5px 5px 5px ;
+        text-align: center;
+        font-size: .8em;
     }
 }
 

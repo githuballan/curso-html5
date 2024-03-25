@@ -11,10 +11,11 @@
 
 
     <style>
+       
         table{
             border-collapse: collapse;
             position: relative;
-
+            
         }
         thead, tfoot{
             background-color: rgb(145, 145, 145);
@@ -45,7 +46,7 @@
             background-color: rgb(206, 214, 157);
         }
         div.responsiva{
-            width: 500px;
+            width: 100%;
             overflow-x: auto;
             margin: auto;
         }
@@ -75,7 +76,7 @@
     O que define a quantidade de linha é a quantidade de tr e o que define a quantidade de coluna é o tr que possuir mais td.
 </p>
 <p>Exemplo:</p>
-<table style="margin: auto;">
+<div class="responsiva"> <table style="margin: auto;">
     <tr>
         <td>A1</td>
         <td>B1</td>
@@ -101,6 +102,7 @@
         <td>C4</td>
     </tr>
 </table>
+</div>
 <p>
     O comando fica assim:
 </p>
@@ -139,7 +141,7 @@
  <h3>Style border-collapse</h3>
 <ul>
     <li><strong>border-collapse: collapse</strong></li>
-    <table>
+    <div class="responsiva"> <table>
         <tr>
             <td>collapse</td>
             <td>collapse</td>
@@ -149,8 +151,9 @@
             <td>collapse</td>
         </tr>
     </table>
+</div>
     <li><strong>border-collapse: separate</strong></li>
-    <table style=" border-collapse: separate;">
+    <div class="responsiva"> <table style=" border-collapse: separate;">
         <tr>
             <td>separate</td>
             <td>separate</td>
@@ -160,8 +163,9 @@
             <td>separate</td>
         </tr>
     </table>
+</div>
     <li><strong>Tabela sem estilo aplicado</strong> Uma tabela é natural sem borda e sem collapse</li>
-    <table style=" border: solid;">
+    <div class="responsiva"> <table style=" border: solid;">
         <tr>
             <td style=" border: hidden;">separate</td>
             <td style=" border: hidden;">separate</td>
@@ -171,7 +175,7 @@
             <td style=" border: hidden;">separate</td>
         </tr>
     </table>
-
+</div>
 </ul>
 <h2> Alinhamentos em tabela</h2>
 <p>
@@ -182,7 +186,7 @@
 
 <ul>
     <li><strong>text-align</strong></li>
-    <table style="height: 350px; width: 350px;">
+    <div class="responsiva"> <table style="height: 350px; width: 350px;">
         <tr>
             <td style="text-align: center;">center</td>
             <td style="text-align: right;">right</td>
@@ -192,8 +196,9 @@
             <td>nada</td>
         </tr>
     </table>
+</div>
     <li><strong>vertical-align</strong></li>
-    <table style="height: 350px;width: 350px;">
+    <div class="responsiva"> <table style="height: 350px;width: 350px;">
         <tr>
             <td style="vertical-align: top;">top</td>
             <td style="vertical-align: midle;">midle</td>
@@ -202,7 +207,7 @@
             <td style="vertical-align: bottom;">bottom</td>
             <td style="vertical-align: bottom; text-align: right;"> 2 estilos</td>
         </tr>
-    </table>
+    </table></div>
 </ul>
 
 
@@ -244,7 +249,7 @@
     <p>
     Exemplo: de tabela semântica:
 </p>
-<table>
+<div class="responsiva"> <table>
     <caption>Caption</caption>
     <thead>
         <tr>
@@ -295,7 +300,7 @@
 
     </tfoot>
 </table>
-
+</div>
 <p>
     Comando:
 </p>
@@ -355,7 +360,7 @@
     <p>
         Exemplo:
     </p>
-    <table>
+    <div class="responsiva"> <table>
         <caption>Caption</caption>
         <thead>
             <tr>
@@ -477,7 +482,7 @@
             </tr>
     
         </tfoot>
-    </table>
+    </table></div>
     <p>
         O comando no head:
     </p>
@@ -496,7 +501,7 @@
     <li><strong>thead>tr>th</strong> Em thead>tr>th devemos definir a style <strong>position:sticky;</strong> + <strong>top:0;</strong> + <strong>background-color: ;(se for o caso)</strong></li>
 </ol>
 
-<table>
+<div class="responsiva"> <table>
     <caption>Caption</caption>
     <thead>
         <tr>
@@ -619,7 +624,7 @@
 
     </tfoot>
 </table>
-
+</div>
 
 
 <p>
@@ -670,7 +675,7 @@
 <p>
     Exemplo:
 </p>
-<table style="margin: auto; height: 200px; width: 500px; text-align: center;">
+<div class="responsiva"> <table style="margin: auto; height: 200px; width: 500px; text-align: center;">
     <tr>
         <td colspan="3">A1/B1/C1</td>
         
@@ -695,7 +700,7 @@
         <td>C4</td>
         <td>D4</td>
     </tr>
-</table>
+</table></div>
 
 <p>
     Comando:
@@ -731,7 +736,7 @@
 
 <h3>Desafio 01</h3>
 
-<table style="text-align: center;">
+<div class="responsiva"> <table style="text-align: center;">
     <tr>
         <td colspan="4">A</td>
         
@@ -767,9 +772,9 @@
         <td colspan="4">N</td>
         
     </tr>
-</table>
+</table></div>
 <h3>Desafio 02</h3>
-<table>
+<div class="responsiva"> <table>
     <tr>
         <td>1</td>
         <td>2</td>
@@ -798,10 +803,10 @@
         <td>14</td>
         <td>15</td>
     </tr>
-</table>
+</table></div>
 
 <h3>Desafio 03</h3>
-<table style="text-align: center;">
+<div class="responsiva"> <table style="text-align: center;">
     <thead>
         <tr>
             <th rowspan="2" scope="col">Área</th>
@@ -864,7 +869,7 @@
         </tr>
 
     </tbody>
-</table>
+</table></div>
 
 <h1>Tag para Colunas</h1>
 <p>
@@ -942,7 +947,7 @@
 <p>
     Funcionamento:
 </p>
-<table>
+<div class="responsiva"> <table>
     <colgroup>
         <col class="A">
         <col class="B">
@@ -973,7 +978,7 @@
         <td>C4</td>
         <td>C4</td>
     </tr>
-</table>
+</table></div>
 
 <h2>Atributo para col</h2>
 <p>

@@ -13,31 +13,72 @@ Telas extra grandes: 1200px
 {...}
 */
 @media screen and (min-width: 768px) and (max-width: 992px) /*tablet*/{
+
+   
+
     article#login{
         width:90vw;
     }
     article#login>section#imagem{/* Por algum motivo quando coloca apenas section#imagem a imagem não vai até o final da artilcle#login. Mas quando coloca a section#imagem como filha da article#login ele vai até o final da article... ESTUDAR*/
 
-        float:left;
-        height: 100%;
-        width: 30%;
+    float:left;
+    height: 100%;
+    width: 30%;
     }
     
+  
+    article#login>section#formu{
+        display: block;
+        margin: 0px;
+        padding: 2%;
+        
+        
+       height:100%;
+       width:70%;
+       float:right;
+
+    }
+    input{
+        height: 3em;
+    }
+    fieldset{
+        font-size: 1.5em;
+        top: auto;
+       
+       
+    }
 }
 @media screen and (min-width: 993px) /*desktop e outros*/{
 
     article#login{
-        width:90vw;
+    width:90vw;
     }
+
     article#login>section#imagem{
-        float:right;
-        height: 100%;
-        width: 30%;
+    float:right;
+    height: 100%;
+    width: 30%;
     }
-    
+
+    article#login>section#formu{
+       
+
+        display: block;
+        margin: 0px;
+        padding: 2%;
+        
+        
+       height:100%;
+       width:70%;
+       float:left;
+
+    }
+    input{
+        height: 3em;
+    }
+    fieldset{
+        font-size: 1.5em;
+    }
+   
 }
 
-@media screen and (min-width:1201px)/*telas grandes*/
-{
-
-}
