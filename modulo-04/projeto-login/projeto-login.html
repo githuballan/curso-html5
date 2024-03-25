@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projeto Login</title>
+
+<link rel="stylesheet" href="estilos/mobile-first.css">
+<link rel="stylesheet" href="estilos/outras-telas.css">
+
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+</head>
+
+<body>
+<main>
+    <article id="login">
+        <h2></h2>
+        <section id="imagem">
+          
+          
+        </section>
+        <section id="formu">
+            <h3> Login</h3>
+
+            <p>Seja Bem Vindo(a) novamente</p>
+
+            <form action="login.php" method="post">
+                <p style=" text-align: justify;">
+                    <label for="lusuario"> <img src="imagens/person.svg" alt=""></label>
+                    <input id="lusuario" type="email" required autocomplete="email" minlength="7" placeholder="Digite seu e-mail">
+                    <label for="lusuario">Login</label>
+                </p>
+
+                <p style=" text-align: justify;">
+                    <label for="lsenha"><img src="imagens/encrypted.svg" alt=""></label>
+                    <input type="password" id="lsenha" required autocomplete="current-password" placeholder="Digite sua Senha" minlength="8" maxlength="16">
+                    <label for="lsenha"> Senha</label>
+                </p>
+                <input type="submit">
+                <input type="reset" value="Limpar">
+                
+                <p style="margin-top: 10px;"><input type="submit" value="Esqueceu sua senha"></p>
+
+
+            </form>
+        </section>
+    </article>
+    
+
+</main>
+
+    
+</body>
+</html>

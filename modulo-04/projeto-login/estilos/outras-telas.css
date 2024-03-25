@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/*
+@media only screen and (max-width: 600px) {...}                
+Tablet em pé e celulares grandes: 601px
+@media only screen and (min-width: 601px) {...}                
+Tablet em deitado: 768px
+@media only screen and (min-width: 768px) {...}                
+Desktop: 992px
+@media only screen and (min-width: 992px) {...}                
+Telas extra grandes: 1200px
+@media only screen and (min-width: 1200px) 
+{...}
+*/
+@media screen and (min-width: 768px) and (max-width: 992px) /*tablet*/{
+    article#login{
+        width:90vw;
+    }
+    article#login>section#imagem{/* Por algum motivo quando coloca apenas section#imagem a imagem não vai até o final da artilcle#login. Mas quando coloca a section#imagem como filha da article#login ele vai até o final da article... ESTUDAR*/
+
+        float:left;
+        height: 100%;
+        width: 30%;
+    }
+    
+}
+@media screen and (min-width: 993px) /*desktop e outros*/{
+
+    article#login{
+        width:90vw;
+    }
+    article#login>section#imagem{
+        float:right;
+        height: 100%;
+        width: 30%;
+    }
+    
+}
+
+@media screen and (min-width:1201px)/*telas grandes*/
+{
+
+}

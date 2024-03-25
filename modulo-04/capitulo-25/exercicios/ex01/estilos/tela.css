@@ -20,6 +20,7 @@ header
 {
     background-color: #bbbbbb;
     position: relative;
+   
     
 }
 
@@ -31,12 +32,12 @@ header>h1
 
 menu
 { 
-    background-color: #888888;
+    
     color: #ffffff;
     height: 70px;
 }
 
-menu>ul
+menu>ul /* posicionamentos dos botões de menu*/
 {
     position: absolute;
     transform: translateX(-50%);
@@ -46,6 +47,7 @@ menu>ul
     bottom: 5%;
 
     list-style-type: none;
+   
 
 }
 
@@ -62,11 +64,29 @@ menu>ul>li
 
 menu>ul>li:hover
 {
-    box-shadow: 5px 5px 5px 2px #000000aa;
+    box-shadow: 2px 2px 5px 0px #000000aa;
     background-color: #666666;
+    cursor: pointer;   
+    
    
     
 }
+
+menu>ul>li:active{
+    background-color: #444444;
+    color: #dddddd;
+    border-radius: 5%;
+    box-shadow:-2px -2px 3px 0px #000000aa;
+    
+
+}
+
+div#menu{
+    cursor: pointer;
+    display: none;
+}
+
+
 
 main
 {
@@ -79,50 +99,36 @@ main
 
 }
 
-span.material-symbols-outlined{
-    cursor: pointer;    
-}
-
 p
 {
     text-align: justify;
 }
 
    
-span.material-symbols-outlined{
-    display: none;    
-}
-menu{
-    display: block;
-}
 
 
-@media screen and (max-width: 550px){
 
-    span.material-symbols-outlined{
-        display: inline;    
-    }
-    /**/
-    menu{
-        display: none;
-    }
+@media screen and (max-width: 550px)
+{
 
-    span.material-symbols-outlined{
-        margin: 7px;
+    div#menu{
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: 10px; 
+         
         
-        
-
     }
-
-   span.material-symbols-outlined:hover{
+    
+   div#menu:hover{
         background-color: #cccccc;
         color: #000000;
         border-radius: 5%;
         box-shadow: 2px 2px 2px 0px #00000088;
-        
-
+     
     }
-    span.material-symbols-outlined:active{
+
+    div#menu:active{
         background-color: #aaaaaa;
         color: #000000;
         border-radius: 5%;
@@ -130,5 +136,8 @@ menu{
         
 
     }
+
     
-}
+    
+}/*fim media query max-width: 550px */
+
