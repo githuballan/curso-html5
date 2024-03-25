@@ -70,9 +70,7 @@ main
 {
     text-align: justify;
     padding-top: 20px;
-    padding: 15px;
     max-width: 800px;
-    width: 85vw;
     margin: auto;
 
 }
@@ -96,8 +94,11 @@ ul
     padding-inline-start: 25px;
 
 }
-
-pre
+div.pre{
+    width: 90vw;
+    overflow-x: scroll;
+}
+/*pre
 {
     font-size: 1.3em;
     text-align: left;
@@ -105,7 +106,7 @@ pre
     word-wrap: break-word;
     margin-bottom: -10px;
  }
-
+*/
  li
  {
     margin-top: 15px;

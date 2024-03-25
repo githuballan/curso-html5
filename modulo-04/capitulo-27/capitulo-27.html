@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Boxes</title>
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+
+    <style>
+        div#conteiner{
+            display:flex;
+            background-color: #990000;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{
+            flex: auto;
+            
+            background-color: #0000ee;
+            border: solid;
+            border-radius: 5px;
+            border:#000000;        
+            margin:3px;
+            color:#ffffff;
+            padding: 1%;
+            
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Capítulo 27</h1>
+    </header>
+    <main>
+        <article>
+            <h1>Flex Boxes</h1>
+            <p>Flex box são caixas flexíveis. Valeu até a próxima!</p>
+            <section>
+                <p>
+                    A ideia inicial do uso das flex box é ajustar o conteúdo do site de acordo com cada formato e tamanho de tela disponível no mercado. Elas funcionam de seguinte forma:
+                </p>
+                <p>
+                    A caixa externa dita as regras de tamanho disponível para exibição. Já as internas trabalham se moldando ao tamanho da externa de acordo com a regras que impulsermos a elas. O objetivo é que elas sempre trabalhem de forma fluida.
+                </p>
+            </section>
+            <section>
+                <p>
+                    Para isso deixar as boxes com essa caracteríscas precisamos usar sempre 2 comandos:
+                    </p>
+                    <ul>
+                        <li><strong>display: flex;</strong>  Display flex usamos na box externa. Mais comnhecida com conteiner</li>
+                        <li><strong>flex: auto;</strong> A flex auto usamos nas box internas. Caixas filhas.</li>
+                    </ul>
+                <p>Exemplo:</p>
+                <div id="conteiner">
+                    <div id="item01">BOX 01</div>
+                    <div id="item02">BOX 02</div>
+                    <div id="item03">BOX 03</div>
+                    <div id="item04">BOX 04</div>
+                    <div id="item04">BOX 05</div>
+                    <div id="item04">BOX 06</div>
+                </div>
+                <p>Comando no body:</p>
+
+                        <div class="pre">
+                
+                    <pre>
+                
+&lt;div id="conteiner">
+    &lt;div id="item01">BOX 01&lt;/div>
+    &lt;div id="item02">BOX 02&lt;/div>
+    &lt;div id="item03">BOX 03&lt;/div>
+    &lt;div id="item04">BOX 04&lt;/div>
+    &lt;div id="item04">BOX 05&lt;/div>
+    &lt;div id="item04">BOX 06&lt;/div>
+&lt;/div>
+                    </pre>
+                </div>
+                    <p>Comando no head:</p>
+                    <div class="pre">
+                    <pre>
+                       
+                
+&lt;style>
+    div#conteiner{
+        display:flex;
+        background-color: #990000;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{
+        flex:auto;
+        background-color: #0000ee; 
+        border: solid;
+        border-radius: 5px;
+        border:#000000;        
+        margin:3px;
+        color:#ffffff;
+        padding: 1%;
+        
+    }
+        
+&lt;/style>
+                </pre>
+                        </div>
+            </section>
+        </article>
+        <article>
+            <h2>
+                Flex-direction
+            </h2>
+            <section>
+                <p>
+                    Flex-direction é um estilo usado na box conteiner. Como o nome já diz, ela serve para direcionar de onde para onde as box internas deverão se organizar.
+                </p>
+                <p>
+                    Existem 04 direcionamentos possíveis:
+                </p>
+                <ul>
+                    <li><strong>flex-direction: row;</strong> Nessa forma as box internas iram se alinhar na horizontal da esquerda para a direita.</li>
+                    <li><strong>flex-direction: row-reverse;</strong> Nessa forma as box internas iram se alinhar na horizontal da direita para esquerda.</li>
+                    <li><strong>flex-direction: column;</strong> Nessa forma as box internas iram se alinhar na vertical de de cima para abaxo.</li>
+                    <li><strong>flex-direction: column-reverse;</strong> E nessa forma as box internas iram se alinhar na vertical de de baixo para acima.</li>
+                </ul>
+            </section>
+        </article>
+
+        <article>
+            <h2>Eixos (axis)</h2>
+            <section>
+                <p>Além das direção da box conteiner, existe ainda mais dois eixos dentro dela:</p>
+                <ul>
+                    <li><strong>main-axis</strong> Como o nome já diz esse é o eixo principal ele o eixo mais longo do retângulo. É  eixo que atravessa o conteiner na direção da flex-direction.</li>
+                    <li><strong>cross-axis</strong> Também como o próprio nome já diz, essa cruza o perpendicularmente o eixo principal(main-axis). </li>
+                </ul>  
+                       
+            </section>
+            <section>
+                <h3>Direcionamentos de cross-axis</h3>
+                <p>
+                    Direcionamentos cross-axis são simples pois eles só quando a flex-direction está na horizontal(row) ou na vertical(column), veja:
+                </p>
+                    <ul>
+                        <li>O cross-axis, em casos de flex-directions horizontais(rows), Sempre serão de cima para baixo. Como o padrão column.</li>
+                        <li>E quando a flex-direction está na vertical ele será sempre da esquerda para dereita. Como a row padrão.</li>
+                    </ul>
+            </section>       
+        </article>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <footer></footer>
+    
+</body>
+</html>
