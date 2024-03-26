@@ -96,7 +96,7 @@ ul
 }
 div.pre{
     width: 90vw;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 /*pre
 {

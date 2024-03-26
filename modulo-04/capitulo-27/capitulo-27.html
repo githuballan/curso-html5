@@ -28,6 +28,75 @@
 
         }
 
+        /*Justfy-content*/
+
+        td, th{
+            border:solid;
+            padding: 1px 1em;
+        }
+
+
+        div.intex{
+        background-color: aquamarine;
+        height: 100px;
+        width: 100px;
+        min-width: 100px;
+        border-radius: 20%;
+        text-align: center;
+        }
+
+        div.contex1{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        width: 700px;
+        justify-content: flex-start;
+        }
+
+       
+        div.contex2{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        width: 700px;
+        justify-content: flex-end;
+        }
+
+        
+
+        div.contex3{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        width: 700px;
+        justify-content: center;
+        }
+        div.contex4{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        width: 700px;
+        justify-content: space-between;
+        }
+
+        div.contex5{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        width: 700px;
+        justify-content: space-evenly;
+        }
+
+        div.contex6{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        width: 700px;
+        justify-content: space-around;
+        }
+
+      
+
     </style>
 </head>
 <body>
@@ -148,7 +217,163 @@
                         <li>O cross-axis, em casos de flex-directions horizontais(rows), Sempre serão de cima para baixo. Como o padrão column.</li>
                         <li>E quando a flex-direction está na vertical ele será sempre da esquerda para dereita. Como a row padrão.</li>
                     </ul>
+                <p>
+                    Faça testes no head dessa página usando o primeiro exemplo.
+                </p>                 
             </section>       
+        </article>
+        <article>
+            <h2>flex-wrap: wrap;</h2>
+            <section>
+                <p>Flex wrap significa encapsulamento flexível. Esse estilo é aplicado na box conteiner(externa). Isso significa que ela vai reorganizar as box internas para que elas caibam no formato da conteiner.</p>
+                <p>As box internas por sua vez vão se mudando de posição  no sentido do cross-axis. Isso quer dizer que conforme for se estreitando a ultima no sentido da flex-direction irá mudar de linha ou coluna no sentido do eixo axis</p>
+            </section>
+            <section>
+                <h3>Wrap, Nowrap e Wrap-Reverse</h3>
+                <ul>
+                    <li><strong>NoWrap</strong>: Por padrão todo conteiner é nowrap, isso significa que as box internas vão se expremer até seus conteúdo permitirem, qd não for mais possível ajustar seus conteúdos ela não irá se ajustar mais e começará a gerar overflow</li>
+                    <p>Comando:</p>
+                    <div class="pre">
+                        <pre>
+            flex-wrap: nowrap;
+                        </pre>
+                    </div>
+                    <li><strong>Wrap-Reverse: </strong> Como já podemos imaginar, esse comando faz com que a última box interna vá para linha ou coluna oposta a direção da axis </li>
+                    <p>Comando:</p>
+                    <div class="pre">
+                        <pre>
+            flex-wrap: wrap-reverse;
+                        </pre>
+                    </div>
+                    <li><strong>Wrap: </strong> Esse comando faz a ultima box da Flex-direction ir para linha ou coluna na direção do eixo axis.</li>
+                    <p>Comando:</p>
+                    <div class="pre">
+                        <pre>
+            flex-wrap: wrap
+            ;
+                        </pre>
+                    </div>
+                </ul>
+                <p> </p>
+                <p></p>
+            </section>
+        </article>
+        <artcle>
+            <h2>Flex-flow</h2>
+            <section>
+                <p>Flex-flow é uma espécie de shothand da flexbox, onde primeiro definimos a flex directions e depois a flex-wrap. Inclusive a W3C recomenda que sempre use flex-flow.</p>
+                <p>Exemplo de comando no head:</p>
+                <div class="pre">
+                <pre>
+                    flex-flow: column wrap
+                </pre>
+                </div>
+            </section>
+        </artcle>
+        <article>
+            <h2></h2>
+            <section>
+                <p></p>
+                <p></p>
+                <div class="pre">
+                    <table style=" border-color: #000000; border-collapse: collapse; border: solid;">
+                    <thead>
+                        <tr>
+                            <th scope="col">justfy-content:</th>
+                            <th scope="col">Explicação / Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">flex-start</th>
+                                <td>Agrupa as boxes internas juntas no início da flex-direction deixando um espaço restante vazio no final</td>
+                               
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contex1">
+                                    <div class="intex">Bloco 01</div>
+                                    <div class="intex">Bloco 02</div>
+                                    <div class="intex">Bloco 03</div>
+                                    <div class="intex">Bloco 04</div>
+                                    <div class="intex">Bloco 05</div>
+                                </div>
+                            </td>
+                            </tr>
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">flex-end</th>
+                                <td>Agrupa as boxes internas juntas no final da flex-direction deixando um espaço restante vazio no início</td>
+                            </tr>
+                            <tr>
+                                <td><div class="contex2">
+                                    <div class="intex">Bloco 01</div>
+                                    <div class="intex">Bloco 02</div>
+                                    <div class="intex">Bloco 03</div>
+                                    <div class="intex">Bloco 04</div>
+                                    <div class="intex">Bloco 05</div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">center</th>
+                                <td>Agrupa as boxes internas juntas no centro e deixa o espaço vazio dividido por igual nas duas extremidade.</td>
+                            </tr>
+                            <tr>
+                                
+                                <td><div class="contex3">
+                                    <div class="intex">Bloco 01</div>
+                                    <div class="intex">Bloco 02</div>
+                                    <div class="intex">Bloco 03</div>
+                                    <div class="intex">Bloco 04</div>
+                                    <div class="intex">Bloco 05</div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">space-between</th>
+                                <td>Cola as duas box mais extremas nas extremidades e divide o restante do espaço vazio por igual entre elas</td>
+                            </tr>
+                            <tr>
+                               
+                                <td><div class="contex4">
+                                    <div class="intex">Bloco 01</div>
+                                    <div class="intex">Bloco 02</div>
+                                    <div class="intex">Bloco 03</div>
+                                    <div class="intex">Bloco 04</div>
+                                    <div class="intex">Bloco 05</div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">space-evenly</th>
+                                <td>Divide o espaço vazio por igual  entre as box inclusives entre a box e a extremidade</td>
+                            </tr>
+                            <tr>
+                                
+                                <td><div class="contex5">
+                                    <div class="intex">Bloco 01</div>
+                                    <div class="intex">Bloco 02</div>
+                                    <div class="intex">Bloco 03</div>
+                                    <div class="intex">Bloco 04</div>
+                                    <div class="intex">Bloco 05</div>
+                                </div></td>
+                            </tr>
+                            <tr>
+                                <th scope="rowgroup" rowspan="2">space-around</th>
+                                <td>Divide todo o espaço vazio pela quantidade de box interna, depois divide por dois e coloca esse valor restante (espaço) de cada lado de cada box. Basicamente ele divide o espaço vazio pela quantidade de box interna e centraliza cada box dentro desse valor resultante.</td>
+                            </tr>
+                            <tr>
+                                
+                                <td><div class="contex6">
+                                    <div class="intex">Bloco 01</div>
+                                    <div class="intex">Bloco 02</div>
+                                    <div class="intex">Bloco 03</div>
+                                    <div class="intex">Bloco 04</div>
+                                    <div class="intex">Bloco 05</div>
+                                </div></td>
+                            </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </section>
         </article>
 
 
@@ -160,10 +385,14 @@
 
 
 
-
-
+        <a href="exemplos/exemplos.html" target="_blank">Html para testes de flex box</a>
     </main>
-    <footer></footer>
+    <footer>
+        <hr>
+        <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+       
+    
+    </footer>
     
 </body>
 </html>
