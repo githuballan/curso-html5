@@ -232,6 +232,51 @@
 &lt;p>rodapé&lt;/p>
 &lt;/footer>
                </pre>
+
+
+               <li><strong>Adição de tag com atributos</strong>: Para adicionar atributos em tags basta colocar os atributos entre colchetes []Exemplo:</li>
+               <pre>
+
+table>(thead>th<span class="mark">[scope="col"]</span>*3)+(tbody>tr*3>th<span class="mark">[scope="row"]</span>+td*2)
+                
+               </pre>
+               <p>ficaria da segunite forma:</p>
+<div class="pre">
+    
+                   <pre>
+    
+    &lt;table>
+        &lt;thead>
+            &lt;th <span class="mark">scope="col"</span>>&lt;/th>
+            &lt;th <span class="mark">scope="col"</span>>&lt;/th>
+            &lt;th <span class="mark">scope="col"</span>>&lt;/th>
+        &lt;/thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;th <span class="mark">scope="row"</span>>&lt;/th>
+                &lt;td>&lt;/td>
+                &lt;td>&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th <span class="mark">scope="row"</span>>&lt;/th>
+                &lt;td>&lt;/td>
+                &lt;td>&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th <span class="mark">scope="row"</span>>&lt;/th>
+                &lt;td>&lt;/td>
+                &lt;td>&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+    
+                   </pre>
+</div>
+
+
+
+
+
             </ul> <!--Fim da lista de abreviaturas-->
         </p>
 

@@ -157,6 +157,7 @@ img
 h1, h2, h3, h4, h5, h6
 {
     font-family: 'Times New Roman', Times, serif;
+    text-align: left;
 }
 h1 
 {
@@ -170,6 +171,7 @@ h2
 {
     background-image: linear-gradient(90deg, #567eb942 50%, #7bd7685f);
     font-size: 1.3em;}
+
     h3, h4, h5, h6{
     font-size: 1.1em;
 }
