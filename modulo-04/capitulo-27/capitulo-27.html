@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex Boxes</title>
+    <title>Capítulo 27</title>
     <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
 
     <style>
-        div#conteiner{
+        div#conteiner{/*article flex boxes*/
             display:flex;
             background-color: #990000;
-            text-align: center;
+           
             flex-wrap: wrap;
         }
 
-        div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{
+        div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{/*article flex boxes*/
             flex: auto;
             
             background-color: #0000ee;
@@ -28,7 +28,7 @@
 
         }
 
-        /*Justfy-content*/
+        
 
         td, th{
             border:solid;
@@ -42,7 +42,7 @@
         }
 
 
-        div.intex{
+        div.intex{/*exemplos alinhamento dos eixos*/
         background-color: aquamarine;
        
         padding: 40px 0px 40px 0px;
@@ -54,7 +54,7 @@
         
         }
 
-        div.contex1{
+        div.contex1{/* Tabela article Alinhamentos nos eixos*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
@@ -63,7 +63,7 @@
         }
 
        
-        div.contex2{
+        div.contex2{ /*Alinhamentos nos eixos>Alinhamento no main-axis>tabela*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
@@ -73,14 +73,14 @@
 
         
 
-        div.contex3{
+        div.contex3{/*Alinhamentos nos eixos>Alinhamento no main-axis>tabela*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
         width: 700px;
         justify-content: center;
         }
-        div.contex4{
+        div.contex4{/*Alinhamentos nos eixos>Alinhamento no main-axis>tabela*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
@@ -88,7 +88,7 @@
         justify-content: space-between;
         }
 
-        div.contex5{
+        div.contex5{/*Alinhamentos nos eixos>Alinhamento no main-axis>tabela*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
@@ -96,7 +96,7 @@
         justify-content: space-evenly;
         }
 
-        div.contex6{
+        div.contex6{/*Alinhamentos nos eixos>Alinhamento no main-axis>tabela*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
@@ -104,7 +104,7 @@
         justify-content: space-around;
         }
 
-        div.contex7{
+        div.contex7{/*Alinhamentos nos eixos>Alinhamento no main-axis>tabela*/
         display: flex;
         flex-flow: row wrap;
         align-items: stretch;
@@ -114,7 +114,7 @@
        
         }
 
-        div.contex8{/* faz as box interna grudarem no início da cross-axis*/
+        div.contex8{/* Alinhamentos nos eixos>Alinhamento no cross-axis>tabela*/
         display: flex;
         flex-flow: row wrap;
         background-color: coral;
@@ -123,7 +123,7 @@
         align-items: flex-start;
         }
 
-        div.contex9{/* faz as box interna grudarem no final da cross-axis*/
+        div.contex9{/* Alinhamentos nos eixos>Alinhamento no cross-axis>tabela*/
         display: flex;
         flex-flow: row wrap;
         background-color: coral;
@@ -132,7 +132,7 @@
         align-items: flex-end;
         }
 
-        div.contex10{/* centraliza as box interna no meio da cross-axis*/
+        div.contex10{/* Alinhamentos nos eixos>Alinhamento no cross-axis>tabela*/
         display: flex;
         flex-flow: row wrap;
         background-color: coral;
@@ -141,7 +141,7 @@
         align-items: center;
         }
 
-        div.contex11{/* Exemplo de Centralização na linha 550 */
+        div.contex11{/* Alinhamentos nos eixos>Alinhamento no cross-axis>tabela */
         display: flex;
         flex-flow: row nowrap;
         background-color: coral;
@@ -228,16 +228,25 @@
         
         }
 
+        
+
         div.contex20{/* align-self*/
         display: flex;
         flex-flow: row wrap;
         background-color: coral;
         width: 600px;
-        height: 400px;
-        align-content: space-around;
-        
+        height: 300px;
+        margin: auto;
         }
-      
+
+        div.intex1{/* align-self*/
+        background-color: aquamarine;
+        padding: 40px 10px 40px 0px;
+        min-width: 100px;
+        border-radius: 20px;
+        border:1px solid #000000
+        }
+        
 
     </style>
 </head>
@@ -799,7 +808,7 @@ div.intex{
         <article><!--Anatomia dos itnes flex-box-->
             <h2>Anatomia dos itnes flex-box</h2>
             <section>
-                <p>Por padrão os itens do conteriner não são flexíveis, isso quer dizer que eles apenas obedecem a organição do conteiner. Entretanto, tem como mudar o comportamento individual de cada item para que cada um se organize do seu jeito dependendo do formato do conteiner.</p>
+                <p>Por padrão os itens do conteiner não são flexíveis, isso quer dizer que eles apenas obedecem a organição do conteiner. Entretanto, tem como mudar o comportamento individual de cada item para que cada um se organize do seu jeito dependendo do formato do conteiner.</p>
             </section>
             <section><!--order-->
                 <h3>order</h3>
@@ -836,8 +845,36 @@ div.intex{
                 </div>
 
             </section><!--Fim order-->
-            <section>
+            <section><!--align-self-->
                 <h3>align-self</h3>
+                <p>
+                    Essa propriedade de estilo tem como principal finalidade dar autonomia as box internas de uma conteiner. Até aqui vimos todas as boxes trabalhando iguais, apenas seguindo as regras do conteiner. Mas agora com essa propriedade poderemos dar estilos independentes para as box internas.
+                </p>
+                <p>
+                    Para isso usaremos 5 estilos:
+                </p>
+                <ul>
+                    <li><strong>auto ou inehit: </strong> Esse estilo é o padrão, portanto ele seguirá as regras do conteiner</li>
+                    <li><strong>flex-start: </strong> Esse alinhamento faz com que a box vá para perto do início da cross-axis</li>
+                    <li><strong>flex-end: </strong> Esse, naturalmente, faz a box ir para o final da cross-axis</li>
+                    <li><strong>center: </strong>Centraliza a box na metade da cross-axis. em outras palavras põe a box em cima do eixo main-axis.</li>
+                    <li><strong>stretch: </strong> estica a box de uma ponta a outra da cross-axis</li>
+                </ul>
+                <p>
+                    Veja o exemplo de todos os comportamentos abaixo:
+                </p>
+                <div class="pre">
+                    <div class="contex20">
+                        <div class="intex1" style="align-self: auto">auto</div>
+                        <div class="intex1" style="align-self: flex-start">flex-start</div>
+                        <div class="intex1" style="align-self: flex-end">flex-end</div>
+                        <div class="intex1" style="align-self: center">center</div>
+                        <div class="intex1" style="align-self: stretch">stretch</div>
+                    </div>
+                </div>
+
+
+
             </section>
         </article><!--Fim Anatomia dos itnes flex-box-->
 

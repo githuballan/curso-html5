@@ -8,7 +8,7 @@
     font-style: normal;
 }
 /*---------------------------------CLASS-------------------------------*/
-.mark
+.mark/*Efeito marca texto*/
 {
     background-color: #ffff004d;
 }
@@ -36,7 +36,6 @@ capitulo
 /*---------------------------------BOXES-------------------------------*/
 body 
 { 
-    text-indent: 2em;
     text-align: justify;
     font-family: Arial, Helvetica, Tahoma, sans-serif;
     background-color: rgb(216, 191, 143, 0.1);
@@ -69,7 +68,7 @@ header>h1
 main
 {
     text-align: justify;
-    padding-top: 20px;
+    padding: 20px 10px 20px 10px; 
     max-width: 800px;
     margin: auto;
 
