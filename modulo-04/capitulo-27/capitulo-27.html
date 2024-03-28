@@ -244,9 +244,111 @@
         padding: 40px 10px 40px 0px;
         min-width: 100px;
         border-radius: 20px;
-        border:1px solid #000000
+        border:1px solid #000000;
+        text-align: center;
         }
         
+    div.contex2A{/*flex-basis/flex-grow & flex-shrink*/
+        display: flex;
+        background-color: coral;
+        flex-flow: row wrap;
+        width: 800px;
+       
+        
+        
+
+            }
+    div.intex2A{/*flex-basis/flex-grow & flex-shrink*/
+        
+        background-color: aquamarine;
+        height: 100px;
+        box-sizing: border-box;
+        border:1px solid #000000;
+        border-radius: 5px;
+        text-align: center;
+        
+        
+
+        flex-basis: 100px;
+        flex-grow:2;
+        flex-shrink: 0;
+    }
+
+    div.intex2B{/*flex-basis/flex-grow & flex-shrink*/
+        
+        background-color: aquamarine;
+        height: 100px;
+        box-sizing: border-box;
+        border:1px solid #000000;
+        border-radius: 5px;
+        text-align: center;
+
+        flex-basis: 100px;
+        flex-grow:3;
+        flex-shrink: 0;
+    }
+    div.intex2C{/*flex-basis/flex-grow & flex-shrink*/
+        
+        background-color: aquamarine;
+        height: 100px;
+        box-sizing: border-box;
+        border:1px solid #000000;
+        border-radius: 5px;
+        text-align: center;
+
+        flex-basis: 100px;
+        flex-grow:4;
+        flex-shrink: 0;
+
+       
+    }
+    
+
+    div.contex3A{/*flex-basis/flex-grow & flex-shrink*/
+        display: flex;
+        background-color: coral;
+        flex-flow: row nowrap;
+        width: 250px;
+        
+
+            }
+    div.intex3A{/*flex-basis/flex-grow & flex-shrink*/
+        
+        background-color: aquamarine;
+        height: 100px;
+        box-sizing: border-box;
+        border:1px solid #000000;
+        border-radius: 20px;
+        text-align: center;
+
+        flex-basis: 100px;
+        flex-shrink:2;
+    }
+
+    div.intex3B{/*flex-basis/flex-grow & flex-shrink*/
+        
+        background-color: aquamarine;
+        height: 100px;
+        box-sizing: border-box;
+        border:1px solid #000000;
+        border-radius: 20px;
+        text-align: center;
+
+        flex-basis: 100px;
+        flex-shrink:3;
+    }
+    div.intex3C{/*flex-basis/flex-grow & flex-shrink*/
+        
+        background-color: aquamarine;
+        height: 100px;
+        box-sizing: border-box;
+        border:1px solid #000000;
+        border-radius: 20px;
+        text-align: center;
+
+        flex-basis: 100px;
+        flex-shrink:4;
+    }
 
     </style>
 </head>
@@ -423,14 +525,14 @@
         </article><!--Fim flex-wrap: wrap;-->
         <article><!--Alinhamentos nos eixos-->
             <h2>Alinhamentos nos eixos</h2>
-            <section>
+            <section><!--Alinhamento no eixo main-axis-->
                 <h3>Alinhamento no eixo main-axis</h3>
                 <p>Quando falamos em alinhamento no eixo <abbr title="eixo que atravessa o conteiner na direção da flex-direction.">main-axis</abbr> pode-se entender também como uma distrubuição das box internas no sentido do main-axis.</p>
                 <p>
                     Essa distribuição se dá através do comando jutify-content seguido das formas de distribuição das box internas. Veja a tabela abaixo os comandos, as explicações e suas respectivas aplicações práticas: 
                 </p>
                 <div class="pre">
-                    <table>
+                    <table><!--justify-content-->
                     <thead>
                         <tr>
                             <th scope="col">justfy-content:</th>
@@ -530,7 +632,7 @@
                     </table>
                 </div>
             </section>
-            <section>
+            <section><!--Alinhamento no eixo cross-axis-->
     
                 <h3>Alinhamento no cross-axis</h3>
                 <p>
@@ -540,9 +642,9 @@
                     Para fazermos os alinhamentos no cross-axis utilizamos o comando: align-items. Veja a tabela abaixo os comandos, as explicações e suas respectivas aplicações práticas:
                 </p>
     
-            </section>
+            
             <div class="pre">
-                <table>
+                <table><!--align-items-->
                     <thead>
                         <tr>
                             <th scope="col">align-items</th>
@@ -617,11 +719,11 @@
                     </tbody>
                 </table>
             </div>
+            </section>
 
 
-
-            <section>
-                <h3>Exemplo de centralização</h3>
+            <section><!--Centralização-->
+                <h3>Centralização</h3>
                 <p>A centralização de itens usando flex box se torna muito mais fácil que os métodos vistos até aqui. Veja o exemplo abaixo:</p>
 
                 <div class="contex11">
@@ -806,8 +908,8 @@ div.intex{
 
         </article><!--Fim Alinhamento de conteúdo empacotado-->
         <article><!--Anatomia dos itnes flex-box-->
-            <h2>Anatomia dos itnes flex-box</h2>
-            <section>
+            <h2>Anatomia dos itens flex-box</h2>
+            <section><!--Introdução-->
                 <p>Por padrão os itens do conteiner não são flexíveis, isso quer dizer que eles apenas obedecem a organição do conteiner. Entretanto, tem como mudar o comportamento individual de cada item para que cada um se organize do seu jeito dependendo do formato do conteiner.</p>
             </section>
             <section><!--order-->
@@ -875,11 +977,157 @@ div.intex{
 
 
 
-            </section>
+            </section><!--Fim align-self-->
+            <section><!--flex-basis-->
+                <h3>flex-basis</h3>
+                <p>
+                Essa propriedade gera larguras flexíveis e ela trabalha de duas formas diferente dependendo das regras do conteiner.
+                </p>
+                <ul>
+                    <li><strong> Conteiner com flex-wrap: <span class="mark">wrap</span>;</strong> Nesse caso ela irá manter a largura definida pela flex-basis mesmo que o conteiner fique menor, pois ela irá quebrar as linhas até que todas as box estejam em coluna e só então, quando começar a estreitar abaixo da largura definida pela flex-basis, ela irá reduzir seu tamanho: </li>
+
+                    <li><strong>Conteiner com flex-wrap: <span class="mark">nowrap</span>;</strong> Nesse caso box interna irá estreitar assim que o conteiner reduzir seu tamanho abaixo da largura definida pela flex-basis.</li>
+                </ul>
+            </section><!--Fim flex-basis-->
+            <section><!--flex-grow & flex-shrink-->
+                <h3>flex-grow & flex-shrink</h3>
+                <p>
+                    Flex-grow e Flex-shrink são propriedades que trabalham juntas com a flex-basis, pois elas habilitam ou desabilitam a flexbilidade da largura definida pela flex-basis.
+                </p>
+                <ul>
+                    <li><strong>flex-grow</strong>: Por padrão ela fica desabilitada. Quando essa propriedade está habilitada ela permite que a box interna  aumente, a largura definida pela flex-basis,para cobrir todo o excesso da conteiner. </li>
+                    <p>
+                        Comando:
+                    </p>
+                    <div class="pre">
+                    <pre>    
+<abbr title="A box cresce até cobrir todo o espaço do conteiner">flex-grow: 1;</abbr>
+<abbr title="A box não cresce">flex-grow: 0;</abbr>
+</pre>
+                    </div>
+                    <li><strong>flex-shrink</strong>: Essa propriedade vem habilitada por padrão. Quando ela está habilitada ela permite que a box interna reduza, a largura definida pela flex-basis, para caber no conteiner.</li>
+                    <p>
+                        Comando:
+                    </p>
+                    <div class="pre">
+                        <pre>
+<abbr title="A box reduz para caber no conteiner">flex-shrink: 1;</abbr>
+<abbr title="A box não reduz">flex-shrink: 0;</abbr>
+                    </pre>
+                    </div>
+                </ul>
+                <p>
+                    Outro ponto importante dessas duas propriedades é que, elas trabalham com valores proporcionais dentro do mesmo conteiner. Isso quer dizer que, se o valor de uma box é 1 e outra é 2, a box de valor dois aumentará ou reduzirá o dobro da box com valor 1.
+                </p>
+                <h4>O cálculo</h4>
+                <p>
+                    Em caso que contenham varias box com valores diferentes dentro do mesmo conteiner o cálculo será feito da seguinte forma: 
+                </p>
+                <p>
+                    A box com o menor valor acima de 0 servirá como base para calcular a proporção de crescimento das demais. Exemplo:
+                </p>
+                <p>
+                    Se uma box tem valor 1 outra tem valor 2, a 2 crescerá duas vezes mais. Até aqui ok.
+                </p>
+                <p>
+                    Porém se duas box têm o valor 2, as duas crecerão iguais, pois a proporção aqui é de 1 para 1
+                </p>
+                <p>
+                    Agora se uma tem valor 2 outra, 3 e outra 4?
+                </p>
+                <ul>
+                    <li>A 2 crescerá normal</li>
+                    <li>A 3 crescerá uma vez e 1/3 a mais que a box de valor 2</li>
+                    <li>E a 4 crescerá o dobro da box de valor 2, pois a 2 é o valor base por ser o menor. </li>
+                </ul>
+                <p>
+                    Veja esse exemplo abaixo:
+                </p>
+                <div class="pre">
+                    <div class="contex2A">
+                        <div class="intex2A">flex-gorw:2</div>
+                        <div class="intex2B">flex-gorw:3</div>
+                        <div class="intex2C">flex-gorw:4</div>
+                    </div>
+                </div>
+                <p>
+                    O mesmo também vale para o flex-shrink. Veja:
+                </p>
+                <div class="pre">
+                    <div class="contex3A">
+                        <div class="intex3A">flex-shrink:2</div>
+                        <div class="intex3B">flex-shrink:3</div>
+                        <div class="intex3C">flex-shrink:4</div>
+                        
+                       
+                    </div>
+                </div>
+
+            </section><!--Fim flex-grow & flex-shrink-->
+            <section><!--Propriedade flex-->
+                <h3>Propriedade flex</h3>
+                <p>A propriedade flex funciona como uma shothand. Assim como a flex-flow é usada no conteirner, a flex é usada nas box internas. </p>
+                <p>
+                    Inclusive a W3C recomenda que usemos sempre a propriedade flex para encurtar os comandos assim com ela também recomenda o uso da flex-flow.
+                </p>
+                <p>
+                    Assim como toda "shothand", essa propriedade tem uma ordem de estilos. Veja a abaixo:
+                </p>
+                <ol>
+                    <li><strong>flex-grow</strong></li>
+                    <li><strong>flex-shrink</strong></li>
+                    <li><strong>flex-basis</strong></li>
+                </ol>
+                <p>
+                    O comando:
+                </p>
+                <div class="pre">
+                    <pre>         flex: <abbr title="flex-grow">2</abbr> <abbr title="flex-shrink">1</abbr> <abbr title="flex-basis">100px</abbr>
+                    </pre>
+                </div>
+                <p>
+                    Veja agora as aplicações mais comuns desse comando flex.
+                </p>
+
+                <div class="pre">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Estilos</th>
+                                <th scope="col">Funcionamento e aplicações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>flex:0 1;</td>
+                                <td rowspan="2">São dois comando que Resetam a box para os padrões de fábrica digamos assim. isso é usado para evitar que algum estilo geraizado interfira no funcionamento esperado pela box interna..</td>
+                            </tr>
+                            <tr>
+                                <td>flex: initial</td>
+                            </tr>
+                            <tr>
+                                <td>flex: 0 0 auto;</td>
+                                <td rowspan="2">Esses comando removem a flexibilidade da box e deixa ela apenas no tamanho do conteúdo delas.</td>
+                            </tr>
+                            <tr>
+                                <td>flex: none;</td>
+                            </tr>
+                            <tr>
+                                <td>flex: 1 1 auto;</td>
+                                <td rowspan="2">Esses comandos fazem o inverso do acima. Esse aqui deixa a box 100% flexível e ajusta seu conteúdo interno também.</td>
+                            </tr>
+                            <tr>
+                                <td>flex: auto;</td>
+                            </tr>
+                            <tr>
+                                <td>flex: 1;</td>
+                                <td>Quando tem apenas um número significa que só foi definido o flex grow. Logo o flex shrink e o flex-basis são o valor padrão. Seria o mesmo que escrever flex: 2 1 auto;</td>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </section><!--Fim Propriedade flex-->
         </article><!--Fim Anatomia dos itnes flex-box-->
-
-
-
 
 
 
@@ -890,8 +1138,9 @@ div.intex{
        
     </main>
     <footer>
-        <a href="exemplos/exemplos.html" target="_blank">Html para testes de flex box</a>
+        <a href="exercicios/exemplos.html" target="_blank">Html para testes de flex box</a>
         <hr>
+        <a href="exercicios/ex01.html">Execício menu Responsivos com flex box</a>
         <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
        
     
