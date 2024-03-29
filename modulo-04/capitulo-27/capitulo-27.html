@@ -357,18 +357,18 @@
         <h1>Capítulo 27</h1>
     </header>
     <main>
-        <article><!--Flex Boxes-->
+        <section><!--Flex Boxes-->
             <h1>Flex Boxes</h1>
             <p>Flex box são caixas flexíveis. Valeu até a próxima!</p>
-            <section>
+            <article>
                 <p>
                     A ideia inicial do uso das flex box é ajustar o conteúdo do site de acordo com cada formato e tamanho de tela disponível no mercado. Elas funcionam de seguinte forma:
                 </p>
                 <p>
                     A caixa externa dita as regras de tamanho disponível para exibição. Já as internas trabalham se moldando ao tamanho da externa de acordo com a regras que impulsermos a elas. O objetivo é que elas sempre trabalhem de forma fluida.
                 </p>
-            </section>
-            <section>
+            </article>
+            <article>
                 <p>
                     Para isso deixar as boxes com essa caracteríscas precisamos usar sempre 2 comandos:
                     </p>
@@ -429,13 +429,13 @@
 &lt;/style>
                 </pre>
                         </div>
-            </section>
-        </article><!--Fim Flex Boxes-->
-        <article><!--Flex-direction-->
+            </article>
+        </section><!--Fim Flex Boxes-->
+        <section><!--Flex-direction-->
             <h2>
                 Flex-direction
             </h2>
-            <section>
+            <article>
                 <p>
                     Flex-direction é um estilo usado na box conteiner. Como o nome já diz, ela serve para direcionar de onde para onde as box internas deverão se organizar.
                 </p>
@@ -448,19 +448,19 @@
                     <li><strong>flex-direction: column;</strong> Nessa forma as box internas iram se alinhar na vertical de de cima para abaxo.</li>
                     <li><strong>flex-direction: column-reverse;</strong> E nessa forma as box internas iram se alinhar na vertical de de baixo para acima.</li>
                 </ul>
-            </section>
-        </article><!--Fim Flex-direction-->
-        <article><!--Eixos (axis)-->
+            </article>
+        </section><!--Fim Flex-direction-->
+        <section><!--Eixos (axis)-->
             <h2>Eixos (axis)</h2>
-            <section>
+            <article>
                 <p>Além das direção da box conteiner, existe ainda mais dois eixos dentro dela:</p>
                 <ul>
                     <li><strong>main-axis</strong> Como o nome já diz esse é o eixo principal ele o eixo mais longo do retângulo. É  eixo que atravessa o conteiner na direção da flex-direction.</li>
                     <li><strong>cross-axis</strong> Também como o próprio nome já diz, essa cruza o perpendicularmente o eixo principal(main-axis). </li>
                 </ul>  
                        
-            </section>
-            <section>
+            </article>
+            <article>
                 <h3>Direcionamentos de cross-axis</h3>
                 <p>
                     Direcionamentos cross-axis são simples pois eles só quando a flex-direction está na horizontal(row) ou na vertical(column), veja:
@@ -472,15 +472,15 @@
                 <p>
                     Faça testes no head dessa página usando o primeiro exemplo.
                 </p>                 
-            </section>       
-        </article><!--Fim Eixos (axis)-->
-        <article><!--flex-wrap: wrap;-->
+            </article>       
+        </section><!--Fim Eixos (axis)-->
+        <section><!--flex-wrap: wrap;-->
             <h2>flex-wrap: wrap;</h2>
-            <section>
+            <article>
                 <p>Flex wrap significa encapsulamento flexível. Esse estilo é aplicado na box conteiner(externa). Isso significa que ela vai reorganizar as box internas para que elas caibam no formato da conteiner.</p>
                 <p>As box internas por sua vez vão se mudando de posição  no sentido do cross-axis. Isso quer dizer que conforme for se estreitando a ultima no sentido da flex-direction irá mudar de linha ou coluna no sentido do eixo axis</p>
-            </section>
-            <section>
+            </article>
+            <article>
                 <h3>Wrap, Nowrap e Wrap-Reverse</h3>
                 <ul>
                     <li><strong>NoWrap</strong>: Por padrão todo conteiner é nowrap, isso significa que as box internas vão se expremer até seus conteúdo permitirem, qd não for mais possível ajustar seus conteúdos ela não irá se ajustar mais e começará a gerar overflow</li>
@@ -516,16 +516,16 @@
                     </div>
                 </ul>
                 
-            </section>
+            </article>
        
         
             
                
            
-        </article><!--Fim flex-wrap: wrap;-->
-        <article><!--Alinhamentos nos eixos-->
+        </section><!--Fim flex-wrap: wrap;-->
+        <section><!--Alinhamentos nos eixos-->
             <h2>Alinhamentos nos eixos</h2>
-            <section><!--Alinhamento no eixo main-axis-->
+            <article><!--Alinhamento no eixo main-axis-->
                 <h3>Alinhamento no eixo main-axis</h3>
                 <p>Quando falamos em alinhamento no eixo <abbr title="eixo que atravessa o conteiner na direção da flex-direction.">main-axis</abbr> pode-se entender também como uma distrubuição das box internas no sentido do main-axis.</p>
                 <p>
@@ -631,8 +631,8 @@
                     </tbody>
                     </table>
                 </div>
-            </section>
-            <section><!--Alinhamento no eixo cross-axis-->
+            </article>
+            <article><!--Alinhamento no eixo cross-axis-->
     
                 <h3>Alinhamento no cross-axis</h3>
                 <p>
@@ -719,10 +719,10 @@
                     </tbody>
                 </table>
             </div>
-            </section>
+            </article>
 
 
-            <section><!--Centralização-->
+            <article><!--Centralização-->
                 <h3>Centralização</h3>
                 <p>A centralização de itens usando flex box se torna muito mais fácil que os métodos vistos até aqui. Veja o exemplo abaixo:</p>
 
@@ -760,12 +760,12 @@ div.intex{
 
                     </pre>
                 </div>
-            </section>
+            </article>
         
-        </article><!--Fim Alinhamentos nos eixos-->
-        <article><!--Alinhamento de conteúdo empacotado-->
+        </section><!--Fim Alinhamentos nos eixos-->
+        <section><!--Alinhamento de conteúdo empacotado-->
             <h2>Alinhamento de conteúdo empacotado</h2>
-            <section>
+            <article>
                 <p>
                     Para alinhar conteúdos empacotados utilizamos o estilo align-content. Esse estilo funciona similar ao estilo jutify-content, pois ele também alinha os itens usando como basa o eixo main-axis. 
                 </p>
@@ -904,15 +904,15 @@ div.intex{
                          </tbody>
                     </table>
                 </div>
-            </section>
+            </article>
 
-        </article><!--Fim Alinhamento de conteúdo empacotado-->
-        <article><!--Anatomia dos itnes flex-box-->
+        </section><!--Fim Alinhamento de conteúdo empacotado-->
+        <section><!--Anatomia dos itnes flex-box-->
             <h2>Anatomia dos itens flex-box</h2>
-            <section><!--Introdução-->
+            <article><!--Introdução-->
                 <p>Por padrão os itens do conteiner não são flexíveis, isso quer dizer que eles apenas obedecem a organição do conteiner. Entretanto, tem como mudar o comportamento individual de cada item para que cada um se organize do seu jeito dependendo do formato do conteiner.</p>
-            </section>
-            <section><!--order-->
+            </article>
+            <article><!--order-->
                 <h3>order</h3>
                 <p>Order é uma forma de organizar os itens dentro de um conteiner. Por padrão todo item do conteiner recebe order=0, sendo assim a ordem que escrevemos a div dentro do conteiner é a ordem que os itens ficarão organizados. Porém nem sempre isso é viável dependendo do tamanho do código, por isso exite o order</p>
                 <p>
@@ -946,8 +946,8 @@ div.intex{
                     </pre>
                 </div>
 
-            </section><!--Fim order-->
-            <section><!--align-self-->
+            </article><!--Fim order-->
+            <article><!--align-self-->
                 <h3>align-self</h3>
                 <p>
                     Essa propriedade de estilo tem como principal finalidade dar autonomia as box internas de uma conteiner. Até aqui vimos todas as boxes trabalhando iguais, apenas seguindo as regras do conteiner. Mas agora com essa propriedade poderemos dar estilos independentes para as box internas.
@@ -977,8 +977,8 @@ div.intex{
 
 
 
-            </section><!--Fim align-self-->
-            <section><!--flex-basis-->
+            </article><!--Fim align-self-->
+            <article><!--flex-basis-->
                 <h3>flex-basis</h3>
                 <p>
                 Essa propriedade gera larguras flexíveis e ela trabalha de duas formas diferente dependendo das regras do conteiner.
@@ -988,8 +988,8 @@ div.intex{
 
                     <li><strong>Conteiner com flex-wrap: <span class="mark">nowrap</span>;</strong> Nesse caso box interna irá estreitar assim que o conteiner reduzir seu tamanho abaixo da largura definida pela flex-basis.</li>
                 </ul>
-            </section><!--Fim flex-basis-->
-            <section><!--flex-grow & flex-shrink-->
+            </article><!--Fim flex-basis-->
+            <article><!--flex-grow & flex-shrink-->
                 <h3>flex-grow & flex-shrink</h3>
                 <p>
                     Flex-grow e Flex-shrink são propriedades que trabalham juntas com a flex-basis, pois elas habilitam ou desabilitam a flexbilidade da largura definida pela flex-basis.
@@ -1063,8 +1063,8 @@ div.intex{
                     </div>
                 </div>
 
-            </section><!--Fim flex-grow & flex-shrink-->
-            <section><!--Propriedade flex-->
+            </article><!--Fim flex-grow & flex-shrink-->
+            <article><!--Propriedade flex-->
                 <h3>Propriedade flex</h3>
                 <p>A propriedade flex funciona como uma shothand. Assim como a flex-flow é usada no conteirner, a flex é usada nas box internas. </p>
                 <p>
@@ -1126,8 +1126,8 @@ div.intex{
                         </tbody>
                     </table>
                 </div>
-            </section><!--Fim Propriedade flex-->
-        </article><!--Fim Anatomia dos itnes flex-box-->
+            </article><!--Fim Propriedade flex-->
+        </section><!--Fim Anatomia dos itnes flex-box-->
 
 
 
