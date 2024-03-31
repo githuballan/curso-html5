@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
+    <title>Grid</title>
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+<style>
+    
+        /*
+        <div id="conteiner">
+    
+            <div id="cabeçalho">Cabeçalho</div>
+            <div id="principal">Principal</div>
+            <div id="rodape">Rodapé</div>
+            <div id="lateral">Lateral</div>
+        </div>*/
+        div#conteiner{
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: lightcoral;
+
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: 150px 150px 150px 150px;
+            grid-template-areas: 
+            "header header header header"
+            "nav main main main"
+            "nav main main main"
+            "footer footer footer footer"
+            ;
+
+
+        }
+        div#cabeçalho{
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: aqua;
+
+            
+            grid-area: header;
+            
+
+        }
+
+        div#principal{
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: aqua;
+
+            grid-area: main;
+
+        }
+        div#rodape{
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: aqua;
+
+            grid-area: footer;
+    
+
+        }
+        div#lateral{
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: aqua;
+
+            grid-area: nav;
+
+        }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Grid-Layout</h1>
+    </header>
+    <main>
+        <p>Grid layout é uma matéria relativamente simples que tem por finalidade definir o layout principal da página através de grades que se ajustam de forma responsiva. Diferentemente das flex-box que se comportam como fluido, a grid trabalha de forma amarrada, parecido com um tabela.</p>
+        <article><!--Conteiner-->
+        <h2>Conteiner</h2>
+        <p>Assim como as flex-box quando trabalhamos com grid também temos uma box conteiner que abriga todas as demais box</p>
+        <p>Para isso usamos o seguintes comandos na box conteiner:</p>
+        <ul>
+            <li><strong>display: grid; </strong> Esse comando é que define que essa box é um conteiner que se comportará como grid. Esse comando é obrigatório para aplicar o grid layout</li>
+            <li><strong>grid-template-columns: auto auto auto;</strong> Esse comnado define a quantidade de colunas que esse conteiner terá. Nesse caso foi definido como 3 colunas de tamanho adaptável de acordo com a tela. Entretanto, nesse caso se limita ao contúdo da box interna, quer dizer que quando não for possível reduzir mais seu conteúdo, ela irá gerar um overflow. </li>
+            <p>
+                Esse comando parece um shothand, pois cada auto ou tamanho definido ( ex.: 150px auto auto) que digitar irá criará automanticamente uma nova coluna 
+            </p>
+            <p>Por padrão ele o conteiner vem definido para uma coluna em auto</p>
+            <li><strong> grid-template-rows: 150px;</strong> Semelhantes ao comando de cima só que esse funciona com colunas.Nesse caso como foi colocado apenas um 150px apenas a primeira linha terá 150px as demais ficaram como auto. </li>
+            <p>
+                A diferença é que esse por padrão assume quantas linhas forem necessária para a quantidade de box internas que existirem no conteiner.
+            </p>
+            <p>Caso defina quatro linhas de 150px e duas colunas auto, nesse caso uma quinta linha seria criada abrigando duas box com tamanho auto.</p>
+            <li><strong>column-gap: </strong> Essa propriedade define um espaço padrão para ficar entre as colunas de box internas. Ela funciona como a justify-content: space-between da flex box</li>
+            <li><strong>row-gap:</strong> Essa define um espaçamento padrão entre as linha da grid. Ela funciona como a align-content: space-between; da flex-box</li>
+            <li><strong>gap</strong> Essa é como uma shothand onde podemos definir os dois espaçamentos acima em uma só linha, sendo a primeira referente a linha e o segundo referente a coluna.</li>
+            <p>Vale ressaltar que caso defina apenas um valor, esse valor será aplicado aos dois espaçamentos</p>
+        </ul>
+        /* column-gap: 5px ;
+        row-gap: 5px;*/
+        gap: 5px 10px;
+    </article>
+    <article>
+        <h2>itens</h2>
+        <p>Vamos começar agora a falar sobre propriedade de itens da grade. Itens entende-se as box internas.</p>
+        <ul>
+            <li><strong>grid-column-start: 1</strong>De forma define em qual coluna esse item irá começar. Use o html testes para melhor compreensão.</li>
+            <li><strong>grid-column-end: 2;</strong> Define até qual coluna esse item irá se esticar.Porém ele não inclui a coluna ele vai apenas até. Nessa caso como está até a coluna dois, mudaria absolutamente nada. Mas se fosse até a 3 o item esticaria absorvendo o espaço da coluna 2 </li>
+            
+            <li><strong>grid-column: 1 / span 3;</strong> Esse comando é como uma shothand dos 2 citados anteriormente onde o primeiro número refere-se a coluna onde o item começa e o sedundo onde ele acaba.</li>
+            <p>Note de nesse caso foi adicionado um span antes do segundo número. Esse span serve apenas para incluir a coluna então nesse caso ele absorve a coluna 3.</p>
+            <p>Importante ainda ressaltar que esse span só pode ser usados em coluna, não funciona em rows como veremos mais a frente.</p>
+            Ressalto ainda que esse span pode ser aplicado em grid-column-end também e que não é brigatório em grid-column, foi só um exemplo.
+            <li><strong>grid-row-start: 1</strong> Idêntico ao grid-column-start: só que nesse caso trata-se de linha </li>
+            <li><strong>grid-row-end: 1</strong> Idêntico ao grid-column-end: só que nesse caso trata-se de linha </li>
+            <li><strong>grid-row: 1/3;</strong> Idêntico ao grid-column: só que nesse caso trata-se de linha e não aceita o span</li>
+            <li><strong>grid-area: 1/1/2/2;</strong>Difícil pra caralho PQP. Nesse caso o 1º item permaneceria no lugar inalterado, mas se aplicar essa configuração em qualquer outro item ele tomará o lugar do primeiro item. Mas isso é uma espécie de shothand. A ordem dos itens são:
+                <ol>
+                    <li>grid-row-start</li>
+                    <li>grid-column-start</li>
+                    <li>grid-row-end</li>
+                    <li>grid-column-end</li>
+                </ol> 
+            </li>
+        </ul>
+       
+    </article>
+    <article><!--Grid-template-areas-->
+    <h2>Grid-template-areas</h2>
+    <p>Esse é o sonho do criador de sites. Enfim algo simples e prático para criar layout de paginas</p>
+    <p>Essa propriedade funciona da seguinte forma:</p>
+    <p>Definimos a pripriedade grid-template-area com o seguinte comandos</p>
+    <p><strong>No body: </strong></p>
+<div class="pre">
+    
+        <pre>
+    
+    &lt;div id="conteiner">
+        &lt;div id="cabeçalho">Cabeçalho&lt;/div>
+        &lt;div id="principal">Principal&lt;/div>
+        &lt;div id="rodape">Rodapé&lt;/div>
+        &lt;div id="lateral">Lateral&lt;/div>
+    &lt;/div>
+    
+        </pre>
+    
+</div>
+<p><strong>No head:</strong></p>
+    <div class="pre">
+        <pre>
+
+div#conteiner{
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: lightcoral;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-areas: 
+    "header header header header"
+    "nav main main main"
+    "nav main main main"
+    "footer footer footer footer"
+    ;
+
+
+}
+div#cabeçalho{
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: aqua;
+
+    
+    grid-area: header;
+    
+
+}
+
+div#principal{
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: aqua;
+
+    grid-area: main;
+
+}
+div#rodape{
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: aqua;
+
+    grid-area: footer;
+
+
+}
+div#lateral{
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: aqua;
+
+    grid-area: nav;
+
+}
+        </pre>
+    </div>
+<p><strong>Exemplo:</strong></p>
+    <div id="conteiner">
+    
+        <div id="cabeçalho">Cabeçalho</div>
+        <div id="principal">Principal</div>
+        <div id="rodape">Rodapé</div>
+        <div id="lateral">Lateral</div>
+    </div>
+    
+
+    </article>
+
+<a href="exemplos/testes.html" target="_blank">Link para testes</a>
+    </main>
+    <footer>
+        <h1>Material de Apoio</h1>
+        <a href="https://youtube.com/playlist?list=PLx4x_zx8csUi47Bnugpk78nqJN6rYvEnV&si=CCsigJAxypbNd1d8" target="_blank">Link para playlist completa</a> Curso completo de HTML e CSS do CFBCursos
+        <ol>
+           
+            <li><a href="https://youtu.be/jb_j6fyQitQ?si=jwGRe94o2XL6HChb">Criando layout em grades CSS</a></li>
+            <li><a href="https://youtu.be/lrtkPCRamvE?si=WMaFX3Ymwp-Aj5uL">Espaçamento entre célula(GAP)</a></li>
+            <li><a href="https://youtu.be/UuODWpcYo30?si=Qop2TOPLtESAcI-M">Posição inicial e final dos elementos</a></li>
+            <li><a href="https://youtu.be/GhgyMmYbQ6o?si=sKszuN9dItov7LH3">Propriedade grid-area</a></li>
+            <li><a href="https://youtu.be/XT3pF7ivpQw?si=NVCYTHC4Y0fDjjVT">Propriedade grid-template-area</a></li>
+        </ol>
+       
+        
+                 
+            <hr>
+            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+           
+        
+    </footer>
+    
+</body>
+</html>
