@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Índice com todas as matérias e vídeos que precisa para aprender tudo sobre htlm e CSS">
+    <link rel="stylesheet" href="styleteste.css">
+    <title>Índice com grid</title>
+
+</head>
+<body>
+    <header> 
+        <h1>testes</h1>
+        <button><img src="../ex01/menu.svg" alt=""></button>
+    </header>
+    <main>
+        <!--Semântica-->   
+        <section><!--Introdução-->
+        <p>Esse resumo tem por finalidade melhorar a semântica do html ensinada pelo curso em vídeo. Além de explicar um funcionamento de cada tag semântica respondendo perguntas como:</p>
+            <ul>
+                <li>Quando usar?</li>
+                <li>Por que usar?</li>
+                <li>Como fuinciona?</li>
+                <li>E a importância do uso</li>
+            </ul>
+        </section>
+        <p>Quando o navegador inicia ele começa a ler o código html por etapa:</p>
+        <ol>
+            <li>Lê o head, na ordem um linha por vez</li>
+            <li>Lê o body também na ordem e uma linha por vez</li>
+        </ol>
+        <p>Por isso é importante o link para o arquivo CSS está sempre no head pois assim ele pausa o carregamento da página, carrega todos os estilos e depois volta para o html.</p>
+        <section><!--!DOCTYPE-->              
+            <h4>&lt;!DOCTYPE html></h4>
+            <p>
+                DOCTYPE não é um elemento html, ele apenas informa para o browser que esse html se trata de um html5
+            </p>
+        </section>
+     
+        <section>
+            <h4>lang</h4>
+            <p>Quando criamos um html 5 logo após informar o DOCTYPE ao navegador, nós devemos informar a língua padrão que está sendo usada na página. Por padrão ela vem configurada com "en" de inglês, então sempre devemos muda-la para "pt-br" portugês brasil</p>
+            <p>Isso serve para que mecanismos de busca indiquem a página para pessoas da linguagem correta. Além disso, informar o navegador o idioma da página, pois caso alguém de outra língua navegue em nossa página o navegador poderá oferecer a opção de tradução correta.</p>
+        </section>
+            <article><!--head-->
+                <section><!--Introdução-->
+                    
+                    <h2>head</h2>
+                    <p>head é a parte onde fica toda as configurações iniciais de um html, aqui é onde declaramos configurações que darão infomações importantes para os motores de buscas e entrw outras configurações.</p>
+                    
+                </section>         
+                <section><!--title-->
+                    
+                    <h4>&lt;title>xxx&lt;/title></h4>
+                    <p>Title Define o título que será exibido na aba do navegador. Porém muito mais importante que isso é que ele é um dos elementos que possuem maior peso, maior relevância para os mecanismos  de busca na hora de renkear uma busca orgânica.</p>
+                    <p>Por isso os title devem sempre ser bem significativo e possuir a palavra chave para rankear a pesquisa no Google. Em outras palavras essa tag faz parte do marketing.</p>
+                    
+                </section>
+                <section><!--style-->
+                    <h4>style</h4>
+                    <p>O style no head é conhecido como Estilo CSS3 Interno deve ser evitado e usado apenas quando para modificações muito específica daquela página e que nenhuma outra possa ter.</p>
+                    <p>Mais importante ainda essa style no head não pode ser influenciada por estilos externo. Então essa deverá ser um estilo que nao descaracterize a página em relação ao resto do site. Para isso devemos evitar usar algumas propriedade de estilo nesse estilo interno como:</p>
+                    <ul>
+                        <li>Cores</li>
+                        <li>Border</li>
+                        <li>font-family</li>
+                    </ul>
+    
+                </section>
+                <article><!--sub-artigo: Metatag-->
+                    <section><!--Introdução-->
+                        
+                        <h3>metatag</h3>
+                        <p>Metatags servem para fazermos as configurações do próprio documento no documento.</p>
+                        
+                    </section>
+                    <section><!--charset-->
+                        <h4>charset</h4>
+                        <p>Essa configuração meta definhe qual padrão de caracteres usaremos em nossa página, é como definir qual será a biblioteca usada para identificar o caracteres que usaremos na nossa página. No Brasil devemos usar sempre o UTF-8 pois é o que engloba acentuações, til, c cidilha enfim. </p>
+                        <p>Quando usamos o charset errado o navegador não interpreta esses caracteres e a página fica cheia de erros no texto..</p>
+                        <p>O comando:</p>
+                        <div class="pre">
+                            <pre>
+    
+        &lt;meta charset="UTF-8">
+                            </pre>
+                        </div>
+                    </section>
+                    <section><!--viewport-->
+                        <h4>viewport</h4>
+                        <p>Essa  meta pega a largura do navegador e adapta o conteúdo do site a essa largura tornando o site mais responsivo. </p>
+                        <p>Esse é um dos principais diferenciais do html5</p>
+                        <p>O comando:</p>
+                            <div class="pre">
+                                <pre>
+    
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                </pre>
+                            </div>
+                        
+                    </section>
+                    <section><!--description-->
+                        <h4>description</h4>
+                        <p>Essa meta é muito importante para rankear bem noss conteúdo nos mecanismos de busca, pois ela é o que aparece na descrição do nosso site no Google logo abaixo do título </p>
+                        <p> Vale apena estudar um pouco de marketing digital para preencher essa descrição</p>
+                        <p>O comando:</p>
+                        <div class="pre">
+                            <pre>
+    
+        &lt;meta name="description", content="Tudo que você precisa conhecer sobre tags semântica do html5">
+                            </pre>
+                        </div>
+                        <p class="mark">Das 3 metas que vimos até agora essa é a primeira que não vem por padrão quando digitamos"!" para iniciar um doc html 5. Porém ela é uma excelente prática, que dever ser adotada em todo site que criarmos</p>
+                    
+                    </section>
+                </article><!--Fim metatag-->
+            </article><!--Fim head-->
+            <article><!--body-->
+                <h2>body</h2>
+                <section>
+                    <h3>header</h3>
+                    <p><strong>Cabeçalho:</strong> A porta de entrada do site, a primeira coisa que o cliente vê ao carregar a página. Deve ser sempre bem feita.</p>
+                    <p>Entretanto é possível usar essa tag em article no meio da tag main  ou section, tudo vai depender da necessidade</p>
+                </section>
+                <section>
+                    <h3>main</h3>
+                    <p><strong>Principal: </strong> É onde fica o conteúdo principal do site o foco.</p>
+                </section>
+                <section>
+                    <h3>footer</h3>
+                    <p><strong>Rodapé: </strong> Uma das principais tag semânticas de uma página, pois essa define o local do rodapé e deixamos algumas informções que não possuem relação alguma com o conteúdo principal pois é do mesmo nível de main</p>
+                </section>
+                <section>
+                    <h3>h1 ... h6</h3>
+                    <p>Títulos são uma das tag mais usadas do html e a única função desse número e definir a Hierarquia entre eles. Para que o mecanismos de busca saiba que se trata de um assuntos dentro de um contexto maior no seu site</p>
+                </section>
+                <section>
+                    <h3>nav</h3>
+                    <p>É como um conteirner que indica ao mecanismos de busca que todos os itens ali dentro são itens de navegação do site </p>
+                    <p></p>
+                </section>
+                <section>
+                    <h3>article</h3>
+                    <p>Consulte o sites <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/article">MDN web docs</a> para mais informações sobre esse e todas as outras tag semânticas</p>
+                    <p>Um dos elementos que mais geram confusão no uso. Essa tag foi criada no html assim como: 
+                        <ul>
+                            <li>header</li>
+                            <li>main</li>
+                            <li>footer</li>
+                            <li>section</li>
+                            <li>aside</li>
+                        </ul>
+                    </p>
+                    <p>Porém as mais confusas são article e section. Tentando explicar article de forma simplificada. Essa tag deverá ser usada sempre que for um assunto independente, essa é a palavra chave para definir article <strong>assunto independente</strong></p>
+                    <p>Se você escreve um trecho do seu site e você consegue retira-lo dali e o site continua fazendo sentido provavelmente está falando de um article. </p>
+                    <p>Outra forma de indentifica-lo é que o article geralmente vem com um título de alto valor dentro da página como um h1 h2 ou h3.</p>
+                </section>
+                <section>
+                    <h3>section</h3>
+                    <p>Outro elemento que gera muita confusão na hora de criar um site.</p>
+                    <p>Por mais que em teoria ele seja o oposto ao article ele se confunde muito com o próprio article. A section deve ser sempre aquele trecho que pertence a algum outro trecho no site ele também vem acompanhado de títulos porém de menor relevância como um h3 em diante</p>
+                    <p>A section nunca deve ser usada no lugar de div pois div não é semânticas</p>
+                </section>
+                <section>
+                    <h3>aside</h3>
+                    <p>Nunca usei mas em teoria é um assunto paralelo.</p>
+                    <p> Imagino que seja como falar para comprar uma baedeira x no meio de uma receita de bolo.</p>
+                    <p></p>
+                </section>
+                <section>
+                    <h4>p</h4>
+                    <p> Paragráfo</p>
+                    <p></p>
+                </section>
+                <section>
+                    <h4>buttom</h4>
+                    <p><strong>Botão</strong> Essa tag diz que aquele link é um botão e é ótima para usar o CSS </p>
+                   
+                </section>
+                <section>
+                    <h4>a</h4>
+                    <p><strong>HyperLinks: </strong> Cria HyperLinks para sites externo ou conteúdos internos</p>
+                    <p></p>
+                </section>
+                <section>
+                    <h4>ul / ol</h4>
+                    <p><strong>Lista não ordenada: </strong> Cria uma lista não ordenada</p>
+                    <p><strong>Lista ordenada: </strong> Cria uma lista ordenada</p>
+                </section>
+               
+               
+    
+            </article>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+       
+    
+        <h1>Resumo aula do curso Gustavo Guanabara</h1>
+            <p>Quando cria-se um site em HTML 5(ou HTML Semântico) não se faz modificação de cores formatos de textos ou efeitos visuais utilizando o HTML, esse tipo de efeitos/embelezamento da página é feito usando o CCS que veremos posteriormente.</p> 
+            <p>Mas por que disso? </p>
+            <p>Isso é feito pra ter funcionalidades e não como apenas leitura, pois se deseja destacar algo no texto, é porque aquilo tem algum significado especial logo ele pode ter uma funcionalidade uma praticidade para o usuário final. Essas mudanças do formato antigo é para que o programa também saiba do que se trata cada item.</p>
+            <p>Por exemplo: quando digitamos um endereço invés de escrever sublinhado com &lt;u&gt;: </p>
+            <p><u>rua fernandes leão, 67, vaz lobo , Rio de janeiro, RJ</u> </p>
+            <p>Nós escrevemos como &lt;address&gt;: </p>
+            <address> rua fernandes leão, 67, vaz lobo , Rio de janeiro, RJ</address>
+            <p>Assim um usuário em um smartphone pode simplesmente clicar no endereço, já abrir no Maps e ir para o local.</p>
+            <p>Por isso os títulos são escritos dentro de &lt;h1&gt;, invés de apenas mudar para negrito e aumanetar ou diminuir a fonte. 
+    
+            </p>
+            <p>Futuramente ao usar CCS ou Java Script poderemos usar essas funções para gerar ações mais intuitivas para o cliente.</p>
+    
+            <h3>Hierarquia de Títulos</h3>
+                <p>A Hierarquiade títulos é a organização de títulos e subtítulos como já vimos anteriormente &lt;h1&gt; é o comando usado para criar título porém  existe também &lt;h2&gt; ,&lt;h3&gt; ,&lt;h4&gt; ,&lt;h5&gt; e &lt;h6&gt; que são usados como subtítulos de subtítulos até no máximo a 6ª Hierarquia </p>
+                <mark>
+                    <strong>Atalho: <br>
+                        Para ganhar velocidade</strong>: Quando quiser usar uma tag sobre uma frase já digitada como em negrito basta: apertar "ctrl + shift + p" digitar abb e selecionar "Wrap with abbreviantion" depois digita a Tag que desejar &lt;b&gt; apenas a letra "b" e "enter". <br>
+                    Ou se ja tiver usado esse atalho recentemente basta digitar "ctrl + shift + p" &rarr;"Enter"&rarr; a letra da tag que deseja usar e&rarr; "Enter".
+                </mark> 
+        </main>
+    <nav>
+        <h2>Módulo 03</h2>
+        <ul class="capitulos">
+            
+            <li><!--Capítulo 18 - Git e GitHub-->
+                <h3><a href="modulo-03/capitulo-18/capitulo-18.html" target="_blank">Capítulo 18 - Git e GitHub</a></h3>
+                <ul class="assuntos">
+                    <li><strong>O que é Git e GitHub?</strong></li>
+                    <li><strong>Instalando GitHub</strong></li>
+                    <li><strong>Criando conte no GitHub</strong></li>
+                    <li><strong>Primeiro Repositório Git e GitHub</strong></li>
+                    <li><strong>Gerenciando Repositórios GitHub</strong></li>
+                    <li><strong>Hospedando site gratuitamente com GitHub Pages</strong></li>
+                    <li><strong>Manutenção em sites Hospedados no GitHub</strong></li>
+                    <li><strong>Recursos Sociais do GitHub</strong></li>
+                    <li><strong>Clonagem de repositórios</strong></li>
+                    <li><strong>GitHub em vários PCs</strong></li>
+                    <li><strong>Curso completo e Avançado de GitHub</strong></li>
+                </ul>
+            </li>
+            <li><!--Capítulo 19 - Background-->
+                <h3><a href="modulo-03/capitulo-19/capitulo-19.html" target="_blank">Capítulo 19 - Background</a></h3>
+                
+                <ul class="assuntos">
+                    <li><strong>Download das imagens do capítulo</strong></li>
+                    <li><strong>Colocando imagem no fundo do site</strong></li>
+                    <li><strong>Imagens que se repetem</strong></li>
+                    <li><strong>Configurando Posição de imagem no fundo do Site</strong></li>
+                    <li><strong>Mudando tamanho da imagem no fundo do Site</strong></li>
+                    <li><strong>Background-attachment e Shothands</strong></li>
+                    <li><strong>Centralizando Box vertical e horizontal</strong></li>
+                </ul>
+            </li>
+            <li><!--Capítulo 20 - Projeto Cordel-->
+                <h3><a href="modulo-03/capitulo-20/capitulo-20.html" target="_blank">Capítulo 20 - Projeto Cordel</a></h3>
+                
+                <ul class="assuntos">
+                    <li><strong>Apresentação projeto Cordel</strong></li>
+                    <li><strong>Download de arquivos para o projeto</strong></li>
+                    <li><strong>Ajuste do HTML do Projeto</strong></li>
+                    <li><strong>Ajuste do CSS do Projeto</strong></li>
+                    <li><strong>Tamanho de fonte com Viewport</strong></li>
+                    <li><strong>Efeito Parallax</strong></li>
+                    <li><strong>Hospedando projeto de graça no GitHub</strong></li>
+    
+                    </ul>
+            </li>
+            <li><!--Capítulo 21 - Tabelas-->
+            <h3><a href="modulo-03/capitulo-21/capitulo-21.html" target="_blank">Capítulo 21 - Tabelas</a></h3>
+            
+                <ul class="assuntos">
+                    <li><strong>Primeira Tabela</strong></li>
+                    <li><strong>Tabelas</strong></li>
+                    <li><strong>Alinhando conteúdos</strong></li>
+                    <li><strong>Tabelas Grandes</strong></li>
+                    <li><strong>Scope e Capition</strong></li>
+                    <li><strong>Zebrando Tabelas</strong></li>
+                    <li><strong>Cabeçalho Fixo</strong></li>
+                    <li><strong>Mesclar Celula</strong></li>
+                    <li><strong>Desafios</strong></li>
+                    <li><strong>Exemplo com todo ensinamento até aqui</strong></li>
+                    <li><strong>Escopo de grupo</strong></li>
+                    <li><strong>Desafio 02</strong></li>
+                    <li><strong>Colgroup</strong></li>
+                    <li><strong>Tabelas Responsivas</strong></li>   
+                </ul>
+            </li> 
+        </ul><!--Módulo 03-->
+    
+    </nav>
+    <footer></footer>
+</body>
+</html>

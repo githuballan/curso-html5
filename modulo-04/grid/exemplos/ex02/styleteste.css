@@ -1,0 +1,272 @@
+@charset "UTF-8";
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+@media screen and (max-width: 550px){
+
+    nav{
+        display: none;
+    }
+    body{
+        gap: 0px 0px;
+    }
+    main{
+        border: 0px;
+    }
+
+    header>button{
+
+        display: block;
+    }
+
+    button:hover> ul.capitulos{
+        display: block;
+      
+
+    }
+    
+    
+}
+
+button{
+    display: none;
+}
+body{
+    border: 2px solid #000000;
+   
+   
+    /*grid*/
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px 10px;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer"
+    ;
+    justify-content: center;
+
+    /*padrão*/
+    text-align: justify;
+    font-family: Arial, Helvetica, Tahoma, sans-serif;
+    background-color: rgb(216, 191, 143, 0.1);
+    font-size: large;
+    color: #000000;
+   
+    margin: auto;
+    padding: 1px;
+}
+
+header{
+    border: 2px solid #000000;
+    border-radius: 10px;
+
+    grid-area: header;
+
+    width: 100%;
+    height: 100%;
+
+    /*padrão*/
+    max-width: 1300px;
+    padding: 3%;
+    background-image: radial-gradient(circle, #7bd768, #bad5dd);
+    margin: auto;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.342);
+    border-radius: 0% 0% 10px 10px;
+
+  
+}
+
+header>h1
+{
+    background-color: rgba(240, 248, 255, 0);
+    margin-top: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    text-align: center;
+  
+    
+}
+
+main{
+    border: 2px solid #000000;
+    border-radius: 10px;
+    
+    
+    grid-area: main;
+    flex: auto;
+
+    max-width: 900px;
+    min-width: 300px;
+    
+     /*padrão*/
+    text-align: justify;
+    padding: 20px 20px 20px 20px;  
+
+}
+
+nav{
+    border: 2px solid #000000;
+    border-radius: 10px;
+
+    grid-area: nav;
+    max-width: 300px;
+
+   
+
+}
+
+ul.assuntos{
+    display: none;
+
+    border: 2px solid #18b82d;
+    border-radius: 10px;
+
+}
+
+ul.capitulos>li{/*conteiner*/
+    margin-top: 10px;
+
+    border: 2px solid #b81818;
+    border-radius: 10px;
+
+
+    display: flex;
+    justify-content: center;
+
+    
+
+}
+ul.capitulos>li:hover>ul{
+
+    position: fixed;
+    left:30%;
+    display: block;
+    list-style-type: none;
+    background-color: rgb(241, 239, 234);
+    
+    transition: 1s;
+}
+
+footer{
+    border: 2px solid #000000;
+    border-radius: 10px;
+
+    grid-area: footer;
+
+    /*padrão*/
+    margin-top: 200px;
+    background-color: #ffd3d3;
+    padding-bottom: 100px;
+
+}
+
+/*-------------BOXE pequenas--- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+code
+{
+    margin: 15px;
+    font-size: 1.4em;
+}
+
+ul, ol
+{
+    padding-inline-start: 25px;
+    margin: 5px;
+
+}
+div.pre{
+    width: 97%;
+    overflow-x: auto;
+}
+pre{
+    font-size: 1.3em;
+    margin-top: 2px;
+}
+/*pre
+{
+    font-size: 1.3em;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: -10px;
+ }
+*/
+ li
+ {
+    margin-top: 15px;
+ }
+
+strong
+{
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+div.video>iframe
+{
+    position:absolute;
+    top: 0%;
+    left:0%;
+    width: 100%;
+    height: 100%;
+}
+
+p
+{
+    margin: 7px;
+    text-indent: 3em;
+}
+
+a::after
+{
+        
+    content: '\00A0\1F517';
+}
+
+
+
+img
+{
+    max-width: 100%;
+    align-self: center;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+h1 
+{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #7bd768;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h2 
+{
+    background-image: linear-gradient(90deg, #567eb942 50%, #7bd7685f);
+    font-size: 1.4em;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 0px #00000055;
+
+}
+    
+
+    h3, h4, h5, h6{
+    font-size: 1.2em;
+}
+
+h3
+{
+    font-size: 1.3em; 
+    border: 2px solid #00000055;   
+    border-radius: 5px;
+    padding: 5px;    
+    box-shadow: 1px 1px 2px 0px #00000055;
+}
