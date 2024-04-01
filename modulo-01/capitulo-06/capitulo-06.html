@@ -3,58 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../capitulo-12/style.css">
     <title>Capítulo 06</title>
 </head>
 <body>
-    <center>
-        <h2>Capítulo 06</h2>
-    </center>
-    <a href="../../indice de links .html"> voltar para índice</a> <br>
-    <h3>Imagens</h3>
-    <P> No HTML usamos basicamente 3 tipos de imagens JPG, PNG e GIF. Cada uma tem uma característica única que a trona perfeita para cada finalidade: <br>
-    <b>JPG:</b> A principal característica do formato JPG é seu tamanho reduzido, permitindo que a pagina carregue em alta velocidade. Vale ressaltar que a velocidade de carregamento é uma das principais característica que um site deve ter. <br>
-    <b>PNG:</b> Esse formato tem como principal característica a capacidade da imagem ficar trasparente. Isso permite efeitos que dão um aspecto mais profissional ao site. <br>
-    <b>GIF:</b> Esse formato é famoso, ele permite exeibição de imagens sequenciais dando animação ao site de forma leve, sem pesar no carregamento.  <br>
-    <b>Cuidados</b>
-    Ao trabalhar com imagens baixadas na internet é importante nunca pegar imagens com direitos autorais, pois isso gera processos que pode facilmente acabar com uma carreira além de gerar direito a idenizações de alto valor <br>
-    Existem algumas formas de buscar imagens na internet sem direitos autorais ou com permições bem brandas.
-    1º no prórpio google: pela opção de busca de imagens você pode ir em Ferramentas &rarr; Direitos de Uso &rarr; Licenças Creative Commons. Assim só aparecerá imagens que podem de usadas para fins comerciais <br>
-    Há também os seguintes sites especializados em imagens com domínio público: <br>
-    <b>• UnSplash </b> Pesquisar somente em inglês.<br>
-    <b>• Pexels </b><br>
-    <b>• FreePik </b><br>
-    <b>• Rawpixel </b><br>
-    <b>• Pixabay </b><br>
-    <b>• Libreshot</b> <br>
-    <b>• Wikimedia Commons</b> <br>
-    Outro Ponto de Suma imortância ao trabalhar com imagens é sempre reduzir o tamanho delas para o menor possível sem afetar a boa aparência dela, pois caso não faça isso o site pode ficar extremamente pesado e gerar uma experiência de carregamento lenta. <b>OBS.:</b> uma página deve levar no máximo 6 seg para carregar, se levar mais que isso o usuário desiste. <br>
-    Existem diversos programas de Manipulação de imagens e grande maioria são pagos, entretanto usaremos aqui o GIMP ele tem todas as funcionalidades que precisamos e é gratuituo. <br>
-    <B>Reduzindo Tamanho de imagens:</B> <br>
-    <b>Resolução:</b>  As resoluções ideais são: <br>
-    1200 para imagens que ocuparam toda a extenção da tela e; <br>
-    650 para imagens que apenas correram entre textos <br>
-    <img src="../../imagens/escritorio 500 jpeg.jpg" alt=" treino"><br> <!-- Atalho para carregar imagens 1º digita "img" e "enter" depois clica entre as primeiras aspas após "src" e aperta "ctrl" e "espaço" abrirá a pasta onde está o arquivo html que está desenvolvendo está localizado, por isso é importante colocar na mesma pasta que se encontra o arquivo uma pasta só para as imagens que serão usadas no site, após isso basta selecionar a imagem que será carregada. -->Imagem acima está com 500 de largura <br>
-    Já a imagem abaixo está com 1200
-    <img src="../../imagens/escritorio 1200 jpeg.jpg" alt="Imagem de treino"> <br>
-    <b>OBS.: A imagem não se adapta ao tamanho de tela como os textos, pelo que está sendo observado até agora. </b> <br>
-    <mark>
-        <strong>Atalho</strong> <br>
-        Para carregar imagens 1º digita "img" e "enter" depois clica entre as primeiras aspas após "src" e aperta "ctrl" e "espaço" abrirá a pasta onde está o arquivo html que está desenvolvendo está localizado, após isso basta selecionar a imagem que será carregada. <br>
-    </mark>
-    Tamabém é importante descrever o conteúdo da imagem nas aspas após o alt= pois isso serve para ques as pessoas com deficiência visual possam ouvir sobre o que se trata a imagem que está sendo carregada na sua tela. <br>
-    <b>Boas Práticas:</b> Criar uma pasta somente para imagens na mesma pasta onde está desenvolvendo seu site e renomear as imagens de acordo com o conteúdo e aplicação delas noa site. <br>
-    Outra forma de carregar imagens para nosso site é usando imagens de outros sites, para isso basta ir na imagem desejada no tal site, cliacar com botão direito sobre a imagem e clicar em copiar endereço da imagem (ou algo parecido). Após isso basta colar esse endereço entre as aspas após "src=" que vimos anteriormente, vale lembrar que nesse procedimento devemos preecher as aspas após o "alt=" normalmente. <b>OBS.:</b> Esse processo cria uma dependência de um link externo, logo se o link externo cair ou o dono da imagem substituíla seu site ficará com um ERRO no carregamento daquela imagem.
+    <header>
+        <h1>Capítulo 06</h1>
+    </header>
+  <main>
 
-    <h3>FAVICON</h3>
-        Caso não saiba o que é um Favicon ele é o sìmbolo que aparece no site ap lado do Title como na imagem abaixo mostrando o Favicon do Google: <br> <img src="imagens/ex favicon.jpg" alt="Ex de favicon">  <br> 
-        Para inseririrmos um favicon em nosso site é fácil. basta ir em head logo antes de title e digitar link selecionar a opção: "<b>Link:favicon</b>" depois clicar entre as aspas logo após "href=""" e executar o mesmo procedimentousado para caregar um imagem("ctrl" + espaço &rarr; selecionar a imagem tipo ICO
-        ) e pronto. <br>
-        <b>Como criar uma imagem tipo .ICO:</b> <br>
-        Existem alguns sites próprios para baixar imagens no formato .ICO, ou criar, ou até mesmo traformar imagens de .PNG para o formato .ICO. Alguns desses sites são: <br>
-        <b>Favicon.IO:</b> Esse site é um dos melhores pois esse dá a opção de criar um ICO apartir de uma palavra ou abreviação curta, ou criar um ICO apartir de um PNG ou até utilizar um emogi como favicon. <br>
-        <b>Favicon.cc:</b> Nesse site você pode criar seu prórpio ICO <br>
-        <b>IconArchive:</b> Aqui você ja encontra os ICO prontos, basta pesquisar o tema que desejar e baixar o que mais te agradar. <br> 
-        </p>
+      <h2>Imagens</h2>
+      <P> No HTML usamos basicamente 3 tipos de imagens JPG, PNG e GIF. Cada uma tem uma característica única que a trona perfeita para cada finalidade: <br>
+      <strong>JPG:</strong> A principal característica do formato JPG é seu tamanho reduzido, permitindo que a pagina carregue em alta velocidade. Vale ressaltar que a velocidade de carregamento é uma das principais característica que um site deve ter. <br>
+      <strong>PNG:</strong> Esse formato tem como principal característica a capacidade da imagem ficar trasparente. Isso permite efeitos que dão um aspecto mais profissional ao site. <br>
+      <strong>GIF:</strong> Esse formato é famoso, ele permite exeibição de imagens sequenciais dando animação ao site de forma leve, sem pesar no carregamento.  <br>
+
+      <h3>Cuidados</h3>
+      Ao trabalhar com imagens baixadas na internet é importante nunca pegar imagens com direitos autorais, pois isso gera processos que pode facilmente acabar com uma carreira além de gerar direito a idenizações de alto valor <br>
+      Existem algumas formas de buscar imagens na internet sem direitos autorais ou com permições bem brandas.
+      1º no prórpio google: pela opção de busca de imagens você pode ir em Ferramentas &rarr; Direitos de Uso &rarr; Licenças Creative Commons. Assim só aparecerá imagens que podem de usadas para fins comerciais <br>
+      Há também os seguintes sites especializados em imagens com domínio público: <br>
+      <strong>• UnSplash </strong> Pesquisar somente em inglês.<br>
+      <strong>• Pexels </strong><br>
+      <strong>• FreePik </strong><br>
+      <strong>• Rawpixel </strong><br>
+      <strong>• Pixabay </strong><br>
+      <strong>• Libreshot</strong> <br>
+      <strong>• Wikimedia Commons</strong> <br>
+      Outro Ponto de Suma imortância ao trabalhar com imagens é sempre reduzir o tamanho delas para o menor possível sem afetar a boa aparência dela, pois caso não faça isso o site pode ficar extremamente pesado e gerar uma experiência de carregamento lenta. <strong>OBS.:</strong> uma página deve levar no máximo 6 seg para carregar, se levar mais que isso o usuário desiste. <br>
+      Existem diversos programas de Manipulação de imagens e grande maioria são pagos, entretanto usaremos aqui o GIMP ele tem todas as funcionalidades que precisamos e é gratuituo. <br>
+      <strong>Reduzindo Tamanho de imagens:</strong> <br>
+      <strong>Resolução:</strong>  As resoluções ideais são: 
+      <p>1200 para imagens que ocuparam toda a extenção da tela e;
+      </p>
+      <p>650 para imagens que apenas correram entre textos 
+
+        <h3>tag para imagens</h3>
+        <h4>tag img</h4>
+        <p>Para carregar imagem usa-se a tag self-close &lt;img> e utilizamos os seguintes atributos:</p>
+        <ul>
+            <li><strong>src: </strong>Onde coloca o endereço da imagem, para isso basta aperta ctrl+espaço e selecionar a imagem. Caso esteja em pasta anterior basta digitar../ para voltar uma pasta(pode digitar ../ quantas vezes precisar até chega na pasta desejada)</li>
+            <li><strong>alt: </strong>Texto alternativo, ele aparecerá caso por algum motivo a imagem não carregue. Mas pricipalmente, será lida por software de acessibilidade em caso de pessoes com deficiência visual</li>
+            <li><strong>width: </strong>Define a largura da que a imagem será exbida e a altura segue a proporção.</li>
+            <li><strong>height: </strong>Define a altura da que a imagem será exbida e a largura segue a proporção.</li>
+            <p>Caso use height e width simultaneamente você ditará as proporções</p>
+        </ul>
+        <h4>tag figure</h4>
+        <p>Essa tag trabalha junto com a tag figcaption. Onde a tag figure engloba as tag img e figcaption.</p>
+        <p>A tag figcaption. Serve para descrever a imagem mas diferente das tag alt ela carrga junto com a imagem.</p>
+        <p>Veja um exemplo de código e suas aplicações abaixo</p>
+        <div class="pre">
+            <pre>
+
+&lt;figure>
+
+    &lt;img src="../../imagens/escritorio 500 jpeg.jpg" alt=" treino">
+    &lt;figcaption>Imagem de 500px de largura &lt;/figcaption>
+&lt;/figure>
+            </pre>
+        </div>
+        <div class="pre">
+                    
+            <figure>
+            <img src="../../imagens/escritorio 500 jpeg.jpg" alt=" treino">
+            <figcaption>Imagem de 500px de largura </figcaption>
+            </figure>
+        </div>
+      <div class="pre">
+          
+          
+          <figure>
+            <img src="../../imagens/escritorio 1200 jpeg.jpg" alt=" treino">
+            <figcaption>Imagem de 1200px de largura </figcaption>
+          </figure>
+          
+      </div>
+      <mark>
+          <strong>Atalho</strong> <br>
+          Para carregar imagens 1º digita "img" e "enter" depois clica entre as primeiras aspas após "src" e aperta "ctrl" e "espaço" abrirá a pasta onde está o arquivo html que está desenvolvendo está localizado, após isso basta selecionar a imagem que será carregada. 
+          <br>
+      </mark>
+      Tamabém é importante descrever o conteúdo da imagem nas aspas após o alt= pois isso serve para ques as pessoas com deficiência visual possam ouvir sobre o que se trata a imagem que está sendo carregada na sua tela. <br>
+      <strong>Boas Práticas:</strong> Criar uma pasta somente para imagens na mesma pasta onde está desenvolvendo seu site e renomear as imagens de acordo com o conteúdo e aplicação delas noa site. <br>
+      Outra forma de carregar imagens para nosso site é usando imagens de outros sites, para isso basta ir na imagem desejada no tal site, cliacar com botão direito sobre a imagem e clicar em copiar endereço da imagem (ou algo parecido). Após isso basta colar esse endereço entre as aspas após "src=" que vimos anteriormente, vale lembrar que nesse procedimento devemos preecher as aspas após o "alt=" normalmente. <strong>OBS.:</strong> Esse processo cria uma dependência de um link externo, logo se o link externo cair ou o dono da imagem substituíla seu site ficará com um ERRO no carregamento daquela imagem.
+<article>
+    
+          <h2>FAVICON</h2>
+              Caso não saiba o que é um Favicon ele é o sìmbolo que aparece no site ap lado do Title como na imagem abaixo mostrando o Favicon do Google: <br> <img src="../../imagens/ex favicon.jpg" alt="Ex de favicon">  <br>
+              Para inseririrmos um favicon em nosso site é fácil. basta ir em head logo antes de title e digitar link selecionar a opção: "<strong>Link:favicon</strong>" depois clicar entre as aspas logo após "href=""" e executar o mesmo procedimentousado para caregar um imagem("ctrl" + espaço &rarr; selecionar a imagem tipo ICO
+              ) e pronto. <br>
+              <strong>Como criar uma imagem tipo .ICO:</strong> <br>
+              Existem alguns sites próprios para baixar imagens no formato .ICO, ou criar, ou até mesmo traformar imagens de .PNG para o formato .ICO. Alguns desses sites são: <br>
+              <strong>Favicon.IO:</strong> Esse site é um dos melhores pois esse dá a opção de criar um ICO apartir de uma palavra ou abreviação curta, ou criar um ICO apartir de um PNG ou até utilizar um emogi como favicon. <br>
+              <strong>Favicon.cc:</strong> Nesse site você pode criar seu prórpio ICO <br>
+              <strong>IconArchive:</strong> Aqui você ja encontra os ICO prontos, basta pesquisar o tema que desejar e baixar o que mais te agradar. <br>
+              </p>
+    
+</article>
+  </main>
 
         <hr> <h1>Materiais utilizados</h1>
         <strong><a href="../../../material-de-apoio/06 - Imagens e Favicon.pdf" target="_blank"> Material em PDF</a></strong>

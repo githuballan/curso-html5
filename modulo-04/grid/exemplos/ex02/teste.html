@@ -12,6 +12,16 @@
         nav{
             grid-area: nav;
             display: none;
+
+            position: fixed;
+            width: 270px;
+            top: 0px;
+            left: 0px;
+            background-color: #FBF8F3;
+            
+            max-height: 90vh;
+            overflow-y: scroll;
+
         }
        
         main{
@@ -21,13 +31,18 @@
         header>button{
     
             display: block;
-        }
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 335px;  
+            
+            border:2px solid #0000ff;
+           
+            
     
-        button:hover> ul.capitulos{
-            display: block;
-          
-    
         }
+
         body{
        
         grid-template-columns: auto;
@@ -42,21 +57,30 @@
         }
     }
 </style>
-    <script>    
+<script>    
 
-        function clickMenu(){
-            if (menu.style.display == 'block'){
-                menu.style.display = 'none'
-                } else {
-                menu.style.display= 'block' }
-        }
-    </script>
+    function clickMenu(){
+
+        if (menu.style.display == 'block'){
+            menu.style.display = 'none'
+            } else {
+            menu.style.display= 'block' }
+    }
+   
+    function clickDetalhes(){
+
+if (ass1.style.display == 'block'){
+    ass1.style.display = 'none'
+    } else {
+    ass1.style.display= 'block' }
+}
+</script>
 
 </head>
 <body>
     <header> 
         <h1>testes</h1>
-       <button onclick="clickMenu()"><img src="../ex01/menu.svg" alt=""></button>
+       <button onclick="clickMenu()" ><img src="../ex01/menu.svg" alt=""></button>
     </header>
     <main>
         <!--Semântica-->   
@@ -284,8 +308,8 @@
         <ul class="capitulos">
             
             <li><!--Capítulo 18 - Git e GitHub-->
-                <h3><a href="modulo-03/capitulo-18/capitulo-18.html" target="_blank">Capítulo 18 - Git e GitHub</a></h3>
-                <ul class="assuntos">
+                <div class="cap"><a href="modulo-03/capitulo-18/capitulo-18.html" target="_blank">Capítulo 18 - Git e GitHub</a> <button onclick="clickDetalhes()" class="detalhes">&darr;</button></div>
+                <ul class="assuntos" id="ass1">
                     <li><strong>O que é Git e GitHub?</strong></li>
                     <li><strong>Instalando GitHub</strong></li>
                     <li><strong>Criando conte no GitHub</strong></li>

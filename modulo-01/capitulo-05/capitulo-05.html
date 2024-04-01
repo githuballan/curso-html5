@@ -1,52 +1,73 @@
-<!DOCTYPE html><!-- Essa linha define o tipo de documento que está sendo criado, nesse caso é o HTML 5
-OBS.:Para iniciar um novo HTML basta digitar "!"e apertar Enter
-OBS2.:O nome do documento está como index pq index significa índice que no html significa dizer que essa é a primeira página do site -->
-<html lang="pt-br"><!--Essa linha mostra o idioma que será usado nessa página, como padrão ela inicia como "en" de english, é importante mudar para o correto. Isso serve para habilitar a função de tradução do navegador-->
-<head><!-- aqui é onde são feitas as configurações iniciais do site-->
-    <meta charset="UTF-8"><!-- Aqui é definido o conjunto de caracteres que erá usado nesse site, no caso o "UTF-8" é o mais completo pois ele engloba todos os caracteres que possuímos no teclado-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Essa linha "viewport" define que o site se ajustará de acordo com o tamanho da tela que o cliente está utilizando, para testar basta reduzir  a largura do navagador e verá que as linha se ajustam automaticamente-->
+   
     <link rel="shortcut icon" href="imagens/Study.ico" type="image/x-icon">
-    <title>Hello World!</title><!---->
+    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <title>Hello World!</title>
 
 </head>
-<body><!-- a área body fica todo oconteúdo do site-->
-
-<center>
-    <h1> Resumo do curso de HTML5</h1>
-</center>
-    Também conhecido como HTML Semântico
-
-    <center>
-        <h2>Capítulo 05</h2>
-    </center>
-    
-        O título do corpo fica dentro de body entre basta escrever &lt;h1&gt; antes e &lt;h1/&gt; depois  
-        <hr> 
-        &lt;hr&gt; traça essa linha horizontal acima
-
-        <p>1º Paragrafo: &lt;p&gt; pula uma linha e inicia um paragrafo e ao finalizar com&lt;/p&gt; ele pula uma linha novamente ante de inciar a próxima linha como pode ver abaixo</p>
-        Já quando escreve &lt;br&gt; ele apenas pula uma linha e inicia outra imediatamente abaixo  como agora:<br>HTML means: Hypertext Markup Language.
-        <h3>Desafio das mensagens:</h3>
-        <p> *Um<br>**Dois<br>***Três<br> ****Quatro</p> ****Quatro <br>***Três <br> **Dois <br> *Um
-        <br> 
-
-    <h2>Caracteres especias</h2>
-        <p>Para adicionar caracteres especias é necessário inserir alguns código. Códigos esses que estão disponíveis na internet, basta pesquisar códigos para caracteres HTML e verificar na lista. <br> Os mais comuns são: &lt; &gt; &reg; &trade; &copy; &uarr; &darr; &larr; &rarr; </p>
-        <p>Também é possível adicionar emogis como: &#x1f596 &#x1f913 &#x996 Para adicionar emogis é neccessário digitar "&#x" e um código que é possível encontrar na EmogiPedia</p> 
+<body>
+    <article id="guanabara">
         
-        <hr> <h1>Materiais utilizados</h1>
-        <strong><a href="../../../material-de-apoio/05 - Caracteres, parágrafos e quebras de linha.pdf" target="_blank"> Material em PDF</a></strong>
-        <h2>Vídeos</h2>
-        <p><a href="https://youtu.be/f6NTJdtEFOc?si=kCSFQiRWVYoFJESH" target="_blank">Parágrafo e Quebras</a></p>
+        <center>
+            <h1> Resumo do curso de HTML5</h1>
+        </center>
+            Também conhecido como HTML Semântico
         
-        <p><a href="https://youtu.be/nhMdFe3WwYc?si=5u3Jd085JwqwnaY4" target="_blank">Símbolos e Emojis</a></p>
-        <p><a href="https://youtu.be/4ynvsrkamt8?si=JgW8aQaq2YMrCyxw" target="_blank">Citações e Códigos</a></p>
-    
-    
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+            <center>
+                <h2>Capítulo 05</h2>
+            </center>
+        
+                O título do corpo fica dentro de body entre basta escrever &lt;h1&gt; antes e &lt;h1/&gt; depois
+                <hr>
+                &lt;hr&gt; traça essa linha horizontal acima
+        
+                <p>1º Paragrafo: &lt;p&gt; pula uma linha e inicia um paragrafo e ao finalizar com&lt;/p&gt; ele pula uma linha novamente ante de inciar a próxima linha como pode ver abaixo</p>
+                Já quando escreve &lt;br&gt; ele apenas pula uma linha e inicia outra imediatamente abaixo  como agora:<br>HTML means: Hypertext Markup Language.
+                <h3>Desafio das mensagens:</h3>
+                <p> *Um<br>**Dois<br>***Três<br> ****Quatro</p> ****Quatro <br>***Três <br> **Dois <br> *Um
+                <br>
+        
+            <h2>Caracteres especias</h2>
+                <p>Para adicionar caracteres especias é necessário inserir alguns código. Códigos esses que estão disponíveis na internet, basta pesquisar códigos para caracteres HTML e verificar na lista. <br> Os mais comuns são: &lt; &gt; &reg; &trade; &copy; &uarr; &darr; &larr; &rarr; </p>
+                <p>Também é possível adicionar emogis como: &#x1f596 &#x1f913 &#x996 Para adicionar emogis é neccessário digitar "&#x" e um código que é possível encontrar na EmogiPedia</p>
+    </article>
+    <article id="full-stack">
+        <header>
+            
+            <h1>Full-stack</h1>
+        </header>
+        <section><!--Nomeclaturas-->
+            <h2>Nomeclaturas</h2>
+                   <ul>
+            <li><strong>Tag: </strong> É tudo aquilo que fica entre os sinais de &lt; &gt;.</li>
+            <p>Existem as tag de abertura e  de fechamento. a única diferença é que a de fechamento usa uma / depois de exemplo: &lt;/tag></p>
+            <p>Além dessa existe a self-close que são as tag que não possuem fechamento elas apenas possuem atributos</p>
+            <li><strong>Atributo: </strong> É o que fica na tag de abertura ou na self-close, eles literalmente atribuem alguma coisa a tag como função, estilo, identificação, entre outros. Exemplo &lt;meta charset="UTF-8"></li>
+            <li><strong></strong></li>
+            <li><strong></strong></li>
+            <li><strong></strong></li>
+                   </ul>
+        </section>
+      
 
+
+    </article>
+        <footer>
+            
+            <hr> <h1>Materiais utilizados</h1>
+            <strong><a href="../../../material-de-apoio/05 - Caracteres, parágrafos e quebras de linha.pdf" target="_blank"> Material em PDF</a></strong>
+            <h2>Vídeos</h2>
+            <p><a href="https://youtu.be/f6NTJdtEFOc?si=kCSFQiRWVYoFJESH" target="_blank">Parágrafo e Quebras</a></p>
+            
+            <p><a href="https://youtu.be/nhMdFe3WwYc?si=5u3Jd085JwqwnaY4" target="_blank">Símbolos e Emojis</a></p>
+            <p><a href="https://youtu.be/4ynvsrkamt8?si=JgW8aQaq2YMrCyxw" target="_blank">Citações e Códigos</a></p>
+            <hr>
+            <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+        </footer>
 
         </body>
         </html>
