@@ -4,32 +4,8 @@
     padding: 0px;
     margin: 0px;
 }
-@media screen and (max-width: 550px){
 
-    nav{
-        display: none;
-    }
-    body{
-        gap: 0px 0px;
-    }
-    main{
-        border: 0px;
-    }
-
-    header>button{
-
-        display: block;
-    }
-
-    button:hover> ul.capitulos{
-        display: block;
-      
-
-    }
-    
-    
-}
-
+@media all{
 button{
     display: none;
 }
@@ -52,7 +28,7 @@ body{
     /*padrão*/
     text-align: justify;
     font-family: Arial, Helvetica, Tahoma, sans-serif;
-    background-color: rgb(216, 191, 143, 0.1);
+    background-color: #FBF8F3;
     font-size: large;
     color: #000000;
    
@@ -135,18 +111,20 @@ ul.capitulos>li{/*conteiner*/
 
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
 
     
 
 }
 ul.capitulos>li:hover>ul{
 
-    position: fixed;
+    position: relative;
     left:30%;
     display: block;
     list-style-type: none;
-    background-color: rgb(241, 239, 234);
+    background-color:#FBF8F3;
     
     transition: 1s;
 }
@@ -269,4 +247,5 @@ h3
     border-radius: 5px;
     padding: 5px;    
     box-shadow: 1px 1px 2px 0px #00000055;
+}
 }

@@ -6,12 +6,57 @@
     <meta name="description" content=" Índice com todas as matérias e vídeos que precisa para aprender tudo sobre htlm e CSS">
     <link rel="stylesheet" href="styleteste.css">
     <title>Índice com grid</title>
+<style>
+    @media screen and (max-width: 550px){
+
+        nav{
+            grid-area: nav;
+            display: none;
+        }
+       
+        main{
+            border: 0px;
+        }
+    
+        header>button{
+    
+            display: block;
+        }
+    
+        button:hover> ul.capitulos{
+            display: block;
+          
+    
+        }
+        body{
+       
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer"
+        ;
+       
+        }
+    }
+</style>
+    <script>    
+
+        function clickMenu(){
+            if (menu.style.display == 'block'){
+                menu.style.display = 'none'
+                } else {
+                menu.style.display= 'block' }
+        }
+    </script>
 
 </head>
 <body>
     <header> 
         <h1>testes</h1>
-        <button><img src="../ex01/menu.svg" alt=""></button>
+       <button onclick="clickMenu()"><img src="../ex01/menu.svg" alt=""></button>
     </header>
     <main>
         <!--Semântica-->   
@@ -233,8 +278,8 @@
                         Para ganhar velocidade</strong>: Quando quiser usar uma tag sobre uma frase já digitada como em negrito basta: apertar "ctrl + shift + p" digitar abb e selecionar "Wrap with abbreviantion" depois digita a Tag que desejar &lt;b&gt; apenas a letra "b" e "enter". <br>
                     Ou se ja tiver usado esse atalho recentemente basta digitar "ctrl + shift + p" &rarr;"Enter"&rarr; a letra da tag que deseja usar e&rarr; "Enter".
                 </mark> 
-        </main>
-    <nav>
+    </main>
+    <nav id="menu">
         <h2>Módulo 03</h2>
         <ul class="capitulos">
             
@@ -304,6 +349,9 @@
         </ul><!--Módulo 03-->
     
     </nav>
-    <footer></footer>
+    <footer>
+
+    </footer>
+   
 </body>
 </html>
