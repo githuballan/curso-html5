@@ -32,6 +32,25 @@
           <h3>Tag semânticas e não semânticas</h3>
           <p>Existem muitas tag que não possuem efeito semântico algum apenas visual e temo algumas semânticas que possuem efeito visual semelhante. Mas o grande PQ da questão é que qd usamos uma tag semântica o mecanismo de busca entende que aquela palavra tem um significado maior para aquele contexto, logo ele levará em consideração ela na hora de ranker o site nas pesquisas. </p>
           <p>Já as tag não semântica não recebem atenção do mecanismos </p>
+          <section>
+        <h3>lang</h3>
+            <p>Quando criamos um html 5 logo após informar o DOCTYPE ao navegador, nós devemos informar a língua padrão que está sendo usada na página. Por padrão ela vem configurada com "en" de inglês, então sempre devemos muda-la para "pt-br" portugês brasil</p>
+            <p>Isso serve para que mecanismos de busca indiquem a página para pessoas da linguagem correta. </p>
+            <p>Além disso, informar o navegador o idioma da página, pois caso alguém de outra língua navegue em nossa página o navegador poderá oferecer a opção de tradução correta.</p>
+            <p>Comando:</p>
+            <div class="pre">
+                <pre>&lt;html lang="pt-br"</pre>
+            </div>
+            <p>É possível também usar em trechos específicos da página que esteja em uma língua diferente da informada no html.</p>
+            <p>Para isso usamos a esse atributo em tag não semânticas como div ou span. a tag vai depender do tamanho do texto</p>
+            <p>Comando:</p>
+            <div class="pre">
+                <pre>&lt;div lang="pt-br"></pre>
+                
+                <pre>&lt;span lang="pt-br"></pre>
+            </div>
+            
+        </section>
     </article>
     <!--Semântica-->   
     <section><!--Introdução-->
@@ -56,12 +75,8 @@
         </p>
     </section>
  
-    <section>
-        <h4>lang</h4>
-        <p>Quando criamos um html 5 logo após informar o DOCTYPE ao navegador, nós devemos informar a língua padrão que está sendo usada na página. Por padrão ela vem configurada com "en" de inglês, então sempre devemos muda-la para "pt-br" portugês brasil</p>
-        <p>Isso serve para que mecanismos de busca indiquem a página para pessoas da linguagem correta. Além disso, informar o navegador o idioma da página, pois caso alguém de outra língua navegue em nossa página o navegador poderá oferecer a opção de tradução correta.</p>
-    </section>
-        <article><!--head-->
+   
+        <article id="head"><!--head-->
             <section><!--Introdução-->
                 
                 <h2>head</h2>

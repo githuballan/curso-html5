@@ -76,7 +76,7 @@ article#guanabara{
 footer
 {
     margin-top: 200px;
-    background-color: #ffd3d3;
+    background-color: #B4D5D3;
     padding-bottom: 100px;
 
 }
@@ -145,11 +145,11 @@ p
     text-indent: 3em;
 }
 
-a::after
+/*a::after
 {
         
     content: '\00A0\1F517';
-}
+}*/
 
 
 
@@ -174,7 +174,7 @@ h1
 
 h2 
 {
-    background-image: linear-gradient(90deg, #567eb942 50%, #7bd7685f);
+    background-image: linear-gradient(90deg, #D1D9E4 50%, #CCE8C5);
     font-size: 1.4em;
     padding: 5px;
     border-radius: 5px;
