@@ -10,8 +10,11 @@
     
 </head>
 <body>
-   <h1>Capítulo 12</h1>
-<h1>Iniciando CSS3</h1>
+<header>
+        <h1>Capítulo 12</h1>
+        <h1>Iniciando CSS3</h1>
+</header>
+<main>
     <h2>Estilo InLine</h2>
     <p>O estilo inline é utilizado para modificar o estilo linha por linha, esse estilo é utilizado é raros  casos onde você precisará de uma modificação muito pontual, como destacar um trecho específico de um texto.
         <br>
@@ -78,38 +81,35 @@ Exemplo:
      </pre>
 </p>
 <h2>Hierarquia de Estilos</h2>
-Como vimos existem 3 formas de aplicar estilos ao site. Porém é possível usar os 3 simultaneamente e por isso existe um Hierarquia entre eles. No caso o HTML prioriza do mais específico para o mas generalizado. <br>
-Veja o exemplo abaixo na ordem de prioridade:
+<p>Como vimos existem 3 formas de aplicar estilos ao site. Porém é possível usar os 3 simultaneamente e por isso existe um Hierarquia entre eles. No caso o HTML prioriza do mais específico para o mas generalizado.</p>
+<p>Veja o exemplo abaixo na ordem de prioridade:</p>
 <ol>
     <li>Estilo InLine</li> 
     <li>Estilo CSS3 Interno</li>
     <li>Estilo CSS3 Externo</li>
 </ol>
-
-<p>
-    <hr>
+<p>Ainda nessa linha de raciocínio de priorizar do mais específico para o mas generalizado. O CSS prioriza estilos mais específicos dentro de uma mesma folha de estilo.</p>
+<p>Exemplo, quando define um estilo para tag "p" e depois define um estilo para "article>p". Nesse caso o CSS vai manter o estilo "article>p" nos paragráfos que cumprirem esse requisito.</p>
+<p>Outra ordem hierarquica ainda nesse sentido é em relação a class e ao id como veremos no <a href="../../modulo-02/capitulo-15/capitulo-15.html#atual-hierarquia">capitulo-15</a>.</p>
+</main>
+<footer>
     <h1>FIM DO MÓDULO 01</h1>
-</p>
-
-
-
-
-
-
-    <hr> <h1>Materiais utilizados</h1>
+    <h1>Materiais utilizados</h1>
     <strong><a href="../../../material-de-apoio/12 - Trabalhando com estilos.pdf" target="_blank"> Material em PDF</a></strong>
     <h2>Vídeos</h2>
 
     <p><a href="https://youtu.be/byqhpuVpvEI?si=pOwxXeQnyZjXHJF2" target="_blank">Estilo CSS3 InLine</a></p>
 
     <p><a href="https://youtu.be/fzyab4P2pn8?si=qLmcBvbmPKlPb-9c" target="_blank">Estilo CSS3 Interno</a></p>
-    
-    
+
+
     <p><a href="https://youtu.be/-i1JVMspDJQ?si=A1Jz0NZcAUSTZO-B" target="_blank">Estilo CSS3 Externos</a></p>
+    <hr>
+    <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
 
+    
+   
+</footer>
 
-<hr>
-<p><a href="../../indice de links .html">Voltar para o Índice</a> </p>
-<p><a href="../../index.html"> Resumo completo</a></p>
 </body>
 </html>

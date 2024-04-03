@@ -3,77 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../style.css">
+    <title>Capítulo 08</title>
 </head>
 <body>
-    <center>
-        <h2>Capítulo 08</h2>
-    </center>        
-    <br><a href="../../indice de links .html"> voltar para índice</a><br>
-<h3>Formas de destacar texto em HTML5:</h3>
-    <p><strong>Negrito </strong> Para destacar em negrito de forma semântica usamos o comando &lt;strong&gt;"Texto a ser destacado"&lt;/strong&gt;. <br> Exemplo: <strong>Negrito</strong> </p>
+    <header>
+        <h1>Capítulo 08</h1>
+        <h1>Formatação e semântica de texto</h1>
+    </header>        
+    <main>
+        <ul>
+            <li><strong>Negrito </strong> Para destacar em negrito de forma semântica usamos o comando:</li> 
+                <div class="pre"> <pre>&lt;strong&gt;"Texto a ser destacado"&lt;/strong&gt;</pre> </div>
+                <p> Exemplo: <strong>Negrito</strong> </p>
 
-    <p><strong>Itálico </strong> Para destacar em Itálico de forma semântica usamos o comando &lt;em&gt;"Texto a ser destacado"&lt;/em&gt;. <br> Exemplo: <em>Itálico.</em> </p>
+            <li><strong>Itálico </strong> Para destacar em Itálico de forma semântica usamos o comando:</li>
+                <div class="pre"> <pre> &lt;em&gt;"Texto a ser destacado"&lt;/em&gt;</pre> </div>
+                <p>Exemplo: <em>Itálico.</em> </p>
 
-    <p><strong>Marca texto </strong> Para destacar em usando efeitio caneta de marca texto de forma semântica usamos o comando &lt;mark&gt;"Texto a ser destacado"&lt;/mark&gt;. <br> Exemplo: <mark>Marca texto</mark> <br>
+            <li><strong>Marca texto </strong> Para destacar em usando efeitio caneta de marca texto de forma semântica usamos o comando:</li> 
+                <div class="pre"> <pre>&lt;mark&gt;"Texto a ser destacado"&lt;/mark&gt;</pre> </div>
+                <p>Exemplo: <mark>Marca texto</mark> </p>
 
-    Uma breve passagem por CCS Caso queira mudar a cor do marca texto pode-se usar dois comandos diferentes de CCS <br>
+            
+            <li><strong>Sublinhado:</strong>Para destacar sublinhando-o de forma semântica usamos o comando:</li> 
+                <div class="pre"> <pre>&lt;ins&gt;"Texto a ser destacado"&lt;/ins&gt;. <br></pre> </div>
+                <p>Exemplo: <ins>Sublinhado.</ins> </p>
 
-    <strong>1º mudança de cor individual:</strong> Escreve &lt;mark style="background-color: lime;"&gt;"Texto a ser destacado"&lt;/mark&gt;. <br> Exemplo: <mark style="background-color: lime;"> Marca texto</mark> <br>
+            <li><strong>Tachado:</strong>Para destacar um texto tachando-o de forma semântica usamos o comando:</li> 
+                <div class="pre"> <pre>&lt;del&gt;"Texto a ser destacado"&lt;/del&gt;.</pre> </div>
+                <p>Exemplo: <del>Tachado.</del> </p>
 
-    <strong>2º mudança de cor de todos os marca texto da página:</strong> Na área head em baixo de title escreva: &lt;style&gt; mark{background-color: "Selecione uma cor na lista";} &lt;/style&gt;
-    </p>
+            <li><strong>Texto sobrescrito:</strong>Para escrever um texto ou algo sobrescrito usamos o comando:</li> 
+                <div class="pre">
+                    <pre>&lt;sup&gt;"Texto a ser sobrescrito"&lt;/sup&gt;. </pre>
+                </div>
+                <p>Exemplo: Texto <sup>sobrescrito.</sup> </p>
 
-    <p><strong>Sublinhado:</strong>Para destacar sublinhando-o de forma semântica usamos o comando &lt;ins&gt;"Texto a ser destacado"&lt;/ins&gt;. <br> Exemplo: <ins>Sublinhado.</ins> </p>
+            <li><strong>Texto subescrito:</strong>Para escrever um texto ou algo subescrito usamos o comando:</li> 
+                <div class="pre">
+                    <pre>&lt;sub&gt;"Texto a ser subescrito"&lt;/sub&gt;.</pre>
+                </div>
+                <p>Exemplo: Texto <sub>subescrito.</sub></p>
+            
+            <li><strong>small: </strong> Escreve o texto menor que o tamnaho de fonte padrão. Comando:</li>
+                <div class="pre">
+                    <pre>&lt;small>Texto&lt;/small></pre>
+                </div>
+                <p>Exemplo:</p>
+                <p>Texto normal <small>Texto pequeno</small></p>
 
-    <p><strong>Tachado:</strong>Para destacar um texto tachando-o de forma semântica usamos o comando &lt;del&gt;"Texto a ser destacado"&lt;/del&gt;. <br> Exemplo: <del>Tachado.</del> </p>
+            <li><strong>Código fonte:</strong> Comando usado para escrever um texto com uma fonte monoespaçada,( o que isso significa? Isso é um texto onde todas a letras ocupam o mesmo espaçamento). Esse tipo de fonte é ótima para fazer leitura de códigos. Para isso usamos o comando:</li> 
+            <div class="pre">
+                <pre>&lt;code&gt;"Texto monoespaçado"&lt;/code&gt;. </pre>
+            </div>
+            <p>A seguir veja 2 exemplos onde o primeiro está monoespaçado e o segundo está normal:</p> 
+            
+            <code>Texto teste.</code>
+            
+            <p>Texto teste.</p>
 
-    <p><strong>Texto sobrescrito:</strong>Para escrever um texto ou algo sobrescrito usamos o comando &lt;sup&gt;"Texto a ser sobrescrito"&lt;/sup&gt;. <br> Exemplo: Texto <sup>sobrescrito.</sup> </p>
-
-    <p><strong>Texto subescrito:</strong>Para escrever um texto ou algo subescrito usamos o comando &lt;sub&gt;"Texto a ser subescrito"&lt;/sub&gt;. <br> Exemplo: Texto <sub>subescrito.</sub></p>
-
-    <p><strong>Código fonte:</strong> Comando usado para escrever um texto com uma fonte monoespaçada,( o que isso significa? Isso é um texto onde todas a letras ocupam o mesmo espaçamento). Esse tipo de fonte é ótima para fazer leitura de códigos. Para isso usamos o comando &lt;code&gt;"Texto monoespaçado"&lt;/code&gt;. A seguir veja 2 exemplos onde o primeiro está monoespaçado e o segundo está normal: <br>
-    <code>Texto teste.</code><br>
-    Texto teste.</p>
-
-    <p><strong>Comando pre:</strong> Esse comando faz, a organização de espaçamentos e quebra de linhas de página, ficarem iguais aos feito no Visual Studio. Para isso usamos o comando &lt;pre&gt;"Texto"&lt;/pre&gt;. Exemplo:<br>
-    <pre>
+            <li><strong>Comando pre:</strong> Esse comando faz, a organização de espaçamentos e quebra de linhas de página, ficarem iguais aos feito no Visual Studio. Para isso usamos o comando:</li> 
+                <div class="pre">
+                    <pre>&lt;pre&gt;"Texto"&lt;/pre&gt;. </pre>
+                </div>
+                Exemplo:<br>
+                <div class="pre"> 
+                    <pre>
         Texto escrito no comando pre
         Esse comando é excelente para ecrever
         exemplificação de códigos
         Tanto é que ele já vem com a mesma fonte do comando code.
-        
-    </pre></p>
+                    </pre> 
+                </div>
 
-    <mark>
-        <strong>Atalho:</strong> <br>
-        Para espaçar ou reduzir o espaçamento dos parágrafos de textos inteiros no Visual Studio: <br>
-        Para aumanetar o espaço: selecionar o texto inteiro e pressionar a tecla "Tab" <br>
-        Para remover o espaçamento: Basta selecionar o texto inteiro e pressionar a tecla "Shift" e "Tab"  
-    </mark>
-<!--Atalho: 
-    Para espaçar ou reduzir o espaçamento dos parágrafos de textos inteiros no Visual Studio: 
+            <mark>
+                <strong>Atalho:</strong> <br>
+                Para espaçar ou reduzir o espaçamento dos parágrafos de textos inteiros no Visual Studio: <br>
+                Para aumanetar o espaço: selecionar o texto inteiro e pressionar a tecla "Tab" <br>
+                Para remover o espaçamento: Basta selecionar o texto inteiro e pressionar a tecla "Shift" e "Tab"  
+            </mark>
 
-    Para aumanetar o espaço: selecionar o texto inteiro e pressionar a tecla "Tab" 
+            <li><strong>Citação Simples:</strong>Para destacar uma citação usamos as famosas aspas, porém para que o programa saiba de se trata de uma citação usamos o comando:</li>
+                <div class="pre">
+                    <pre>&lt;q&gt;"Texto citado"&lt;/q&gt;.</pre>
+                </div>
+                <p>Exemplo: Como dizia fulano: <q>Blá-Blá-Blá...</q> </p>
 
-    Para remover o espaçamento: Basta selecionar o texto inteiro e pressionar a tecla "Shift" e "Tab"    -->
+            <li><strong>Citação completa:</strong>Para destacar uma citação completa, também usamos as famosas aspas. Porém em uma citação completa ela quebra a linha e abre um espaço depois da margem e ainda podemos referenciar, ou não, o site de onde tiramos essa citação. 
+            Para uma citação completa sem referenciar usamos o comando:</li>
+            <div class="pre">
+                <pre>&lt;blockquote&gt;"Texto citado"&lt;/blockquote&gt; </pre>
+            </div>
+                <p>Exemplo sem referência: Como dizia fulano: <blockquote>Blá-Blá-Blá...</blockquote></p>
 
-    <p><strong>Citação Simples:</strong>Para destacar uma citação usamos as famosas aspas, porém para que o programa saiba de se trata de uma citação usamos o comando &lt;q&gt;"Texto citado"&lt;/q&gt;. <br> Exemplo: Como dizia fulano: <q>Blá-Blá-Blá...</q> </p>
+                <p>Para uma citação referenciada usamos:</p>
 
-    <p><strong>Citação completa:</strong>Para destacar uma citação completa, também usamos as famosas aspas. Porém em uma citação completa ela quebra a linha e abre um espaço depois da margem e ainda podemos referenciar, ou não, o site de onde tiramos essa citação. <br>
-         Para uma citação completa sem referenciar usamos o comando &lt;blockquote&gt;"Texto citado"&lt;/blockquote&gt; <br>
-         Exemplo sem referência: Como dizia fulano: <blockquote>Blá-Blá-Blá...</blockquote> <br>
+                <div class="pre">
+                    <pre>&lt;blockquote cite="https://rj.olx.com.br/"&gt;"Texto citado"&lt;/blockquote&gt;</pre>
+                </div>
+                
+                <p>Exemplo com referência:</p>
+                 
+                <p>Como dizia fulano: <blockquote cite="https://rj.olx.com.br/">Blá-Blá-Blá...</blockquote></p> <br>
+                
+                 <p>Como pôde observar o usuário da página não verá diferença alguma entre com e sem essa referência. Isso é apenas para que o programa use para fins de pesquisas do google e afins.            
+                </p>
 
-         Para uma citação referenciada usamos:&lt;blockquote cite="https://rj.olx.com.br/"&gt;"Texto citado"&lt;/blockquote&gt; <br>
-         Exemplo com referência: Como dizia fulano: <blockquote cite="https://rj.olx.com.br/">Blá-Blá-Blá...</blockquote> <br>
-          Como pôde observar o usuário da página não verá diferença alguma entre com e sem essa referência. Isso é apenas para que o programa use para fins de pesquisas do google e afins.            
-        </p>
+            <li><strong>Abreviações:</strong>Usamos essa tag para que quando o usuário passe o mouse por cima, ele veja o significado daquela sigla. Para isso usamos o comando:</li>
+                <div class="pre">
+                    <pre>&lt;abbr title="significado da sigla" &gt;"Sigla"&lt;/abbr&gt;.</pre>
+                </div>
+                <p>Exemplo: <abbr title="Hypertext Markup Language">HTML</abbr> </p>
 
-    <p><strong>Abreviações:</strong>Usamos essa tag para que quando o usuário passe o mouse por cima, ele veja o significado daquela sigla. Para isso usamos o comando &lt;abbr title="significado da sigla" &gt;"Sigla"&lt;/abbr&gt;. <br> Exemplo: <abbr title="Hypertext Markup Language">HTML</abbr> </p>
-
-    <p><strong>Texto invertido:</strong> Usamos essa tag para abosolutamente nada, mas ela existe então está aí. Para isso usamos o comando &lt;bdo dir="rtl" &gt;"Texto invertido"&lt;/bdo&gt;. <br> 
-        Exemplo: <bdo dir="rtl"> Texto invertido</bdo> </p>
-
+            <li><strong>Texto invertido:</strong> Usamos essa tag para abosolutamente nada, mas ela existe então está aí. Para isso usamos o comando:</li>
+                <div class="pre">
+                    <pre>&lt;bdo dir="rtl" &gt;"Texto invertido"&lt;/bdo&gt;.</pre>
+                </div> 
+                <p>Exemplo: <bdo dir="rtl"> Texto invertido</bdo> </p>
+        </ul>
+    </main>
+    <footer>
         <hr> <h1>Materiais utilizados</h1>
     <strong><a href="../../material-de-apoio/08 - Formatação de Textos.pdf" target="_blank"> Material em PDF</a></strong>
     <h2>Vídeos</h2>
@@ -85,6 +135,6 @@
 
     <hr>
     <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-    
+</footer>
 </body>
 </html>
