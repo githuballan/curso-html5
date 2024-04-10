@@ -8,6 +8,7 @@
 @media all{
 button{
     display: none;
+    
 }
 button.detalhes{
     height: 100%;
@@ -95,6 +96,7 @@ nav{
 
     grid-area: nav;
     max-width: 300px;
+    display: block;
 
    
 
@@ -133,6 +135,11 @@ ul.capitulos>li/*:hover*/>ul{
     background-color:#FBF8F3;
     
 }
+
+ul#ass1{
+    display: none;
+}
+
 
 footer{
     border: 2px solid #000000;
@@ -253,4 +260,4 @@ h3
     padding: 5px;    
     box-shadow: 1px 1px 2px 0px #00000055;
 }
-}
+}/* fim media all*/

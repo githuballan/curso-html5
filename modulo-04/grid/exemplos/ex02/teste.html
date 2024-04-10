@@ -10,10 +10,11 @@
     @media screen and (max-width: 550px){
 
         nav{
-            grid-area: nav;
             display: none;
-
             position: fixed;
+            
+
+           
             width: 270px;
             top: 0px;
             left: 0px;
@@ -27,15 +28,22 @@
         main{
             border: 0px;
         }
+        
+
     
         header>button{
     
-            display: block;
+            display: inline-block;
+            position: relative;
+            left:calc(270px - 22px);
+
         
-            display: flex;
+        
+        
+           
             justify-content: center;
             align-items: center;
-            width: 335px;  
+            width: 30px;  
             
             border:2px solid #0000ff;
            
@@ -46,10 +54,9 @@
         body{
        
         grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto;
         grid-template-areas: 
         "header"
-        "nav"
         "main"
         "footer"
         ;
@@ -79,11 +86,17 @@ if (ass1.style.display == 'block'){
 </head>
 <body>
     <header> 
+
+        
         <h1>testes</h1>
-       <button onclick="clickMenu()" ><img src="../ex01/menu.svg" alt=""></button>
+       
+        <button onclick="clickMenu()" ><img src="../ex01/menu.svg" alt=""></button>
     </header>
     <main>
         <!--Semântica-->   
+
+       
+
         <section><!--Introdução-->
         <p>Esse resumo tem por finalidade melhorar a semântica do html ensinada pelo curso em vídeo. Além de explicar um funcionamento de cada tag semântica respondendo perguntas como:</p>
             <ul>
@@ -93,6 +106,7 @@ if (ass1.style.display == 'block'){
                 <li>E a importância do uso</li>
             </ul>
         </section>
+        
         <p>Quando o navegador inicia ele começa a ler o código html por etapa:</p>
         <ol>
             <li>Lê o head, na ordem um linha por vez</li>
@@ -259,27 +273,7 @@ if (ass1.style.display == 'block'){
                
                
     
-            </article>
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-       
+           
     
         <h1>Resumo aula do curso Gustavo Guanabara</h1>
             <p>Quando cria-se um site em HTML 5(ou HTML Semântico) não se faz modificação de cores formatos de textos ou efeitos visuais utilizando o HTML, esse tipo de efeitos/embelezamento da página é feito usando o CCS que veremos posteriormente.</p> 

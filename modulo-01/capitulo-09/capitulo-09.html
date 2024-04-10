@@ -263,168 +263,181 @@ etc..
         </section>
     <article> <!--Matéria avançada-->
         <h1>Matéria avançada</h1>
-        <h2>Style, Um pouco de CSS</h2>
-        <p>
-        OBS.: Essa parte está no capítulo 17 do módulo 02 no vídeo <a href="https://youtu.be/pdomr7thueI?si=wJTR0SFf6MyPiyJk" target="_blank">Rodpé, conteúdo periféricos e links</a> Minuto 06:40
-        </p>
-        <p>
-        Agora, vou te mostrar como criar mais personalizações e a criar um ótimo resultado visual.
-        </p>
-        <h3>Dividindo a lista em 02 colunas</h3>
-        <p>
-        Para dividir a lista em mais de um coluna usamos a style columns
-        </p>
-        <p>
-        Exemplo:
-        </p>
-        <ol style="columns: 2;" type="I" >
-        <li>Acordar</li>
-        <li> Preparar o Café</li>
-        <li>Tomar Banho</li>
-        <li>Tomar o café</li>
-        <li>Etc..</li>
-        </ol>
-        <p>
-        Exemplo de código:
-        </p>
-        <pre>
-        &lt;ol style="columns: 2;" type="I" >
-            &lt;li>Acordar&lt;/li>
-            &lt;li> Preparar o Café&lt;/li>
-            &lt;li>Tomar Banho&lt;/li>
-            &lt;li>Tomar o café&lt;/li>
-            &lt;li>Etc..&lt;/li>
-        &lt;/ol>
-        </pre>
-        
-        <h3> Estilos externo</h3>
-        <p>
-            É possível também usar outros marcadores além dos vistos em type, para isso temos que usar o CSS também
-        </p>
-        <p>
-            Para isso  usaremos a style: <code>list-style-type: <abbr title="Esse código pega na emoji pedia">'código'</abbr></code>
-        </p>
-        <p>
+        <section><!--Style, Um pouco de CSS-->
+            <h2>Style, Um pouco de CSS</h2>
+            <p>
+            OBS.: Essa parte está no capítulo 17 do módulo 02 no vídeo <a href="https://youtu.be/pdomr7thueI?si=wJTR0SFf6MyPiyJk" target="_blank">Rodpé, conteúdo periféricos e links</a> Minuto 06:40
+            </p>
+            <p>
+            Agora, vou te mostrar como criar mais personalizações e a criar um ótimo resultado visual.
+            </p>
+            <h3>Dividindo a lista em 02 colunas</h3>
+            <p>
+            Para dividir a lista em mais de um coluna usamos a style columns
+            </p>
+            <p>
             Exemplo:
-        <ol style="list-style-type: '\2714'" >
+            </p>
+            <ol style="columns: 2;" type="I" >
             <li>Acordar</li>
             <li> Preparar o Café</li>
             <li>Tomar Banho</li>
             <li>Tomar o café</li>
             <li>Etc..</li>
-        </ol>
+            </ol>
+            <p>
             Exemplo de código:
-        <pre>
-        &lt;ol style="list-style-type: '\2714'" >
+            </p>
+            <pre>
+            &lt;ol style="columns: 2;" type="I" >
                 &lt;li>Acordar&lt;/li>
                 &lt;li> Preparar o Café&lt;/li>
                 &lt;li>Tomar Banho&lt;/li>
                 &lt;li>Tomar o café&lt;/li>
                 &lt;li>Etc..&lt;/li>
             &lt;/ol>
-        </pre>
-            Caso não lembre como usar a emoji pedia reveja o <a href="../Capítulo 05/Capítulo 05 .html" target="_blank">Capítulo 05</a>
-        </p>
-        <h3>Remover o marcador</h3>
-        <p>
-            Para remover o marcador basta escrever "none" onde ficaria o código da emoji pedia.
-        </p>
-            <p>Exemplo:</p>
-            <ol style="list-style-type: none" >
+            </pre>
+            
+        </section>
+        <section><!--Estilos externo-->
+            
+            <h3> Estilos externo</h3>
+            <p>
+                É possível também usar outros marcadores além dos vistos em type, para isso temos que usar o CSS também
+            </p>
+            <p>
+                Para isso  usaremos a style: <code>list-style-type: <abbr title="Esse código pega na emoji pedia">'código'</abbr></code>
+            </p>
+            <p>
+                Exemplo:
+            <ol style="list-style-type: '\2714'" >
                 <li>Acordar</li>
                 <li> Preparar o Café</li>
                 <li>Tomar Banho</li>
                 <li>Tomar o café</li>
                 <li>Etc..</li>
             </ol>
-            <p>Exemplo de código:</p>
-        <pre>
-        &lt;ol style="list-style-type: none" >
-                &lt;li>Acordar&lt;/li>
-                &lt;li> Preparar o Café&lt;/li>
-                &lt;li>Tomar Banho&lt;/li>
-                &lt;li>Tomar o café&lt;/li>
-                &lt;li>Etc..&lt;/li>
-            &lt;/ol>
-        </pre>
+                Exemplo de código:
+            <pre>
+            &lt;ol style="list-style-type: '\2714'" >
+                    &lt;li>Acordar&lt;/li>
+                    &lt;li> Preparar o Café&lt;/li>
+                    &lt;li>Tomar Banho&lt;/li>
+                    &lt;li>Tomar o café&lt;/li>
+                    &lt;li>Etc..&lt;/li>
+                &lt;/ol>
+            </pre>
+                Caso não lembre como usar a emoji pedia reveja o <a href="../Capítulo 05/Capítulo 05 .html" target="_blank">Capítulo 05</a>
+            </p>
+            <h3>Remover o marcador</h3>
+            <p>
+                Para remover o marcador basta escrever "none" onde ficaria o código da emoji pedia.
+            </p>
+                <p>Exemplo:</p>
+                <ol style="list-style-type: none" >
+                    <li>Acordar</li>
+                    <li> Preparar o Café</li>
+                    <li>Tomar Banho</li>
+                    <li>Tomar o café</li>
+                    <li>Etc..</li>
+                </ol>
+                <p>Exemplo de código:</p>
+            <pre>
+            &lt;ol style="list-style-type: none" >
+                    &lt;li>Acordar&lt;/li>
+                    &lt;li> Preparar o Café&lt;/li>
+                    &lt;li>Tomar Banho&lt;/li>
+                    &lt;li>Tomar o café&lt;/li>
+                    &lt;li>Etc..&lt;/li>
+                &lt;/ol>
+            </pre>
             
-        
-        
-        <h3>Como deixar o marcador mais perto</h3>
-        <p>
-            É possível também deixar os marcadores mais perto dos itens na lista, para isso também temos que usar o CSS também
-        </p>
-        <p>
-            Para isso  usaremos a style: <code>list-style-position: inside</code>
-        </p>
-        <p>
-            Exemplo:
-        </p>
-        <ol style="list-style-position: inside" >
-            <li>Acordar</li>
-            <li> Preparar o Café</li>
-            <li>Tomar Banho</li>
-            <li>Tomar o café</li>
-            <li>Etc..</li>
-        </ol>
-        <p>
-            Exemplo de código:
-        </p>
-        <pre>
-        &lt;ol style="list-style-position: inside" >
-                &lt;li>Acordar&lt;/li>
-                &lt;li> Preparar o Café&lt;/li>
-                &lt;li>Tomar Banho&lt;/li>
-                &lt;li>Tomar o café&lt;/li>
-                &lt;li>Etc..&lt;/li>
-            &lt;/ol>
-        </pre>
-        
-        <h3> Como espaçar o marcador</h3>
-        <p>
-            Se não gostou, achou que ficou muito perto. Então vamos definir a ditância manualmente
-        </p>
-        <p>
-            Para isso  usaremos a style: <code>list-style-type: \2714\0020</code>
-        </p>
-        <p>
-            Exemplo:
-        </p>
-        <ol style="list-style-type: '\2714\0020';list-style-position: inside" >
-            <li>Acordar</li>
-            <li> Preparar o Café</li>
-            <li>Tomar Banho</li>
-            <li>Tomar o café</li>
-            <li>Etc..</li>
-        </ol>
-        <p>
-            Exemplo de código:
-        </p>
-        <pre>
-        &lt;ol style="list-style-type: '\2714\0020';list-style-position: inside" >
-                &lt;li>Acordar&lt;/li>
-                &lt;li> Preparar o Café&lt;/li>
-                &lt;li>Tomar Banho&lt;/li>
-                &lt;li>Tomar o café&lt;/li>
-                &lt;li>Etc..&lt;/li>
-            &lt;/ol>
-        </pre>
-        <p class="mark">
-            OBS.: 0020 é um hexadecimal para espaço assim como o 00A0 também é.
-        </p>
-        <p class="mark">
-            OBS 02.: Só é possível aumentar o espaço se usar um estilo externo, caso contrário ele apenas substituirá o marcador por um espaço vazio.
-        </p>
-        <p>
-            Exemplo:
-        </p>
-        <ol style="list-style-type: '\0020';list-style-position: inside" >
-            <li>Acordar</li>
-            <li> Preparar o Café</li>
-            <li>Tomar Banho</li>
-            <li>Tomar o café</li>
-            <li>Etc..</li>
-        </ol>
+            
+            
+        </section>
+        <section><!--Como deixar o marcador mais perto-->
+            
+            <h3>list-style-position</h3>
+            <p>
+                Por padrão, os bullets de uma lista não são exibidos dentro dos boxes dos itens. Podemos alterar esse comportamento através da propriedade list-style-position.
+            </p>
+            <div class="img">
+                <img src="imagens/Captura de tela 2024-04-08 104715.png" alt="">
+            </div>
+            <p>
+                Para isso  usaremos a style: <code>list-style-position: inside</code>
+            </p>
+            <p>
+                Exemplo:
+            </p>
+            <ol style="list-style-position: inside" >
+                <li>Acordar</li>
+                <li> Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+            <p>
+                Exemplo de código:
+            </p>
+            <pre>
+            &lt;ol style="list-style-position: inside" >
+                    &lt;li>Acordar&lt;/li>
+                    &lt;li> Preparar o Café&lt;/li>
+                    &lt;li>Tomar Banho&lt;/li>
+                    &lt;li>Tomar o café&lt;/li>
+                    &lt;li>Etc..&lt;/li>
+                &lt;/ol>
+            </pre>
+            
+        </section>
+        <section><!--Como espaçar o marcado-->
+            <h3> Como espaçar o marcador</h3>
+            <p>
+                Se não gostou, achou que ficou muito perto. Então vamos definir a ditância manualmente
+            </p>
+            <p>
+                Para isso  usaremos a style: <code>list-style-type: \2714\0020</code>
+            </p>
+            <p>
+                Exemplo:
+            </p>
+            <ol style="list-style-type: '\2714\0020';list-style-position: inside" >
+                <li>Acordar</li>
+                <li> Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+            <p>
+                Exemplo de código:
+            </p>
+            <pre>
+            &lt;ol style="list-style-type: '\2714\0020';list-style-position: inside" >
+                    &lt;li>Acordar&lt;/li>
+                    &lt;li> Preparar o Café&lt;/li>
+                    &lt;li>Tomar Banho&lt;/li>
+                    &lt;li>Tomar o café&lt;/li>
+                    &lt;li>Etc..&lt;/li>
+                &lt;/ol>
+            </pre>
+            <p class="mark">
+                OBS.: 0020 é um hexadecimal para espaço assim como o 00A0 também é.
+            </p>
+            <p class="mark">
+                OBS 02.: Só é possível aumentar o espaço se usar um estilo externo, caso contrário ele apenas substituirá o marcador por um espaço vazio.
+            </p>
+            <p>
+                Exemplo:
+            </p>
+            <ol style="list-style-type: '\0020';list-style-position: inside" >
+                <li>Acordar</li>
+                <li> Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+        </section>
     </article>  
         
     </main>
