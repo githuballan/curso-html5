@@ -100,48 +100,179 @@ undefined
                 <p>Note que o tipo de varável se altera de acordo com a necessidade.</p>
             </article><!-- /#variaveis -->
             <article id="operadores">
-                <h2>Operadores</h2>
-                <p>Para manipular os valores das variáveis de um programa, devemos utilizar os operadores oferecidos pela linguagem de programação adotada. A linguagem JavaScript possui diversos operadores e os principais são categorizados da seguinte forma:
-                    </p>
-                    <ul>
-                        <li><strong>Aritmético: </strong>+ - * / %</li>
-                        <li><strong>Atribuição: </strong>= += -= *= /= %= ++ --</li>
-                        <li><strong>Relacional: </strong>== != < <= > >=
-                        </li>
-                        <li><strong>Lógico: </strong>&& ||
-                        </li>
-                    </ul>
+                <section id="introducao-operadores">
                     
-                
-                   
-                <section id="operadores-aritmeticos">
-                    
-                    <h3>Operadores Aritméticos</h3>
-                    <p>Os operadores aritméticos funcionam de forma muito semelhante aos operadores da matemática. Os operadores aritméticos são:
-                    </p>
-                    <ul>
-                        <li><strong>Adição +</strong></li>
-                        <li><strong>Subtração -
-                        </strong></li>
-                        <li><strong>Multiplicação *</strong></li>
-                        <li><strong>Divisão /</strong></li>
-                        <li><strong>Módulo %</strong> Módulo é o resto de uma divisão. Exemplo: 5 % 4 = 1 pois 5 dividido por 4 sobra 1.</li>
-                    </ul>
-                    <div class="obs">
-                        <p>
-                            As operações aritméticas em JavaScript obedecem as mesmas regras da matemática com relação à precedência dos operadores e parênteses. Portanto, as operações são resolvidas a partir dos parênteses mais internos até os mais externos, primeiro resolvemos as
-                            multiplicações, divisões e os módulos. Em seguida, resolvemos as adições e subtrações.
-                             
+                    <h2>Operadores</h2>
+                    <p>Para manipular os valores das variáveis de um programa, devemos utilizar os operadores oferecidos pela linguagem de programação adotada. A linguagem JavaScript possui diversos operadores e os principais são categorizados da seguinte forma:
                         </p>
-                    </div>
-                                 
-                </section><!--/#operadores-aritmeticos-->
-                
-                <section id="operadores-de-atribuicao">
-                    <h3>Operadores de Atribuição</h3>
-                    <p></p>
-                    <p></p>
-                </section><!-- /#atribuicao -->
+                        <ul>
+                            <li><strong>Aritmético: </strong>+ - * / %</li>
+                            <li><strong>Atribuição: </strong>= += -= *= /= %= ++ --</li>
+                            <li><strong>Relacional: </strong>== != < <= > >=
+                            </li>
+                            <li><strong>Lógico: </strong>&& ||
+                            </li>
+                        </ul>
+                    
+                    
+                    </section><!-- /#introducao--operadores-->
+                    <section id="operadores-aritmeticos">
+                    
+                        <h3>Operadores Aritméticos</h3>
+                        <p>Os operadores aritméticos funcionam de forma muito semelhante aos operadores da matemática. Os operadores aritméticos são:
+                        </p>
+                        <ul>
+                            <li><strong>Adição +</strong></li>
+                            <li><strong>Subtração -
+                            </strong></li>
+                            <li><strong>Multiplicação *</strong></li>
+                            <li><strong>Divisão /</strong></li>
+                            <li><strong>Módulo %</strong> Módulo é o resto de uma divisão. Exemplo: 5 % 4 = 1 pois 5 dividido por 4 sobra 1.</li>
+                        </ul>
+                        <div class="obs">
+                            <p>
+                                As operações aritméticas em JavaScript obedecem as mesmas regras da matemática com relação à precedência dos operadores e parênteses. Portanto, as operações são resolvidas a partir dos parênteses mais internos até os mais externos, primeiro resolvemos as
+                                multiplicações, divisões e os módulos. Em seguida, resolvemos as adições e subtrações.
+                    
+                            </p>
+                        </div>
+                    
+                               
+                    </section><!--/#operadores-aritmeticos-->
+                    <section id="operadores-de-atribuicao">
+                        <h3>Operadores de Atribuição</h3>
+                        <p>Como o próprio nome já diz esses sinais servem para atribuir algo do lado direito para algo que está no lado esquerdo do sinal (esse algo e o operando), geralmente o que fica no lado esquerdo são variáveis.O operador de atribuição básico é o igual (=), que atribui o valor do operando à direita ao operando à esquerda. Isto é, x = y atribui o valor de y a x.</p>
+                          
+                        <p>Os outros operadores de atribuição são encurtamentos de operadores padrão.</p>
+
+                        <p>Veja os operadores de distribuição abaixo:</p>
+
+                        <div class="overflow-x">
+                            <table class="tabela_basica">
+                                <thead>
+                                    <tr>
+                                        <th class="th_col_tabela_basica" scope="col">Nome</th>
+                                        <th class="th_col_tabela_basica" scope="col">Operador encurtado</th>
+                                        <th class="th_col_tabela_basica" scope="col">Significado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="td_tabela_basica">Simples =</td>
+                                        <td class="td_tabela_basica">x = y	</td>
+                                        <td class="td_tabela_basica">x = y</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Atribuição de adição +=</td>
+                                        <td class="td_tabela_basica">x += y	</td>
+                                        <td class="td_tabela_basica">x = x + y</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Atribuição de subtração -=</td>
+                                        <td class="td_tabela_basica">x -= y	</td>
+                                        <td class="td_tabela_basica">x = x - y</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Multiplicativa *</td>
+                                        <td class="td_tabela_basica">x *= y	</td>
+                                        <td class="td_tabela_basica">x = x * y</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Divisória /=</td>
+                                        <td class="td_tabela_basica">x /= y	</td>
+                                        <td class="td_tabela_basica">x = x / y</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Modular %=</td>
+                                        <td class="td_tabela_basica">x %= y</td>
+                                        <td class="td_tabela_basica">x = x % y</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Incremento ++</td>
+                                        <td class="td_tabela_basica">x++</td>
+                                        <td class="td_tabela_basica">x+1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Decremento --</td>
+                                        <td class="td_tabela_basica">x--</td>
+                                        <td class="td_tabela_basica">x-1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="obs">
+                            OBS.:
+    
+                            <p>Os operadores de Incremento "++" e Decremento "--" podem ser usado antes da variável ficando ++x ou --x. Isso faz diferença. No ++x a variável recebe a soma na hora já no x++ ela recebe a soma somente quando o programa passar para o próximo comando.</p>
+                            <p>Isso acontece porque o navegador carrega na ordem exata que foi digitado então numa suposta ocasião onde o programa encerre em x++ a variável x não irá receber a soma efetivamente.</p>
+                            <p>Que diferença isso faz? Não sei, só sei que é assim e foi citado em aula.</p>
+    
+                        </div>
+                        <div class="mark">
+                            <p><span class="maiuscula">x+5 é diferente de x+=5 pois em x+5 x não altera seu valor apenas apresenta o resultado!</span></p>
+                        </div>
+                    </section><!-- /#atribuicao -->
+                    <section id="operadores-comparativos">
+                        <h3>Operadores Comparativos</h3>
+                        <p>Esses operadores, como o próprio nome já diz, comparam variaveis ou valores. Eles trabalham com valores booleanos, ou seja, verdadeiro ou falso,true or false.</p>
+
+                        <div class="overflow-x">
+                            <table class="tabela_basica">
+                                <thead>
+                                    <tr>
+                                        <th class="th_col_tabela_basica" scope="col">Operador</th>
+                                        <th class="th_col_tabela_basica" scope="col">Descrição</th>
+                                        <th class="th_col_tabela_basica" scope="col">Exemplos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="td_tabela_basica">Igualdade ==</td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam iguais.</td>
+                                        <td class="td_tabela_basica">3==3 true</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Estritamente igual (===)</td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo. Isso é, esse testa o tipo de veriável que está abrigando o valor em questão. </td>
+                                        <td class="td_tabela_basica td_left" ><span class="nao_quebra">3==="3" false</span> <br>porém <br> <span class="nao_quebra">3=="3" true</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Diferença !=</td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos não sejam iguais.</td>
+                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3!=3 false</span> <span class="nao_quebra">3!=2 true</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Estritamente diferente (!==)</td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam diferentes e de tipo diferentes. Isso é, esse testa o tipo de veriável que está abrigando o valor em questão.</td>
+                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3!=="3" true</span> <br>porém <br> <span class="nao_quebra">3!="3" false</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Menor que &lt;</td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.</td>
+                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3&lt;3 false</span> <span class="nao_quebra">3&lt;4 true</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Menor ou igual &lt;=
+                                        </td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja menor ou igual ao da direita.</td>
+                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3&lt;=2 false</span> <span class="nao_quebra">3&lt;=3 true</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Maior ></td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja maior que o da direita.</td>
+                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3>3 false</span> <span class="nao_quebra">3>2 true</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_tabela_basica">Maior ou igual >=</td>
+                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja maior ou igual ao da direita.</td>
+                                        <td class="td_tabela_basica td_left"> <span class="nao_quebra">3>=4 false</span> <span class="nao_quebra">3>=3 true</span></td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    
 
             </article><!-- /#operadores -->
             
