@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo 26,5</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <style>
+
+        .conteiner{
+            height: 400px;
+            width: 350px;
+            border: 2px solid #0f0;
+            margin: auto;
+        }
+        .int{/*interno*/
+            border-radius: 5px;
+            border: 2px solid #000;
+            height: 100px;
+            width: 100px;
+            
+        }
+        .int-red{
+            background-color: red;
+        }
+        .int-green{
+            background-color: green;
+        }
+        .int-blue{
+            background-color: blue;
+        }
+        /*Exemplo in-line block ex1*/
+        .conteiner-ex1{
+            text-align: center;
+            word-spacing: -20px;            
+        }
+        .int-ex1{
+            display:inline-block
+        }
+
+        /*fim Exemplo in-line block ex1*/
+
+        /*Exemplo Position Relative ex2*/
+        
+        .int-red-ex2{
+            position: relative;
+            top:200px;
+            left:75px;
+        }
+
+        .int-green-ex2{
+            position: relative;
+            top:50px;
+            left:50px;
+        }
+        .int-blue-ex2{
+            position: relative;
+           
+        }
+        div.int-green-ex2:hover{
+            background-color: #000;
+        }
+        /*Exemplo fim Position Relative ex2*/
+
+        /*Exemplo Position absolute */
+        /*ex3*/
+       
+        .int-green-ex3{
+            position: absolute;
+            left: 0px;
+
+        }
+        
+        /*fim ex3*/
+        /*ex4*/
+        .conteiner-ex4{
+            position: relative;
+        }
+        .int-green-ex4{
+            position: absolute;
+            left: 10px;
+        }
+        .int-blue-ex4{
+            position: relative;
+            left: 0px;
+        }
+        /*fim ex04*/
+        /* fim Exemplo Position absolute */
+
+        /*Exemplo Position fixed ex05*/
+        
+        .int-green-ex5{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #0f0;
+
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+           
+        }
+         /* fim Exemplo Position fixed ex05*/
+
+          /*Exemplo Position float ex06*/
+          .int-green-ex6{
+            float:right;
+            margin: 10px;
+        }
+
+        p#p-exemplo-float::first-letter{
+            font-size: 3em;
+            float: inline-start;   
+        }
+        p#p-exemplo-float{
+            text-indent: 0;
+        }
+        /*fim Exemplo Position float ex06*/
+
+        /*Exemplo Position clear*/
+
+        /*ex07*/
+        .int-red-ex7{
+            float:right;
+           
+
+        }
+        .int-green-ex7{
+            float: left;
+           
+
+        }
+        .int-blue-ex7{
+            float: left;
+            clear: both;
+
+            
+        }
+        /*fim ex07*/
+
+        /*ex08*/
+        .conteiner-ex8{
+            border: 2px solid #0f0;
+            
+        }
+        .int-red-ex8{
+            float:right;
+
+        }
+        .int-green-ex8{
+            float: left;
+
+        }
+
+        .int-blue-ex8{
+            float: left;
+        }
+       /*fim ex08*/
+
+       /*ex09*/
+       
+        .int-green-ex9{
+            float: left;
+            margin-left: 10px;
+        }
+         /*fim ex09*/
+
+         /*ex10*/
+
+         .conteiner-ex10{
+            overflow: auto;
+            border: 2px solid #0f0;
+         }
+         /*fim ex10*/
+
+         /*ex11*/
+         .conteiner-ex11{
+            overflow: auto;
+            border: 2px solid #0f0;
+         }
+
+         .int-red-ex11{
+            float: left;
+        }
+        .int-green-ex11{
+            float: left;
+        }
+        .int-blue-ex11{
+           clear:left;
+           display: inline-block;
+        }
+
+         /*fim ex11*/
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Capítulo Extra</h1>
+        <h1>Position</h1>
+    </header>
+    <main>
+        <article id="inline-block">
+            <h2>Display inline-block</h2>
+            <p>Quando aplicamos o display inline block em um elemento que é naturalamente block, como uma div, ela deixa de se comportar como um bloco e passa a se comportar como uma palavra(na verdade palavra são naturalmente inline-block mas para fins de entendimento isso basta). </p>
+            <p>Isso quer dizer que os comando aplicado a textos funcionarão em div que estiverem como display inline-block.</p>
+            <p>Exemplos text-aling, center;</p>
+            <div class="conteiner conteiner-ex1">
+                <div class="int int-red int-ex1"></div>
+                <div class="int int-green int-ex1"></div>
+                <div class="int int-blue int-ex1"></div>
+            </div>
+            <div class="obs">
+                <p>As div não ficam uma sob a outra quando usa word-spacing com valores negativos o máximo que acontece é ficarem coladas</p>
+            </div>
+        </article><!-- /#inline-block -->
+        <article id="position-static">
+            <h2>Position Static</h2>
+            <p>Static é o valor padrão da propriedade position. O box de um elemento com position:static é colocado na sua posição natural. Isso é: se for um box em display block ele fiacará colado ao lado esquerdo da tela e um embaixo deo outro, e si for inline block ele ficará um ao lado do outro.</p>
+            <p>Não podemos alterar a posição dos boxes dos elementos HTML com position: static.</p>
+            <p>Exemplo Display block:</p>
+            <div class="conteiner">
+                <div class="int int-red"></div>
+                <div class="int int-green"></div>
+                <div class="int int-blue"></div>
+            </div>
+            <p>Exemplo Display inline-block:</p>
+            <div class="conteiner">
+                <div class="int int-red int-ex1"></div>
+                <div class="int int-green int-ex1"></div>
+                <div class="int int-blue int-ex1"></div>
+            </div>
+
+
+        </article><!-- /#position-static -->
+        <article id="position-relative">
+            <h2>Position Relative</h2>
+            <p>O box de um elemento com position: relative é colocado em uma posição relativa a sua posição natural(static). As propriedades left, top, right e bottom são utilizadas para determinar o deslocamento entre a posição desejada e a posição natural.</p> 
+
+            <p>O espaço que essa box ocuparia, se ele estivesse em sua posição natural, não poderá ser ocupado por nenhum outro elemento. E a box será projatada para uma posição em primeiro plano acima e será exibida por cima de qualquer outro elemento</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+
+.conteiner{
+    height: 400px;
+    width: 400px;
+    border: 2px solid #0f0;
+}
+
+.int-red-ex2{
+    position: relative;
+    top:200px;
+    left:75px;
+}
+
+.int-green-ex2{
+    position: relative;
+    top:50px;
+    left:50px;
+}
+.int-blue-ex2{
+    position: relative;
+    
+}
+div.int-green-ex2:hover{
+    background-color: #000;
+}
+
+                </pre>
+            </div>
+            <p>Como ficaria o exemplo acima:</p>
+            <div class="conteiner">
+                <div class="int int-red int-red-ex2"></div>
+                <div class="int int-green int-green-ex2"></div>
+                <div class="int int-blue int-blue-ex2"></div>
+            </div><!-- /#conteiner -->
+            <div class="obs">
+                <h3>Observações</h3>
+                <ul>
+                    <li><strong>Espaço "físico": </strong>O espaço "físico" permanece no seu lugar natural. A única coisa que mudou de lugar foi sua projeção, sua visão.</li>
+                    <li><strong>Interações: </strong> As interações como cliques,  ou efeitos ao passar o mouse, permanecem na sua projeção, pois ela se projeta por inteiro, exceto o seu espaço "físico".</li>
+                    <li><strong>Hierarquia: </strong> As projeções se projetam uma por cima da outra, o que define qual aparecerá por cima é ordem que estão sendo mencionadas no conteiner. Sendo a última a que ficará em por cima de todas e a primeira a que ficará por baixo de todas</li>
+                
+                </ul>
+            </div><!-- /#obs -->
+            <section id="problemas">
+                
+                            <h3>Problemas desse posicionamento</h3>
+                            <ul>
+                                <li><strong>Espaço em branco: </strong>Como o espaço natural não é ocupado por outro elemento. Ficará um espaço vazio no bloco o que pode ficar estéticamente feio ou estranho.</li>
+                                <li><strong>Sensível a modificações: </strong> Como esse posicionamento é projeta sua imagem para outro plano ele poderá gerar efeitos estranho caso seja feita qualquer modificação no futuro. Exemplo se mudar o tamanho do conteiner o bloco pode ir para cima de outro bloco, sair da tela, fica mal posicionado e etc.. </li>
+                
+                            </ul>
+            </section><!-- /#problemas -->
+
+        </article><!-- /#position-relative -->
+        <article id="position-absolute">
+            <h2>Position: absolute;</h2>
+            <section id="introducao">
+                <p>Existem dois casos quando usamos o position absolute em uma div interna a um conteiner:
+                </p>
+                <p>1º caso o conteiner tem um position definida como static. Ou não declarou position pois static é o padrão.</p>
+                <p>2º caso o conteiner possui uma position diferente de static.</p>
+            </section><!-- /#introducao -->
+            <section id="conteiner-sem-position-definida">
+                
+                <h3>Conteiner sem position definida </h3>
+                <p>O bloco com position: absolute  terá seu posicionamento relativo à página. Quando digo página não é body, nem html, mas literalmente a toda a extenção da página.</p>
+                <p>Exemplo de style: </p>
+                    <div class="pre">
+                <pre>
+html{
+    padding:50px;
+}
+
+body{
+    padding: 50px;
+}
+div.conteiner{
+    position: <abbr title="Posicionamento padrão">static;</abbr>
+}
+div.int{
+    postion: absolute;
+    left: 0px;
+}
+
+                </pre>
+                    </div>
+                <p>Como ficaria o exemplo acima:</p>
+                <div class="conteiner conteiner-ex3">
+                
+                    <div class="int int-green int-green-ex3"></div>
+                
+                </div>
+            </section><!-- /#conteiner-sem-position-definida -->
+            <section id="coteiner-com-position-diferente-de-static">
+                <h3>Coteiner com position diferente de static</h3>
+           
+                <p>Caso o bloco possua um conteiner  qualquer que o englobe com position diferente de static. O box absolute terá suas medições relativas a esse conteiner onde ele se encontra.</p>
+                <p>Exemplo style:</p>
+                <div class="pre">
+    <pre>
+
+    div.conteiner{
+        position: <abbr title="Qualquer position diferente de static">relative;</abbr>
+    }
+    div.int-green-ex4{
+        position: absolute;
+        left: 10px;
+    }
+    div.int-blue-ex4{
+        position: relative;
+        left: 0px;
+    }
+
+    </pre>
+                </div>
+                <p>Como ficaria o exemplo acima:</p>
+                <div class="conteiner conteiner-ex4">
+                    <div class="int int-red"></div>
+                    <div class="int int-green int-green-ex4"></div>
+                    <div class="int int-blue int-blue-ex4"></div>
+                </div>
+                <p>Vale ressaltar que se fosse o conteiner "avô" com position diferente de static e o "pai" com position static. O bloco teria sua referência no conteiner "avô."</p>
+            </section><!-- /#coteiner-com-position-diferente-de-static -->
+            <section id="observacaoes-absolute">
+                <h3>Observações</h3>
+                    <ul>
+                        <li><strong>Absolute vs Relative: </strong>O conteiner absolute fica em baixo do relative caso estejam aparecendo no mesmo local da tela. </li>
+                        <li><strong>Projeta por inteiro: </strong>Diferentemente do relativo o posicionamento absoluto porjeta seu espaço "físico" junto com sua projeção visual. Isso significa que não ficará aquele espaço vazio indesjado no meio do conteiner.</li>
+                        <li><strong>Referência no posicionamento: </strong>se desloca  relativo a qualquer conteiner que estiver contido desde que o position seja deferente de static.</li>
+                        <li><strong>Hierarquia de conteiner: </strong> Caso esteja dentro de mais de um conteiner diferente de static ele irá se referenciar por aquele que estiver mais próximo. Exemplo entre o "pai" e o "avô" a referência seria o "pai"</li>
+                        <li><strong>Hierarquia entre blocos</strong> Assim como os blocos de posicionamento relativo que se projetam uma por cima do outro, o que define qual aparecerá por cima aqui também é ordem que estão sendo mencionados no conteiner. Sendo o último o que ficará em por cima de todas e o primeiro o que ficará por baixo de todos</li>
+                    </ul>
+                
+            </section><!-- /#observacaoes-absolute -->  
+        </article><!-- /#position-absolute -->  
+        <article id="position-fixed">
+            <h2>Position fixed</h2>
+            <p>O posicionamento fixed é muito parecido com o posicionamento absoluto, quando o absoluto possui conteiner com posicionamento estático. A diferença é que o posicionamento fixo usa a viewport como referência. </p>
+            <div class="int-green-ex5"> Exemplo de position: Fixed</div>
+
+            <p>Exemplo no canto inferior direito da tela.</p>
+            
+        </article><!-- /#position-fixed -->
+        <article id="position-sticky">
+            <h2>Position Sticky</h2>
+            <p>Essa position funciona como o congelar do excel para correr a planilha sem perder de vista os títulos de cada coluna. Inclusive já usamos essa position no capitulo sobre tabelas.</p>
+            <p>Essa position é muito usada em site de loja quando passar pelo preço ele gruda no topo da página com a opção de comprar sempre visível.</p>
+            <p>Exemplo: os títulos desse sites estão com position Sticky.</p>
+            
+        </article><!-- /#position-sticky -->
+        <article id="float">
+            <h2>Float</h2>
+            <p>Antigamente essa porpriedade era usada como usamos o grid e o flex-box hoje em dia. </p>
+            <section id="aplicabilidade">
+                <h3>Aplicabilidade do float atualmente</h3>
+    
+                <p>Efeitos como os usados no exemplo abaixo são os mais o comuns, hoje em dia, como uma imagem  lateral ao texto ou a primeira letra do texto maior que as demais </p>
+                 <div class="conteiner">
+    
+                        <div class="int int-green int-green-ex6"></div>
+                        <p id="p-exemplo-float">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero maiores quidem nesciunt corrupti quaerat, adipisci exercitationem earum excepturi ipsam cupiditate recusandae, porro dignissimos? Repellendus officiis velit error magnam et.</p>
+                    </div>
+                    <p>O comando</p>
+                    <div class="pre">
+                        <pre>
+    .int-green-ex6{
+        float:right;
+        margin: 10px;
+    }
+    
+    p#p-exemplo-float::first-letter{
+        font-size: 3em;
+        float: inline-start;
+    }
+    p#p-exemplo-float{
+        text-indent: 0;
+    }
+    
+                        </pre>
+                    </div>
+                <div class="obs">
+                    <p>Por algum bug essa primeira letra maior só funciona se text-indent for igual a zero(0). Caso contrário o texto "indenta" antes e depois da letra.</p>
+                </div>
+    
+            </section><!-- /#aplicabilidade -->
+            <section id="funcionamento-float">
+                
+                <h3>Como funciona o float</h3>
+                <p>A propriedade float faz literalmente o bloco flutuar sobre o conteiner a ponto do conteiner perder sua referência.</p>
+                <p>Veja um exemplo abaixo:</p>
+                 <div class="conteiner-ex8">
+                    <div class="int int-red int-red-ex8"></div>
+                    <div class="int int-green int-green-ex8"></div>
+                    <div class="int int-blue int-blue-ex8"></div>
+                </div>
+                
+                <br><br><br><br><br><br> <!--Esses br foram necessário pois o texto subiu para dentro do exemplo de float acima-->
+                <p>O comando:</p>
+                <p>Por causa dessa característica de de perder sua referência, todas as box de um conteiner deverão ser float também. Caso contrário as boxes float iram sobrepor as demais.</p>
+                <p>Exemplo:</p>
+                <div class="conteiner-ex8">
+                    <div class="int int-red int-red-ex9"></div>
+                    <div class="int int-green int-green-ex9"></div>
+                    <div class="int int-blue int-blue-ex9"></div>
+                </div>
+                <p>O comando:</p>
+                <div class="pre">
+                    <pre>
+                &lt;head>
+                    &lt;style>
+                        
+                        .int-green-ex9{
+                float: left;
+                margin-left: 10px;
+                        }
+                    &lt;/style>
+                &lt;/head>
+                &lt;body>
+                    &lt;div class="conteiner-ex8">
+                        &lt;div class="int int-red int-red-ex9">&lt;/div>
+                        &lt;div class="int int-green int-green-ex9">&lt;/div>
+                        &lt;div class="int int-blue int-blue-ex9">&lt;/div>
+                    &lt;/div>
+                &lt;/body>
+                    </pre>
+                </div>
+                <p>Note que o box verde é o segundo no conteiner porém ele está por cima do azul. Isso aconteceu porque o verde "flutuou" com isso o conteiner e o azul perderam sua referência, então o azul subiu e o conteiner readaptou sua altura para enquadrar apenas as box vermelha e a azul.</p>
+                <div class="obs">
+                    <h4>Gambiarra</h4>
+                    <p>Existe um bug que faz o conteiner considerar  os espaços ocupados pelas box que estiverem como float. Para isso basta usar o <strong>overflow:auto;</strong> no conteiner.</p>
+                    <p>Digo bug pois o overflow auto obviamente não foi criado para essa finalidade.</p>
+                    <p>Exemplo:</p>
+                    <div class="conteiner-ex10">
+                        <div class="int int-red int-red-ex8"></div>
+                        <div class="int int-green int-green-ex8"></div>
+                        <div class="int int-blue int-blue-ex8"></div>
+                    </div>
+                    <p>o comando:</p>
+                    <div class="pre">
+                        <pre>
+                .conteiner-ex10{
+                overflow: auto;
+                border: 2px solid #0f0;
+                }
+                        </pre>
+                    </div>
+                </div>
+            </section><!-- /#funcionamento-float -->
+            <section id="clear">
+                <h3>Clear</h3>
+                <p>Essa propriedade foi desenvolvida para trabalhar junto com float, pois sua finalidade é justamente fazer com que as boxes float reconheçam as que não são float. Fazendo assim que a float não sobreponha a elas.</p>
+                <p>Essa porpriedade funciona da seguinte forma:</p>
+                <ul>
+                    <li><strong>Clear: left; </strong> Faz com que todas as float left reconheçam essa box. Porém as float right não reconhecem. </li>
+                    <li><strong>Clear: right; </strong>Faz com que todas as float right reconheçam essa box. Porém as float left não reconhecem.</li>
+                    <li><strong>Clear: both; </strong>Faz com que todas as float left e float right reconheçam essa box.</li>
+                </ul>
+                <p>Exemplo:</p>
+                <div class="conteiner-ex11">
+                    <div class="int int-red int-red-ex11"></div>
+                    <div class="int int-green int-green-ex11"></div>
+                    <div class="int int-blue int-blue-ex11"></div>
+                </div>
+                <p>Vale ressaltar que uma box pode ser clear ou float, ela não funciona com as duas ao mesmo tempo pois a clear perde a funcionalidade.</p>
+
+                <div class="obs">
+                    <h4>Curiosidade</h4>
+                    <p>Como toda box se alinha naturalmente a esquerda e a clear left faz as box float left reconhcerem a box clear left. Se usarmos a propriedade display: inline-box junto com clear left, essa box em questão se comportará como um float left. </p>
+                </div>
+    
+            </section><!-- /#clear -->
+    
+        </article><!-- /#float -->
+       
+
+    </main>
+    <!-- 
+        div.conteiner.>div.int.int-red+div.int.int-green+div.int.int-blue
+    -->
+   <footer>
+       
+            <h1>Materiais utilizados</h1>
+            <strong><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank"> Material em PDF</a></strong>
+            <h2>Vídeos</h2>
+            <p>Curso particular</p>
+            <hr>
+            <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+    </footer>
+    
+</body>
+</html>

@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="stylesheet" href="../../style.css">
 
 
     <style>
@@ -63,7 +63,7 @@
     </header>
     <main>
         <section><!--Tabelas-->
-            <article><!--Introdução-->
+            <article id="introducao"><!--Introdução-->
             <h1>Introdução</h1>
             <p>
                 Tabelas em html são 100% desenhada por comandos, porém de forma muito parecida com as listas.
@@ -143,7 +143,7 @@
                 A w3c permite que não encerre a tag tr com &lt;/tr> nem e td com &lt;/td>. Porém é melhor encerrar para evitar erros.
             </p>
             </article> 
-            <article> <!--Estilos para Tabelas-->
+            <article id="estilos"> <!--Estilos para Tabelas-->
             <h2> Estilos para Tabelas</h2>
             <h3>Style border-collapse</h3>
             <ul>
@@ -186,7 +186,7 @@
             </ul>
             
             </article> 
-            <article> <!--Alinhamentos em tabela-->
+            <article id="alinhamentos"> <!--Alinhamentos em tabela-->
                 <h2> Alinhamentos em tabela</h2>
             <p>
                 Exitem duas formas de alinhar texto em um célula horizontal e vertical. Veja os exemplos abaixo:
@@ -221,9 +221,9 @@
             </ul>
             </article>
         </section>
-        <section><!--Tabela Semântica-->
+        <section id="tabela-semantica"><!--Tabela Semântica-->
             <article><!--Introdução-->
-        <h1>Tabela Semântica</h1>
+        <h2>Tabela Semântica</h2>
             <p>
                 O objetivo de trabalhar com trabalhar com tabelas semânticas é organizar melhor sua tabela. A w3c recomenda o uso desse tipo sempre que for usar tabelas grandes, com muitos dados. No entanto é bom usar essa tipo de tabela sempre que possível, pois o google valoriza essa Semântica.
             </p>
@@ -1147,12 +1147,16 @@ col.D{
                 </pre>
     
             </div>
-            <span class="mark"> 
-                OBS.: Essa width foi só para exemplificar como fica sem precisar reduzir a tela, mas o ideal seria usar width: 80vw; .
-            </span>
-            <span class="mark"> 
-                Quando usa a tabela responsiva ela para de congelar a primeira linha (thead) pois agora ela está dentro de uma div. Para que ela volte a funcionar é preciso colocar um height definido assim como o width  e usar overflow-y também.
-            </span>
+            <p>
+                <span class="mark">
+                    OBS.: Essa width foi só para exemplificar como fica sem precisar reduzir a tela, mas o ideal seria usar width: 80%; .
+                </span>
+            </p>
+            <p>
+                <span class="mark">
+                    Quando usa a tabela responsiva ela para de congelar a primeira linha (thead) pois agora ela está dentro de uma div. Para que ela volte a funcionar é preciso colocar um height definido assim como o width  e usar overflow-y também.
+                </span>
+            </p>
             
         </section>
     </main>

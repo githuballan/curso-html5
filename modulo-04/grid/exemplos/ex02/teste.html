@@ -23,6 +23,8 @@
             max-height: 90vh;
             overflow-y: scroll;
 
+            box-shadow: 1px 1px 500px 1px #000;
+
         }
        
         main{
@@ -31,12 +33,11 @@
         
 
     
-        header>button{
+        button#botao-menu{
     
             display: inline-block;
             position: relative;
-            left:calc(270px - 22px);
-
+            left: 250px;
         
         
         
@@ -69,18 +70,19 @@
     function clickMenu(){
 
         if (menu.style.display == 'block'){
-            menu.style.display = 'none'
+            menu.style.display = 'none' 
             } else {
-            menu.style.display= 'block' }
-    }
-   
+            menu.style.display= 'block'; 
+            }
+            }
+
     function clickDetalhes(){
 
-if (ass1.style.display == 'block'){
-    ass1.style.display = 'none'
-    } else {
-    ass1.style.display= 'block' }
-}
+        if (ass1.style.display == 'block'){
+        ass1.style.display = 'none'
+        } else {
+        ass1.style.display= 'block' }
+        }
 </script>
 
 </head>
@@ -90,7 +92,7 @@ if (ass1.style.display == 'block'){
         
         <h1>testes</h1>
        
-        <button onclick="clickMenu()" ><img src="../ex01/menu.svg" alt=""></button>
+        <button id="botao-menu" onclick="clickMenu()" ><img src="../ex01/menu.svg" alt=""></button>
     </header>
     <main>
         <!--Semântica-->   

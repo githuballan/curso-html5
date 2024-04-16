@@ -79,11 +79,15 @@ let sobrenome;
                     <li><strong>String</strong></li>
                     <li><strong>Boolean</strong></li>
                 </ul>
-                <h3>Typeof</h3>
-                <p>Esse comando serve para identificar que tipo de variável está sendo aplicado àquela variável.</p>
-                <p>Exemplo:</p>
-                <div class="pre">
-                    <pre>
+               
+                <section id="typeof">
+                    
+                    <h3>Typeof</h3>
+                    <p>Esse comando serve para identificar que tipo de variável está sendo aplicado àquela variável.</p>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+               
                         
 > let nome="allan"
 undefined
@@ -98,17 +102,17 @@ undefined
                     </pre>
                 </div>
                 <p>Note que o tipo de varável se altera de acordo com a necessidade.</p>
+            </section><!-- /#typeof -->
             </article><!-- /#variaveis -->
             <article id="operadores">
-                <section id="introducao-operadores">
-                    
-                    <h2>Operadores</h2>
+                <h2>Operadores</h2>
+                    <section id="introducao-operadores">
                     <p>Para manipular os valores das variáveis de um programa, devemos utilizar os operadores oferecidos pela linguagem de programação adotada. A linguagem JavaScript possui diversos operadores e os principais são categorizados da seguinte forma:
                         </p>
                         <ul>
                             <li><strong>Aritmético: </strong>+ - * / %</li>
                             <li><strong>Atribuição: </strong>= += -= *= /= %= ++ --</li>
-                            <li><strong>Relacional: </strong>== != < <= > >=
+                            <li><strong>Comparativo: </strong>== != < <= > >=
                             </li>
                             <li><strong>Lógico: </strong>&& ||
                             </li>
@@ -139,6 +143,36 @@ undefined
                     
                                
                     </section><!--/#operadores-aritmeticos-->
+                    <section id="concatenacao-de-string">
+                        <h3>Concatenação de Strings</h3>
+                        <p>String são variávies capazes de suportar conjuntos de caracteres, vulgo frases e assim como no excel é possível concatenar variáveis do tipo string.</p>
+                        <p>Para isso usamos o sinal de "+"Veja um exemplo abaixo:
+                            <div class="pre">
+                                <pre>
+var nome='João'
+var sobrenome='Silva'
+var nomecompleto='nome'+'sobrenome'
+nomecompleto=JoãoSilva
+                                </pre>
+                            </div>
+                        <p>Note que é necessário incluir espaço no nome!</p>
+                        <div class="obs">
+                            <p>Ao declarar uma string é necessário coloca-la entre aspas duplas ou simples e isso deve ficar padronizado no projeto, pois caso sua string possua aspas no meio do texto, será necessário usar a que não está sendo usada para declarar a string.</p>
+                        </div>
+
+                        <p> Como pudemos notar é o mesmo operador utilidado para adição. Como consequência disso, o JS pode gerar algumas confusões quando precisamos concatenar frases e realizar somas juntas </p>
+                        <p>Exemplo:</p>
+                        <div class="pre">
+                            <pre>
+'João'+1 = João1
+'João'+1+1=João11
+1+1+'João'=2João
+1+1+'João'+2+2=2João22
+1+1+'João'+2+2-1=NaN</pre>
+                        </div>
+                        <p>Como pudemos notar, apartir do momento que usamos um sinal de adição para concatenar, todos os próximos elemento serão reconhecidos como string e todo sinal de adição será reconhecido como concatenação. Caso precise usar algum outro operador aritmético o JS acusará NaN (Not a Number) infomando que não é um número.</p>
+
+                    </section><!-- /#concatenacao-de-string -->
                     <section id="operadores-de-atribuicao">
                         <h3>Operadores de Atribuição</h3>
                         <p>Como o próprio nome já diz esses sinais servem para atribuir algo do lado direito para algo que está no lado esquerdo do sinal (esse algo e o operando), geralmente o que fica no lado esquerdo são variáveis.O operador de atribuição básico é o igual (=), que atribui o valor do operando à direita ao operando à esquerda. Isto é, x = y atribui o valor de y a x.</p>
@@ -211,7 +245,7 @@ undefined
                         <div class="mark">
                             <p><span class="maiuscula">x+5 é diferente de x+=5 pois em x+5 x não altera seu valor apenas apresenta o resultado!</span></p>
                         </div>
-                    </section><!-- /#atribuicao -->
+                    </section><!-- /#operadores-de-atribuicao -->
                     <section id="operadores-comparativos">
                         <h3>Operadores Comparativos</h3>
                         <p>Esses operadores, como o próprio nome já diz, comparam variaveis ou valores. Eles trabalham com valores booleanos, ou seja, verdadeiro ou falso,true or false.</p>
@@ -271,14 +305,57 @@ undefined
                                 </tbody>
                             </table>
                         </div>
-                    </section>
-                    
+                    </section><!-- /#operadores-comparativos -->
+                    <section id="operadores-logicos">
+                        <h3>Operadores Lógicos</h3>
+                        <p>Esses operadores permitem verificar duas ou mais condições devolvendo valores booleanos.</p>
+                        <p>O JavaScript possui 02 operadores lógicos e eles sempre trabalham verificando o resultado dos operadores comparativos. Os operadores lógico são:</p>
+                        <ul>
+                            <li><strong>&& (E): </strong>Esse comparador só retornará o valor "true" se todos os operadores comparativos em questão retornarem "true". Caso um retorne "false" esse comparador retronará "false</li>
+                            <p>Exemplo:</p>
+                            <div class="pre">
+                                <pre>
+<abbr title="true">10>8</abbr> && <abbr title="true">10>08</abbr> && <abbr title="true">10>7</abbr> = true
+<abbr title="true">10>8</abbr> && <abbr title="true">10>05</abbr> && <abbr title="false">10>11</abbr> = false</pre>
+                            </div>
+                            <li><strong>|| (OU): </strong> Esse comparador só retornará o valor "False" se todos os operadores comparativos em questão retornarem "false". Caso um retorne "true" esse comparador retronará "true".</li>
+                            <p>Exemplo:</p>
+                            <div class="pre">
+                                <pre>
+<abbr title="true">10>8</abbr> || <abbr title="false">10>15</abbr> || <abbr title="true">10>7</abbr> = true
+<abbr title="false">10>12</abbr> || <abbr title="false">10>15</abbr> || <abbr title="false">10>11</abbr> = false</pre>
+                            </div>
+                        </ul>
+                    </section><!-- /#operadores-logicos -->
+                    <section id="operador-negacao">
+                        <h3>Operador negação "!"</h3>
+                        <p>Esse operador é simples e muito utilizado. A função dele é apenas inverter o resultado booleano, se for verdadeiro ele trasforma em falso e se for falso trasforma em verdadeiro.</p>
+                        <p>Para isso basta colocar o sinal de "!" antes de qualquer teste e ele inverterá o resultado daquela teste.</p>
+                        <p>Exemplo:</p>
+                        <div class="pre">
+                            <pre>
+!10>5 = false</pre>
+                        </div>
+                        <div class="obs">
+                            <p>OBS.: Esse operador pode ser usado apenas no início da linha do teste de resultado booleano, ele não funciona em testes em teste indviduais dentro do teste principal. Exemplo:</p>
+                            <p>10>8 || 10>15 || <span class="mark">!10>7 </span>= true</p>
+                            <p>Esse resultado não irá alterar pois e operador de negação não causou efeito</p>
+                        </div>
 
+                    </section><!-- /#operador-negacao -->
             </article><!-- /#operadores -->
-            
+            <article id="string-em-number">
+                <h2>Transformando string em Number</h2>
+                <p>Existem duas formas de transformar uma variável string em Number. Mas isso vai dependder se é número inteiro ou fracionado. As duas formas são:  </p>
+                <ul>
+                    <li><strong>parceInt: </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
+                    <li><strong>parceFloat: </strong>Para número fracionados, exemplo: 1,151; 3,58; 7,5...</li>
+                </ul>
+                <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3" </p>
+            </article><!-- /#string-em-number -->
         </section><!-- /#tjs-basico -->
 
-        <script src =" script .js"></script>
+        <script src ="script.js"></script>
 
         
 

@@ -6,6 +6,7 @@
    <meta name="description", content="Tudo que você precisa conhecer sobre tags semântica do html5">
     <title>Capítulo 07</title>
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <meta name="keyword" content="Peixes, neon, betta, filtros, ph, kh, dureza, aquarismo, aquainfo">
 
     <link rel="stylesheet" href="../../style.css">
 </head>
@@ -15,16 +16,29 @@
         <h1 id="capitulo">Semântica</h1>
     </header>
 
-<body>
+
    <main>
     <article id="full-stack">
-        <header>
-            
-            <h1>Full-stack</h1>
-        </header>
+       <h2>Tags Semânticas</h2>
+       <section><!--Introdução-->
+        <p>Esse resumo tem por finalidade melhorar a semântica do html ensinada pelo curso em vídeo. Além de explicar um funcionamento de cada tag semântica respondendo perguntas como:</p>
+            <ul>
+                <li>Quando usar?</li>
+                <li>Por que usar?</li>
+                <li>Como fuinciona?</li>
+                <li>E a importância do uso</li>
+            </ul>
+        
+        <p>Quando o navegador inicia ele começa a ler o código html por etapa:</p>
+        <ol>
+            <li>Lê o head, na ordem um linha por vez</li>
+            <li>Lê o body também na ordem e uma linha por vez</li>
+        </ol>
+        <p>Por isso é importante o link para o arquivo CSS está sempre no head pois assim ele pausa o carregamento da página, carrega todos os estilos e depois volta para o html.</p>
+        </section>
 
         <section><!--Semântica-->
-            <h2>Títulos</h2>
+            <h3>Títulos</h3>
             <p>Títulos possuem importância semantica para interpretação exclusivamente dos navegadores e do mecanismos de busca. Principalmente os mecanismos de busca e isso funciona da segunite forma:</p>
             <p>Caso um usuário pesquise por um palavra chave x e seu título h1 contenha ou seja exatamente essa palavra chave  o mecanismo irá rankear melhor sua página nos resultado que uma página que possua essa palavra chave em um h2 ou outros.</p>
             <p>E se essa palavara chave estiver apenas numa tag "p" provavelmente sua página nem aparecerá na pesquisa</p>
@@ -32,42 +46,10 @@
           <h3>Tag semânticas e não semânticas</h3>
           <p>Existem muitas tag que não possuem efeito semântico algum apenas visual e temo algumas semânticas que possuem efeito visual semelhante. Mas o grande PQ da questão é que qd usamos uma tag semântica o mecanismo de busca entende que aquela palavra tem um significado maior para aquele contexto, logo ele levará em consideração ela na hora de ranker o site nas pesquisas. </p>
           <p>Já as tag não semântica não recebem atenção do mecanismos </p>
-          <section>
-        <h3>lang</h3>
-            <p>Quando criamos um html 5 logo após informar o DOCTYPE ao navegador, nós devemos informar a língua padrão que está sendo usada na página. Por padrão ela vem configurada com "en" de inglês, então sempre devemos muda-la para "pt-br" portugês brasil</p>
-            <p>Isso serve para que mecanismos de busca indiquem a página para pessoas da linguagem correta. </p>
-            <p>Além disso, informar o navegador o idioma da página, pois caso alguém de outra língua navegue em nossa página o navegador poderá oferecer a opção de tradução correta.</p>
-            <p>Comando:</p>
-            <div class="pre">
-                <pre>&lt;html lang="pt-br"</pre>
-            </div>
-            <p>É possível também usar em trechos específicos da página que esteja em uma língua diferente da informada no html.</p>
-            <p>Para isso usamos a esse atributo em tag não semânticas como div ou span. a tag vai depender do tamanho do texto</p>
-            <p>Comando:</p>
-            <div class="pre">
-                <pre>&lt;div lang="pt-br"></pre>
-                
-                <pre>&lt;span lang="pt-br"></pre>
-            </div>
-            
-        </section>
+         
     </article>
     <!--Semântica-->   
-    <section><!--Introdução-->
-    <p>Esse resumo tem por finalidade melhorar a semântica do html ensinada pelo curso em vídeo. Além de explicar um funcionamento de cada tag semântica respondendo perguntas como:</p>
-        <ul>
-            <li>Quando usar?</li>
-            <li>Por que usar?</li>
-            <li>Como fuinciona?</li>
-            <li>E a importância do uso</li>
-        </ul>
-    </section>
-    <p>Quando o navegador inicia ele começa a ler o código html por etapa:</p>
-    <ol>
-        <li>Lê o head, na ordem um linha por vez</li>
-        <li>Lê o body também na ordem e uma linha por vez</li>
-    </ol>
-    <p>Por isso é importante o link para o arquivo CSS está sempre no head pois assim ele pausa o carregamento da página, carrega todos os estilos e depois volta para o html.</p>
+   
     <section><!--!DOCTYPE-->              
         <h4>&lt;!DOCTYPE html></h4>
         <p>
@@ -101,15 +83,14 @@
                 </ul>
 
             </section>
-            <article><!--sub-artigo: Metatag-->
-                <section><!--Introdução-->
-                    
-                    <h3>metatag</h3>
+            <article id="metatag"><!--sub-artigo: Metatag-->
+                <h2>metatag</h2>
+                <section>
                     <p>Metatags servem para fazermos as configurações do próprio documento no documento.</p>
                     
-                </section>
-                <section><!--charset-->
-                    <h4>charset</h4>
+                </section><!--Introdução-->
+                <section id="charset">
+                    <h3>charset</h3>
                     <p>Essa configuração meta definhe qual padrão de caracteres usaremos em nossa página, é como definir qual será a biblioteca usada para identificar o caracteres que usaremos na nossa página. No Brasil devemos usar sempre o UTF-8 pois é o que engloba acentuações, til, c cidilha enfim. </p>
                     <p>Quando usamos o charset errado o navegador não interpreta esses caracteres e a página fica cheia de erros no texto..</p>
                     <p>O comando:</p>
@@ -119,9 +100,9 @@
     &lt;meta charset="UTF-8">
                         </pre>
                     </div>
-                </section>
-                <section><!--viewport-->
-                    <h4>viewport</h4>
+                </section><!--charset-->
+                <section id="viewport">
+                    <h3>viewport</h3>
                     <p>Essa  meta pega a largura do navegador e adapta o conteúdo do site a essa largura tornando o site mais responsivo. </p>
                     <p>Esse é um dos principais diferenciais do html5</p>
                     <p>O comando:</p>
@@ -132,9 +113,9 @@
                             </pre>
                         </div>
                     
-                </section>
-                <section><!--description-->
-                    <h4>description</h4>
+                </section><!--viewport-->
+                <section id="description">
+                    <h3>description</h3>
                     <p>Essa meta é muito importante para rankear bem noss conteúdo nos mecanismos de busca, pois ela é o que aparece na descrição do nosso site no Google logo abaixo do título </p>
                     <p> Vale apena estudar um pouco de marketing digital para preencher essa descrição</p>
                     <p>O comando:</p>
@@ -146,7 +127,15 @@
                     </div>
                     <p class="mark">Das 3 metas que vimos até agora essa é a primeira que não vem por padrão quando digitamos"!" para iniciar um doc html 5. Porém ela é uma excelente prática, que dever ser adotada em todo site que criarmos</p>
                 
-                </section>
+                </section><!--description-->
+                <section id="keyword">
+                    <h3>keywords</h3>
+                    <p>Essa tag é responsável pelas palavras chaves que puxarão essa página para ser exibidada no Google.</p>
+                    <p>Essa e a meta descrpition são tecnicas diretamente ligadas a SEO e super importantes para um bom rankeamento do site.</p>
+                    <div class="pre">
+                        <pre>&lt;meta name="keyword" content="Peixes, neon, betta, filtros, ph, kh, dureza, aquarismo, aquainfo"></pre>
+                    </div>
+                </section><!--keyword-->
             </article><!--Fim metatag-->
         </article><!--Fim head-->
         <article><!--body-->

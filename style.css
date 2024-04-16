@@ -7,6 +7,9 @@
     font-weight: normal;
     font-style: normal;
 }
+*{
+    box-sizing: border-box;
+}
 /*---------------------------------CLASS-------------------------------*/
 .mark/*Efeito marca texto*/
 {
@@ -35,7 +38,7 @@ body
     color: rgb(5, 3, 28);
     max-width: 1300px;
     margin: auto;
-    padding: 1px;
+    
  }
 
  header
@@ -67,13 +70,8 @@ main
     margin: auto;
 
 }
-article#full-stack{
-    border: 1px solid #000000;
-    border-radius: 10px;
-}
-article#guanabara{
-    border: 1px solid #0000ff;
-}
+
+
 footer
 {
     margin-top: 200px;
@@ -163,6 +161,9 @@ p
     margin: 7px;
     text-indent: 3em;
 }
+p::first-letter{
+    text-transform: uppercase;
+}
 
 a[target="_blank"]::after
 {
@@ -209,6 +210,8 @@ h2
     padding: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 4px 0px #00000055;
+    position: sticky;
+    top: 0;
 
 }
     
@@ -224,6 +227,10 @@ h3
     border-radius: 5px;
     padding: 5px;    
     box-shadow: 1px 1px 2px 0px #00000055;
+    background-color: #FBF8F3;
+    position: sticky;
+    top: 37px;
+    
 }
 table.tabela_basica{
     border-collapse: collapse;
