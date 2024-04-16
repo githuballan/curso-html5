@@ -191,7 +191,11 @@ h1, h2, h3, h4, h5, h6
 {
     font-family: 'Times New Roman', Times, serif;
     text-align: left;
+    margin: 5px;
+    font-size: 1.2em;
+    padding: 10px;
 }
+
 h1 
 {
     
@@ -214,12 +218,6 @@ h2
     top: 0;
 
 }
-    
-
-    h3, h4, h5, h6{
-    font-size: 1.2em;
-}
-
 h3
 {
     font-size: 1.3em; 
@@ -231,19 +229,23 @@ h3
     position: sticky;
     top: 37px;
     
-}
-table.tabela_basica{
+}    
+
+   
+
+
+.tabela_basica{
     border-collapse: collapse;
     border: 2px solid #000;
 }
-td.td_tabela_basica{
+.td_tabela_basica{
     border: 2px solid #000;
     padding: 5px 7px 5px 7px;
 }
 .td_left{
     text-align: left;
 }
-th.th_col_tabela_basica{
+.th_col_tabela_basica{
     border: 2px solid #000;
     padding: 3px;
     text-align: center;

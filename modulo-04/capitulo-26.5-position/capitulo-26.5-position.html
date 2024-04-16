@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
 
     <style>
-
+        /*configurações gerais dos exemplos*/
         .conteiner{
             height: 400px;
             width: 350px;
@@ -31,6 +31,8 @@
         .int-blue{
             background-color: blue;
         }
+        /* fim configurações gerais dos exemplos*/
+
         /*Exemplo in-line block ex1*/
         .conteiner-ex1{
             text-align: center;
@@ -39,11 +41,9 @@
         .int-ex1{
             display:inline-block
         }
-
         /*fim Exemplo in-line block ex1*/
 
-        /*Exemplo Position Relative ex2*/
-        
+        /*Exemplo Position Relative ex2*/        
         .int-red-ex2{
             position: relative;
             top:200px;
@@ -62,17 +62,15 @@
         div.int-green-ex2:hover{
             background-color: #000;
         }
-        /*Exemplo fim Position Relative ex2*/
+        /* fim Exemplo Position Relative ex2*/
 
         /*Exemplo Position absolute */
-        /*ex3*/
-       
+        /*ex3*/       
         .int-green-ex3{
             position: absolute;
             left: 0px;
 
-        }
-        
+        }        
         /*fim ex3*/
         /*ex4*/
         .conteiner-ex4{
@@ -89,8 +87,7 @@
         /*fim ex04*/
         /* fim Exemplo Position absolute */
 
-        /*Exemplo Position fixed ex05*/
-        
+        /*Exemplo Position fixed ex05*/        
         .int-green-ex5{
             width: 60px;
             height: 60px;
@@ -120,7 +117,6 @@
         /*fim Exemplo Position float ex06*/
 
         /*Exemplo Position clear*/
-
         /*ex07*/
         .int-red-ex7{
             float:right;
@@ -139,7 +135,6 @@
             
         }
         /*fim ex07*/
-
         /*ex08*/
         .conteiner-ex8{
             border: 2px solid #0f0;
@@ -153,34 +148,27 @@
             float: left;
 
         }
-
         .int-blue-ex8{
             float: left;
         }
        /*fim ex08*/
-
-       /*ex09*/
-       
+       /*ex09*/       
         .int-green-ex9{
             float: left;
             margin-left: 10px;
         }
          /*fim ex09*/
-
          /*ex10*/
-
          .conteiner-ex10{
             overflow: auto;
             border: 2px solid #0f0;
          }
          /*fim ex10*/
-
          /*ex11*/
          .conteiner-ex11{
             overflow: auto;
             border: 2px solid #0f0;
          }
-
          .int-red-ex11{
             float: left;
         }
@@ -191,8 +179,69 @@
            clear:left;
            display: inline-block;
         }
-
          /*fim ex11*/
+         /*ex13*/
+         .int-yellow{
+            background-color: yellow;
+         }
+        .int-red-ex13{
+            width: 346px;
+        }
+        .int-green-ex13{
+            float:left;
+            height: 200px;
+        }
+        .int-blue-ex13{
+            float:left;
+            height: 200px;
+            width: 246px; 
+        }
+        .int-yellow-ex13{
+            clear:both;
+            width: 346px; 
+        }
+         /*fim ex13*/
+         /* fim Exemplo Position clear*/
+
+         /*Exemplo Transform*/
+         /*ex12*/
+         .int-red-ex12{
+            transform: translate3d(-50%, -50%, 0);
+        }
+        .int-green-ex12{
+            transform: rotate(45deg);
+        }
+        .int-blue-ex12{
+            transform:rotatey(135deg) 
+        }
+         /*fim ex12*/
+         /* fim Exemplo Transform*/
+    </style>
+    <style>/*Transform*/
+    /*Configurações Básicas*/
+    .conteiner-float{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #0f0;
+    }
+    .div-img{
+        width: 50px;
+        height: 50px;
+        border: 1px solid #000;
+    }
+    /*fim Configurações Básicas*/
+
+    .div-img-translate{
+        transform: translate(-50%, -50%);
+        margin:50%;	
+    }
+    .div-img-scale{
+        transform: scale(5,1);
+        margin:40%;        
+    }
+    .div-img-rotate{
+        transform: rotate(180deg)
+    }
 
 
     </style>
@@ -442,7 +491,28 @@ div.int{
                 </div>
                 
                 <br><br><br><br><br><br> <!--Esses br foram necessário pois o texto subiu para dentro do exemplo de float acima-->
-                <p>O comando:</p>
+               <p>o comando:</p>
+               <div class="pre">
+                <pre>
+
+.conteiner-ex8{
+    border: 2px solid #0f0;
+    
+}
+.int-red-ex8{
+    float:right;
+
+}
+.int-green-ex8{
+    float: left;
+
+}
+
+.int-blue-ex8{
+    float: left;
+                    }
+                </pre>
+               </div>
                 <p>Por causa dessa característica de de perder sua referência, todas as box de um conteiner deverão ser float também. Caso contrário as boxes float iram sobrepor as demais.</p>
                 <p>Exemplo:</p>
                 <div class="conteiner-ex8">
@@ -453,22 +523,24 @@ div.int{
                 <p>O comando:</p>
                 <div class="pre">
                     <pre>
-                &lt;head>
-                    &lt;style>
-                        
-                        .int-green-ex9{
-                float: left;
-                margin-left: 10px;
-                        }
-                    &lt;/style>
-                &lt;/head>
-                &lt;body>
-                    &lt;div class="conteiner-ex8">
-                        &lt;div class="int int-red int-red-ex9">&lt;/div>
-                        &lt;div class="int int-green int-green-ex9">&lt;/div>
-                        &lt;div class="int int-blue int-blue-ex9">&lt;/div>
-                    &lt;/div>
-                &lt;/body>
+
+&lt;head>
+    &lt;style>
+        
+        .int-green-ex9{
+        float: left;
+        margin-left: 10px;
+        }
+
+    &lt;/style>
+&lt;/head>
+&lt;body>
+    &lt;div class="conteiner-ex8">
+        &lt;div class="int int-red int-red-ex9">&lt;/div>
+        &lt;div class="int int-green int-green-ex9">&lt;/div>
+        &lt;div class="int int-blue int-blue-ex9">&lt;/div>
+    &lt;/div>
+&lt;/body>
                     </pre>
                 </div>
                 <p>Note que o box verde é o segundo no conteiner porém ele está por cima do azul. Isso aconteceu porque o verde "flutuou" com isso o conteiner e o azul perderam sua referência, então o azul subiu e o conteiner readaptou sua altura para enquadrar apenas as box vermelha e a azul.</p>
@@ -485,10 +557,10 @@ div.int{
                     <p>o comando:</p>
                     <div class="pre">
                         <pre>
-                .conteiner-ex10{
-                overflow: auto;
-                border: 2px solid #0f0;
-                }
+.conteiner-ex10{
+overflow: auto;
+border: 2px solid #0f0;
+}
                         </pre>
                     </div>
                 </div>
@@ -508,17 +580,161 @@ div.int{
                     <div class="int int-green int-green-ex11"></div>
                     <div class="int int-blue int-blue-ex11"></div>
                 </div>
+                <p>O comando:</p>
+                <div class="pre">
+                    <pre>
+
+.conteiner-ex11{
+    overflow: auto;
+    border: 2px solid #0f0;
+    }
+
+    .int-red-ex11{
+    float: left;
+}
+.int-green-ex11{
+    float: left;
+}
+.int-blue-ex11{
+    clear:left;
+    display: inline-block;
+}
+                    </pre>
+                </div>
                 <p>Vale ressaltar que uma box pode ser clear ou float, ela não funciona com as duas ao mesmo tempo pois a clear perde a funcionalidade.</p>
 
                 <div class="obs">
                     <h4>Curiosidade</h4>
                     <p>Como toda box se alinha naturalmente a esquerda e a clear left faz as box float left reconhcerem a box clear left. Se usarmos a propriedade display: inline-box junto com clear left, essa box em questão se comportará como um float left. </p>
                 </div>
+                <h4>Layout de sites antigos usando float</h4>
+                <p>Como foi dito no início dessa position, a melhor forma de fazer layout antigamente era usando float. Isso funcionava como uma flex box. Veja o exemplo abaixo:</p>
+                <div class="conteiner">
+                    <div class="int int-red int-red-ex13"> HEADER</div>
+                    <div class="int int-green int-green-ex13">NAV</div>
+                    <div class="int int-blue int-blue-ex13">MAIN</div>
+                    <div class="int int-yellow int-yellow-ex13">FOOTER</div>
+                </div>
+                <p>O comando:</p>
+                <div class="pre">
+                    <pre>
+
+.conteiner{
+    height: 400px;
+    width: 350px;
+    border: 2px solid #0f0;
+    margin: auto;
+}
+
+.int-red-ex13{
+    width: 346px;
+}
+.int-green-ex13{
+    float:left;
+    height: 200px;
+}
+.int-blue-ex13{
+    float:left;
+    height: 200px;
+    width: 246px; 
+}
+.int-yellow-ex13{
+    clear:both;
+    width: 346px; 
+}   
+                    </pre>
+                </div>
     
             </section><!-- /#clear -->
     
         </article><!-- /#float -->
-       
+       <article id="transform">
+        <h2>Transform</h2>
+            <section class="introducao">
+                
+                <p>A propriedade tranform também é uma propriedade de posicionamento porém ela tira como base suas próprias medidas. Função muito útil para evitar gambiarras como margem negativa.</p>
+                <p>Existem 6 tipos de transform e cada uma modifica o bloco ou img de uma forma. Essas 6 são:</p>
+                <ul>
+                    <li><strong>transform: translate</strong></li>
+                    <li><strong>transform: scale</strong></li>
+                    <li><strong>transform: rotate</strong></li>
+                    <li><strong>transform: skew</strong></li>
+                    <li><strong>transform: matrix</strong></li>
+                    <li><strong>transform: scale(0.5) translate(-100%, -100%);</strong> É possível usar mais de um trasform na mesma prorpiedade.</li>
+                </ul>
+            </section><!-- /.introducao -->
+            <section id="translate">
+                <h3>transform translate</h3>
+                <p>Essa função translate funciona de forma parecida com a position relative, pois essa também se projeta sem mover o espaço físico dela. Entrentanto o translate usa medidas relativas a si próprio tipo as margens só que sem aumentar o espaço físico, pois esse fica parado igual ao position relative.</p>
+                <p>Um uso muito comum é usar essa propriedade com porcentagem afim de alinhas elementos, pois nela podemos alterar seus limites forçando a box a se guiar  pelo centro invés das extremidades dela usando transform: translate(-50%, -50%); e com margin 50% é possível centralizar qualquer box. </p>
+                <p>A função translate funciona com eixo x e y onde entre () fica primeiro o eixo x e depois o y separados por vírgula.</p>
+                <p>Exemplo:</p>
+                
+                <div class="conteiner-float">
+                    <div class="div-img div-img-translate">
+                        <img src="imagens/firefox-logo.svg" alt="Logo fire fox para exemplo">
+                    </div>
+                </div>
+                <p>O Comando:</p>
+                <div class="pre">
+                    <pre>
+
+    .div-img-translate{
+        transform: translate(-50%, -50%);
+        margin:50%;	
+    }
+                    </pre>
+                </div>
+                <div class="obs">
+                    <h4>Observação</h4>
+                    <p>Não pode haver espaços entre a <abbr title="translate ou qualquer outra">função</abbr> e os () pois o navegador não reconhece o comando!!</p>
+                </div>
+                
+                
+            </section><!-- /#translate-->
+            <section id="scale">
+                <h3>transform scale</h3>
+                <p>Essa função mexe na escala do largura (width) e altura (height) da box podendo esticar ou reduzir ambas em proporções independentes. </p>
+                <p>Porém depois de criar a escala, quando for mexer só no width ou só no height o box irá aumentar seguindo a proporção criada na escala.</p>
+                <p>Exemplo:</p>
+
+                <div class="conteiner-float">
+                   
+                        <img  class="div-img-scale" src="imagens/firefox-logo.svg" alt="Logo fire fox para exemplo">
+                    
+                </div>
+                <p>O comando:</p>
+                <div class="pre">
+                    <pre>
+
+.div-img-scale{
+    transform: scale(5,1);
+    margin:40%;        
+}
+                    </pre>
+                </div>
+
+            </section><!-- /#scale -->
+            <section id="rotate">
+                <h3>transform: rotate</h3>
+                <p>Como já é de se imagina essa função rotate rotaciona o elemanto ou a box.</p>
+                <p>Exemplo:</p>
+                <div class="conteiner-float">
+                    <img  class="div-img-rotate" src="imagens/firefox-logo.svg" alt="Logo fire fox para exemplo">
+            </div>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+
+.div-img-rotate{
+    transform: rotate(180deg)
+}
+                </pre>
+            </div>
+
+            </section>
+            <!-- /#rotate -->
+       </article><!-- /#transform-->
 
     </main>
     <!-- 
@@ -527,9 +743,14 @@ div.int{
    <footer>
        
             <h1>Materiais utilizados</h1>
-            <strong><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank"> Material em PDF</a></strong>
+            <p><strong><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank"> Material em PDF</a></strong></p>
+            <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform" target="_blank"><strong>Propriedade Transform MDN</strong></a></p>
+            <p><a href="../../material-de-apoio/Aula 07 - CSS - tranformação e transição.pdf"><strong> Traformação e transição</strong></a></p>
             <h2>Vídeos</h2>
             <p>Curso particular</p>
+            <p><a href="https://youtu.be/VwilZMUnddY?si=eazwDTFN5_Deax9b" target="_blank"><strong>Transform translate-Serliv</strong></a></p>
+            <p><a href="https://youtu.be/eQdTJa0HbtE?si=VjEehtuYTPBBFEuI" target="_blank"><strong>Float atualmente - Serliv</strong></a></p>
+            <p><a href="https://youtu.be/KCNY1Q8H7jY?si=_5jmakUkdiEuwVes" target="_blank"><strong>Float - Serliv</strong></a></p>
             <hr>
             <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
     </footer>
