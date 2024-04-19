@@ -236,11 +236,32 @@
         margin:50%;	
     }
     .div-img-scale{
-        transform: scale(5,1);
-        margin:40%;        
+        transform: scale(2,0.5);               
     }
     .div-img-rotate{
         transform: rotate(180deg)
+    }
+    .div-img-origin{
+        transform-origin: right top;
+        transform: rotate(270deg);
+       
+    }
+    .div-img-mais{
+        transform-origin: right top;
+        transform:scale(.5,.3)translate(50%, 50%)rotate(180deg) ;
+        border: 1px solid ;
+       
+       
+    }
+    .conteiner-float-skew{
+        width: 100%;
+        overflow: hidden;
+    }
+    .div-img-skew{
+        border: 1px solid ;
+        width: 200px;
+        background-color: #0f0;
+        transform: skewX(180deg);
     }
 
 
@@ -708,10 +729,15 @@ border: 2px solid #0f0;
                     <pre>
 
 .div-img-scale{
-    transform: scale(5,1);
-    margin:40%;        
+    transform: scale(2,0.5);  
 }
                     </pre>
+                </div>
+                <div class="obs">
+                    <ul>
+                        <li>Note que ao reduzir pela metade sua altura ela reduiu em direção a centro da box e não foi para o centro superior esquerdo como seria se uma box tivesse essa proporções</li>
+                        <li>Não é necessário usar sempre dois valores nessa propriedade(um para o eixo X e outro para o Y). É possível também pôr apenas um valor e o progrma aplicará esse valor para os dois eixos. </li>
+                    </ul>
                 </div>
 
             </section><!-- /#scale -->
@@ -732,15 +758,99 @@ border: 2px solid #0f0;
                 </pre>
             </div>
 
+            </section><!-- /#rotate -->
+            <section id="orign">
+                <h3>transform: origin</h3>
+                <p>Essa propriedade modifica a origem da div. Origem seria o local da box que menos se movimenta ou que fica parada durante as trasformações da box.</p>
+                <p>Exemplo:</p>
+                <div class="conteiner-float">
+                    <img  class="div-img-origin" src="imagens/firefox-logo.svg" alt="Logo fire fox para exemplo">
+            </div>
+                <p>O comando:</p>
+                <div class="pre">
+                    <pre>
+
+.div-img-origin{
+    transform-origin: right top;
+    transform: rotate(270deg);
+    
+}
+                    </pre>
+                </div>
+                
+                <div class="obs">
+                    <p>Observação:</p>
+                    <ul>
+                        <li>Note que é possível relocar a origem da transformação tanto para o centro das laterais, quanto para as diagonais, para isso basta colocar o nome das laterais(left, right, top, bottom) que são unidas pela diagonal em questão.</li>
+                        <li>Perceba também que mesmo a figura sendo circular, o navegador reconhece ela como quadrada. </li>
+                    </ul>
+                </div>
+                
+
+            </section><!-- /#orign -->
+            <section id="mais-de-uma-transform">
+                <h3>Usando mais de uma transform</h3>
+                <p>Para usar mais de uma propriredade transform, precisamos adicionar toda as transformações desejadas dentro da mesma propriedade trasform. Não é igual uma shothand, pois a shothand é opcional, já se quiser fazer mais de um tranformação no box só poderá fazer dessa forma pois, caso contrário, o CSS só reconhecerá a primeira ou nenhuma.</p>
+                <p>Exemplo:</p>
+                <div class="conteiner-float">
+                    <img  class="div-img-mais" src="imagens/firefox-logo.svg" alt="Logo fire fox para exemplo">
+            </div>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+
+.div-img-mais{
+    transform-origin: right top;
+    transform:scale(.5,.3)translate(50%, 50%)rotate(180deg) ;
+    border: 1px solid ;
+}
+                </pre>
+            </div>
+            <div class="obs">
+                <p>Observações</p>
+                <ul>
+                    <li>A ordem das transformações faz toda a diferença no efeito final. Se atente ao que efeito desejado. Para isso faça o código passo a passo, mesmo que mentalmente, para notar o que irá acontecer na próxima transformação.</li>
+                 
+                </ul>
+            </div>
+            </section><!-- /#mais-de-uma-transform -->
+            <section id="skew">
+                <h3>skew</h3>
+                <h4>skewx ou y</h4>
+                <p>Essa transform atua inclinando os eixos x e y um de acordo com o outro como base, se inclinar o eixo x no ângulo de 60 graus ele abrirá 60º no verticeY(neg) com X(pos) </p>
+                <p>Exemplo:</p>
+                <div class="conteiner-float conteiner-float-skew">
+                    <img  class="div-img-skew" src="imagens/firefox-logo.svg" alt="Logo fire fox para exemplo">
+            </div>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+
+.div-img-skew{
+    border: 1px solid ;
+    width: 200px;
+    background-color: #0f0;
+    transform: skewX(60deg);
+}
+                </pre>
+            </div>
+            <div class="obs">
+                <p>Observação</p>
+                <ul>
+                    <li>Se o ângulo se abre no verticeY(neg) com X(pos). Logo, se colocar 90º a box deverá sumir pois os eixos ficarão paralelos. </li>
+                    <li>Se colocar o ângulo de 180º ele não espelha a imagem. Não entendi o porque. Deveria aparecer invertida</li>
+                </ul>
+            </div>
+            h4
+
             </section>
-            <!-- /#rotate -->
        </article><!-- /#transform-->
 
     </main>
     <!-- 
         div.conteiner.>div.int.int-red+div.int.int-green+div.int.int-blue
     -->
-   <footer>
+    <footer>
        
             <h1>Materiais utilizados</h1>
             <p><strong><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank"> Material em PDF</a></strong></p>
