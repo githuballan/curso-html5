@@ -90,6 +90,9 @@ footer>iframe
 
 }
 /*-------------BOXE pequenas--- -- -- -- -- -- -- -- -- -- -- -- -- -- --*/
+/*
+<a class="buttom buttom-index" href="../../index.html">Índice</a>
+*/
 code
 {
     margin: 15px;
@@ -126,6 +129,35 @@ pre{
     margin-top: 2px;
     font-family: Helvetica, sans-serif
 }
+
+.buttom{
+    border-radius: 5px;
+    background-color: #aaa;
+    padding: 7px;
+    box-shadow: inset 2px 2px #ffffff88;
+    border: 1px groove;
+}
+.buttom:hover{
+    box-shadow: inset 2px 2px #ffffff88;
+    background-color: #bbb;
+}
+
+.buttom:active{
+    box-shadow: inset -1px -1px #ffffff88;
+    background-color: #999;
+}
+
+.buttom-index{
+    color: #000;
+    text-decoration: none;
+
+    position: fixed;
+    right: 10px;
+    bottom: 15px;
+    z-index: 20;
+   
+}
+
 
 ul
 {
