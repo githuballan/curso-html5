@@ -12,22 +12,52 @@
                         
 </head>
 <body>
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        <h1>Capítulo 28</h1>
+        <h1>Capítulo 29</h1>
         <h1>Java Script Básico</h1>
     </header>
     <main>
-        <section id="js-basico">
+
             <article id="introducao-js">
+                <h2>Conhecimentos básicos</h2>
                
                 <p>Nos capítulos anteriores, vimos que as linguagens HTML e a CSS são fundamentais para a criação de páginas web. O foco do HTML é o conteúdo enquanto o foco do CSS é a formatação dessas páginas.</p>
                 <p>As linguagens HTML e CSS não são linguagens de programação. Para resolver determinados problemas, é necessário utilizar uma linguagem de programação. Por isso, veremos nesse capítulo, a linguagem de programação JavaScript.</p>  
                 <p>Com a linguagem JavaScript podemos construir páginas extremamente dinâmicas e interativas. O foco do JavaScript é implementar o comportamento ou a inteligência das páginas web</p>
-                <p>Há duas formas de associar código JavaScript e documentos HTML.</p>
+                <p>Há duas formas de associar código JavaScript aos documentos HTML.</p>
                 <ul>
                     <li><strong>Interno</strong></li>
                     <li><strong>Externo</strong></li>
                 </ul>
+               
+                <p>Para trabalhar com JS é necessário ter intalado o node js no pc para rodar os programas que iremos criar. Para isso basta assistir o vídeo <a href="https://youtu.be/FdePtO5JSd0?si=YELVCXbHkyvvZCz_">Dando os primeiros passos em JS</a></p>
+                <p>Feito isso, existem duas formas de rodar um programa Java script:</p>
+                <ul>
+                    <li>No VS Code</li>
+                    <li>No navegador</li>
+                </ul>
+                <section id="no-vscode">
+                    <h3>Rodando JS no VS Code</h3>
+                    <p>Para rodar o Java Script no VS Code basta abrir um novo terminal utlizando a tecla de atalho "ctrl+j" ou abrindo a aba "Terminal" &rArr;"Novo terminal"</p>
+                    <p>Após isso abrirá uma janela no VS Code em baixo da janela de código. Nela digita "node" e enter. Pronto agora é so digitar os códigos nela e o resultado será exposto na linha abaixo.</p>
+                </section><!--/#no-vscode-->
+                <section id="no-navegador">
+                    <h3>Rodando JS no navegador</h3>
+                    <p>Para rodar o JS navegador é necessário associar código JavaScript ao HTML.</p>
+                    <p> Feito isso, abra o navegador &rArr; botão direito na página de navegação&rArr; Inpecionar e &rArr; cliquei na aba console. Agora para aparecer os resultados dos código é necessário sempre digitar o coódigo:"console.log(a)" </p>
+                    <p>exemplo:</p>
+                    <div class="pre">
+                        <pre>
+var a = 30;
+var b = 5;
+console.log(a+b);
+                        </pre>
+                    </div>
+                    <p>No console irá aparecer apenas o que está entre parenteses. Nesse caso seria 35</p>
+                    
+                </section>
+                
             </article><!--/#introducao-js -->
             <article id="js-interno">
                 <h2>JavaScript interno</h2>
@@ -83,7 +113,7 @@ let sobrenome;
                 <section id="typeof">
                     
                     <h3>Typeof</h3>
-                    <p>Esse comando serve para identificar que tipo de variável está sendo aplicado àquela variável.</p>
+                    <p>Esse comando serve para identificar o tipo que está sendo aplicado àquela variável.</p>
                     <p>Exemplo:</p>
                     <div class="pre">
                         <pre>
@@ -102,7 +132,7 @@ undefined
                     </pre>
                 </div>
                 <p>Note que o tipo de varável se altera de acordo com a necessidade.</p>
-            </section><!-- /#typeof -->
+                </section><!-- /#typeof -->
             </article><!-- /#variaveis -->
             <article id="operadores">
                 <h2>Operadores</h2>
@@ -155,8 +185,9 @@ var nomecompleto='nome'+'sobrenome'
 nomecompleto=JoãoSilva
                                 </pre>
                             </div>
-                        <p>Note que é necessário incluir espaço no nome!</p>
+                        
                         <div class="obs">
+                            <p>Note que é necessário incluir espaço no nome!</p>
                             <p>Ao declarar uma string é necessário coloca-la entre aspas duplas ou simples e isso deve ficar padronizado no projeto, pois caso sua string possua aspas no meio do texto, será necessário usar a que não está sendo usada para declarar a string.</p>
                         </div>
 
@@ -175,7 +206,7 @@ nomecompleto=JoãoSilva
                     </section><!-- /#concatenacao-de-string -->
                     <section id="operadores-de-atribuicao">
                         <h3>Operadores de Atribuição</h3>
-                        <p>Como o próprio nome já diz esses sinais servem para atribuir algo do lado direito para algo que está no lado esquerdo do sinal (esse algo e o operando), geralmente o que fica no lado esquerdo são variáveis.O operador de atribuição básico é o igual (=), que atribui o valor do operando à direita ao operando à esquerda. Isto é, x = y atribui o valor de y a x.</p>
+                        <p>Como o próprio nome já diz esses sinais servem para atribuir algo do lado direito para algo que está no lado esquerdo do sinal (esse algo é o operando), geralmente o que fica no lado esquerdo são variáveis.O operador de atribuição básico é o igual (=), que atribui o valor do operando à direita ao operando à esquerda. Isto é, x = y atribui o valor de y a x.</p>
                           
                         <p>Os outros operadores de atribuição são encurtamentos de operadores padrão.</p>
 
@@ -343,39 +374,51 @@ nomecompleto=JoãoSilva
                         </div>
 
                     </section><!-- /#operador-negacao -->
+                    <section id="operador-ternario">
+                        <h3>Operador ternário “?:”</h3>
+                        <p>O Operador ternário "?" funciona como um if simplificado onde se uma comparação for verdadeira ele irá gerar o primeiro resultado e se for falso irá entregar o segundo resultado.</p>
+                        <p>Exemplo:</p>
+                        <div class="pre">
+                            <pre>
+var a = 30;
+var b = 5;
+a==b?"Sim":"Não"
+                            </pre>
+                        </div>
+                        <p>No exemplo acima o resultado será: Não.</p>
+                    </section><!-- /#operador-ternario -->
             </article><!-- /#operadores -->
             <article id="string-em-number">
                 <h2>Transformando string em Number</h2>
                 <p>Existem duas formas de transformar uma variável string em Number. Mas isso vai dependder se é número inteiro ou fracionado. As duas formas são:  </p>
                 <ul>
-                    <li><strong>parceInt: </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
-                    <li><strong>parceFloat: </strong>Para número fracionados, exemplo: 1,151; 3,58; 7,5...</li>
+                    <li><strong>Number.parseInt: </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
+                    <li><strong>Number.parseFloat: </strong>Para número fracionados, exemplo: 1,151; 3,58; 7,5...</li>
                 </ul>
-                <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3" </p>
+                <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3"</p>
             </article><!-- /#string-em-number -->
-        </section><!-- /#tjs-basico -->
+    
 
-        <script src ="script.js"></script>
-
-        
-
-    </main>
-    <footer>
-        <a href="exercicios/exemplos.html" target="_blank">Html para testes</a>
-        <hr>
-        <a href="exercicios/ex01.html">Execícios </a>
-
-        <h1>Materiais utilizados</h1>
             
-        <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
-     
-     
- <h1>Vídeos</h1>
-
-        <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-       
-    
-    </footer>
-    
-</body>
+            
+            
+        </main>
+        <footer>
+            <a href="exercicios/exemplos.html" target="_blank">Html para testes</a>
+            <hr>
+            <a href="exercicios/ex01.html">Execícios </a>
+            
+            <h1>Materiais utilizados</h1>
+            
+            <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
+            
+            
+            <h1>Vídeos</h1>
+            
+            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+            
+            
+        </footer>
+    <script src ="script.js"></script>
+    </body>
 </html>
