@@ -1,26 +1,72 @@
-var a = 30;
-var b = 5;
-var c = 'joão';
-console.log(a+b+c+a+b);
 
-a="30";
+console.log("Exemplo Switch")
 
-b="5";
-Number.parseInt(b)
-b+=b
-var c = Number.parseInt(a)+Number.parseInt(b)
- 
-
+var a = 3;
+a=8
 console.log(a)
-console.log(a==b?"sim":"Não")
 
-console.log(b)
+switch(a){
+    case 2:
+        console.log("case 2")
+        break
 
-console.log(c)
+    case 3:
+        console.log("case 3")
+        break
 
-a=b
+    case 4:
+        console.log("case 4")
+        break
 
-if(a==b) {c=1}
-    else{c=2}
+    default:
+        break
+
+}
+console.log("Fora")
+console.log("---------------------------Fim do exemplo Switch----------------")
+
+console.log("Exemplo For")
+var backup =1
+for(var i=1; i<15; i++){
+    console.log(i+"ª vez impresso")
+    backup++
+    if(backup>20){console.log("break"); break}
+}
+console.log("---------------------------Fim do exemplo For----------------")
+
+console.log("Exemplo While")
+
+backup =1;
+var w=1;
+while(w<11){
+    console.log(w+"ª vez");
+    w++
+
+    backup++;
+    if(backup>20){console.log("break"); break}
+}
+
+console.log("---------------------------Fim do exemplo While----------------")
+
+console.log("Exemplo do... While")
+
+var d=11;
+backup =1
+do{
     
-console.log(c)
+    console.log(d+"ª vez");
+    d++;
+
+
+    backup++
+    if(backup>200){console.log("break"); break}
+}while(d<10);
+
+console.log("---------------------------Fim do exemplo do... While----------------")
+
+console.log("Exemplo math.random");
+
+var m=Math.random()*100;
+
+console.log(m);
+console.log("---------------------------Fim do exemplo math.random----------------");

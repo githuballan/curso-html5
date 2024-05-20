@@ -17,20 +17,191 @@
         <article id="if-else">
         <h2>if e else</h2>
         <p>If e else funciona como if else da linguagem C, C++, é tudo igual, só muda a forma de escrever.</p>
-        <p> É uma função de condições booleanas, funciona parecida com o ternário que vimos anteriormente, porém o if permite um nível bem superior de complexidade  nas condições.</p>
-        <p>O comando if permite que valores booleanos sejam testados, funciona parecida com o ternário que vimos anteriormente. Se o valor passado como parâmetro para o comando if for true, o bloco do if é executado. Caso caso seja false ele executará o else.</p>
-        <p>Vale ressaltar que o bloco if ou else só será lido caso a condição seja satisfeita caso contrário o programa irá pular o bloco inteiro.</p>
+        <p>O comando if permite que valores booleanos sejam testados, funciona parecida com o ternário que vimos anteriormente. Se o valor passado como parâmetro para o comando if for true, o bloco do if é executado. Caso seja false ele executará o else.</p>
+        <p>Vale ressaltar que o bloco de comandos if ou else, só será lido caso a condição seja satisfeita caso contrário o programa irá pular o bloco inteiro.</p>
         <p>Exemplo:</p>
         <div class="pre">
             <pre>
+if(a==b) {c=1}
+else{c=2}
+            </pre>
+        </div>
+        <p>Nesse caso o resultado será 2.</p>
+        <div class="obs">
+            <ul>
+                <li>Não é necessário abrir o bloco de comando(as chaves) no exemplo acima, pois só tem um resultado simples, o bloco de comando só é necessário quando o programa tem que executar mais de uma ação.</li>
+                <li>No exemplo acima poderia ter sido usado o operador ternário para simplificar o código.</li>
+               
+            </ul>
+        </div>
 
+        <p>É possivel impor mais de uma condição no mesmo if usando o else if.</p>
+        <p>Exemplo:</p>
+        <div class="pre">
+            <pre>
+if(1+a==3) {c="certo"} 
+else if(1+a==4) {c="quase"}
+else {c="errado"}
             </pre>
         </div>
 
         </article><!--/#if-else-->
-    </main>
+        <article id="switch">
+            <h2>Switch</h2>
+            <p>Switch significa escolha em inglês e é exatamente o que ele faz. Seu funcionamento é parecido com o if, onde ele testa um determinado resultado. Porém, ele faz vários testes internos até que um caso funcione e ele execute o que for estabelecido.</p>
+            <p>Entretanto, ele não executará apenas a ação do resultado que retornou verdadeiro; ele executará todas as ações posteriores àquele resultado que retornou verdadeiro, até o comando break. Esse comando é o que interrompe o switch.</p>
+            <p>Outra ressalva importante é que o switch não faz testes comparativos como ">", "<", "==", "!=", etc., igual ao if; ele apenas verifica se o resultado está igual ao que for estabelecido no case.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+switch(a){
+    case 2:
+        console.log("case 2")
+        break
 
-     <footer>
+    case 3:
+        console.log("case 3")
+        break
+
+    case 4:
+        console.log("case 4")
+        break
+
+    default:
+        console.log("default")
+
+}
+                </pre>
+            </div>
+            <div class="obs">
+                <p>Note que "a" é uma variável e ela terá seus valores testados em cada case. </p>
+                <p>Caso a fosse igual a 7, por exemplo, o resultado seria default pois não existe case on 7 retorne verdadeiro.</p>
+                <p>Se não tivesse usado break e "a" fosse igual a 4, a função switch retornaria 4 e default. Por isso é importante usar o break, para evitar resultados inesperados e consequentemente bugs.</p>
+            </div>
+
+        </article>
+        <article id="loop">
+            <h2>Funções loop/repetição</h2>
+            <section id="introducao">
+                <p>Funções de loop são utilizadas quando precisamos que algo se repita até que seja satisfeita alguma condições. Como acertar o login e a senha para entrar no site, ou fazer um cálculo de potênciação ou raiz onde precisamos multiplicar ou dividir várias vezes o mesmo número.</p>
+                <p>Para isso exsitem duas funções muito usadas em JS que são:</p>
+                <ul>
+                    <li><strong>While</strong></li>
+                    <li><strong>For</strong></li>
+                </ul>
+                <p>É importante saber que na função loop é muito fácil criar um bug que travará todo o site talves até a máquina do usuário, são os chamados loop infinitos onde você impõe uma resultado inalcansável e a máquina ficará repetindo o loop até esgotar toda a memória RAM ou superaquecer o processador. Por isso muito cuidado e sempre teste seus loop antes de enviar para o site.</p>
+                <p>Para evitar isso, certifique-se de que a condição do loop eventualmente se torne falsa. Para isso podemos por o comando break dentro de uma função no loop de forma que ele possa seja acionado caso o loop atinja certo número de repetição evitando problemas, pois assim como em switch o break interromperá o loop.</p>
+    
+            </section><!-- /#introducao -->
+            <section id="while">
+                <h3>While</h3>
+                <p>While significa enquanto, isso quer dizer que ela rodará o loop enquanto determinada condição não for satisfeita e assim que for satisfeita ela sairá do loop e seguirá para o resto do programa.</p>
+                <p>A estrutura básica dessa função é apenas uma condição seguida do seu bloco de comandos. semelhante ao if. </p>
+                <p>Por só existir essas duas condições é muito importante que primeiro crie o bloco de comando já com a função que satisfaça a condição e depois a condição que deverá ser satisfeita para não travar a máquina no looping infinito ao testar.</p>
+                <div class="mark">
+                    <h4 style="text-align: center;">ATENÇÃO</h4>
+                    <p>É importante desliga o live server enquanto criar o while, pois no porcesso a página irá carregar o programa inacabado e travará em algum momento por causa do looping infinito.</p>
+                    <p>Outro ponto importante, é sempre deixar um break quando for testar o programa, para não precisar ficar travando a página toda vez que der um erro.</p>
+                </div>
+                <div class="pre">
+                    <pre>
+
+var backup =1;
+var w=1;
+while(w&lt;11){
+    console.log(w+"ª vez");
+    w++;
+
+    backup++;
+    if(backup>20){console.log("break"); break}
+}
+
+                    </pre>
+                </div>
+                <div class="obs">
+                    <p>Se w fosse declarado igual a 12 o programa iria pular o while. </p>
+                    <p>A forma correta de ler a função while é: executar o bloco de comando enquanto w for menor que 11.</p>
+                </div>
+            </section><!-- /#while -->
+            <section id="do_while">
+                <h3>do... while</h3>
+                <p>O while verifica a condição antes de executar o bloco de código, enquanto o do...while executa o bloco de código pelo menos uma vez antes de verificar a condição.</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+var d=11;
+backup =1
+do{
+
+console.log(d+"ª vez");
+d++;
+
+
+backup++
+if(backup>200){console.log("break"); break}
+}while(d&lt;10);
+                    </pre>
+                </div>
+                <div class="obs">
+                    <p>No exemplo acima a ação foi executada uma vez e saiu do loop, pois a condição já iniciou satisfeita.</p>
+                </div>
+                <!-- /.pre -->
+            </section><!-- /#do_while -->
+            <section id="for">
+                <h3>For</h3>
+                <p>O comando for em JavaScript é utilizado para executar um bloco de código repetidamente, geralmente com base em uma condição que é verificada antes de cada iteração.</p>
+                <p>Esse comando possui uma estrutura básica composta em 3 partes:</p>
+                <ol>
+                    <li><strong>Inicialização: </strong>Executada uma vez antes do início do loop. Geralmente é usada para definir e inicializar a variável de controle do loop.</li>
+                    <li><strong>Condição: </strong>Avaliada antes de cada iteração do loop. Se a condição for verdadeira, o bloco de código dentro do loop é executado. Se for falsa, o loop termina.</li>
+                    <li><strong>Incremento: </strong>Executado após cada iteração do loop. Normalmente, é usado para atualizar a variável de controle do loop.</li>
+                </ol>
+                <p>Veja um exemplo:</p>
+                <div class="pre">
+                    <pre>
+for(<abbr title="Inicialização">var i=1</abbr>; <abbr title="Condição">i&lt;6</abbr>; <abbr title="Incremento">i++</abbr>){
+    console.log(i+"ª vez impresso")
+}
+                    </pre>
+                </div>
+                
+                    <p>Omissão de Componentes: É possível omitir um ou mais componentes do loop, embora isso possa tornar o código menos claro esujeito a loop infinito. Por exemplo é possível não decalarar a condição ou o incremento deixando o espaço em branco, entretanto é necessário por os ";". </p>
+                    <p>Uma forma de evitar loop infinito é criando uma sistema de segurança como backup na hora de testar o código para isso basta decelarar uma variável antes e fora do loop e dentro do loop incrementar essa variável logo após o incremento criar i um if var > que 100 break. Dessa forma evitará erros no teste.</p>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+var backup =1
+for(var i=1; i&lt;31; i){
+    console.log(i+"ª vez impresso")
+    backup++
+    if(backup>20){console.log("break"); break}
+}
+                        </pre>
+                    </div>
+                    <div class="obs">
+                        <p>Note que no exemplo acima o incremento está com erro pois faltou o "++" nesse caso o loop irá parar em 20 repetições por causa do break.</p>
+                    </div>
+             
+            </section><!-- /#for -->
+        </article>
+        <article id="random">
+            <h2>Função Math.random</h2>
+            <p>Essa função não está relacionada a controle de fluxo.</p>
+            <p>A função Math.random gera números decimais aleatórios cada vez que ela é executada. </p>
+            <p>Veja um exemplo:</p>
+            <div class="pre">
+                <pre>
+var m=Math.random()*100;
+                </pre>
+            </div>
+            <div class="obs">
+                <p>Note que o valor está sendo multiplicado por 100. Isso ocorre porque os números gerados são sempre decimais.</p>
+                <p>Importante ressaltar que o "M" de Math.random tem que ser maiúsculo.</p>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
 
         <h1>Materiais utilizados</h1>
             
