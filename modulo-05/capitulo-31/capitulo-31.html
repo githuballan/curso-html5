@@ -103,44 +103,55 @@ console.log(tamanho); // 3
         <article id="metodos">
             <h2>Métodos Comuns de Arrays</h2>
             <sections id="push">
-                <h3>push()</h3>
-                <p>Adiciona um ou mais elementos ao final do array e retorna o novo comprimento do array.</p>
+                <h3>Adicionar elementos no final</h3>
+                <p>Para adicionar um ou mais elementos ao final do array e retorna o novo comprimento do array utilizamos o comando <strong>push()</strong>.</p>
                 <div class="pre">
                     <pre>
 console.log(frutas.push('Morango'));//4
                     </pre>
                 </div>
-                <p>Note que o comprimento anterior era 3, e agora ele retornou 4 pois adicionou o Morango. </p>
-            </sections><!--/#push-->
-            <section id="pop">
-                <h3>pop</h3>
-                <p>Remove o último elemento do array e o retorna.</p>
-                <div class="pre">
-                    <pre>
-console.log(frutas.pop()); //Morango
-                    </pre>
+                <div class="obs">
+                    
+                    <p>Note que o comprimento anterior era 3, e agora ele retornou 4 pois adicionou o Morango. </p>
+                    <p>Para adicionar mais de um elemento basta separa-los com vírgula.</p>
                 </div>
-            </section>
+            </sections><!--/#push-->
+             <section id="unshift">
+                <h3>Adicionar elementos no início</h3>
+                <p>Para adicionar um ou mais elementos ao início do array e retornar o novo comprimento do array basta usar o coamando <strong>unshift()</strong>.</p>
+                <div class="pre">
+                    <pre>console.log(frutas.unshift('Uva')); //maçã</pre>
+                </div>
+                <div class="obs">
+                    <p>Funiciona de forma similar ao push(), com a única diferença que o push adiciona no final e esse adiciona no início.</p>
+                    <p>Assim como no push(), para adicionar mais de um elemento basta separa-los com vírgula.</p>
+                </div>
+                <!-- /.pre -->
+            </section><!-- /#unshift -->
             <section id="shift">
-                <h3>shift</h3>
-                <p> Remove o primeiro elemento do array e o retorna.</p>
+                <h3>Remover o primeiro elemento</h3>
+                <p> Para remover o primeiro elemento do array e o retornar basta usar o comando <strong>shift()</strong>.</p>
                 <div class="pre">
                     <pre>
 console.log(frutas.shift()); //maçã
                     </pre>
                 </div>
-            </section><!-- /#pop -->
-            <section id="unshift">
-                <h3>unshift</h3>
-                <p>Adiciona um ou mais elementos ao início do array e retorna o novo comprimento do array.</p>
+            </section><!-- /#shift -->
+            <section id="pop">
+                <h3>Remover o último elemento do array</h3>
+                <p>Para remover o último elemento do array e o retorna utilizamos o comando <strong>pop()</strong>.</p>
                 <div class="pre">
-                    <pre>console.log(frutas.unshift('Uva')); //maçã</pre>
+                    <pre>
+console.log(frutas.pop()); //Morango
+                    </pre>
                 </div>
-                <!-- /.pre -->
-            </section><!-- /#unshift -->
+                <div class="obs">
+                    <p>Foi testado colocar número nesse parenteses e nada aconteceu, excluiu apenas o último mesmo.</p>
+                </div>
+            </section><!-- /#pop -->
             <section id="indexOf">
-                <h3>indexOf</h3>
-                <p>Retorna o primeiro índice do elemento especificado no array, ou -1 se não for encontrado.</p>
+                <h3>Descobrindo o índice do elemento</h3>
+                <p><strong>indexOf(): </strong>Retorna o índice do elemento especificado, ou -1 se não for encontrado.</p>
                 <div class="pre">
                     <pre>
 let frutas = ['maçã', 'banana', 'laranja'];
@@ -148,47 +159,11 @@ let indice = frutas.indexOf('banana');
 console.log(indice);//1
                     </pre>
                 </div>
+                <div class="obs">
+                    <p>Observação: Caso tenha mais de um elemento igual no array, o indexOf retornará o primeiro. Ou em outras palavras o índice de menor valor.</p>
+                    <p>Atenção o "O" de indexOf é maiúsculo.</p>
+                </div>
             </section><!-- /#indexOf -->
-            <section id="splice">
-                <h3>splice</h3>
-                <p>Adiciona/remova elementos de um array.</p>
-                <h4>Remover elemento usando splice</h4>
-                <p>Splice quando usado para remover algum elemento funciona da seguinte forma:</p>
-                <ul>
-                    <li>O primeiro valor representa o número do índice do elemento do array em questão.</li>
-                    <li>O segundo representa quantos elementos você deseja excluir. Lemabrando que ele excluirá a quantidade que escolher apartir do elemento escolhido no primeiro valor.</li>
-                </ul>
-                <p>Exemplo:</p>
-                <div class="pre">
-                    <pre>
-let frutas = ['uva', 'maçã', 'banana', 'laranja'];
-frutas.splice(1, 2);
-                    </pre>
-                </div>
-                <div class="obs">
-                    <ul>
-                        <li>No exemplo acima o programa excluirá maçã e banana</li>
-                        <li>Se estivesse colocado um valor maior que a quantidade de item no array, o programa excluiria todos os itens apartir do item selecionado no primeiro valor, inclusive item selecionado.</li>
-                        <li>Se o segundo valor for 0 ele excluirá nenhum item. Acontece nada.</li>
-                    </ul>
-                </div>
-                <h4>Adicionar elemento usando splice</h4>
-                <p>Para adicionar elemento usando splice basta acrescentar um "," e logo em seguida o elemento que seja incluir no array.</p>
-                <div class="pre">
-                <pre>
-let frutas = ['uva', 'maçã', 'banana', 'laranja'];
-frutas.splice(1, 0, 'kiwi');
-                </pre>
-                </div>
-                <div class="obs">
-                    <ul>
-                        <li>No caso acima 'kiwi' ficou no lugar de maçã e maçã passou a ser elemento 2 no index e empurrou todos os posteriores a ele pra uma casa a frente</li>
-                        <li>Podemos também adicionar mais elementos basta separar todos por vírgula.</li>
-                        <li>Se na segunda casa tivesse o número 1, nesse caso 'maçã' seria excluída e entreria 'kiwi' no lugar dela e nada mais seria modificado.</li>
-                        <li>E se fosse algum número superior a 1 ele excluiria assim como visto anteriormente com a única diferença que o programa adicionaria kiwi na posição 1.</li>
-                    </ul>
-                </div>
-            </section><!-- /#splice -->
             <section id="slice">
                 <h3>slice</h3>
                 <p>O método slice() em JavaScript é usado para copiar uma parte de um array para um novo array sem modificar o array original. Ele aceita dois argumentos opcionais: o índice de início e o índice de fim.</p>
@@ -200,41 +175,91 @@ frutas.splice(1, 0, 'kiwi');
                 <div class="mark"><p>O método slice() cria uma cópia superficial do array original. Isso significa que se o array contiver objetos ou outros arrays, somente as referências desses objetos serão copiadas para o novo array. Os objetos em si não são duplicados.</p></div>
                 <div class="pre">
                     <pre>
-let frutas = ['uva', maçã', 'banana', 'laranja'];
-
-let novoArray = frutas.slice(1, 3);
-console.log(novoArray)//0:"maçã"
+                        let frutas = ['uva', maçã', 'banana', 'laranja'];
+                        
+                        let novoArray = frutas.slice(1, 3);
+                        console.log(novoArray)//0:"maçã"
                         1:"banana"
                         length:2
                     </pre>
                 </div>
-               <div class="obs">
-                <ul>
-                    <li>Note que ele copiou somente até o 2.</li>
-                    <li>Se você fornecer apenas o índice de início, o método slice copiará todos os elementos apartir desse índice, incluindo o próprio, até o final do array slice(1); </li>
-                    <li>Se usar slice(-2) com valor negativo ele copiará a quantidade de itens especificados a contar do último item do array</li>
-                    <li> Se usar slice() vazio ele copiará todo o array;</li>
-                </ul>
-               </div>
+                <div class="obs">
+                    <ul>
+                        <li>Note que ele copiou somente até o 2.</li>
+                        <li>Se você fornecer apenas o índice de início, o método slice copiará todos os elementos apartir desse índice, incluindo o próprio, até o final do array slice(1); </li>
+                        <li>Se usar slice(-2) com valor negativo ele copiará a quantidade de itens especificados a contar do último item do array</li>
+                        <li> Se usar slice() vazio ele copiará todo o array;</li>
+                    </ul>
+                </div>
             </section><!-- /#slice -->
             <section id="forEach">
                 <h3>forEach</h3>
-                <p></p>
+                <p>Executa uma função em cada elemento do array.</p>
                 <div class="pre">
-                    <pre></pre>
+                    <pre>
+                        frutas.forEach(function(item, indice) {
+                            console.log(item, indice);
+                        });
+                    </pre>
                 </div>
-                <!-- /.pre -->
-            </section>
-            <!-- /#forEach -->
+                <p>No exemplo atual ele apenas enumerou cada fruta com seu índice.</p>
+            </section><!-- /#forEach -->
         </article><!--/#metodos-->
+        <article id="splice">
+            <h2>splice</h2>
+            <p>Adiciona/remova elementos de um array.</p>
+            <section id="splice_remover">
+                
+                            <h3>Remover elemento usando splice</h3>
+                            <p>Splice quando usado para remover algum elemento funciona da seguinte forma:</p>
+                            <ul>
+                                <li>O primeiro valor representa o número do índice do elemento do array em questão.</li>
+                                <li>O segundo representa quantos elementos você deseja excluir. Lemabrando que ele excluirá a quantidade que escolher apartir do elemento escolhido no primeiro valor.</li>
+                            </ul>
+                            <p>Exemplo:</p>
+                            <div class="pre">
+                                <pre>
+                        let frutas = ['uva', 'maçã', 'banana', 'laranja'];
+                        frutas.splice(1, 2);
+                                </pre>
+                            </div>
+                            <div class="obs">
+                                <ul>
+                                    <li>No exemplo acima o programa excluirá maçã e banana</li>
+                                    <li>Se estivesse colocado um valor maior que a quantidade de item no array, o programa excluiria todos os itens apartir do item selecionado no primeiro valor, inclusive item selecionado.</li>
+                                    <li>Se o segundo valor for 0 ele excluirá nenhum item. Acontece nada.</li>
+                                </ul>
+                            </div>
+                
+            </section><!-- /#splice_remover -->
+            <section id="splice_adicionar">    
+                            <h3>Adicionar elemento usando splice</h3>
+                            <p>Para adicionar elemento usando splice basta acrescentar um "," e logo em seguida o elemento que seja incluir no array.</p>
+                            <div class="pre">
+                            <pre>
+                        let frutas = ['uva', 'maçã', 'banana', 'laranja'];
+                        frutas.splice(1, 0, 'kiwi');
+                            </pre>
+                            </div>
+                            <div class="obs">
+                                <ul>
+                                    <li>No caso acima 'kiwi' ficou no lugar de maçã e maçã passou a ser elemento 2 no index e empurrou todos os posteriores a ele pra uma casa a frente</li>
+                                    <li>Podemos também adicionar mais elementos basta separar todos por vírgula.</li>
+                                    <li>Se na segunda casa tivesse o número 1, nesse caso 'maçã' seria excluída e entreria 'kiwi' no lugar dela e nada mais seria modificado.</li>
+                                    <li>E se fosse algum número superior a 1 ele excluiria assim como visto anteriormente com a única diferença que o programa adicionaria kiwi na posição 1.</li>
+                                </ul>
+                            </div>
+                
+            </section><!-- /#splice_adicionar -->
+        </article><!-- /#splice -->
         <!--section#pop>h3{pop}+p+div.pre>pre|c-->
     </main>
     <footer>
         <h1>Materiais utilizados</h1>            
         <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>  
  <h1>Vídeos</h1>
-        <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-    </footer>
+ <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+</footer>
 
 </body>
 <script src ="capitulo-31/script.js"></script>

@@ -31,6 +31,7 @@ frutas.forEach(function(item, indice) {
 
   frutas.splice(2, 2);
 
+
   frutas.forEach(function(item, indice) {
     console.log(item, indice);
   });
