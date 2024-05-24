@@ -18,56 +18,48 @@
         <h1>Array</h1>
     </header>
     <main>
-        <article id="iniciando_array">  
-            <section id="introducao">
-                  
-                <p>Os arrays em JavaScript são estruturas de dados usadas para armazenar múltiplos dados em sequência. Arrays são como variáveis armazenadas em sequência.</p>
-                <p>Começando sempre do "0"(zero) até o número de elemento que for posto no Array. Essa sequência se chama index do array ou, em português, índice do array.</p>
-            </section><!-- /#introducao -->
-            <section id="declarando_array">
-    
-                    <h2>Declarando Array</h2>
-                    <p>Existem duas forma de declarar um array:</p>
-                    <ol>
-                      <li><strong>Usando o construtor Array</strong></li>
-                      <li><strong>Usando colchetes</strong></li>
-                    </ol>
-    
-                    <section id="construtor_array">
-                        <h3>Usando o construtor Array </h3>
-                        <div class="pre">
-                            <pre>
-                                familia = new Array("Allan","Karol","Maya","Moana");
-                                console.log(familia[3]);
-                            </pre>
-                        </div>
-                        <p>No caso o resultado foi "Moana"</p>
-                        <div class="obs">
-                            <ul>
-                                
-                                <li>Cada elemento do array deve ser separado por vírgula.</li>
-                                
-                                <li>Nesse exemplo todos foram strings, mas poderiam ser números, valores booleanos, variáveis, ou qualquer outro tipo que já vimos. Poderia até ser outro array ou um objeto que veremos mais pra frente.</li>
-                                
-                            </ul>
-                        </div>
-                    </section><!-- /#construtor_array -->
-                    <section id="usando_colchetes">
-                        
-                        <h3>Usando colchetes</h3>
-                        <p>A outra forma de declarar um array é semalhante a declarar uma variável. Para isso basta por os valores entre colchtes"[]"</p>
-                        <p>Veja:</p>
-                        <div class="pre">
-                            <pre>
-        let frutas = ['maçã', 'banana', 'laranja'];
-        console.log(frutas[1]); //banana
-                            </pre>
-                        </div>
-                        <p>No caso o resultado foi "banana"</p>
-                        
-                    </section><!-- /#usando_colchetes -->
-            </section><!-- /#declarando_array -->
-        </article><!-- /#iniciando_array -->
+        <section id="introducao">
+                
+            <p>Os arrays em JavaScript são estruturas de dados usadas para armazenar múltiplos dados em sequência. Arrays são como variáveis armazenadas em sequência.</p>
+            <p>Começando sempre do "0"(zero) até o número de elemento que for posto no Array. Essa sequência se chama index do array ou, em português, índice do array.</p>
+        </section><!-- /#introducao -->
+        <article id="declarando_array">
+                <h2>Declarando Array</h2>
+                <p>Existem duas forma de declarar um array:</p>
+                <section id="construtor_array">
+                    <h3>Usando o construtor Array </h3>
+                    <div class="pre">
+                        <pre>
+                            familia = new Array("Allan","Karol","Maya","Moana");
+                            console.log(familia[3]);
+                        </pre>
+                    </div>
+                    <p>No caso o resultado foi "Moana"</p>
+                    <div class="obs">
+                        <ul>
+                            
+                            <li>Cada elemento do array deve ser separado por vírgula.</li>
+                            
+                            <li>Nesse exemplo todos foram strings, mas poderiam ser números, valores booleanos, variáveis, ou qualquer outro tipo que já vimos. Poderia até ser outro array ou um objeto que veremos mais pra frente.</li>
+                            
+                        </ul>
+                    </div>
+                </section><!-- /#construtor_array -->
+                <section id="usando_colchetes">
+                    
+                    <h3>Usando colchetes</h3>
+                    <p>A outra forma de declarar um array é semalhante a declarar uma variável. Para isso basta por os valores entre colchetes"[]"</p>
+                    <p>Veja:</p>
+                    <div class="pre">
+                        <pre>
+    let frutas = ['maçã', 'banana', 'laranja'];
+    console.log(frutas[1]); //banana
+                        </pre>
+                    </div>
+                    <p>No caso o resultado foi "banana"</p>
+                    
+                </section><!-- /#usando_colchetes -->
+        </article><!-- /#declarando_array -->
         <article id="acessando_elementos">
             <h2>Acessando Elementos</h2>
             <p>Os elementos do array são acessados usando índices, que começam em 0.</p>

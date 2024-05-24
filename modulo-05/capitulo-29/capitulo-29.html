@@ -18,407 +18,457 @@
         <h1>Java Script Básico</h1>
     </header>
     <main>
-
-            <article id="introducao-js">
-                <h2>Conhecimentos básicos</h2>
-               
-                <p>Nos capítulos anteriores, vimos que as linguagens HTML e a CSS são fundamentais para a criação de páginas web. O foco do HTML é o conteúdo enquanto o foco do CSS é a formatação dessas páginas.</p>
-                <p>As linguagens HTML e CSS não são linguagens de programação. Para resolver determinados problemas, é necessário utilizar uma linguagem de programação. Por isso, veremos nesse capítulo, a linguagem de programação JavaScript.</p>  
-                <p>Com a linguagem JavaScript podemos construir páginas extremamente dinâmicas e interativas. O foco do JavaScript é implementar o comportamento ou a inteligência das páginas web</p>
-                <p>Há duas formas de associar código JavaScript aos documentos HTML.</p>
-                <ul>
-                    <li><strong>Interno</strong></li>
-                    <li><strong>Externo</strong></li>
-                </ul>
-               
-                <p>Para trabalhar com JS é necessário ter intalado o node js no pc para rodar os programas que iremos criar. Para isso basta assistir o vídeo <a href="https://youtu.be/FdePtO5JSd0?si=YELVCXbHkyvvZCz_">Dando os primeiros passos em JS</a></p>
-                <p>Feito isso, existem duas formas de rodar um programa Java script:</p>
-                <ul>
-                    <li>No VS Code</li>
-                    <li>No navegador</li>
-                </ul>
-                <section id="no-vscode">
-                    <h3>Rodando JS no VS Code</h3>
-                    <p>Para rodar o Java Script no VS Code basta abrir um novo terminal utlizando a tecla de atalho "ctrl+j" ou abrindo a aba "Terminal" &rArr;"Novo terminal"</p>
-                    <p>Após isso abrirá uma janela no VS Code em baixo da janela de código. Nela digita "node" e enter. Pronto agora é so digitar os códigos nela e o resultado será exposto na linha abaixo.</p>
-                </section><!--/#no-vscode-->
-                <section id="no-navegador">
-                    <h3>Rodando JS no navegador</h3>
-                    <p>Para rodar o JS navegador é necessário associar código JavaScript ao HTML.</p>
-                    <p> Feito isso, abra o navegador &rArr; botão direito na página de navegação&rArr; Inpecionar e &rArr; cliquei na aba console. Agora para aparecer os resultados dos código é necessário sempre digitar o coódigo:"console.log(a)" </p>
-                    <p>exemplo:</p>
-                    <div class="pre">
-                        <pre>
-var a = 30;
-var b = 5;
-console.log(a+b);
-                        </pre>
-                    </div>
-                    <p>No console irá aparecer apenas o que está entre parenteses. Nesse caso seria 35</p>
-                    
-                </section>
+        <article id="introducao-js">
+            <h2>Conhecimentos básicos</h2>
+            
+            <p>Nos capítulos anteriores, vimos que as linguagens HTML e a CSS são fundamentais para a criação de páginas web. O foco do HTML é o conteúdo enquanto o foco do CSS é a formatação dessas páginas.</p>
+            <p>As linguagens HTML e CSS não são linguagens de programação. Para resolver determinados problemas, é necessário utilizar uma linguagem de programação. Por isso, veremos nesse capítulo, a linguagem de programação JavaScript.</p>  
+            <p>Com a linguagem JavaScript podemos construir páginas extremamente dinâmicas e interativas. O foco do JavaScript é implementar o comportamento ou a inteligência das páginas web</p>
+            <p>Há duas formas de associar código JavaScript aos documentos HTML.</p>
+            <ul>
+                <li><strong>Interno</strong></li>
+                <li><strong>Externo</strong></li>
+            </ul>
+            
+            <p>Para trabalhar com JS é necessário ter intalado o node js no pc para rodar os programas que iremos criar. Para isso basta assistir o vídeo <a href="https://youtu.be/FdePtO5JSd0?si=YELVCXbHkyvvZCz_">Dando os primeiros passos em JS</a></p>
+            <p>Feito isso, existem duas formas de rodar um programa Java script:</p>
+            <ul>
+                <li>No VS Code</li>
+                <li>No navegador</li>
+            </ul>
+            <section id="no-vscode">
+                <h3>Rodando JS no VS Code</h3>
+                <p>Para rodar o Java Script no VS Code basta abrir um novo terminal utlizando a tecla de atalho "ctrl+j" ou abrindo a aba "Terminal" &rArr;"Novo terminal"</p>
+                <p>Após isso abrirá uma janela no VS Code em baixo da janela de código. Nela digita "node" e enter. Pronto agora é so digitar os códigos nela e o resultado será exposto na linha abaixo.</p>
+            </section><!--/#no-vscode-->
+            <section id="no-navegador">
+                <h3>Rodando JS no navegador</h3>
+                <p>Para rodar o JS navegador é necessário associar código JavaScript ao HTML.</p>
+                <p> Feito isso, abra o navegador &rArr; botão direito na página de navegação&rArr; Inpecionar e &rArr; cliquei na aba console. Agora para aparecer os resultados dos código é necessário sempre digitar o coódigo:"console.log(a)" </p>
+                <p>exemplo:</p>
+                <div class="pre">
+                    <pre>
+    var a = 30;
+    var b = 5;
+    console.log(a+b);
+                    </pre>
+                </div>
+                <p>No console irá aparecer apenas o que está entre parenteses. Nesse caso seria 35</p>
                 
-            </article><!--/#introducao-js -->
-            <article id="js-interno">
-                <h2>JavaScript interno</h2>
-                <p>Assim como o CSS o JS pode ser interno deixando ele amarrado há um único HTML. Nesse caso, diferentemente do CSS, ele fica na última parte do body, para não pesar no carregamento da página, pois diferente do CSS ele não irá gerar efeitos visuais confusos durante o carregamento. O máximo que vai acontecer é não rodar alguns comandos enquanto carrega. </p>
-                <p>O código JavaScript pode ser definido dentro de um documento HTML no corpo do elemento script.</p>
-                <p>Veja o código abaixo:</p>
-                <div class="pre">
-                    <pre>
+            </section>
+            
+        </article><!--/#introducao-js -->
+        <article id="js-interno">
+            <h2>JavaScript interno</h2>
+            <p>Assim como o CSS o JS pode ser interno deixando ele amarrado há um único HTML. Nesse caso, diferentemente do CSS, ele fica na última parte do body, para não pesar no carregamento da página, pois diferente do CSS ele não irá gerar efeitos visuais confusos durante o carregamento. O máximo que vai acontecer é não rodar alguns comandos enquanto carrega. </p>
+            <p>O código JavaScript pode ser definido dentro de um documento HTML no corpo do elemento script.</p>
+            <p>Veja o código abaixo:</p>
+            <div class="pre">
+                <pre>
 
-&lt;body>
-.
-.
-.
+    &lt;body>
+    .
+    .
+    .
     &lt;script>
-        alert ("K19");
+    alert ("K19");
     &lt;/script>
-&lt;/body>
-                    </pre>
-                </div>
-            </article><!-- /#js-interno -->
-            <article id="js-externo">
-                <h2>JavaScript externo</h2>
-                <p>Assim como o CSS o código JavaScript pode ser definido em arquivos separados e depois associados aos documentos HTML. Para isso basta por o atributo src e indicar local do arquivo script.js. Assim como style é recomendo deixar na mesma pasta do index e com o nome script.js </p>
-                <p>Veja o código abaixo:</p>
-                <div class="pre">
-                    <pre>
-&lt;script src =" script .js"> &lt;/script></pre>
-                </div>
-            </article><!-- /#js-externo -->
-            <article id="variaveis">
-                <h2>Variáveis</h2>
-                <p>Assim como qualquer linguagem de programação, JavaScript permite a criação de variáveis. No JS podemos indicar a criação de uma variável de duas formas diferentes:</p>
+    &lt;/body>
+                </pre>
+            </div>
+        </article><!-- /#js-interno -->
+        <article id="js-externo">
+            <h2>JavaScript externo</h2>
+            <p>Assim como o CSS o código JavaScript pode ser definido em arquivos separados e depois associados aos documentos HTML. Para isso basta por o atributo src e indicar local do arquivo script.js. Assim como style é recomendo deixar na mesma pasta do index e com o nome script.js </p>
+            <p>Veja o código abaixo:</p>
+            <div class="pre">
+                <pre>
+    &lt;script src =" script .js"> &lt;/script></pre>
+            </div>
+        </article><!-- /#js-externo -->
+        <article id="variaveis">
+            <h2>Variáveis</h2>
+            <section id="introducao_variaveis">
+                <p>Em JavaScript, as variáveis podem ser declaradas usando var, let ou const. Cada uma dessas palavras-chave possui características e comportamentos distintos. Vamos explorar as diferenças entre elas:</p>
+                <p>Através de qualquer uma dessas duas palavras chaves seguida de seu nome (identificador) criaremos uma variável.
+            </section><!-- /#introducao_variaveis -->
+            <section id="var">
+                <h3>var</h3>
+                <p>Características da variável decalarada com "var":</p>
                 <ul>
-                    <li><strong>var</strong></li>
-                    <li><strong>let</strong></li>
+                    <li><strong>Escopo de Função: </strong> A variável declarada com "var" tem escopo de função. Isso significa que se ela for declarada dentro de uma função, não estará acessível fora dessa função.</li>
+                    <li><strong>Não tem Escopo de Bloco: </strong>"var" não respeita o escopo de bloco. Se você declarar uma variável com "var" dentro de um bloco (como dentro de um "if" ou "for"), ela estará disponível fora desse bloco.</li>
                 </ul>
-                <p>Através de qualquer uma dessas duas palavras chaves seguida de seu nome (identificador) criaremos uma variável. Veja os exemplos abaixo criando uma variável nome e uma variável sobrenome:</p>
                 <div class="pre">
                     <pre>
-                        
-var nome;
-let sobrenome;
+    function testeVar() {
+    var x = 1;
+    if (true) {
+    var x = 2; // Mesmo escopo!
+    console.log(x); // 2
+    }
+    console.log(x); // 2
+    }
                     </pre>
                 </div>
+                <div class="obs">
+                    <p>
+                        Note que quando a variável foi chamada pela segunda vez ele estava do escopo da function entretanto ela apresentou o valor do bloco if.
+                    </p>
+                </div>
+            </section><!-- /#var -->
+            <section id="let">
+                <h3>let</h3>
+                <p><strong>Escopo de Bloco: </strong> let tem escopo de bloco. Isso significa que se você declarar uma variável com let dentro de um bloco {}, ela só estará disponível dentro desse bloco.</p>
+                <div class="pre">
+                    <pre>
+function testeLet() {
+let x = 1;
+if (true) {
+    let x = 2; // Escopo diferente!
+    console.log(x); // 2
+}
+console.log(x); // 1
+}
+
+testeLet();
+                    </pre>
+                </div>
+                <div class="obs">
+                    <p>Note que dessa vez, diferentemente, do que houve em "var", agora o resultado do segundo exemplo foi 1, pois a segunda declaração estava no bloco de if. Logo x só é igual a 2 dentro do bloco. if</p>
+                </div>
+            </section><!-- /#let -->
+            <section id="const">
+                <h3>const</h3>
+                <p>Características da variável decalarada com "const":</p>
+                <ul>
+                    <li><strong>Escopo de Bloco: </strong>Assim como "let", "const" tem escopo de bloco.</li>
+                    <li><strong>Imutabilidade: </strong>As variáveis declaradas com "const" devem ser inicializadas no momento da declaração e não podem ser reatribuídas. No entanto, se a variável for um objeto ou array, suas propriedades ou elementos podem ser modificados.</li>
+                </ul>
+                <div class="pre">
+                    <pre>
+const c = 42;
+c = 50; // TypeError: Assignment to constant variable.
+
+const obj = { prop: 1 };
+obj.prop = 2; // Isto é permitido.
+console.log(obj.prop); // 2 
+                    </pre>
+                </div>
+            </section><!--/#const-->
+            <section id="tipo_de_variaveis">
+                    <h3>Tipos de variáveis</h3>
                 <p>Diferentemente da linguagem C aqui não precisa definir o tipo da variável pois ela se ajustará sozinha de acordo com o valor atribuído a ela. Portanto é importante limitar esse tipo para evitar mudanças desnecessárias e deixar o código pesado em vão.</p>
                 <p>Existem 3 tipos de varáveis primitivas promordiais em JavaScript que são:</p>
                 <ul>
-                    <li><strong>Number</strong></li>
-                    <li><strong>String</strong></li>
-                    <li><strong>Boolean</strong></li>
+    <li><strong>Number</strong></li>
+    <li><strong>String</strong></li>
+    <li><strong>Boolean</strong></li>
                 </ul>
-               
-                <section id="typeof">
+            </section><!-- /#tipo_de_variaveis -->
+            <section id="typeof">
+                <h3>Identificando o tipo da variável</h3>
+                <p><strong>typeof: </strong>Esse comando serve para identificar o tipo que está sendo aplicado àquela variável.</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+            
                     
-                    <h3>Typeof</h3>
-                    <p>Esse comando serve para identificar o tipo que está sendo aplicado àquela variável.</p>
+    > let nome="allan"
+    undefined
+    > nome
+    'allan'
+    > typeof nome
+    'string'
+    > nome=1
+    1
+    > typeof nome
+    'number'
+                </pre>
+            </div>
+            <p>Note que o tipo de varável se altera de acordo com a necessidade.</p>
+            </section><!-- /#typeof -->
+        </article><!-- /#variaveis -->
+        <article id="operadores">
+            <h2>Operadores</h2>
+                <section id="introducao-operadores">
+                <p>Para manipular os valores das variáveis de um programa, devemos utilizar os operadores oferecidos pela linguagem de programação adotada. A linguagem JavaScript possui diversos operadores e os principais são categorizados da seguinte forma:
+                    </p>
+                    <ul>
+                        <li><strong>Aritmético: </strong>+ - * / %</li>
+                        <li><strong>Atribuição: </strong>= += -= *= /= %= ++ --</li>
+                        <li><strong>Comparativo: </strong>== != < <= > >=
+                        </li>
+                        <li><strong>Lógico: </strong>&& ||
+                        </li>
+                    </ul>
+                
+                
+                </section><!-- /#introducao--operadores-->
+                <section id="operadores-aritmeticos">
+                
+                    <h3>Operadores Aritméticos</h3>
+                    <p>Os operadores aritméticos funcionam de forma muito semelhante aos operadores da matemática. Os operadores aritméticos são:
+                    </p>
+                    <ul>
+                        <li><strong>Adição +</strong></li>
+                        <li><strong>Subtração -
+                        </strong></li>
+                        <li><strong>Multiplicação *</strong></li>
+                        <li><strong>Divisão /</strong></li>
+                        <li><strong>Módulo %</strong> Módulo é o resto de uma divisão. Exemplo: 5 % 4 = 1 pois 5 dividido por 4 sobra 1.</li>
+                    </ul>
+                    <div class="obs">
+                        <p>
+                            As operações aritméticas em JavaScript obedecem as mesmas regras da matemática com relação à precedência dos operadores e parênteses. Portanto, as operações são resolvidas a partir dos parênteses mais internos até os mais externos, primeiro resolvemos as
+                            multiplicações, divisões e os módulos. Em seguida, resolvemos as adições e subtrações.
+                
+                        </p>
+                    </div>
+                
+                            
+                </section><!--/#operadores-aritmeticos-->
+                <section id="concatenacao-de-string">
+                    <h3>Concatenação de Strings</h3>
+                    <p>String são variávies capazes de suportar conjuntos de caracteres, vulgo frases e assim como no excel é possível concatenar variáveis do tipo string.</p>
+                    <p>Para isso usamos o sinal de "+"Veja um exemplo abaixo:
+                        <div class="pre">
+                            <pre>
+    var nome='João'
+    var sobrenome='Silva'
+    var nomecompleto='nome'+'sobrenome'
+    nomecompleto=JoãoSilva
+                            </pre>
+                        </div>
+                    
+                    <div class="obs">
+                        <p>Note que é necessário incluir espaço no nome!</p>
+                        <p>Ao declarar uma string é necessário coloca-la entre aspas duplas ou simples e isso deve ficar padronizado no projeto, pois caso sua string possua aspas no meio do texto, será necessário usar a que não está sendo usada para declarar a string.</p>
+                    </div>
+
+                    <p> Como pudemos notar é o mesmo operador utilidado para adição. Como consequência disso, o JS pode gerar algumas confusões quando precisamos concatenar frases e realizar somas juntas </p>
                     <p>Exemplo:</p>
                     <div class="pre">
                         <pre>
-               
+    'João'+1 = João1
+    'João'+1+1=João11
+    1+1+'João'=2João
+    1+1+'João'+2+2=2João22
+    1+1+'João'+2+2-1=NaN</pre>
+                    </div>
+                    <p>Como pudemos notar, apartir do momento que usamos um sinal de adição para concatenar, todos os próximos elemento serão reconhecidos como string e todo sinal de adição será reconhecido como concatenação. Caso precise usar algum outro operador aritmético o JS acusará NaN (Not a Number) infomando que não é um número.</p>
+
+                </section><!-- /#concatenacao-de-string -->
+                <section id="operadores-de-atribuicao">
+                    <h3>Operadores de Atribuição</h3>
+                    <p>Como o próprio nome já diz esses sinais servem para atribuir algo do lado direito para algo que está no lado esquerdo do sinal (esse algo é o operando), geralmente o que fica no lado esquerdo são variáveis.O operador de atribuição básico é o igual (=), que atribui o valor do operando à direita ao operando à esquerda. Isto é, x = y atribui o valor de y a x.</p>
                         
-> let nome="allan"
-undefined
-> nome
-'allan'
-> typeof nome
-'string'
-> nome=1
-1
-> typeof nome
-'number'
-                    </pre>
-                </div>
-                <p>Note que o tipo de varável se altera de acordo com a necessidade.</p>
-                </section><!-- /#typeof -->
-            </article><!-- /#variaveis -->
-            <article id="operadores">
-                <h2>Operadores</h2>
-                    <section id="introducao-operadores">
-                    <p>Para manipular os valores das variáveis de um programa, devemos utilizar os operadores oferecidos pela linguagem de programação adotada. A linguagem JavaScript possui diversos operadores e os principais são categorizados da seguinte forma:
-                        </p>
-                        <ul>
-                            <li><strong>Aritmético: </strong>+ - * / %</li>
-                            <li><strong>Atribuição: </strong>= += -= *= /= %= ++ --</li>
-                            <li><strong>Comparativo: </strong>== != < <= > >=
-                            </li>
-                            <li><strong>Lógico: </strong>&& ||
-                            </li>
-                        </ul>
-                    
-                    
-                    </section><!-- /#introducao--operadores-->
-                    <section id="operadores-aritmeticos">
-                    
-                        <h3>Operadores Aritméticos</h3>
-                        <p>Os operadores aritméticos funcionam de forma muito semelhante aos operadores da matemática. Os operadores aritméticos são:
-                        </p>
-                        <ul>
-                            <li><strong>Adição +</strong></li>
-                            <li><strong>Subtração -
-                            </strong></li>
-                            <li><strong>Multiplicação *</strong></li>
-                            <li><strong>Divisão /</strong></li>
-                            <li><strong>Módulo %</strong> Módulo é o resto de uma divisão. Exemplo: 5 % 4 = 1 pois 5 dividido por 4 sobra 1.</li>
-                        </ul>
-                        <div class="obs">
-                            <p>
-                                As operações aritméticas em JavaScript obedecem as mesmas regras da matemática com relação à precedência dos operadores e parênteses. Portanto, as operações são resolvidas a partir dos parênteses mais internos até os mais externos, primeiro resolvemos as
-                                multiplicações, divisões e os módulos. Em seguida, resolvemos as adições e subtrações.
-                    
-                            </p>
-                        </div>
-                    
-                               
-                    </section><!--/#operadores-aritmeticos-->
-                    <section id="concatenacao-de-string">
-                        <h3>Concatenação de Strings</h3>
-                        <p>String são variávies capazes de suportar conjuntos de caracteres, vulgo frases e assim como no excel é possível concatenar variáveis do tipo string.</p>
-                        <p>Para isso usamos o sinal de "+"Veja um exemplo abaixo:
-                            <div class="pre">
-                                <pre>
-var nome='João'
-var sobrenome='Silva'
-var nomecompleto='nome'+'sobrenome'
-nomecompleto=JoãoSilva
-                                </pre>
-                            </div>
-                        
-                        <div class="obs">
-                            <p>Note que é necessário incluir espaço no nome!</p>
-                            <p>Ao declarar uma string é necessário coloca-la entre aspas duplas ou simples e isso deve ficar padronizado no projeto, pois caso sua string possua aspas no meio do texto, será necessário usar a que não está sendo usada para declarar a string.</p>
-                        </div>
+                    <p>Os outros operadores de atribuição são encurtamentos de operadores padrão.</p>
 
-                        <p> Como pudemos notar é o mesmo operador utilidado para adição. Como consequência disso, o JS pode gerar algumas confusões quando precisamos concatenar frases e realizar somas juntas </p>
+                    <p>Veja os operadores de distribuição abaixo:</p>
+
+                    <div class="overflow-x">
+                        <table class="tabela_basica">
+                            <thead>
+                                <tr>
+                                    <th class="th_col_tabela_basica" scope="col">Nome</th>
+                                    <th class="th_col_tabela_basica" scope="col">Operador encurtado</th>
+                                    <th class="th_col_tabela_basica" scope="col">Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="td_tabela_basica">Simples =</td>
+                                    <td class="td_tabela_basica">x = y	</td>
+                                    <td class="td_tabela_basica">x = y</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Atribuição de adição +=</td>
+                                    <td class="td_tabela_basica">x += y	</td>
+                                    <td class="td_tabela_basica">x = x + y</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Atribuição de subtração -=</td>
+                                    <td class="td_tabela_basica">x -= y	</td>
+                                    <td class="td_tabela_basica">x = x - y</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Multiplicativa *</td>
+                                    <td class="td_tabela_basica">x *= y	</td>
+                                    <td class="td_tabela_basica">x = x * y</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Divisória /=</td>
+                                    <td class="td_tabela_basica">x /= y	</td>
+                                    <td class="td_tabela_basica">x = x / y</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Modular %=</td>
+                                    <td class="td_tabela_basica">x %= y</td>
+                                    <td class="td_tabela_basica">x = x % y</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Incremento ++</td>
+                                    <td class="td_tabela_basica">x++</td>
+                                    <td class="td_tabela_basica">x+1</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Decremento --</td>
+                                    <td class="td_tabela_basica">x--</td>
+                                    <td class="td_tabela_basica">x-1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="obs">
+                        OBS.:
+
+                        <p>Os operadores de Incremento "++" e Decremento "--" podem ser usado antes da variável ficando ++x ou --x. Isso faz diferença. No ++x a variável recebe a soma na hora já no x++ ela recebe a soma somente quando o programa passar para o próximo comando.</p>
+                        <p>Isso acontece porque o navegador carrega na ordem exata que foi digitado então numa suposta ocasião onde o programa encerre em x++ a variável x não irá receber a soma efetivamente.</p>
+                        <p>Que diferença isso faz? Não sei, só sei que é assim e foi citado em aula.</p>
+
+                    </div>
+                    <div class="mark">
+                        <p><span class="maiuscula">x+5 é diferente de x+=5 pois em x+5 x não altera seu valor apenas apresenta o resultado!</span></p>
+                    </div>
+                </section><!-- /#operadores-de-atribuicao -->
+                <section id="operadores-comparativos">
+                    <h3>Operadores Comparativos</h3>
+                    <p>Esses operadores, como o próprio nome já diz, comparam variaveis ou valores. Eles trabalham com valores booleanos, ou seja, verdadeiro ou falso,true or false.</p>
+
+                    <div class="overflow-x">
+                        <table class="tabela_basica">
+                            <thead>
+                                <tr>
+                                    <th class="th_col_tabela_basica" scope="col">Operador</th>
+                                    <th class="th_col_tabela_basica" scope="col">Descrição</th>
+                                    <th class="th_col_tabela_basica" scope="col">Exemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="td_tabela_basica">Igualdade ==</td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam iguais.</td>
+                                    <td class="td_tabela_basica">3==3 true</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Estritamente igual (===)</td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo. Isso é, esse testa o tipo de veriável que está abrigando o valor em questão. </td>
+                                    <td class="td_tabela_basica td_left" ><span class="nao_quebra">3==="3" false</span> <br>porém <br> <span class="nao_quebra">3=="3" true</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Diferença !=</td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso os operandos não sejam iguais.</td>
+                                    <td class="td_tabela_basica td_left"><span class="nao_quebra">3!=3 false</span> <span class="nao_quebra">3!=2 true</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Estritamente diferente (!==)</td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam diferentes e de tipo diferentes. Isso é, esse testa o tipo de veriável que está abrigando o valor em questão.</td>
+                                    <td class="td_tabela_basica td_left"><span class="nao_quebra">3!=="3" true</span> <br>porém <br> <span class="nao_quebra">3!="3" false</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Menor que &lt;</td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.</td>
+                                    <td class="td_tabela_basica td_left"><span class="nao_quebra">3&lt;3 false</span> <span class="nao_quebra">3&lt;4 true</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Menor ou igual &lt;=
+                                    </td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja menor ou igual ao da direita.</td>
+                                    <td class="td_tabela_basica td_left"><span class="nao_quebra">3&lt;=2 false</span> <span class="nao_quebra">3&lt;=3 true</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Maior ></td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja maior que o da direita.</td>
+                                    <td class="td_tabela_basica td_left"><span class="nao_quebra">3>3 false</span> <span class="nao_quebra">3>2 true</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_tabela_basica">Maior ou igual >=</td>
+                                    <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja maior ou igual ao da direita.</td>
+                                    <td class="td_tabela_basica td_left"> <span class="nao_quebra">3>=4 false</span> <span class="nao_quebra">3>=3 true</span></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </section><!-- /#operadores-comparativos -->
+                <section id="operadores-logicos">
+                    <h3>Operadores Lógicos</h3>
+                    <p>Esses operadores permitem verificar duas ou mais condições devolvendo valores booleanos.</p>
+                    <p>O JavaScript possui 02 operadores lógicos e eles sempre trabalham verificando o resultado dos operadores comparativos. Os operadores lógico são:</p>
+                    <ul>
+                        <li><strong>&& (E): </strong>Esse comparador só retornará o valor "true" se todos os operadores comparativos em questão retornarem "true". Caso um retorne "false" esse comparador retronará "false</li>
                         <p>Exemplo:</p>
                         <div class="pre">
                             <pre>
-'João'+1 = João1
-'João'+1+1=João11
-1+1+'João'=2João
-1+1+'João'+2+2=2João22
-1+1+'João'+2+2-1=NaN</pre>
+    <abbr title="true">10>8</abbr> && <abbr title="true">10>08</abbr> && <abbr title="true">10>7</abbr> = true
+    <abbr title="true">10>8</abbr> && <abbr title="true">10>05</abbr> && <abbr title="false">10>11</abbr> = false</pre>
                         </div>
-                        <p>Como pudemos notar, apartir do momento que usamos um sinal de adição para concatenar, todos os próximos elemento serão reconhecidos como string e todo sinal de adição será reconhecido como concatenação. Caso precise usar algum outro operador aritmético o JS acusará NaN (Not a Number) infomando que não é um número.</p>
-
-                    </section><!-- /#concatenacao-de-string -->
-                    <section id="operadores-de-atribuicao">
-                        <h3>Operadores de Atribuição</h3>
-                        <p>Como o próprio nome já diz esses sinais servem para atribuir algo do lado direito para algo que está no lado esquerdo do sinal (esse algo é o operando), geralmente o que fica no lado esquerdo são variáveis.O operador de atribuição básico é o igual (=), que atribui o valor do operando à direita ao operando à esquerda. Isto é, x = y atribui o valor de y a x.</p>
-                          
-                        <p>Os outros operadores de atribuição são encurtamentos de operadores padrão.</p>
-
-                        <p>Veja os operadores de distribuição abaixo:</p>
-
-                        <div class="overflow-x">
-                            <table class="tabela_basica">
-                                <thead>
-                                    <tr>
-                                        <th class="th_col_tabela_basica" scope="col">Nome</th>
-                                        <th class="th_col_tabela_basica" scope="col">Operador encurtado</th>
-                                        <th class="th_col_tabela_basica" scope="col">Significado</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="td_tabela_basica">Simples =</td>
-                                        <td class="td_tabela_basica">x = y	</td>
-                                        <td class="td_tabela_basica">x = y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Atribuição de adição +=</td>
-                                        <td class="td_tabela_basica">x += y	</td>
-                                        <td class="td_tabela_basica">x = x + y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Atribuição de subtração -=</td>
-                                        <td class="td_tabela_basica">x -= y	</td>
-                                        <td class="td_tabela_basica">x = x - y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Multiplicativa *</td>
-                                        <td class="td_tabela_basica">x *= y	</td>
-                                        <td class="td_tabela_basica">x = x * y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Divisória /=</td>
-                                        <td class="td_tabela_basica">x /= y	</td>
-                                        <td class="td_tabela_basica">x = x / y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Modular %=</td>
-                                        <td class="td_tabela_basica">x %= y</td>
-                                        <td class="td_tabela_basica">x = x % y</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Incremento ++</td>
-                                        <td class="td_tabela_basica">x++</td>
-                                        <td class="td_tabela_basica">x+1</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Decremento --</td>
-                                        <td class="td_tabela_basica">x--</td>
-                                        <td class="td_tabela_basica">x-1</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="obs">
-                            OBS.:
-    
-                            <p>Os operadores de Incremento "++" e Decremento "--" podem ser usado antes da variável ficando ++x ou --x. Isso faz diferença. No ++x a variável recebe a soma na hora já no x++ ela recebe a soma somente quando o programa passar para o próximo comando.</p>
-                            <p>Isso acontece porque o navegador carrega na ordem exata que foi digitado então numa suposta ocasião onde o programa encerre em x++ a variável x não irá receber a soma efetivamente.</p>
-                            <p>Que diferença isso faz? Não sei, só sei que é assim e foi citado em aula.</p>
-    
-                        </div>
-                        <div class="mark">
-                            <p><span class="maiuscula">x+5 é diferente de x+=5 pois em x+5 x não altera seu valor apenas apresenta o resultado!</span></p>
-                        </div>
-                    </section><!-- /#operadores-de-atribuicao -->
-                    <section id="operadores-comparativos">
-                        <h3>Operadores Comparativos</h3>
-                        <p>Esses operadores, como o próprio nome já diz, comparam variaveis ou valores. Eles trabalham com valores booleanos, ou seja, verdadeiro ou falso,true or false.</p>
-
-                        <div class="overflow-x">
-                            <table class="tabela_basica">
-                                <thead>
-                                    <tr>
-                                        <th class="th_col_tabela_basica" scope="col">Operador</th>
-                                        <th class="th_col_tabela_basica" scope="col">Descrição</th>
-                                        <th class="th_col_tabela_basica" scope="col">Exemplos</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="td_tabela_basica">Igualdade ==</td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam iguais.</td>
-                                        <td class="td_tabela_basica">3==3 true</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Estritamente igual (===)</td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo. Isso é, esse testa o tipo de veriável que está abrigando o valor em questão. </td>
-                                        <td class="td_tabela_basica td_left" ><span class="nao_quebra">3==="3" false</span> <br>porém <br> <span class="nao_quebra">3=="3" true</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Diferença !=</td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos não sejam iguais.</td>
-                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3!=3 false</span> <span class="nao_quebra">3!=2 true</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Estritamente diferente (!==)</td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso os operandos sejam diferentes e de tipo diferentes. Isso é, esse testa o tipo de veriável que está abrigando o valor em questão.</td>
-                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3!=="3" true</span> <br>porém <br> <span class="nao_quebra">3!="3" false</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Menor que &lt;</td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.</td>
-                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3&lt;3 false</span> <span class="nao_quebra">3&lt;4 true</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Menor ou igual &lt;=
-                                        </td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja menor ou igual ao da direita.</td>
-                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3&lt;=2 false</span> <span class="nao_quebra">3&lt;=3 true</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Maior ></td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja maior que o da direita.</td>
-                                        <td class="td_tabela_basica td_left"><span class="nao_quebra">3>3 false</span> <span class="nao_quebra">3>2 true</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="td_tabela_basica">Maior ou igual >=</td>
-                                        <td class="td_tabela_basica">Retorna verdadeiro caso o operando da esquerda seja maior ou igual ao da direita.</td>
-                                        <td class="td_tabela_basica td_left"> <span class="nao_quebra">3>=4 false</span> <span class="nao_quebra">3>=3 true</span></td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </section><!-- /#operadores-comparativos -->
-                    <section id="operadores-logicos">
-                        <h3>Operadores Lógicos</h3>
-                        <p>Esses operadores permitem verificar duas ou mais condições devolvendo valores booleanos.</p>
-                        <p>O JavaScript possui 02 operadores lógicos e eles sempre trabalham verificando o resultado dos operadores comparativos. Os operadores lógico são:</p>
-                        <ul>
-                            <li><strong>&& (E): </strong>Esse comparador só retornará o valor "true" se todos os operadores comparativos em questão retornarem "true". Caso um retorne "false" esse comparador retronará "false</li>
-                            <p>Exemplo:</p>
-                            <div class="pre">
-                                <pre>
-<abbr title="true">10>8</abbr> && <abbr title="true">10>08</abbr> && <abbr title="true">10>7</abbr> = true
-<abbr title="true">10>8</abbr> && <abbr title="true">10>05</abbr> && <abbr title="false">10>11</abbr> = false</pre>
-                            </div>
-                            <li><strong>|| (OU): </strong> Esse comparador só retornará o valor "False" se todos os operadores comparativos em questão retornarem "false". Caso um retorne "true" esse comparador retronará "true".</li>
-                            <p>Exemplo:</p>
-                            <div class="pre">
-                                <pre>
-<abbr title="true">10>8</abbr> || <abbr title="false">10>15</abbr> || <abbr title="true">10>7</abbr> = true
-<abbr title="false">10>12</abbr> || <abbr title="false">10>15</abbr> || <abbr title="false">10>11</abbr> = false</pre>
-                            </div>
-                        </ul>
-                    </section><!-- /#operadores-logicos -->
-                    <section id="operador-negacao">
-                        <h3>Operador negação "!"</h3>
-                        <p>Esse operador é simples e muito utilizado. A função dele é apenas inverter o resultado booleano, se for verdadeiro ele trasforma em falso e se for falso trasforma em verdadeiro.</p>
-                        <p>Para isso basta colocar o sinal de "!" antes de qualquer teste e ele inverterá o resultado daquela teste.</p>
+                        <li><strong>|| (OU): </strong> Esse comparador só retornará o valor "False" se todos os operadores comparativos em questão retornarem "false". Caso um retorne "true" esse comparador retronará "true".</li>
                         <p>Exemplo:</p>
                         <div class="pre">
                             <pre>
-!10>5 = false</pre>
+    <abbr title="true">10>8</abbr> || <abbr title="false">10>15</abbr> || <abbr title="true">10>7</abbr> = true
+    <abbr title="false">10>12</abbr> || <abbr title="false">10>15</abbr> || <abbr title="false">10>11</abbr> = false</pre>
                         </div>
-                        <div class="obs">
-                            <p>OBS.: Esse operador pode ser usado apenas no início da linha do teste de resultado booleano, ele não funciona em testes em teste indviduais dentro do teste principal. Exemplo:</p>
-                            <p>10>8 || 10>15 || <span class="mark">!10>7 </span>= true</p>
-                            <p>Esse resultado não irá alterar pois e operador de negação não causou efeito</p>
-                        </div>
+                    </ul>
+                </section><!-- /#operadores-logicos -->
+                <section id="operador-negacao">
+                    <h3>Operador negação "!"</h3>
+                    <p>Esse operador é simples e muito utilizado. A função dele é apenas inverter o resultado booleano, se for verdadeiro ele trasforma em falso e se for falso trasforma em verdadeiro.</p>
+                    <p>Para isso basta colocar o sinal de "!" antes de qualquer teste e ele inverterá o resultado daquela teste.</p>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+    !10>5 = false</pre>
+                    </div>
+                    <div class="obs">
+                        <p>OBS.: Esse operador pode ser usado apenas no início da linha do teste de resultado booleano, ele não funciona em testes em teste indviduais dentro do teste principal. Exemplo:</p>
+                        <p>10>8 || 10>15 || <span class="mark">!10>7 </span>= true</p>
+                        <p>Esse resultado não irá alterar pois e operador de negação não causou efeito</p>
+                    </div>
 
-                    </section><!-- /#operador-negacao -->
-                    <section id="operador-ternario">
-                        <h3>Operador ternário “?:”</h3>
-                        <p>O Operador ternário "?" funciona como um if simplificado onde se uma comparação for verdadeira ele irá gerar o primeiro resultado e se for falso irá entregar o segundo resultado.</p>
-                        <p>Exemplo:</p>
-                        <div class="pre">
-                            <pre>
-var a = 30;
-var b = 5;
-a==b?"Sim":"Não"
-                            </pre>
-                        </div>
-                        <p>No exemplo acima o resultado será: Não.</p>
-                    </section><!-- /#operador-ternario -->
-            </article><!-- /#operadores -->
-            <article id="string-em-number">
-                <h2>Transformando string em Number</h2>
-                <p>Existem duas formas de transformar uma variável string em Number. Mas isso vai dependder se é número inteiro ou fracionado. As duas formas são:  </p>
-                <ul>
-                    <li><strong>Number.parseInt: </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
-                    <li><strong>Number.parseFloat: </strong>Para número fracionados, exemplo: 1,151; 3,58; 7,5...</li>
-                </ul>
-                <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3"</p>
-            </article><!-- /#string-em-number -->
-    
-
-            
-            
-            
-        </main>
-        <footer>
-            <a href="exercicios/exemplos.html" target="_blank">Html para testes</a>
-            <hr>
-            <a href="exercicios/ex01.html">Execícios </a>
-            
-            <h1>Materiais utilizados</h1>
-            
-            <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
-            
-            
-            <h1>Vídeos</h1>
-            
-            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-            
-            
-        </footer>
+                </section><!-- /#operador-negacao -->
+                <section id="operador-ternario">
+                    <h3>Operador ternário “?:”</h3>
+                    <p>O Operador ternário "?" funciona como um if simplificado onde se uma comparação for verdadeira ele irá gerar o primeiro resultado e se for falso irá entregar o segundo resultado.</p>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+    var a = 30;
+    var b = 5;
+    a==b?"Sim":"Não"
+                        </pre>
+                    </div>
+                    <p>No exemplo acima o resultado será: Não.</p>
+                </section><!-- /#operador-ternario -->
+        </article><!-- /#operadores -->
+        <article id="string-em-number">
+            <h2>Transformando string em Number</h2>
+            <p>Existem duas formas de transformar uma variável string em Number. Mas isso vai dependder se é número inteiro ou fracionado. As duas formas são:  </p>
+            <ul>
+                <li><strong>Number.parseInt: </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
+                <li><strong>Number.parseFloat: </strong>Para número fracionados, exemplo: 1,151; 3,58; 7,5...</li>
+            </ul>
+            <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3"</p>
+        </article><!-- /#string-em-number -->
+    </main>
+    <footer>
+        <a href="exercicios/exemplos.html" target="_blank">Html para testes</a>
+        <hr>
+        <a href="exercicios/ex01.html">Execícios </a>
+        
+        <h1>Materiais utilizados</h1>
+        
+        <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
+        
+        
+        <h1>Vídeos</h1>
+        
+        <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+        
+        
+    </footer>
     <script src ="script.js"></script>
     </body>
 </html>
