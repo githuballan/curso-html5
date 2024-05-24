@@ -37,4 +37,4 @@ frutas.forEach(function(item, indice) {
   });
 
   let novoArray = frutas.slice(3, 4);
-  console.log(novoArray)
+  console.log(novoArray);
