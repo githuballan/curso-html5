@@ -70,3 +70,54 @@ var m=Math.random()*100;
 
 console.log(m);
 console.log("---------------------------Fim do exemplo math.random----------------");
+
+console.log("Exemplo Number.parseInt(n)1");
+{
+let n1="3";
+let n2=4;
+let soma=n1+n2;
+n1=Number.parseInt(n1);
+console.log(soma);//34
+}
+console.log("------------------ fim do exemplo Number.parseInt(n)1----------------");
+console.log("Exemplo Number.parseInt(n)2");
+{
+let n3="3";
+let n4=4;
+n3=Number.parseInt(n3);
+let soma=n3+n4;
+console.log(soma);//7
+}
+console.log("------------------ fim do exemplo Number.parseInt(n)2----------------");
+console.log("Exemplo Number.parseFloat(n)");
+{
+let n1="7.5";
+let n2=9;
+let soma=Number.parseFloat(n1)+n2;
+console.log(soma);//16.5
+}
+console.log("------------------ fim do exemplo parseFloat(n)2----------------");
+console.log("Exemplo Number(n)");
+{
+    let n1="7.5";
+    let n2="10";
+    let soma=Number(n1)+Number(n2);
+    console.log(soma);//17.5
+}
+console.log("------------------ fim do exemplo Number(n)2----------------");
+console.log("Exemplo Number em string");
+{
+    let n1=7.5;
+   console.log(typeof(n1));//number
+   n1=String(n1);
+   console.log(typeof(n1));//string
+}
+console.log("------------------ fim do exemplo Number(n)2----------------");
+console.log("Exemplo Concatenar com crase");
+{
+    let nome="Allan";
+    let nota1b=9.5;
+
+    console.log("O aluno "+nome+" ficou com nota "+nota1b+" no 1º bimestre");
+    console.log(`O aluno ${nome} ficou com nota ${nota1b} no 1º bimestre`);
+}

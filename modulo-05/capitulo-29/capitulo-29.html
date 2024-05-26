@@ -443,27 +443,136 @@ console.log(obj.prop); // 2
                     <p>No exemplo acima o resultado será: Não.</p>
                 </section><!-- /#operador-ternario -->
         </article><!-- /#operadores -->
-        <article id="string-em-number">
-            <h2>Transformando string em Number</h2>
-            <p>Existem duas formas de transformar uma variável string em Number. Mas isso vai dependder se é número inteiro ou fracionado. As duas formas são:  </p>
-            <ul>
-                <li><strong>Number.parseInt: </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
-                <li><strong>Number.parseFloat: </strong>Para número fracionados, exemplo: 1,151; 3,58; 7,5...</li>
-            </ul>
-            <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3"</p>
+        <article id="tratamento_de_dados">
+            <h2>Tratamento de dados</h2>
+            <section id="introducao_TD">
+                
+                <p>Como vimos exitem mais de um tipo de variável em JavaScript, por conta disso, por vezes se faz necessário fazer conversões de tipo, para que o programa consiga tratar os dados da maneira correta.</p>
+            </section><!-- /#introducao_TD -->
+            <section id="string_em_number">
+                <h3>Transformando string em Number</h3>
+                <p>Existem 3 formas de transformar uma variável string em Number. Mas isso vai dependder se é número inteiro ou fracionado. As duas formas são:  </p>
+                <ul>
+                    <li><strong>Number.parseInt(n): </strong>Para número inteiro, exemplo: 1, 2, 3, 4, 5... </li>
+                    <li><strong>Number.parseFloat(n): </strong>Para número real, exemplo: 1,151; 3,58; 7,5...</li>
+                    <li><strong>Number(n): </strong> Essa conversão detecta automaticamente o tipo de número que está sendo usado e converte.</li>
+                </ul>
+                <p>Vale ressaltar que obviamente isso só funciona em string do tipo var x="3". Se você escrever "três" o prgrama irá gerar um ERRO.</p>
+                <h4>Number.parseInt(n)</h4>
+                <p>Como já vimos esse comando faz a conversão para número inteiro, </p>
+                <p>Exemplo 01:</p>
+                <div class="pre">
+                    <pre>
+var n1="3";
+var n2=4;
+var soma=n1+n2;
+n1=Number.parseInt(n1);
+console.log(soma);//34
+                    </pre>
+                </div>
+                <p>Exemplo02:</p>
+                <div class="pre">
+                    <pre>
+var n3="3";
+var n4=4;
+n3=Number.parseInt(n3);
+var soma=n3+n4;
+console.log(soma);//7
+                    </pre>
+                </div>
+                <div class="obs">
+                    <h5>Observações</h5>
+                    <ul>
+                        <li>No 1º exemplo o resultado de errado porque a variável soma foi declarada antes da conversão, logo o cálculo foi feito antes da conversão. Mesmo sendo chamada depois, ela apenas exibiu o cálculo ja ja estava feito</li>
+                        <li>No segundo exemplo, foi feito o uso correto do comando e a soma foi realizada.</li>
+                        <li> Para evitar erros, deve-se converter logo após ter sido criada a variável. Ou fazer a conversão dentro da variável exemplo "var soma=Number.parseInt(n3)+n4;" </li>
+                    </ul>
+                </div>
+                <h4>Number.parseFloat(n)</h4>
+                <p>O funcionamento desses comandos de conversão são todos iguais. Resta apenas algumas diferenças quanto ao tipo interio ou real. </p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+{
+let n1="7.5";
+let n2=9;
+let soma=Number.parseFloat(n1)+n2;
+console.log(soma);//16.5
+}
+                    </pre>
+                </div>
+                <div class="obs">
+                    <h5>Observações</h5>
+                    <p>A variável está sendo criada em let entre chaves para não precisar ficar trocando o nome da variável em todo exemplo. Como já vimos let não sai do escopo"{}"</p>
+                    <p>Dessa vez a conversão foi feita dentro da variável soma. Assim evita muitos bugs posteriores com as manutenções no código.</p>
+                </div>
+                <h4>Number(n)</h4>
+                <p>Como já foi falado, essa conversão detecta automaticamente o tipo de número que está sendo usado e converte.</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+{
+    let n1="7.5";
+    let n2="10";
+    let soma=Number(n1)+Number(n2);
+    console.log(soma);//17.5
+}
+                    </pre>
+                </div>
+            </section><!-- /#string_em_number -->
+            <section id="number_em_string">
+                <h3>Transformando Number em string</h3>
+                <p>Assim como podemos converter string em number também podemos fazer o contrário. Transformar uma variável tipo number em uma string.</p>
+                <p>É um pouco menos comum esse uso mas é necessário as vezes. Para isso podemos utilizar 2 comandos diferentes: </p>
+                <ul>
+                    <li><strong>String(n): </strong>Essa é a forma mais simples e funciona de forma similar a number que vimos anteriormente.</li>
+                    <li><strong>n.toString(): </strong> Tem o mesmo efeito que a anterior, porém a escrita muda.</li>
+                </ul>
+                <div class="pre">
+                    <pre>
+{
+    let n1=7.5;
+    console.log(typeof(n1));//number
+    n1=String(n1);
+    console.log(typeof(n1));//string
+}
+                    </pre>
+                </div>
+                <div class="obs">
+                    Atenção para o "S" de "String" que é maiúculo.
+                </div>
+            </section><!-- /#number_em_string -->4
+            <section id="concatenar_com_crase">
+                <h3>Concatenar com crase</h3>
+                <p>Já aprendemos em operadores que para concatenar string utilizamos o sinal de "+". Entertanta existe uma outra forma de cocatenar utilizando crase inves de aspas "".</p>
+                <p>Essa forma foi lançada na última versão do java script em 2015 e se tornou muito popular por ser menos verbosa.</p>
+                <p>Para isso usa-se crase no lugar das aspas e sempre que precisar por uma variável no meio da string,  basta  por a variável entre chaves{} e precedida por um "$". da seguinte forma: ${variável}.</p>
+                <p>Exemplo comparativo:</p>
+                <div class="pre">
+                    <pre>
+{
+    let nome="Allan";
+    let nota1b=9.5;
+
+    console.log("O aluno "+nome+" ficou com nota "+nota1b+" no 1º bimestre");
+    console.log(`O aluno ${nome} ficou com nota ${nota1b} no 1º bimestre`);
+}
+                    </pre>
+                </div>
+                <p>O resultado foi exatamente o mesmo, mas note que até nesse exemplo com pouca variável no meio do texto. O texto com crase ficou menor.</p>
+            </section><!-- /#concatenar_com_crase -->
+            section
+
         </article><!-- /#string-em-number -->
     </main>
     <footer>
-        <a href="exercicios/exemplos.html" target="_blank">Html para testes</a>
-        <hr>
-        <a href="exercicios/ex01.html">Execícios </a>
-        
+             
         <h1>Materiais utilizados</h1>
         
         <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
         
         
-        <h1>Vídeos</h1>
+      
         
         <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
         

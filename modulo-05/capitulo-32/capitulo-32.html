@@ -20,39 +20,78 @@
     </header>
     <main>
         <section id="introducao">
-            <p>As funções são blocos de código reutilizáveis em JavaScript que podem ser executados sempre que necessários. Elas são fundamentais para escrever código modular, legível e eficiente. Aqui está um guia completo sobre o que você precisa saber sobre funções em JavaScript:</p>
+            <p>Funções são blocos de comando com um nome pra vc chamar quando precisar executar aquela série de comandos sem precisar ficar toda hora digitando comando pra car%&@. Tipo a formula soma do excel, você pode ficar digitando + um monte de vezes ou simplesmente usar a fórmula soma.</p>
+            <p>Existem dois tipos de função:</p>
+            <ul>
+                <li><strong>Declaradas;</strong></li>
+                <li><strong>Expressas.</strong></li>
+            </ul>
+
         </section><!--/#introducao-->
         <article id="funcao_declarada">
-            <h2>Funções Declaradas</h2>
-            <p>Uma função declarada é definida usando a palavra-chave function, seguida pelo nome da função, uma lista de parâmetros entre parênteses e o corpo da função entre chaves.</p>
+            <h2>Funções Declaradas </h2>
+            <p>Uma função declarada é definida usando a palavra-chave "function", seguida pelo nome da função, uma lista de parâmetros entre parênteses e o corpo da função entre chaves.</p>
+            <p>Você pode chamar uma função pelo seu nome, seguido por parênteses contendo quaisquer argumentos necessários.</p>
+            <div class="obs">
+                <h4>Observação</h4>
+                <p>Parâmetros são variáveis equivalente as declaradas com "var". Porém declara-las dessa forma fica muito mais fácil.</p>
+                <p>Argumentos são os valores atribuidos aos parâmetros da função quando ela é chamada.</p>
+                <p>Essas varáveis podem ter um valor padrão inicial ou não, é aconselhável sempre ter um valor padrão em toda variável, afim de evitar bugs. Para declara-las com valor padrão basta fazer igual fazemos quando declara variável, usando o sinal de "=" para atribuir o valor padrão.</p>
+            </div>
             <div class="pre">
                 <pre>
-function saudacao(nome) {
-    return `Olá, ${nome}!`;
-    }
+<abbr title="palavra-chave">function</abbr> <abbr title="nome da função">soma</abbr><abbr title="lista de parâmetros entre parênteses">(n1=0,n2=0,n3=0,n4=0)</abbr><abbr title="corpo da função entre chaves.">
+    {</abbr>
+        <abbr title="Palavra chave para indicar o que será executado pela função">return</abbr> <abbr title="Os comandos propriamente ditos">n1+n2+n3+n4;</abbr>
+    };
+
+console.log(soma(<abbr title="Argumentos, ou em outras palavras, valores atribuidos a n1, n2, n3 e n4">10,15,5,7</abbr>));//37
                 </pre>
             </div>
+            <div class="obs">
+                <h4>Informação relevantes</h4>
+                <ul>
+                <li>Se faltasse o valor de alguma variável exemplo:"soma(10,15,5)" nesse caso resultaria 20. Mas apenas porque o valor da variável padrão é zero, caso não houvesse declarado um valor padrão isso resultaria um erro. </li>
+                <li>Uma função declarada pode ser chamada em qualquer momento mesmo antes de declara-la. Pois elas são tipo (hoisted), basisicamente significa que elas são carregadas primeiro pelo JS.</li>
+                <li>Mesmo que a função não possua argumentos ou parametros ela sempre precisará te os () mesmo que vazio, tanto na hora que criar a função quanto na hora que for chamar a função para exibir seu resultado. Caso crie a função sem os parenteses o JS acasará um ERRO e caso chame a função sem os () o JS exibirá todo código da função escrito.</li>
+                </ul>
+            </div>
+
         </article><!--/#funcao_declarada-->
         <article id="funcao_expressa">
-            <h2>Funções Expressas</h2>
+            <h2>Função Expressa ou Função anônima</h2>
             <p>Uma função expressa é uma função que pode ser armazenada em uma variável. Ao contrário das funções declaradas, as funções expressas não são elevadas (hoisted), ou seja, você não pode chamá-las antes de serem definidas.</p>
             <div class="pre">
                 <pre>
-const saudacao = function(nome) {
-    return `Olá, ${nome}!`;
-    };
-                </pre>
+const soma1 =function (n1=0,n2=0,n3=0,n4=0){
+    return n1+n2+n3+n4;
+};
+
+console.log(soma1(5,5,15,8));//33
+</pre>
+            </div>
+            <div class="obs">
+                <p>Repare que o nome da função so tornou o nome da variável e a função se tornou o valor padrão da variável</p>
+                <p>Note também que a variável usada foi "const", pois não podemos alterar o valor dela (nesse caso a função) posteriormente.</p>
             </div>
         </article><!--/#funcao_expressa-->
-        <article id="chamando_funcoes">
-            <h2>Chamando Funções</h2>
-            <p>Você pode chamar uma função pelo seu nome, seguido por parênteses contendo quaisquer argumentos necessários.</p>
+        <article id="funcao_flecha">
+            <h2>Funções de Flecha (Arrow Functions)</h2>
+            <p>Introduzidas no ES6 (versão do JavaScript lançada em 2015), as funções de flecha têm uma sintaxe mais curta e não têm seu próprio "this"(a palavra-chave function) </p>
+            <p>É mais parecida com a função expressa, pois também é criada dentro de uma variável.</p>
             <div class="pre">
                 <pre>
-console.log(saudacao('Ana')); // Olá, Ana!
+const soma2=(a1=0,a2=0,a3=0,a4=0)=>a1+a2+a3+a4;
+
+console.log(soma2(5,5,18,8));//36
                 </pre>
             </div>
-        </article><!--/#chamando_funcoes-->
+            <!-- /.pre -->
+        </article><!-- /#funcao_flecha -->
+        
+
+
+       
 
 
 
