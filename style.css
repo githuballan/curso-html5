@@ -191,6 +191,9 @@ p
 p::first-letter{
     text-transform: uppercase;
 }
+.low::first-letter{
+    text-transform: lowercase;
+}
 
 a[target="_blank"]::after
 {

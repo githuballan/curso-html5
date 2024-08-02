@@ -121,3 +121,29 @@ console.log("Exemplo Concatenar com crase");
     console.log("O aluno "+nome+" ficou com nota "+nota1b+" no 1º bimestre");
     console.log(`O aluno ${nome} ficou com nota ${nota1b} no 1º bimestre`);
 }
+
+console.log("------------------ fim do exemplo Number(n)2----------------");
+console.log("Exemplos Formatando Strings");
+
+{
+    let nome="pé sujo";
+    console.log(nome.length);
+}
+
+{
+    let nome="pé sujo";
+    console.log(nome.toUpperCase());
+}
+
+{
+    let nome="PÉ SUJO";
+    console.log(nome.toLowerCase());
+}
+
+{
+    let num=2;
+    console.log(num.toFixed(2));
+}
+
+
+

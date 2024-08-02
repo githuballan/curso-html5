@@ -541,7 +541,7 @@ console.log(soma);//16.5
                 <div class="obs">
                     Atenção para o "S" de "String" que é maiúculo.
                 </div>
-            </section><!-- /#number_em_string -->4
+            </section><!-- /#number_em_string -->
             <section id="concatenar_com_crase">
                 <h3>Concatenar com crase</h3>
                 <p>Já aprendemos em operadores que para concatenar string utilizamos o sinal de "+". Entertanta existe uma outra forma de cocatenar utilizando crase inves de aspas "".</p>
@@ -561,9 +561,86 @@ console.log(soma);//16.5
                 </div>
                 <p>O resultado foi exatamente o mesmo, mas note que até nesse exemplo com pouca variável no meio do texto. O texto com crase ficou menor.</p>
             </section><!-- /#concatenar_com_crase -->
-            section
-
+            <article id="formatando_string">
+                <h3>Formatando Strings</h3>
+                <section id="introducao_FS">
+                    
+                    <p>É possível fazer alguma formatações básicas em string utlizando JavaScript e até mesmo tratar os dados de uma string como contar quantos caracteres e string possui.</p>
+                    <p>Conheça agora alguns comandos básicos e suas funcionalidades.</p>
+                    
+                </section><!-- /#introducao_FS -->
+                <section id="length">
+                    <h4>Contar caracteres</h4>
+                    <p class="low"><strong>.lentgh: </strong>lentgh é um atributo ele serve para medir uma string contando quantos caracteres ela possui.</p>
+                    <p>Veja:</p>
+                    <div class="pre">
+                        <pre>
+{
+    let nome="pé sujo";
+    console.log(nome.length);//7
+}
+                        </pre>
+                    </div>
+                    <div class="obs">
+                        Note que ele conta os espaços também e não conta os acentos.
+                    </div>
+                </section><!-- /#length -->
+                <section id="maiusculo">
+                        <h4>Transformando texto em maiúsculo</h4>
+                        <p class="low"><strong>.toUpperCase(): </strong> Esse método transforma todo o texto em maiúsculo.</p>
+                        <p>Veja:</p>
+                        <div class="pre">
+                            <pre>
+{
+    let nome="pé sujo";
+    console.log(nome.toUpperCase());//PÉ SUJO
+}
+                            </pre>
+                        </div>
+                        <div class="obs">
+                            <p>Esse diferente é um método  note que ele precisa dos parenteses no final diferentemente de length que não precisa. Pois length é um atributo</p>
+                        </div>
+                </section> <!-- /#maiusculo -->
+                <section id="minuscula">
+                    <h4>Transformando texto em minúsculo</h4>
+                    <p>.<strong>toLowerCase()</strong>: Esse método transforma todo o texto em minúsculo.</p>
+                    <p>Veja:
+                    </p>
+                    <div class="pre">
+                        <pre>
+{
+    let nome="PÉ SUJO";
+    console.log(nome.toLowerCase());/pé sujo
+}</div>
+               
+                        </pre>
+                </section><!-- /#minuscula -->
+            </article><!-- /#formatando_string -->
+            <article id="formatando_numeros">
+                <h3>Formatando Números</h3>
+                <section id="casas_decimais">
+                    <h4>Casas decimais</h4>
+                    <p class="low"><strong>.toFixed()</strong> Com esse método é possível escolher a quantidade de casas decimais que deseja que apareça depois da vírgula. Seu funcionamento é simples basta por a variável que desja mudar antes do "." e entre os parenteses a quantidade de casas decimais que deseja que apareça.</p>
+                    <p>É interessante usar pelo menos duas casa decimais em unidades de medidas como: metro, kg valores financeiros entre outras.</p>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+{
+    let num=2;
+    console.log(num.toFixed(2));//2.00
+}
+                        </pre>
+                    </div>
+                </section><!-- /#casas_decimais -->
+                
+        </article><!-- /#formatando_numeros -->
         </article><!-- /#string-em-number -->
+
+       <!-- como exibir dados na tela:
+        abre a tag script
+        document.write() Para ecrever algo no body da página
+        window.prompt() Para abrir um caixa de aviso
+        fecha tag script-->
     </main>
     <footer>
              
