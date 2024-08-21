@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="stylesheet" href="../../style.css">
 
 
 
@@ -19,85 +19,96 @@
 
     </header>
     <main>
-<h2>Variação de fontes</h2>
-    <h3>font-variant:</h3>
-        <ul>
-            <li><strong>font-variant: small-caps;: </strong><span style="font-variant: small-caps;">Todas as letras ficam maiúsculas porém as que seriam minúsculas permanecem com a altura de minúsculas. </span></li>
+        <article id="var-fontes">
             
-        </ul>
-        
-
-    <h3>text-transform:</h3>
-        <ul>
-            <li><strong>text-transform: uppercase;:</strong><span style="text-transform: uppercase;"> Deixa tudo em MAIÚSCULO</span></li>
-            <li><strong>text-transform: capitalize;:</strong><span style="text-transform: capitalize;">Toda palavra começa com letra maiúscula</span> </li>
-            <li><strong>text-transform: lowercase;:</strong><span style="text-transform: lowercase;"> Deixa tudo em minúsculo</span></li>
-        </ul>
-<h2>viewport </h2>
-    <p>
-        Viewport uma medida de tamanho assim como: "em", "px" e "cm. A diferença é que a viewport vairia de acordo com o tamanho da tela do usuário. Aí você deve pensar "TOOOOOPPPPP responsivo total!" Só que não, infelizmente. 
-    </p>
-    <p>
-        Pois um texto com a letra a 3% da largura da viewportem um celular fica muiti pequeno e em uma tela de 40 pol fica absurdamente grande. Então esse viewport deve ser usada em casos mais específicos como com elementos decorativos, fotos, box, background enfim.
-    </p>
-    <p>
-        Nós usamos viewport desde nosse primeira aula. Na linha 5 do nosso código base, definimos que a viewport terá a largura máxima 
-        baseada na largura do dispositivo e que vai usar uma escala (zoom) inicial da tela 
-        para o valor padrão 1.0 (zoom de 100%). 
-    </p>
-    <p>Exemplo:</p>
-    <p> Comando: <code> style="font-size: 2vw;"</code>
-        <span style="font-size: 2vw;">    
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi. Magnam, delectus! Incidunt aperiam dicta temporibus aut ducimus cumque harum consequuntur hic, sed voluptatem facilis quaerat voluptas ipsa, commodi consequatur.
-    </span>
-    </p>
-    <p>
-        No exemplo acima usamos "vw" pois significa "Viewport width" largua da tela. mas poderia ser ser também "vh" que significa "Viewport heigth" altura da tela.
-    </p>
-    <p>
-        Note que a letra ficou boa em somente um tamanho de tela ou outro. Nos demais ficaram horríveis pra leitura.
-    </p>
-<h1>Efeito Parallax</h1>
-<p>
-    Efeito Paralax simula uma sensação de você está passando por uma janela, e conforme vai mudando o ângulo de visão você vai conseguindo enxergar mais da paisagem. 
-</p>
-<p>Veja o efeito Parallax abaixo:</p>
-
-<div style="display: inline-block; width: 400px; height: 400px; margin-left: 10%; background-image: url(imagens/wallpaper002.jpg); background-attachment: fixed; background-size: cover; box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);"></div>
-
-<p class="mark"> Não funciona se usar o transform: translate</p>
-
-<p> Veja o código usado:</p>
-<pre>
-&lt;div style=" 
-        display: inline-block;
-        width: 400px;
-        height: 400px; 
-        margin-left: 25vw; 
-        background-image: url(imagens/wallpaper002.jpg); 
-        background-attachment: fixed; 
-        background-size: cover; 
-        box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);
-    ">
-    &lt;/div>
-
-</pre>
-
-<p>
-    O segredo para esse efeito está em inserir uma background-image com o background-attachment: fixed em uma box que está dentro de outra box maior, que nesse caso foi a box main.
-</p>
-<p>
-    Assim a imagem fica fixa porém o box fica correndo com a tela
-</p>
-
-
-
-
-
-
-
-
-        
+            <h2>Variação de fontes</h2>
+            
+                <h3>font-variant:</h3>
+            <ul>
+                <li><strong>font-variant: small-caps;: </strong><span style="font-variant: small-caps;">Todas as letras ficam maiúsculas porém as que seriam minúsculas permanecem com a altura de minúsculas. </span></li>
+            
+            </ul>
+            
+            
+                <h3>text-transform:</h3>
+            <ul>
+                <li><strong>text-transform: uppercase;:</strong><span style="text-transform: uppercase;"> Deixa tudo em MAIÚSCULO</span></li>
+                <li><strong>text-transform: capitalize;:</strong><span style="text-transform: capitalize;">Toda palavra começa com letra maiúscula</span> </li>
+                <li><strong>text-transform: lowercase;:</strong><span style="text-transform: lowercase;"> Deixa tudo em minúsculo</span></li>
+            </ul>
+            
+        </article><!-- /#var-fontes -->
+         <article id="viewport">
+             <h2>viewport </h2>
+                 <p>
+                     Viewport uma medida de tamanho assim como: "em", "px" e "cm. A diferença é que a viewport varia de acordo com o tamanho da tela do usuário. Aí você deve pensar "TOOOOOPPPPP responsivo total!" Só que não, infelizmente. 
+                 </p>
+                 <p>
+                     Pois um texto com a letra a 3% da largura da viewport em um celular fica muito pequeno e em uma tela de 40 pol fica absurdamente grande. Então esse viewport deve ser usada em casos mais específicos como com elementos decorativos, fotos, box, background enfim.
+                 </p>
+                 <p>
+                     Nós usamos viewport desde nosse primeira aula. Na linha 5 do nosso código base, definimos que a viewport terá a largura máxima 
+                     baseada na largura do dispositivo e que vai usar uma escala (zoom) inicial da tela 
+                     para o valor padrão 1.0 (zoom de 100%). 
+                 </p>
+                 <p>Exemplo:</p>
+                 <p> Comando: <code> style="font-size: 2vw;"</code>
+                     <span style="font-size: 2vw;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi. Magnam, delectus! Incidunt aperiam dicta temporibus aut ducimus cumque harum consequuntur hic, sed voluptatem facilis quaerat voluptas ipsa, commodi consequatur.
+                 </span>
+                 </p>
+                 <p>
+                     No exemplo acima usamos "vw" pois significa "Viewport width" largura da tela. mas poderia ser ser também "vh" que significa "Viewport heigth" altura da tela.
+                 </p>
+                 <p>
+                     Note que a letra ficou boa em somente um tamanho de tela ou outro. Nos demais ficaram horríveis pra leitura.
+                 </p>
+         </article><!-- /#viewport -->
+        <article id="parallax">
+            
+                            <h2>Efeito Parallax</h2>
+                            <p>
+                Efeito Paralax simula uma sensação de você está passando por uma janela, e conforme vai mudando o ângulo de visão você vai conseguindo enxergar mais da paisagem. 
+                            </p>
+                            <p>Veja o efeito Parallax abaixo:</p>
+                            
+                            <div style="
+                            display: inline-block; 
+                            width: 50vw; 
+                            height: 50vw;
+                            background-image: url(imagens/wallpaper002.jpg); 
+                            background-attachment: fixed; 
+                            background-size: cover; 
+                            box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);"></div>
+                            
+                            <p class="mark"> Não funciona se usar o transform: translate pois perde o efeito Paralax</p>
+                            
+                            <p> Veja o código usado:</p>
+                            <div class="pre">
+            
+                <pre>
+                &lt;div style="
+            display: inline-block;
+            width: 400px;
+            height: 400px;
+            margin-left: 25vw;
+            background-image: url(imagens/wallpaper002.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);
+                    ">
+                    &lt;/div>
+            
+                </pre>
+                            </div>
+                            
+                            <p>
+                O segredo para esse efeito está em inserir uma background-image com o background-attachment: fixed em uma box que está dentro de outra box maior, que nesse caso foi a box main.
+                            </p>
+                            <p>
+                Assim a imagem fica fixa porém o box fica correndo com a tela
+                            </p>
+        </article><!-- /#parallax -->
     </main>
     <footer>
 
@@ -135,6 +146,6 @@
             <hr>
             <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
         
-        </footer>
+    </footer>
 </body>
 </html>
