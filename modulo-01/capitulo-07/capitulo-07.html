@@ -38,27 +38,18 @@
         <p>Por isso é importante o link para o arquivo CSS está sempre no head pois assim ele pausa o carregamento da página, carrega todos os estilos e depois volta para o html.</p>
         </section>
 
-        <section><!--Semântica-->
-            <h3>Títulos</h3>
-            <p>Títulos possuem importância semantica para interpretação exclusivamente dos navegadores e do mecanismos de busca. Principalmente os mecanismos de busca e isso funciona da segunite forma:</p>
-            <p>Caso um usuário pesquise por um palavra chave x e seu título h1 contenha ou seja exatamente essa palavra chave  o mecanismo irá rankear melhor sua página nos resultado que uma página que possua essa palavra chave em um h2 ou outros.</p>
-            <p>E se essa palavara chave estiver apenas numa tag "p" provavelmente sua página nem aparecerá na pesquisa</p>
-          </section>
+        
           <h3>Tag semânticas e não semânticas</h3>
           <p>Existem muitas tag que não possuem efeito semântico algum apenas visual e temo algumas semânticas que possuem efeito visual semelhante. Mas o grande PQ da questão é que qd usamos uma tag semântica o mecanismo de busca entende que aquela palavra tem um significado maior para aquele contexto, logo ele levará em consideração ela na hora de ranker o site nas pesquisas. </p>
           <p>Já as tag não semântica não recebem atenção do mecanismos </p>
          
     </article>
-    <!--Semântica-->   
-   
     <section><!--!DOCTYPE-->              
         <h4>&lt;!DOCTYPE html></h4>
         <p>
             DOCTYPE não é um elemento html, ele apenas informa para o browser que esse html se trata de um html5
         </p>
     </section>
- 
-   
         <article id="head"><!--head-->
             <section><!--Introdução-->
                 
@@ -66,17 +57,17 @@
                 <p>head é a parte onde fica toda as configurações iniciais de um html, aqui é onde declaramos configurações que darão infomações importantes para os motores de buscas e entrw outras configurações.</p>
                 
             </section>         
-            <section><!--title-->
+            <section id="title">
                 
                 <h4>&lt;title>xxx&lt;/title></h4>
                 <p>Title Define o título que será exibido na aba do navegador. Porém muito mais importante que isso é que ele é um dos elementos que possuem maior peso, maior relevância para os mecanismos  de busca na hora de renkear uma busca orgânica.</p>
                 <p>Por isso os title devem sempre ser bem significativo e possuir a palavra chave para rankear a pesquisa no Google. Em outras palavras essa tag faz parte do marketing.</p>
                 
-            </section>
+            </section><!--title-->
             <section><!--style-->
                 <h4>style</h4>
                 <p>O style no head é conhecido como Estilo CSS3 Interno deve ser evitado e usado apenas quando para modificações muito específica daquela página e que nenhuma outra possa ter.</p>
-                <p>Mais importante ainda essa style no head não pode ser influenciada por estilos externo. Então essa deverá ser um estilo que nao descaracterize a página em relação ao resto do site. Para isso devemos evitar usar algumas propriedade de estilo nesse estilo interno como:</p>
+                <p>Mais importante ainda essa style no head não pode ser influenciada por estilos externo. Então essa deverá ser um estilo que não descaracterize a página em relação ao resto do site. Para isso devemos evitar usar algumas propriedade de estilo nesse estilo interno como:</p>
                 <ul>
                     <li>Cores</li>
                     <li>Border</li>
@@ -139,7 +130,7 @@
                 </section><!--keyword-->
             </article><!--Fim metatag-->
         </article><!--Fim head-->
-        <article><!--body-->
+        <article id="body">
             <h2>body</h2>
             <section>
                 <h3>header</h3>
@@ -154,10 +145,12 @@
                 <h3>footer</h3>
                 <p><strong>Rodapé: </strong> Uma das principais tag semânticas de uma página, pois essa define o local do rodapé e deixamos algumas informções que não possuem relação alguma com o conteúdo principal pois é do mesmo nível de main</p>
             </section>
-            <section>
-                <h3>h1 ... h6</h3>
-                <p>Títulos são uma das tag mais usadas do html e a única função desse número e definir a Hierarquia entre eles. Para que o mecanismos de busca saiba que se trata de um assuntos dentro de um contexto maior no seu site</p>
-            </section>
+            <section id="titulos">
+                <h3>Títulos</h3>
+                <p>Títulos possuem importância semantica para interpretação exclusivamente dos navegadores e do mecanismos de busca. Principalmente os mecanismos de busca e isso funciona da segunite forma:</p>
+                <p>Caso um usuário pesquise por um palavra chave x e seu título h1 contenha ou seja exatamente essa palavra chave  o mecanismo irá rankear melhor sua página nos resultado que uma página que possua essa palavra chave em um h2 ou outros.</p>
+                <p>E se essa palavara chave estiver apenas numa tag "p" provavelmente sua página nem aparecerá na pesquisa</p>
+            </section><!--Títulos-->
             <section>
                 <h3>nav</h3>
                 <p>É como um conteirner que indica ao mecanismos de busca que todos os itens ali dentro são itens de navegação do site </p>
@@ -188,33 +181,21 @@
             <section>
                 <h3>aside</h3>
                 <p>Nunca usei mas em teoria é um assunto paralelo.</p>
-                <p> Imagino que seja como falar para comprar uma baedeira x no meio de uma receita de bolo.</p>
+                <p> Imagino que seja como falar para comprar uma  determinada batedeira no meio de uma receita de bolo.</p>
                 <p></p>
             </section>
             <section>
-                <h4>p</h4>
-                <p> Paragráfo</p>
-                <p></p>
+                <h3>Tags de menor valor</h3>
+                <ul>
+                    <li><strong>P</strong>: Paragráfo</li>
+                    <li><strong>buttom</strong>: Essa tag diz que aquele link é um botão e é ótima para usar o CSS</li>
+                    <li><strong>a</strong>: Cria HyperLinks para sites externo ou conteúdos internos</li>
+                    <li><strong>ul</strong>: Cria uma lista não ordenada</li>
+                    <li><strong>ol</strong>: Cria uma lista ordenada</li>
+                </ul>
+                
             </section>
-            <section>
-                <h4>buttom</h4>
-                <p><strong>Botão</strong> Essa tag diz que aquele link é um botão e é ótima para usar o CSS </p>
-               
-            </section>
-            <section>
-                <h4>a</h4>
-                <p><strong>HyperLinks: </strong> Cria HyperLinks para sites externo ou conteúdos internos</p>
-                <p></p>
-            </section>
-            <section>
-                <h4>ul / ol</h4>
-                <p><strong>Lista não ordenada: </strong> Cria uma lista não ordenada</p>
-                <p><strong>Lista ordenada: </strong> Cria uma lista ordenada</p>
-            </section>
-           
-           
-
-        </article>
+        </article><!--body-->
     
 
 
