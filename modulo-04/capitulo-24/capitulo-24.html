@@ -880,25 +880,27 @@
     <p>
         O comando:
     </p>
-    <pre>
-
-&lt;fieldset>
-    &lt;legend>Avaliação do Produto&lt;/legend>
-&lt;form action="avaliacoes.php" method="post" <abbr title="Parte em java JavaScript">oninput="inota.value=Number(lnota.value)"</abbr>>
-    
-    &lt;div>
-        &lt;p>
-            &lt;label for="lnota">Nota:&lt;/label>
-            &lt;abbr title="Nota de 1 a 5">&lt;input type="range" name="Nota" id="lnota" min="1" max="5" value="5" >&lt;/abbr>
+    <div class="pre">
         
-            <span class="mark">&lt;output name="nota" <abbr title="Note que esse id é usado pelo JavaScript para receber o valor de lnota">id="inota"</abbr>>5&lt;/output></span>
-        &lt;/p>
-        &lt;/div>
-
-&lt;/form>
-&lt;/fieldset>
-
-    </pre>
+        <pre>
+        
+        &lt;fieldset>
+        &lt;legend>Avaliação do Produto&lt;/legend>
+        &lt;form action="avaliacoes.php" method="post" <abbr title="Parte em java JavaScript">oninput="inota.value=Number(lnota.value)"</abbr>>
+        
+        &lt;div>
+            &lt;p>
+                &lt;label for="lnota">Nota:&lt;/label>
+                &lt;abbr title="Nota de 1 a 5">&lt;input type="range" name="Nota" id="lnota" min="1" max="5" value="5" >&lt;/abbr>
+        
+                <span class="mark">&lt;output name="nota" <abbr title="Note que esse id é usado pelo JavaScript para receber o valor de lnota">id="inota"</abbr>>5&lt;/output></span>
+            &lt;/p>
+            &lt;/div>
+        
+        &lt;/form>
+        &lt;/fieldset>
+        </pre>
+    </div>
     <p>
         Note a importâcia do identificador id, todo id deve ser semântico para evitar confusões.
     </p>
