@@ -20,11 +20,16 @@
     </header>
     <main>
         <section id="introducao">
-            <p>Funções são blocos de comando com um nome pra vc chamar quando precisar executar aquela série de comandos sem precisar ficar toda hora digitando uma série de comandos infindáveis. Tipo a formula soma do excel, você pode ficar digitando + um monte de vezes ou simplesmente usar a fórmula soma.</p>
-            <p>Existem dois tipos de função:</p>
+            <p>Funções são blocos de comando com um nome pra vc chamar quando precisar executar aquela série de comandos sem precisar ficar toda hora redigitando tudo. Tipo a formula soma do excel, você pode ficar digitando + um monte de vezes ou simplesmente usar a fórmula soma.</p>
+            <p>Nomeclaturas que precisamos conhecer:</p>
             <ul>
-                <li><strong>Declaradas;</strong></li>
-                <li><strong>Expressas.</strong></li>
+                <li><strong>Parâmetros:</strong> são variáveis equivalente as declaradas com "var". Porém declara-las dessa forma fica muito mais fácil.</li>
+                 <div class="obs">
+                <h4>Observação</h4>
+                
+                <p>Esses parâmetros podem ter um valor padrão inicial ou não e, assim como as variáveis, é aconselhável sempre ter um valor padrão em todos eles, afim de evitar bugs. Para declara-los com valor padrão basta fazer igual fazemos quando declara variável, usando o sinal de "=" para atribuir o valor padrão.</p>
+            </div>
+                <li><strong>Argumentos: </strong>são os valores atribuidos aos parâmetros da função quando ela é chamada.</li>
             </ul>
 
         </section><!--/#introducao-->
@@ -32,12 +37,7 @@
             <h2>Funções Declaradas </h2>
             <p>Uma função declarada é definida usando a palavra-chave "function", seguida pelo nome da função, uma lista de parâmetros entre parênteses e o corpo da função entre chaves.</p>
             <p>Você pode chamar uma função pelo seu nome, seguido por parênteses contendo quaisquer argumentos necessários.</p>
-            <div class="obs">
-                <h4>Observação</h4>
-                <p>Parâmetros são variáveis equivalente as declaradas com "var". Porém declara-las dessa forma fica muito mais fácil.</p>
-                <p>Argumentos são os valores atribuidos aos parâmetros da função quando ela é chamada.</p>
-                <p>Essas varáveis podem ter um valor padrão inicial ou não, é aconselhável sempre ter um valor padrão em toda variável, afim de evitar bugs. Para declara-las com valor padrão basta fazer igual fazemos quando declara variável, usando o sinal de "=" para atribuir o valor padrão.</p>
-            </div>
+           
             <div class="pre">
                 <pre>
 <abbr title="palavra-chave">function</abbr> <abbr title="nome da função">soma</abbr><abbr title="lista de parâmetros entre parênteses">(n1=0,n2=0,n3=0,n4=0)</abbr><abbr title="corpo da função entre chaves.">
@@ -88,6 +88,26 @@ console.log(soma2(5,5,18,8));//36
             </div>
             <!-- /.pre -->
         </article><!-- /#funcao_flecha -->
+        <article id="rest">
+            <h2>Parâmetro REST em funções</h2>
+            <p>O parâmetro rest (ou rest parameter) é uma funcionalidade do JavaScript que permite representar um número indefinido de argumentos como um array. Ele é útil quando você precisa criar funções onde o número de argumentos possam variar.  </p>
+            <p>O parâmetro rest é indicado por três pontos (...) antes do nome do parâmetro na definição de uma função. Quando você usa o parâmetro rest, todos os argumentos passados para a função, após os 3 pontos, serão colocados em um array.</p>
+            <h3>Exemplo de aplicação do parametro REST</h3>
+            <p></p>
+            <div class="pre">
+                <pre>
+function soma(...valores){
+    let tam=valores.length
+    let res=0
+    for(let i=0;i&lt;tam;i++){
+        res+=valores[i]
+    }
+    return res
+}
+console.log(soma(10,3,2,5)) // 20
+                </pre>
+            </div>
+        </article><!-- /#rest -->
         
 
 

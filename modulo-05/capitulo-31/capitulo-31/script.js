@@ -38,3 +38,15 @@ frutas.forEach(function(item, indice) {
 
   let novoArray = frutas.slice(3, 4);
   console.log(novoArray);
+  console.log("------------------------------------------------------")
+  function soma(n1,n2){
+    return n1+n2
+  }
+  console.log(soma(2,3))
+  console.log("------------------------------------------------------")
+  function soma(...numeros) {
+    return numeros.reduce((acumulador, numeroAtual) => acumulador + numeroAtual, 0);
+  }
+  
+  console.log(soma(1, 2, 3));       // Output: 6
+  console.log(soma(10, 20, 30, 40)); // Output: 100

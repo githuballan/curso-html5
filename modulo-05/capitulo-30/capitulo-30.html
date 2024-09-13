@@ -150,7 +150,7 @@ if(backup>200){console.log("break"); break}
             <section id="for">
                 <h3>For</h3>
                 <p>O comando for em JavaScript é utilizado para executar um bloco de código repetidamente, geralmente com base em uma condição que é verificada antes de cada iteração.</p>
-                <p>Esse comando possui uma estrutura básica composta em 3 partes:</p>
+                <p>Esse comando possui uma estrutura básica composta por 3 partes:</p>
                 <ol>
                     <li><strong>Inicialização: </strong>Executada uma vez antes do início do loop. Geralmente é usada para definir e inicializar a variável de controle do loop.</li>
                     <li><strong>Condição: </strong>Avaliada antes de cada iteração do loop. Se a condição for verdadeira, o bloco de código dentro do loop é executado. Se for falsa, o loop termina.</li>
@@ -171,13 +171,26 @@ for(<abbr title="Inicialização">var i=1</abbr>; <abbr title="Condição">i&lt;
                     <div class="pre">
                         <pre>
 var backup =1
-for(var i=1; i&lt;31; i){
-    console.log(i+"ª vez impresso")
-    backup++
-    if(backup>20){console.log("break"); break}
+for(var i=1; i&lt;31;i++){
+    document.write(i+"ª vez impresso&lt;br>")
+    backup++   
+    if(backup>400){document.write("break"); break;}
 }
                         </pre>
                     </div>
+                    <p>Resultado:</p>
+                    <div class="resp">
+                        <script>
+                        
+                            var backup =1
+                        for(var i=1; i<31;i++){
+                            document.write(i+"ª vez impresso<br>")
+                            backup++   
+                            if(backup>400){document.write("break"); break;}
+                        }
+                        </script>
+                    </div>
+    
                     <div class="obs">
                         <p>Note que no exemplo acima o incremento está com erro pois faltou o "++" nesse caso o loop irá parar em 20 repetições por causa do break.</p>
                     </div>

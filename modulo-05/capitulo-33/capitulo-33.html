@@ -18,7 +18,7 @@
     </header>
     <main>
         <section id="introducao">
-            <h2>Introdução</h2>
+            
             <p>O objeto funciona de forma muito semelhante a um array, pois também é uma colecão de variáveis. Entretanto, quando se trata de objetos chamamos essas variáveis de propriedades do objeto.
              </p>
             <p>Sendo assim, um objeto é uma coleção de propriedades, onde cada propriedade é uma associação entre um nome (chave) e um valor (Assim como as variáveis). Objetos são uma das principais formas de estruturar dados em JavaScript e são extremamente flexíveis.</p>
@@ -26,12 +26,106 @@
         <article id="caracteristicas_objeto">
             <h2>Características de um Objeto</h2>
             <ul>
-                <li><strong>Chaves e Valores:</strong> Cada propriedade de um objeto tem uma chave (também chamada de nome ou identificador) e um valor. A chave é sempre uma string (ou algo que pode ser convertido para string), enquanto o valor pode ser de qualquer tipo, incluindo outros objetos, funções, arrays, números, strings, etc.</li>
+                <li><strong>Chaves e Valores:</strong> Cada propriedade de um objeto tem uma chave (também chamada de nome ou identificador) e um valor. A chave é sempre uma palavra(string), é como se fosse o nome da variável (ou algo que pode ser convertido para string), enquanto o valor pode ser de qualquer tipo, incluindo outros objetos, funções, arrays, números, strings, etc.</li>
                 <li><strong>Sintaxe de Definição:</strong>Sintaxe de Definição: Existem várias maneiras de criar objetos em JavaScript. A forma mais comum é usando a notação literal de objeto, que é representada por chaves {}.</li>
                 <li><strong>Mutabilidade:</strong> Objetos em JavaScript são mutáveis, o que significa que você pode alterar suas propriedades após a criação.</li>
             </ul>
-        </article>
+           
+        </article><!--caracteristicas_objeto-->
+        <article id="criacao_objeto">
+                <h2>Criação de Objetos</h2>
+                <section>
+                    
+                    <p>Existem algumas formas de criar objetos e uma dela é muito semelhante ao array, entretanto enquanto no array utilizamos colchetes para cria-lo, quando se trata de objetos nós utilizamos chaves</p>
+                    <p>Outra diferença é que no array quando precisamos buscar o valor de uma propriedade nós utilizamos o index (que vai do 0 em diante) já no objeto, conseguimos puxar esse valor chamando pela chave da propriedade. Igual fazemos com as variáveis</p>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+                    var aluno={
+                        <abbr title="Chave">nome</abbr>:<abbr title="valor">"Allan"</abbr>, 
+                        <abbr title="Chave">nota1</abbr>:<abbr title="valor">10</abbr>, 
+                        nota2:9, 
+                        nota3:8, 
+                        nota4:7
+                    };
+                    document.write(aluno["nome"]+"&lt;br>");
+                    document.write(aluno.nome);
+                        </pre>
+                    </div>
+                    <p>Resultado:</p>
+                    <div class="resp">
+                        <script>
+                            {
+                            let aluno={
+                                nome:"Allan",
+                                nota1:10,
+                                nota2:9,
+                                nota3:8,
+                                nota4:7
+                            };
+                            document.write(aluno["nome"]+"<br>");
+                            document.write(aluno.nome);
+                        }
+                        </script>
+                    </div>
+                </section>
+            <article id="objet_com_array">
+                <h3>Objeto com array</h3>
+                <p>Também é possível criar Arrays dentro de objetos. </p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+{
+    let aluno={
+    nome:"Allan", 
+    nota:[10,9,8,7]
+    };
+document.write(aluno["nome"]+"&lt;br>");
+document.write(aluno.nome+"&lt;br>");
+document.write(aluno.nota[0]);
+}
+                    </pre>
+                </div><!-- /.pre -->
+                <p>Resultado:</p>
+                <div class="resp">
+                    <script>
+{
+    let aluno={
+    nome:"Allan", 
+    nota:[10,9,8,7]
+   };
+document.write(aluno["nome"]+"<br>");
+document.write(aluno.nome+"<br>");
+document.write(aluno.nota[0]);
+}
+                    </script>
+                </div><!-- /.resp -->
+            </article><!-- /#objet_com_array -->
+            <article id="obj_metodo">
+                <h3>Objeto com Métodos (função)</h3>
+                <p>Método nada mais é que função dentro do objeto, assim como as variáveis se chamam propriedades funções se chamam método.</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
 
+                    </pre>
+                </div>
+                <p>Resultado:</p>
+                <div class="resp">
+                    <script>
+                        {
+let aluno={
+nome:"Allan";
+nota:[10,9,8,7];
+ media: function();
+}
+
+                        }
+                    
+                    </script>
+                </div>
+            </article><!--obj_metodo-->
+        </article><!--#criacao_objeto -->
     </main>
     <footer>
         <h1>Materiais utilizados</h1>            

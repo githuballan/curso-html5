@@ -74,3 +74,18 @@ for(var a in aluno){
     console.log(aluno[a]+"  "+notas1b[a]+"  "+notas2b[a]+"  "+notas3b[a]+"  "+notas4b[a]+" Sua média é: "+media()+"  "+sera());
     a++
 }
+console.log("------------------------------------------")
+{
+
+    function soma(...valores){
+        let tam=valores.length
+        let res=0
+        for(let i=0;i<tam;i++){
+            res+=valores[i]
+        }
+        return res
+    }
+    console.log(soma(10,3,2,5))
+    
+    }
+
