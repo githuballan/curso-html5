@@ -89,3 +89,16 @@ console.log("------------------------------------------")
     
     }
 
+    console.log("Relembrando------------------------------------------")
+    {
+       
+
+
+        let resultado
+        let a=1
+        let b=2
+
+        if(a==b){(console.log('ok'))}else{console.log('não')}
+        
+       
+    }

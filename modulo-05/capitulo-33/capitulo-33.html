@@ -27,7 +27,7 @@
             <h2>Características de um Objeto</h2>
             <ul>
                 <li><strong>Chaves e Valores:</strong> Cada propriedade de um objeto tem uma chave (também chamada de nome ou identificador) e um valor. A chave é sempre uma palavra(string), é como se fosse o nome da variável (ou algo que pode ser convertido para string), enquanto o valor pode ser de qualquer tipo, incluindo outros objetos, funções, arrays, números, strings, etc.</li>
-                <li><strong>Sintaxe de Definição:</strong>Sintaxe de Definição: Existem várias maneiras de criar objetos em JavaScript. A forma mais comum é usando a notação literal de objeto, que é representada por chaves {}.</li>
+                <li><strong>Sintaxe de Definição:</strong> Existem várias maneiras de criar objetos em JavaScript. A forma mais comum é usando a notação literal de objeto, que é representada por chaves {}.</li>
                 <li><strong>Mutabilidade:</strong> Objetos em JavaScript são mutáveis, o que significa que você pode alterar suas propriedades após a criação.</li>
             </ul>
            
@@ -69,63 +69,170 @@
                         </script>
                     </div>
                 </section>
-            <article id="objet_com_array">
-                <h3>Objeto com array</h3>
-                <p>Também é possível criar Arrays dentro de objetos. </p>
-                <p>Exemplo:</p>
-                <div class="pre">
-                    <pre>
+
+        </article><!--#criacao_objeto -->
+        <article id="objet_com_array">
+            <h2>Objeto com array</h2>
+            <p>Também é possível criar Arrays dentro de objetos. </p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
 {
-    let aluno={
-    nome:"Allan", 
-    nota:[10,9,8,7]
-    };
+let aluno={
+nome:"Allan", 
+nota:[10,9,8,7]
+};
 document.write(aluno["nome"]+"&lt;br>");
 document.write(aluno.nome+"&lt;br>");
 document.write(aluno.nota[0]);
 }
-                    </pre>
-                </div><!-- /.pre -->
-                <p>Resultado:</p>
-                <div class="resp">
-                    <script>
+                </pre>
+            </div><!-- /.pre -->
+            <p>Resultado:</p>
+            <div class="resp">
+                <script>
 {
-    let aluno={
-    nome:"Allan", 
-    nota:[10,9,8,7]
-   };
-document.write(aluno["nome"]+"<br>");
-document.write(aluno.nome+"<br>");
-document.write(aluno.nota[0]);
-}
-                    </script>
-                </div><!-- /.resp -->
-            </article><!-- /#objet_com_array -->
-            <article id="obj_metodo">
-                <h3>Objeto com Métodos (função)</h3>
-                <p>Método nada mais é que função dentro do objeto, assim como as variáveis se chamam propriedades funções se chamam método.</p>
-                <p>Exemplo:</p>
-                <div class="pre">
-                    <pre>
-
-                    </pre>
-                </div>
-                <p>Resultado:</p>
-                <div class="resp">
-                    <script>
-                        {
 let aluno={
-nome:"Allan";
-nota:[10,9,8,7];
- media: function();
+nome:"Allan", 
+nota:[10,9,8,7]
+};
+
+document.write("Aluno: "+aluno.nome+"<br>");
+document.write("Nota: "+aluno.nota[2]);
+}
+                </script>
+            </div><!-- /.resp -->
+        </article><!-- /#objet_com_array -->
+        <article id="obj_metodo">
+            <h2>Objeto com Métodos (função)</h2>
+            <p>Método nada mais é que função dentro do objeto, assim como as variáveis se chamam propriedades funções se chamam método.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+function calcMedia(...nota)
+{
+return (this.nota[0]+<span class="mark">this</span>.nota[1]+this.nota[2]+this.nota[3])/4;
 }
 
+{
+var aluno=
+{
+    nome:"Allan",
+    nota:[9,8,9,9],
+    media: calcMedia
+}
+}
+
+
+document.write(aluno.nome+"&lt;br>");
+document.write(aluno.media()+"&lt;br>");
+                </pre>
+            </div>
+            <div class="obs">
+                <p>Note o 'this.' utilizado na function, esse this serve para mostrar para a função que o array que ela está buscando está dentro do objeto que a função está sendo aplicada, caso contrário ela poderia buscaria em todo o código e não acharia ou acaharia o errado, pois ela não buscaria dentro do próprio objeto</p>
+                <p>Vale ressaltar que essa função calcMedia só poderá ser usada como método pois esse this aponta para um array do um objeto se tentar aplica-la fora de um objeto ela dará erro.</p>
+            </div>
+            <p>Resultado:</p>
+            <div class="resp">
+                <script>
+                    function calcMedia(...nota)
+                    {
+                        return (this.nota[0]+this.nota[1]+this.nota[2]+this.nota[3])/4;
+                    }
+                
+                    {
+                        var aluno=
+                        {
+                            nome:"Allan",
+                            nota:[9,8,9,9],
+                            media: calcMedia
                         }
+                    }
                     
-                    </script>
-                </div>
-            </article><!--obj_metodo-->
-        </article><!--#criacao_objeto -->
+                        
+                        document.write(aluno.nome+"<br>");
+                        document.write(aluno.media()+"<br>");
+                        document.write(tamanho);
+                    
+                </script>
+                
+            </div>
+        </article><!--obj_metodo-->
+        <article id="construtor">
+            <h2>Construtor de objeto</h2>
+            <p>Costrutor de objetos trata-se de criar uma função cujo o return seja a criação de um objeto. O objetivo de usar uma função para isso é evitar erros e facilitar a construção de muito objetos com propriedades semelhantes.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+<pre>
+    
+function criarAluno(nome,n1,n2,n3,n4){
+    return{
+        nome:nome,
+        n1:n1,
+        n2:n2,
+        n3:n3,
+        n4:n4,
+        media:function(){return(this.n1+this.n2+this.n3+this.n4)/4}
+    }
+}
+
+let turma = [
+
+    criarAluno("Allan",9,9,9,9),
+    criarAluno("Joa",3,9,9,9),
+]
+
+let aluno=turma[1];
+
+console.log(aluno);
+console.log(aluno.media());
+
+document.write("Nome: "+aluno.nome+
+    "&lt;br> Nota 1: "+aluno.n1+
+    "&lt;br> Nota 2: "+aluno.n2+
+    "&lt;br> Nota 3: "+aluno.n3+
+    "&lt;br> Nota 4: "+aluno.n4+
+    "&lt;br> Média: "+aluno.media()
+);
+
+</pre>
+            </div><!-- /.pre -->
+            <p>Resultado:</p>
+            <div class="resp">
+                <script>
+                    {
+                        function criarAluno(nome,n1,n2,n3,n4){
+                            return{
+                                nome:nome,
+                                n1:n1,
+                                n2:n2,
+                                n3:n3,
+                                n4:n4,
+                                media:function(){return(this.n1+this.n2+this.n3+this.n4)/4}
+                            }
+                        }
+
+                        let turma = [
+
+                            criarAluno("Allan",9,9,9,9),
+                            criarAluno("Joa",3,9,9,9),
+                        ]
+                        
+                        let aluno=turma[1];
+
+                        console.log(aluno);
+                        console.log(aluno.media());
+                        document.write("Nome: "+aluno.nome+
+                            "<br> Nota 1: "+aluno.n1+
+                            "<br> Nota 2: "+aluno.n2+
+                            "<br> Nota 3: "+aluno.n3+
+                            "<br> Nota 4: "+aluno.n4+
+                            "<br> Média: "+aluno.media()
+                        );
+                    }
+                </script>
+            </div><!-- /.resp -->
+        </article><!-- /#construtor -->
     </main>
     <footer>
         <h1>Materiais utilizados</h1>            

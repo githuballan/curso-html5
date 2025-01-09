@@ -9,13 +9,9 @@
     <link rel="stylesheet" href="./style.css">
     <style>
         
-       /*.sub-titulo{
-            display: none;
-        }
-        .titulo:active>.sub-titulo{
-            transition-duration: 5s;
-            display: block;            
-        }*/
+       .menu{
+        display: none;
+       }
     </style>
     
 <style>
@@ -78,11 +74,11 @@
 
     <main>
  
-        <h2>Módulo 01</h2>
-        <ul><!--Módulo 01--> 
+        <h2 onclick="exibir01()">Módulo 01</h2>
+        <ul id="modulo01" class="menu"><!--Módulo 01--> 
             <li class="titulo"><!--Capítulo 01-->
                 <h3>Capítulo 01</h3>
-                <ul class="sub-titulo">
+                <ul>
                     <li><strong><a href="https://youtu.be/VfIXgGJWLvA?si=NSiVmB731V3DB2ze">Precisamos fazer um acordo</a></strong></li>
                     <li><strong><a href="https://youtu.be/57wyfS560Uk?si=SeF_l0NTheyMchSM">Será que este curso é para mim?</a></strong></li>
                     <li><strong><a href="https://youtu.be/0zLjVhHdOm8?si=NhpMs7I5DOlFL9l2">Melhores livros para aprender HTML5 e CSS3</a></strong></li>
@@ -178,8 +174,8 @@
 
         </ul><!--/Módulo 01-->
 
-        <h2>Módulo 02 - CSS3</h2>
-        <ul><!--Módulo 02-->
+        <h2 onclick="exibir02()">Módulo 02 - CSS3</h2>
+        <ul id="modulo02" class="menu"><!--Módulo 02-->
 
             
             <li><!--Capítulo 13 - Cores-->
@@ -264,8 +260,8 @@
 
         </ul><!--/Módulo 02-->
 
-        <h2>Módulo 03</h2>
-        <ul><!--Módulo 03-->
+        <h2 onclick="exibir03()">Módulo 03</h2>
+        <ul id="modulo03" class="menu"><!--Módulo 03-->
             
             <li><!--Capítulo 18 - Git e GitHub-->
                 <h3><a href="modulo-03/capitulo-18/capitulo-18.html">Capítulo 18 - Git e GitHub</a></h3>
@@ -319,7 +315,7 @@
                     <li><strong>Scope e Capition</strong></li>
                     <li><strong>Zebrando Tabelas</strong></li>
                     <li><strong>Cabeçalho Fixo</strong></li>
-                    <li><strong>Mesclar Celula</strong></li>
+                    <li><strong>Mesclar Célula</strong></li>
                     <li><strong>Desafios</strong></li>
                     <li><strong>Exemplo com todo ensinamento até aqui</strong></li>
                     <li><strong>Escopo de grupo</strong></li>
@@ -330,8 +326,8 @@
             </li> 
         </ul><!--/Módulo 03-->
 
-        <h2>Módulo 04</h2>
-        <ul><!--Módulo 04-->
+        <h2 onclick="exibir04()">Módulo 04</h2>
+        <ul id="modulo04" class="menu"><!--Módulo 04-->
             
             <li><!--Capítulo 22 - iframe-->
                 <h3><a href="modulo-04/capitulo-22/capitulo-22.html">Capítulo 22 - iframe</a></h3>
@@ -477,8 +473,8 @@
             </li> 
         </ul><!--/Módulo 04-->
 
-        <h2>Módulo 05</h2>
-        <ul><!--Módulo 05-->
+        <h2 onclick="exibir05()">Módulo 05 -  JavaScript Básico</h2>
+        <ul id="modulo05" class="menu"><!--Módulo 05-->
             <li><!--Capítulo 29 - JavaScript Básico-->
                 <h3><a href="modulo-05/capitulo-29/capitulo-29.html">Capítulo 29 - JavaScript Básico</a></h3>
             <ul><!--Sutítulos Capítulo 29-->
@@ -531,15 +527,15 @@
             <li><!--Capítulo 31 - Array-->
                 <h3><a href="modulo-05\capitulo-31\capitulo-31.html">Capítulo 31 - Array</a></h3>
                 <ul><!--Sutítulos Capítulo 31-->
-                   <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#declarando_array">Declarando Array</a></strong>
-                    <ul><!--Declarando Array-->
+                   <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#declarando_array">Declarando Array</a></strong><!--Declarando Array-->
+                    <ul>
                         <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#construtor_array">Usando o construtor Array</a></strong></li>
                         <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#usando_colchetes">Usando colchetes</a></strong></li>
-                    </ul><!--/Declarando Array-->
+                    </ul>
                     </li><!--/Declarando Array-->
                    
-                   <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#metodos">Trabalhando com os elementos de um Array</a></strong>
-                    <ul><!--Métodos Comuns de Arrays-->
+                   <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#metodos">Trabalhando com os elementos de um Array</a></strong><!--Trabalhando com os elementos de um Array-->
+                    <ul>
                         <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#acessando_elementos">Acessando Elementos</a></strong></li>
                    <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#modificando_elementos">Modificando Elementos</a></strong></li>
                    <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#length">Verificar quantos elementos tem no Array</a></strong></li>
@@ -550,14 +546,15 @@
                         <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#indexOf">Descobrindo o índice do elemento</a></strong></li>
                         <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#slice">Copiar array inteiro ou parte</a></strong></li>
                         <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#forEach">forEach</a></strong></li>
-                    </ul><!--/Métodos Comuns de Arrays-->
-                    </li><!--/Métodos Comuns de Arrays-->
-                   <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#splice">splice</a></strong>
+                        <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#splice">splice</a></strong>
                         <ul><!--splice-->
                             <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#splice_remover">Remover elemento usando splice</a></strong></li>
                              <li><strong><a href="modulo-05\capitulo-31\capitulo-31.html#splice_adicionar">Adicionar elemento usando splice</a></strong></li>
                         </ul><!--/splice-->
                     </li><!--/splice-->
+                    </ul>
+                    </li><!--Trabalhando com os elementos de um Array-->
+                   
                 </ul><!--/Sutítulos Capítulo 31-->
             </li><!--/Capítulo 31 - Array-->
             <li><!--Capítulo 32 - Funções-->
@@ -570,14 +567,89 @@
             </li><!--Capítulo 32 - Funções-->
             <li><!--Capítulo 33 - Objeto-->
                 <h3><a href="modulo-05\capitulo-33\capitulo-33.html">Capítulo 33 - Objeto</a></h3>
-                <ul><!--Sutítulos Capítulo 32-->
-                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#">Funções Declaradas</a></strong></li>
-                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#">Funções Declaradas</a></strong></li>
-                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#">Funções Declaradas</a></strong></li>
-                </ul><!--/Sutítulos Capítulo 32-->
-            </li><!--Capítulo 32 - Funções-->
+                <ul><!--Sutítulos Capítulo 33-->
+                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#caracteristicas_objeto">Características de um Objeto</a></strong></li>
+                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#criacao_objeto">Criação de Objetos</a></strong></li>
+                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#objet_com_array">Objeto com array</a></strong></li>
+                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#obj_metodo">Objeto com Métodos (função)</a></strong></li>
+                    <li><strong><a href="modulo-05\capitulo-33\capitulo-33.html#construtor">Construtor de objeto</a></strong></li>
+                    
+                </ul><!--/Sutítulos Capítulo 33-->
+            </li><!--Capítulo 33 - Objeto-->
+           
         </ul><!--/Módulo 05-->
+
+        <h2 onclick="exibir06()">Módulo 06 -  JavaScript Intermediário</h2>
+        <ul id="modulo06" class="menu"><!--Módulo 06-->
+            <li>
+                <h3><a href="modulo-06/capitulo-34/capitulo-34.html">Capítulo 34 - Integrando JS ao HTML</a></h3>
+                <ul><!--Sutítulos Capítulo 34-->
+                    <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#window">Objeto padrão (window)</a></strong></li>
+                    <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#">Subtítulos</a></strong></li>
+                    <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#">Subtítulos</a></strong></li>
+                    <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#">Subtítulos</a></strong></li>
+                    <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#">Subtítulos</a></strong></li>
+                    <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#">Subtítulos</a></strong></li>
+                </ul><!--Sutítulos Capítulo 34-->
+            </li>
+            
+        </ul><!--Módulo 06-->
+        <p>
+            <strong><a href="modulo-05/teste/teste.html">Testes
+            </a></strong>
+        </p>
     </main>
 
 </body>
+<script>
+function exibir01(){
+    var x = document.getElementById("modulo01");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
+}
+function exibir02(){
+    var x = document.getElementById("modulo02");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
+}
+function exibir03(){
+    var x = document.getElementById("modulo03");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
+}
+function exibir04(){
+    var x = document.getElementById("modulo04");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
+}
+function exibir05(){
+    var x = document.getElementById("modulo05");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
+}
+function exibir06(){
+    var x = document.getElementById("modulo06");
+    if(x.style.display === "block"){
+        x.style.display = "none";
+    }else{
+        x.style.display = "block";
+    }
+}
+
+</script>
 </html>

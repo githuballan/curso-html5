@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tudo que você precisa conhecer sobre tags semântica do html5">
+    <meta name="keywords" content="Palavras chaves, chave, palavra">
+    <title>Capítulo 34</title>
+
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+    <header>
+        <h1>Capítulo 34</h1>
+        <h1>Objeto</h1>
+    </header>
+    <main>
+        <article id="window">
+            <h2>Objeto padrão (window)</h2>
+            <p>O window é o objeto que carrega todos os métodos (funções) nativos do JS, como: o console.log(), getElementById, document.innertHtml dentre muitos outros que veremos mais para frente.</p>
+            <p>por se tratar de um objeto padrão, não é necessário chamar o método da forma que chamamos os demais ecrevendo o nome do objeto e depois o método:  window.console.log(), nesse caso basta escrever diretamante um de seus métodos: console.log(). Mas os dois exemplos citados funcionam.</p>
+            <section>
+            <h3>Métodos de window</h3>
+            <p>Para conhecer todos os métodos de window basta:</p>
+            <ol>
+                <li>Abrir o navegadores</li>
+                <li>Botão direito</li>
+                <li>Inspecionar</li>
+                <li>Console</li>
+                <li>Digitar window enter</li>
+            </ol>
+            <p>Ao clicar na seta ao lado de window aparecerá todos os métodos disponíveis nesse objeto.</p>
+        </section>
+        </article><!-- /#window -->
+        <article id="acessando-html">
+            <h2>Acessando Html com JS</h2>
+            <section class="introducao">
+            <p>Para Acessar o Html através do JS, utilizaremos uma propriedade document. Essa é uma propriedade do objeto window e ao usar ela no console do navegador essa propriedade irá exibir o próprio documento html da página.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+>document.head
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;meta name="description" ,="" content="Tudo que você precisa conhecer sobre tags semântica do html5">
+    &lt;meta name="keyword" content="Palavras chaves, chave, palavra">
+    &lt;title>Capítulo 34&lt;/title>
+
+    &lt;link rel="stylesheet" href="../../style.css">
+&lt;/head>
+                </pre>
+            </div>
+            <p>Nesse caso foi pedido para imprimir somente head, mas também é possível exibir todo o documento usando apenas o comando document, ou até somente o body usando o document.body. </p>
+            </section><!--#introducao-->
+            <article id="acessando-elementos">
+                <h3>Acessando elementos dentro do Html</h3>
+            <p>
+                Porém não é possível seguir essa linha de raciocínio e acessar o main com document.body.main. Para acessar um elemento específico dentro do body ou head, vocâ precisará usar a propriedade getElementBy... e essa propriedade possui algumas varições que usaremos de acordo com a necessidade.
+            </p>
+            <p>Veja:</p>
+            <ul>
+                <li><strong>document.getElementById("Nome do id")</strong> Exemplo: </li>
+                <div class="pre">
+                    <pre>document.getElementById("window")</pre>
+                </div>
+                <li><strong>document.getElementsByClassName("Nome da class")</strong>Exemplo:</li>
+                <div class="pre">
+                    <pre>document.getElementsByClassName("pre")</pre>
+                </div>
+                <p class="mark">Note que Element está no plural: Elements, pois Class e TagName podem ter mais de um diferente de Id que só pode ter um por página!</p>
+                <li><strong>document.getElementsByTagName("Nome da tag")</strong> Exemplo:</li>
+                <div class="pre">
+                    <pre>document.getElementsByTagName("section")</pre>
+                </div>
+            </ul>
+            <p>Esses comandos exibidos acima servem apenas para o JavaScript ler o html.</p>
+
+            </article><!--acessando-elementos-->
+             <article id="modificando-elementos">
+                <h3>Modificando elementos dentro do Html</h3>
+                <section id="intro">
+                    
+                                
+                                <p>Agora vamos aprender a modificar elementos do Html com o JS para enfim termos um mínimo de interação.</p>
+                                <p>Para editar elementos do html usaremo os mesmos comandos vistos acima, porém serão colocados em uma variável e serão utilizados seguidos de três diferentes formas de alteração do HTML. Essas são:</p>
+                                <ul>
+                    <li><strong>innerHTML</strong>: Esse método lê não somente textos como também as tag dentro da box que foi carregada. Além de também inserir novas tag obviamente.</li>
+                    <li><strong>innerText</strong>: Lê e insere textos entrentanto não lê tag. </li>
+                    <li><strong>textContent</strong>: Lê e insere textos entrentanto não lê tag, nem estilos aparentemente.</li>
+                                </ul>
+                    <p class="mark">Para verificar os resultados dos exemplos abaixo, será necessário abrir o console do navegador!</p>
+                </section><!-- /#intro -->
+                <section id="innerHTML">
+                    <h4>innerHTML</h4>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+                    {let p = document.getElementById("BHtml")
+                    p.innerHTML="innerHTML";}
+                    {let p = document.getElementById("BHtml2")
+                    console.log(p.innerHTML);}
+                    ____________________________________________
+                    
+                    &lt;p id="BHtml">&lt;span> alem&lt;/span>&lt;/p>
+                    &lt;p id="BHtml2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
+                        </pre>
+                    </div><!-- /.pre -->
+                    <p>Resultado</p>
+                    <div class="resp">
+                        <p id="BHtml"><span> alem</span></p>
+                        <p id="BHtml2"><span style="color: aquamarine;"> alem</span></p>
+                    </div>
+                    <!-- /.resp -->
+                </section><!-- /#innerHTML -->
+                <section id="innerText">
+                    
+                    <h4>innerText</h4>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+                    {let p = document.getElementById("BTxt")
+                    p.innerText="innerText";}
+                    {let p = document.getElementById("BTxt2")
+                    console.log(p.innerText);}
+                    ___________________________________________
+                    
+                    &lt;div class="resp">
+                        &lt;p id="BTxt">&lt;span> alem&lt;/span>&lt;/p>
+                        &lt;p id="BTxt2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
+                    &lt;/div>
+                        </pre>
+                    </div>
+                    <!-- /.pre -->
+                    <p>Resultado:</p>
+                    <div class="resp">
+                        <p id="BTxt"><span> alem</span></p>
+                        <p id="BTxt2"><span style="color: aquamarine;"> alem</span></p>
+                    </div>
+                    <!-- /.resp -->
+                </section><!-- /#innerText -->
+                <section id="textContent">
+                    
+                    <h4>textContent</h4>
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>
+                    {let p = document.getElementById("BCont")
+                    p.textContent="textContent";}
+                    {let p = document.getElementById("BCont2")
+                    console.log(p.textContent);}
+                    __________________________________________
+                    &lt;div class="resp">
+                        &lt;p id="BCont">&lt;span> alem&lt;/span>&lt;/p>
+                        &lt;p id="BCont2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
+                    &lt;/div>
+                        </pre>
+                    </div>
+                    <!-- /.pre -->
+                    <p>Resultado:</p>
+                    <div class="resp">
+                        <p id="BCont"><span> alem</span></p>
+                        <p id="BCont2"><span style="color: aquamarine;"> alem</span></p>
+                    </div>
+                    <!-- /.resp -->
+                </section><!-- /#textContent -->
+                <section id="modificando-atributos">
+                    <h3>Modificando Atributos</h3> 
+                    <p>Para modificar atributos de um elemento, podemos usar as seguintes 3 propriedades: </p>
+                    <ul>
+                        <li><strong> setAttribute()</strong>: Para definir o valor de um atributo no elemento especificado. Se o atributo já existir, o valor será atualizado; caso contrário, um novo atributo será adicionado com o nome e valor especificados.
+                            <p><strong>Sintaxe: </strong>setAttribute(name, value)</p>
+                            <p>Outra forma de modificar ou substituir um atributo é utilizando um . (ponto)</p>
+                            <p><strong>Sintaxe: </strong>tag.name="value"</p>
+
+                            <div class="obs">
+                                <p>Caso o value tenha um "-" (traço) nessa sintaxe substituímos o - pela letra maiúscula, exemplo:</p>
+                                <p> 
+                                    Invés de: 
+                                    <br> style="background-color: blue;"
+                                </p>
+                                <p>
+                                    escrevemos:
+                                    <br>
+                                    style="backgroundColor: blue;"
+                                </p>
+                            </div>
+                      </li> 
+                        <li><strong>getAttribute()</strong>: Para obter o valor atual de um atributo
+                            <p><strong>Sintaxe: </strong>getAttribute(name, value)</p></li>
+                        <li><strong>removeAttribute()</strong>: Para remover um atributo
+                            <p><strong>Sintaxe: </strong>removeAttribute(name, value)</p></li>
+                    </ul>
+                </section> <!-- /#modificando-atributos -->
+                <section id="Evento-JS">
+                    <h3>Evento JS</h3>
+                    <p>Eventos em JS são formas de interagir com a página. Para ver mais comandos veja a apostila na página 366 </p>
+                    <div class="pre">
+                        <pre>
+&lt;fieldset>
+    &lt;legend>Ficha&lt;/legend>
+
+    &lt;h4>Sexo:&lt;/h4>
+
+    &lt;form action="cadastro.php" method="get">
+        &lt;p>
+            &lt;label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:&lt;/label>
+
+            &lt;input type="radio" name="sexo" id="lmasculino" value="Masculino" 
+                
+                onmousemove="modhm(); modgm();"
+            >
+        &lt;/p>
+
+        &lt;p>
+            &lt;label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:&lt;/label>
+            &lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"
+            onmousemove="modho(); modgo();"
+            >
+        &lt;/p>
+    &lt;/form>
+    &lt;form action="cadastro.php" method="get">
+
+        &lt;h4>Orientação:&lt;/h4>
+        &lt;p>
+            &lt;label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:&lt;/label>
+
+            &lt;input type="radio" name="sexo" id="lhete" value="Masculino" 
+                
+                onclick="modeo(); modoe();"
+            >
+        &lt;/p>
+
+        &lt;p>
+            &lt;label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:&lt;/label>
+            &lt;input type="radio" name="sexo" id="lhomo" value="Feminino"
+            onclick=" modoed();modeod();"
+            >
+        &lt;/p>
+
+
+        &lt;input type="submit" value="Enviar">
+    &lt;/form>
+&lt;/fieldset>
+______________________________________________________________________________________
+       JavaScript
+
+function modgm(){
+    let p = document.getElementById("lafeminino")
+    p.textContent='Masculino:';
+    p.style.marginRight='2px';
+}
+
+function modhm(){
+    let p = document.getElementById("lamasculino")
+    p.textContent='Feminino:';
+    p.style.marginRight='9px';
+       
+}
+function modgo(){
+    let p = document.getElementById("lafeminino")
+    p.textContent='Feminino:';
+    p.style.marginRight='9px';
+    
+}
+
+function modho(){
+    let p = document.getElementById("lamasculino")
+    p.textContent='Masculino:';
+    p.style.marginRight='2px';
+    
+}
+
+{
+    function modoe(){
+        let p = document.getElementById("lahomo")
+        p.textContent='Héterosexual:';
+        p.style.marginRight='2px';
+    }
+
+    function modeo(){
+        let p = document.getElementById("lahete")
+        p.textContent='Homosexual:';
+        p.style.marginRight='9px';
+           
+    }
+      
+    function modoed(){
+        let p = document.getElementById("lahete")
+        p.textContent='Héterosexual:';
+        p.style.marginRight='2px';
+    }
+
+    function modeod(){
+        let p = document.getElementById("lahomo")
+        p.textContent='Homosexual:';
+        p.style.marginRight='9px';
+           
+    }
+    
+}
+                    </pre>
+                    </div>                                   
+                    <p>Resultado:</p>
+                    <fieldset>
+                        <legend>Ficha</legend>
+
+                        <h4>Sexo:</h4>
+
+                        <form action="cadastro.php" method="get">
+                            <p>
+                                <label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:</label>
+
+                                <input type="radio" name="sexo" id="lmasculino" value="Masculino" 
+                                    
+                                    onmousemove="modhm(); modgm();"
+                                >
+                            </p>
+
+                            <p>
+                                <label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:</label>
+                                <input type="radio" name="sexo" id="lfeminino" value="Feminino"
+                                onmousemove="modho(); modgo();"
+                                >
+                            </p>
+                        </form>
+                        <form action="cadastro.php" method="get">
+
+                            <h4>Orientação:</h4>
+                            <p>
+                                <label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:</label>
+
+                                <input type="radio" name="sexo" id="lhete" value="Masculino" 
+                                    
+                                    onclick="modeo(); modoe();"
+                                >
+                            </p>
+
+                            <p>
+                                <label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:</label>
+                                <input type="radio" name="sexo" id="lhomo" value="Feminino"
+                                onclick=" modoed();modeod();"
+                                >
+                            </p>
+
+
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </fieldset>
+                    
+
+                </section><!-- /#Evento-JS-->
+            </article><!-- /#modificando-elementos-->
+        </article><!--/acessando-html-->
+       
+    </main>
+    <footer>
+        <h1>Materiais utilizados</h1>            
+        <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>  
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
