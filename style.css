@@ -146,10 +146,13 @@ pre{
     padding: 7px;
     box-shadow: inset 2px 2px #ffffff88;
     border: 1px groove;
+    margin: 5px;
+    
 }
 .buttom:hover{
     box-shadow: inset 2px 2px #ffffff88;
     background-color: #bbb;
+    cursor: pointer;
 }
 
 .buttom:active{

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 24</title>
+    <title>Formulários</title>
     
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
@@ -63,7 +63,7 @@
    
 <main>
     <p>
-        Formulários é tudo que o usuário preencher no site, como login, senha, pesquisas, comentários entre outros. A tag usada em formulário é a tag form &lt;form>&lt;/form>. E dentro dessa tag usamos a tag input. que é a tag que faz abre o campo para o usuário digitar. <br>
+        Formulários são tudo que o usuário preenche no site, como login, senha, pesquisas, comentários, entre outros. A tag usada em formulário é a tag form &lt;form>&lt;/form>. E dentro dessa tag usamos a tag input, que é a tag que abre o campo para o usuário digitar. <br>
         Veja o exemplo abaixo:
     </p>
     <form >
@@ -90,7 +90,7 @@
         A primeira e a última linhas vão delimitar o formulário. Tudo aquilo que estiver dentro desse par de tags será considerado como conteúdo dos campos. No exemplo acima, temos apenas 2 campos que vão aceitar um texto relativo ao nome e ao sobrenome da pessoa e um botão de submissão, que vai permitir enviar o formulário. 
     </p>
     <p>
-        Porém precisamos fazer algumas configurações adicionais para que esse formulário funcione de maneira mais semântica e correta, para isso adicionaremos alguns atributos: 
+        Porém, precisamos fazer algumas configurações adicionais para que esse formulário funcione de maneira mais semântica e correta. Para isso, adicionaremos alguns atributos: 
     </p>
 
 
@@ -107,7 +107,7 @@
     
     <h2>action</h2>
         <p>
-            Esse atributo dirá para onde os dados serão enviados e será ativado quando o atributu submit for acionado em &lt;input type="submit" value="Enviar">
+            Esse atributo dirá para onde os dados serão enviados e será ativado quando o atributo submit for acionado em &lt;input type="submit" value="Enviar">
         </p>
 
 
@@ -129,7 +129,7 @@
 </pre>
 
     <p class="mark">
-        Php é uma das linguagens de programação mais usadas na internet ela é que trata os dados digitados pelo usuário. Temos outras, mas as mais utilizadas são PhP e Java Script.
+        PHP é uma das linguagens de programação mais usadas na internet, ela é que trata os dados digitados pelo usuário. Temos outras, mas as mais utilizadas são PHP e JavaScript.
     </p>
 
     <h2>method</h2>
@@ -147,7 +147,7 @@
     </p>
     <img style="max-height: 38px;" src="Imagens/url-google.png" alt="url-google">
     <p>
-        Note que aquilo que você digitou no formulário apareceu na URL que está sendo apresentada no seu navegador. Isso é uma característica presente nos formulários com método GET, pois ele condensa todos os dados digitados pelo visitante e envia como parte do endereço acessado.
+        Note que aquilo que você digitou no formulário apareceu na URL que est</ul>á sendo apresentada no seu navegador. Isso é uma característica presente nos formulários com método GET, pois ele condensa todos os dados digitados pelo visitante e envia como parte do endereço acessado.
     </p>
     <p>
         Principais características do método GET:
@@ -179,7 +179,7 @@
     <h2>Tag label</h2>
     
     <p>
-        A tag label serve para criar uma ligação semântica entre o  identificador (nome do caixa de texto) e o caixa de texto(input). Essa tag não possui efeito visual apenas semântico e isso auxilia o macanismo de busca. Em outras palavras é importante para ficar bem poscionado em em buscas do Google.
+        A tag label serve para criar uma ligação semântica entre o identificador (nome da caixa de texto) e a caixa de texto (input). Essa tag não possui efeito visual, apenas semântico, e isso auxilia o mecanismo de busca. Em outras palavras, é importante para ficar bem posicionado em buscas do Google.
     </p>
     <p>
         Essa tag funiciona da seguinte forma:
@@ -197,7 +197,7 @@
 
     </pre>
     <p>
-        Note que a palavra "lnome" é o que faz a ligação entre os dois elementos então ela devem ser iguaias e devem ser usada somente uma para cada label.
+        Note que a palavra "lnome" é o que faz a ligação entre os dois elementos, então elas devem ser iguais e devem ser usadas somente uma para cada label.
     </p>
 
     <p>Resultado:</p>
@@ -226,7 +226,7 @@
 
 <h2>Atributo name</h2>
     <p>
-        Esse atributo name , também é usado dentro da tag input. Esse atributo serve para identificar a tag input, porém esse name será o título da coluna do formulário que o usuário preencher. Então esse name pode ser exatamente igual ao identificador da caixa de texto.
+        Esse atributo name também é usado dentro da tag input. Esse atributo serve para identificar a tag input, porém esse name será o título da coluna do formulário que o usuário preencher. Então esse name pode ser exatamente igual ao identificador da caixa de texto.
     </p>
 
     <pre>
@@ -240,7 +240,7 @@
 
     <h3>Informação EXTRA</h3>
     <p>
-        Para desativar o aquela aba de autopreenchimento dos formulários basta adicionar o atributo autocomplete e botar off:
+        Para desativar aquela aba de autopreenchimento dos formulários, basta adicionar o atributo autocomplete e colocar off:
     </p> 
     <p>
         OBS.: o ON vem ativado por padrão.
@@ -260,7 +260,7 @@
     Fieldset / Legend
 </h2>
     <p>
-        Fieldset define um grupo de campos na forma de um fieldset. Por padrão, é exibida uma linha em volta do controle (pode ser personalizada via CSS) e permite usar a tag <legend> para descrever qual será o texto que identifica o grupo. 
+        Fieldset define um grupo de campos na forma de um fieldset. Por padrão, é exibida uma linha em volta do controle (pode ser personalizada via CSS) e permite usar a tag &lt;legend> para descrever qual será o texto que identifica o grupo.
     </p>
     <p>
         Veja como fica:
@@ -321,7 +321,7 @@
 
 <h2>type="radio"</h2>
      <p>         
-         Esse atributo de input é uma espécie de multipla escolha que permite apenas uma marcação, mas para isso devemos nos atentar para sempre usar os atributos a seguir corretamente:
+        Esse atributo de input é uma espécie de múltipla escolha que permite apenas uma marcação, mas para isso devemos nos atentar para sempre usar os atributos a seguir corretamente:
      </p>
      <ul>
         <li><strong>name=""</strong>: esse atributo deve ser usado sempre igual em todos os input relacionado(lembre que esse é o título da coluna do de resposta do formulário). Caso fique diferente ele irá marcar mais de umo opção. </li>
@@ -368,7 +368,7 @@
 </pre>
 <h2>type="checkbox"</h2>
     <p>
-        Cria uma multipla escolha que permite mais de uma marcação. Atributo importantes:
+        Cria uma múltipla escolha que permite mais de uma marcação. Atributos importantes:
     </p>
     <ul>
         <li><strong>value=""</strong>: esse atributo não é obrigatório, mas é sempre bom definir o valor a ser enviado pois caso não defina será enviado o valor on(equivale ao verdadeiro do excel)</li>
@@ -454,7 +454,7 @@
 
 <h2>type="range"</h2>
     <p>
-        Basicamente exibe uma pequena barra horizontal com um controle deslizante. Mas possui atributos que auxiliam nas respotas que recebemos.
+        Basicamente exibe uma pequena barra horizontal com um controle deslizante. Mas possui atributos que auxiliam nas respostas que recebemos.
     </p>
     <p>
         Veja como fica:
@@ -656,10 +656,10 @@
 
 <h1>Tag select</h1>
     <p> 
-        Essa tag funiciona mais ou menos parecido com a type="radio" a diferença é que nessa as opções ficam recolhidas, por isso só é interessante usar a type="radio" quando tem até duas opções.
+        Essa tag funciona mais ou menos parecido com a type="radio", a diferença é que nessa as opções ficam recolhidas, por isso só é interessante usar a type="radio" quando tem até duas opções.
     </p>
     <p>
-        Essa tag utiliza os elementos a seguir 
+        Essa tag utiliza os elementos a seguir:
     </p>
     <ul type="circle">
         <li><strong>option</strong>: são as opções que apareceram para o usuário, Essa opção entra junto com o atributo value que é o que será enviado para o formulário.</li>
@@ -733,10 +733,10 @@
 
 <h2>input com atributo list</h2>
     <p>
-        O input com esse atributo funciona de forma parecida com a tag select com uma pequena diferença, o input aceita que o usuário escreva uma opção que não esteja listada.
+        O input com esse atributo funciona de forma parecida com a tag select, com uma pequena diferença: o input aceita que o usuário escreva uma opção que não esteja listada.
     </p>
     <p>
-        Para isso usaremos o seguintes atributo:
+        Para isso, usaremos o seguinte atributo:
     </p>
     <ul>
         <li><strong>list="lstxxx"</strong>: Esse atributo não só  faz o input trabalhar com uma lista como também faz o link com a lista que será usada por ele <span class="mark"> OBS.: o nome não pode ser o mesmo da tag label pois ele não consegue fazer o link. Um boa prática é sempre iniciar com lst</span></li>
@@ -744,7 +744,7 @@
     </ul>
     <h3>Tag datalist</h3>
     <p>
-        Nessa tag é onde fica armazenada todas as opções que serão exposta para o usuário. Para isso ele usa o seguinte atributo e elemento:
+        Nessa tag é onde ficam armazenadas todas as opções que serão expostas para o usuário. Para isso, ela usa o seguinte atributo e elemento:
     </p>
     <ul>
         <li><strong>id="lstxxx"</strong> Esse atributo é o que faz o link com o list do input, por isso esse nomes devem ser exatamente iguais.</li>
@@ -799,7 +799,7 @@
 
 <h1>Tag textarea</h1>
     <p>
-        Essa tag cria um campo grande de mensagem, a grande diferença para o input type="text" é que aqui não tem limite de tamanho da mensagem. <span class="mark"> É importante por um max lengh mesmo que com o valor alto para que algum engraçadinho não derrube o site por causa de um texto gigante</span> O usuário ainda pode ajustar o tamanho da área que está digitando o texto.
+        Essa tag cria um campo grande de mensagem, a grande diferença para o input type="text" é que aqui não tem limite de tamanho da mensagem. <span class="mark"> É importante colocar um maxlength mesmo que com um valor alto para que algum engraçadinho não derrube o site por causa de um texto gigante</span>. O usuário ainda pode ajustar o tamanho da área que está digitando o texto.
     </p>
     <p>
         Veja um exemplo abaixo:
@@ -857,7 +857,7 @@
     </pre>
 <h1>Output</h1>
     <p>
-        Como já é de imaginar a tag output não recebe a Informação do usuáio, mas ela envia informação para tela do usuário. Para isso precisamos usar um pouco de JavaScript, pois sem isso não tem como enviar alguma informção útil.
+        Como já é de imaginar, a tag output não recebe a informação do usuário, mas ela envia informação para a tela do usuário. Para isso, precisamos usar um pouco de JavaScript, pois sem isso não tem como enviar alguma informação útil.
     </p>
     <p>
         Veja abaixo um exemplo bem básico de output usando JavaScript onde ele mostra a nota que está sendo gerada pelo input range.

@@ -67,8 +67,16 @@ p.textContent="textContent";}
         }
         
     }
+        function idade(){
+        let p = document.getElementById("lidade")
+        let result = document.getElementById("resultado")
+        let n= Number.parseInt(p.value);
+        let r = n+5;
+        result.innerHTML =r;
 
+    }
 
+   
 
    
         

@@ -74,7 +74,7 @@
 
     <main>
  
-        <h2 onclick="exibir01()">Módulo 01</h2>
+        <h2 class="buttom" onclick="exibir01()">Módulo 01</h2>
         <ul id="modulo01" class="menu"><!--Módulo 01--> 
             <li class="titulo"><!--Capítulo 01-->
                 <h3>Capítulo 01</h3>
@@ -174,7 +174,7 @@
 
         </ul><!--/Módulo 01-->
 
-        <h2 onclick="exibir02()">Módulo 02 - CSS3</h2>
+        <h2 class="buttom" onclick="exibir02()">Módulo 02 - CSS3</h2>
         <ul id="modulo02" class="menu"><!--Módulo 02-->
 
             
@@ -260,7 +260,7 @@
 
         </ul><!--/Módulo 02-->
 
-        <h2 onclick="exibir03()">Módulo 03</h2>
+        <h2 class="buttom" onclick="exibir03()">Módulo 03</h2>
         <ul id="modulo03" class="menu"><!--Módulo 03-->
             
             <li><!--Capítulo 18 - Git e GitHub-->
@@ -326,7 +326,7 @@
             </li> 
         </ul><!--/Módulo 03-->
 
-        <h2 onclick="exibir04()">Módulo 04</h2>
+        <h2 class="buttom" onclick="exibir04()">Módulo 04</h2>
         <ul id="modulo04" class="menu"><!--Módulo 04-->
             
             <li><!--Capítulo 22 - iframe-->
@@ -473,7 +473,7 @@
             </li> 
         </ul><!--/Módulo 04-->
 
-        <h2 onclick="exibir05()">Módulo 05 -  JavaScript Básico</h2>
+        <h2 class="buttom" onclick="exibir05()">Módulo 05 -  JavaScript Básico</h2>
         <ul id="modulo05" class="menu"><!--Módulo 05-->
             <li><!--Capítulo 29 - JavaScript Básico-->
                 <h3><a href="modulo-05/capitulo-29/capitulo-29.html">Capítulo 29 - JavaScript Básico</a></h3>
@@ -579,7 +579,7 @@
            
         </ul><!--/Módulo 05-->
 
-        <h2 onclick="exibir06()">Módulo 06 -  JavaScript Intermediário</h2>
+        <h2 class="buttom" onclick="exibir06()">Módulo 06 -  JavaScript Intermediário</h2>
         <ul id="modulo06" class="menu"><!--Módulo 06-->
             <li>
                 <h3><a href="modulo-06/capitulo-34/capitulo-34.html">Capítulo 34 - Integrando JS ao HTML</a></h3>
@@ -592,16 +592,20 @@
                     <li><strong><a href="modulo-06/capitulo-34/capitulo-34.html#">Subtítulos</a></strong></li>
                 </ul><!--Sutítulos Capítulo 34-->
             </li>
+            <li>
+                <a href="modulo-06/testes/testes.html">PAg de  testes</a>
+            </li>
             
         </ul><!--Módulo 06-->
         <p>
-            <strong><a href="modulo-05/teste/teste.html">Testes
+            <strong><a href="teste/teste.html">Testes
             </a></strong>
         </p>
     </main>
 
 </body>
 <script>
+
 function exibir01(){
     var x = document.getElementById("modulo01");
     if(x.style.display === "block"){

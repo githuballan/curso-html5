@@ -6,6 +6,18 @@
     <meta name="description" content="Tudo que você precisa conhecer sobre tags semântica do html5">
     <meta name="keywords" content="Palavras chaves, chave, palavra">
     <title>Capítulo 34</title>
+    <style>
+        td{
+            border: 2px solid black;
+            text-align:center;
+            vertical-align: middle;
+        }
+        th{
+            border: 2px solid black;
+            text-align:center;
+            vertical-align: middle;
+        }
+    </style>
 
     <link rel="stylesheet" href="../../style.css">
 </head>
@@ -193,164 +205,258 @@
                             <p><strong>Sintaxe: </strong>removeAttribute(name, value)</p></li>
                     </ul>
                 </section> <!-- /#modificando-atributos -->
-                <section id="Evento-JS">
-                    <h3>Evento JS</h3>
-                    <p>Eventos em JS são formas de interagir com a página. Para ver mais comandos veja a apostila na página 366 </p>
-                    <div class="pre">
-                        <pre>
+<section id="Evento-JS">
+    <h3>Evento JS</h3>
+    <p>Eventos em JS são formas de interagir com a página. Para ver mais comandos veja a apostila na <a href="../../material-de-apoio/apostila-html5-css-jquery.pdf">página 366</a> </p>
+    <div class="pre">
+        <pre>
 &lt;fieldset>
-    &lt;legend>Ficha&lt;/legend>
+&lt;legend>Ficha&lt;/legend>
 
-    &lt;h4>Sexo:&lt;/h4>
+&lt;h4>Sexo:&lt;/h4>
 
-    &lt;form action="cadastro.php" method="get">
-        &lt;p>
-            &lt;label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:&lt;/label>
+&lt;form action="cadastro.php" method="get">
+&lt;p>
+&lt;label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:&lt;/label>
 
-            &lt;input type="radio" name="sexo" id="lmasculino" value="Masculino" 
-                
-                onmousemove="modhm(); modgm();"
-            >
-        &lt;/p>
+&lt;input type="radio" name="sexo" id="lmasculino" value="Masculino" 
 
-        &lt;p>
-            &lt;label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:&lt;/label>
-            &lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"
-            onmousemove="modho(); modgo();"
-            >
-        &lt;/p>
-    &lt;/form>
-    &lt;form action="cadastro.php" method="get">
+onmousemove="modhm(); modgm();"
+>
+&lt;/p>
 
-        &lt;h4>Orientação:&lt;/h4>
-        &lt;p>
-            &lt;label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:&lt;/label>
+&lt;p>
+&lt;label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:&lt;/label>
+&lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"
+onmousemove="modho(); modgo();"
+>
+&lt;/p>
+&lt;/form>
+&lt;form action="cadastro.php" method="get">
 
-            &lt;input type="radio" name="sexo" id="lhete" value="Masculino" 
-                
-                onclick="modeo(); modoe();"
-            >
-        &lt;/p>
+&lt;h4>Orientação:&lt;/h4>
+&lt;p>
+&lt;label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:&lt;/label>
 
-        &lt;p>
-            &lt;label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:&lt;/label>
-            &lt;input type="radio" name="sexo" id="lhomo" value="Feminino"
-            onclick=" modoed();modeod();"
-            >
-        &lt;/p>
+&lt;input type="radio" name="sexo" id="lhete" value="Masculino" 
+
+onclick="modeo(); modoe();"
+>
+&lt;/p>
+
+&lt;p>
+&lt;label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:&lt;/label>
+&lt;input type="radio" name="sexo" id="lhomo" value="Feminino"
+onclick=" modoed();modeod();"
+>
+&lt;/p>
 
 
-        &lt;input type="submit" value="Enviar">
-    &lt;/form>
+&lt;input type="submit" value="Enviar">
+&lt;/form>
 &lt;/fieldset>
 ______________________________________________________________________________________
-       JavaScript
+JavaScript
 
 function modgm(){
-    let p = document.getElementById("lafeminino")
-    p.textContent='Masculino:';
-    p.style.marginRight='2px';
+let p = document.getElementById("lafeminino")
+p.textContent='Masculino:';
+p.style.marginRight='2px';
 }
 
 function modhm(){
-    let p = document.getElementById("lamasculino")
-    p.textContent='Feminino:';
-    p.style.marginRight='9px';
-       
+let p = document.getElementById("lamasculino")
+p.textContent='Feminino:';
+p.style.marginRight='9px';
+
 }
 function modgo(){
-    let p = document.getElementById("lafeminino")
-    p.textContent='Feminino:';
-    p.style.marginRight='9px';
-    
+let p = document.getElementById("lafeminino")
+p.textContent='Feminino:';
+p.style.marginRight='9px';
+
 }
 
 function modho(){
-    let p = document.getElementById("lamasculino")
-    p.textContent='Masculino:';
-    p.style.marginRight='2px';
-    
+let p = document.getElementById("lamasculino")
+p.textContent='Masculino:';
+p.style.marginRight='2px';
+
 }
 
 {
-    function modoe(){
-        let p = document.getElementById("lahomo")
-        p.textContent='Héterosexual:';
-        p.style.marginRight='2px';
-    }
-
-    function modeo(){
-        let p = document.getElementById("lahete")
-        p.textContent='Homosexual:';
-        p.style.marginRight='9px';
-           
-    }
-      
-    function modoed(){
-        let p = document.getElementById("lahete")
-        p.textContent='Héterosexual:';
-        p.style.marginRight='2px';
-    }
-
-    function modeod(){
-        let p = document.getElementById("lahomo")
-        p.textContent='Homosexual:';
-        p.style.marginRight='9px';
-           
-    }
-    
+function modoe(){
+let p = document.getElementById("lahomo")
+p.textContent='Héterosexual:';
+p.style.marginRight='2px';
 }
-                    </pre>
-                    </div>                                   
-                    <p>Resultado:</p>
-                    <fieldset>
-                        <legend>Ficha</legend>
 
-                        <h4>Sexo:</h4>
+function modeo(){
+let p = document.getElementById("lahete")
+p.textContent='Homosexual:';
+p.style.marginRight='9px';
 
-                        <form action="cadastro.php" method="get">
-                            <p>
-                                <label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:</label>
+}
 
-                                <input type="radio" name="sexo" id="lmasculino" value="Masculino" 
-                                    
-                                    onmousemove="modhm(); modgm();"
-                                >
-                            </p>
+function modoed(){
+let p = document.getElementById("lahete")
+p.textContent='Héterosexual:';
+p.style.marginRight='2px';
+}
 
-                            <p>
-                                <label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:</label>
-                                <input type="radio" name="sexo" id="lfeminino" value="Feminino"
-                                onmousemove="modho(); modgo();"
-                                >
-                            </p>
-                        </form>
-                        <form action="cadastro.php" method="get">
+function modeod(){
+let p = document.getElementById("lahomo")
+p.textContent='Homosexual:';
+p.style.marginRight='9px';
 
-                            <h4>Orientação:</h4>
-                            <p>
-                                <label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:</label>
+}
 
-                                <input type="radio" name="sexo" id="lhete" value="Masculino" 
-                                    
-                                    onclick="modeo(); modoe();"
-                                >
-                            </p>
+}
+    </pre>
+    </div>                                   
+    <p>Resultado:</p>
+    <fieldset>
+        <legend>Ficha</legend>
 
-                            <p>
-                                <label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:</label>
-                                <input type="radio" name="sexo" id="lhomo" value="Feminino"
-                                onclick=" modoed();modeod();"
-                                >
-                            </p>
+        <h4>Sexo:</h4>
 
+        <form action="cadastro.php" method="get">
+            <p>
+                <label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:</label>
 
-                            <input type="submit" value="Enviar">
-                        </form>
-                    </fieldset>
+                <input type="radio" name="sexo" id="lmasculino" value="Masculino" 
                     
+                    onmousemove="modhm(); modgm();"
+                >
+            </p>
 
-                </section><!-- /#Evento-JS-->
+            <p>
+                <label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:</label>
+                <input type="radio" name="sexo" id="lfeminino" value="Feminino"
+                onmousemove="modho(); modgo();"
+                >
+            </p>
+        </form>
+        <form action="cadastro.php" method="get">
+
+            <h4>Orientação:</h4>
+            <p>
+                <label for="lmasculino" id="lahete" style="margin-right: 2px;">Heterosexual:</label>
+
+                <input type="radio" name="sexo" id="lhete" value="Masculino" 
+                    
+                    onclick="modeo(); modoe();"
+                >
+            </p>
+
+            <p>
+                <label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:</label>
+                <input type="radio" name="sexo" id="lhomo" value="Feminino"
+                onclick=" modoed();modeod();"
+                >
+            </p>
+
+
+            <input type="submit" value="Enviar">
+        </form>
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Ficha de Cadastro</legend>
+            
+    <form method="get" action="cadastro.php">
+    
+        <div>
+            <label for="lnome">Nome:</label>
+            <input type="text" id="lnome" required>
+            
+        </div>
+    
+        <div>
+            <label for="lidade">Idade:</label>
+            <input id="lidade" type="number" max="100" min="18" size="3" required >
+        </div>
+            <br>
+        <button onclick="idade()" class="buttom" id="calculo" >
+            Calculo:
+        </button>
+        <span id="resultado" ></span>
+    
+    
+    </form>
+    </fieldset>
+
+    <section style="overflow-x: auto;">
+        
+        <table class="tabela_basica">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Leite</th>
+                    <th>Whey concentrado</th>
+                    <th>PEITO FRANGO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> 
+                    <th>Valor do produto</th>
+                    <td><input type="number" id="valor1"></td>
+                    <td><input type="number" id="valor2"></td>
+                    <td><input type="number" id="valor3"></td>
+                </tr>
+                
+                <tr>
+                    <th>Qtd comprada em gr</th>
+                    <td><input type="number" id="embala1"></td>
+                    <td><input type="number" id="embala2"></td>
+                    <td><input type="number" id="embala3"></td>
+                </tr>
+                <tr>
+                    <th>Porção em gr</th>
+                    <td><input type="number" id="porc1"></td>
+                    <td><input type="number" id="porc2"></td>
+                    <td><input type="number" id="porc3"></td>
+                </tr>
+                <tr>
+                    <th>Qtd de proteina por porção</th>
+                    <td><input type="number" id="prot1"></td>
+                    <td><input type="number" id="prot2"></td>
+                    <td><input type="number" id="prot3"></td>
+                </tr>
+                <tr>
+                    <th>Valor por porção</th>
+                    <td><span>R$:</span><output id="lvalor1"> 00.00 </output></td>
+                    <td id="lvalor2"></td>
+                    <td id="lvalor3"></td>
+                </tr>
+                <tr>
+                    <th>Valor por gr de proteína</th>
+                    <td id="lvalor1"></td>
+                    <td id="lvalor2"></td>
+                    <td id="lvalor3"></td>
+                </tr>
+                <tr>
+                    <th>Valor p/ dia</th>
+                    <td id="lvalor1"></td>
+                    <td id="lvalor2"></td>
+                    <td id="lvalor3"></td>
+                </tr>
+                <tr>
+                    <th>Valor p/ mês</th>
+                    <td id="lvalor1"></td>
+                    <td id="lvalor2"></td>
+                    <td id="lvalor3"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <button class="buttom" onclick="calcvp(b3,b4,b5)"> Calcular</button>
+    </section>
+    
+
+</section><!-- /#Evento-JS-->
             </article><!-- /#modificando-elementos-->
         </article><!--/acessando-html-->
        

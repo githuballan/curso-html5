@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description", content="teste do que esta sendo aprendido">
+        <meta name="keyword" content="proteína, gasto de proteína, valor de proteína, consumo de proteína">
+        <title>Testando conhecimento</title>
+
+        <style>
+            input::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input{
+                width: 100px;
+            }
+            
+            td{
+                border: 2px solid black;
+                text-align:center;
+                vertical-align: middle;
+            }
+            th{
+                border: 2px solid black;
+                text-align:center;
+                vertical-align: middle;
+            }
+        </style>
+    
+        <link rel="stylesheet" href="../style.css">
+    </head>
+<body>
+    <a class="buttom buttom-index" href="../index.html">Índice</a>
+    <header>
+        <h1>Testes</h1>
+        <h1>Funções</h1>
+    </header>
+    <main>
+
+
+    <fieldset>
+
+        <legend>Proteína e Valor </legend>
+            
+    <form>
+    
+        <div>
+            <label for="lnome">Peso (Kg):</label>
+            <input placeholder="85,15" type="number" inputmode="numeric"  id="kg" size="2" required>
+            
+        </div>
+    
+        <div>
+            <label for="lestado">Porcentual de gordura:</label> <br>
+            <select name="Estado" id="gord" required>
+                <option value="" selected>Selecione um Porcentual</option>
+                
+                    <option value="1.6" >Acima de 20%</option>
+                    <option value="2">20% a 10%</option>
+                    <option value="2.2">Abaixo de 10%</option>
+                
+               
+            </select>
+        </div>    
+    </form>
+    </fieldset>
+<div style="overflow-x: auto;">
+        <table class="tabela_basica">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th><input type="text" placeholder="Whey" maxlength="20"></th>
+                    <th><input type="text" placeholder="Peito de frango" maxlength="20"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Valor do produto</th>
+                    <td><input type="number" inputmode="numeric" id="valor1"></td>
+                    <td><input type="number" inputmode="numeric" id="valor2"></td>
+                </tr>
+    
+                <tr>
+                    <th>Qtd comprada em gr/ml</th>
+                    <td><input type="number" inputmode="numeric" id="embala1"></td>
+                    <td><input type="number" inputmode="numeric" id="embala2"></td>
+                </tr>
+                <tr>
+                    <th>Porção em gr/ml</th>
+                    <td><input type="number" inputmode="numeric" id="porc1"></td>
+                    <td><input type="number" inputmode="numeric" id="porc2"></td>
+                </tr>
+                <tr>
+                    <th>Qtd de proteina por porção</th>
+                    <td><input type="number" inputmode="numeric" id="prot1"></td>
+                    <td><input type="number" inputmode="numeric" id="prot2"></td>
+                </tr>
+                <tr>
+                    <th>Valor por porção</th>
+                    <td><span>R$:</span><output id="vporc1"> 00.00 </output></td>
+                    <td><span>R$:</span><output id="vporc2"> 00.00 </output></td>
+                </tr>
+                <tr>
+                    <th>Valor por gr de proteína</th>
+                    <td><span>R$:</span><output id="vprot1"> 00.00 </output></td>
+                    <td><span>R$:</span><output id="vprot2"> 00.00 </output></td>
+                </tr>
+                <tr>
+                    <th>Valor p/ dia</th>
+                    <td><span>R$:</span><output id="vd1"> 00.00 </output></td>
+                    <td><span>R$:</span><output id="vd2"> 00.00 </output></td>
+                </tr>
+                <tr>
+                    <th>Valor p/ mês</th>
+                    <td><span>R$:</span><output id="vm1"> 00.00 </output></td>
+                    <td><span>R$:</span><output id="vm2"> 00.00 </output></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    
+
+        <button class="buttom" onclick="calcvporc(1);calcvprot(1);calcvd(1);calcvm(1);calcvporc(2);calcvprot(2);calcvd(2);calcvm(2)"> Calcular</button>
+    
+</div>
+<!-- /#teste-proteina -->
+    </main>
+
+    
+    <script src ="teste.js"></script>
+</body>
+
+</html>
