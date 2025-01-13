@@ -142,13 +142,13 @@ pre{
 
 .buttom{
     border-radius: 5px;
-    background-color: #aaa;
+    background-color: #aaaaaa60;
     padding: 7px;
     box-shadow: inset 2px 2px #ffffff88;
     border: 1px groove;
     margin: 10px;
     text-decoration: none;
-    color: #000;
+    color: #000000;
     border-color: #000;
     
 }
