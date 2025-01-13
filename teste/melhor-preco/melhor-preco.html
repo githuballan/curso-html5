@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description", content="teste do que esta sendo aprendido">
+        <meta name="keyword" content="proteína, gasto de proteína, valor de proteína, consumo de proteína">
+        <title>Melhor preço</title>
+
+        <style>
+            input::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input{
+                width: 100px;
+            }
+            
+            td{
+                border: 2px solid black;
+                text-align:center;
+                vertical-align: middle;
+            }
+            th{
+                border: 2px solid black;
+                text-align:center;
+                vertical-align: middle;
+            }
+        </style>
+    
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+<body>
+    <a class="buttom buttom-index" href="../index-utlidades.html">Índice</a>
+    <header>
+        <h1>Melhor preço</h1>
+    </header>
+    <main>
+       
+       
+    <div style="overflow-x: auto;">
+            <table class="tabela_basica">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th><input type="text" placeholder="Latão Bud" maxlength="20"></th>
+                        <th><input type="text" placeholder="Litrão Original" maxlength="20"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Valor do produto</th>
+                        <td><input type="number" inputmode="numeric" placeholder="3,99" id="valor1"></td>
+                        <td><input type="number" inputmode="numeric" placeholder="9,99" id="valor2"></td>
+                    </tr>
+        
+                    <tr>
+                        <th>Qtd comprada em gr/ml</th>
+                        <td><input type="number" inputmode="numeric" placeholder="473" id="ml1"></td>
+                        <td><input type="number" inputmode="numeric" placeholder="1000" id="ml2"></td>
+                    </tr>
+                    <tr>
+                        <th>Resultado em L/Kg:</th>
+                        <td><span>R$:</span><output id="result1" style="background-color: greenyellow;"></output></td>
+                        <td><output id="result2"><span>R$:</span></output></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <br>
+        
+    
+            <button class="buttom" onclick="calcv(1) , calcv(2), cor()"> Calcular</button>
+        
+    </div>
+    <!-- /#teste-proteina -->
+            
+                
+    </main>
+    <script src="melhor-preco.js"></script>
+</body>
+</html>

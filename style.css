@@ -146,7 +146,10 @@ pre{
     padding: 7px;
     box-shadow: inset 2px 2px #ffffff88;
     border: 1px groove;
-    margin: 5px;
+    margin: 10px;
+    text-decoration: none;
+    color: #000;
+    border-color: #000;
     
 }
 .buttom:hover{
@@ -156,13 +159,12 @@ pre{
 }
 
 .buttom:active{
-    box-shadow: inset -1px -1px #ffffff88;
+    box-shadow: inset -2px -2px #ffffff88;
     background-color: #999;
 }
 
 .buttom-index{
-    color: #000;
-    text-decoration: none;
+    
 
     position: fixed;
     right: 10px;
