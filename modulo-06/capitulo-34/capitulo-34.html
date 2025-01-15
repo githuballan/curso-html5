@@ -90,376 +90,333 @@
             <p>Esses comandos exibidos acima servem apenas para o JavaScript ler o html.</p>
 
             </article><!--acessando-elementos-->
-             <article id="modificando-elementos">
-                <h3>Modificando elementos dentro do Html</h3>
-                <section id="intro">
-                    
-                                
-                                <p>Agora vamos aprender a modificar elementos do Html com o JS para enfim termos um mínimo de interação.</p>
-                                <p>Para editar elementos do html usaremo os mesmos comandos vistos acima, porém serão colocados em uma variável e serão utilizados seguidos de três diferentes formas de alteração do HTML. Essas são:</p>
-                                <ul>
-                    <li><strong>innerHTML</strong>: Esse método lê não somente textos como também as tag dentro da box que foi carregada. Além de também inserir novas tag obviamente.</li>
-                    <li><strong>innerText</strong>: Lê e insere textos entrentanto não lê tag. </li>
-                    <li><strong>textContent</strong>: Lê e insere textos entrentanto não lê tag, nem estilos aparentemente.</li>
-                                </ul>
-                    <p class="mark">Para verificar os resultados dos exemplos abaixo, será necessário abrir o console do navegador!</p>
-                </section><!-- /#intro -->
-                <section id="innerHTML">
-                    <h4>innerHTML</h4>
-                    <p>Exemplo:</p>
-                    <div class="pre">
-                        <pre>
-                    {let p = document.getElementById("BHtml")
-                    p.innerHTML="innerHTML";}
-                    {let p = document.getElementById("BHtml2")
-                    console.log(p.innerHTML);}
-                    ____________________________________________
-                    
-                    &lt;p id="BHtml">&lt;span> alem&lt;/span>&lt;/p>
-                    &lt;p id="BHtml2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
-                        </pre>
-                    </div><!-- /.pre -->
-                    <p>Resultado</p>
-                    <div class="resp">
-                        <p id="BHtml"><span> alem</span></p>
-                        <p id="BHtml2"><span style="color: aquamarine;"> alem</span></p>
-                    </div>
-                    <!-- /.resp -->
-                </section><!-- /#innerHTML -->
-                <section id="innerText">
-                    
-                    <h4>innerText</h4>
-                    <p>Exemplo:</p>
-                    <div class="pre">
-                        <pre>
-                    {let p = document.getElementById("BTxt")
-                    p.innerText="innerText";}
-                    {let p = document.getElementById("BTxt2")
-                    console.log(p.innerText);}
-                    ___________________________________________
-                    
-                    &lt;div class="resp">
-                        &lt;p id="BTxt">&lt;span> alem&lt;/span>&lt;/p>
-                        &lt;p id="BTxt2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
-                    &lt;/div>
-                        </pre>
-                    </div>
-                    <!-- /.pre -->
-                    <p>Resultado:</p>
-                    <div class="resp">
-                        <p id="BTxt"><span> alem</span></p>
-                        <p id="BTxt2"><span style="color: aquamarine;"> alem</span></p>
-                    </div>
-                    <!-- /.resp -->
-                </section><!-- /#innerText -->
-                <section id="textContent">
-                    
-                    <h4>textContent</h4>
-                    <p>Exemplo:</p>
-                    <div class="pre">
-                        <pre>
-                    {let p = document.getElementById("BCont")
-                    p.textContent="textContent";}
-                    {let p = document.getElementById("BCont2")
-                    console.log(p.textContent);}
-                    __________________________________________
-                    &lt;div class="resp">
-                        &lt;p id="BCont">&lt;span> alem&lt;/span>&lt;/p>
-                        &lt;p id="BCont2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
-                    &lt;/div>
-                        </pre>
-                    </div>
-                    <!-- /.pre -->
-                    <p>Resultado:</p>
-                    <div class="resp">
-                        <p id="BCont"><span> alem</span></p>
-                        <p id="BCont2"><span style="color: aquamarine;"> alem</span></p>
-                    </div>
-                    <!-- /.resp -->
-                </section><!-- /#textContent -->
-                <section id="modificando-atributos">
-                    <h3>Modificando Atributos</h3> 
-                    <p>Para modificar atributos de um elemento, podemos usar as seguintes 3 propriedades: </p>
-                    <ul>
-                        <li><strong> setAttribute()</strong>: Para definir o valor de um atributo no elemento especificado. Se o atributo já existir, o valor será atualizado; caso contrário, um novo atributo será adicionado com o nome e valor especificados.
-                            <p><strong>Sintaxe: </strong>setAttribute(name, value)</p>
-                            <p>Outra forma de modificar ou substituir um atributo é utilizando um . (ponto)</p>
-                            <p><strong>Sintaxe: </strong>tag.name="value"</p>
-
-                            <div class="obs">
-                                <p>Caso o value tenha um "-" (traço) nessa sintaxe substituímos o - pela letra maiúscula, exemplo:</p>
-                                <p> 
-                                    Invés de: 
-                                    <br> style="background-color: blue;"
-                                </p>
-                                <p>
-                                    escrevemos:
-                                    <br>
-                                    style="backgroundColor: blue;"
-                                </p>
-                            </div>
-                      </li> 
-                        <li><strong>getAttribute()</strong>: Para obter o valor atual de um atributo
-                            <p><strong>Sintaxe: </strong>getAttribute(name, value)</p></li>
-                        <li><strong>removeAttribute()</strong>: Para remover um atributo
-                            <p><strong>Sintaxe: </strong>removeAttribute(name, value)</p></li>
-                    </ul>
-                </section> <!-- /#modificando-atributos -->
-<section id="Evento-JS">
-    <h3>Evento JS</h3>
-    <p>Eventos em JS são formas de interagir com a página. Para ver mais comandos veja a apostila na <a href="../../material-de-apoio/apostila-html5-css-jquery.pdf">página 366</a> </p>
-    <div class="pre">
-        <pre>
-&lt;fieldset>
-&lt;legend>Ficha&lt;/legend>
-
-&lt;h4>Sexo:&lt;/h4>
-
-&lt;form action="cadastro.php" method="get">
-&lt;p>
-&lt;label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:&lt;/label>
-
-&lt;input type="radio" name="sexo" id="lmasculino" value="Masculino" 
-
-onmousemove="modhm(); modgm();"
->
-&lt;/p>
-
-&lt;p>
-&lt;label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:&lt;/label>
-&lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"
-onmousemove="modho(); modgo();"
->
-&lt;/p>
-&lt;/form>
-&lt;form action="cadastro.php" method="get">
-
-&lt;h4>Orientação:&lt;/h4>
-&lt;p>
-&lt;label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:&lt;/label>
-
-&lt;input type="radio" name="sexo" id="lhete" value="Masculino" 
-
-onclick="modeo(); modoe();"
->
-&lt;/p>
-
-&lt;p>
-&lt;label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:&lt;/label>
-&lt;input type="radio" name="sexo" id="lhomo" value="Feminino"
-onclick=" modoed();modeod();"
->
-&lt;/p>
-
-
-&lt;input type="submit" value="Enviar">
-&lt;/form>
-&lt;/fieldset>
-______________________________________________________________________________________
-JavaScript
-
-function modgm(){
-let p = document.getElementById("lafeminino")
-p.textContent='Masculino:';
-p.style.marginRight='2px';
-}
-
-function modhm(){
-let p = document.getElementById("lamasculino")
-p.textContent='Feminino:';
-p.style.marginRight='9px';
-
-}
-function modgo(){
-let p = document.getElementById("lafeminino")
-p.textContent='Feminino:';
-p.style.marginRight='9px';
-
-}
-
-function modho(){
-let p = document.getElementById("lamasculino")
-p.textContent='Masculino:';
-p.style.marginRight='2px';
-
-}
-
-{
-function modoe(){
-let p = document.getElementById("lahomo")
-p.textContent='Héterosexual:';
-p.style.marginRight='2px';
-}
-
-function modeo(){
-let p = document.getElementById("lahete")
-p.textContent='Homosexual:';
-p.style.marginRight='9px';
-
-}
-
-function modoed(){
-let p = document.getElementById("lahete")
-p.textContent='Héterosexual:';
-p.style.marginRight='2px';
-}
-
-function modeod(){
-let p = document.getElementById("lahomo")
-p.textContent='Homosexual:';
-p.style.marginRight='9px';
-
-}
-
-}
-    </pre>
-    </div>                                   
-    <p>Resultado:</p>
-    <fieldset>
-        <legend>Ficha</legend>
-
-        <h4>Sexo:</h4>
-
-        <form action="cadastro.php" method="get">
-            <p>
-                <label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:</label>
-
-                <input type="radio" name="sexo" id="lmasculino" value="Masculino" 
-                    
-                    onmousemove="modhm(); modgm();"
-                >
-            </p>
-
-            <p>
-                <label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:</label>
-                <input type="radio" name="sexo" id="lfeminino" value="Feminino"
-                onmousemove="modho(); modgo();"
-                >
-            </p>
-        </form>
-        <form action="cadastro.php" method="get">
-
-            <h4>Orientação:</h4>
-            <p>
-                <label for="lmasculino" id="lahete" style="margin-right: 2px;">Heterosexual:</label>
-
-                <input type="radio" name="sexo" id="lhete" value="Masculino" 
-                    
-                    onclick="modeo(); modoe();"
-                >
-            </p>
-
-            <p>
-                <label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:</label>
-                <input type="radio" name="sexo" id="lhomo" value="Feminino"
-                onclick=" modoed();modeod();"
-                >
-            </p>
-
-
-            <input type="submit" value="Enviar">
-        </form>
-    </fieldset>
-
-    <fieldset>
-
-        <legend>Ficha de Cadastro</legend>
-            
-    <form method="get" action="cadastro.php">
-    
-        <div>
-            <label for="lnome">Nome:</label>
-            <input type="text" id="lnome" required>
-            
-        </div>
-    
-        <div>
-            <label for="lidade">Idade:</label>
-            <input id="lidade" type="number" max="100" min="18" size="3" required >
-        </div>
-            <br>
-        <button onclick="idade()" class="buttom" id="calculo" >
-            Calculo:
-        </button>
-        <span id="resultado" ></span>
-    
-    
-    </form>
-    </fieldset>
-
-    <section style="overflow-x: auto;">
-        
-        <table class="tabela_basica">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Leite</th>
-                    <th>Whey concentrado</th>
-                    <th>PEITO FRANGO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr> 
-                    <th>Valor do produto</th>
-                    <td><input type="number" id="valor1"></td>
-                    <td><input type="number" id="valor2"></td>
-                    <td><input type="number" id="valor3"></td>
-                </tr>
+            <article id="modificando-elementos">
+            <h3>Modificando elementos dentro do Html</h3>
+            <section id="intro">
                 
-                <tr>
-                    <th>Qtd comprada em gr</th>
-                    <td><input type="number" id="embala1"></td>
-                    <td><input type="number" id="embala2"></td>
-                    <td><input type="number" id="embala3"></td>
-                </tr>
-                <tr>
-                    <th>Porção em gr</th>
-                    <td><input type="number" id="porc1"></td>
-                    <td><input type="number" id="porc2"></td>
-                    <td><input type="number" id="porc3"></td>
-                </tr>
-                <tr>
-                    <th>Qtd de proteina por porção</th>
-                    <td><input type="number" id="prot1"></td>
-                    <td><input type="number" id="prot2"></td>
-                    <td><input type="number" id="prot3"></td>
-                </tr>
-                <tr>
-                    <th>Valor por porção</th>
-                    <td><span>R$:</span><output id="lvalor1"> 00.00 </output></td>
-                    <td id="lvalor2"></td>
-                    <td id="lvalor3"></td>
-                </tr>
-                <tr>
-                    <th>Valor por gr de proteína</th>
-                    <td id="lvalor1"></td>
-                    <td id="lvalor2"></td>
-                    <td id="lvalor3"></td>
-                </tr>
-                <tr>
-                    <th>Valor p/ dia</th>
-                    <td id="lvalor1"></td>
-                    <td id="lvalor2"></td>
-                    <td id="lvalor3"></td>
-                </tr>
-                <tr>
-                    <th>Valor p/ mês</th>
-                    <td id="lvalor1"></td>
-                    <td id="lvalor2"></td>
-                    <td id="lvalor3"></td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-
-        <button class="buttom" onclick="calcvp(b3,b4,b5)"> Calcular</button>
-    </section>
-    
-
-</section><!-- /#Evento-JS-->
+                            
+                            <p>Agora vamos aprender a modificar elementos do Html com o JS para enfim termos um mínimo de interação.</p>
+                            <p>Para editar elementos do html usaremo os mesmos comandos vistos acima, porém serão colocados em uma variável e serão utilizados seguidos de três diferentes formas de alteração do HTML. Essas são:</p>
+                            <ul>
+                <li><strong>innerHTML</strong>: Esse método lê não somente textos como também as tag dentro da box que foi carregada. Além de também inserir novas tag obviamente.</li>
+                <li><strong>innerText</strong>: Lê e insere textos entrentanto não lê tag. </li>
+                <li><strong>textContent</strong>: Lê e insere textos entrentanto não lê tag, nem estilos aparentemente.</li>
+                            </ul>
+                <p class="mark">Para verificar os resultados dos exemplos abaixo, será necessário abrir o console do navegador!</p>
+            </section><!-- /#intro -->
+            <section id="innerHTML">
+                <h4>innerHTML</h4>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+                {let p = document.getElementById("BHtml")
+                p.innerHTML="innerHTML";}
+                {let p = document.getElementById("BHtml2")
+                console.log(p.innerHTML);}
+                ____________________________________________
+                
+                &lt;p id="BHtml">&lt;span> alem&lt;/span>&lt;/p>
+                &lt;p id="BHtml2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
+                    </pre>
+                </div><!-- /.pre -->
+                <p>Resultado</p>
+                <div class="resp">
+                    <p id="BHtml"><span> alem</span></p>
+                    <p id="BHtml2"><span style="color: aquamarine;"> alem</span></p>
+                </div>
+                <!-- /.resp -->
+            </section><!-- /#innerHTML -->
+            <section id="innerText">
+                
+                <h4>innerText</h4>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+                {let p = document.getElementById("BTxt")
+                p.innerText="innerText";}
+                {let p = document.getElementById("BTxt2")
+                console.log(p.innerText);}
+                ___________________________________________
+                
+                &lt;div class="resp">
+                    &lt;p id="BTxt">&lt;span> alem&lt;/span>&lt;/p>
+                    &lt;p id="BTxt2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
+                &lt;/div>
+                    </pre>
+                </div>
+                <!-- /.pre -->
+                <p>Resultado:</p>
+                <div class="resp">
+                    <p id="BTxt"><span> alem</span></p>
+                    <p id="BTxt2"><span style="color: aquamarine;"> alem</span></p>
+                </div>
+                <!-- /.resp -->
+            </section><!-- /#innerText -->
+            <section id="textContent">
+                
+                <h4>textContent</h4>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+                {let p = document.getElementById("BCont")
+                p.textContent="textContent";}
+                {let p = document.getElementById("BCont2")
+                console.log(p.textContent);}
+                __________________________________________
+                &lt;div class="resp">
+                    &lt;p id="BCont">&lt;span> alem&lt;/span>&lt;/p>
+                    &lt;p id="BCont2">&lt;span style="color: aquamarine;"> alem&lt;/span>&lt;/p>
+                &lt;/div>
+                    </pre>
+                </div>
+                <!-- /.pre -->
+                <p>Resultado:</p>
+                <div class="resp">
+                    <p id="BCont"><span> alem</span></p>
+                    <p id="BCont2"><span style="color: aquamarine;"> alem</span></p>
+                </div>
+                <!-- /.resp -->
+            </section><!-- /#textContent -->
             </article><!-- /#modificando-elementos-->
+            <article id="modificando-atributos">
+                <h3>Modificando Atributos</h3> 
+                <p>Para modificar atributos de um elemento, podemos usar as seguintes 3 propriedades: </p>
+                <ul>
+                    <li><strong> setAttribute()</strong>: Para definir o valor de um atributo no elemento especificado. Se o atributo já existir, o valor será atualizado; caso contrário, um novo atributo será adicionado com o nome e valor especificados.
+                        <p><strong>Sintaxe: </strong>setAttribute(name, value)</p>
+                        <p>Outra forma de modificar ou substituir um atributo é utilizando um . (ponto)</p>
+                        <p><strong>Sintaxe: </strong>tag.name="value"</p>
+
+                        <div class="obs">
+                            <p>Caso o value tenha um "-" (traço) nessa sintaxe substituímos o - pela letra maiúscula, exemplo:</p>
+                            <p> 
+                                Invés de: 
+                                <br> style="background-color: blue;"
+                            </p>
+                            <p>
+                                escrevemos:
+                                <br>
+                                style="backgroundColor: blue;"
+                            </p>
+                        </div>
+                    </li> 
+                    <li><strong>getAttribute()</strong>: Para obter o valor atual de um atributo
+                        <p><strong>Sintaxe: </strong>getAttribute(name, value)</p></li>
+                    <li><strong>removeAttribute()</strong>: Para remover um atributo
+                        <p><strong>Sintaxe: </strong>removeAttribute(name, value)</p></li>
+                </ul>
+            </article> <!-- /#modificando-atributos -->
         </article><!--/acessando-html-->
-       
+        <article id="Evento-JS">
+            <h2>Evento JS (DOM)</h2>
+            <p>Eventos em JS são formas de interagir com a página. Para ver mais comandos veja a apostila na <a href="../../material-de-apoio/apostila-html5-css-jquery.pdf">página 366</a> </p>
+            <div class="pre">
+                <pre>
+        &lt;fieldset>
+        &lt;legend>Ficha&lt;/legend>
+
+        &lt;h4>Sexo:&lt;/h4>
+
+        &lt;form action="cadastro.php" method="get">
+        &lt;p>
+        &lt;label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:&lt;/label>
+
+        &lt;input type="radio" name="sexo" id="lmasculino" value="Masculino" 
+
+        onmousemove="modhm(); modgm();"
+        >
+        &lt;/p>
+
+        &lt;p>
+        &lt;label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:&lt;/label>
+        &lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"
+        onmousemove="modho(); modgo();"
+        >
+        &lt;/p>
+        &lt;/form>
+        &lt;form action="cadastro.php" method="get">
+
+        &lt;h4>Orientação:&lt;/h4>
+        &lt;p>
+        &lt;label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:&lt;/label>
+
+        &lt;input type="radio" name="sexo" id="lhete" value="Masculino" 
+
+        onclick="modeo(); modoe();"
+        >
+        &lt;/p>
+
+        &lt;p>
+        &lt;label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:&lt;/label>
+        &lt;input type="radio" name="sexo" id="lhomo" value="Feminino"
+        onclick=" modoed();modeod();"
+        >
+        &lt;/p>
+
+
+        &lt;input type="submit" value="Enviar">
+        &lt;/form>
+        &lt;/fieldset>
+        ______________________________________________________________________________________
+        JavaScript
+
+        function modgm(){
+        let p = document.getElementById("lafeminino")
+        p.textContent='Masculino:';
+        p.style.marginRight='2px';
+        }
+
+        function modhm(){
+        let p = document.getElementById("lamasculino")
+        p.textContent='Feminino:';
+        p.style.marginRight='9px';
+
+        }
+        function modgo(){
+        let p = document.getElementById("lafeminino")
+        p.textContent='Feminino:';
+        p.style.marginRight='9px';
+
+        }
+
+        function modho(){
+        let p = document.getElementById("lamasculino")
+        p.textContent='Masculino:';
+        p.style.marginRight='2px';
+
+        }
+
+        {
+        function modoe(){
+        let p = document.getElementById("lahomo")
+        p.textContent='Héterosexual:';
+        p.style.marginRight='2px';
+        }
+
+        function modeo(){
+        let p = document.getElementById("lahete")
+        p.textContent='Homosexual:';
+        p.style.marginRight='9px';
+
+        }
+
+        function modoed(){
+        let p = document.getElementById("lahete")
+        p.textContent='Héterosexual:';
+        p.style.marginRight='2px';
+        }
+
+        function modeod(){
+        let p = document.getElementById("lahomo")
+        p.textContent='Homosexual:';
+        p.style.marginRight='9px';
+
+        }
+
+        }
+            </pre>
+            </div>                                   
+            <p>Resultado:</p>
+            <fieldset>
+                <legend>Ficha</legend>
+
+                <h4>Sexo:</h4>
+
+                <form action="cadastro.php" method="get">
+                    <p>
+                        <label for="lmasculino" id="lamasculino" >Masculino:</label>
+
+                        <input type="radio" name="sexo" value="Masculino" 
+                        onmousemove="troca(1)"
+                        
+                        >
+                    </p>
+
+                    <p>
+                        <label for="lfeminino" id="lafeminino" style="margin-right: 7px;">Feminino:</label>
+                        <input type="radio" name="sexo" value="Feminino"
+                        onmousemove="troca(2)"
+                        >
+                    </p>
+                </form>
+                <form action="cadastro.php" method="get">
+
+                    <h4>Orientação:</h4>
+                    <p>
+                        <label for="lmasculino" id="hete" >Heterosexual:</label>
+
+                        <input type="radio" name="sexo" id="lhete" value="Masculino"onclick="mudar(1)">
+                    </p>
+
+                    <p>
+                        <label for="lfeminino" id="homo" style="margin-right: 7px;">Homosexual:</label>
+
+                        <input type="radio" name="sexo" id="lhomo" value="Feminino" onclick="mudar(2)">
+                    </p>
+
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Ficha de Cadastro</legend>
+                    
+            <form method="dialog">
+            
+                <div>
+                    <label for="lnome">Nome:</label>
+                    <input type="text" id="lnome" required>
+                    
+                </div>
+            
+                <div>
+                    <label for="lidade">Idade:</label>
+                    <input id="lidade" type="number" max="100" min="18" size="3" required >
+                </div>
+                    <br>
+                <button onclick="idade()" class="buttom" id="calculo" >
+                    Calculo:
+                </button>
+                <span id="resultado" ></span>
+            
+            
+            </form>
+            </fieldset>
+
+        
+            
+
+        </article><!-- /#Evento-JS-->
+        <article id="Elementos-pai-filho">
+            <h2>Acessando elementos pai e filho pelo JS</h2>
+            <p>Para acessar elementos pai e filho pelo JS, utilizaremos as seguintes propriedades:</p>
+            <ul>
+                <li><strong>parentElement</strong>: Retorna o elemento pai do elemento especificado.</li>
+                <li><strong>children</strong>: Retorna uma coleção de elementos filhos de um elemento.</li>
+                <li><strong>firstElementChild</strong>: Retorna o primeiro elemento filho de um elemento.</li>
+                <li><strong>lastElementChild</strong>: Retorna o último elemento filho de um elemento.</li>
+            </ul>
+            <p>Entretanto o resultado só é vizualizado no console.log.</p>
+            <input type="text" >
+            <button onclick="pai()">parent</button> Resposta: <output id="resposta"></output>
+           <div class="resp">
+<div id="vo">
+    <div id="pai"> pai
+        <div id="filho1"> filho 1</div>
+        <div id="filho2"> 
+            filho 2 
+            <div id="neto">
+                neto
+        </div>
+        </div>
+        <div id="filho3"> filho 3</div>
+    </div>
+</div><!-- /#vo -->
+           </div>
+        </article><!-- /#Elementos-pai-filho-->
+                    
     </main>
     <footer>
         <h1>Materiais utilizados</h1>            

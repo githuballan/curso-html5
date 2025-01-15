@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tudo que você precisa conhecer sobre tags semântica do html5">
+        <meta name="keywords" content="Rifa, sorteio de rifa, rifa online">
+        <title>Rifa</title>
+        <style>
+            table{
+                border-collapse: separate;
+                margin: 0 auto;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            td{
+                border: 2px solid black;
+                text-align:center;
+                vertical-align: middle;
+                width: 30px;
+                height: 30px;
+            }
+            td:hover
+            {
+                box-shadow: inset 2px 2px #ffffff88;
+                background-color: #bbb;
+                cursor: pointer;
+            }
+            #res{
+                text-align: center;
+                display: none;
+               
+            }
+
+            
+        </style>
+        
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+<body>
+   
+    <header>
+        <a class="buttom buttom-index" href="../index-utlidades.html">Utlidades</a>
+        <h1>Sorteio de Rifa</h1>
+    </header>
+    <main>
+        <section id="Rifa">
+            <h2 id="res"><output id="nomes"></output></h2>
+            <p>Sorteio de rifa online. Digite o número da rifa e clique em sortear.</p>
+           
+                <label>Nome da Rifa:</label>
+                <input type="text" id="nomeRifa"><br>
+                <label for="numeroRifa">Número:</label>
+                <input type="number" id="numeroRifa" min="1" max="100"><br>
+                <button onclick="add(); elimiNull()">Cadastrar</button>
+
+
+<button onclick="sorteio()">Sortear</button>
+
+            
+            
+         
+            
+                <output id="nomec"></output>
+            <div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td onclick="consultatd(this)" id="1">1</td>
+                            <td onclick="consultatd(this)">2</td>
+                            <td onclick="consultatd(this)">3</td>
+                            <td onclick="consultatd(this)">4</td>
+                            <td onclick="consultatd(this)">5</td>
+                            <td onclick="consultatd(this)">6</td>
+                            <td onclick="consultatd(this)">7</td>
+                            <td onclick="consultatd(this)">8</td>
+                            <td onclick="consultatd(this)">9</td>
+                            <td onclick="consultatd(this)">10</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">11</td>
+                            <td onclick="consultatd(this)">12</td>
+                            <td onclick="consultatd(this)">13</td>
+                            <td onclick="consultatd(this)">14</td>
+                            <td onclick="consultatd(this)">15</td>
+                            <td onclick="consultatd(this)">16</td>
+                            <td onclick="consultatd(this)">17</td>
+                            <td onclick="consultatd(this)">18</td>
+                            <td onclick="consultatd(this)">19</td>
+                            <td onclick="consultatd(this)">20</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">21</td>
+                            <td onclick="consultatd(this)">22</td>
+                            <td onclick="consultatd(this)">23</td>
+                            <td onclick="consultatd(this)">24</td>
+                            <td onclick="consultatd(this)">25</td>
+                            <td onclick="consultatd(this)">26</td>
+                            <td onclick="consultatd(this)">27</td>
+                            <td onclick="consultatd(this)">28</td>
+                            <td onclick="consultatd(this)">29</td>
+                            <td onclick="consultatd(this)">30</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">31</td>
+                            <td onclick="consultatd(this)">32</td>
+                            <td onclick="consultatd(this)">33</td>
+                            <td onclick="consultatd(this)">34</td>
+                            <td onclick="consultatd(this)">35</td>
+                            <td onclick="consultatd(this)">36</td>
+                            <td onclick="consultatd(this)">37</td>
+                            <td onclick="consultatd(this)">38</td>
+                            <td onclick="consultatd(this)">39</td>
+                            <td onclick="consultatd(this)">40</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">41</td>
+                            <td onclick="consultatd(this)">42</td>
+                            <td onclick="consultatd(this)">43</td>
+                            <td onclick="consultatd(this)">44</td>
+                            <td onclick="consultatd(this)">45</td>
+                            <td onclick="consultatd(this)">46</td>
+                            <td onclick="consultatd(this)">47</td>
+                            <td onclick="consultatd(this)">48</td>
+                            <td onclick="consultatd(this)">49</td>
+                            <td onclick="consultatd(this)">50</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">51</td>
+                            <td onclick="consultatd(this)">52</td>
+                            <td onclick="consultatd(this)">53</td>
+                            <td onclick="consultatd(this)">54</td>
+                            <td onclick="consultatd(this)">55</td>
+                            <td onclick="consultatd(this)">56</td>
+                            <td onclick="consultatd(this)">57</td>
+                            <td onclick="consultatd(this)">58</td>
+                            <td onclick="consultatd(this)">59</td>
+                            <td onclick="consultatd(this)">60</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">61</td>
+                            <td onclick="consultatd(this)">62</td>
+                            <td onclick="consultatd(this)">63</td>
+                            <td onclick="consultatd(this)">64</td>
+                            <td onclick="consultatd(this)">65</td>
+                            <td onclick="consultatd(this)">66</td>
+                            <td onclick="consultatd(this)">67</td>
+                            <td onclick="consultatd(this)">68</td>
+                            <td onclick="consultatd(this)">69</td>
+                            <td onclick="consultatd(this)">70</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">71</td>
+                            <td onclick="consultatd(this)">72</td>
+                            <td onclick="consultatd(this)">73</td>
+                            <td onclick="consultatd(this)">74</td>
+                            <td onclick="consultatd(this)">75</td>
+                            <td onclick="consultatd(this)">76</td>
+                            <td onclick="consultatd(this)">77</td>
+                            <td onclick="consultatd(this)">78</td>
+                            <td onclick="consultatd(this)">79</td>
+                            <td onclick="consultatd(this)">80</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">81</td>
+                            <td onclick="consultatd(this)">82</td>
+                            <td onclick="consultatd(this)">83</td>
+                            <td onclick="consultatd(this)">84</td>
+                            <td onclick="consultatd(this)">85</td>
+                            <td onclick="consultatd(this)">86</td>
+                            <td onclick="consultatd(this)">87</td>
+                            <td onclick="consultatd(this)">88</td>
+                            <td onclick="consultatd(this)">89</td>
+                            <td onclick="consultatd(this)">90</td>
+                        </tr>
+                        <tr> 
+                            <td onclick="consultatd(this)">91</td>
+                            <td onclick="consultatd(this)">92</td>
+                            <td onclick="consultatd(this)">93</td>
+                            <td onclick="consultatd(this)">94</td>
+                            <td onclick="consultatd(this)">95</td>
+                            <td onclick="consultatd(this)">96</td>
+                            <td onclick="consultatd(this)">97</td>
+                            <td onclick="consultatd(this)">98</td>
+                            <td onclick="consultatd(this)">99</td>
+                            <td onclick="consultatd(this)">100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                    <input type="number" id="consultaRifa" min="0" max="100">
+                    <button onclick="consulta()">Consultar</button>
+</div>
+            
+
+        </section><!--Rifa-->
+    <script src="script.js"></script>
+</body>
+</html>

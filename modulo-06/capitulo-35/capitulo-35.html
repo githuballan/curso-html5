@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tudo que você precisa conhecer sobre tags semântica do html5">
+        <meta name="keywords" content="Palavras chaves, chave, palavra">
+        <title>Capítulo 35</title>
+        
+    
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+    <body>
+        <a class="buttom buttom-index" href="../../index.html">Índice</a>
+        <header>
+            <h1>Capítulo 35</h1>
+            <h1>JavaScript Intermediário</h1>
+        </header>
+        <main>
+            <article id="Math">
+                <h2>Biblioteca Math</h2>
+
+                <p>A biblioteca <code>Math</code> é uma biblioteca padrão do JavaScript que fornece funções matemáticas básicas e avançadas. Ela é usada para realizar operações matemáticas como arredondamento, geração de números aleatórios, trigonometria, entre outras.</p>
+                <p>Aqui estão alguns dos métodos mais usados da biblioteca <code>Math</code>:</p>
+                <ul>
+                    <li><strong>Math.random()</strong>: Gera um número pseudo-aleatório entre 0 (inclusive) e 1 (exclusivo).
+                        <div class="pre"> <pre><code>let randomNum = Math.random();</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.round()</strong>: Arredonda um número para o inteiro mais próximo.
+                        <div class="pre"> <pre><code>let roundedNum = Math.round(4.7); // 5</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.floor()</strong>: Arredonda um número para baixo, para o inteiro mais próximo.
+                        <div class="pre"> <pre><code>let flooredNum = Math.floor(4.7); // 4</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.ceil()</strong>: Arredonda um número para cima, para o inteiro mais próximo.
+                        <div class="pre"> <pre><code>let ceiledNum = Math.ceil(4.3); // 5</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.max()</strong>: Retorna o maior número de uma lista de argumentos.
+                        <div class="pre"> <pre><code>let maxNum = Math.max(1, 2, 3, 4, 5); // 5</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.min()</strong>: Retorna o menor número de uma lista de argumentos.
+                        <div class="pre"> <pre><code>let minNum = Math.min(1, 2, 3, 4, 5); // 1</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.sqrt()</strong>: Calcula a raiz quadrada de um número.
+                        <div class="pre"> <pre><code>let sqrtNum = Math.sqrt(16); // 4</code> </pre> </div>
+                    </li>
+                    <li><strong>Math.pow()</strong>: Calcula a potência de um número.
+                        <div class="pre"> <pre><code>let powNum = Math.pow(<abbr title="Base">2</abbr>, <abbr title="Expoente">3</abbr>); // 8</code> </pre> </div>
+                    </li>
+                </ul>
+                <p>Esses são apenas alguns exemplos das muitas funções disponíveis na biblioteca <code>Math</code>. Ela é uma ferramenta poderosa para qualquer tipo de cálculo matemático em JavaScript.</p>
+            </article><!--Math-->
+            <article id="JSON">
+                <h2>JSON- Java Script Object Notation</h2>
+                <p>JSON (JavaScript Object Notation) é um formato leve de intercâmbio de dados. Ele é fácil para os humanos lerem e escreverem, e fácil para máquinas interpretarem e gerarem. JSON é uma representação textual de um objeto JavaScript, mas é independente de linguagem, o que significa que pode ser usado em muitas linguagens de programação.</p>
+                <p>Um objeto JavaScript é uma coleção de pares chave-valor, onde as chaves são strings e os valores podem ser qualquer tipo de dado, incluindo outros objetos. JSON segue a mesma estrutura, mas é representado como uma string.</p>
+                <h3>Métodos</h3>
+                <ul>
+                    <li><strong>JSON.parse()</strong> é usado para converter uma string JSON em um objeto JavaScript.</li> 
+                    <li><strong>JSON.stringify()</strong> é usado para converter um objeto JavaScript em uma string JSON.</li>
+                </ul>
+                <p>Aqui está um exemplo que mostra a diferença entre os dois métodos:</p>
+                <div class="pre">
+    <pre>
+// Objeto JavaScript
+let obj = {
+    nome: "Allan",
+    idade: 30,
+    cidade: "São Paulo"
+};
+
+// Convertendo o objeto JavaScript em uma string JSON
+let jsonString = JSON.stringify(obj);
+console.log(jsonString); // {"nome":"Allan","idade":30,"cidade":"São Paulo"}
+
+// Convertendo a string JSON de volta para um objeto JavaScript
+let newObj = JSON.parse(jsonString);
+console.log(newObj); // {nome: "Allan", idade: 30, cidade: "São Paulo"}
+    </pre>
+                </div>
+                <p>Devemos usar JSON em vez de objetos JavaScript quando precisamos enviar dados entre um servidor e um cliente. JSON é um formato de dados leve e independente de linguagem, o que o torna ideal para a troca de dados em aplicações web.</p>
+            </article><!--JSON-->
+            <article id="local-storage">
+                <h2>Local Storage</h2>
+                <p>O armazenamento local (local storage) é uma maneira de armazenar dados no navegador do usuário. Ele permite que você armazene dados no navegador do usuário de forma persistente, o que significa que os dados permanecem mesmo depois que o navegador é fechado.</p>
+                <p>O armazenamento local é útil para armazenar informações como configurações de usuário, preferências, dados de formulários, entre outros. Ele é uma alternativa ao uso de cookies, que são limitados em tamanho e têm outras limitações.</p>
+                <h3>Métodos</h3>
+                <ul>
+                    <li><strong>localStorage.setItem()</strong> é usado para armazenar um par chave-valor no armazenamento local.</li>
+                    <li><strong>localStorage.getItem()</strong> é usado para recuperar o valor associado a uma chave no armazenamento local.</li>
+                    <li><strong>localStorage.removeItem()</strong> é usado para remover um item do armazenamento local.</li>
+                    <li><strong>localStorage.clear()</strong> é usado para remover todos os itens do armazenamento local.</li>
+                </ul>
+                <p>Aqui está um exemplo que mostra como usar o armazenamento local:</p>
+                <div class="pre">
+    <pre>
+// Armazenando um valor no armazenamento local
+localStorage.setItem("nome", "Allan");
+
+// Recuperando o valor do armazenamento local
+let nome = localStorage.getItem("nome");
+console.log(nome); // Allan
+
+// Removendo o valor do armazenamento local
+localStorage.removeItem("nome");
+
+// Limpando o armazenamento local
+localStorage.clear();
+    </pre>
+                </div>
+                <p>O armazenamento local é uma ferramenta poderosa para armazenar dados no navegador do usuário. Ele é amplamente suportado pelos navegadores modernos e é fácil de usar. No entanto, é importante lembrar que o armazenamento local é limitado em tamanho (geralmente 5 MB) e não deve ser usado para armazenar grandes quantidades de dados.</p>
+
+            </article><!--local-storage-->
+        </main>
+        <footer>
+             
+            <h1>Materiais utilizados</h1>
+            
+            <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
+            
+            
+          
+            
+            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+            
+            
+        </footer>
+    </body>
+</html>
