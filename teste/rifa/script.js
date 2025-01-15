@@ -34,6 +34,7 @@ function sorteio() {
     
     
 }
+
 function add() {
     var nm = document.getElementById('nomeRifa').value;
     let nr = document.getElementById('numeroRifa').value;
@@ -41,6 +42,9 @@ function add() {
     nome[nr]=nm;
     console.log(nome[nr]);
     localStorage.setItem('nome', JSON.stringify(nome));
+
+    document.getElementById('nomeRifa').value = "";
+    document.getElementById('numeroRifa').value = "";
    
     };
 }
