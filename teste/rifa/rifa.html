@@ -55,11 +55,22 @@
                 height: 30px;
 
             }
+            #btsorteio{
+                width: 130px;
+                height: 30px;
+            }
             fieldset{
                 width: 300px;
                 margin: 0 auto;
+
+                
             }
 
+            .marcado{
+                background-image: linear-gradient(45deg, #ffffff 45%,40%,#f00 10%,60%, #ffffff 45%);
+            }
+
+            
             
         </style>
         
@@ -82,11 +93,11 @@
                         <input type="text" id="nomeRifa" required><br>
                         <label for="numeroRifa">Número:</label>
                         <input type="number" id="numeroRifa" min="1" max="100" required><br>
-                        <button id="btCadastrar" onclick="add(); elimiNull()">Cadastrar</button>
+                        <button class="buttom" id="btCadastrar" onclick="add() ; elimiNull() ; marcar()">Cadastrar</button>
                    
                </fieldset>    
            </form>
-
+<button onclick="apagMemoria()">Apagar tudo</button>
             
                 <div id="nomecdiv">
                     <output id="nomec"></output>
@@ -95,132 +106,135 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td onclick="consultatd(this)" id="1">1</td>
-                            <td onclick="consultatd(this)"id="2">2</td>
-                            <td onlick="consultatd(this)"id="3">3</td>
-                            <td onlick="consultatd(this)"id="4">4</td>
-                            <td onlick="consultatd(this)"id="5">5</td>
-                            <td onlick="consultatd(this)"id="6">6</td>
-                            <td onlick="consultatd(this)"id="7">7</td>
-                            <td onlick="consultatd(this)"id="8">8</td>
-                            <td onlick="consultatd(this)"id="9">9</td>
-                            <td onclick="consultatd(this)"id="10">10</td>
+                            <td onclick="consultatd(this)" id="n1">1</td>
+                            <td onclick="consultatd(this)" id="n2">2</td>
+                            <td onclick="consultatd(this)" id="n3">3</td>
+                            <td onclick="consultatd(this)" id="n4">4</td>
+                            <td onclick="consultatd(this)" id="n5">5</td>
+                            <td onclick="consultatd(this)" id="n6">6</td>
+                            <td onclick="consultatd(this)" id="n7">7</td>
+                            <td onclick="consultatd(this)" id="n8">8</td>
+                            <td onclick="consultatd(this)" id="n9">9</td>
+                            <td onclick="consultatd(this)"id="n10">10</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="11">11</td>
-                            <td onclick="consultatd(this)"id="12">12</td>
-                            <td onclick="consultatd(this)"id="13">13</td>
-                            <td onclick="consultatd(this)"id="14">14</td>
-                            <td onclick="consultatd(this)"id="15">15</td>
-                            <td onclick="consultatd(this)"id="16">16</td>
-                            <td onclick="consultatd(this)"id="17">17</td>
-                            <td onclick="consultatd(this)"id="18">18</td>
-                            <td onclick="consultatd(this)"id="19">19</td>
-                            <td onclick="consultatd(this)"id="20">20</td>
+                            <td onclick="consultatd(this)"id="n11">11</td>
+                            <td onclick="consultatd(this)"id="n12">12</td>
+                            <td onclick="consultatd(this)"id="n13">13</td>
+                            <td onclick="consultatd(this)"id="n14">14</td>
+                            <td onclick="consultatd(this)"id="n15">15</td>
+                            <td onclick="consultatd(this)"id="n16">16</td>
+                            <td onclick="consultatd(this)"id="n17">17</td>
+                            <td onclick="consultatd(this)"id="n18">18</td>
+                            <td onclick="consultatd(this)"id="n19">19</td>
+                            <td onclick="consultatd(this)"id="n20">20</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="21">21</td>
-                            <td onclick="consultatd(this)"id="22">22</td>
-                            <td onclick="consultatd(this)"id="23">23</td>
-                            <td onclick="consultatd(this)"id="24">24</td>
-                            <td onclick="consultatd(this)"id="25">25</td>
-                            <td onclick="consultatd(this)"id="26">26</td>
-                            <td onclick="consultatd(this)"id="27">27</td>
-                            <td onclick="consultatd(this)"id="28">28</td>
-                            <td onclick="consultatd(this)"id="29">29</td>
-                            <td onclick="consultatd(this)"id="30">30</td>
+                            <td onclick="consultatd(this)"id="n21">21</td>
+                            <td onclick="consultatd(this)"id="n22">22</td>
+                            <td onclick="consultatd(this)"id="n23">23</td>
+                            <td onclick="consultatd(this)"id="n24">24</td>
+                            <td onclick="consultatd(this)"id="n25">25</td>
+                            <td onclick="consultatd(this)"id="n26">26</td>
+                            <td onclick="consultatd(this)"id="n27">27</td>
+                            <td onclick="consultatd(this)"id="n28">28</td>
+                            <td onclick="consultatd(this)"id="n29">29</td>
+                            <td onclick="consultatd(this)"id="n30">30</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="31">31</td>
-                            <td onclick="consultatd(this)"id="32">32</td>
-                            <td onclick="consultatd(this)"id="33">33</td>
-                            <td onclick="consultatd(this)"id="34">34</td>
-                            <td onclick="consultatd(this)"id="35">35</td>
-                            <td onclick="consultatd(this)"id="36">36</td>
-                            <td onclick="consultatd(this)"id="37">37</td>
-                            <td onclick="consultatd(this)"id="38">38</td>
-                            <td onclick="consultatd(this)"id="39">39</td>
-                            <td onclick="consultatd(this)"id="40">40</td>
+                            <td onclick="consultatd(this)"id="n31">31</td>
+                            <td onclick="consultatd(this)"id="n32">32</td>
+                            <td onclick="consultatd(this)"id="n33">33</td>
+                            <td onclick="consultatd(this)"id="n34">34</td>
+                            <td onclick="consultatd(this)"id="n35">35</td>
+                            <td onclick="consultatd(this)"id="n36">36</td>
+                            <td onclick="consultatd(this)"id="n37">37</td>
+                            <td onclick="consultatd(this)"id="n38">38</td>
+                            <td onclick="consultatd(this)"id="n39">39</td>
+                            <td onclick="consultatd(this)"id="n40">40</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="41">41</td>
-                            <td onclick="consultatd(this)"id="42">42</td>
-                            <td onclick="consultatd(this)"id="43">43</td>
-                            <td onclick="consultatd(this)"id="44">44</td>
-                            <td onclick="consultatd(this)"id="45">45</td>
-                            <td onclick="consultatd(this)"id="46">46</td>
-                            <td onclick="consultatd(this)"id="47">47</td>
-                            <td onclick="consultatd(this)"id="48">48</td>
-                            <td onclick="consultatd(this)"id="49">49</td>
-                            <td onclick="consultatd(this)"id="50">50</td>
+                            <td onclick="consultatd(this)"id="n41">41</td>
+                            <td onclick="consultatd(this)"id="n42">42</td>
+                            <td onclick="consultatd(this)"id="n43">43</td>
+                            <td onclick="consultatd(this)"id="n44">44</td>
+                            <td onclick="consultatd(this)"id="n45">45</td>
+                            <td onclick="consultatd(this)"id="n46">46</td>
+                            <td onclick="consultatd(this)"id="n47">47</td>
+                            <td onclick="consultatd(this)"id="n48">48</td>
+                            <td onclick="consultatd(this)"id="n49">49</td>
+                            <td onclick="consultatd(this)"id="n50">50</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="51">51</td>
-                            <td onclick="consultatd(this)"id="52">52</td>
-                            <td onclick="consultatd(this)"id="53">53</td>
-                            <td onclick="consultatd(this)"id="54">54</td>
-                            <td onclick="consultatd(this)"id="55">55</td>
-                            <td onclick="consultatd(this)"id="56">56</td>
-                            <td onclick="consultatd(this)"id="57">57</td>
-                            <td onclick="consultatd(this)"id="58">58</td>
-                            <td onclick="consultatd(this)"id="59">59</td>
-                            <td onclick="consultatd(this)"id="60">60</td>
+                            <td onclick="consultatd(this)"id="n51">51</td>
+                            <td onclick="consultatd(this)"id="n52">52</td>
+                            <td onclick="consultatd(this)"id="n53">53</td>
+                            <td onclick="consultatd(this)"id="n54">54</td>
+                            <td onclick="consultatd(this)"id="n55">55</td>
+                            <td onclick="consultatd(this)"id="n56">56</td>
+                            <td onclick="consultatd(this)"id="n57">57</td>
+                            <td onclick="consultatd(this)"id="n58">58</td>
+                            <td onclick="consultatd(this)"id="n59">59</td>
+                            <td onclick="consultatd(this)"id="n60">60</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="61">61</td>
-                            <td onclick="consultatd(this)"id="62">62</td>
-                            <td onclick="consultatd(this)"id="63">63</td>
-                            <td onclick="consultatd(this)"id="64">64</td>
-                            <td onclick="consultatd(this)"id="65">65</td>
-                            <td onclick="consultatd(this)"id="66">66</td>
-                            <td onclick="consultatd(this)"id="67">67</td>
-                            <td onclick="consultatd(this)"id="68">68</td>
-                            <td onclick="consultatd(this)"id="69">69</td>
-                            <td onclick="consultatd(this)"id="70">70</td>
+                            <td onclick="consultatd(this)"id="n61">61</td>
+                            <td onclick="consultatd(this)"id="n62">62</td>
+                            <td onclick="consultatd(this)"id="n63">63</td>
+                            <td onclick="consultatd(this)"id="n64">64</td>
+                            <td onclick="consultatd(this)"id="n65">65</td>
+                            <td onclick="consultatd(this)"id="n66">66</td>
+                            <td onclick="consultatd(this)"id="n67">67</td>
+                            <td onclick="consultatd(this)"id="n68">68</td>
+                            <td onclick="consultatd(this)"id="n69">69</td>
+                            <td onclick="consultatd(this)"id="n70">70</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="71">71</td>
-                            <td onclick="consultatd(this)"id="72">72</td>
-                            <td onclick="consultatd(this)"id="73">73</td>
-                            <td onclick="consultatd(this)"id="74">74</td>
-                            <td onclick="consultatd(this)"id="75">75</td>
-                            <td onclick="consultatd(this)"id="76">76</td>
-                            <td onclick="consultatd(this)"id="77">77</td>
-                            <td onclick="consultatd(this)"id="78">78</td>
-                            <td onclick="consultatd(this)"id="79">79</td>
-                            <td onclick="consultatd(this)"id="80">80</td>
+                            <td onclick="consultatd(this)"id="n71">71</td>
+                            <td onclick="consultatd(this)"id="n72">72</td>
+                            <td onclick="consultatd(this)"id="n73">73</td>
+                            <td onclick="consultatd(this)"id="n74">74</td>
+                            <td onclick="consultatd(this)"id="n75">75</td>
+                            <td onclick="consultatd(this)"id="n76">76</td>
+                            <td onclick="consultatd(this)"id="n77">77</td>
+                            <td onclick="consultatd(this)"id="n78">78</td>
+                            <td onclick="consultatd(this)"id="n79">79</td>
+                            <td onclick="consultatd(this)"id="n80">80</td>
                         </tr>
                         <tr> 
-                            <td onclick="consultatd(this)"id="81">81</td>
-                            <td onclick="consultatd(this)"id="82">82</td>
-                            <td onclick="consultatd(this)"id="83">83</td>
-                            <td onclick="consultatd(this)"id="84">84</td>
-                            <td onclick="consultatd(this)"id="85">85</td>
-                            <td onclick="consultatd(this)"id="86">86</td>
-                            <td onclick="consultatd(this)"id="87">87</td>
-                            <td onclick="consultatd(this)"id="88">88</td>
-                            <td onclick="consultatd(this)"id="89">89</td>
-                            <td onclick="consultatd(this)"id="90">90</td>
+                            <td onclick="consultatd(this)"id="n81">81</td>
+                            <td onclick="consultatd(this)"id="n82">82</td>
+                            <td onclick="consultatd(this)"id="n83">83</td>
+                            <td onclick="consultatd(this)"id="n84">84</td>
+                            <td onclick="consultatd(this)"id="n85">85</td>
+                            <td onclick="consultatd(this)"id="n86">86</td>
+                            <td onclick="consultatd(this)"id="n87">87</td>
+                            <td onclick="consultatd(this)"id="n88">88</td>
+                            <td onclick="consultatd(this)"id="n89">89</td>
+                            <td onclick="consultatd(this)"id="n90">90</td>
                         </tr>
-                        <tr> 
-                            <td onclick="consultatd(this)"id="91">91</td>
-                            <td onclick="consultatd(this)"id="92">92</td>
-                            <td onclick="consultatd(this)"id="93">93</td>
-                            <td onclick="consultatd(this)"id="94">94</td>
-                            <td onclick="consultatd(this)"id="95">95</td>
-                            <td onclick="consultatd(this)"id="96">96</td>
-                            <td onclick="consultatd(this)"id="97">97</td>
-                            <td onclick="consultatd(this)"id="98">98</td>
-                            <td onclick="consultatd(this)"id="99">99</td>
-                            <td onclick="consultatd(this)"id="100">100</td>
+                        <tr>
+                            <td onclick="consultatd(this)"id="n91">91</td>
+                            <td onclick="consultatd(this)"id="n92">92</td>
+                            <td onclick="consultatd(this)"id="n93">93</td>
+                            <td onclick="consultatd(this)"id="n94">94</td>
+                            <td onclick="consultatd(this)"id="n95">95</td>
+                            <td onclick="consultatd(this)"id="n96">96</td>
+                            <td onclick="consultatd(this)"id="n97">97</td>
+                            <td onclick="consultatd(this)"id="n98">98</td>
+                            <td onclick="consultatd(this)"id="n99">99</td>
+                            <td onclick="consultatd(this)"id="n100">100</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div id="sorteio"><button onclick="sorteio()">Sortear</button></div>
+            <div id="sorteio" ><button class="buttom" id="btsorteio" onclick="sorteio()">Sortear</button></div>
            
-
+            <div><button class="buttom" id="btsorteio" onclick="listar()">Listar</button></div>
+            <div id="list">
+                
+            </div>
         </section><!--Rifa-->
     <script src="script.js"></script>
 </body>

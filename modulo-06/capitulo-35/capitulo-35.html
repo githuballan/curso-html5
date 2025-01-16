@@ -111,6 +111,39 @@ localStorage.clear();
                 <p>O armazenamento local é uma ferramenta poderosa para armazenar dados no navegador do usuário. Ele é amplamente suportado pelos navegadores modernos e é fácil de usar. No entanto, é importante lembrar que o armazenamento local é limitado em tamanho (geralmente 5 MB) e não deve ser usado para armazenar grandes quantidades de dados.</p>
 
             </article><!--local-storage-->
+            <article id="json-local-storage">
+                <h2>Usando JSON com Local Storage</h2>
+                <p>Podemos combinar JSON com Local Storage para armazenar objetos JavaScript de forma persistente no navegador do usuário. Isso é útil quando precisamos salvar dados complexos, como configurações de usuário ou preferências, que podem ser representados como objetos JavaScript.</p>
+                <h3>Exemplo</h3>
+                <p>Vamos ver um exemplo de como armazenar e recuperar um objeto JavaScript usando JSON e Local Storage:</p>
+
+                <p>Convertendo o objeto JavaScript em uma string JSON e armazenando no Local Storage</p>
+                <div class="pre">
+                    <pre>
+// Objeto JavaScript
+let user = {
+    nome: "Allan",
+    idade: 30,
+    cidade: "São Paulo"
+};
+
+localStorage.setItem("user", JSON.stringify(user));
+</pre>
+                </div>
+
+
+<p>Recuperando a string JSON do Local Storage e convertendo de volta para um objeto JavaScript</p>
+<div class="pre">
+    <pre>
+        
+let storedUser = JSON.parse(localStorage.getItem("user"));
+console.log(storedUser); // {nome: "Allan", idade: 30, cidade: "São Paulo"}
+    </pre>
+</div>
+<!-- /.pre -->
+                    
+                <p>Neste exemplo, primeiro criamos um objeto JavaScript chamado <code>user</code>. Em seguida, usamos <code>JSON.stringify()</code> para converter o objeto em uma string JSON e armazenamos essa string no Local Storage usando <code>localStorage.setItem()</code>. Para recuperar o objeto, usamos <code>localStorage.getItem()</code> para obter a string JSON do Local Storage e <code>JSON.parse()</code> para convertê-la de volta para um objeto JavaScript.</p>
+            </article><!--json-local-storage-->        
         </main>
         <footer>
              
@@ -121,8 +154,7 @@ localStorage.clear();
             
           
             
-            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-            
+           
             
         </footer>
     </body>
