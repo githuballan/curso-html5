@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Tudo que você precisa conhecer sobre tags semântica do html5">
-        <meta name="keywords" content="Rifa, sorteio de rifa, rifa online">
+        <meta name="keywords" content="Rifasgbdk, sorteio de rifa, rifa online">
         <title>Rifa</title>
         <style>
             table{
@@ -61,6 +61,19 @@
                 width: 130px;
                 height: 30px;
             }
+
+            #Apagar{
+                display: none;
+            }
+
+            #aviso{
+                font-family: serif;
+                font-size:xx-small;
+                color: #f00;
+                
+                text-align: center;
+            }
+
             .apg{
                 margin: auto;
                 margin-top: 10px;
@@ -78,9 +91,7 @@
                 
             }
 
-            #Apagar{
-                display: none;
-            }
+            
         
 
             fieldset{
@@ -111,13 +122,16 @@
             <h2 id="res"><output id="nomes"></output></h2>
             
             
-           <form action="" method="dialog">
+           <form action="" method="dialog" autocomplete="off">
                <fieldset >
                 <legend>Ficha de Cadastro</legend>
                         <label>Nome da Rifa:</label>
                         <input type="text" id="nomeRifa" required><br>
                         <label for="numeroRifa">Número:</label>
-                        <input type="number" id="numeroRifa" min="1" max="100" required><br>
+                        <input onchange="limite()" type="number" id="numeroRifa" min="1" max="100" required><br>
+                       
+                            <div id="aviso"></div>
+                        
                         <button class="buttom" id="btCadastrar" onclick="Cadastrar()">Cadastrar</button>
                    
                </fieldset>    

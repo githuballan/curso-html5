@@ -209,185 +209,131 @@
         </article><!--/acessando-html-->
         <article id="Evento-JS">
             <h2>Evento JS (DOM)</h2>
-            <p>Eventos em JS são formas de interagir com a página. Para ver mais comandos veja a apostila na <a href="../../material-de-apoio/apostila-html5-css-jquery.pdf">página 366</a> </p>
-            <div class="pre">
-                <pre>
-        &lt;fieldset>
-        &lt;legend>Ficha&lt;/legend>
-
-        &lt;h4>Sexo:&lt;/h4>
-
-        &lt;form action="cadastro.php" method="get">
-        &lt;p>
-        &lt;label for="lmasculino" id="lamasculino" style="margin-right: 2px;">Masculino:&lt;/label>
-
-        &lt;input type="radio" name="sexo" id="lmasculino" value="Masculino" 
-
-        onmousemove="modhm(); modgm();"
-        >
-        &lt;/p>
-
-        &lt;p>
-        &lt;label for="lfeminino" id="lafeminino" style="margin-right: 9px;">Feminino:&lt;/label>
-        &lt;input type="radio" name="sexo" id="lfeminino" value="Feminino"
-        onmousemove="modho(); modgo();"
-        >
-        &lt;/p>
-        &lt;/form>
-        &lt;form action="cadastro.php" method="get">
-
-        &lt;h4>Orientação:&lt;/h4>
-        &lt;p>
-        &lt;label for="lmasculino" id="lahete" style="margin-right: 2px;">Héterosexual:&lt;/label>
-
-        &lt;input type="radio" name="sexo" id="lhete" value="Masculino" 
-
-        onclick="modeo(); modoe();"
-        >
-        &lt;/p>
-
-        &lt;p>
-        &lt;label for="lfeminino" id="lahomo" style="margin-right: 9px;">Homosexual:&lt;/label>
-        &lt;input type="radio" name="sexo" id="lhomo" value="Feminino"
-        onclick=" modoed();modeod();"
-        >
-        &lt;/p>
-
-
-        &lt;input type="submit" value="Enviar">
-        &lt;/form>
-        &lt;/fieldset>
-        ______________________________________________________________________________________
-        JavaScript
-
-        function modgm(){
-        let p = document.getElementById("lafeminino")
-        p.textContent='Masculino:';
-        p.style.marginRight='2px';
-        }
-
-        function modhm(){
-        let p = document.getElementById("lamasculino")
-        p.textContent='Feminino:';
-        p.style.marginRight='9px';
-
-        }
-        function modgo(){
-        let p = document.getElementById("lafeminino")
-        p.textContent='Feminino:';
-        p.style.marginRight='9px';
-
-        }
-
-        function modho(){
-        let p = document.getElementById("lamasculino")
-        p.textContent='Masculino:';
-        p.style.marginRight='2px';
-
-        }
-
-        {
-        function modoe(){
-        let p = document.getElementById("lahomo")
-        p.textContent='Héterosexual:';
-        p.style.marginRight='2px';
-        }
-
-        function modeo(){
-        let p = document.getElementById("lahete")
-        p.textContent='Homosexual:';
-        p.style.marginRight='9px';
-
-        }
-
-        function modoed(){
-        let p = document.getElementById("lahete")
-        p.textContent='Héterosexual:';
-        p.style.marginRight='2px';
-        }
-
-        function modeod(){
-        let p = document.getElementById("lahomo")
-        p.textContent='Homosexual:';
-        p.style.marginRight='9px';
-
-        }
-
-        }
-            </pre>
-            </div>                                   
-            <p>Resultado:</p>
-            <fieldset>
-                <legend>Ficha</legend>
-
-                <h4>Sexo:</h4>
-
-                <form action="cadastro.php" method="get">
-                    <p>
-                        <label for="lmasculino" id="lamasculino" >Masculino:</label>
-
-                        <input type="radio" name="sexo" value="Masculino" 
-                        onmousemove="troca(1)"
-                        
-                        >
-                    </p>
-
-                    <p>
-                        <label for="lfeminino" id="lafeminino" style="margin-right: 7px;">Feminino:</label>
-                        <input type="radio" name="sexo" value="Feminino"
-                        onmousemove="troca(2)"
-                        >
-                    </p>
-                </form>
-                <form action="cadastro.php" method="get">
-
-                    <h4>Orientação:</h4>
-                    <p>
-                        <label for="lmasculino" id="hete" >Heterosexual:</label>
-
-                        <input type="radio" name="sexo" id="lhete" value="Masculino"onclick="mudar(1)">
-                    </p>
-
-                    <p>
-                        <label for="lfeminino" id="homo" style="margin-right: 7px;">Homosexual:</label>
-
-                        <input type="radio" name="sexo" id="lhomo" value="Feminino" onclick="mudar(2)">
-                    </p>
-
-
-                    <input type="submit" value="Enviar">
-                </form>
-            </fieldset>
-
-            <fieldset>
-
-                <legend>Ficha de Cadastro</legend>
-                    
-            <form method="dialog">
-            
-                <div>
-                    <label for="lnome">Nome:</label>
-                    <input type="text" id="lnome" required>
-                    
+            <article id="eventos">
+                <h3>Eventos com JavaScript</h3>
+                <p>Os eventos permitem que o JavaScript capture interações do usuário e execute ações em resposta a essas interações. Alguns exemplos de eventos são cliques de mouse, pressionamento de teclas e movimentos do mouse.</p>
+                <ul>
+                    <li><strong>onclick</strong>: Disparado quando um elemento é clicado.</li>
+                    <li><strong>onmouseover</strong>: Disparado quando o ponteiro do mouse passa sobre um elemento.</li>
+                    <li><strong>onmouseout</strong>: Disparado quando o ponteiro do mouse deixa um elemento.</li>
+                    <li><strong>onkeydown</strong>: Disparado quando uma tecla é pressionada.</li>
+                    <li><strong>onkeyup</strong>: Disparado quando uma tecla é liberada.</li>
+                    <li><strong>onload</strong>: Disparado quando um elemento é carregado.</li>
+                    <li><strong>onresize</strong>: Disparado quando a janela do navegador é redimensionada.</li>
+                    <li><strong>onsubmit</strong>: Disparado quando um formulário é enviado.</li>
+                </ul>
+                <p>Exemplo de evento de clique:</p>
+                <div class="pre">
+                    <pre>
+&lt;button onclick="alert('Botão clicado!')">Clique em mim&lt;/button>
+                    </pre>
                 </div>
-            
-                <div>
-                    <label for="lidade">Idade:</label>
-                    <input id="lidade" type="number" max="100" min="18" size="3" required >
+                <p>Resultado:</p>
+                <button onclick="alert('Botão clicado!')">Clique em mim</button>
+            </article> <!--eventos-->
+            <article id="addEventListener">
+                <h3>Usando addEventListener</h3>
+                <p>O método <code>addEventListener</code> permite adicionar vários eventos a um único elemento, sem sobrescrever os eventos existentes. Ele é mais flexível e poderoso do que usar atributos de evento HTML.</p>
+                <p>Os eventos mais utilizados com <code>addEventListener</code> incluem:</p>
+                <ul>
+                    <li><strong>click</strong>: Disparado quando um elemento é clicado.</li>
+                    <li><strong>mouseover</strong>: Disparado quando o ponteiro do mouse passa sobre um elemento.</li>
+                    <li><strong>mouseout</strong>: Disparado quando o ponteiro do mouse deixa um elemento.</li>
+                    <li><strong>keydown</strong>: Disparado quando uma tecla é pressionada.</li>
+                    <li><strong>keyup</strong>: Disparado quando uma tecla é liberada.</li>
+                    <li><strong>load</strong>: Disparado quando um elemento é carregado.</li>
+                    <li><strong>resize</strong>: Disparado quando a janela do navegador é redimensionada.</li>
+                    <li><strong>submit</strong>: Disparado quando um formulário é enviado.</li>
+                </ul>
+                <p>Exemplo de uso do <code>addEventListener</code>:</p>
+                <div class="pre">
+                    <pre>
+            document.getElementById("myButton").addEventListener("click", function() {
+                alert("Botão clicado!");
+            });
+                    </pre>
                 </div>
-                    <br>
-                <button onclick="idade()" class="buttom" id="calculo" >
-                    Calculo:
-                </button>
-                <span id="resultado" ></span>
-            
-            
-            </form>
-            </fieldset>
-
-        
-            
-
+                <p>Resultado:</p>
+                <button id="myButton">Clique em mim</button>
+                <p>É mais interessante usar <code>addEventListener</code> quando você precisa adicionar múltiplos eventos ao mesmo elemento ou quando deseja garantir que não sobrescreverá eventos existentes.</p>
+            </article><!--addEventListener-->
+             <section>
+                       
+                             <p>Para ver mais comandos veja a apostila na <a href="../../material-de-apoio/apostila-html5-css-jquery.pdf">página 366</a> </p>
+                             <div class="pre">
+                                 <pre>
+                  &lt;fieldset>
+                      &lt;legend>Ficha&lt;/legend>
+                      &lt;h4>Sexo:&lt;/h4>
+                      &lt;form action="cadastro.php" method="get">
+                          &lt;p>
+                              &lt;label for="lmasculino" id="lamasculino" >Masculino:&lt;/label>
+                              &lt;input type="radio" name="sexo" value="Masculino"
+                              onmousemove="troca(1)"
+                 
+                              >
+                          &lt;/p>
+                          &lt;p>
+                              &lt;label for="lfeminino" id="lafeminino" style="margin-right: 7px;">Feminino:&lt;/label>
+                              &lt;input type="radio" name="sexo" value="Feminino"
+                              onmousemove="troca(2)"
+                              >
+                          &lt;/p>
+                      &lt;/form>
+                      &lt;form action="cadastro.php" method="get">
+                 
+                          &lt;input type="submit" value="Enviar">
+                      &lt;/form>
+                  &lt;/fieldset>
+                         ______________________________________________________________________________________
+                         function mudar(m){
+                             if(m==1){
+                             let e = document.getElementById("hete")
+                             let o = document.getElementById("homo")
+                             e.style.marginRight='6px';
+                             o.style.marginRight='0px';
+                         
+                             e.innerHTML="Homosexual:";
+                             o.innerHTML="Heterosexual:"
+                         }else{
+                             let e = document.getElementById("hete")
+                             let o = document.getElementById("homo")
+                             o.style.marginRight='7px';
+                             e.style.marginRight='0px';
+                         
+                             e.innerHTML="Heterosexual:";
+                             o.innerHTML="Homosexual:"
+                         
+                         }
+                         }
+                             </pre>
+                             </div>                                   
+                             <p>Resultado:</p>
+                             <fieldset>
+                                 <legend>Ficha</legend>
+                 
+                                 <h4>Sexo:</h4>
+                 
+                                 <form action="cadastro.php" method="get">
+                  <p>
+                      <label for="lmasculino" id="lamasculino" >Masculino:</label>
+                      <input type="radio" name="sexo" value="Masculino"
+                      onmousemove="troca(1)"
+                 
+                      >
+                  </p>
+                  <p>
+                      <label for="lfeminino" id="lafeminino" style="margin-right: 7px;">Feminino:</label>
+                      <input type="radio" name="sexo" value="Feminino"
+                      onmousemove="troca(2)"
+                      >
+                  </p>
+                                 </form>
+                                 <form action="cadastro.php" method="get">
+                  <input type="submit" value="Enviar">
+                                 </form>
+                             </fieldset>
+             </section>
         </article><!-- /#Evento-JS-->
         <article id="Elementos-pai-filho">
             <h2>Acessando elementos pai e filho pelo JS</h2>
@@ -399,7 +345,7 @@
                 <li><strong>lastElementChild</strong>: Retorna o último elemento filho de um elemento.</li>
             </ul>
             <p>Entretanto o resultado só é vizualizado no console.log.</p>
-            <input type="text" >
+          
             <button onclick="pai()">parent</button> Resposta: <output id="resposta"></output>
            <div class="resp">
 <div id="vo">

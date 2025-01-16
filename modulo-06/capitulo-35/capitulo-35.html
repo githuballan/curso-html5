@@ -143,18 +143,68 @@ console.log(storedUser); // {nome: "Allan", idade: 30, cidade: "São Paulo"}
 <!-- /.pre -->
                     
                 <p>Neste exemplo, primeiro criamos um objeto JavaScript chamado <code>user</code>. Em seguida, usamos <code>JSON.stringify()</code> para converter o objeto em uma string JSON e armazenamos essa string no Local Storage usando <code>localStorage.setItem()</code>. Para recuperar o objeto, usamos <code>localStorage.getItem()</code> para obter a string JSON do Local Storage e <code>JSON.parse()</code> para convertê-la de volta para um objeto JavaScript.</p>
-            </article><!--json-local-storage-->        
+            </article><!--json-local-storage-->
+            <article id="timers">
+                <h2>Temporizadores em JavaScript</h2>
+                <p>Os temporizadores em JavaScript são usados para executar uma função após um determinado período de tempo ou em intervalos regulares. Existem dois métodos principais para trabalhar com temporizadores:</p>
+                <ul>
+                    <li><code>setTimeout()</code> e     <li><code>setInterval()</code>.
+                </ul>
+                <h3>setTimeout()</h3>
+                <p>O método <code>setTimeout()</code> executa uma função após um período de tempo especificado (em milissegundos).</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+// Executa a função após 2 segundos (2000 milissegundos)
+setTimeout(function() {
+console.log("Executado após 2 segundos");
+}, 2000);
+                    </pre>
+                </div>
+
+                <h3>setInterval()</h3>
+                <p>O método <code>setInterval()</code> executa uma função repetidamente em intervalos de tempo especificados (em milissegundos).</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+// Executa a função a cada 1 segundo (1000 milissegundos)
+setInterval(function() {
+console.log("Executado a cada 1 segundo");
+}, 1000);
+                    </pre>
+                </div>
+
+                <h3>clearTimeout() e clearInterval()</h3>
+                <p>Os métodos <code>clearTimeout()</code> e <code>clearInterval()</code> são usados para cancelar temporizadores criados com <code>setTimeout()</code> e <code>setInterval()</code>, respectivamente.</p>
+                <p>Exemplo:</p>
+                <div class="pre">
+                    <pre>
+// Criando um temporizador com setTimeout
+let timeoutId = setTimeout(function() {
+console.log("Isso não será executado");
+}, 5000);
+
+// Cancelando o temporizador
+clearTimeout(timeoutId);
+
+// Criando um temporizador com setInterval
+let intervalId = setInterval(function() {
+console.log("Isso não será executado repetidamente");
+}, 1000);
+
+// Cancelando o temporizador
+clearInterval(intervalId);
+                    </pre>
+                </div>
+
+                <p>Use os temporizadores com cuidado para evitar problemas de desempenho.</p>
+            </article><!--timers-->
         </main>
         <footer>
              
             <h1>Materiais utilizados</h1>
             
             <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
-            
-            
-          
-            
-           
             
         </footer>
     </body>

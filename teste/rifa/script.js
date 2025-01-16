@@ -1,14 +1,13 @@
 var nome = [];
+var t=0;//número selecionado na tabela
 
 onload = function () { 
-    // nomev = JSON.parse(localStorage.getItem('nomev')) || [];
+    
     nome = JSON.parse(localStorage.getItem('nome')) || [];
     console.log(nome);
-    // console.log(nomev);
+    
     marcar();
 }
-
-
 
 function sorteio() {
     let ns=0;
@@ -56,11 +55,38 @@ function sorteio() {
 
 }
 
+function limite(){
+      let timer=4000;
+      dis=document.getElementById("aviso");
 
+    if(document.getElementById('numeroRifa').value>100){
+        console.log("Número inválido");
+        document.getElementById('aviso').innerHTML = "*Somente números de 1 a 100";
+        document.getElementById('numeroRifa').value = "";
+        
+        dis.style.display = "block";
+        setTimeout(disp, timer);
+    }
+
+        else if (document.getElementById('numeroRifa').value<1){
+            console.log("Número inválido");
+            document.getElementById('numeroRifa').value = "";
+            document.getElementById('aviso').innerHTML = "*Somente números de 1 a 100";
+            dis.style.display = "block";
+            setTimeout(disp, timer);
+        };
+}
+
+function disp(){
+    let dis=0;
+    dis=document.getElementById("aviso");
+    dis.style.display = "none";
+}
 
 
 function Cadastrar() {
         if(document.getElementById('numeroRifa').value>100){console.log("Número inválido")}
+        else if (document.getElementById('numeroRifa').value<1){console.log("Número inválido")}
         else{
             var nm = document.getElementById('nomeRifa').value;
             let nr = document.getElementById('numeroRifa').value;
@@ -82,7 +108,6 @@ function Cadastrar() {
 marcar();
 
 }
-var t=0;
 
 function excluir(){
         let td=0;
@@ -99,11 +124,10 @@ function excluir(){
         dis.style.display = "none";
         document.getElementById('nomec').value = "";
 
-    }
-
+}
 
 function consultatd(tds){
-   t= tds.innerHTML;
+    t= tds.innerHTML;
     if(nome[t]==null){document.getElementById('nomec').innerHTML = "Vazio";
         document.getElementById('numeroRifa').value = t;
 
@@ -121,8 +145,6 @@ function consultatd(tds){
     }
     
 }
-
-
 
 function marcar(){
     let n = 0;
@@ -143,26 +165,37 @@ function marcar(){
         }
        
     }  
-   }
+}
 
-   function apagMemoria(){
+function apagMemoria(){
     console.log(nome);
-    // console.log(nomev);
+    let n=0;
+   
     let i = 0;
+
+    while (n<101){n++
+            console.log(nome[n])
+            if(nome[n]==null){}else{
+                td=document.getElementById("n"+n)
+                td.removeAttribute('class','marcado')
+            }
+
+        }
 
     while(i < 101) {
         i++;
         nome.shift();
-        // nomev.shift();
     }
     localStorage.clear();
 
     console.log(nome);
-    // console.log(nomev);   
 
-   }
+    
+    
 
-   function listar(){
+}
+
+function listar(){
     let bk=0;
     let n = 0;
     let list = document.getElementById('list');
@@ -189,4 +222,5 @@ function marcar(){
        
     }
     }
-   }
+}
+
