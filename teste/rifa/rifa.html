@@ -32,6 +32,8 @@
                
             }
 
+           
+
             #nomecdiv{
                 text-align: center;
                 margin-top: 20px;
@@ -59,6 +61,28 @@
                 width: 130px;
                 height: 30px;
             }
+            .apg{
+                margin: auto;
+                margin-top: 10px;
+                max-width: 350px;
+                display:flex;
+                flex-flow: row wrap-reverse;
+                justify-content: space-evenly;
+            }
+
+            .int{
+                max-width: 150px;
+                flex: auto;
+                padding: 1%;
+                margin: 0;
+                
+            }
+
+            #Apagar{
+                display: none;
+            }
+        
+
             fieldset{
                 width: 300px;
                 margin: 0 auto;
@@ -86,6 +110,7 @@
         <section id="Rifa">
             <h2 id="res"><output id="nomes"></output></h2>
             
+            
            <form action="" method="dialog">
                <fieldset >
                 <legend>Ficha de Cadastro</legend>
@@ -93,12 +118,17 @@
                         <input type="text" id="nomeRifa" required><br>
                         <label for="numeroRifa">Número:</label>
                         <input type="number" id="numeroRifa" min="1" max="100" required><br>
-                        <button class="buttom" id="btCadastrar" onclick="add() ; elimiNull() ; marcar()">Cadastrar</button>
+                        <button class="buttom" id="btCadastrar" onclick="Cadastrar()">Cadastrar</button>
                    
                </fieldset>    
            </form>
-<button onclick="apagMemoria()">Apagar tudo</button>
-            
+           <div class="apg">
+
+            <button id="Apagar" class="int" onclick="excluir()">Apagar</button>
+               
+               
+               
+           </div>
                 <div id="nomecdiv">
                     <output id="nomec"></output>
                 </div>
@@ -232,8 +262,12 @@
             <div id="sorteio" ><button class="buttom" id="btsorteio" onclick="sorteio()">Sortear</button></div>
            
             <div><button class="buttom" id="btsorteio" onclick="listar()">Listar</button></div>
-            <div id="list">
-                
+            <ul id="list">
+
+
+            </ul>
+            <div style="margin-top: 50px;">
+            <button  class="int" onclick="apagMemoria()">Apagar tudo</button>
             </div>
         </section><!--Rifa-->
     <script src="script.js"></script>
