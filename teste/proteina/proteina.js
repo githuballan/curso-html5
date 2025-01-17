@@ -1,20 +1,24 @@
 
 function calcvporc(col){
-    n3 = parseFloat(document.getElementById("valor"+col).value) || 0;
-    n4 = parseFloat(document.getElementById("embala"+col).value) || 0;
-    n5 = parseFloat(document.getElementById("porc"+col).value) || 0;
+    //n3 = parseFloat(document.getElementById("valor"+col).value) || 0;
+   // n4 = parseFloat(document.getElementById("embala"+col).value) || 0;
+    n4 = parseFloat(document.getElementById("vprot"+col).value) || 0;
+    n5 = parseFloat(document.getElementById("porcao").value) || 0;
     result = document.getElementById("vporc"+col);
 
-    calc = n5*n3/n4;
+    // calc = n5*n3/n4;
+    calc = n4*n5;
     result.innerHTML = calc.toFixed(2);
 } 
 
 function calcvprot(col){
-    n6 = parseFloat(document.getElementById("prot"+col).value) || 0;
-    n7 = parseFloat(document.getElementById("vporc"+col).value) || 0;
+    n6 = parseFloat(document.getElementById("valor"+col).value) || 0;
+    n7 = parseFloat(document.getElementById("embala"+col).value) || 0;
+    n8 = parseFloat(document.getElementById("porc"+col).value) || 0;
+    n9 = parseFloat(document.getElementById("prot"+col).value) || 0;
     result = document.getElementById("vprot"+col);
 
-    calc = n7/n6;
+    calc = n6/n7*n8/n9;
     result.innerHTML = calc.toFixed(2);
    
 } 

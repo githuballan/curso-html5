@@ -40,6 +40,9 @@
             button{
                 width: 120px;
             }
+            #porcao{
+                width: 30px;
+            }
         </style>
     
         <link rel="stylesheet" href="../../style.css">
@@ -60,13 +63,15 @@
             </div>
         
             <div>
-                <label for="lestado">Porcentual de gordura:</label> <br>
+                <label for="lestado">Necessidade de
+                    <br> ingestão diária:</label> <br>
                 <select name="Estado" id="gord" required>
-                    <option value="" selected>Selecione um Porcentual</option>
+                    <option value="" selected>Selecione:</option>
                     
-                        <option value="1.6" >Acima de 20%</option>
-                        <option value="2">10% a 20%</option>
-                        <option value="2.2">Abaixo de 10%</option>
+                        <option value="1.6" >1,6g*kg de peso</option>
+                        <option value="1.8">1,8g*kg de peso</option>
+                        <option value="2.0">2g*kg de peso</option>
+                        <option value="2.2">2.2*kg de peso</option>
                     
                 
                 </select>
@@ -74,38 +79,37 @@
         </form>
         </fieldset>
         <div style="overflow-x: auto;">
-        <table class="tabela_basica">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th><input type="text" placeholder="Whey" maxlength="20"></th>
-                    <th><input type="text" placeholder="Peito de frango" maxlength="20"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Valor do produto</th>
-                    <td><input type="number" placeholder="139" inputmode="numeric" id="valor1"></td>
-                    <td><input type="number" placeholder="20,00" inputmode="numeric" id="valor2"></td>
-                </tr>
-    
-                <tr>
-                    <th>Qtd comprada em gr/ml</th>
-                    <td><input type="number" placeholder="900g" inputmode="numeric" id="embala1"></td>
-                    <td><input type="number" placeholder="1kg" inputmode="numeric" id="embala2"></td>
-                </tr>
+            <table class="tabela_basica">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th><input type="text" placeholder="Whey" maxlength="20" tabindex="1"></th>
+                        <th><input type="text" placeholder="Peito de frango" maxlength="20" tabindex="6"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Valor do produto</th>
+                        <td><input type="number" placeholder="139" inputmode="numeric" id="valor1" tabindex="2"></td>
+                        <td><input type="number" placeholder="20,00" inputmode="numeric" id="valor2" tabindex="7"></td>
+                    </tr>
+                    <tr>
+                        <th>Qtd comprada em gr/ml</th>
+                        <td><input type="number" placeholder="900g" inputmode="numeric" id="embala1" tabindex="3"></td>
+                        <td><input type="number" placeholder="1000g" inputmode="numeric" id="embala2" tabindex="8"></td>
+                    </tr>
                 <tr>
                     <th>Porção em gr/ml</th>
-                    <td><input type="number" placeholder="30g" inputmode="numeric" id="porc1"></td>
-                    <td><input type="number" placeholder="100g" inputmode="numeric" id="porc2"></td>
+                    <td><input type="number" placeholder="30g" inputmode="numeric" id="porc1" tabindex="4"></td>
+                    <td><input type="number" placeholder="100g" inputmode="numeric" id="porc2" tabindex="9"></td>
                 </tr>
                 <tr>
                     <th>Qtd de proteina por porção</th>
-                    <td><input type="number" placeholder="24g" inputmode="numeric" id="prot1"></td>
-                    <td><input type="number" placeholder="31g" inputmode="numeric" id="prot2"></td>
+                    <td><input type="number" placeholder="24g" inputmode="numeric" id="prot1" tabindex="5"></td>
+                    <td><input type="number" placeholder="21g" inputmode="numeric" id="prot2" tabindex="10"></td>
                 </tr>
                 <tr>
-                    <th>Valor por porção</th>
+                    <th>Valor de <input type="number" placeholder="21" tabindex="11" inputmode="numeric" id="porcao">g de proteina</th>
                     <td><span>R$:</span><output id="vporc1"> 00.00 </output></td>
                     <td><span>R$:</span><output id="vporc2"> 00.00 </output></td>
                 </tr>
