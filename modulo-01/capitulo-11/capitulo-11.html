@@ -15,8 +15,13 @@
 </header>
 <main>
     <article><!--Imagens Flexíveis-->
+        <h2>Imagens Flexíveis</h2>
         <section> <!--Introdução-->
-            <h1>Imagens Flexíveis</h1>
+            <p>Imagens flexíveis são aquelas que se adaptam automaticamente ao tamanho da tela do usuário, proporcionando uma melhor experiência de visualização em diferentes dispositivos.</p>
+        
+            <p>As imagens flexíveis são aquelas que se adaptam automaticamente ao tamanho da tela do usuário, proporcionando melhor experiência de visualização em diferentes dispositivos.</p>
+        </section>
+    
             <p>No <a href="../Capítulo 06/Capítulo 06 .html" target="_blank">Capítulo 06</a> nós vimos como adicionar imagens no HTML, porém pudemos observar também que a imagem não se adapta ao tamanho da tela como acontece com os textos.</p>
             
             <p>Para isso podemos usar a tag &lt;picture&gt;, Com essa tag é possível adicionar mais de uma imagem com tamanhos diferentes para que essas imagens se alternem de acordo com o tamanho de tela do usuário:</p>
@@ -29,12 +34,12 @@
         </section>
         <section> <!--Tag picture-->           
             <h3>Tag picture</h3>
-                <p>Note que a imagem acima muda conforme altera a largura da tela isso ocorre porque a tag &lt;picture&gt; testa todas as tag &lt;source&gt; de cima para baixo, se alguma der como verdadeira ela exibe aquela imagem caso nenhuma dê verdadeira ela exibe a última imagem. Por isso é importante sempre deixar a última imagem sem estar na tag source, para evitar que não carregue imagem alguma.</p>
+                <p>Note que a imagem acima muda conforme se altera a largura da tela. Isso ocorre porque a tag &lt;picture&gt; testa todas as tags &lt;source&gt; de cima para baixo. Se alguma der como verdadeira, ela exibe aquela imagem. Caso nenhuma dê verdadeira, ela exibe a última imagem. Por isso é importante sempre deixar a última imagem sem estar na tag source, para evitar que não carregue imagem alguma.</p>
         </section>
         <section><!--Tag source media type-->
             <h3>Tag source media type</h3>
 
-            <p>Essa tag trabalha como o comando "se" do Excel e ela se divide em 3 partes:</p>
+            <p>Essa tag funciona como o comando "se" do Excel e ela se divide em 3 partes:</p>
 
             <ul>
             <li><strong>1ª parte</strong> é onde o teste verifica o tamanho da tela do dispositivo esse teste é feito  "<code>media="(<b>max</b>-width: 750px)"</code>" nesse caso ela está testando o se a tela tem até 750 pixels de largura. Caso a tela tenha até 750 pixels, ela exibirá a imagem configurada em <code>srcset="imagens/foto-p.png"</code> caso contrário ela não exibirá imagem e a tag picture passará para o próximo teste.</li>
@@ -66,32 +71,50 @@
         
             </div>
         </section>
-        <section><!--Tag Figure e figcaption-->
-            <h2>Tag Figure e figcaption</h2>
+    </article>
+<section><!--Tag Figure e figcaption-->
+    <h2>Tag Figure e figcaption</h2>
 
-            <p>A tag figure serve para criar uma relação entre a tag figcaption e a imagem. Por enquanto...</p>
+    <p>A tag figure serve para criar uma relação entre a tag figcaption e a imagem.</p>
 
-            <p>figcaption é a tag que define a legenda que ficará embaixo de imagem. </p>
+    <p>Figcaption é a tag que define a legenda que ficará embaixo da imagem.</p>
 
-            <p>Exemplo:</p>
-            <figure>
-                <img src="imagens/foto-p.png" alt="imagem de exemplo">
-                <figcaption>Legenda da imagem</figcaption>
-            </figure>
-            <p>o comando:</p>
-            <div class="pre">
-                <pre>
+    <p>Exemplo:</p>
+    <figure>
+        <img src="imagens/foto-p.png" alt="imagem de exemplo">
+        <figcaption>Legenda da imagem</figcaption>
+    </figure>
+    <p>O comando:</p>
+    <div class="pre">
+        <pre>
 &lt;figure>
     &lt;img src="imagens/foto-p.png" alt="imagem de exemplo">
     &lt;figcaption>Legenda da imagem&lt;/figcaption>
 &lt;/figure>
-                </pre>
-            </div>
-        </section>
+        </pre>
+    </div>
+<section>
+    <h2>Tag Figure e figcaption</h2>
+    <p>A tag <code>&lt;figure&gt;</code> é usada para agrupar elementos de mídia, como imagens, com suas respectivas legendas, utilizando a tag <code>&lt;figcaption&gt;</code>.</p>
+    <p>Exemplo:</p>
+    <figure>
+        <img src="imagens/foto-p.png" alt="Imagem de exemplo">
+        <figcaption>Legenda da imagem</figcaption>
+    </figure>
+    <p>O código HTML correspondente é:</p>
+    <div class="pre">
+        <pre>
+&lt;figure&gt;
+    &lt;img src="imagens/foto-p.png" alt="Imagem de exemplo"&gt;
+    &lt;figcaption&gt;Legenda da imagem&lt;/figcaption&gt;
+&lt;/figure&gt;
+        </pre>
+    </div>
+</section>
     </article>
     <article><!--Matéria adiantada-->
         
-        <h1>Imagens responsivas com CSS (Matéria adiantada)</h1>
+        <h2>Imagens responsivas com CSS (Matéria adiantada)</h2>
                 A melhor forma de tornar imagens responsivas é difinindo a style com:
                 <ul>
                     <li><strong>max-width: 100%;</strong> Pode ficar definido na folha de estilo geral do site;</li>
@@ -112,18 +135,18 @@
                     <picture>
                         <source media="(max-width: 300px)" srcset="imagens/foto-p.png" type="image/png">
                         <source media="(max-width: 700px)" srcset="imagens/foto-m.png" type="image/png">
-                        <img src="imagens/foto-g.png" alt="Foto Teste">
+                        <img src="../../imagens/ex favicon.jpg" alt="Foto Teste">
                     </picture>
         
-            <h2>
-                Centralização de imagens
-            </h2>
+            
+            <h4>Centralização de imagens </h4>
+           
             <p class="mark">
                 Para centralizar imagens em CSS é necessário aplicar display: block; e depois margin: auto;
             </p>
     </article>
     <article><!--Áudios-->
-        <h1>Áudios</h1>        
+        <h2>Áudios</h2>        
         <section><!--Direitos autorais-->
             <h2>Direitos autorais</h2>
                 <p>Assim como vimos no capítulo 06 sobre direitos autorais de imagens, com áudios também não é deiferente. Uma forma de baixar áudios, ou músicas livres de direitos autorais é usando o uma Ferramenta do YouTube. Para acessá-la basta ir em no YouTube &rarr; Conta&rarr;You Tube Studio&rarr;Bíblioteca de áudios.</p>
@@ -200,30 +223,29 @@
         </section>
     </article>
     <article><!--Vídeos-->
-        <h1>Vídeos</h1>
+        <h2>Vídeos</h2>
+        
         <section><!--Direitos autorais-->
+            <h3>Direitos autorais</h3>
             
-            <h2>Direitos autorais</h2>
             
             <p>Assim como imagens e áudios, víedeos também possuem direitos autorais e um bom site para conseguir videos livre de direitos autorais é o <a href="https://www.pexels.com/pt-br/videos/" target="_blank">Pexels</a>, o mesmo que vimos em imagens.</p>
         </section>
         <section><!--Edição de Vídeos no HTML-->
-            <h2>Formatos de Vídeos para HTML</h2>
-            
-            <p>A edição de vídeos é de suma importância assim como para as fotos. Talvez até mais importante pois um video muito pesado estraga completmente a experiência final do usuário. </p>
-            <p>Durante o curso utilizaremos o editor de videos gratuito HandBreak, mas existe a possibilidade de fazer conversão em site de forma gratuita.Os principais formatos aceitos pelo navegadores são:</p>
-                <ul>
-                    <li>mp4;</li>
-                    <li>m4v;</li>
-                    <li>webm e;</li>
-                    <li>ogv (menos compatível porém boa compactação e qualidade)</li>
-                </ul>
-            
+            <h3>Formatos de Vídeos para HTML</h3>
+            <p>Os principais formatos aceitos pelos navegadores são:</p>
+            <ul>
+                <li>MP4: Formato mais popular, compatível com a maioria dos navegadores e dispositivos.</li>
+                <li>M4V: Similar ao MP4, usado principalmente pela Apple.</li>
+                <li>WebM: Formato aberto e eficiente, suportado por navegadores modernos.</li>
+                <li>OGV: Menos compatível, mas oferece boa compactação e qualidade.</li>
+            </ul>
+            <p>Durante o curso utilizaremos o editor de videos gratuito HandBreak, mas existe a possibilidade de fazer conversão em site de forma gratuita.            
             
         </section>    
         <section>
         <section><!--Adição de Vídeos no próprio site-->
-            <h2>Adição de Vídeos no próprio site</h2>
+            <h3>Adição de Vídeos no próprio site</h3>
             
             <p>Obs.: Os servidores de hospedagens de site cobram por tráfego de dados logo, se hospedar um vídeo pesado no próprio site, esse vídeos encarecerá absurdamente o site.</p>
             
@@ -260,27 +282,32 @@
                
             </setion>
         </section>
-
-<h2>Adição de vídeos de sites Externos</h2>
-
-<h3>YouTube</h3>
-
-<p><Strong>MELHOR OPÇÃO</Strong> basicamente carregue o vídeo no <a href="https://www.youtube.com/?gl=BR" target="_blank">YouTube</a> depois abra o vídeo no YouTube clique em compartilhar&rarr; incoporar &rarr; copiar &rarr; cole no local deseja no VS Code.</p>
-<p>Essa é a melhor opção porque não ocupa tráfego nem dados na sua hospedagem. Resumindo, vídeo grátis.</p>
-<p><strong>Ponto negativo</strong>, ao final do vídeo o youtube oferece outra opções de vídeo e nessas opções pode acabar aparecendo uma opção de um concorrente.</p>
-
-<h3>Vimeo</h3>
-
-<p>Outro site de hospeddagem de vídeo é o <strong><a href="https://vimeo.com/pt-br/" target="_blank"> Vimeo</a></strong> nesse site você pode hospedar seus vídeos com mais qualidade e sem mostrar vídeos na conclusão e sem limites de transferência de dados.</p>
-
-<p><strong>Ponto negativo:</strong> é pago e tem limite de vídeos.</p>
-
-<h2>Desafio</h2>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gqrySQQzvvQ?si=pqsC93V2l78G1M0u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<p><a href="desafio-capitulo-11.html"> Conclusão do desafio</a></p>
-</p>
+<section id="videos-externo">
+    
+    <h2>Adição de vídeos de sites Externos</h2>
+    
+    <h3>YouTube</h3>
+    
+    <p><strong>MELHOR OPÇÃO</strong> basicamente carregue o vídeo no <a href="https://www.youtube.com/?gl=BR" target="_blank">YouTube</a>, depois abra o vídeo no YouTube, clique em compartilhar &rarr; incorporar &rarr; copiar &rarr; cole no local desejado no VS Code.</p>
+    <p>Essa é a melhor opção porque não consome tráfego nem dados da sua hospedagem. Em resumo, vídeos gratuitos sem custos adicionais.</p>
+    <p><strong>Ponto negativo</strong>, ao final do vídeo o youtube oferece outra opções de vídeo e nessas opções pode acabar aparecendo uma opção de um concorrente.</p>
+    
+    <h3>Vimeo</h3>
+    <p>Outra opção de hospedagem de vídeos é o <strong><a href="https://vimeo.com/pt-br/" target="_blank">Vimeo</a></strong>. Nesse site, você pode hospedar seus vídeos com mais qualidade, sem exibir vídeos ao final e sem limites de transferência de dados.</p>
+    <p><strong>Ponto negativo:</strong> é um serviço pago e possui limite de vídeos.</p>
+    
+    <p>Outro site de hospeddagem de vídeo é o <strong><a href="https://vimeo.com/pt-br/" target="_blank"> Vimeo</a></strong> nesse site você pode hospedar seus vídeos com mais qualidade e sem mostrar vídeos na conclusão e sem limites de transferência de dados.</p>
+    
+    <p><strong>Ponto negativo:</strong> é pago e tem limite de vídeos.</p>
+    
+    <h2>Desafio</h2>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gqrySQQzvvQ?si=pqsC93V2l78G1M0u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    <p><a href="desafio-capitulo-11.html"> Conclusão do desafio</a></p>
+    </p>
+</section>
+<!-- /#videos-externo -->
     </article>
 </main>
 <footer>

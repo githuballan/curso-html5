@@ -56,8 +56,9 @@
                 <p>Um objeto JavaScript é uma coleção de pares chave-valor, onde as chaves são strings e os valores podem ser qualquer tipo de dado, incluindo outros objetos. JSON segue a mesma estrutura, mas é representado como uma string.</p>
                 <h3>Métodos</h3>
                 <ul>
-                    <li><strong>JSON.parse()</strong> é usado para converter uma string JSON em um objeto JavaScript.</li> 
-                    <li><strong>JSON.stringify()</strong> é usado para converter um objeto JavaScript em uma string JSON.</li>
+                    <li><strong>JSON.parse(text)</strong>: Converte uma string JSON em um objeto JavaScript.</li>
+                    <li><strong>JSON.stringify(obj)</strong>: Converte um objeto JavaScript em uma string JSON.</li>
+                   
                 </ul>
                 <p>Aqui está um exemplo que mostra a diferença entre os dois métodos:</p>
                 <div class="pre">
@@ -86,11 +87,11 @@ console.log(newObj); // {nome: "Allan", idade: 30, cidade: "São Paulo"}
                 <p>O armazenamento local é útil para armazenar informações como configurações de usuário, preferências, dados de formulários, entre outros. Ele é uma alternativa ao uso de cookies, que são limitados em tamanho e têm outras limitações.</p>
                 <h3>Métodos</h3>
                 <ul>
-                    <li><strong>localStorage.setItem()</strong> é usado para armazenar um par chave-valor no armazenamento local.</li>
-                    <li><strong>localStorage.getItem()</strong> é usado para recuperar o valor associado a uma chave no armazenamento local.</li>
-                    <li><strong>localStorage.removeItem()</strong> é usado para remover um item do armazenamento local.</li>
-                    <li><strong>localStorage.clear()</strong> é usado para remover todos os itens do armazenamento local.</li>
-                </ul>
+                    <li><strong>localStorage.setItem(key, value)</strong>: Armazena um par chave-valor no armazenamento local.</li>
+                    <li><strong>localStorage.getItem(key)</strong>: Recupera o valor associado a uma chave no armazenamento local.</li>
+                    <li><strong>localStorage.removeItem(key)</strong>: Remove um item do armazenamento local.</li>
+                    <li><strong>localStorage.clear()</strong>: Remove todos os itens do armazenamento local.</li>
+               
                 <p>Aqui está um exemplo que mostra como usar o armazenamento local:</p>
                 <div class="pre">
     <pre>
@@ -114,6 +115,12 @@ localStorage.clear();
             <article id="json-local-storage">
                 <h2>Usando JSON com Local Storage</h2>
                 <p>Podemos combinar JSON com Local Storage para armazenar objetos JavaScript de forma persistente no navegador do usuário. Isso é útil quando precisamos salvar dados complexos, como configurações de usuário ou preferências, que podem ser representados como objetos JavaScript.</p>
+                <ul>
+                    <li><code>localStorage.setItem(key, value)</code>: Armazena um par chave-valor no Local Storage.</li>
+                    <li><code>localStorage.getItem(key)</code>: Recupera o valor associado a uma chave no Local Storage.</li>
+                    <li><code>JSON.stringify(value)</code>: Converte um objeto JavaScript em uma string JSON.</li>
+                    <li><code>JSON.parse(value)</code>: Converte uma string JSON de volta para um objeto JavaScript.</li>
+                </ul>
                 <h3>Exemplo</h3>
                 <p>Vamos ver um exemplo de como armazenar e recuperar um objeto JavaScript usando JSON e Local Storage:</p>
 
@@ -148,8 +155,9 @@ console.log(storedUser); // {nome: "Allan", idade: 30, cidade: "São Paulo"}
                 <h2>Temporizadores em JavaScript</h2>
                 <p>Os temporizadores em JavaScript são usados para executar uma função após um determinado período de tempo ou em intervalos regulares. Existem dois métodos principais para trabalhar com temporizadores:</p>
                 <ul>
-                    <li><code>setTimeout()</code> e     <li><code>setInterval()</code>.
-                </ul>
+                    <li><code>setTimeout(function, delay)</code></li>
+                    <li><code>setInterval(function, delay)</code></li>
+               
                 <h3>setTimeout()</h3>
                 <p>O método <code>setTimeout()</code> executa uma função após um período de tempo especificado (em milissegundos).</p>
                 <p>Exemplo:</p>

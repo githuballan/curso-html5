@@ -26,6 +26,20 @@
                 text-align:center;
                 vertical-align: middle;
             }
+            fieldset{
+                width: 450px;
+                margin: auto;
+            }
+            table{
+                width: 450px;
+                margin: auto;
+            }
+            #bt{
+                text-align: center;
+            }
+            button{
+                width: 120px;
+            }
         </style>
     
         <link rel="stylesheet" href="../../style.css">
@@ -37,35 +51,29 @@
         <h1></h1>
     </header>
     <main>
-
-
-    <fieldset>
-
-        <legend>Proteína e Valor </legend>
-            
-    <form>
-    
-        <div>
-            <label for="lnome">Peso (Kg):</label>
-            <input placeholder="85,15" type="number" inputmode="numeric"  id="kg" size="2" required>
-            
-        </div>
-    
-        <div>
-            <label for="lestado">Porcentual de gordura:</label> <br>
-            <select name="Estado" id="gord" required>
-                <option value="" selected>Selecione um Porcentual</option>
+        <fieldset>
+            <legend>Proteína e Valor </legend>            
+        <form>    
+            <div>
+                <label for="lnome">Peso (Kg):</label>
+                <input placeholder="85,15" type="number" inputmode="numeric"  id="kg" size="2" required>
+            </div>
+        
+            <div>
+                <label for="lestado">Porcentual de gordura:</label> <br>
+                <select name="Estado" id="gord" required>
+                    <option value="" selected>Selecione um Porcentual</option>
+                    
+                        <option value="1.6" >Acima de 20%</option>
+                        <option value="2">10% a 20%</option>
+                        <option value="2.2">Abaixo de 10%</option>
+                    
                 
-                    <option value="1.6" >Acima de 20%</option>
-                    <option value="2">10% a 20%</option>
-                    <option value="2.2">Abaixo de 10%</option>
-                
-               
-            </select>
-        </div>    
-    </form>
-    </fieldset>
-<div style="overflow-x: auto;">
+                </select>
+            </div>    
+        </form>
+        </fieldset>
+        <div style="overflow-x: auto;">
         <table class="tabela_basica">
             <thead>
                 <tr>
@@ -77,24 +85,24 @@
             <tbody>
                 <tr>
                     <th>Valor do produto</th>
-                    <td><input type="number" inputmode="numeric" id="valor1"></td>
-                    <td><input type="number" inputmode="numeric" id="valor2"></td>
+                    <td><input type="number" placeholder="139" inputmode="numeric" id="valor1"></td>
+                    <td><input type="number" placeholder="20,00" inputmode="numeric" id="valor2"></td>
                 </tr>
     
                 <tr>
                     <th>Qtd comprada em gr/ml</th>
-                    <td><input type="number" inputmode="numeric" id="embala1"></td>
-                    <td><input type="number" inputmode="numeric" id="embala2"></td>
+                    <td><input type="number" placeholder="900g" inputmode="numeric" id="embala1"></td>
+                    <td><input type="number" placeholder="1kg" inputmode="numeric" id="embala2"></td>
                 </tr>
                 <tr>
                     <th>Porção em gr/ml</th>
-                    <td><input type="number" inputmode="numeric" id="porc1"></td>
-                    <td><input type="number" inputmode="numeric" id="porc2"></td>
+                    <td><input type="number" placeholder="30g" inputmode="numeric" id="porc1"></td>
+                    <td><input type="number" placeholder="100g" inputmode="numeric" id="porc2"></td>
                 </tr>
                 <tr>
                     <th>Qtd de proteina por porção</th>
-                    <td><input type="number" inputmode="numeric" id="prot1"></td>
-                    <td><input type="number" inputmode="numeric" id="prot2"></td>
+                    <td><input type="number" placeholder="24g" inputmode="numeric" id="prot1"></td>
+                    <td><input type="number" placeholder="31g" inputmode="numeric" id="prot2"></td>
                 </tr>
                 <tr>
                     <th>Valor por porção</th>
@@ -119,16 +127,14 @@
             </tbody>
         </table>
         <br>
-    
-
-        <button class="buttom" onclick="calcvporc(1);calcvprot(1);calcvd(1);calcvm(1);calcvporc(2);calcvprot(2);calcvd(2);calcvm(2)"> Calcular</button>
+        <div id="bt"><button class="buttom" onclick="calcvporc(1);calcvprot(1);calcvd(1);calcvm(1);calcvporc(2);calcvprot(2);calcvd(2);calcvm(2)"> Calcular</button></div>
     
 </div>
 <!-- /#teste-proteina -->
     </main>
 
     
-    <script src ="teste.js"></script>
+    <script src ="proteina.js"></script>
 </body>
 
 </html>
