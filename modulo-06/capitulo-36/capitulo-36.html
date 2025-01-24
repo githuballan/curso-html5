@@ -656,7 +656,7 @@
                         <li><strong>requestAnimationFrame(callback)</strong>: Solicita que o navegador chame uma função específica para atualizar uma animação antes da próxima repintura.</li>
                     </ul>
                 </section><!--animacao-requestAnimationFrame-->
-                <section>
+                <section><!--Desafio-->
                     <h3>Desafio</h3>
                     <p>Fazer uma espiral.</p>
                     <div class="canv1">
@@ -676,24 +676,26 @@
                                 raio1 = 190;
                                 start1 = 0;
                                 end1=0;
+                                line1 = 3;
                             };                       
 
                            function chama(){
                            
-                            inter=setInterval(espiral,1); 
+                            inter=setInterval(espiral,10); 
                             
 }
 
                           function espiral(){
                             // v= end1 -= 0.07;
                             // start1 += v;
+                            // line1=0.001;
 
-                          start1 += 0.1;
+                           start1 += 0.1;
                             raio1 -=0.19;
                             end1 +=0.101;//0.101 foi melhor
                             ctxDesafio.beginPath();
                            ctxDesafio.arc(200,200,raio1, start1 ,end1);
-                           ctxDesafio.lineWidth=3;
+                           ctxDesafio.lineWidth= line1;
                            ctxDesafio.stroke();
                             
 
@@ -711,7 +713,56 @@
                        
                     </div>
                      <button id="chama" onclick=" limpa(); chama()">Chama</button>
-                </section>
+                </section><!--Desafio-->
+                <section id="carregando-imagem">
+                    <h3>Exemplo: Carregando Imagem no Canvas</h3>
+                    <p>O elemento <code>&lt;canvas&gt;</code> permite carregar e manipular imagens, o que é útil para criar gráficos dinâmicos e interativos. Vamos explorar como carregar uma imagem no canvas utilizando JavaScript e como usar as propriedades <code>naturalWidth</code> e <code>naturalHeight</code> para obter as dimensões naturais da imagem.</p>
+                    <div class="canv1">
+                        <canvas id="canvasImagem" width="400" height="400"></canvas>
+                        <script>
+                            const canvasImagem = document.getElementById('canvasImagem');
+                            const ctxImagem = canvasImagem.getContext('2d');
+                            const img = new Image();
+                            img.src = './pedra.jpeg';
+
+                            img.onload = function() {
+                                const imgWidth = img.naturalWidth;
+                                const imgHeight = img.naturalHeight;
+                                console.log('Largura natural:', imgWidth);
+                                console.log('Altura natural:', imgHeight);
+                                ctxImagem.drawImage(img, 0, 0, canvasImagem.width, canvasImagem.height);
+                            };
+                        </script>
+                    </div>
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvasImagem" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvasImagem = document.getElementById('canvasImagem');
+    const ctxImagem = canvasImagem.getContext('2d');
+    const img = new Image();
+    img.src = './pedra.jpeg';
+
+    img.onload = function() {
+        const imgWidth = img.naturalWidth;
+        const imgHeight = img.naturalHeight;
+        console.log('Largura natural:', imgWidth);
+        console.log('Altura natural:', imgHeight);
+        ctxImagem.drawImage(img, 0, 0, canvasImagem.width, canvasImagem.height);
+    };
+&lt;/script&gt;
+                        </pre>
+                    </div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>img.src</strong>: Define o caminho da imagem a ser carregada.</li>
+                        <li><strong>img.onload</strong>: Função que é chamada quando a imagem é carregada. Dentro dessa função, podemos manipular a imagem no canvas.</li>
+                        <li><strong>img.naturalWidth</strong>: Obtém a largura natural da imagem.</li>
+                        <li><strong>img.naturalHeight</strong>: Obtém a altura natural da imagem.</li>
+                        <li><strong>ctx.drawImage(img, x, y, width, height)</strong>: Desenha a imagem no canvas. Os parâmetros <code>x</code> e <code>y</code> definem a posição no canvas, e <code>width</code> e <code>height</code> definem as dimensões da imagem desenhada.</li>
+                    </ul>
+                </section><!--carregando-imagem-->
+
             </article><!--canvas-->
 
         </main>
