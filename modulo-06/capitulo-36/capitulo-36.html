@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tudo que você precisa conhecer sobre tags semântica do html5">
+        <meta name="keywords" content="Palavras chaves, chave, palavra">
+        <title>Capítulo 36</title>
+        
+    
+        <link rel="stylesheet" href="../../style.css">
+
+        <style>
+            #meuCanvas{
+                background-color: beige;
+               
+            }
+            .canv1{
+            background-color: antiquewhite;
+               margin: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 401px;
+            }
+        </style>
+    </head>
+    <body>
+        <a class="buttom buttom-index" href="../../index.html">Índice</a>
+        <header>
+            <h1>Capítulo 36</h1>
+            <h1>JavaScript Intermediário</h1>
+        </header>
+        <main>
+            <article id="CSS-HTML-JS">
+                <h2>Animações com HTML, CSS e JS</h2>
+                <p>Para criar animações na web, podemos utilizar uma combinação de HTML, CSS e JavaScript. O HTML define a estrutura, o CSS estiliza os elementos e o JavaScript controla a animação.</p>
+               
+                <p>Vamos criar um exemplo onde uma pequena div atravessa uma div maior de um lado ao outro.</p>
+                
+                <div id="container">
+                    <div id="small-box"></div>
+                </div>
+
+                <style>
+                    #container:hover
+                    {
+                        cursor: pointer;
+                    }
+                    
+                    #container {
+                        width: 300px;
+                        height: 300px;
+                        background-color: lightgray;
+                        position: relative;
+                        overflow: hidden;
+                       
+                        
+                    }
+                    #small-box {
+                        width: 10px;
+                        height: 10px;
+                        background-color: red;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                </style>
+
+                <script>
+                    document.getElementById("container").addEventListener('click', 
+                   
+                    function() { 
+                        const smallBox = document.getElementById('small-box');
+                        const interval = setInterval(frame, 10);
+                        let position = 0;
+
+                        function frame() {
+                           
+                            if (position >= 300) {
+                                clearInterval(interval);
+                            } else {
+                                position++;
+                                smallBox.style.left = position + 'px';
+                            }
+                        
+                    }});
+                </script>
+                 
+                    <p>Para criar a animação, utilizamos a função <code>setInterval</code> do JavaScript, que executa uma função repetidamente em um intervalo de tempo especificado. Dentro dessa função, atualizamos a posição da <code>small-box</code> incrementando o valor da propriedade <code>left</code> até que ela atinja a borda direita da <code>container</code>. Quando a posição atinge 300 pixels, a animação para, pois a função <code>clearInterval</code> é chamada para interromper o intervalo.</p>
+               
+            </article><!--CSS-HTML-JS-->
+            <article id="canvas">
+                 <h2>Canvas</h2>
+                <section id="introducao-canvas">
+                   
+                    <p>O elemento <code>&lt;canvas&gt;</code> do HTML5 é uma poderosa ferramenta para desenhar gráficos e criar animações diretamente na página web. Ele permite que você desenhe formas, textos, imagens e até mesmo crie jogos interativos utilizando JavaScript.</p>
+                    <p>Algumas funcionalidades do <code>&lt;canvas&gt;</code> incluem:</p>
+                    <ul>
+                        <li>Desenho de formas geométricas (retângulos, círculos, linhas, etc.)</li>
+                        <li>Renderização de textos com diferentes fontes e estilos</li>
+                        <li>Manipulação de imagens (corte, redimensionamento, etc.)</li>
+                        <li>Criação de animações complexas e interativas</li>
+                        <li>Aplicação de efeitos visuais, como sombras e gradientes</li>
+                    </ul>
+                    <p>Utilizar o <code>&lt;canvas&gt;</code> pode ser mais vantajoso do que fazer animações com HTML, CSS e JavaScript por várias razões:</p>
+                    <ul>
+                        <li>Maior controle sobre os gráficos e animações, permitindo criar efeitos mais complexos e personalizados</li>
+                        <li>Melhor desempenho, especialmente para animações e jogos que exigem renderização rápida e eficiente</li>
+                        <li>Possibilidade de manipular diretamente os pixels da tela, oferecendo uma flexibilidade que não é possível com CSS</li>
+                        <li>Capacidade de criar gráficos dinâmicos e interativos que respondem a eventos do usuário em tempo real</li>
+                    </ul>
+                </section><!--introducao-canvas-->
+                <section id="desenhando-linha">
+                    <h3>Desenhando uma Linha com Canvas</h3>
+                    <p>Para desenhar uma linha usando o elemento <code>&lt;canvas&gt;</code>, precisamos seguir alguns passos básicos. Primeiro, adicionamos o elemento <code>&lt;canvas&gt;</code> ao nosso HTML. Em seguida, utilizamos o JavaScript para acessar o contexto de desenho e desenhar a linha.</p>
+                    
+                    <p>Vamos começar adicionando o elemento <code>&lt;canvas&gt;</code>:</p>
+<div class="pre">
+    
+                        <pre>&lt;canvas id="meuCanvas" width="400" height="400"&gt;&lt;/canvas&gt;</pre>
+    
+</div>
+                    <div id="atributos">
+                        <ul>
+                            <li><strong>id</strong>: Um identificador único para o elemento <code>&lt;canvas&gt;</code>, que permite acessá-lo e manipulá-lo usando JavaScript.</li>
+                            <li><strong>width</strong>: Define a largura do elemento <code>&lt;canvas&gt;</code> em pixels.</li>
+                            <li><strong>height</strong>: Define a altura do elemento <code>&lt;canvas&gt;</code> em pixels.</li>
+                        </ul>
+                    </div>
+                    <p>Agora, vamos adicionar o código JavaScript para desenhar a linha:</p>
+                    <div class="pre">
+                        
+                        <pre>
+&lt;script&gt;
+    const canvas = document.getElementById('meuCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Definindo as propriedades da linha
+    ctx.strokeStyle = 'blue'; // Cor da linha
+    ctx.lineWidth = 2; // Largura da linha
+
+    // Desenhando a linha
+    ctx.beginPath(); // Inicia um novo caminho
+    ctx.moveTo(50, 50); // Move o ponto inicial para (50, 50)
+    ctx.lineTo(350, 350); // Desenha uma linha até (350, 350)
+    ctx.stroke(); // Desenha o contorno da linha
+&lt;/script&gt;
+                        </pre>
+                        
+                    </div>
+
+                    <div class="canv1">
+    
+                        <canvas id="meuCanvas" width="400" height="400" ></canvas>
+    
+                        <script>
+                            const canvas = document.getElementById('meuCanvas');
+                            const ctx = canvas.getContext('2d');
+    
+                            // Definindo as propriedades da linha
+                            ctx.strokeStyle = 'blue'; // Cor da linha
+                            ctx.lineWidth = 5; // Largura da linha
+    
+                            // Desenhando a linha
+                            ctx.beginPath(); // Inicia um novo caminho
+                            ctx.moveTo(50, 50); // Move o ponto inicial para (50, 50)
+                            ctx.lineTo(350, 350); // Desenha uma linha até (350, 350)
+                            ctx.moveTo(50, 350);
+                            ctx.lineTo(350, 50);
+                            ctx.stroke(); // Desenha o contorno da linha
+                        </script>
+    
+</div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>canvas.getContext('2d')</strong>: Obtém o contexto de desenho 2D do canvas, que nos permite desenhar formas e linhas.</li>
+                        <li><strong>ctx.strokeStyle</strong>: Define a cor da linha.</li>
+                        <li><strong>ctx.lineWidth</strong>: Define a largura da linha em pixels (importante estar sempre definida antes de lineTo).</li>
+                        <li><strong>ctx.beginPath()</strong>: Inicia um novo caminho de desenho.</li>
+                        <li><strong>ctx.moveTo(x, y)</strong>: Move o ponto inicial do caminho para as coordenadas (x, y).</li>
+                        <li><strong>ctx.lineTo(x, y)</strong>: Desenha uma linha até as coordenadas (x, y).</li>
+                        <li><strong>ctx.stroke()</strong>: Desenha o contorno da linha no canvas.</li>
+                    </ul>
+
+                </section><!--desenhando-linha-->
+                <section id="desenhando-retangulo">
+                    
+
+                    
+                   
+                    <h3>Desenhando um Retângulo com Canvas</h3>
+                    <p>Para desenhar um retângulo usando o elemento <code>&lt;canvas&gt;</code>, precisamos seguir alguns passos básicos. Primeiro, adicionamos o elemento <code>&lt;canvas&gt;</code> ao nosso HTML. Em seguida, utilizamos o JavaScript para acessar o contexto de desenho e desenhar o retângulo.</p>
+
+                    <h4>Exemplo 1: Retângulo Preenchido</h4>
+
+                    <div  class="canv1">
+                        <canvas id="canvas1" width="400" height="400"></canvas>
+                        <script>
+                            const canvas1 = document.getElementById('canvas1');
+                            const ctx1 = canvas1.getContext('2d');
+
+                            // Definindo as propriedades do retângulo
+                            ctx1.fillStyle = 'green'; // Cor de preenchimento
+
+                            // Desenhando o retângulo preenchido
+                            ctx1.fillRect(100, 150, 200, 100); // Desenha um retângulo preenchido
+                        </script>
+                    </div> 
+                    
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvas1" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas1 = document.getElementById('canvas1');
+    const ctx1 = canvas1.getContext('2d');
+
+    // Definindo as propriedades do retângulo
+    ctx1.fillStyle = 'green'; // Cor de preenchimento
+
+    // Desenhando o retângulo preenchido
+    ctx1.fillRect(50, 50, 200, 100); // Desenha um retângulo preenchido
+&lt;/script&gt;
+                        </pre>
+                    </div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>canvas.getContext('2d')</strong>: Obtém o contexto de desenho 2D do canvas, que nos permite desenhar formas e linhas.</li>
+                        <li><strong>ctx.fillStyle</strong>: Define a cor de preenchimento do retângulo.</li>
+                        <li><strong>ctx.fillRect(x, y, width, height)</strong>: Desenha um retângulo preenchido com a cor definida em <code>fillStyle</code>. Os parâmetros <code>x</code> e <code>y</code> definem a posição do canto superior esquerdo do retângulo, enquanto <code>width</code> e <code>height</code> definem a largura e a altura do retângulo, respectivamente.</li>
+                    </ul>
+
+                    <h4>Exemplo 2: Retângulo com Borda de Cor Diferente</h4>
+                    <div  class="canv1">
+                        <canvas id="canvas2" width="400" height="400"></canvas>
+                        <script>
+                            const canvas2 = document.getElementById('canvas2');
+                            const ctx2 = canvas2.getContext('2d');
+
+                            // Definindo as propriedades do retângulo
+                            ctx2.strokeStyle = 'blue'; // Cor da borda
+                            ctx2.lineWidth = 5; // Largura da borda
+
+                            // Desenhando o retângulo com borda
+                            ctx2.strokeRect(50, 50, 200, 100); // Desenha um retângulo com borda
+                        </script>
+                    </div>
+
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvas2" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas2 = document.getElementById('canvas2');
+    const ctx2 = canvas2.getContext('2d');
+
+    // Definindo as propriedades do retângulo
+    ctx2.strokeStyle = 'blue'; // Cor da borda
+    ctx2.lineWidth = 5; // Largura da borda
+
+    // Desenhando o retângulo com borda
+    ctx2.strokeRect(50, 50, 200, 100); // Desenha um retângulo com borda
+&lt;/script&gt;
+                        </pre>
+                    </div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>ctx.strokeStyle</strong>: Define a cor da borda do retângulo.</li>
+                        <li><strong>ctx.lineWidth</strong>: Define a largura da borda do retângulo.</li>
+                        <li><strong>ctx.strokeRect(x, y, width, height)</strong>: Desenha um retângulo com borda usando a cor definida em <code>strokeStyle</code> e a largura definida em <code>lineWidth</code>. Os parâmetros <code>x</code>, <code>y</code>, <code>width</code> e <code>height</code> têm a mesma função que em <code>fillRect</code>.</li>
+                    </ul>
+
+                    <h4>Exemplo 3: Retângulo com "Buraco" no Centro</h4>
+                    <div  class="canv1">
+                        <canvas id="canvas3" width="400" height="400"></canvas>
+                        <script>
+                            const canvas3 = document.getElementById('canvas3');
+                            const ctx3 = canvas3.getContext('2d');
+
+                            // Desenhando o retângulo preenchido
+                            ctx3.fillStyle = 'red';
+                            ctx3.fillRect(50, 50, 300, 200);
+
+                            // Criando um "buraco" no centro
+                            ctx3.clearRect(150, 100, 100, 100); // Limpa um retângulo no centro
+                        </script>
+                    </div>
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvas3" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas3 = document.getElementById('canvas3');
+    const ctx3 = canvas3.getContext('2d');
+
+    // Desenhando o retângulo preenchido
+    ctx3.fillStyle = 'red';
+    ctx3.fillRect(50, 50, 300, 200);
+
+    // Criando um "buraco" no centro
+    ctx3.clearRect(150, 100, 100, 100); // Limpa um retângulo no centro
+&lt;/script&gt;
+                        </pre>
+                    </div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>ctx.clearRect(x, y, width, height)</strong>: Limpa a área definida pelos parâmetros <code>x</code>, <code>y</code>, <code>width</code> e <code>height</code>, tornando-a transparente. Isso cria um "buraco" no retângulo preenchido.</li>
+                    </ul>
+                </section><!--desenhando-retangulo-->
+                <section id="desenhando-duas-linhas">
+                    <h3>Desenhando Duas Linhas com Canvas</h3>
+                    
+                    <p>
+                        Para desenhar duas linhas usando o elemento &lt;canvas>, precisamos seguir alguns passos básicos. Primeiro, adicionamos o elemento &lt;canvas> ao nosso HTML. Em seguida, utilizamos o JavaScript para acessar o contexto de desenho e desenhar as linhas.
+
+                        </p>
+
+                    <h4>Exemplo: Duas Linhas com Canvas</h4>
+                    <div class="canv1">
+                        <canvas id="canvas4" width="400" height="400"></canvas>
+                        <script>
+                            const canvas4 = document.getElementById('canvas4');
+                            const ctx4 = canvas4.getContext('2d');
+
+                            // Desenhando a primeira linha
+                            ctx4.beginPath(); // Inicia um novo caminho
+                            ctx4.moveTo(50, 50); // Move o ponto inicial para (50, 50)
+                            ctx4.lineTo(350, 50); // Desenha uma linha até (350, 50)
+                            ctx4.strokeStyle = 'blue'; // Define a cor da linha
+                            ctx4.lineWidth = 2; // Define a largura da linha
+                            ctx4.stroke(); // Desenha o contorno da linha
+
+                            // Desenhando a segunda linha
+                            ctx4.beginPath(); // Inicia um novo caminho
+                            ctx4.moveTo(50, 100); // Move o ponto inicial para (50, 100)
+                            ctx4.lineTo(350, 100); // Desenha uma linha até (350, 100)
+                            ctx4.strokeStyle = 'red'; // Define a cor da linha
+                            ctx4.lineWidth = 2; // Define a largura da linha
+                            ctx4.stroke(); // Desenha o contorno da linha
+                        </script>
+                    </div>
+
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvas4" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas4 = document.getElementById('canvas4');
+    const ctx4 = canvas4.getContext('2d');
+
+    // Desenhando a primeira linha
+    ctx4.beginPath(); // Inicia um novo caminho
+    ctx4.moveTo(50, 50); // Move o ponto inicial para (50, 50)
+    ctx4.lineTo(350, 50); // Desenha uma linha até (350, 50)
+    ctx4.strokeStyle = 'blue'; // Define a cor da linha
+    ctx4.lineWidth = 2; // Define a largura da linha
+    ctx4.stroke(); // Desenha o contorno da linha
+
+    // Desenhando a segunda linha
+    ctx4.beginPath(); // Inicia um novo caminho
+    ctx4.moveTo(50, 100); // Move o ponto inicial para (50, 100)
+    ctx4.lineTo(350, 100); // Desenha uma linha até (350, 100)
+    ctx4.strokeStyle = 'red'; // Define a cor da linha
+    ctx4.lineWidth = 2; // Define a largura da linha
+    ctx4.stroke(); // Desenha o contorno da linha
+&lt;/script&gt;
+                        </pre>
+                    </div>
+
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>canvas.getContext('2d')</strong>: Obtém o contexto de desenho 2D do canvas, que nos permite desenhar formas e linhas.</li>
+                        <li><strong>ctx.beginPath()</strong>: Inicia um novo caminho de desenho. Isso é necessário para desenhar formas ou linhas separadas.</li>
+                        <li><strong>ctx.moveTo(x, y)</strong>: Move o ponto inicial do caminho para as coordenadas (x, y).</li>
+                        <li><strong>ctx.lineTo(x, y)</strong>: Desenha uma linha até as coordenadas (x, y).</li>
+                        <li><strong>ctx.strokeStyle</strong>: Define a cor da linha.</li>
+                        <li><strong>ctx.lineWidth</strong>: Define a largura da linha em pixels.</li>
+                        <li><strong>ctx.stroke()</strong>: Desenha o contorno da linha no canvas.</li>
+                    </ul>
+                    <p>Se não usarmos o <code>beginPath()</code> ao desenhar as duas linhas, elas serão conectadas automaticamente. Isso ocorre porque o contexto de desenho do canvas mantém um caminho atual, e qualquer nova linha desenhada será adicionada a esse caminho. No exemplo acima, se omitirmos o <code>beginPath()</code> antes de desenhar a segunda linha, o resultado será uma linha contínua que vai de (50, 50) a (350, 50) e depois de (350, 50) a (350, 100). Para evitar isso e garantir que as linhas sejam desenhadas separadamente, é importante usar <code>beginPath()</code> para iniciar um novo caminho de desenho.</p>
+
+                </section><!--desenhando-duas-linhas -->
+                <section id="closepath">
+                    <h3>Exemplo: Usando o Comando closePath</h3>
+                    <p>O método <code>closePath()</code> do contexto de desenho 2D do canvas é utilizado para fechar um caminho, conectando o ponto atual ao ponto inicial do caminho. Isso é útil para desenhar formas fechadas, como polígonos.</p>
+                    <div class="canv1">
+                        <canvas id="canvas7" width="400" height="400"></canvas>
+                        <script>
+                            const canvas7 = document.getElementById('canvas7');
+                            const ctx7 = canvas7.getContext('2d');
+
+                            // Desenhando um triângulo
+                            ctx7.beginPath(); // Inicia um novo caminho
+                            ctx7.moveTo(100, 100); // Move o ponto inicial para (100, 100)
+                            ctx7.lineTo(300, 100); // Desenha uma linha até (300, 100)
+                            ctx7.lineTo(200, 300); // Desenha uma linha até (200, 300)
+                            ctx7.closePath(); // Fecha o caminho conectando o ponto atual ao ponto inicial
+                            ctx7.strokeStyle = 'green'; // Define a cor da linha
+                            ctx7.lineWidth = 2; // Define a largura da linha
+                            ctx7.stroke(); // Desenha o contorno do triângulo
+                        </script>
+                    </div>
+
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvas7" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas7 = document.getElementById('canvas7');
+    const ctx7 = canvas7.getContext('2d');
+
+    // Desenhando um triângulo
+    ctx7.beginPath(); // Inicia um novo caminho
+    ctx7.moveTo(100, 100); // Move o ponto inicial para (100, 100)
+    ctx7.lineTo(300, 100); // Desenha uma linha até (300, 100)
+    ctx7.lineTo(200, 300); // Desenha uma linha até (200, 300)
+    ctx7.closePath(); // Fecha o caminho conectando o ponto atual ao ponto inicial
+    ctx7.strokeStyle = 'green'; // Define a cor da linha
+    ctx7.lineWidth = 2; // Define a largura da linha
+    ctx7.stroke(); // Desenha o contorno do triângulo
+&lt;/script&gt;
+                        </pre>
+                    </div>
+
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>ctx.closePath()</strong>: Fecha o caminho atual conectando o ponto atual ao ponto inicial do caminho.</li>
+                    </ul>
+                </section><!--closepath-->
+                <section id="circulo">
+                    <h3>Exemplo: Desenhando um Círculo com Canvas</h3>
+                    <p>O elemento <code>&lt;canvas&gt;</code> também permite desenhar círculos e arcos, o que é útil para criar gráficos, diagramas e outros elementos visuais. Vamos explorar como desenhar um círculo simples e um arco utilizando o contexto de desenho 2D do canvas.</p>
+                    <div class="canv1">
+                        <canvas id="canvas5" width="400" height="400"></canvas>
+                        <script>
+
+                            const canvas5 = document.getElementById('canvas5');
+                            const ctx5 = canvas5.getContext('2d');
+                            
+                            
+                            function radius(){
+                                
+                            ctx5.clearRect(0, 0, 400, 400);
+                                ini= document.getElementById("start").value;
+                                
+                                fim= document.getElementById("end").value;
+
+                                raio=document.getElementById("raio").value;
+
+                                line=document.getElementById("line").value;
+                                
+
+                            // Desenhando um círculo
+                            ctx5.beginPath(); // Inicia um novo caminho
+                            ctx5.arc(200, 200, raio, ini, fim* Math.PI); // Desenha um círculo com centro em (200, 200) e raio de 100
+                            ctx5.strokeStyle = 'purple'; // Define a cor da linha
+                            ctx5.lineWidth = line; // Define a largura da linha
+                            ctx5.stroke(); // Desenha o contorno do círculo
+                            }
+                        </script>
+                    </div>
+                    <p><strong>Teste valores de 0 a 2:</strong></p>
+                    <p><strong>lineWidth:</strong></strong><input type="number" id="line"></p>
+                    <p><strong>Raio:</strong></strong><input type="number" id="raio"></p>
+                    <p><strong>startAngle:</strong></strong><input type="number" id="start"></p>
+                    <p><strong>endAngle:</strong><input type="number" id="end"><button onclick="radius()">Calcular</button></p>
+                    
+                    <p>Valores maiores que dois não aparecem porque ele desenha por cima da linha que já está desenhada.</p>
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvas5" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas5 = document.getElementById('canvas5');
+    const ctx5 = canvas5.getContext('2d');
+
+    // Desenhando um círculo
+    ctx5.beginPath(); // Inicia um novo caminho
+    ctx5.arc(200, 200, 100, 0, 2 * Math.PI); // Desenha um círculo com centro em (200, 200) e raio de 100
+    ctx5.strokeStyle = 'purple'; // Define a cor da linha
+    ctx5.lineWidth = 3; // Define a largura da linha
+    ctx5.stroke(); // Desenha o contorno do círculo
+&lt;/script&gt;
+                        </pre>
+                    </div>
+
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>ctx.arc(x, y, radius, startAngle, endAngle)</strong>: Desenha um arco ou círculo. Os parâmetros <code>x</code> e <code>y</code> definem o centro do círculo, <code>radius</code> define o raio, <code>startAngle</code> e <code>endAngle</code> definem o ângulo inicial e final do arco em radianos.</li>
+                    </ul>
+                    
+                    <section id="radianos">
+                        <h4>Mas o que são Radianos?</h4>
+                        <p>Radianos são uma unidade de medida para ângulos, utilizada principalmente em matemática e física. Um radiano é definido como o ângulo formado no centro de um círculo por um arco cuja extensão é igual ao raio do círculo. Em outras palavras, um radiano é o ângulo correspondente a um arco de comprimento igual ao raio do círculo. Existem 2π radianos em uma circunferência completa, o que equivale a 360 graus. Portanto, para converter graus em radianos, multiplicamos o valor em graus por π/180.</p>
+                        
+                        <h5>Exemplo: Desenhando um Arco com Canvas usando Radianos</h5>
+                        <div class="canv1">
+                            <canvas id="canvas6" width="400" height="400"></canvas>
+                            <script>
+                                const canvas6 = document.getElementById('canvas6');
+                                const ctx6 = canvas6.getContext('2d');
+
+                                // Desenhando um arco
+                                ctx6.beginPath(); // Inicia um novo caminho
+                                ctx6.arc(200, 200, 100, 0, Math.PI / 2); // Desenha um arco de 0 a 90 graus (π/2 radianos)
+                                ctx6.strokeStyle = 'orange'; // Define a cor da linha
+                                ctx6.lineWidth = 3; // Define a largura da linha
+                                ctx6.stroke(); // Desenha o contorno do arco
+                            </script>
+                        </div>
+
+                        <div class="pre">
+                            <pre>
+                    &lt;canvas id="canvas6" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas6 = document.getElementById('canvas6');
+    const ctx6 = canvas6.getContext('2d');
+
+    // Desenhando um arco
+    ctx6.beginPath(); // Inicia um novo caminho
+    ctx6.arc(200, 200, 100, 0, Math.PI / 2); // Desenha um arco de 0 a 90 graus (π/2 radianos)
+    ctx6.strokeStyle = 'orange'; // Define a cor da linha
+    ctx6.lineWidth = 3; // Define a largura da linha
+    ctx6.stroke(); // Desenha o contorno do arco
+&lt;/script&gt;
+                            </pre>
+                        </div>
+
+                        <p>Explicação dos elementos:</p>
+                        <ul>
+                            <li><strong>ctx.arc(x, y, radius, startAngle, endAngle)</strong>: Desenha um arco ou círculo. Os parâmetros <code>x</code> e <code>y</code> definem o centro do arco, <code>radius</code> define o raio, <code>startAngle</code> e <code>endAngle</code> definem o ângulo inicial e final do arco em radianos.</li>
+                        </ul>
+                    </section> <!--radianos-->
+                </section><!-- circulo -->
+                <section id="animacao-setinterval">
+                    <h3>Exemplo: Animação com Canvas usando setInterval</h3>
+                    <p>Além de <code>requestAnimationFrame</code>, também podemos usar <code>setInterval</code> para criar animações no canvas. Vamos explorar como criar uma animação simples utilizando o contexto de desenho 2D do canvas e a função <code>setInterval</code>.</p>
+                    <div class="canv1">
+                        <canvas id="canvasAnimacaoInterval" width="400" height="400"></canvas>
+                        <script>
+                            const canvasAnimacaoInterval = document.getElementById('canvasAnimacaoInterval');
+                            const ctxAnimacaoInterval = canvasAnimacaoInterval.getContext('2d');
+                            let xInterval = 23;
+                            let yInterval = 200;
+                            let dxInterval = 5;
+
+                            function drawInterval() {
+                                ctxAnimacaoInterval.clearRect(0, 0, canvasAnimacaoInterval.width, canvasAnimacaoInterval.height);
+                                ctxAnimacaoInterval.beginPath();
+                                ctxAnimacaoInterval.arc(xInterval, yInterval, 20, 0, 2 * Math.PI);
+                                ctxAnimacaoInterval.fillStyle = 'red';
+                                ctxAnimacaoInterval.fill();
+                                ctxAnimacaoInterval.stroke();
+                                xInterval += dxInterval;
+                                if (xInterval > canvasAnimacaoInterval.width - 20 || xInterval < 22) {
+                                    dxInterval = -dxInterval;
+                                }
+                            }
+
+                            setInterval(drawInterval, 20);
+                        </script>
+                    </div>
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvasAnimacaoInterval" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvasAnimacaoInterval = document.getElementById('canvasAnimacaoInterval');
+    const ctxAnimacaoInterval = canvasAnimacaoInterval.getContext('2d');
+    let xInterval = 0;
+    let yInterval = 200;
+    let dxInterval = 2;
+
+    function drawInterval() {
+        ctxAnimacaoInterval.clearRect(0, 0, canvasAnimacaoInterval.width, canvasAnimacaoInterval.height);
+        ctxAnimacaoInterval.beginPath();
+        ctxAnimacaoInterval.arc(xInterval, yInterval, 20, 0, 2 * Math.PI);
+        ctxAnimacaoInterval.fillStyle = 'red';
+        ctxAnimacaoInterval.fill();
+        ctxAnimacaoInterval.stroke();
+        xInterval += dxInterval;
+        if (xInterval > canvasAnimacaoInterval.width - 20 || xInterval &lt; 20) {
+            dxInterval = -dxInterval;
+        }
+    }
+
+    setInterval(drawInterval, 20);
+&lt;/script&gt;
+                        </pre>
+                    </div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>setInterval(callback, delay)</strong>: Chama repetidamente a função <code>callback</code> a cada <code>delay</code> milissegundos.</li>
+                        <li><strong>ctx.clearRect(x, y, width, height)</strong>: Limpa a área definida pelos parâmetros <code>x</code>, <code>y</code>, <code>width</code> e <code>height</code>, permitindo que a animação seja redesenhada.</li>
+                        <li><strong>ctx.arc(x, y, radius, startAngle, endAngle)</strong>: Desenha um arco ou círculo. Os parâmetros <code>x</code> e <code>y</code> definem o centro do círculo, <code>radius</code> define o raio, <code>startAngle</code> e <code>endAngle</code> definem o ângulo inicial e final do arco em radianos.</li>
+                    </ul>
+                </section><!--animacao-setinterval-->
+                <section id="animacao-requestAnimationFrame">
+                    <h3>Exemplo: Animação com requestAnimationFrame</h3>
+                    <p>O elemento <code>&lt;canvas&gt;</code> também permite criar animações, o que é útil para criar gráficos dinâmicos, jogos e outros elementos interativos. Vamos explorar como criar uma animação simples utilizando o contexto de desenho 2D do canvas.</p>
+                    <div class="canv1">
+                        <canvas id="canvasAnimacao" width="400" height="400"></canvas>
+                        <script>
+                            const canvasAnimacao = document.getElementById('canvasAnimacao');
+                            const ctxAnimacao = canvasAnimacao.getContext('2d');
+                            let x = 23;
+                            let y = 23;
+                            let dx = 2;
+                            let dy = 2;
+
+                            function draw() {
+                                ctxAnimacao.clearRect(0, 0, canvasAnimacao.width, canvasAnimacao.height);
+                                ctxAnimacao.beginPath();
+                                ctxAnimacao.arc(x, y, 20, 0, 2 * Math.PI);
+                                ctxAnimacao.fillStyle = 'blue';
+                                ctxAnimacao.fill();
+                                ctxAnimacao.stroke();
+                                x += dx;
+                                y += dy;
+                                if (x > canvasAnimacao.width-22 || x <22) {
+                                    dx = -dx;
+                                    dy = -dy;
+                                }
+                                requestAnimationFrame(draw);
+                            }
+
+                            draw();
+                        </script>
+                    </div>
+                    <div class="pre">
+                        <pre>
+&lt;canvas id="canvasAnimacao" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvasAnimacao = document.getElementById('canvasAnimacao');
+    const ctxAnimacao = canvasAnimacao.getContext('2d');
+    let x = 0;
+    let y = 200;
+    let dx = 2;
+
+    function draw() {
+        ctxAnimacao.clearRect(0, 0, canvasAnimacao.width, canvasAnimacao.height);
+        ctxAnimacao.beginPath();
+        ctxAnimacao.arc(x, y, 20, 0, 2 * Math.PI);
+        ctxAnimacao.fillStyle = 'blue';
+        ctxAnimacao.fill();
+        ctxAnimacao.stroke();
+        x += dx;
+        if (x > canvasAnimacao.width || x < 0) {
+            dx = -dx;
+        }
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+&lt;/script&gt;
+                        </pre>
+                    </div>
+                    <p>Explicação dos elementos:</p>
+                    <ul>
+                        <li><strong>ctx.clearRect(x, y, width, height)</strong>: Limpa a área definida pelos parâmetros <code>x</code>, <code>y</code>, <code>width</code> e <code>height</code>, permitindo que a animação seja redesenhada.</li>
+                        <li><strong>ctx.arc(x, y, radius, startAngle, endAngle)</strong>: Desenha um arco ou círculo. Os parâmetros <code>x</code> e <code>y</code> definem o centro do círculo, <code>radius</code> define o raio, <code>startAngle</code> e <code>endAngle</code> definem o ângulo inicial e final do arco em radianos.</li>
+                        <li><strong>requestAnimationFrame(callback)</strong>: Solicita que o navegador chame uma função específica para atualizar uma animação antes da próxima repintura.</li>
+                    </ul>
+                </section><!--animacao-requestAnimationFrame-->
+                <section>
+                    <h3>Desafio</h3>
+                    <p>Fazer uma espiral.</p>
+                    <div class="canv1">
+                        <canvas id="canvasDesafio" width="400" height="400"></canvas>
+                        <script>
+                           var canvasDesafio = document.getElementById("canvasDesafio");
+                           var ctxDesafio = canvasDesafio.getContext("2d");
+
+                           var raio1 = 190;
+                           var start1 = 0;
+                           var end1=0;
+                        //    var inter =setInterval(espiral,2)
+
+
+
+                            function limpa(){ ctxDesafio.clearRect(0, 0, 400, 400);
+                                raio1 = 190;
+                                start1 = 0;
+                                end1=0;
+                            };                       
+
+                           function chama(){
+                           
+                            inter=setInterval(espiral,1); 
+                            
+}
+
+                          function espiral(){
+                            // v= end1 -= 0.07;
+                            // start1 += v;
+
+                          start1 += 0.1;
+                            raio1 -=0.19;
+                            end1 +=0.101;//0.101 foi melhor
+                            ctxDesafio.beginPath();
+                           ctxDesafio.arc(200,200,raio1, start1 ,end1);
+                           ctxDesafio.lineWidth=3;
+                           ctxDesafio.stroke();
+                            
+
+                             if(raio1<2){
+                                console.log("interval cleared");
+                                clearInterval(inter);
+                                
+                             }
+                           }
+
+                        
+
+                        </script>
+
+                       
+                    </div>
+                     <button id="chama" onclick=" limpa(); chama()">Chama</button>
+                </section>
+            </article><!--canvas-->
+
+        </main>
+        <footer>
+             
+            <h1>Materiais utilizados</h1>
+            
+            <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>
+            
+        </footer>
+    </body>
+</html>

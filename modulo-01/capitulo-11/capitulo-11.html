@@ -17,14 +17,10 @@
     <article><!--Imagens Flexíveis-->
         <h2>Imagens Flexíveis</h2>
         <section> <!--Introdução-->
-            <p>Imagens flexíveis são aquelas que se adaptam automaticamente ao tamanho da tela do usuário, proporcionando uma melhor experiência de visualização em diferentes dispositivos.</p>
-        
-            <p>As imagens flexíveis são aquelas que se adaptam automaticamente ao tamanho da tela do usuário, proporcionando melhor experiência de visualização em diferentes dispositivos.</p>
-        </section>
-    
+         
             <p>No <a href="../Capítulo 06/Capítulo 06 .html" target="_blank">Capítulo 06</a> nós vimos como adicionar imagens no HTML, porém pudemos observar também que a imagem não se adapta ao tamanho da tela como acontece com os textos.</p>
             
-            <p>Para isso podemos usar a tag &lt;picture&gt;, Com essa tag é possível adicionar mais de uma imagem com tamanhos diferentes para que essas imagens se alternem de acordo com o tamanho de tela do usuário:</p>
+            <p>Para isso podemos usar a tag &lt;picture&gt;. Com essa tag é possível adicionar mais de uma imagem com tamanhos diferentes para que essas imagens se alternem de acordo com o tamanho da tela do usuário:</p>
 
                 <picture>
                     <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
@@ -71,48 +67,29 @@
         
             </div>
         </section>
-    </article>
-<section><!--Tag Figure e figcaption-->
-    <h2>Tag Figure e figcaption</h2>
+    </article><!--Imagens Flexíveis-->
 
-    <p>A tag figure serve para criar uma relação entre a tag figcaption e a imagem.</p>
+    <article id="figcaption"><!--Tag Figure e figcaption-->
+        <h2>Tag Figure e figcaption</h2>
+        <p>A tag <code>&lt;figure&gt;</code> é usada para agrupar elementos de mídia, como imagens, com suas respectivas legendas, utilizando a tag <code>&lt;figcaption&gt;</code>.</p>
+        <p>Exemplo:</p>
+        <figure>
+            <img src="imagens/foto-p.png" alt="Imagem de exemplo">
+            <figcaption>Legenda da imagem</figcaption>
+        </figure>
+        <p>O código HTML correspondente é:</p>
+        <div class="pre">
+            <pre>
+    &lt;figure&gt;
+        &lt;img src="imagens/foto-p.png" alt="Imagem de exemplo"&gt;
+        &lt;figcaption&gt;Legenda da imagem&lt;/figcaption&gt;
+    &lt;/figure&gt;
+            </pre>
+        </div>
+    </article><!--Tag Figure e figcaption-->
 
-    <p>Figcaption é a tag que define a legenda que ficará embaixo da imagem.</p>
-
-    <p>Exemplo:</p>
-    <figure>
-        <img src="imagens/foto-p.png" alt="imagem de exemplo">
-        <figcaption>Legenda da imagem</figcaption>
-    </figure>
-    <p>O comando:</p>
-    <div class="pre">
-        <pre>
-&lt;figure>
-    &lt;img src="imagens/foto-p.png" alt="imagem de exemplo">
-    &lt;figcaption>Legenda da imagem&lt;/figcaption>
-&lt;/figure>
-        </pre>
-    </div>
-<section>
-    <h2>Tag Figure e figcaption</h2>
-    <p>A tag <code>&lt;figure&gt;</code> é usada para agrupar elementos de mídia, como imagens, com suas respectivas legendas, utilizando a tag <code>&lt;figcaption&gt;</code>.</p>
-    <p>Exemplo:</p>
-    <figure>
-        <img src="imagens/foto-p.png" alt="Imagem de exemplo">
-        <figcaption>Legenda da imagem</figcaption>
-    </figure>
-    <p>O código HTML correspondente é:</p>
-    <div class="pre">
-        <pre>
-&lt;figure&gt;
-    &lt;img src="imagens/foto-p.png" alt="Imagem de exemplo"&gt;
-    &lt;figcaption&gt;Legenda da imagem&lt;/figcaption&gt;
-&lt;/figure&gt;
-        </pre>
-    </div>
-</section>
-    </article>
-    <article><!--Matéria adiantada-->
+    </article id="imagens-responsivas">
+    <article><!--imagens-responsivas-->
         
         <h2>Imagens responsivas com CSS (Matéria adiantada)</h2>
                 A melhor forma de tornar imagens responsivas é difinindo a style com:
@@ -145,86 +122,149 @@
                 Para centralizar imagens em CSS é necessário aplicar display: block; e depois margin: auto;
             </p>
     </article>
-    <article><!--Áudios-->
-        <h2>Áudios</h2>        
-        <section><!--Direitos autorais-->
-            <h2>Direitos autorais</h2>
-                <p>Assim como vimos no capítulo 06 sobre direitos autorais de imagens, com áudios também não é deiferente. Uma forma de baixar áudios, ou músicas livres de direitos autorais é usando o uma Ferramenta do YouTube. Para acessá-la basta ir em no YouTube &rarr; Conta&rarr;You Tube Studio&rarr;Bíblioteca de áudios.</p>
-                <p>Aqui você poderá fazer downloads de toda as músicas de graça. No entanto, nem todos são 100% livers de direitos autorais, pois algumas exigem atribuição, ISSO É, precisar colocar uma legenda atribuindo aquela música ao autor delas. Para evitar isso basta filtrar os resultados clicando em Atribuições&rarr;Atribuição não necessária</p>
-        </section>
-        <section><!--Adição de Áudios no HTML-->    
-            <h2>Adição de Áudios no HTML</h2>
-            <section><!--Introdução-->
-                <p>No HTML 5 são aceitos 3 formatos de áudios:</p>
-                <ul>
-                <li><b>MP3:</b> Excelente formato, bem conhecido, lido por muitos navegadores e bem compacto.</li>
-                <li><b>OGG:</b>Pouco conhecido, lido por alguns navegadores e muito compacto</li>
-                <li><b>WAV:</b> Muito conhecido, lido por muito navegadores, porém muito pesado. Esse formato deve ser usado em último caso.</li>
-                </ul>
-
-            </section>
-            <h3>Tag audio:</h3>
-    
-            <p>Na primeira parte dessa tag nós indicaremos o local e que bom que essa tag aceita o Atalho "ctrl+espaço". Então a primeira parte fica:</p>
-                  
-                    "&lt;audio src="ctrl+espaço"...
-    
-            <h4>Atributos</h4>
-                    <b>Atributo autoplay:</b> assim o aúdio começa a tocar assim que a página for carregada. PORÉM, usuário não suportam isso pois se o volume estiver alto pode assustar e o usuário sairá da página imediatamente. Outro ponto negativo é que a maioria dos navegadores ignoram esse comando e não reproduzem o audio. E o pior ponto desse Atributo é que a página só termina de carregar quando o áudio estiver concluído o download, o que deixará a página extremamente pesada.
-                <br><b>Atributo Control:</b> Esse Atributo exibe os controles básicos do áudio disponbilizado pela página como na imagem abaixo <b>NUNCA ESQUEÇA ESSE DE ADICONAR ESSE ATRIBUTO</b> :
-            <img style="width: 300px;" src="imagens/Captura de tela 2024-02-23 111458.png" alt="Print Controle de áudio">
-            <p><b>Atributo loop:</b> Faz o áudio ficar reproduzindo em loop, quando acabar o áudio recomeça até o usuário pausar</p>
-            <b>Atributo Preload:</b> nesse Atributo podemos escolher que dados do áudio serão carregados juntos com a página: <br>
-            "&lt;audio src="ctrl+espaço" controls preload"<b>auto</b>"..."
-            <br>
-            <b>Auto:</b> Carrega todo o áudio. Não é indicado pois demora mais a carregar a página e se preencher nada o auto é o padrão, então preencha! <br>
-            <b>Metadata:</b> Carrega apenas algumas informações sobre o áudio como: duração, nome e formato. esse é INDICADO! <br>
-            "&lt;audio src="ctrl+espaço" controls preload"<b>metadata</b>"..."
-            <br>
-            <b>None:</b>Carrega nada.
-            <br>
-            "&lt;audio src="ctrl+espaço" controls preload"<b>none</b>"..."
-            <br>
-    
-            <p><h3>Tag áudio como tag picture</h3>
-                A tag áudio também pode funiconar semelhante a tag picture onde ela escolhe qual audio carregar. Esse Atributo serve para evitar incompatibilidade com o formato do áudio. Assim podemos botar na ordem de preferência audios em foramtos mais leves e caso o navegador não suporte ele tentará carregar o próximo áudio e assim por diante. E caso nenhum formato seja carregado, poderemos ainda, expor uma mensagem informando que não foi possível carregar o áudio e disponibilizar um link para download, se for o caso. <br>
-                Para isso basta digitar a tag áudio normal e apagar a parte marcada  "&lt;audio <mark>src="ctrl+espaço"</mark>.... <br>
-                Após isso digite entre as tags, como na ilustracão abaixo, source e selecione source src. <br>
-    
+    <article id="audio"><!--Áudios-->
+       
+                <h2>Áudios</h2>        
+                <section><!--Direitos autorais-->
+                    <h3>Direitos autorais</h3>
+                        <p>Assim como vimos no capítulo 06 sobre direitos autorais de imagens, com áudios também não é diferente. Uma forma de baixar áudios ou músicas livres de direitos autorais é usando uma ferramenta do YouTube. Para acessá-la basta ir no YouTube &rarr; Conta &rarr; YouTube Studio &rarr; Biblioteca de áudios.</p>
+                        <p>Aqui você poderá fazer downloads de todas as músicas de graça. No entanto, nem todas são 100% livres de direitos autorais, pois algumas exigem atribuição, ou seja, é necessário colocar uma legenda atribuindo aquela música ao autor. Para evitar isso basta filtrar os resultados clicando em Atribuições &rarr; Atribuição não necessária.</p>
+                </section>
+                <section><!--Adição de Áudios no HTML-->    
+                    <h3>Adição de Áudios no HTML</h3>
+                    <section><!--Introdução-->
+                        <p>No HTML 5 são aceitos 3 formatos de áudios:</p>
+                        <ul>
+                        <li><b>MP3:</b> Excelente formato, bem conhecido, lido por muitos navegadores e bem compacto.</li>
+                        <li><b>OGG:</b> Pouco conhecido, lido por alguns navegadores e muito compacto.</li>
+                        <li><b>WAV:</b> Muito conhecido, lido por muitos navegadores, porém muito pesado. Esse formato deve ser usado em último caso.</li>
+                        </ul>
+        
+                    </section>
+                    <h3>Tag audio:</h3>
+            
+                    <p>Na primeira parte dessa tag nós indicaremos o local e que bom que essa tag aceita o atalho "ctrl+espaço". Então a primeira parte fica:</p>
+                          
+                            "&lt;audio src="ctrl+espaço"...
+            
+                    <h4>Atributos</h4>
+                            <b>Atributo autoplay:</b> assim o áudio começa a tocar assim que a página for carregada. PORÉM, os usuários não suportam isso pois se o volume estiver alto pode assustar e o usuário sairá da página imediatamente. Outro ponto negativo é que a maioria dos navegadores ignora esse comando e não reproduz o áudio. E o pior ponto desse atributo é que a página só termina de carregar quando o áudio estiver concluído o download, o que deixará a página extremamente pesada.
+                        <br><b>Atributo controls:</b> Esse atributo exibe os controles básicos do áudio disponibilizado pela página como na imagem abaixo <b>NUNCA ESQUEÇA DE ADICIONAR ESSE ATRIBUTO</b> :
+                    <img style="width: 300px;" src="imagens/Captura de tela 2024-02-23 111458.png" alt="Print Controle de áudio">
+                    <p><b>Atributo loop:</b> Faz o áudio ficar reproduzindo em loop, quando acabar o áudio recomeça até o usuário pausar.</p>
+                    <b>Atributo preload:</b> nesse atributo podemos escolher que dados do áudio serão carregados juntos com a página: <br>
+                    "&lt;audio src="ctrl+espaço" controls preload="<b>auto</b>"..."
+                    <br>
+                    <b>Auto:</b> Carrega todo o áudio. Não é indicado pois demora mais a carregar a página e se não preencher nada o auto é o padrão, então preencha! <br>
+                    <b>Metadata:</b> Carrega apenas algumas informações sobre o áudio como: duração, nome e formato. Esse é INDICADO! <br>
+                    "&lt;audio src="ctrl+espaço" controls preload="<b>metadata</b>"..."
+                    <br>
+                    <b>None:</b> Não carrega nada.
+                    <br>
+                    "&lt;audio src="ctrl+espaço" controls preload="<b>none</b>"..."
+                    <br>
+            
+                    <h3>Tag áudio como tag picture</h3>
+                    <p>A tag áudio também pode funcionar semelhante à tag picture onde ela escolhe qual áudio carregar. Esse atributo serve para evitar incompatibilidade com o formato do áudio. Assim podemos colocar na ordem de preferência áudios em formatos mais leves e caso o navegador não suporte ele tentará carregar o próximo áudio e assim por diante. E caso nenhum formato seja carregado, poderemos ainda, expor uma mensagem informando que não foi possível carregar o áudio e disponibilizar um link para download, se for o caso.</p>
+                    <p>Para isso basta digitar a tag áudio normal e apagar a parte marcada "&lt;audio <mark>src="ctrl+espaço"</mark>....</p>
+                    <p>Após isso digite entre as tags, como na ilustração abaixo, source e selecione source src.</p>
+            
                     &lt;audio&gt;<mark>"source: src"</mark>&lt;/audio&gt;
                     <br>
-    
-            Ficará assim: <br>
-            &lt;audio&gt;<b>&ltsource src="ctrl+espaço" type="tipo do arquivo/formato"&gt;</b>&lt;/audio&gt;
+            
+                    <p>Ficará assim:</p>
+                    &lt;audio&gt;<b>&ltsource src="ctrl+espaço" type="tipo do arquivo/formato"&gt;</b>&lt;/audio&gt;
                     <br>
-                    Em src basta usar o atalho ctrl+espaço e selecionar o audio desejado como já vimos antes <br>
-                    Em Type tem vários formatos que são aceitos, é o caso dar um pesquisada no google caso de dúvidas mas basicamente você deve digitar "audio/a extenção do arquivo de áudio sem o ponto" <br>
-                    Exemplo: <br>
-                    &lt;audio&gt;<b>&ltsource src=""modulo-01/capitulo-11/audios/Dead Wrong - Jeremy Blake.mp3"" type=<mark>"audio/mpeg"</mark>&gt;</b>&lt;/audio&gt;
-                    <p>
-                        A tag completa fica seguinte forma:
+                    <p>Em src basta usar o atalho ctrl+espaço e selecionar o áudio desejado como já vimos antes.</p>
+                    <p>Em type tem vários formatos que são aceitos, é o caso de dar uma pesquisada no Google em caso de dúvidas mas basicamente você deve digitar "audio/a extensão do arquivo de áudio sem o ponto".</p>
+                    <p>Exemplo:</p>
+                    &lt;audio&gt;<b>&ltsource src="modulo-01/capitulo-11/audios/Dead Wrong - Jeremy Blake.mp3" type=<mark>"audio/mpeg"</mark>&gt;</b>&lt;/audio&gt;
+                    <p>A tag completa fica da seguinte forma:</p>
                     <div class="pre">
-                            <pre>
-            &lt;audio preload="metadata"&gt;
-            &lt;source src="modulo-01/capitulo-11/audios/Exemplo ogg.ogg" type="audio/ogg"&gt;
-            &lt;source src="modulo-01/capitulo-11/audios/Exemplo mp3.mp3" type="audio/mpeg"&gt;
-            &lt;source src="modulo-01/capitulo-11/audios/Exemplo wav.wav" type="audio/wav"&gt;
-            &lt;p&gt; Infelizmente não foi possível carregar essa áudio
-            &lt;a href="modulo-01/capitulo-11/audios/Exemplo mp3.mp3"&gt;Clique aqui&lt;/a&gt;
-            para fazer o download&lt;/p&gt;
-            &lt;/audio&gt;
-                    </pre>
-    
+                        <pre>
+        &lt;audio preload="metadata"&gt;
+        &lt;source src="modulo-01/capitulo-11/audios/Exemplo ogg.ogg" type="audio/ogg"&gt;
+        &lt;source src="modulo-01/capitulo-11/audios/Exemplo mp3.mp3" type="audio/mpeg"&gt;
+        &lt;source src="modulo-01/capitulo-11/audios/Exemplo wav.wav" type="audio/wav"&gt;
+        &lt;p&gt; Infelizmente não foi possível carregar esse áudio
+        &lt;a href="modulo-01/capitulo-11/audios/Exemplo mp3.mp3"&gt;Clique aqui&lt;/a&gt;
+        para fazer o download&lt;/p&gt;
+        &lt;/audio&gt;
+                        </pre>
                     </div>
-                            <strong>Veja um exemplo funcionando abaixo:</strong>
-                </p>
-                        <p><audio src="audios/Dead Wrong - Jeremy Blake.mp3" controls preload=""><source src="" type=""></audio></p>
-                </p>
-        </section>
+                    <strong>Veja um exemplo funcionando abaixo:</strong>
+                    <p><audio src="audios/Dead Wrong - Jeremy Blake.mp3" controls preload=""><source src="" type=""></audio></p>
+                </section>
     </article>
-    <article><!--Vídeos-->
+    <article id="videos"><!--Vídeos-->
         <h2>Vídeos</h2>
         
+        <section><!--Direitos autorais-->
+            <h3>Direitos autorais</h3>
+            
+            <p>Assim como imagens e áudios, vídeos também possuem direitos autorais e um bom site para conseguir vídeos livres de direitos autorais é o <a href="https://www.pexels.com/pt-br/videos/" target="_blank">Pexels</a>, o mesmo que vimos em imagens.</p>
+        </section>
+        <section><!--Edição de Vídeos no HTML-->
+            <h3>Formatos de Vídeos para HTML</h3>
+            <p>Os principais formatos aceitos pelos navegadores são:</p>
+            <ul>
+            <li>MP4: Formato mais popular, compatível com a maioria dos navegadores e dispositivos.</li>
+            <li>M4V: Similar ao MP4, usado principalmente pela Apple.</li>
+            <li>WebM: Formato aberto e eficiente, suportado por navegadores modernos.</li>
+            <li>OGV: Menos compatível, mas oferece boa compactação e qualidade.</li>
+            </ul>
+            <p>Durante o curso utilizaremos o editor de vídeos gratuito HandBrake, mas existe a possibilidade de fazer conversão em sites de forma gratuita.</p>
+        </section>    
+        <section><!--Adição de Vídeos no próprio site-->
+            <h3>Adição de Vídeos no próprio site</h3>
+            
+            <p>Obs.: Os servidores de hospedagem de sites cobram por tráfego de dados, logo, se hospedar um vídeo pesado no próprio site, esse vídeo encarecerá absurdamente o site.</p>
+            
+            <p>Para adicionar o vídeo no próprio site é bem similar à adição de áudios.</p>
+        </section>
+        <section><!--Tag video-->
+            <h3>Tag video</h3>
+        
+            <p>Essa tag também permite usar a tag source dentro dela assim como audio para que teste todos os <b>formatos</b> do mais leve para o mais pesado.</p>
+            <p>Porém também podemos usar o source media como nas imagens para definirmos também a resolução do vídeo de acordo com o tamanho da tela, e ainda organizar dentro dos formatos. <b>O problema é</b> que não dá para colocar poster para cada resolução. <b>Outro problema é</b> que caso o usuário esteja com smartphone em pé e deite ele durante a navegação, a resolução não aumentará pois ele precisará atualizar a página com o smartphone deitado.</p>
+        </section>
+        <section><!--Atributos da tag video-->
+            
+            <h3>Principais atributos da tag video:</h3>
+            <ul>
+                <li><strong>controls:</strong> Exibe os controles de reprodução do vídeo (play, pause, volume, etc.).</li>
+                <li><strong>autoplay:</strong> Faz o vídeo começar a reproduzir automaticamente assim que a página é carregada.</li>
+                <li><strong>loop:</strong> Faz o vídeo reiniciar automaticamente quando termina.</li>
+                <li><strong>muted:</strong> Inicia o vídeo sem som.</li>
+                <li><strong>poster:</strong> Define uma imagem a ser exibida antes do vídeo começar a ser reproduzido.</li>
+                <li><strong>preload:</strong> Indica ao navegador como deve tratar o carregamento do vídeo. Pode ser:
+                    <ul>
+                        <li><strong>auto:</strong> Carrega todo o vídeo quando a página é carregada.</li>
+                        <li><strong>metadata:</strong> Carrega apenas os metadados do vídeo (como duração, dimensões, etc.).</li>
+                        <li><strong>none:</strong> Não carrega nada do vídeo até que o usuário inicie a reprodução.</li>
+                    </ul>
+                </li>
+                <li><strong>width:</strong> Define a largura do vídeo.</li>
+                <li><strong>height:</strong> Define a altura do vídeo.</li>
+            </ul>
+
+            <p>Sintaxe:</p>
+            <pre>
+            &lt;video controls autoplay loop muted poster="caminho/para/imagem.jpg" preload="auto" width="640" height="360"&gt;
+                &lt;source src="caminho/para/video.mp4" type="video/mp4"&gt;
+                &lt;source src="caminho/para/video.webm" type="video/webm"&gt;
+                Seu navegador não suporta a tag de vídeo.
+            &lt;/video&gt;
+            </pre>
+
+            <p>Exemplo usando source media:</p>
+            
+            <video controls style="max-width: 90%;">
+            <source media="(max-width: 750px)" src="videos/social-360-webm.mp4" type="video/mp4">
+            <source media="(min-width: 751px)" src="videos/Pexels-Rafa-20074003.mp4" type="video/mp4">
+            </video>
+            
+        </section>
         <section><!--Direitos autorais-->
             <h3>Direitos autorais</h3>
             
@@ -243,7 +283,6 @@
             <p>Durante o curso utilizaremos o editor de videos gratuito HandBreak, mas existe a possibilidade de fazer conversão em site de forma gratuita.            
             
         </section>    
-        <section>
         <section><!--Adição de Vídeos no próprio site-->
             <h3>Adição de Vídeos no próprio site</h3>
             
@@ -251,38 +290,37 @@
             
             <p>Para adicionar o vídeo no próprio é bem similar a adição de áudios.</p>
         </section>
-            <section><!--Tag video-->
-                <h3>Tag video</h3>
-        
-                <p>Essa tag também permite usar a tag source dentro dela assim como audio para que teste todos os <b>formatos</b> do mais leve para o mais pesado.</p>
-                <p>Porém também podemos usar o source media como nas imagens para definirmos também a resolução do video de acordo com o tamanho da tela, e ainda organizar dentro dos formatos. <b>O problema é</b> que não dá para colocar poster para cada resolução. <b>Outro problema é</b> que caso o usuário esteja com smartphone em pé e deite ele durante a navegação, a resolução não aumentará pois ele precisará atualizar a página com o smartphone deitado.</p>
-            </section>
-            <setion><!--Atributos da tag video-->
-                <h3>Atributos da tag video</h3>
-
-                <h4>control:</h4>
-                <p>Essa tag é de extrema importância pois ela exibe os controles de vídeos no navegador, assim como no áudio, se não adicionar essa atribuição o cliente não conseguirá dar plays no vídeo.</p>
-
-                <h4>width</h4>
-                <p>Essa atribuição configura a largura padrão que o vídeo será exibido independente da largura de tela.</p>
-
-                <h4>poster</h4>
-                <p>Essa permite exibir uma imagem inicial do vídeo invés do primeiro frame do vídeo.</p>
-
-                <h4>loop</h4>
-                <p>Assim como no áudio o loop faz o vídeo repetir infinitamente até o usuário pausar.</p>
-
-                <p>Exemplo usando source media:</p>
-                
+        <section><!--Tag video-->
+            <h3>Tag video</h3>
     
-                    <video controls style="max-width: 90%;">
-                        <source media="(max-width: 750px)" src="videos/social-360-webm.mp4" type="video/mp4">
-                        <source media="(min-width: 751px)" src="videos/Pexels-Rafa-20074003.mp4"type="video/mp4">
-                    </video>
-               
-            </setion>
+            <p>Essa tag também permite usar a tag source dentro dela assim como audio para que teste todos os <b>formatos</b> do mais leve para o mais pesado.</p>
+            <p>Porém também podemos usar o source media como nas imagens para definirmos também a resolução do video de acordo com o tamanho da tela, e ainda organizar dentro dos formatos. <b>O problema é</b> que não dá para colocar poster para cada resolução. <b>Outro problema é</b> que caso o usuário esteja com smartphone em pé e deite ele durante a navegação, a resolução não aumentará pois ele precisará atualizar a página com o smartphone deitado.</p>
         </section>
-<section id="videos-externo">
+        <setion><!--Atributos da tag video-->
+            <h3>Atributos da tag video</h3>
+
+            <h4>control:</h4>
+            <p>Essa tag é de extrema importância pois ela exibe os controles de vídeos no navegador, assim como no áudio, se não adicionar essa atribuição o cliente não conseguirá dar plays no vídeo.</p>
+
+            <h4>width</h4>
+            <p>Essa atribuição configura a largura padrão que o vídeo será exibido independente da largura de tela.</p>
+
+            <h4>poster</h4>
+            <p>Essa permite exibir uma imagem inicial do vídeo invés do primeiro frame do vídeo.</p>
+
+            <h4>loop</h4>
+            <p>Assim como no áudio o loop faz o vídeo repetir infinitamente até o usuário pausar.</p>
+
+            <p>Exemplo usando source media:</p>
+            
+
+                <video controls style="max-width: 90%;">
+                    <source media="(max-width: 750px)" src="videos/social-360-webm.mp4" type="video/mp4">
+                    <source media="(min-width: 751px)" src="videos/Pexels-Rafa-20074003.mp4"type="video/mp4">
+                </video>
+            
+        </setion>
+        <section id="videos-externo">
     
     <h2>Adição de vídeos de sites Externos</h2>
     
@@ -306,9 +344,9 @@
     
     <p><a href="desafio-capitulo-11.html"> Conclusão do desafio</a></p>
     </p>
-</section>
-<!-- /#videos-externo -->
+        </section><!-- /#videos-externo -->
     </article>
+
 </main>
 <footer>
 <p>
