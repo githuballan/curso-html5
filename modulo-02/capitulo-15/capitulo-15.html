@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="../../style.css">
 
 <style>
-    div{
-        color: blue;
-    }
+   
     div>p{
         background-color: rgb(255, 255, 000);
     }
@@ -24,279 +22,266 @@
     .exhover:hover{
         background-color: aqua;
     }
-    div.pre{
-        color: black;
+    ul.alternating li:nth-child(odd) {
+        background-color: lightgray;
     }
+    ul.alternating li:nth-child(even) {
+        background-color: lightcoral
+    }
+   
 </style>
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
         <h1>Capítulo 15</h1>
-        <h1>Trabalhando com id  e class</h1>
+        <h1>Seletores</h1>
+
+        
     </header>
+    <nav>
+        <a href="#id" class="buttom menu" >id</a>
+        <a href="#class" class="buttom menu">class</a>
+        <a href="#pseudo-classes" class="buttom menu">pseudo-classes</a>
+        <a href="#pseudo-elementos" class="buttom menu">pseudo-elementos</a>
+        <a href="#hierarquia-css" class="buttom menu">Hierarquia CSS</a>
+    </nav>
     <main>
-        <section>
-            <p>id são identificadores e class são classificadores. Eles servem para darmos estilos prórpio para cada item de acordo com suas característica exclusiva.</p>
-            <asside>
-                <p>Algumas OBS.:</p> 
-                <ul>
-                    <li>id em HTML é: id="nome-do-identificador".</li>
-                    <li>id em CSS é: #nome-do-identificador</li>
-                    <li>class em HTML é:  class="nome-da-classe"</li>
-                    <li>class em CSS é: .nome-da-classe</li>
-                    <li>Comentar em HTML: &lt;!-- Comentário--&gt;
-                    <li>Comentar em CSS: /*Comentário*/</li>
-                </ul>
-            </asside>
-
-        </section><!--Introdução-->
-        <article><!--id-->
-                <h2>id&rarr;# </h2>
-           
-                <p>O "id" nada mais é que um identificador. Essa função é utilizada para identificarmos algo específico na página. Por exemplo o Título dessa página atual é Capítulo 15 e está em h1, porém só existe um título assim que nomeia a página inteira,  mas existem muitos outros títulos h1 na página logo podemos identificar esse h1 do Capítulo 15 com id. Assim poderemos dar uma personalização a mais.</p> 
-                <p>Exemplo no HTML:</p>
-
-                <div class="pre">
-                    <pre>
+        <article id="seletores">
+            <h2>Seletores</h2>
+            <p>Seletores são padrões utilizados para selecionar elementos específicos em um documento HTML para aplicar estilos CSS. Eles permitem que você estilize elementos de forma precisa e eficiente.</p>
+            <p>Exemplo de seletor no CSS:</p>
+            <div class="pre">
+                <pre>
+                p {
+                    color: red;
+                }
+                </pre>
+            </div>
+            <p>O exemplo acima seleciona todos os elementos &lt;p&gt; e aplica a cor vermelha ao texto.</p>
+            <h3>Lista de Seletores</h3>
+            <ul>
+                <li><strong>Seletor de Tipo</strong>: Seleciona todos os elementos de um tipo específico. Exemplo: <code>p</code> seleciona todos os parágrafos.</li>
+                <li><strong>Seletor de Classe</strong>: Seleciona todos os elementos com uma classe específica. Exemplo: <code>.classe</code> seleciona todos os elementos com a classe "classe".</li>
+                <li><strong>Seletor de ID</strong>: Seleciona um elemento com um ID específico. Exemplo: <code>#id</code> seleciona o elemento com o ID "id".</li>
+                <li><strong>Seletor de Atributo</strong>: Seleciona elementos com um atributo específico. Exemplo: <code>[type="text"]</code> seleciona todos os elementos com o atributo type igual a "text".</li>
+                <li><strong>Seletor de Descendente</strong>: Seleciona elementos que são descendentes de um elemento específico. Exemplo: <code>div p</code> seleciona todos os parágrafos dentro de divs.</li>
+                <li><strong>Seletor de Filho</strong>: Seleciona elementos que são filhos <strong>diretos</strong> de um elemento específico. Exemplo: <code>div > p</code> seleciona todos os parágrafos que são filhos diretos de divs.</li>
+                <li><strong>Seletor de Irmão Adjacente</strong>: Seleciona <span class="mark">um</span> elemento que é <span class="mark">imediatamente precedido</span> por um elemento específico. Exemplo: <code>h1 + p</code> seleciona o parágrafo imediatamente após um h1.</li>
+                <li><strong>Seletor de Irmão Geral</strong>: Seleciona <span class="mark">todos</span> os elementos <span class="mark">que são precedidos</span> por um elemento específico. Exemplo: <code>h1 ~ p</code> seleciona todos os parágrafos precedidos por um h1.</li>
+            </ul>
+            <p class="mark">Dica de aula: Atalho para comentar no VSCode: selecione o trecho que deseja comentar e pressione: "ctrl + ;"</p>
+        </article><!--seletores-->
+        <article id="id">
+            <h2>id&rarr;# </h2>
+            <p>
+            O atributo id é utilizado para identificar de forma única um elemento HTML. Ele serve para aplicar estilos específicos via CSS ou manipular o elemento diretamente com JavaScript. Cada id deve ser único dentro de um documento HTML, garantindo que o elemento possa ser selecionado e estilizado de maneira precisa.</p> 
+            <p>Exemplo no HTML:</p>
+            <div class="pre">
+                <pre>
 &lt;h1 id="capitulo">Capítulo 15&lt;/h1>
-                    </pre>
-    
-                </div>
-
-                <p>Exemplo no CSS3:</p> <br>
-               <div class="pre">
-                   
-                    <pre>
+                </pre>
+            </div>
+            <p>Exemplo no CSS3:</p> <br>
+            <div class="pre">
+                <pre>
 #capitulo
 {
 font-family: Georgia, 'Times New Roman', Times, serif;
 font-size: 2.5em;
 background-image: radial-gradient(circle, #567eb942, #bad5dd);
 }
-                    </pre>
-               </div>
-
-         
-            <p>
-                OBS.: Se houver personalização conflitante entre o h1 e o id o CSS vai sempre priorizar a personalização de id.</p>
-            <p>
-                OBS.: Segundo o W3C Não podemos usar mais de um id no mesmo HTML por mais que funcione, isso não está correto. 
-            </p>
+                </pre>
+            </div>
+            <p>OBS.: Se houver personalização conflitante entre o h1 e o id, o CSS vai sempre priorizar a personalização de id.</p>
+            <p>OBS.: Segundo o W3C, não podemos usar mais de um id no mesmo HTML. Por mais que funcione, isso não está correto.</p>
             <p class="mark">
                 Atalho: <br>
-                Para selecionar mais de um parte do texto ao mesmo tempo. Basta seguras a tecla "ALT" e clicar ou selecionar com o mouse os locais que deseja editar simultaneamente.
+                Para selecionar mais de uma parte do texto ao mesmo tempo, basta segurar a tecla "ALT" e clicar ou selecionar com o mouse os locais que deseja editar simultaneamente.
             </p>
-
-        </article>
-        <article><!--class-->
-            <h2>class→.</h2>
-        <p>
-            Quando necessário identificar mais de um elemento com a mesma personalização em um mesmo doc HTML ele se torna uma "class". <br>
-            <strong>Exemplo no HTML:</strong> 
-            <pre>&lt;p class="mark">&lt;/p></pre>
-            <br>
-
-            <strong>Exemplo no CSS3:</strong> <br>
-            <pre>
-            .mark
-                {
-                    background-color: yellow;
-                }
-            </pre>
-        </p>
-        <h3>Mais de uma class no mesmo item</h3>
-        <p>
-            É possível adicionar mais de uma class no mesmo item. Ficaria da seguinte forma: <br>
-            <strong>Exemplo no HTML:</strong> <br>
-            <pre>&lt;p class="mark mark2">&lt;/p></pre>
-            <br>
-            <strong>Exemplo no CSS3:</strong> <br>
-            <pre>
-            .mark
-                {
-                    background-color: yellow;
-                }
-                .mark2
-                {
-                    font-size: 2.5em;
-                }
-            </pre>
-        </p>
-        <p>
-            Também é possivel adicionar id e class no mesmo item. Mas nesse caso as configurações do id se sobrepõe caso haja conflito com a class.
-        </p>
-        <h3>O que NUNCA fazer!</h3>
-        <p>
-            Nunca devemos nomear a class com a caracterísca que ela gera para o elemento. Pois quando se faz isso você perde toda a Semântica do seu HTML. <br>
-            Outro ponto é que, se por acaso quiser mudar a personalização da class um dia. Provavelmente irá acontecer algo do tipo:
-            <strong>Exemplo no CSS3:</strong> <br>
-            <pre>
-            .bgvermelho
-                {
-                    background-color: yellow;
-                }
-                .fontgrande
-                {
-                    font-color: #7bd768;
-                }
-            </pre>
-            Note que o exemplo acima ficou uma zona!
-        </p>
-        
-            
-        </article>
-        <article id="atual-hierarquia">
-            <article><h2>Atualização da Hierarquia de Estilos</h2>
-            <p>Se houver personalizações conflitantes, a hierarquia de prioridades entre elas fica da seguinte forma:</p>
-                <ol>
-                    <li>Estilo InLine</li>
-                    <li>id</li>
-                    <li>class</li>
-                    <li>Estilo CSS3 Interno</li>
-                    <li>Estilo CSS3 Externo</li>
-       
-                </ol>
-        </article><!--atual-hierarquia-->
-        </article>
-        <article><!--Pseudo-classes-->
-            <h2>Pseudo-classes&rarr;:</h2>
-        <p>
-            Uma pseudo-classe CSS é uma palavra-chave adicionada às declarações de um seletor após um sinal de dois pontos (:). Basicamente geram uma dinâmica no site, deixa ele mais intuitivo e mais interativo. <br>
-            Alguns exemplos conhecidos são passar o mouse e abrir uma aba (:hover). Existem as pseudo classes nativas como as de link onde ela ficam roxas depois de visitado (:visited). <br>
-            Veja abaxo alguns exemplos de pseudo classes:
-            <ul>
-                <li><strong>:hover</strong>: Gera uma reação quando o mouse passar em cima;
-                <p><strong>Cursor: </strong>Essa pseudo classe costumar ser muito usada com o estilo de cursor. Para quando passar o mouse em cima de algum elemento, mudar o cursor dependendo da funcionalidade que estiver disponível. Para saber mais sobre essa propriedade acesse o site da <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">MDN</a></p>
-                </li>
-                <li> <strong>:visited</strong>: Modifica a forma de um link que já foi visitado;
-                <li> <strong>:link</strong>: Adiciona um estilo especial a um vínculo não visitado ;
-                <li> <strong>:active</strong>: Adiciona um estilo especial a um vínculo selecionado(clicado);
-                <li><strong>:focus</strong>: deixa marcado o último item clicado;
-                <li><strong>:lang</strong>:Permite que o autor especifique uma linguagem a ser usada num elemento específico;
-            </ul>
-
-        </p>
-        <p>
-                Agora veja exemplos de funcionamento e códigos: 
-        </p>
-        <p class="mark">
-            Dica extra: <br>
-            Ao usar um pseudo-classe como hover ou active pra gerar uma interação com o usuáurio é possivel escolher um tempo de transição com a seguinte style: <br>
-            <pre>trasition-duration: .5s;</pre> <br>
-        </p>
-            <p>        
-                Pseudo-classe hover: <br>
-                Exemplo de código no head:
+        </article><!--id-->
+        <article id="class">
+            <h2>Class &rarr; .</h2>
+            <p>
+                A classe é um atributo utilizado para aplicar estilos a um ou mais elementos HTML. Ao contrário do id, que deve ser único em um documento, várias tags podem compartilhar a mesma classe, permitindo a aplicação de estilos comuns a múltiplos elementos.
+            </p>
+            <p>Exemplo no HTML:</p>
+            <div class="pre">
                 <pre>
-                &lt;style>
-                    .exhover:hover{
-                        background-color: aqua;
-                    }   
-                    &lt;style>
+&lt;p class="destaque">Texto em destaque&lt;/p>
                 </pre>
-                Exemplo de código no body:
-            <pre>
-            &lt;p class="exhover">Passe o mouse aqui&lt;/p>
-            </pre>
-                Exemplo de funcionamento:
+            </div>
+            <p>Exemplo no CSS:</p>
+            <div class="pre">
+                <pre>
+.destaque {
+    color: red;
+    font-weight: bold;
+}
+                </pre>
+            </div>
+            <p>Exemplo de funcionamento:</p>
+            <p class="destaque">Texto em destaque</p>
+       
+               
+            <h3>Mais de uma class no mesmo item</h3>
+            <p>
+                É possível adicionar mais de uma class no mesmo item. Ficaria da seguinte forma: <br>
+                <strong>Exemplo no HTML:</strong> <br>
+                 <div class="pre">
+                <pre>&lt;p class="mark mark2">&lt;/p></pre></div>
+                <br>
+                <strong>Exemplo no CSS3:</strong> <br>
+                 <div class="pre">
+                <pre>
+.mark
+    {
+        background-color: yellow;
+    }
+    .mark2
+    {
+        font-size: 2.5em;
+    }
+                </pre></div>
+            </p>
+            <p>
+                Também é possível adicionar id e class no mesmo item. Mas, nesse caso, as configurações do id se sobrepõem caso haja conflito com a class.
+            </p>
+            <h3>O que NUNCA fazer!</h3>
+            <p>
+                Nunca devemos nomear a class com a característica que ela gera para o elemento. Pois, quando se faz isso, você perde toda a semântica do seu HTML. <br>
+                Outro ponto é que, se por acaso quiser mudar a personalização da class um dia, provavelmente irá acontecer algo do tipo:
+                <strong>Exemplo no CSS3:</strong> <br>
+                 <div class="pre">
+                <pre>
+                .bgvermelho
+                    {
+                        background-color: yellow;
+                    }
+                    .fontgrande
+                    {
+                        font-color: #7bd768;
+                    }
+                </pre></div>
+                Note que o exemplo acima ficou uma zona!
+            </p>
+        </article><!--class-->
+        <article id="pseudo-classes">
+            <h2>Pseudo-classes&rarr;:</h2>
+            <p>
+                Pseudo-classes são palavras-chave adicionadas aos seletores que especificam um estado especial do elemento selecionado. Elas permitem que você aplique estilos a um elemento em seu estado ou comportamento dinâmico. Por exemplo, você pode usar pseudo-classes para mudar o ponteiro do mouse para uma mãozinha que indica que pode clicar, ou para destacar um campo quando o mouse passa sobre ele.
+            </p>
+                <p><strong>Exemplo de funcionamento:</strong></p>
                 <p class="exhover"> Passe o mouse aqui</p>
             </p>
-        </article>
-        <article><!--Pseudo-elementos-->
+                Veja abaixo alguns exemplos de pseudo-classes:
+                <ul>
+                    <li><strong>:hover</strong>: Gera uma reação quando o mouse passa sobre o elemento;
+                    <p><strong>Cursor: </strong>Essa pseudo-classe costuma ser muito usada com o estilo de cursor. Para quando passar o mouse sobre algum elemento, mudar o cursor dependendo da funcionalidade que estiver disponível. Para saber mais sobre essa propriedade, acesse o site da <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">MDN</a></p>
+                    </li>
+                    <li> <strong>:visited</strong>: Modifica a forma de um link que já foi visitado;</li>
+                    <li> <strong>:link</strong>: Adiciona um estilo especial a um link não visitado;</li>
+                    <li> <strong>:active</strong>: Adiciona um estilo especial a um link selecionado (clicado);</li>
+                    <li><strong>:focus</strong>: Deixa marcado o último item clicado;</li>
+                    <li><strong>:lang</strong>: Permite que o autor especifique uma linguagem a ser usada em um elemento específico;</li>
+                    <li><strong>:nth-child(n)</strong>: Seleciona o enésimo filho de um elemento pai.</li>
+                    <li><strong>:nth-last-child(n)</strong>: Seleciona o enésimo filho a partir do último filho de um elemento pai.</li>
+                    <li><strong>:nth-of-type(n)</strong>: Seleciona o enésimo elemento de um tipo específico.</li>
+                    <li><strong>:nth-last-of-type(n)</strong>: Seleciona o enésimo elemento de um tipo específico a partir do último.</li>
+                    <li><strong>:first-child</strong>: Seleciona o primeiro filho de um elemento pai.</li>
+                    <li><strong>:last-child</strong>: Seleciona o último filho de um elemento pai.</li>
+                    <li><strong>:only-child</strong>: Seleciona um elemento que é o único filho de seu pai.</li>
+                    <li><strong>:empty</strong>: Seleciona elementos que não têm filhos (incluindo nós de texto).</li>
+                </ul>
+           
+            <h3>Lista com cores alternadas</h3>
+            <p>Exemplo de código no head:</p>
+            <div class="pre">
+                <pre>
+                &lt;style>
+                    ul.alternating li:nth-child(odd) {
+                        background-color: lightgray;
+                    }
+                    ul.alternating li:nth-child(even) {
+                        background-color: lightcoral;
+                    }
+                &lt;/style>
+                </pre>
+            </div>
+            <p>Exemplo de código no body:</p>
+            <div class="pre">
+                <pre>
+                &lt;ul class="alternating">
+                    &lt;li>Item 1&lt;/li>
+                    &lt;li>Item 2&lt;/li>
+                    &lt;li>Item 3&lt;/li>
+                    &lt;li>Item 4&lt;/li>
+                    &lt;li>Item 5&lt;/li>
+                &lt;/ul>
+                </pre>
+            </div>
+            <p>Exemplo de funcionamento:</p>
+            <ul class="alternating">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+            <p>Note que os itens ímpares têm um fundo cinza claro, enquanto os itens pares têm um fundo coral claro. Isso é feito usando as pseudo-classes <code>:nth-child(odd)</code> e <code>:nth-child(even)</code> para selecionar os elementos ímpares e pares, respectivamente.</p>
+               
+         
+        </article><!--Pseudo-classes-->
+        <article id="pseudo-elementos">
             <h2>Pseudo-elementos &rarr;::</h2>
-        <p>
-            Pseudo-elementos são acessório que ficam envolta do elemento principal. É como um personalização, porém invés de modificar cores ou fontes. Essa personalização insere novos elementos como uma seta ou textos para da destaque, ou alertas, vai depender da sua intensão. 
-        </p>
-        <p>
+            <p>
+            Pseudo-elementos são acessórios que ficam em volta do elemento principal. É como uma personalização, porém, em vez de modificar cores ou fontes, essa personalização insere novos elementos como uma seta ou textos para dar destaque, ou alertas, vai depender da sua intenção. 
+            </p>
+            <p>
             Agora veja exemplos de funcionamento e códigos:
             <br>
-        </p>
-            Exemplo de código no head:
-            <pre>
-        &lt;style>
-                .exafter::after{
-                    content: '<<<<';
-                    }
-            &lt;style>
-                </pre>
-
-            Exemplo de código no body: <br>
-            <pre>
-                &lt;p class="exafter">
-                        agora
-                    &lt;/p>
-            </pre>
-            Exemplo de funcionamento:
-            <p class="exafter">
-                agora
             </p>
-            Note que não dá para selecionar o after.
-
-        </article>
-        <article><!--Div-->
-        <h2>Div </h2>
-        <p>Div é uma box não semântica que permite adicionar estilos a itens contidos nela. Quase sempre usamos div com alguma classe ou id, pois ela só serve para darmos estilos e se usar apenas div sem class, ela servirá apenas como um conteiner. </p>
-            <p>Exemplo de código no head:</p>
-
-        <div class="pre">
+            <p><strong>Exemplo de código no head:</strong></p>
+            <div class="pre">
             <pre>
-            
-    &lt;style>
-        div{
-        color: blue;
-        }
-    &lt;style>
+            &lt;style>
+                .exafter::after{
+                content: '&lt;&lt;&lt;&lt;';
+                }
+            &lt;/style>
             </pre>
-        </div>
-        Exemplo de código no body:
-    <div class="pre">
+            </div>
+            <p><strong>Exemplo de código no body:</strong></p>
+            <div class="pre">
             <pre>
-
-    &lt;div>
-        TESTANDO A TAG DIV
-    &lt;/div>
+            &lt;p class="exafter">
+                agora
+            &lt;/p>
             </pre>
-    </div>
-        Exemplo de funcionamento:
-        <div>
-            TESTANDO A TAG DIV
-        </div>
-        </article>
-        <article><!--Children-->
-            <section><!--Children-->
-                <h2>Children &rarr; ></h2>
-                    <p>Children serve para se referir uma tag que está dentro da tag div. Para isso usamos o símbolo de maior que (>).</p>
-                    <p>Exemplo de código no head:</p>
-                <div class="pre">
-                        <pre>
-                
-                &lt;style>
-                    div>p{
-                        background-color: rgb(255, 255, 000);
-                    }
-                &lt;style>
-                        </pre>
-                </div>
-                    Exemplo de código no body:
-                <div class="pre">
-                <pre>
-                
-                    &lt;div>
-                        &lt;p> TESTANDO A TAG DIV&lt;/p>
-                    &lt;/div>
-                </pre>
-                </div>
-                Exemplo de funcionamento:
-                <div>
-                    <p>TESTANDO A TAG DIV</p>
-                </div>
-            </section>
-            <section>     <!--Hierarquia CSS-->   
-                    <h3>Hierarquia CSS</h3>
-                    <p>Como já vimos quanto mais específico maior o grau hierarquico do estilo, logo se usar uma children para definir um item essa será a prioridade da CSS.</p>
-                
-            
+            </div>
+            <p><strong>Exemplo de funcionamento:</strong></p>
+            <p class="exafter">
+            agora
+            </p>
+            <p>Note que não dá para selecionar o after.</p>
+            <h3>Pseudo-elementos mais utilizados</h3>
+            <ul>
+                <li><strong>::after</strong>: Insere conteúdo após o elemento selecionado.</li>
+                <li><strong>::before</strong>: Insere conteúdo antes do elemento selecionado.</li>
+                <li><strong>::first-letter</strong>: Aplica estilos à primeira letra do elemento selecionado.</li>
+                <li><strong>::first-line</strong>: Aplica estilos à primeira linha do elemento selecionado.</li>
+                <li><strong>::selection</strong>: Aplica estilos à parte do documento que foi selecionada pelo usuário.</li>
+                <li><strong>::placeholder</strong>: Aplica estilos ao texto de placeholder de um input ou textarea.</li>
+                <li><strong>::backdrop</strong>: Aplica estilos ao fundo de um elemento em tela cheia.</li>
+                <li><strong>::marker</strong>: Aplica estilos aos marcadores de lista.</li>
+                <li><strong>::cue</strong>: Aplica estilos às legendas de mídia.</li>
+                <li><strong>::part</strong>: Aplica estilos a partes específicas de um elemento personalizado.</li>
+            </ul>
+        </article><!--Pseudo-elementos-->
+        
+         <article id="hierarquia-css">  
+                <h2>Hierarquia CSS</h2>
+                <p>Como já vimos, quanto mais específico maior o grau hierárquico do estilo, logo se usar uma children para definir um item essa será a prioridade do CSS.</p>
                 <ol>
                     <li><strong>Inline</strong></li>
                     <li><strong>Interno</strong>
@@ -315,23 +300,10 @@ background-image: radial-gradient(circle, #567eb942, #bad5dd);
                             <li>comum</li>
                         </ol>
                     </li>
-                
                 </ol>
-            </section>
-            <section><!--Mistura de id class e children-->
-                <h3>Mistura de id class e children</h3>
-                <p>Quando mistura children com class e id o conteiner com id é prioridade acima de qualquer conteiner sem id e acima de id ou class da box interna</p>
-                <ol>
-                    <li><strong>Conteiner com id</strong></li>
-                    <li><strong>Box interna com id</strong></li>
-                    <li><strong>Conteiner com class</strong></li>
-                    <li><strong>Box interna com class</strong></li>
-                    <li><strong>Conteiner puro</strong></li>
-                    <li><strong>Box interna pura</strong></li>
-                    
-                </ol> 
-            </section>
-        </article>
+            </article><!--Hierarquia CSS--> 
+    </main>
+       
         
     </main>
     <footer>
@@ -354,36 +326,10 @@ background-image: radial-gradient(circle, #567eb942, #bad5dd);
             <p>
                 <a href="https://youtu.be/vMlrcOVr7po?si=WnV7-Sw8p9hn_Hwi" target="_blank">Pseudo-elementos em CSS</a>
             </p>
-            <p>
-                <a href="https://youtu.be/oHj5ez1bSkc?si=p0jjL_cJnWkbuGTj" target="_blank">XXXXXXXXXXXXXXXX</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">XXXXXXXXXXXXXXXX</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">XXXXXXXXXXXXXXXX</a>
-            <p>
-                    <a href="https://youtu.be/XTtfM0L7Co0?si=04-AhKRJqDaBdzdr" target="_blank">XXXXXXXXXXXXXXXX</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/i_c5Fzk807M?si=_P6bdD4gBAvpgiXX" target="_blank">XXXXXXXXXXXXXXXX</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme">XXXXXXXXXXXXXXXX</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme">XXXXXXXXXXXX</a>
-            </p>
-
-            <p>
-                <a href="https://youtu.be/tJTtp4qyqdE?si=09KPGh0Pf6ui60v_">XXXXXXXXXXXXXXXX</a>
-            </p>
-
-            </p>
+           
        
         
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+        
     </footer>
 </body>
 </html>
