@@ -195,7 +195,7 @@ pre{
 
 .buttom:hover{
     box-shadow: inset 2px 2px #ffffff88;
-    background-color: #ffffff62;
+    background-color: #888888cf;
     cursor: pointer;
 }
 
@@ -305,6 +305,7 @@ h2
     overflow-x: auto;
     top: 0;
     z-index: 10;
+    max-height: 45px;
 
 }
 h3
@@ -320,8 +321,7 @@ h3
     z-index: 9;
    
     
-}    
-
+}   
    
 
 

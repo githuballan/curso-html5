@@ -7,21 +7,51 @@
     
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
+
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
+
 <header>
 <h1 id="capitulo"> Capítulo 23</h1>
-<h1>Não houve novidade então esse projeto também será feito quando acabar o curso</h1>
-
 
 </header>
    
-    <main>
+<main>
+    <article id="variaveis">
+        <h2>Variáveis em CSS</h2>
+        <p>Variáveis em CSS, também conhecidas como custom properties, permitem que você armazene valores que podem ser reutilizados em todo o seu código CSS. Elas são definidas usando a sintaxe --nome-da-variavel: valor; e podem ser acessadas usando a função.</p>
+        <ul>
+            <li><strong>Definir uma variável:</strong> --nome-da-variavel: valor;</li>
+            <li><strong>Usar uma variável:</strong> var(--nome-da-variavel);</li>
+        </ul>
         
+        <p><strong>Como definir variáveis em CSS</strong></p>
+        <p>Para definir uma variável em CSS, você pode adicioná-la dentro de um seletor. Normalmente, as variáveis são definidas no seletor <code>:root</code> para que estejam disponíveis globalmente:</p>
+        
+        <div class="pre">:root {<br>
+        --cor-principal: #3498db;<br>
+        --margem-padrao: 16px;<br>
+    }</div>
+        
+        <p><strong>Como usar variáveis em CSS</strong></p>
+        <p>Para usar uma variável em CSS, você utiliza a função <code>var()</code> passando o nome da variável:</p>
+        <div class="pre">body {<br>
+        color: var(--cor-principal);<br>
+        margin: var(--margem-padrao);<br>
+    }</div>
+        
+        <p><strong>Vantagens de usar variáveis em CSS</strong></p>
+        <ul>
+            <li>Facilitam a manutenção do código, permitindo que você altere um valor em um único lugar.</li>
+            <li>Melhoram a consistência visual do seu site.</li>
+            <li>Permitem a criação de temas dinâmicos e personalizáveis.</li>
+        </ul>
+    </article><!--variaveis-->
+       
 
-    </main>
+</main>
 
 
 
@@ -37,6 +67,7 @@
             
             
         <h1>Vídeos</h1>
+        <p><strong>Projeto redes sociais</strong></p>
         <p>
             <a href="https://youtu.be/hPze5_OYqBw?si=oKLKFx_cKxMITE-P" target="_blank">Apresentação do projeto redes sociais</a>
         </p>       
@@ -59,10 +90,7 @@
             <a href="https://youtu.be/z30JMe5Cufs?si=oYkxhDjD-luEkA1_" target="_blank">Personalizando o Projeto</a>
         </p>      
                     
-            <hr>
-            <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-           
-        
+          
         </footer>
 </body>
 </html>

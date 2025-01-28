@@ -7,12 +7,37 @@
     <link rel="stylesheet" href="../../style.css">
 
     <style>
-        div#conteiner{/*article flex boxes*/
+       #conteiner{/*article flex boxes*/
             display:flex;
             background-color: #990000;
            
             flex-wrap: wrap;
         }
+        
+        .contex{/* Tabela article Alinhamentos nos eixos*/
+        display: flex;
+        flex-flow: row wrap-reverse;
+        background-color: coral;
+        
+        justify-content: flex-start;
+        }
+
+        .intex{/*exemplos alinhamento dos eixos*/
+        background-color: aquamarine;
+       
+        padding: 40px 0px 40px 0px;
+        width: 100px;
+        min-width: 50px;
+        border-radius: 20px;
+        text-align: center;
+        border:1px solid #000000
+        
+        }
+
+
+
+
+
 
         div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{/*article flex boxes*/
             flex: auto;
@@ -42,19 +67,10 @@
         }
 
 
-        div.intex{/*exemplos alinhamento dos eixos*/
-        background-color: aquamarine;
-       
-        padding: 40px 0px 40px 0px;
-        width: 100px;
-        min-width: 100px;
-        border-radius: 20px;
-        text-align: center;
-        border:1px solid #000000
         
-        }
 
-        div.contex1{/* Tabela article Alinhamentos nos eixos*/
+        
+        .contex1{/* Tabela article Alinhamentos nos eixos*/
         display: flex;
         flex-flow: row wrap-reverse;
         background-color: coral;
@@ -359,26 +375,18 @@
         <h1>Flex Box</h1>
     </header>
     <main>
-        <section><!--Flex Boxes-->
+        <section  id="Introdução">
             <h2>O que são flex Box?</h2>
             <p>Flex box são caixas flexíveis.</p>
-            <article>
-                <p>
-                    A ideia inicial do uso das flex box é ajustar o conteúdo do site de acordo com cada formato e tamanho de tela disponível no mercado. Elas funcionam de seguinte forma:
-                </p>
-                <p>
-                    A caixa externa dita as regras de tamanho disponível para exibição. Já as internas trabalham se moldando ao tamanho da externa de acordo com a regras que impulsermos a elas. O objetivo é que elas sempre trabalhem de forma fluida.
-                </p>
-            </article>
-            <article>
-                <p>
-                    Para isso deixar as boxes com essa caracteríscas precisamos usar sempre 2 comandos:
-                    </p>
-                    <ul>
-                        <li><strong>display: flex;</strong>  Display flex usamos na box externa. Mais comnhecida com conteiner</li>
-                        <li><strong>flex: auto;</strong> A flex auto usamos nas box internas. Caixas filhas.</li>
-                    </ul>
-                <p>Exemplo:</p>
+           
+        <p>A ideia inicial do uso das flex box é ajustar o conteúdo do site de acordo com cada formato e tamanho de tela disponível no mercado. Elas funcionam da seguinte forma:</p>
+        <p>A caixa externa dita as regras de tamanho disponível para exibição. Já as internas se moldam ao tamanho da externa de acordo com as regras que impusermos a elas. O objetivo é que elas sempre trabalhem de forma fluida.</p>
+        <p>Para deixar as boxes com essas características, precisamos usar sempre 2 comandos:</p>
+            <ul>
+                <li><strong>display: flex;</strong> Usamos display flex na box externa, mais conhecida como container.</li>
+                <li><strong>flex: auto;</strong> Usamos flex auto nas boxes internas, ou caixas filhas.</li>
+            </ul>
+        <p>Exemplo:</p>
                 <div id="conteiner">
                     <div id="item01">BOX 01</div>
                     <div id="item02">BOX 02</div>
@@ -431,108 +439,183 @@
 &lt;/style>
                 </pre>
                         </div>
-            </article>
-        </section><!--Fim Flex Boxes-->
-        <section><!--Flex-direction-->
-            <h2>
-                Flex-direction
-            </h2>
-            <article>
-                <p>
-                    Flex-direction é um estilo usado na box conteiner. Como o nome já diz, ela serve para direcionar de onde para onde as box internas deverão se organizar.
-                </p>
-                <p>
-                    Existem 04 direcionamentos possíveis:
-                </p>
-                <ul>
-                    <li><strong>flex-direction: row;</strong> Nessa forma as box internas iram se alinhar na horizontal da esquerda para a direita.</li>
-                    <li><strong>flex-direction: row-reverse;</strong> Nessa forma as box internas iram se alinhar na horizontal da direita para esquerda.</li>
-                    <li><strong>flex-direction: column;</strong> Nessa forma as box internas iram se alinhar na vertical de de cima para abaxo.</li>
-                    <li><strong>flex-direction: column-reverse;</strong> E nessa forma as box internas iram se alinhar na vertical de de baixo para acima.</li>
-                </ul>
-            </article>
-        </section><!--Fim Flex-direction-->
-        <section><!--Eixos (axis)-->
-            <h2>Eixos (axis)</h2>
-            <article>
-                <p>Além das direção da box conteiner, existe ainda mais dois eixos dentro dela:</p>
-                <ul>
-                    <li><strong>main-axis</strong> Como o nome já diz esse é o eixo principal ele o eixo mais longo do retângulo. É  eixo que atravessa o conteiner na direção da flex-direction.</li>
-                    <li><strong>cross-axis</strong> Também como o próprio nome já diz, essa cruza o perpendicularmente o eixo principal(main-axis). </li>
-                </ul>  
-                       
-            </article>
-            <article>
-                <h3>Direcionamentos de cross-axis</h3>
-                <p>
-                    Direcionamentos cross-axis são simples pois eles só quando a flex-direction está na horizontal(row) ou na vertical(column), veja:
-                </p>
-                    <ul>
-                        <li>O cross-axis, em casos de flex-directions horizontais(rows), Sempre serão de cima para baixo. Como o padrão column.</li>
-                        <li>E quando a flex-direction está na vertical ele será sempre da esquerda para dereita. Como a row padrão.</li>
-                    </ul>
-                <p>
-                    Faça testes no head dessa página usando o primeiro exemplo.
-                </p>                 
-            </article>       
-        </section><!--Fim Eixos (axis)-->
-        <section><!--flex-wrap: wrap;-->
-            <h2>flex-wrap: wrap;</h2>
-            <article>
-                <p>Flex wrap significa encapsulamento flexível. Esse estilo é aplicado na box conteiner(externa). Isso significa que ela vai reorganizar as box internas para que elas caibam no formato da conteiner.</p>
-                <p>As box internas por sua vez vão se mudando de posição  no sentido do cross-axis. Isso quer dizer que conforme for se estreitando a ultima no sentido da flex-direction irá mudar de linha ou coluna no sentido do eixo axis</p>
-            </article>
-            <article>
-                <h3>Wrap, Nowrap e Wrap-Reverse</h3>
-                <ul>
-                    <li><strong>NoWrap</strong>: Por padrão todo conteiner é nowrap, isso significa que as box internas vão se expremer até seus conteúdo permitirem, qd não for mais possível ajustar seus conteúdos ela não irá se ajustar mais e começará a gerar overflow</li>
-                    <p>Comando:</p>
-                    <div class="pre">
-                        <pre>
-            flex-wrap: nowrap;
-                        </pre>
-                    </div>
-                    <li><strong>Wrap: </strong> Esse comando 
-                    divide o conteiner criando linhas paralelas a main-axis no sentido de cross-axis. Na prática, esse comando faz com que a última box interna vá para linha ou coluna a direção da axis</li>
-                    <p>Comando:</p>
-                    <div class="pre">
-                        <pre>
-            flex-wrap: wrap
-            ;
-                        </pre>
-                    </div>
-                    <li><strong>Wrap-Reverse: </strong> Esse comando 
-                        divide o conteiner criando linhas paralelas a main-axis no sentido contrário da cross-axis. Na prática, esse comando faz com que a última box interna vá para linha ou coluna oposta a direção da axis </li>
-                    <p>Comando:</p>
-                    <div class="pre">
-                        <pre>
-            flex-wrap: wrap-reverse;
-                        </pre>
-                    </div>
-                    <li><strong>Flex-flow</strong>: Flex-flow é uma espécie de shothand da flexbox, onde primeiro definimos a flex directions e depois a flex-wrap. Inclusive a W3C recomenda que sempre use flex-flow.</li>
-                    <p>Exemplo de comando no head:</p>
-                    <div class="pre">
-                    <pre>
-            flex-flow: column wrap
-                    </pre>
-                    </div>
-                </ul>
-                
-            </article>
-       
-        
-            
-               
            
-        </section><!--Fim flex-wrap: wrap;-->
-        <section><!--Alinhamentos nos eixos-->
-            <h2>Alinhamentos nos eixos</h2>
-            <article><!--Alinhamento no eixo main-axis-->
-                <h3>Alinhamento no eixo main-axis</h3>
-                <p>Quando falamos em alinhamento no eixo <abbr title="eixo que atravessa o conteiner na direção da flex-direction.">main-axis</abbr> pode-se entender também como uma distrubuição das box internas no sentido do main-axis.</p>
-                <p>
-                    Essa distribuição se dá através do comando jutify-content seguido das formas de distribuição das box internas. Veja a tabela abaixo os comandos, as explicações e suas respectivas aplicações práticas: 
-                </p>
+        </section><!--Introdução-->
+        <article id="Eixos-axis">
+            <h2>Eixos (axis)</h2>
+            <p>Além das direções da caixa contêiner, existem ainda mais dois eixos dentro dela:</p>
+            <ul>
+            <li><strong>main-axis</strong>: Como o nome já diz, este é o eixo principal, o eixo mais longo do retângulo. É o eixo que atravessa o contêiner na direção da flex-direction. Resumidamente seria o eixo X do plano cartesiano.</li>
+            <li><strong>cross-axis</strong>: Também como o próprio nome já diz, este cruza perpendicularmente o eixo principal (main-axis). Resumidamente seria o eixo Y do plano cartesiano.</li>
+            </ul>
+           
+            
+                
+                <canvas id="planoCartesiano" width="300" height="300" style="border:1px solid #000000; margin-left: calc(50% - 150px);"></canvas>
+                
+            
+            <script>
+                const canvas = document.getElementById('planoCartesiano');
+                const ctx = canvas.getContext('2d');
+
+                // Desenhar eixo X
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height / 2);
+                ctx.lineTo(canvas.width, canvas.height / 2);
+                ctx.stroke();
+                ctx.font = "20px Arial";
+                ctx.fillText("Y",canvas.width / 2 + 5, 15);
+                ctx.font = "30px Arial";
+                ctx.fillText("+",canvas.width - 15,canvas.height / 2 -12);
+                ctx.font = "30px Arial";
+                ctx.fillText("-",15,canvas.height / 2 -12);
+               
+
+                ctx.font = "20px Arial";
+                ctx.fillText("0",canvas.width / 2 -14, canvas.height / 2 +18);
+                
+
+                // Desenhar eixo Y
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 2, 0);
+                ctx.lineTo(canvas.width / 2, canvas.height);
+                ctx.stroke();
+                ctx.font = "20px Arial";
+                ctx.fillText("X",canvas.width - 15,canvas.height / 2 + 20);
+                ctx.font = "30px Arial";
+                ctx.fillText("+",canvas.width /2 - 20, 20);
+                ctx.font = "30px Arial";
+                ctx.fillText("-",canvas.width / 2 -20, canvas.height -10);
+               
+                
+
+                // Desenhar marcações no eixo X
+                for (let i = 0; i < canvas.width; i += 50) {
+                    ctx.beginPath();
+                    ctx.moveTo(i, canvas.height / 2 - 5);
+                    ctx.lineTo(i, canvas.height / 2 + 5);
+                    ctx.stroke();
+                }
+
+                // Desenhar marcações no eixo Y
+                for (let i = 0; i < canvas.height; i += 50) {
+                    ctx.beginPath();
+                    ctx.moveTo(canvas.width / 2 - 5, i);
+                    ctx.lineTo(canvas.width / 2 + 5, i);
+                    ctx.stroke();
+                }
+            </script>
+           
+            
+        </article><!--Fim Eixos (axis)-->
+        <article id="Flex-direction">
+            <h2>Flex-direction</h2>
+            <p>Flex-direction é uma propriedade que altera o eixo principal e a direção dos eixos, em outra palavras ela pode traformar o eixo Y no eixo principal e trocar os lados negativo e positivo do plano cartesiano.</p>
+            <p>Existem quatro direções possíveis:</p>
+            <ul>
+                <li><strong>flex-direction: row;</strong> O padrão, as caixas internas se alinham horizontalmente da esquerda para a direita.</li>
+                <div class="contex">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                </div>
+
+                <li><strong>flex-direction: row-reverse;</strong> As caixas internas se alinham horizontalmente da direita para a esquerda.</li>
+                <div class="contex" style="flex-direction: row-reverse;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                </div>
+
+                <li><strong>flex-direction: column;</strong> As caixas internas se alinham verticalmente de cima para baixo.</li>
+                <div class="contex" style="flex-direction: column;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                </div>
+
+                <li><strong>flex-direction: column-reverse;</strong> As caixas internas se alinham verticalmente de baixo para cima.</li>
+                <div class="contex" style="flex-direction: column-reverse;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                </div>
+            </ul>
+            <p> <strong>Simplificando:</strong> o column tranforma o eixo Y no principal e o reverse inverte os lados negativo e positivo.</p>
+            
+             
+        </article><!--Fim Flex-direction-->
+        <article id="flex-wrap">
+            <h2>flex-wrap</h2>
+            <p>Flex wrap significa encapsulamento flexível. Esse estilo é aplicado no contêiner (div externa). Isso significa que ela vai reorganizar as caixas internas para que elas caibam no formato do container.</p>
+                      
+           
+            <ul>
+                <li><strong>flex-wrap: nowrap;</strong> As caixas internas não quebram linha e se comprimem para caber no contêiner. O problema é que, por não quebrar linhas, pode extrapolar o contêiner quando não conseguir se comprimir mais.</li>
+                <div class="contex" style="flex-wrap: nowrap; width: 200px; height: 200px;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                    <div class="intex">Bloco 04</div>
+                    <div class="intex">Bloco 05</div>
+                </div>
+
+                <li><strong>flex-wrap: wrap;</strong> Esse comando protege o tamanho das caixas internas do contêiner. Em vez de espremer as caixas, ele aumenta o tamanho do contêiner para baixo ou para o lado, dependendo da direção que está sendo encurtada. O problema é que a caixa interna pode transbordar o contêiner caso não haja espaço suficiente para mantê-las em seu tamanho original dentro do contêiner.</li>
+                <div class="contex" style="flex-wrap: wrap; width: 200px; height: 200px; margin-bottom: 120px;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                    <div class="intex">Bloco 04</div>
+                    <div class="intex">Bloco 05</div>
+                </div>
+
+                <li><strong>flex-wrap: wrap-reverse;</strong> Similar ao flex-wrap: wrap, mas na direção inversa. Outro ponto a ser observado é que agora as caixas ficarão encostadas na parte inferior do contêiner em vez da parte superior.</li>
+                <div class="contex" style="flex-wrap: wrap-reverse; width: 200px; height: 200px; margin-top: 120px;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                    <div class="intex">Bloco 04</div>
+                    <div class="intex">Bloco 05</div>
+                </div>
+               
+            
+        </article><!--Fim flex-wrap: wrap;-->
+        <article id="flex-flow">
+                <h2>Flex-flow</h2>
+                <p>A propriedade <strong>flex-flow</strong> é uma abreviação para as propriedades <strong>flex-direction</strong> e <strong>flex-wrap</strong>. Ela permite definir a direção e o encapsulamento dos itens flexíveis em uma única linha de código.</p>
+                <p>Exemplo:</p>
+                <div class="contex" style="flex-flow: row wrap;">
+                    <div class="intex">Bloco 01</div>
+                    <div class="intex">Bloco 02</div>
+                    <div class="intex">Bloco 03</div>
+                    <div class="intex">Bloco 04</div>
+                    <div class="intex">Bloco 05</div>
+                </div>
+                <p>Comando:</p>
+                <div class="pre">
+                    <pre>
+            div.contex {
+                display: flex;
+                flex-flow: row wrap;
+                background-color: coral;
+            }
+            div.intex {
+                background-color: aquamarine;
+                padding: 40px 0px;
+                width: 100px;
+                min-width: 50px;
+                border-radius: 20px;
+                text-align: center;
+                border: 1px solid #000000;
+            }
+                    </pre>
+                </div>
+        </article><!--flex-flow-->            
+        <article id="alinhamentos-nos-eixos">
+            <h2>Alinhamentos nos eixos (Conteiner)</h2>
+            <article id="justify-content">
+                <h3>Alinhamento no eixo main-axis (justify-content)</h3>
+                <p>A propriedade <strong>justify-content</strong> é utilizada para alinhar os itens flexíveis ao longo do eixo principal (main-axis) do contêiner. Ela define como o espaço disponível nesse eixo deve ser distribuído entre os itens.</p>
                 <div class="overflow-x">
                     <table><!--justify-content-->
                     <thead>
@@ -561,7 +644,7 @@
                             </tr>
                             <tr>
                                 <th scope="rowgroup" rowspan="2">flex-end</th>
-                                <td>Agrupa as boxes internas juntas no final da flex-direction deixando um espaço restante vazio no início</td>
+                                <td>Agrupa as boxes internas juntas no final da flex-direction deixando um espaço restante vazio no início. Não, não é igual ao flex direction: row-reverse; confira a ordem das caixas e verá que no reverse a ordem é invertida.</td>
                             </tr>
                             <tr>
                                 <td><div class="contex2">
@@ -616,7 +699,7 @@
                             </tr>
                             <tr>
                                 <th scope="rowgroup" rowspan="2">space-around</th>
-                                <td>Divide todo o espaço vazio pela quantidade de box interna, depois divide por dois e coloca esse valor restante (espaço) de cada lado de cada box. Basicamente ele divide o espaço vazio pela quantidade de box interna e centraliza cada box dentro desse valor resultante.</td>
+                                <td>Divide todo o espaço vazio pela quantidade de caixas, depois divide por dois e coloca esse valor restante (espaço) de cada lado de cada caixa.</td>
                             </tr>
                             <tr>
                                 
@@ -633,16 +716,11 @@
                     </tbody>
                     </table>
                 </div>
-            </article>
-            <article><!--Alinhamento no eixo cross-axis-->
+            </article><!--justify-content-->
+            <article id="align-items">
     
-                <h3>Alinhamento no cross-axis</h3>
-                <p>
-                    Assim como no alinhamento no main-axis também existe o alinhamento no sentido do cross-axis.
-                </p>
-                <p>
-                    Para fazermos os alinhamentos no cross-axis utilizamos o comando: align-items. Veja a tabela abaixo os comandos, as explicações e suas respectivas aplicações práticas:
-                </p>
+                <h3>Alinhamento no cross-axis (align-items)</h3>
+                <p>A propriedade <strong>align-items</strong> é utilizada para alinhar os itens flexíveis ao longo do eixo transversal (cross-axis) do contêiner. Ela define como os itens são distribuídos ao longo do eixo transversal, permitindo que você controle o alinhamento vertical dos itens dentro do contêiner</p>
     
             
             <div class="overflow-x">
@@ -672,12 +750,12 @@
                         </tr>
                         <tr>
                             <th scope="rowgroup" rowspan="2">flex-start</th>
-                            <td>Faz as box interna grudarem no início da cross-axis. span.mark{Caso as box internas tenham heigth ou width definida. Esse se tornará o alinhamento padrão}</td>
+                            <td>Faz as box interna grudarem no início da cross-axis. <span class="mark">Caso as box internas tenham heigth ou width definida. Esse se tornará o alinhamento padrão</span></td>
                         </tr>
                         <tr>
                             
                             <td>
-                                <div class="contex8">
+                     </div>           <div class="contex8">
                                     <div class="intex">Bloco 01</div>
                                     <div class="intex">Bloco 02</div>
                                     <div class="intex">Bloco 03</div>
@@ -693,7 +771,7 @@
                         <tr>
                            
                             <td>
-                                <div class="contex9">
+                  </div>              <div class="contex9">
                                     <div class="intex">Bloco 01</div>
                                     <div class="intex">Bloco 02</div>
                                     <div class="intex">Bloco 03</div>
@@ -721,60 +799,11 @@
                     </tbody>
                 </table>
             </div>
-            </article>
-
-
-            <article><!--Centralização-->
-                <h3>Centralização</h3>
-                <p>A centralização de itens usando flex box se torna muito mais fácil que os métodos vistos até aqui. Veja o exemplo abaixo:</p>
-
-                <div class="contex11">
-
-                    <div class="intex">Bloco</div>
-                    
-                </div>
-
-
-                <p>
-                    Veja o comando no head:
-                </p>
-                <div class="pre">
-                    <pre>
-
-div.contex11{
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: coral;
-    width: 300px;
-    height: 300px;
-    align-items: center;
-    justify-content: center;
-}
-
-div.intex{
-    background-color: aquamarine;
-    height: 100px;
-    width: 100px;
-    min-width: 100px;
-    border-radius: 20%;
-}
-
-
-                    </pre>
-                </div>
-            </article>
-        
-        </section><!--Fim Alinhamentos nos eixos-->
-        <section><!--Alinhamento de conteúdo empacotado-->
-            <h2>Alinhamento de conteúdo empacotado</h2>
-            <article>
-                <p>
-                    Para alinhar conteúdos empacotados utilizamos o estilo align-content. Esse estilo funciona similar ao estilo jutify-content, pois ele também alinha os itens usando como basa o eixo main-axis. 
-                </p>
-                <p>
-                    No entanto, esse estilo deverá ser aplicado somente quando houver empacotamento dos itens. Em outras palavras, ele só será aplicado quando usarmos também o flex-wrap: wrap;
-                </p>
-
+            </article><!--align-items-->    
+            <article id="align-content">
+                <h3>Alinhamento de conteúdo empacotado (align-content)</h3>
+                <p>A propriedade <strong>align-content</strong> é utilizada para alinhar as linhas de itens flexíveis dentro de um contêiner flexível quando há espaço extra no eixo transversal (cross-axis). Ela é aplicada somente quando os itens flexíveis são empacotados em várias linhas, ou seja, quando a propriedade <strong>flex-wrap</strong> está definida como <strong>wrap</strong> ou <strong>wrap-reverse</strong>. A <strong>align-content</strong> define como o espaço extra entre as linhas de itens flexíveis deve ser distribuído, permitindo um controle mais preciso sobre o layout do contêiner.</p>
+               
                 <div class="overflow-x">
                     <table>
                         <thead>
@@ -906,22 +935,59 @@ div.intex{
                          </tbody>
                     </table>
                 </div>
-            </article>
+            </article><!--align-content-->
+            <article><!--Centralização-->
+                <h3>Centralização</h3>
+                <p>A centralização de itens usando flex box se torna muito mais fácil que os métodos vistos até aqui. Veja o exemplo abaixo:</p>
 
-        </section><!--Fim Alinhamento de conteúdo empacotado-->
-        <section><!--Anatomia dos itnes flex-box-->
-            <h2>Anatomia dos itens flex-box</h2>
+                <div class="contex11">
+
+                    <div class="intex">Bloco</div>
+                    
+                </div>
+
+
+                <p>
+                    Veja o comando no head:
+                </p>
+                <div class="pre">
+                    <pre>
+
+div.contex11{
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: coral;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+div.intex{
+    background-color: aquamarine;
+    height: 100px;
+    width: 100px;
+    min-width: 100px;
+    border-radius: 20%;
+}
+
+
+                    </pre>
+                </div>
+            </article>
+        </article><!--alinhamentos-nos-eixos-->
+        <article id="autonomia-itens">
+            <h2>Autonomia dos itens flex-box</h2>
             <article><!--Introdução-->
                 <p>Por padrão os itens do conteiner não são flexíveis, isso quer dizer que eles apenas obedecem a organição do conteiner. Entretanto, tem como mudar o comportamento individual de cada item para que cada um se organize do seu jeito dependendo do formato do conteiner.</p>
-            </article>
-            <article><!--order-->
+            </article><!--Fim Introdução-->
+            <article id="order">
                 <h3>order</h3>
-                <p>Order é uma forma de organizar os itens dentro de um conteiner. Por padrão todo item do conteiner recebe order=0, sendo assim a ordem que escrevemos a div dentro do conteiner é a ordem que os itens ficarão organizados. Porém nem sempre isso é viável dependendo do tamanho do código, por isso exite o order</p>
+                <p>Order é uma forma de organizar os itens dentro de um contêiner. Por padrão, todo item do contêiner recebe order=0, sendo assim a ordem que escrevemos a div dentro do contêiner é a ordem que os itens ficarão organizados. Porém, nem sempre isso é viável dependendo do tamanho do código, por isso existe o order.</p>
                 <p>
-                    Exemplo
+                    Exemplo:
                 </p>
                 <div class="overflow-x">
-    
                     <div class="contex19">
                         <div class="intex" style="order: 5">1</div>
                         <div class="intex" style="order: 4">2</div>
@@ -929,14 +995,12 @@ div.intex{
                         <div class="intex" style="order: 2">4</div>
                         <div class="intex" style="order: 1">5</div>
                     </div>
-    
                 </div>
                 <p>
                     Comando:
                 </p>
                 <div class="pre">
                     <pre>
-
 &lt;div class="contex19">
     &lt;div class="intex" style="order: 5">1&lt;/div>
     &lt;div class="intex" style="order: 4">2&lt;/div>
@@ -944,25 +1008,23 @@ div.intex{
     &lt;div class="intex" style="order: 2">4&lt;/div>
     &lt;div class="intex" style="order: 1">5&lt;/div>
 &lt;/div>
-
                     </pre>
                 </div>
-
             </article><!--Fim order-->
-            <article><!--align-self-->
+            <article id="align-self">
                 <h3>align-self</h3>
                 <p>
-                    Essa propriedade de estilo tem como principal finalidade dar autonomia as box internas de uma conteiner. Até aqui vimos todas as boxes trabalhando iguais, apenas seguindo as regras do conteiner. Mas agora com essa propriedade poderemos dar estilos independentes para as box internas.
+                    Esta propriedade de estilo tem como principal finalidade dar autonomia às caixas internas de um contêiner. Até aqui, vimos todas as caixas trabalhando iguais, apenas seguindo as regras do contêiner. Mas agora, com esta propriedade, poderemos dar estilos independentes para as caixas internas.
                 </p>
                 <p>
-                    Para isso usaremos 5 estilos:
+                    Para isso, usaremos 5 estilos:
                 </p>
                 <ul>
-                    <li><strong>auto ou inehit: </strong> Esse estilo é o padrão, portanto ele seguirá as regras do conteiner</li>
-                    <li><strong>flex-start: </strong> Esse alinhamento faz com que a box vá para perto do início da cross-axis</li>
-                    <li><strong>flex-end: </strong> Esse, naturalmente, faz a box ir para o final da cross-axis</li>
-                    <li><strong>center: </strong>Centraliza a box na metade da cross-axis. em outras palavras põe a box em cima do eixo main-axis.</li>
-                    <li><strong>stretch: </strong> estica a box de uma ponta a outra da cross-axis</li>
+                    <li><strong>auto ou inherit:</strong> Este é o estilo padrão, portanto ele seguirá as regras do contêiner.</li>
+                    <li><strong>flex-start:</strong> Este alinhamento faz com que a caixa vá para perto do início do eixo transversal (cross-axis).</li>
+                    <li><strong>flex-end:</strong> Este, naturalmente, faz a caixa ir para o final do eixo transversal (cross-axis).</li>
+                    <li><strong>center:</strong> Centraliza a caixa na metade do eixo transversal (cross-axis), em outras palavras, coloca a caixa em cima do eixo principal (main-axis).</li>
+                    <li><strong>stretch:</strong> Estica a caixa de uma ponta a outra do eixo transversal (cross-axis).</li>
                 </ul>
                 <p>
                     Veja o exemplo de todos os comportamentos abaixo:
@@ -976,160 +1038,154 @@ div.intex{
                         <div class="intex1" style="align-self: stretch">stretch</div>
                     </div>
                 </div>
-
-
-
             </article><!--Fim align-self-->
-            <article><!--flex-basis-->
-                <h3>flex-basis</h3>
-                <p>
-                Essa propriedade gera larguras flexíveis e ela trabalha de duas formas diferente dependendo das regras do conteiner.
-                </p>
-                <ul>
-                    <li><strong> Conteiner com flex-wrap: <span class="mark">wrap</span>;</strong> Nesse caso ela irá manter a largura definida pela flex-basis mesmo que o conteiner fique menor, pois ela irá quebrar as linhas até que todas as box estejam em coluna e só então, quando começar a estreitar abaixo da largura definida pela flex-basis, ela irá reduzir seu tamanho: </li>
-
-                    <li><strong>Conteiner com flex-wrap: <span class="mark">nowrap</span>;</strong> Nesse caso box interna irá estreitar assim que o conteiner reduzir seu tamanho abaixo da largura definida pela flex-basis.</li>
-                </ul>
-            </article><!--Fim flex-basis-->
-            <article><!--flex-grow & flex-shrink-->
-                <h3>flex-grow & flex-shrink</h3>
-                <p>
-                    Flex-grow e Flex-shrink são propriedades que trabalham juntas com a flex-basis, pois elas habilitam ou desabilitam a flexbilidade da largura definida pela flex-basis.
-                </p>
-                <ul>
-                    <li><strong>flex-grow</strong>: Por padrão ela fica desabilitada. Quando essa propriedade está habilitada ela permite que a box interna  aumente, a largura definida pela flex-basis,para cobrir todo o excesso da conteiner. </li>
-                    <p>
-                        Comando:
-                    </p>
-                    <div class="pre">
-                    <pre>    
-<abbr title="A box cresce até cobrir todo o espaço do conteiner">flex-grow: 1;</abbr>
-<abbr title="A box não cresce">flex-grow: 0;</abbr>
-</pre>
+             <section id="flex-basis-grow-shrink">
+                <article id="flex-basis">
+                    <h3>flex-basis</h3>
+                    <p>A propriedade <strong>flex-basis</strong> define o tamanho inicial de um item flexível antes de qualquer espaço extra ser distribuído ou qualquer ajuste de tamanho ocorrer. Ela pode ser definida em qualquer unidade de medida CSS, como pixels (px), porcentagem (%), em, rem, etc.</p>
+                    <p>Se a propriedade <strong>flex-basis</strong> não for especificada, o valor padrão é <strong>auto</strong>, o que significa que o tamanho do item será determinado pelo seu conteúdo.</p>
+                    <p>Exemplo de uso:</p>
+                    <div class="contex" style="flex-flow: row wrap; width: 180px;">
+                        <div class="intex" style="flex-basis: 100px;">Bloco 01</div>
+                        <div class="intex" style="flex-basis: 150px;">Bloco 02</div>
+                        <div class="intex" style="flex-basis: 200px;">Bloco 03</div>
                     </div>
-                    <li><strong>flex-shrink</strong>: Essa propriedade vem habilitada por padrão. Quando ela está habilitada ela permite que a box interna reduza, a largura definida pela flex-basis, para caber no conteiner.</li>
-                    <p>
-                        Comando:
-                    </p>
+                    <p>Comando:</p>
                     <div class="pre">
                         <pre>
-<abbr title="A box reduz para caber no conteiner">flex-shrink: 1;</abbr>
-<abbr title="A box não reduz">flex-shrink: 0;</abbr>
-                    </pre>
-                    </div>
-                </ul>
-                <p>
-                    Outro ponto importante dessas duas propriedades é que, elas trabalham com valores proporcionais dentro do mesmo conteiner. Isso quer dizer que, se o valor de uma box é 1 e outra é 2, a box de valor dois aumentará ou reduzirá o dobro da box com valor 1.
-                </p>
-                <h4>O cálculo</h4>
-                <p>
-                    Em caso que contenham varias box com valores diferentes dentro do mesmo conteiner o cálculo será feito da seguinte forma: 
-                </p>
-                <p>
-                    A box com o menor valor acima de 0 servirá como base para calcular a proporção de crescimento das demais. Exemplo:
-                </p>
-                <p>
-                    Se uma box tem valor 1 outra tem valor 2, a 2 crescerá duas vezes mais. Até aqui ok.
-                </p>
-                <p>
-                    Porém se duas box têm o valor 2, as duas crecerão iguais, pois a proporção aqui é de 1 para 1
-                </p>
-                <p>
-                    Agora se uma tem valor 2 outra, 3 e outra 4?
-                </p>
-                <ul>
-                    <li>A 2 crescerá normal</li>
-                    <li>A 3 crescerá uma vez e 1/3 a mais que a box de valor 2</li>
-                    <li>E a 4 crescerá o dobro da box de valor 2, pois a 2 é o valor base por ser o menor. </li>
-                </ul>
-                <p>
-                    Veja esse exemplo abaixo:
-                </p>
-                <div class="overflow-x">
-                    <div class="contex2A">
-                        <div class="intex2A">flex-gorw:2</div>
-                        <div class="intex2B">flex-gorw:3</div>
-                        <div class="intex2C">flex-gorw:4</div>
-                    </div>
-                </div>
-                <p>
-                    O mesmo também vale para o flex-shrink. Veja:
-                </p>
-                <div class="overflow-x">
-                    <div class="contex3A">
-                        <div class="intex3A">flex-shrink:2</div>
-                        <div class="intex3B">flex-shrink:3</div>
-                        <div class="intex3C">flex-shrink:4</div>
-                        
-                       
-                    </div>
-                </div>
+div.intex {
+flex-basis: 100px; /* Define o tamanho inicial do item */
+}
 
-            </article><!--Fim flex-grow & flex-shrink-->
-            <article><!--Propriedade flex-->
+&lt;div class="contex" style="flex-flow: row wrap; width: 180px;">
+&lt;div class="intex" style="flex-basis: 100px;">Bloco 01&lt;/div>
+&lt;div class="intex" style="flex-basis: 150px;">Bloco 02&lt;/div>
+&lt;div class="intex" style="flex-basis: 200px;">Bloco 03&lt;/div>
+&lt;/div>
+                        </pre>
+                    </div>
+                    <p>Você pode usar a propriedade <strong>flex-basis</strong> em conjunto com <strong>flex-grow</strong> e <strong>flex-shrink</strong> para criar layouts flexíveis e responsivos.</p>
+                    <p>As propriedades <strong>flex-grow</strong> e <strong>flex-shrink</strong> são usadas para controlar a capacidade de um item flexível de crescer ou encolher dentro de um contêiner flexível.</p>
+                </article><!--Fim flex-basis-->
+                <article id="flex-grow">
+                    
+                    <h3>flex-grow</h3>
+                    <p>A propriedade <strong>flex-grow</strong> define a capacidade de um item flexível de crescer para ocupar o espaço disponível no contêiner. O valor padrão é 0, o que significa que o item não crescerá além do seu tamanho inicial. Um valor maior que 0 permite que o item cresça proporcionalmente ao espaço disponível.</p>
+                    <p>Exemplo:</p>
+                    <div class="contex" style="flex-flow: row nowrap; width: 400px;">
+                        <div class="intex" style="flex-grow: 1;">Bloco 01</div>
+                        <div class="intex" style="flex-grow: 2;">Bloco 02</div>
+                        <div class="intex" style="flex-grow: 3;">Bloco 03</div>
+                    </div>
+                    <p>Comando:</p>
+                    <div class="pre">
+                        <pre>
+div.intex {
+    flex-grow: 1; /* Define a capacidade de crescimento do item */
+}
+
+&lt;div class="contex" style="flex-flow: row nowrap; width: 400px;">
+    &lt;div class="intex" style="flex-grow: 1;">Bloco 01&lt;/div>
+    &lt;div class="intex" style="flex-grow: 2;">Bloco 02&lt;/div>
+    &lt;div class="intex" style="flex-grow: 3;">Bloco 03&lt;/div>
+&lt;/div>
+                        </pre>
+                    </div>
+                </article><!-- /#flex-grow -->
+                <article id="flex-shrink">
+                    
+                                    <h3>flex-shrink</h3>
+                                    <p>A propriedade <strong>flex-shrink</strong> define a capacidade de um item flexível de encolher para liberar espaço no contêiner. O valor padrão é 1, o que significa que o item pode encolher se necessário. Um valor de 0 impede que o item encolha.</p>
+                                    <p>Exemplo:</p>
+                                    <div class="contex" style="flex-flow: row nowrap; width: 200px;">
+                                        <div class="intex" style="flex-shrink: 1;">Bloco 01</div>
+                                        <div class="intex" style="flex-shrink: 2;">Bloco 02</div>
+                                        <div class="intex" style="flex-shrink: 3;">Bloco 03</div>
+                                    </div>
+                                    <p>Comando:</p>
+                                    <div class="pre">
+                                        <pre>
+div.intex {
+    flex-shrink: 1; /* Define a capacidade de encolhimento do item */
+}
+
+
+&lt;div class="contex" style="flex-flow: row nowrap; width: 200px;">
+    &lt;div class="intex" style="flex-shrink: 1;">Bloco 01&lt;/div>
+    &lt;div class="intex" style="flex-shrink: 2;">Bloco 02&lt;/div>
+    &lt;div class="intex" style="flex-shrink: 3;">Bloco 03&lt;/div>
+&lt;/div>
+                                        </pre>
+                                    </div>
+                    
+                </article><!-- /#flex-shrink -->
+                 <article id="propriedade-flex">
                 <h3>Propriedade flex</h3>
-                <p>A propriedade flex funciona como uma shothand. Assim como a flex-flow é usada no conteirner, a flex é usada nas box internas. </p>
-                <p>
-                    Inclusive a W3C recomenda que usemos sempre a propriedade flex para encurtar os comandos assim com ela também recomenda o uso da flex-flow.
-                </p>
-                <p>
-                    Assim como toda "shothand", essa propriedade tem uma ordem de estilos. Veja a abaixo:
-                </p>
-                <ol>
-                    <li><strong>flex-grow</strong></li>
-                    <li><strong>flex-shrink</strong></li>
-                    <li><strong>flex-basis</strong></li>
-                </ol>
-                <p>
-                    O comando:
-                </p>
+                <p>A propriedade <strong>flex</strong> é uma abreviação para as propriedades <strong>flex-grow</strong>, <strong>flex-shrink</strong> e <strong>flex-basis</strong>. Ela permite definir o comportamento de crescimento, encolhimento e tamanho base de um item flexível em uma única linha de código.</p>
+                <p>Exemplo de uso:</p>
+                <div class="contex" style="flex-flow: row nowrap; width: 400px;">
+                    <div class="intex" style="flex: 1 1 100px;">Bloco 01</div>
+                    <div class="intex" style="flex: 2 1 150px;">Bloco 02</div>
+                    <div class="intex" style="flex: 3 1 200px;">Bloco 03</div>
+                </div>
+                <p>Comando:</p>
                 <div class="pre">
-                    <pre>         flex: <abbr title="flex-grow">2</abbr> <abbr title="flex-shrink">1</abbr> <abbr title="flex-basis">100px</abbr>
+                    <pre>
+div.intex {
+    flex: 1 1 100px; /* Define flex-grow, flex-shrink e flex-basis */
+}
+
+&lt;div class="contex" style="flex-flow: row nowrap; width: 400px;">
+    &lt;div class="intex" style="flex: 1 1 100px;">Bloco 01&lt;/div>
+    &lt;div class="intex" style="flex: 2 1 150px;">Bloco 02&lt;/div>
+    &lt;div class="intex" style="flex: 3 1 200px;">Bloco 03&lt;/div>
+&lt;/div>
                     </pre>
                 </div>
-                <p>
-                    Veja agora as aplicações mais comuns desse comando flex.
-                </p>
+                <p>Você pode usar a propriedade <strong>flex</strong> para criar layouts flexíveis e responsivos de forma mais concisa e eficiente.</p>
+                <p>Veja agora as aplicações mais comuns desse comando flex.</p>
 
                 <div class="overflow-x">
                     <table>
                         <thead>
                             <tr>
                                 <th scope="col">Estilos</th>
-                                <th scope="col">Funcionamento e aplicações</th>
+                                <th scope="col">Funcionamento e Aplicações</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>flex:0 1;</td>
-                                <td rowspan="2">São dois comando que Resetam a box para os padrões de fábrica digamos assim. isso é usado para evitar que algum estilo geraizado interfira no funcionamento esperado pela box interna..</td>
+                                <td>flex: 0 1;</td>
+                                <td rowspan="2">Esses dois comandos resetam a box para os padrões iniciais. Isso é usado para evitar que algum estilo generalizado interfira no funcionamento esperado da box interna.</td>
                             </tr>
                             <tr>
                                 <td>flex: initial</td>
                             </tr>
                             <tr>
                                 <td>flex: 0 0 auto;</td>
-                                <td rowspan="2">Esses comando removem a flexibilidade da box e deixa ela apenas no tamanho do conteúdo delas.</td>
+                                <td rowspan="2">Esses comandos removem a flexibilidade da box e a deixam apenas no tamanho do conteúdo delas.</td>
                             </tr>
                             <tr>
                                 <td>flex: none;</td>
                             </tr>
                             <tr>
                                 <td>flex: 1 1 auto;</td>
-                                <td rowspan="2">Esses comandos fazem o inverso do acima. Esse aqui deixa a box 100% flexível e ajusta seu conteúdo interno também.</td>
+                                <td rowspan="2">Esses comandos fazem o inverso dos anteriores. Eles deixam a box 100% flexível e ajustam seu conteúdo interno também.</td>
                             </tr>
                             <tr>
                                 <td>flex: auto;</td>
                             </tr>
                             <tr>
                                 <td>flex: 1;</td>
-                                <td>Quando tem apenas um número significa que só foi definido o flex grow. Logo o flex shrink e o flex-basis são o valor padrão. Seria o mesmo que escrever flex: 2 1 auto;</td>
-                            
+                                <td>Quando há apenas um número, significa que só foi definido o flex-grow. Logo, o flex-shrink e o flex-basis assumem o valor padrão. Seria o mesmo que escrever flex: 1 1 auto;</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </article><!--Fim Propriedade flex-->
-        </section><!--Fim Anatomia dos itnes flex-box-->
+            </section><!--Fim flex-basis-grow-shrink-->
+           
+        </article><!--Fim Anatomia dos itnes flex-box-->
 
 
 
@@ -1151,25 +1207,9 @@ div.intex{
      
  <h1>Vídeos</h1>
 
-        <ol>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-1-introducao-ao-flexbox/">Introdução ao Flexbox</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-2-direcoes-e-eixos/">Direções e eixos</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-3-empacotamento-e-fluxo/">Empacotamento e fluxo</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-4-alinhamentos-nos-eixos/">Alinhamentos nos eixos</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-5-centralizacao-com-flexbox/">Centralização com Flexbox</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-6-alinhamento-empacotado/">Alinhamento empacotado</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-7-anatomia-dos-itens-flexbox/">Anatomia dos itens Flexbox</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-8-tamanho-base-dos-itens/">Tamanho base dos itens</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-9-pode-crescer-ou-diminuir/">Pode crescer ou diminuir</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-10-simplificando-com-flex/">Simplificando com flex</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-11-menu-com-flexbox-parte1/">Menu com Flexbox (Parte1)</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-12-menu-com-flexbox-parte-2/">Menu com Flexbox (Parte 2)</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-13-menu-com-flexbox-parte-3/">Menu Com Flexbox (Parte 3)</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-14-conteudo-flexivel-parte-1/">Conteúdo Flexível (Parte 1)</a></li>
-            <li><a href="https://www.estudonauta.com/licao/capitulo-27-aula-15-conteudo-flexivel-parte-2/">Conteúdo Flexível (Parte 2)</a></li>
-        </ol>
+        
  
-        <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+       
        
     
     </footer>

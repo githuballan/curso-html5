@@ -45,6 +45,7 @@
         <a href="#pseudo-classes" class="buttom menu">pseudo-classes</a>
         <a href="#pseudo-elementos" class="buttom menu">pseudo-elementos</a>
         <a href="#hierarquia-css" class="buttom menu">Hierarquia CSS</a>
+        <a href="#calc" class="buttom menu">CSS calc()</a>
     </nav>
     <main>
         <article id="seletores">
@@ -278,8 +279,7 @@ background-image: radial-gradient(circle, #567eb942, #bad5dd);
                 <li><strong>::part</strong>: Aplica estilos a partes específicas de um elemento personalizado.</li>
             </ul>
         </article><!--Pseudo-elementos-->
-        
-         <article id="hierarquia-css">  
+        <article id="hierarquia-css">  
                 <h2>Hierarquia CSS</h2>
                 <p>Como já vimos, quanto mais específico maior o grau hierárquico do estilo, logo se usar uma children para definir um item essa será a prioridade do CSS.</p>
                 <ol>
@@ -301,7 +301,94 @@ background-image: radial-gradient(circle, #567eb942, #bad5dd);
                         </ol>
                     </li>
                 </ol>
-            </article><!--Hierarquia CSS--> 
+        </article><!--Hierarquia CSS--> 
+        <article id="calc">
+            <h2>Função <code>calc()</code> no CSS</h2>
+            <p>A função <code>calc()</code> no CSS permite realizar cálculos matemáticos para definir valores de propriedades CSS. Isso é útil quando você precisa combinar diferentes unidades ou ajustar tamanhos de elementos de forma dinâmica.</p>
+           <p><strong>Exemplo de uso</strong></p>
+            <p>Vamos ver um exemplo de como usar a função <code>calc()</code> para definir a largura de um elemento:</p>
+            <div class="pre">
+                <pre>
+&lt;style>
+    .box {
+        width: calc(100% - 50px);
+        height: 200px;
+        margin: auto;
+        background-color: lightblue;
+    }
+&lt;/style>
+                </pre>
+            </div>
+            <p class="mark">Note que sempre há espaço entre os operadores e o número!</p>
+            <p>Exemplo de código no body:</p>
+            <div class="pre">
+                <pre>
+&lt;div style="background-color: lime;">
+    &lt;div class="box">Conteúdo da caixa&lt;/div>
+&lt;/div>
+                </pre>
+            </div>
+            
+            <style>
+            .box {
+                width: calc(100% - 50px);
+                height: 200px;
+                margin: auto;
+                background-color: lightblue;
+            }
+        </style>
+            <p>Exemplo de funcionamento:</p>
+            <div style="background-color: lime;">
+                <div class="box">Conteúdo da caixa</div>
+            </div>
+            <p>No exemplo acima, a largura da caixa é calculada como 100% da largura do elemento pai menos 50 pixels.</p>
+
+            <section id="operadores">
+                <h3>Operadores suportados</h3>
+                <ul>
+                    <li><strong>Adição (+)</strong>: <code>calc(50% + 20px)</code></li>
+                    <li><strong>Subtração (-)</strong>: <code>calc(100% - 50px)</code></li>
+                    <li><strong>Multiplicação (*)</strong>: <code>calc(10px * 2)</code></li>
+                    <li><strong>Divisão (/)</strong>: <code>calc(100px / 2)</code></li>
+                </ul>
+                <p class="mark">Note que a multiplicação e a divisão só podem ser usadas com números, não com unidades diferentes.</p>
+            </section><!-- /#operadores -->
+
+            <section id="var-css">                
+                <h3>Usando Variáveis CSS com <code>calc()</code></h3>
+                <p>Você pode usar variáveis CSS (custom properties) junto com a função <code>calc()</code> para criar estilos dinâmicos e reutilizáveis. As variáveis CSS são definidas usando a sintaxe <code>--nome-da-variavel</code> e podem ser acessadas usando a função <code>var()</code>.</p>
+                <p><strong>Exemplo de uso</strong></p>
+                <p>Vamos ver um exemplo de como usar variáveis CSS com a função <code>calc()</code>:</p>
+                <div class="pre">
+                    <pre>
+                &lt;style>
+                    :root {
+                        --spacing: 20px;
+                        --box-width: calc(100% - var(--spacing) * 2);
+                    }
+                    .box {
+                        width: var(--box-width);
+                        height: 200px;
+                        margin: var(--spacing);
+                        background-color: lightcoral;
+                    }
+                &lt;/style>
+                    </pre>
+                </div>
+                <p>Exemplo de código no body:</p>
+                <div class="pre">
+                    <pre>
+                &lt;div class="box">Conteúdo da caixa&lt;/div>
+                    </pre>
+                </div>
+                <p>Exemplo de funcionamento:</p>
+                <div style="background-color: lime;">
+                <div class="box">Conteúdo da caixa</div>
+                </div>
+                <p>No exemplo acima, a largura da caixa é calculada como 100% da largura do elemento pai menos duas vezes o valor da variável <code>--spacing</code>.</p>
+                
+            </section><!-- /#var-css -->
+        </article>
     </main>
        
         

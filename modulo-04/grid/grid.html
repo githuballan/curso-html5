@@ -5,108 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
     <title>Grid</title>
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="stylesheet" href="../../style.css">
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 <style>
-    
-        /*
-        <div id="conteiner">
-    
-            <div id="cabeçalho">Cabeçalho</div>
-            <div id="principal">Principal</div>
-            <div id="rodape">Rodapé</div>
-            <div id="lateral">Lateral</div>
-        </div>*/
-        div#conteiner{
-            border: 2px solid #000000;
-            border-radius: 5px;
-            background-color: lightcoral;
 
+    .contex{/* Tabela article Alinhamentos nos eixos*/
+        display: grid;        
+        background-color: coral; 
+        padding: 5px;  
+        }
+
+    .intex{/*exemplos alinhamento dos eixos*/
+        background-color: aquamarine;       
+        padding: 40px 0px 40px 0px;      
+        border-radius: 20px;
+        text-align: center;
+        border:1px solid #000000;
+        min-width: 100px;
+        }
+
+        div#conteiner{          
             display: grid;
+            gap: 5px;
             grid-template-columns: auto auto auto auto;
             grid-template-rows: 150px 150px 150px 150px;
             grid-template-areas: 
             "header header header header"
             "nav main main main"
             "nav main main main"
-            "footer footer footer footer"
-            ;
-
-
+            "footer footer footer footer";
         }
-        div#cabeçalho{
-            border: 2px solid #000000;
-            border-radius: 5px;
-            background-color: aqua;
-
-            
-            grid-area: header;
-            
-
-        }
-
-        div#principal{
-            border: 2px solid #000000;
-            border-radius: 5px;
-            background-color: aqua;
-
-            grid-area: main;
-
-        }
-        div#rodape{
-            border: 2px solid #000000;
-            border-radius: 5px;
-            background-color: aqua;
-
-            grid-area: footer;
-    
-
-        }
-        div#lateral{
-            border: 2px solid #000000;
-            border-radius: 5px;
-            background-color: aqua;
-
-            grid-area: nav;
-
-        }
+      
+        div#cabeçalho{grid-area: header;}
+        div#principal{grid-area: main;}
+        div#rodape{grid-area: footer;}
+        div#lateral{grid-area: nav;}
 
 </style>
 </head>
 <body>
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
+        
+        <h1>Capítulo 28</h1>
         <h1>Grid-Layout</h1>
     </header>
     <main>
-        <p>Grid layout é uma matéria relativamente simples que tem por finalidade definir o layout principal da página através de grades que se ajustam de forma responsiva. Diferentemente das flex-box que se comportam como fluido, a grid trabalha de forma amarrada, parecido com um tabela.</p>
-        <article><!--Conteiner-->
-        <h2>Conteiner</h2>
-        <p>Assim como as flex-box quando trabalhamos com grid também temos uma box conteiner que abriga todas as demais box</p>
-        <p>Para isso usamos o seguintes comandos na box conteiner:</p>
+        
+      
+    <article id="conteiner">
+        <p>O Grid Layout é uma técnica relativamente simples que tem por finalidade definir o layout principal da página através de grades que se ajustam de forma responsiva. Diferentemente das flex-boxes, que se comportam como um fluido, a grid trabalha de forma mais rígida, semelhante a uma tabela.</p>
+
+        <h2>Container</h2>
+
+        <p>Assim como em flex-box, quando trabalhamos com grid também temos um container que abriga todas as demais caixas.</p>
+        <p>Para isso, usamos os seguintes comandos no container:</p>
+
         <ul>
-            <li><strong>display: grid; </strong> Esse comando é que define que essa box é um conteiner que se comportará como grid. Esse comando é obrigatório para aplicar o grid layout</li>
-            <li><strong>grid-template-columns: auto auto auto;</strong> Esse comnado define a quantidade de colunas que esse conteiner terá. Nesse caso foi definido como 3 colunas de tamanho adaptável de acordo com a tela. Entretanto, nesse caso se limita ao contúdo da box interna, quer dizer que quando não for possível reduzir mais seu conteúdo, ela irá gerar um overflow. </li>
-            <p>
-                Esse comando parece um shothand, pois cada auto ou tamanho definido ( ex.: 150px auto auto) que digitar irá criará automanticamente uma nova coluna 
-            </p>
-            <p>Por padrão ele o conteiner vem definido para uma coluna em auto</p>
-            <li><strong> grid-template-rows: 150px;</strong> Semelhantes ao comando de cima só que esse funciona com colunas.Nesse caso como foi colocado apenas um 150px apenas a primeira linha terá 150px as demais ficaram como auto. </li>
-            <p>
-                A diferença é que esse por padrão assume quantas linhas forem necessária para a quantidade de box internas que existirem no conteiner.
-            </p>
-            <p>Caso defina quatro linhas de 150px e duas colunas auto, nesse caso uma quinta linha seria criada abrigando duas box com tamanho auto.</p>
-            <li><strong>column-gap: </strong> Essa propriedade define um espaço padrão para ficar entre as colunas de box internas. Ela funciona como a justify-content: space-between da flex box</li>
-            <li><strong>row-gap:</strong> Essa define um espaçamento padrão entre as linha da grid. Ela funciona como a align-content: space-between; da flex-box</li>
-            <li><strong>gap</strong> Essa é como uma shothand onde podemos definir os dois espaçamentos acima em uma só linha, sendo a primeira referente a linha e o segundo referente a coluna.</li>
-            <p>Vale ressaltar que caso defina apenas um valor, esse valor será aplicado aos dois espaçamentos</p>
+            <li><strong>display: grid;</strong> Este comando define que esta caixa é um container que se comportará como grid.</li>
+            <li><strong>grid-template-columns: auto auto auto;</strong> Este comando define a quantidade de colunas que este container terá. Neste caso, foram definidas 3 colunas de tamanho adaptável de acordo com a tela. Entretanto, se limita ao conteúdo da caixa, ou seja, quando não for possível reduzir mais seu conteúdo, ela irá gerar um overflow. Por padrão, o container vem definido para uma coluna em "auto".</li>
+            <li><strong>grid-template-rows: 150px;</strong> Semelhante ao comando acima, mas este funciona com linhas. Neste caso, como foi colocado apenas um "150px", apenas a primeira linha terá 150px, as demais ficarão como "auto".</li>
+            <p>A diferença é que este, por padrão, assume quantas linhas forem necessárias para a quantidade de caixas que existirem no container.</p>
+            <p>Caso defina quatro linhas de 150px e duas colunas "auto", uma quinta linha seria criada abrigando duas caixas com tamanho "auto".</p>
+            <li><strong>column-gap:</strong> Esta propriedade define um espaço padrão entre as colunas de caixas. Ela funciona como a "justify-content: space-between" das flex-boxes.</li>
+            <li><strong>row-gap:</strong> Esta define um espaçamento padrão entre as linhas da grid. Ela funciona como a "align-content: space-between" das flex-boxes.</li>
+            <li><strong>gap:</strong> Esta é como um shorthand onde podemos definir os dois espaçamentos acima em uma só linha, sendo o primeiro referente à linha e o segundo referente à coluna.</li>
+            <p>Vale ressaltar que, caso defina apenas um valor, este valor será aplicado aos dois espaçamentos.</p>
         </ul>
-        /* column-gap: 5px ;
-        row-gap: 5px;*/
-        gap: 5px 10px;
-    </article>
+        <fieldset>
+            <legend>Exemplo interativo</legend>
+            <p>
+                <strong>Largura do contêiner:</strong>
+
+                <input type="number" oninput="wd=this.value; 
+                document.querySelector('#conter1').style.width = wd+'px';">
+            </p>
+            
+        <div class="contex" id="conter1" style="
+        grid-template-columns: auto auto auto auto; 
+        grid-template-rows: 150px 150px; 
+        column-gap: 10px; 
+        row-gap: 10px;">
+            <div class="intex" style="width: 150px;">Bloco 01</div>
+            <div class="intex" style="width: 150px;">Bloco 02</div>
+            <div class="intex" style="width: 150px;">Bloco 03</div>
+            <div class="intex" style="width: 150px;">Bloco 04</div>
+        </div> 
+
+    </fieldset>
+        <p>Para melhor compreensão, altere o da largura do contêiner abaixo para ver o efeito do espaçamento entre as caixas.</p>
+        
+        <p>Note que por mais que reduza a largura do contêiner, as caixas não descem para a linha de baixo, pois estão definidas 4 colunas e a largura da caixa segura a largura da coluna mais o gap.</p>
+        <p>Se as caixas não tivessem uma largura definida, elas se comprimiriam até o limite de seus conteúdos.</p>
+
+        <p><strong>Código</strong>:</p>
+        <div class="pre">
+            <pre>
+&lt;div class="contex" style="
+display: grid;
+grid-template-columns: auto auto auto auto; 
+grid-template-rows: 150px; 
+column-gap: 10px; 
+row-gap: 10px;">
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;/div> 
+            </pre>
+        </div>
+
+        
+
+
+    </article><!--conteiner-->
+    <article id="Grid-template">
+        <h2>Grid-template-areas</h2>
+        <p>Esta propriedade é uma forma de definir o layout da página de forma mais visual, sem a necessidade de definir quantas colunas e linhas o container terá. Vejamos o exemplo abaixo:</p>
+        
+        grid-template-areas:<br> 
+    "header header header header"<br>
+    "nav main main main"<br>
+    "nav main main main"<br>
+    "footer footer footer footer";<br>
+    <p>Este comando define que o container terá 4 colunas e 4 linhas, onde:</p>
+        <ul>
+        <li>o header  ocupará as 4 colunas da primeira linha, 
+        <li>a nav ocupará a primeira coluna das linhas 2 e 3, 
+        <li>o main ocupará as 3 colunas restantes das linhas 2 e 3 e 
+        <li>o footer ocupará as 4 colunas da última linha.
+    </ul>
+        <p><strong>Html: </strong></p>
+    <div class="pre">
+        
+            <pre>
+        
+        &lt;div class="contex" id="conteiner">
+            &lt;div class="intex" id="cabeçalho">Cabeçalho&lt;/div>
+            &lt;div class="intex" id="principal">Principal&lt;/div>
+            &lt;div class="intex" id="rodape">Rodapé&lt;/div>
+            &lt;div class="intex" id="lateral">Lateral&lt;/div>
+        &lt;/div>
+        
+            </pre>
+        
+    </div>
+    <p><strong>CSS:</strong></p>
+        <div class="pre">
+            <pre>
+    
+.contex{/* Tabela article Alinhamentos nos eixos*/
+    display: grid;        
+    background-color: coral; 
+    padding: 5px;  
+    }
+
+.intex{/*exemplos alinhamento dos eixos*/
+    background-color: aquamarine;       
+    padding: 40px 0px 40px 0px;      
+    border-radius: 20px;
+    text-align: center;
+    border:1px solid #000000;
+    min-width: 100px;
+    }
+
+#conteiner{          
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-areas: 
+    "header header header header"
+    "nav main main main"
+    "nav main main main"
+    "footer footer footer footer";
+    }
+
+#cabeçalho{grid-area: header;}
+div#principal{grid-area: main;}
+div#rodape{grid-area: footer;}
+div#lateral{grid-area: nav;}
+            </pre>
+        </div>
+    <p><strong>Exemplo:</strong></p>
+        <div class="contex" id="conteiner">
+        
+            <div class="intex" id="cabeçalho">Cabeçalho</div>
+            <div class="intex" id="principal">Principal</div>
+            <div class="intex" id="rodape">Rodapé</div>
+            <div class="intex" id="lateral">Lateral</div>
+        </div>
+        
+    
+    </article><!--Grid-template-->
     <article>
         <h2>itens</h2>
-        <p>Vamos começar agora a falar sobre propriedade de itens da grade. Itens entende-se as box internas.</p>
+        <p>Vamos começar agora a falar sobre propriedade de itens da grade. Itens entende-se as caixas.</p>
         <ul>
             <li><strong>grid-column-start: 1</strong>De forma define em qual coluna esse item irá começar. Use o html testes para melhor compreensão.</li>
             <li><strong>grid-column-end: 2;</strong> Define até qual coluna esse item irá se esticar.Porém ele não inclui a coluna ele vai apenas até. Nessa caso como está até a coluna dois, mudaria absolutamente nada. Mas se fosse até a 3 o item esticaria absorvendo o espaço da coluna 2 </li>
@@ -129,96 +223,7 @@
         </ul>
        
     </article>
-    <article><!--Grid-template-areas-->
-    <h2>Grid-template-areas</h2>
-    <p>Esse é o sonho do criador de sites. Enfim algo simples e prático para criar layout de paginas</p>
-    <p>Essa propriedade funciona da seguinte forma:</p>
-    <p>Definimos a pripriedade grid-template-area com o seguinte comandos</p>
-    <p><strong>No body: </strong></p>
-<div class="pre">
     
-        <pre>
-    
-    &lt;div id="conteiner">
-        &lt;div id="cabeçalho">Cabeçalho&lt;/div>
-        &lt;div id="principal">Principal&lt;/div>
-        &lt;div id="rodape">Rodapé&lt;/div>
-        &lt;div id="lateral">Lateral&lt;/div>
-    &lt;/div>
-    
-        </pre>
-    
-</div>
-<p><strong>No head:</strong></p>
-    <div class="pre">
-        <pre>
-
-div#conteiner{
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: lightcoral;
-
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: 150px 150px 150px 150px;
-    grid-template-areas: 
-    "header header header header"
-    "nav main main main"
-    "nav main main main"
-    "footer footer footer footer"
-    ;
-
-
-}
-div#cabeçalho{
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: aqua;
-
-    
-    grid-area: header;
-    
-
-}
-
-div#principal{
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: aqua;
-
-    grid-area: main;
-
-}
-div#rodape{
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: aqua;
-
-    grid-area: footer;
-
-
-}
-div#lateral{
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: aqua;
-
-    grid-area: nav;
-
-}
-        </pre>
-    </div>
-<p><strong>Exemplo:</strong></p>
-    <div id="conteiner">
-    
-        <div id="cabeçalho">Cabeçalho</div>
-        <div id="principal">Principal</div>
-        <div id="rodape">Rodapé</div>
-        <div id="lateral">Lateral</div>
-    </div>
-    
-
-    </article>
     <article>
         <h2>Posicionamento</h2>
         <p>
@@ -226,12 +231,17 @@ div#lateral{
         </p>
     </article>
 
-<a href="exemplos/ex01/testes.html" target="_blank">Link para testes</a>
-<a href="exemplos/ex02/teste.html" target="_blank">Link para novo menu</a>
+
     </main>
     <footer>
         <h1>Material de Apoio</h1>
+
+<a href="exemplos/ex01/testes.html" target="_blank">Link para testes</a>
+<a href="exemplos/ex02/teste.html" target="_blank">Link para novo menu</a>
+
         <a href="https://youtube.com/playlist?list=PLx4x_zx8csUi47Bnugpk78nqJN6rYvEnV&si=CCsigJAxypbNd1d8" target="_blank">Link para playlist completa</a> Curso completo de HTML e CSS do CFBCursos
+
+
         <ol>
            
             <li><a href="https://youtu.be/jb_j6fyQitQ?si=jwGRe94o2XL6HChb">Criando layout em grades CSS</a></li>

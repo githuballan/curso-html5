@@ -236,6 +236,23 @@
                 </div>
                 <p>Resultado:</p>
                 <button onclick="alert('Botão clicado!')">Clique em mim</button>
+                <h3>JavaScript "in-line"</h3>
+                <p>Os eventos podem ser adicionados diretamente a elementos HTML usando atributos de evento, como <code>onclick</code>, <code>onmouseover</code> e <code>onmouseout</code>. No entanto, é mais comum adicionar eventos usando o método <code>addEventListener</code>, que é mais flexível e poderoso.</p>
+                <p>Exemplo de evento de clique que altera a cor do botão:</p>
+                <div class="pre">
+                    <pre>
+&lt;button onclick="this.style.backgroundColor='red'">Clique em mim&lt;/button>
+                    </pre>
+                </div>
+                <p>Resultado:</p>
+                <button onclick="this.style.backgroundColor='red'">Clique em mim</button>
+                <p>Explicação dos elementos usados:</p>
+                <ul>
+                    <li><strong>&lt;button></strong>: Define um botão clicável.</li>
+                    <li><strong>onclick</strong>: Atributo de evento que dispara uma função JavaScript quando o botão é clicado.</li>
+                    <li><strong>this.style.backgroundColor='red'</strong>: Código JavaScript que altera a cor de fundo do botão para vermelho.</li>
+                   
+                </ul>
             </article> <!--eventos-->
             <article id="addEventListener">
                 <h3>Usando addEventListener</h3>
