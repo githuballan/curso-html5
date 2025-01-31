@@ -114,10 +114,28 @@
                     </li>
 
                     <li><strong>animation-direction:</strong> Define se a animação deve ser reproduzida para frente, para trás ou alternadamente. Exemplo: <code>animation-direction: alternate;</code></li>
+                    <ul>
+                        <li><strong>normal:</strong> A animação é reproduzida no sentido normal (do início ao fim).</li>
+                        <li><strong>reverse:</strong> A animação é reproduzida no sentido inverso (do fim ao início).</li>
+                        <li><strong>alternate:</strong> A animação é reproduzida alternadamente no sentido normal e inverso.</li>
+                        <li><strong>alternate-reverse:</strong> A animação é reproduzida alternadamente no sentido inverso e normal.</li>
+                    </ul>
                     
-                    <li><strong>animation-fill-mode:</strong> Define o estilo aplicado ao elemento quando a animação não está sendo reproduzida (antes de começar, após terminar ou ambos). Exemplo: <code>animation-fill-mode: forwards;</code></li>
+                    <li><strong>animation-fill-mode:</strong> Define o estilo aplicado ao elemento quando a animação não está sendo reproduzida (antes de começar, após terminar ou ambos). Exemplo: <code>animation-fill-mode: forwards;</code>
+                        <ul>
+                            <li><strong>none:</strong> O estilo do elemento não é alterado fora do tempo de execução da animação.</li>
+                            <li><strong>forwards:</strong> O elemento mantém o estilo aplicado no último quadro da animação após a conclusão.</li>
+                            <li><strong>backwards:</strong> O elemento aplica o estilo do primeiro quadro da animação durante o tempo de atraso da animação.</li>
+                            <li><strong>both:</strong> O elemento segue as regras de <code>forwards</code> e <code>backwards</code>, aplicando o estilo do primeiro quadro durante o atraso e mantendo o estilo do último quadro após a conclusão.</li>
+                        </ul>
+                    </li>
 
-                    <li><strong>animation-play-state:</strong> Define se a animação está em execução ou pausada. Exemplo: <code>animation-play-state: paused;</code></li>
+                    <li><strong>animation-play-state:</strong> Define se a animação está em execução ou pausada. Exemplo: <code>animation-play-state: paused;</code>
+                        <ul>
+                            <li><strong>running:</strong> A animação está em execução.</li>
+                            <li><strong>paused:</strong> A animação está pausada.</li>
+                        </ul>
+                    </li>
                
                 
                
@@ -147,6 +165,15 @@
                         <option value="steps(4, start)">steps(4, start)</option>
                         <option value="steps(4, end)">steps(4, end)</option>
                         <option value="cubic-bezier(0.1, 0.7, 1.0, 0.1)">cubic-bezier(0.1, 0.7, 1.0, 0.1)</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <strong>animation-play-state:</strong>
+                    <select onchange="document.querySelector('#animado').style.animationPlayState = this.value;">
+                        <option value="running">running</option>
+                        <option value="paused">paused</option>
                     </select>
                 </div>
                 
