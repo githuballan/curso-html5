@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
+    <title>Animação CSS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+   
+    <style>
+        :root {
+                    --spacing: 20px;
+                    --contex-width: 100px;
+                    --larg: calc(var(--contex-width) - 50px);
+                }
+         @keyframes exemplo {
+            
+            /* 50% {transform-origin: right top;
+                transform: rotate(270deg);}
+            100% {transform-origin: left top;
+                transform: rotate(-1deg);} */
+                50%{transform: translateX(var(--larg));}
+               
+            
+           
+            
+        }
+       
+        .img{
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            width: 50px;
+        }
+        .contex{/* Tabela article Alinhamentos nos eixos*/
+            background-color: coral; 
+            border: 1px solid #000;
+            padding: 5px;
+            margin: 10px;
+            width: 100%;
+            }
+
+        fieldset{
+            
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;            
+               
+        }
+
+        fieldset>div{
+            align-self: center;
+        }
+
+        .intex{/*exemplos alinhamento dos eixos*/
+            background-color: aquamarine;       
+            padding: 10px 0px 10px 0px;      
+            border-radius: 20px;
+            text-align: center;
+            border:1px solid #000000;
+            min-width: 50px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animação CSS</h1>
+    </header>
+    <main>
+       
+        <article id="keyframes">
+            <h2>@keyframes</h2>
+            <p>A propriedade <code>@keyframes</code> é utilizada para criar animações em CSS. Com ela, você pode definir mudanças graduais nos estilos de um elemento ao longo do tempo.</p>
+            
+            <ul>
+                <li><strong>from:</strong> Define o estado inicial da animação.</li>
+                <li><strong>to:</strong> Define o estado final da animação.</li>
+                <li><strong>0% - 100%:</strong> Você pode usar porcentagens para definir pontos intermediários na animação. Por exemplo, <code>0%</code> é o início e <code>100%</code> é o final.</li>
+            </ul>
+            <article id="animation">
+                <h2>Propriedade animation</h2>
+                <p>A propriedade <code>animation</code> é uma forma abreviada de definir várias propriedades de animação ao mesmo tempo. Ela permite que você controle a reprodução de animações CSS.</p>
+                
+                <ul>
+                    <li><strong>animation-name:</strong> Define o nome da animação, que é especificado usando a regra <code>@keyframes</code>. Exemplo: <code>animation-name: exemplo;</code></li>
+
+                    <li><strong>animation-duration:</strong> Define a duração da animação. Exemplo: <code>animation-duration: 2s;</code></li>
+
+                    <li><strong>animation-timing-function:</strong> Define a curva de velocidade da animação. Exemplo: <code>animation-timing-function: ease-in-out;</code>
+                        <ul>
+                          
+                            <li><strong>linear:</strong> A animação tem uma velocidade constante do início ao fim.</li>
+                            <li><strong>ease:</strong> Este é o valor padrão. Ele cria uma transição suave que é ideal para a maioria das animações, proporcionando uma sensação natural de aceleração e desaceleração..A animação começa devagar, acelera no meio e desacelera no final.</li>
+                            <li><strong>ease-in-out:</strong> A animação começa devagar, acelera no meio e desacelera no final.mas de forma mais pronunciada do que ease.</li>
+                            <li><strong>ease-in:</strong> A animação começa devagar e acelera no final.</li>
+                            <li><strong>ease-out:</strong> A animação começa rápida e desacelera no final.Este valor é usado quando se deseja uma animação que tenha uma aceleração e desaceleração mais perceptíveis. É útil para criar um efeito mais dramático e enfatizar o início e o fim da animação.</li>
+                            <li><strong>step-start:</strong> A animação salta imediatamente para o estado final no início.</li>
+                            <li><strong>step-end:</strong> A animação permanece no estado inicial até o final, quando salta para o estado final.</li>
+                            <li><strong>steps(n, start|end):</strong> A animação é dividida em n etapas distintas. Pode começar ou terminar em um estado intermediário.</li>
+                            <li><strong>cubic-bezier(x1, y1, x2, y2):</strong> Permite definir uma curva de velocidade personalizada usando uma função cúbica de Bézier.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>animation-delay:</strong> Define um atraso antes do início da animação. Exemplo: <code>animation-delay: 1s;</code>. Porém, esse pode ser um valor negativo, o que faz com que a animação comece como se já estivesse em andamento por essa quantidade de tempo. Exemplo: em uma animação de 4s com um delay de -2s, a página já inicia na metade da animação.</li>
+
+                    <li><strong>animation-iteration-count:</strong> Define o número de vezes que a animação deve ser reproduzida. Exemplo: <code>animation-iteration-count: infinite;</code>
+                        <ul>
+                            <li><strong>n:</strong> A animação será reproduzida n vezes, onde n é um número inteiro positivo.</li>
+                            <li><strong>infinite:</strong> A animação será reproduzida indefinidamente.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>animation-direction:</strong> Define se a animação deve ser reproduzida para frente, para trás ou alternadamente. Exemplo: <code>animation-direction: alternate;</code></li>
+                    
+                    <li><strong>animation-fill-mode:</strong> Define o estilo aplicado ao elemento quando a animação não está sendo reproduzida (antes de começar, após terminar ou ambos). Exemplo: <code>animation-fill-mode: forwards;</code></li>
+
+                    <li><strong>animation-play-state:</strong> Define se a animação está em execução ou pausada. Exemplo: <code>animation-play-state: paused;</code></li>
+               
+                
+               
+            </article>
+            
+            <p>Veja um exemplo de animação que faz um elemento se mover para a direita:</p>
+            
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <p>Experimente alterar os valores abaixo para ver como a animação se comporta.</p>
+                
+                <div>
+                    <strong style="margin-right: 30px;">animation-duration:</strong>
+                    <input type="number" oninput="dur=this.value + 's';
+                    document.querySelector('#animado').style.animationDuration = dur;">
+                </div>
+                <div>
+                    <strong>animation-timing-function:</strong>
+                    <select onchange="document.querySelector('#animado').style.animationTimingFunction = this.value;">
+                        <option value="linear">linear</option>
+                        <option value="ease">ease</option>
+                        <option value="ease-in-out">ease-in-out</option>
+                        <option value="ease-in">ease-in</option>
+                        <option value="ease-out">ease-out</option>
+                        <option value="step-start">step-start</option>
+                        <option value="step-end">step-end</option>
+                        <option value="steps(4, start)">steps(4, start)</option>
+                        <option value="steps(4, end)">steps(4, end)</option>
+                        <option value="cubic-bezier(0.1, 0.7, 1.0, 0.1)">cubic-bezier(0.1, 0.7, 1.0, 0.1)</option>
+                    </select>
+                </div>
+                
+                <div class="contex" id="conter3"
+                style="padding: 0px;
+                width: 500;">
+                    <div id="animado" style="
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-image: linear-gradient(90deg, #00000027, #ffffff);
+                   
+                    animation-name: exemplo ;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-in-out;"></div>
+                </div>
+                
+                <div style="align-self: stretch">
+                   
+                </div>
+            </fieldset>
+            
+            <p><strong>Código</strong>:</p>
+            
+            <div class="pre">
+                <pre>
+        @keyframes exemplo {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100px);
+            }
+        }
+
+        #animado {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            animation: exemplo 2s infinite;
+        }
+                </pre>
+            </div>
+        </article>
+
+    </main>
+    <footer>
+        <a class="buttom buttom-index" href="../../index.html">Índice</a>
+    </footer>
+    <script>console.log(document.querySelector('#conter3').offsetWidth);
+
+    document.documentElement.style.setProperty('--contex-width', document.querySelector('#conter3').offsetWidth + 'px');</script>
+    </script>
+</body>
+</html>

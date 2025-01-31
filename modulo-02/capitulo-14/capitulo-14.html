@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 14 </title>
-    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
+        <title>Grid</title>
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+         <style>
         @font-face {
             font-family: 'star';
             src: url('../../fonts/twinkle-star/twinklestar-Regular.ttf'), format ('truetype');
@@ -16,12 +17,18 @@
         }
         
     </style>
-</head>
+    </head>
+    
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
-    <h1>Fontes</h1>
+<header>
+    
+        <h1>Capítulo 14</h1>
+        <h1>Fontes</h1>
+    
+</header>
     <p>
-        <h3>Fontes Serifadas</h3>
+        <h2>Fontes Serifadas</h2>
         Esta é a categoria mais clássica de fontes, As serifas têm a capacidade de guiar nossos olhos graças aos 
         pequenos prolongamentos que elas criam e fazem as letras “se juntarem” em palavras. Essas fontes são ótimas para serem usadas em títulos. A seguir, vemos quatro exemplos de fontes serifadas. <br>
         <img src="imagens/fontes-serifadas.png" alt="">
@@ -29,22 +36,22 @@
         OBS.:Serifa: também chamada de apoio ou patilha. São pequenas retas que ornamentam as hastes de alguns tipos. <br>
     </p>
     <p>
-        <h3>Fontes não Serifadas</h3>
+        <h2>Fontes não Serifadas</h2>
         Mias conhecidas como sans-serif são fontes que, como você já pode imaginar, não apresentam serifas. Elas são ótimas para a exibição em telas/monitores pois transmitem a sensação de limpeza, clareza e organização. Veja a seguir alguns exemplos de fontes não serifadas: <br>
         <img src="imagens/fontes-nao-serifadas.png" alt="">
     </p>
     <p>
-    <h3>Fontes Monoespaçadas</h3>
+    <h2>Fontes Monoespaçadas</h2>
     . Elas possuem a mesma largura para todas as letras. São muito usada para leitura de códigos de programação. <br>
     <img src="imagens/fonte-monoespaçada.png" alt="">
     </p>
 <p>
-    <h3>Fontes Script</h3>
+    <h2>Fontes Script</h2>
     Também chamadas de fontes handwriting,são aquelas que tentam imitar a escrita humana. Seu uso deve ser bem controlado e jamais será aplicado a textos muito longos, pois causam cansaço visual e tornam-se difíceis de ler. <br>
     <img src="imagens/fonte-script.png" alt="">
 </p>
 <p>
-    <h3>Fontes Display</h3>
+    <h2>Fontes Display</h2>
     Toda fonte que foge completamente das definições feitas pelas classificações acima são consideradas fontes display. São fontes com bastante efeitos visuais, enfeitadas e até mesmo curiosas. Também são chamadas de fontes comemorativas e algumas delas sequer representam letras, podendo ser desenhos de animais, objetos, pessoas, personagens de quadrinhos, etc. <br>
     <img src="imagens/fonte-display.png" alt="">
 </p>
@@ -66,7 +73,7 @@
 <h2>Medidas</h2>
 <p>
     Existem 2 tipos de medidas de fontes:
-    <h3>Medidas Absolutas</h3>
+    <h2>Medidas Absolutas</h2>
     Medidas absolutas são aquelas que independente da plataforma ou do tamanho da tela é terá sempre a mesma medida. <br>
     Exemplo: <br>
     <strong>cm:</strong> essa são os centímetros. <br>
@@ -74,7 +81,7 @@
     <strong>pt:</strong> essa medida é utilizada por impressaoras. Programas de edição de texto como Word, Write e WordPad usam essa medida <br>
     <strong>in:</strong> Polegadas <br>
     
-    <h3>Medidas Relativas</h3>
+    <h2>Medidas Relativas</h2>
     
     <strong>em:</strong> Essa medida é a que deve ser usada sempre exceto em rara excessões. Ela trabalha em cima da medida "px" sendo "1em" em um computador equivalente a "16px", Já "1.5em" equivale a "24px".
     <br>
@@ -86,7 +93,7 @@
     Por isso é tão importante usarmos sempre o padrão "em" 
      
 </p>
-<h3> Viewport</h3>
+<h2> Viewport</h2>
     <p>
         No capítulo 20 veremos essa medida mas como faz parte desse assunto resolvi trazer aqui para ficar mais fácil de achar posteriormente.  
         <strong><a href="../../material-de-apoio/20 - Mini-projeto Cordel.pdf" target="_blank"> PDF do Capítulo 20</a></strong>
@@ -144,14 +151,14 @@
 
 <h2>Variação de fontes</h2>
 <p>Essa matéria foi passada no capítulo 20 na aula <a href="https://youtu.be/0bBBaHNkzVE?si=mOf4a-rl6AE69o_p">Colocando fontes</a></p>
-    <h3>font-variant:</h3>
+    <h2>font-variant:</h2>
         <ul>
             <li><strong>font-variant: small-caps;: </strong><span style="font-variant: small-caps;">Todas as letras ficam maiúsculas porém as que seriam minúsculas permanecem com a altura de minúsculas. </span></li>
             
         </ul>
         
 
-    <h3>text-transform:</h3>
+    <h2>text-transform:</h2>
         <ul>
             <li><strong>text-transform: uppercase;:</strong><span style="text-transform: uppercase;"> Deixa tudo em MAIÚSCULO</span></li>
             <li><strong>text-transform: capitalize;:</strong><span style="text-transform: capitalize;">Toda palavra começa com letra maiúscula</span> </li>

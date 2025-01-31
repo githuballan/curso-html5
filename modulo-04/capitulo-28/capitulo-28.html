@@ -7,41 +7,47 @@
     <title>Grid</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
-<style>
+    <style>
+        .img{
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            width: 50px;
+        }
+        .contex{/* Tabela article Alinhamentos nos eixos*/
+            display: grid;        
+            background-color: coral; 
+            padding: 5px;
+            margin: 10px;
+            min-width: 300px;
+            min-height: 300px;
+            max-width: 800px;
+            max-height: 800px;
+            }
 
-    .contex{/* Tabela article Alinhamentos nos eixos*/
-        display: grid;        
-        background-color: coral; 
-        padding: 5px;  
+        fieldset{
+            
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;            
+                flex-wrap: wrap;
         }
 
-    .intex{/*exemplos alinhamento dos eixos*/
-        background-color: aquamarine;       
-        padding: 40px 0px 40px 0px;      
-        border-radius: 20px;
-        text-align: center;
-        border:1px solid #000000;
-        min-width: 100px;
+        fieldset>div{
+            align-self: center;
         }
 
-        div#conteiner{          
-            display: grid;
-            gap: 5px;
-            grid-template-columns: auto auto auto auto;
-            grid-template-rows: 150px 150px 150px 150px;
-            grid-template-areas: 
-            "header header header header"
-            "nav main main main"
-            "nav main main main"
-            "footer footer footer footer";
-        }
-      
-        div#cabeçalho{grid-area: header;}
-        div#principal{grid-area: main;}
-        div#rodape{grid-area: footer;}
-        div#lateral{grid-area: nav;}
-
-</style>
+        .intex{/*exemplos alinhamento dos eixos*/
+            background-color: aquamarine;       
+            padding: 10px 0px 10px 0px;      
+            border-radius: 20px;
+            text-align: center;
+            border:1px solid #000000;
+            min-width: 50px;
+            }
+    </style>
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
@@ -61,7 +67,7 @@
            
             
         </section><!-- /#introducao -->
-        <section id="basica">
+        <section id="basica"> 
             
             <h3>Propriedades básicas</h3>
             <ul>
@@ -73,6 +79,10 @@
                 <li><strong>grid-template-rows: 150px;</strong> Semelhante ao comando acima, mas este funciona com linhas. Neste caso, como foi colocado apenas um "150px", apenas a primeira linha terá 150px, as demais ficarão como "auto".</li>
                 <p>A diferença é que este, por padrão, assume quantas linhas forem necessárias para a quantidade de caixas que existirem no container.</p>
                 <p>Caso defina quatro linhas de 150px e duas colunas "auto", uma quinta linha seria criada abrigando duas caixas com tamanho "auto".</p>
+                <li><strong>grid-template:auto auto / auto auto auto; </strong>Essa propriedade finciona como uma abreviação de <code>grid-template-columns:</code> e <code>grid-template-rows:</code> onde o primeiro valor refere-se às colunas e o segundo às linhas. Neste caso, foram definidas 3 colunas e 2 linhas, todas com tamanho "auto".</li>
+                
+
+
                 <li><strong>column-gap:</strong> Esta propriedade define um espaço padrão entre as colunas de caixas. Ela funciona como a "justify-content: space-between" das flex-boxes.</li>
                 <li><strong>row-gap:</strong> Esta define um espaçamento padrão entre as linhas da grid. Ela funciona como a "align-content: space-between" das flex-boxes.</li>
                 <li><strong>gap:</strong> Esta é como um shorthand onde podemos definir os dois espaçamentos acima em uma só linha, sendo o primeiro referente à linha e o segundo referente à coluna.</li>
@@ -80,12 +90,13 @@
             </ul>
             <fieldset>
                 <legend>Exemplo interativo</legend>
-                <p>
-                    <strong>Largura do contêiner:</strong>
+                <div>
+
+                <strong>Largura do contêiner:</strong>
                     <input type="number" oninput="wd=this.value;
                     document.querySelector('#conter1').style.width = wd+'px';">
-                </p>
-            
+                    
+                
             <div class="contex" id="conter1" style="
             grid-template-columns: auto auto auto;
             grid-template-rows: 100px 100px;
@@ -95,6 +106,7 @@
                 <div class="intex" style="width: 100px;">Bloco 02</div>
                 <div class="intex" style="width: 100px;">Bloco 03</div>
             </div> 
+        </div>
             
                 </fieldset>
             <p>Para melhor compreensão, altere o da largura do contêiner para ver o efeito do espaçamento entre as caixas.</p>
@@ -104,22 +116,22 @@
             <p><strong>Código</strong>:</p>
             <div class="pre">
                 <pre>
-            &lt;div class="contex" style="
-            display: grid;
-            grid-template-columns: auto auto auto auto; 
-            grid-template-rows: 150px; 
-            column-gap: 10px; 
-            row-gap: 10px;">
-            &lt;div class="intex"  style="width: 150px;">&lt;/div>
-            &lt;div class="intex"  style="width: 150px;">&lt;/div>
-            &lt;div class="intex"  style="width: 150px;">&lt;/div>
-            &lt;div class="intex"  style="width: 150px;">&lt;/div>
-            &lt;/div>
+&lt;div class="contex" style="
+display: grid;
+grid-template-columns: auto auto auto auto; 
+grid-template-rows: 150px; 
+column-gap: 10px; 
+row-gap: 10px;">
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;div class="intex"  style="width: 150px;">&lt;/div>
+&lt;/div>
                 </pre>
             </div>
         </section><!-- /#basica -->   
         <article id="Grid-template">
-            <h3>Grid-template-areas</h3>
+            <h3>Grid Template Area</h3>
             <p>Esta propriedade é uma forma de definir o layout da página de forma mais visual, sem a necessidade de definir quantas colunas e linhas o container terá. Vejamos o exemplo abaixo:</p>
             
             grid-template-areas:<br> 
@@ -134,66 +146,50 @@
             <li>o main ocupará as 3 colunas restantes das linhas 2 e 3 e 
             <li>o footer ocupará as 4 colunas da última linha.
         </ul>
-            <p><strong>Html: </strong></p>
+            
+       
+        <p><strong>Exemplo:</strong></p>
+            <div class="contex" style="
+             display: grid;
+            gap: 5px;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: 150px 150px 150px 150px;
+            grid-template-areas: 
+            'Cabe Cabe Cabe Cabe'
+            'Late Prin Prin Prin'
+            'Late Prin Prin Prin'
+            'Roda Roda Roda Roda';
+            ">
+            
+                <div class="intex" style="grid-area: Cabe;">Cabeçalho</div>
+                <div class="intex" style="grid-area: Prin;">Principal</div>
+                <div class="intex" style="grid-area: Roda;">Rodapé</div>
+                <div class="intex" style="grid-area: Late;">Lateral</div>
+            </div>
+            <p><strong>Código: </strong></p>
         <div class="pre">
             
                 <pre>
-            
-            &lt;div class="contex" id="conteiner">
-                &lt;div class="intex" id="cabeçalho">Cabeçalho&lt;/div>
-                &lt;div class="intex" id="principal">Principal&lt;/div>
-                &lt;div class="intex" id="rodape">Rodapé&lt;/div>
-                &lt;div class="intex" id="lateral">Lateral&lt;/div>
-            &lt;/div>
-            
+&lt;div class="contex" style="
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-areas: 
+    'Cabe Cabe Cabe Cabe'
+    'Late Prin Prin Prin'
+    'Late Prin Prin Prin'
+    'Roda Roda Roda Roda';
+">
+
+    &lt;div class="intex" style="grid-area: Cabe;">Cabeçalho&lt;/div>
+    &lt;div class="intex" style="grid-area: Prin;">Principal&lt;/div>
+    &lt;div class="intex" style="grid-area: Roda;">Rodapé&lt;/div>
+    &lt;div class="intex" style="grid-area: Late;">Lateral&lt;/div>
+&lt;/div>
                 </pre>
             
         </div>
-        <p><strong>CSS:</strong></p>
-            <div class="pre">
-                <pre>
-        
-    .contex{/* Tabela article Alinhamentos nos eixos*/
-        display: grid;        
-        background-color: coral; 
-        padding: 5px;  
-        }
-
-    .intex{/*exemplos alinhamento dos eixos*/
-        background-color: aquamarine;       
-        padding: 40px 0px 40px 0px;      
-        border-radius: 20px;
-        text-align: center;
-        border:1px solid #000000;
-        min-width: 100px;
-        }
-
-    #conteiner{          
-        display: grid;
-        gap: 5px;
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: 150px 150px 150px 150px;
-        grid-template-areas: 
-        "header header header header"
-        "nav main main main"
-        "nav main main main"
-        "footer footer footer footer";
-        }
-
-    #cabeçalho{grid-area: header;}
-    div#principal{grid-area: main;}
-    div#rodape{grid-area: footer;}
-    div#lateral{grid-area: nav;}
-                </pre>
-            </div>
-        <p><strong>Exemplo:</strong></p>
-            <div class="contex" id="conteiner">
-            
-                <div class="intex" id="cabeçalho">Cabeçalho</div>
-                <div class="intex" id="principal">Principal</div>
-                <div class="intex" id="rodape">Rodapé</div>
-                <div class="intex" id="lateral">Lateral</div>
-            </div>
             
         
         </article><!--Grid-template-->
@@ -204,9 +200,8 @@
         <ul>
             <li><strong>grid-column-start: 1;</strong> Define em qual coluna o item irá começar.</li>
             <li><strong>grid-column-end: 2;</strong> Define até qual coluna o item irá se esticar. Ele não inclui a coluna final, apenas vai até ela. Neste caso, como está até a coluna 2, não mudaria nada. Mas se fosse até a 3, o item se esticaria absorvendo o espaço da coluna 2.</li>
-            <li><strong>grid-column: 1 / span 3;</strong> Este comando é uma abreviação dos dois anteriores, onde o primeiro número refere-se à coluna onde o item começa e o segundo onde ele termina.</li>
-            <p>Note que neste caso foi adicionado um "span" antes do segundo número. Esse "span" serve para incluir a coluna, então neste caso ele absorve a coluna 3.</p>
-            <p>Importante ressaltar que o "span" só pode ser usado em colunas, não funciona em linhas como veremos mais adiante.</p>
+            <li><strong>grid-column: 1 / 3;</strong> Este comando é uma abreviação dos dois anteriores, onde o primeiro número refere-se à coluna onde o item começa e o segundo onde ele termina.</li>
+           
             <li><strong>grid-row-start: 1;</strong> Idêntico ao "grid-column-start", mas neste caso trata-se de linhas.</li>
             <li><strong>grid-row-end: 1;</strong> Idêntico ao "grid-column-end", mas neste caso trata-se de linhas.</li>
             <li><strong>grid-row: 1 / 3;</strong> Idêntico ao "grid-column", mas neste caso trata-se de linhas e não aceita o "span".</li>
@@ -218,41 +213,74 @@
                     <li>grid-column-end</li>
                 </ol>
             </li>
+            <li><strong>span:</strong> Esta propriedade permite que o item se estenda por várias colunas ou linhas. Por exemplo, se você quiser que um item se estenda por 3 colunas, basta definir "<code>grid-column-end: span 3;</code>".
+            <p>Nesse caso, não importa onde o item inicia, ele sempre se estenderá por mais 3 colunas à frente.</p>
+            <p>OBS.: Preste atenção à sintaxe, pois há um espaço entre "span" e o número. Caso não coloque esse espaço, o item se estenderá por todas as linhas ou colunas disponíveis à frente.</p></li>
         </ul>
         <p class="mark">Importante: As propriedades que estendem os itens de acordo com as colunas não funcionarão caso a largura (width) da caixa esteja definida. Da mesma forma, as propriedades que estendem os itens de acordo com as linhas não funcionarão se a altura (height) da caixa estiver definida.</p>
         <fieldset>
             <legend>Exemplo interativo</legend>
 
-            
-                <p>Bloco 01:</p>
-                <p>
-                <strong>grid-row-start:</strong>
-                <input type="number" oninput="rs=this.value; 
-                document.querySelector('#inter1').style.gridRowStart = rs;">
-            </p>
-            <p>
-                <strong>grid-row-end:</strong>
+            <p>Experimente alterar os valores abaixo para ver como o Bloco 02 se posiciona dentro da célula.</p>
 
-                <input type="number" oninput="re=this.value; 
-                document.querySelector('#inter1').style.gridRowEnd = re;">
-            </p>
-
-            <div class="contex" id="conter2" style="
-        grid-template-columns: 100px 100px 100px ; 
-        grid-template-rows: 100px 100px 100px; 
-        column-gap: 10px; 
-        row-gap: 10px;">
-            <div class="intex" id="inter1" style="
-            grid-row-start: 1;
-            grid-row-end: 4;
-            grid-column-start: 1;
-            grid-column-end: 3;">Bloco 01</div>
-             <div class="intex" style="
-             grid-row-start: 1;
-             grid-row-end: 5;
-             grid-column-start: 3;
-             grid-column-end: 4;">Bloco 02</div>
+               <div>
+                    <strong style="margin-right: 30px;">grid-row-start:</strong>
+                    <input type="number" oninput="rs=this.value;
+                    document.querySelector('#inter1').style.gridRowStart = rs;">
+                <br>
+               
+                    <strong style="margin-right: 40px;">grid-row-end:</strong>
+                    <input type="number" oninput="re=this.value;
+                    document.querySelector('#inter1').style.gridRowEnd = re;">
+               <br>
+                    <strong style="margin-right: 1px;">grid-column-start:</strong>
+                    <input type="number" oninput="rs=this.value;
+                    document.querySelector('#inter1').style.gridColumnStart = rs;">
+               <br>
+                    <strong style="margin-right: 10px;">grid-column-end:</strong>
+                    <input type="number" oninput="re=this.value;
+                    document.querySelector('#inter1').style.gridColumnEnd = re;">
             </div>
+
+
+    
+                <div class="contex" id="conter2" style="
+                align-self: center;
+            grid-template-columns: 50px 50px 50px 50px 50px 50px ;
+            grid-template-rows: 50px 50px 50px 50px 50px 50px;
+            column-gap: 10px;
+            row-gap: 10px;
+            width: 360px;
+            height: 360px;">
+                <div class="intex"  style="
+                grid-row-start: 6;
+                grid-row-end: 0;
+                grid-column-start: 6;
+                grid-column-end: 0;">Bloco 01</div>
+                 <div class="intex" id="inter1" style="
+                 grid-row-start: 1;
+                 grid-row-end: 0;
+                 grid-column-start: 1;
+                 grid-column-end: 0;">Bloco 02</div>
+                </div>
+    
+
+
+            
+                <div style="align-self: stretch">
+                    
+                        Note que:
+                        <ul>
+                        <li>Quando o valor de "grid-row-end" é 0, o item se estende até o final da linha inicial.</li>
+                        <li>Quando o valor de "grid-row-end" excede a quantidade de linhas, o contêiner cria novas linhas com o tamanho do gap, neste caso, 10px.</li>
+                        <li>Quando o valor é negativo, o item se estende por todas as linhas ou colunas disponíveis no contêiner.</li>
+                        </ul>
+                    
+                </div>
+            
+
+            
+        </fieldset>
 
             <p><strong>Código</strong>:</p>
 
@@ -260,10 +288,12 @@
                 <pre>
 
 &lt;div class="contex" id="conter2" style="
-grid-template-columns: 100px 100px 100px ; 
-grid-template-rows: 100px 100px 100px; 
+grid-template-columns: 50px 50px 50px 50px 50px 50px ; 
+grid-template-rows: 50px 50px 50px 50px 50px 50px; 
 column-gap: 10px; 
-row-gap: 10px;">
+row-gap: 10px;
+width: 360px;
+height: 360px;">
     &lt;div class="intex" id="inter1" style="
     grid-row-start: 1;
     grid-row-end: 4;
@@ -282,10 +312,9 @@ row-gap: 10px;">
 
             
          
-        </fieldset>
+      
         </article><!--mesclar-->  
-        <article id="pos-celula">
-        
+        <article id="pos-cai-d-cel">
             <h3>Posicionamento da caixa dentro da célula</h3>
             <p>Os itens dentro de um contêiner de grid podem ser posicionados de várias maneiras usando propriedades específicas. Aqui veremos como posicionar os itens dentro de suas células:</p>
             <ul>
@@ -317,13 +346,16 @@ row-gap: 10px;">
                 <div class="contex" id="conter3" style="
                     display: grid;
                     grid-template-columns: auto auto auto ;
-                    grid-template-rows: 150px;
+                    grid-template-rows: auto auto;
                     gap: 10px;
                     ">
                     
-                    <div class="intex" style="background-color: lightblue;">Item 1</div>
-                    <div class="intex" style="background-color: lightgreen;">Item 2</div>
-                    <div class="intex" style="background-color: lightcoral;">Item 3</div>
+                        <div class="intex" >Item 1</div>
+                        <div class="intex" >Item 2</div>
+                        <div class="intex" >Item 3</div>
+                        <div class="intex" >Item 4</div>
+                        <div class="intex" >Item 5</div>
+                        <div class="intex" >Item 6</div>
                 </div>
             </fieldset>
             <div class="pre">
@@ -331,21 +363,29 @@ row-gap: 10px;">
 &lt;div class="contex" id="conter3" style="
     display: grid;
     grid-template-columns: auto auto auto ;
-    grid-template-rows: 150px;
+    grid-template-rows: auto auto;
     gap: 10px;
     ">
 
-&lt;div class="intex" style="background-color: lightblue;">Item 1&lt;/div>
-&lt;div class="intex" style="background-color: lightgreen;">Item 2&lt;/div>
-&lt;div class="intex" style="background-color: lightcoral;">Item 3&lt;/div>
-&lt;/div>
+&lt;div class="intex" >Item 1&lt;/div>
+&lt;div class="intex" >Item 2&lt;/div>
+&lt;div class="intex" >Item 3&lt;/div>
+&lt;div class="intex" >Item 4&lt;/div>
+&lt;div class="intex" >Item 5&lt;/div>
+&lt;div class="intex" >Item 6&lt;/div>
                 </pre>
             </div>
+            <p>Quando você usa <code>justify-items</code> ou <code>align-items</code>, o que acontece é uma movimentação dos itens dentro da célula, permitindo que eles se alinhem de acordo com as propriedades definidas.</p>
+            <p>Agora veja como fica:</p>
+            <div class="img">
+                <img src="img/items-min.png" alt="Img ilustrativa de content">
+            </div>
+
         </article><!--pos-celula-->
-        <article id="pos-cel-cont">
+        <article id="pos-tab-d-cont">
            
-                <h3>Posicionamento das células dentro do contêiner</h3>
-                <p>Além de posicionar os itens dentro de suas células, também podemos controlar o posicionamento das células dentro do contêiner usando as propriedades <code>justify-content</code> e <code>align-content</code>.</p>
+                <h3>Posicionamento da tabela dentro do contêiner</h3>
+                <p>Além de posicionar os itens dentro de suas células, também podemos controlar o posicionamento da tabela dentro do contêiner usando as propriedades <code>justify-content</code> e <code>align-content</code>.</p>
                 <ul>
                     <li><strong>justify-content:</strong> Alinha as células dentro do contêiner no eixo horizontal. Os valores possíveis são <code>start</code>, <code>end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, e <code>space-evenly</code>.</li>
                     <li><strong>align-content:</strong> Alinha as células dentro do contêiner no eixo vertical. Os valores possíveis são <code>start</code>, <code>end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, e <code>space-evenly</code>.</li>
@@ -357,6 +397,7 @@ row-gap: 10px;">
                     <p>
                         <strong>justify-content:</strong>
                         <select onchange="document.querySelector('#conter4').style.justifyContent = this.value;">
+                            <option value="">vazio</option>
                             <option value="start">start</option>
                             <option value="end">end</option>
                             <option value="center">center</option>
@@ -368,6 +409,7 @@ row-gap: 10px;">
                     <p>
                         <strong>align-content:</strong>
                         <select onchange="document.querySelector('#conter4').style.alignContent = this.value;">
+                            <option value="">vazio</option>
                             <option value="start">start</option>
                             <option value="end">end</option>
                             <option value="center">center</option>
@@ -376,13 +418,16 @@ row-gap: 10px;">
                             <option value="space-evenly">space-evenly</option>
                         </select>
                     </p>
+
+                    
                     <div class="contex" id="conter4" style="
                         display: grid;
                         grid-template-columns: auto auto auto;
                         grid-template-rows: auto auto ;
                         gap: 10px;
                         height: 300px;
-                        ">
+                        width: 300px;"
+                        >
                         <div class="intex" >Item 1</div>
                         <div class="intex" >Item 2</div>
                         <div class="intex" >Item 3</div>
@@ -391,44 +436,87 @@ row-gap: 10px;">
                         <div class="intex" >Item 6</div>
                         
                     </div>
+                    
+
                 </fieldset>
-                <p class="mark">No exemplo acima, tudo funciona perfeitamente porque as colunas e as linhas estão definidas como "auto" e a altura do contêiner está definida.</p>
+                <p class="mark">No exemplo acima, tudo funciona perfeitamente porque as colunas e as linhas estão definidas como "auto" e a altura e a largura do contêiner estão definidas.</p>
                 <div class="pre">
                     <pre>
-            &lt;div class="contex" id="conter4" style="
-                display: grid;
-                grid-template-columns: auto auto auto;
-                grid-template-rows: auto auto;
-                gap: 10px;
-                height: 300px;">
-            &lt;div class="intex">Item 1&lt;/div>
-            &lt;div class="intex">Item 2&lt;/div>
-            &lt;div class="intex">Item 3&lt;/div>
-            &lt;div class="intex">Item 4&lt;/div>
-            &lt;div class="intex">Item 5&lt;/div>
-            &lt;div class="intex">Item 6&lt;/div>
-            &lt;/div>
+&lt;div class="contex" id="conter4" style="
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    height: 300px;">
+&lt;div class="intex">Item 1&lt;/div>
+&lt;div class="intex">Item 2&lt;/div>
+&lt;div class="intex">Item 3&lt;/div>
+&lt;div class="intex">Item 4&lt;/div>
+&lt;div class="intex">Item 5&lt;/div>
+&lt;div class="intex">Item 6&lt;/div>
+&lt;/div>
                     </pre>
                 </div>
+                <p>Quando você usa <code>justify-content</code> ou <code>align-content</code>, toda a grade se movimenta dentro do contêiner, e a célula assume o tamanho exato para abrigar o item. Dessa forma, os itens não têm espaço para se movimentar ou se alinhar dentro da célula.</p>
+                <p>Veja abaixo como fica a célula:</p>
+                    <div style="display: flex;
+                    justify-content: center;">
+                        <img src="img/content.png" alt="Img ilustrativa de content">
+                    </div>
+                <p>Quando não se declara <code>justify-content</code> ou <code>align-content</code>, as células ocupam todo o espaço do contêiner de forma que todas tenham o mesmo tamanho.</p>
+                <p>Veja abaixo como fica a célula:</p>
+                    <div class="img">
+                        <img src="img/content-min.png" alt="Img ilustrativa de content">
+                    </div>
            
         </article><!-- /#pos-cel-cont --> 
-        <article id="dif">
-            <h3>Diferença entre usar items e content</h3>
-            <p>Quando você usa <code>content</code>, o que acontece é uma movimentação de toda a grade dentro do contêiner e a célula assume o tamanho exato para abrigar o item. Assim, os itens ficam sem espaço para se movimentar ou se alinhar dentro da célula.</p>
-        <p>Veja abaixo como fica a célula quando usamos <code>content</code>:</p>
-            <div>
-                <img src="img/content.png" alt="Img ilustrativa de content">
-            </div>
-
-            <p>Por outro lado, quando você usa <code>items</code>, o que acontece é uma movimentação dos itens dentro da célula, permitindo que eles se alinhem de acordo com as propriedades definidas.</p>
-            <p>Agora veja como fica quando trabalhamos com <code>items</code>:</p>
-            <div>
-                <img src="img/items.png" alt="Img ilustrativa de content">
-            </div>
-
-        </article>
     </article><!--conteiner-->
-    
+    <article id="item">
+            <h2>Autonomia dos itens</h2>
+            <p>Além de alinhar todos os itens dentro de suas células e as células dentro do contêiner, você pode alinhar individualmente cada item em relação à sua célula usando as propriedades <code>justify-self</code> e <code>align-self</code>.</p>
+            <ul>
+                <li><strong>justify-self:</strong> Alinha o item no eixo horizontal. Os valores possíveis são <code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code>.</li>
+                <li><strong>align-self:</strong> Alinha o item no eixo vertical. Os valores possíveis são <code>start</code>, <code>end</code>, <code>center</code>, <code>stretch</code>.</li>
+                <li><strong>place-self:</strong> É uma abreviação para <code>align-self</code> e <code>justify-self</code>. O primeiro valor é para <code>align-self</code> e o segundo é para <code>justify-self</code>. Se apenas um valor for fornecido, ele será aplicado a ambos.</li>
+            </ul>
+            <fieldset>
+                <legend>Exemplo Interativo</legend>
+                <p>Experimente alterar os valores de <code>justify-self</code> e <code>align-self</code> para ver como o Item 1 se posiciona dentro da célula.</p>
+                <p>
+                    <strong>justify-self:</strong>
+                    <select onchange="document.querySelector('#conter5').style.justifySelf = this.value;">
+                        <option value="start">start</option>
+                        <option value="end">end</option>
+                        <option value="center">center</option>
+                        <option value="stretch">stretch</option>
+                    </select>
+                </p>
+                <p>
+                    <strong>align-self:</strong>
+                    <select onchange="document.querySelector('#conter5').style.alignSelf = this.value;">
+                        <option value="start">start</option>
+                        <option value="end">end</option>
+                        <option value="center">center</option>
+                        <option value="stretch">stretch</option>
+                    </select>
+                </p>
+                <div class="contex" style="
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    grid-template-rows: auto auto;
+                    gap: 10px;
+                    height: 300px;
+                    width: 300px;"
+                    >
+                    <div class="intex" id="conter5" >Item 1</div>
+                    <div class="intex" >Item 2</div>
+                    <div class="intex" >Item 3</div>
+                    <div class="intex" >Item 4</div>
+                    <div class="intex" >Item 5</div>
+                    <div class="intex" >Item 6</div>
+                    </div>
+            </fieldset>
+    </article><!-- /#alinhamento -->
    
    
 

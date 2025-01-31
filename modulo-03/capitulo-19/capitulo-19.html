@@ -6,7 +6,7 @@
     <title>Capítulo 19</title>
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="stylesheet" href="../../style.css">
 
 
     <style>
@@ -59,7 +59,7 @@
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-<h1>Capitulo 19 - Imagens de Fundos</h1>
+<h1>Background</h1>
     </header>
   <main>
 <div ></div>
@@ -204,59 +204,63 @@
         }
         &lt;/style>
 </pre>
-<h1>Centralizando Box vertical e horizontal</h1>
-<p>
-    Como já tentamos o posicionamento de caixas é bem difícil. Poré. existem 2 comandos chaves para isso:
-    <ul>
-        <li><strong>position: relative;</strong> a box externa deve sempre ser mantida com a position: relative; pois ela está avisando para as box interna que o posicionamento delas agora será em relação a ela e não ao body</li>
-        <li><strong>position: absolute;</strong> A box interna deve assumir essa position, pois ess position permite se posicionar de foma absoluta, como os comandos left e top em relação a box relative onde ela se encontra.</li>
-        <li><strong>transform: translate:</strong> Com esse comando transform é possivel faz mil modifiações na box. porém agora usaremos apenas o translate, pois esse permite modificar  o a base da box que naturalmente vem como superior esquerda </li>
-            
-    </ul>
-    <p>
-        O translate modificar a base da box tanto para fora dela como para dentro. Como sempre para dentro os valores são negativos.
-    </p>
-    <p>
-        Logo para puxar a base da box da superior esquerda para o centro basta reduzir 50% da esquerda e 50% de cima ficando assim:
-    </p>
-<p>Exemplo:</p>
-<code>transform: translate(-50%, -50%);</code>
-<p>
-    Veja abaixo todos os comnados usado no head para fazer as box azul centralizar com o centro da amarela:
-</p>
-<pre>
-    div#fora{
-        text-indent: 0px;
-        height: 400px;
-        width: 400px;
-        background-color: yellow;
-        padding: 0px;
-        position: relative;
+<article>    
+    <h2>Background com Degradê</h2>
+    <p>Para criar um efeito degradê com o CSS, Utilizamos o background-image: invés de color. É possível utilizar esse efeito de forma:</p>
+    
+        <section><!--Linear-->
+            <h4>Linear:</h4>
+            <p>Onde o efeito segue em linha utilizando graus para derecionar o início e o fim do efeito ou;</p>
+            <p>Exemplo:</p>
+            <div style="background-image: linear-gradient(90deg, #f00, #0f0); height: 100px; border-radius: 5px;" ></div>
+            <p>O comando:</p>
+            <div class="pre">
+                    <pre>style="background-image: linear-gradient(90deg, #00000027, #ffffff);"</pre>
+            </div>
+            <p>É possível ainda, adicionar mais de duas cores ao efeito. </p>
+            <p>Exemplo: </p>
+    
+            <div style="background-image: linear-gradient(90deg, #41c518e7, #c91a1ad2,  #00f);height: 100px;"></div>
+            <p>Comando: </p>
+            <div class="pre">
+                <pre>style="background-image: linear-gradient(90deg, #41c518e7, #c91a1ad2,  #ffffff);"</pre>
+            </div>
+        </section>
+        <section><!--Radial-->
+            <h4>Radial:</h4>
+            <p> Onde o efeito degradê parte do centro da imagem para as extremidade;</p>
+    
+            <p>Exemplo: </p>
+            <div style="background-image: radial-gradient(circle, #00f, #0f0); height: 100px; border-radius: 5px;" ></div>
+    
+            <p>Comando: </p>
+            <div class="pre">
+                <pre>style="background-image: radial-gradient(circle, #00000027, #ffffff);"</pre>
+            </div>
+        </section>
+    
+    <h3>Ocupacão porcentagem </h3>
+    
+    <p>É possível escolher o percentual que a cor antes de iniciar o degradê. Veja no exemplos abaixo a cor verde ocupando 50% do espaço. </p>
+        <p>Exemplo:</p>
+       <div style="height: 100px;background-image: linear-gradient(90deg, #0f0 50%, #f0f,  #00f);"></div>
+        <p>Comando:</p>
+        <div class="pre">
+            <pre>style="background-image: linear-gradient(90deg, #567eb9de 50%, #1aafc9d2,  #2ece3b);"</pre>
+        </div>
+    
+    
+        <p>É possível também escolher em qual trecho do bloco iniciará a transição da cor.Para isso o percentual deverá ficar entre vírgulas e entre as cores que escolher Veja no exemplos abaixo usando os dois conhecimentos. </p>
+        <p>Exemplo:</p>
+       <div style="height: 100px;background-image: linear-gradient(90deg, #f00 29%,30%, #0f0 31% ,49%, #00f 50%);"></div>
+        <p>Comando:</p>
+        <div class="pre">
+            <pre>style="height: 100px;background-image: linear-gradient(90deg, #f00 29%,30%, #0f0 31% ,49%, #00f 50%);"</pre>
+        </div>
+        <p>Note que o percentual escolhe o posicionamento de cada cor e cada transição no bloco.</p>
+    
+</article>
 
-    }
-    div#interna{
-       
-        height: 150px;
-        width: 150px;
-        background-color: blue;
-        margin: auto;
-
-        position: absolute;
-        left: 50%;
-        top: 50%;
-
-        transform: translate(-50%, -50%);
-
-    }
-
-</pre>
-   
-    Veja funcionando:
-</p>
-
-<div id="fora">
-    <div id="interna"> </div>
-</div>
   </main>  
 
   <footer>
