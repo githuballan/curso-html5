@@ -139,7 +139,19 @@ code
    
     font-weight: 500;
 }
-
+aside
+{
+    background-color: #f0f0f0; 
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #000;
+    box-shadow: 1px 1px 5px 0px #0005;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'star';
+    
+}
 div.overflow-x{
     overflow-x: auto;
 }

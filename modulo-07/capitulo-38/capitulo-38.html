@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
+    <title>JS Avançado</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    
+</head>
+<body>
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+    <header>
+        <h1>JS Avançado</h1>
+    </header>
+    <nav>
+        <a  class="buttom menu" href="#use-strict">Diretiva "use strict"</a>
+        <a  class="buttom menu" href="#this-keyword">Propriedade "this"</a>
+        <a  class="buttom menu" href="#bind-call-apply">Propriedades "bind", "call" e "apply"</a>
+    </nav>
+    <main>
+        <article id="use-strict">
+            <h2>Diretiva <code>"use strict"</code></h2  >
+            <p>A diretiva <code>"use strict"</code> foi introduzida no ECMAScript 5 e é uma maneira de optar por uma versão mais restrita do JavaScript. Quando você usa esta diretiva, o JavaScript executa seu código em um modo mais rigoroso, ajudando a evitar erros comuns e práticas de codificação potencialmente perigosas.</p>
+            
+            <h4>Como Usar</h4>
+            <p>Para ativar o modo estrito, basta adicionar a linha <code>"use strict";</code> no início do seu script ou função:</p>
+            <div class="pre">
+                <pre>
+    
+"use strict";
+// Seu código JavaScript aqui
+
+                </pre>
+            </div>
+            <p>Você também pode ativar o modo estrito dentro de uma função específica:</p>
+            <div class="pre"><pre>
+function minhaFuncao() {
+    "use strict";
+    // Código da função aqui
+}
+            </code></pre></div>
+            
+            <h4>Benefícios do "use strict"</h4>
+            <ul>
+                <li>Elimina alguns erros silenciosos do JavaScript, lançando exceções.</li>
+                <li>Impede a declaração de variáveis globais acidentais.</li>
+                <p>Veja um exemplo :</p>
+            <div class="pre"><pre>
+"use strict";
+x = 3.14; // Isso lançará um erro porque 'x' não foi declarado
+            </code></pre></div>
+            <p>Sem o modo estrito, o código acima simplesmente criaria uma variável global (var) 'x', o que pode levar a comportamentos inesperados e difíceis de depurar.</p>
+            <p class="mark">OBS.: É possível criar variáveis dessa forma dentro de funções também, porém, em funções, a variável será local (let).</p>
+                <li>Proíbe a duplicação de nomes de propriedades de objeto ou parâmetros de função.</li>
+                <li>Desativa o uso de palavras reservadas futuras, ajudando a garantir a compatibilidade com versões futuras do ECMAScript.</li>
+            </ul>
+        </article><!--use-strict-->
+        <article id="this-keyword">
+            <h2><code>this</code></h2>
+            <p>A palavra-chave <code>this</code> é uma referência especial em JavaScript que aponta para o objeto ao qual a função atual pertence. Vale lembrar que, em JavaScript, quase tudo é um objeto. Portanto, <code>this</code> será o objeto onde a função está sendo chamada.</p>
+            <p>Por exemplo, considere o seguinte código:</p>
+            <div class="pre">
+                <pre>
+&lt;button onclick="console.log(this)"&gt;Clique Aqui&lt;/button&gt;
+                </pre>
+            </div>
+
+            <p>Quando você clica nesse botão, o <code>this</code> se refere ao próprio botão, pois é o objeto que invocou a função.</p>
+            <p><button onclick="console.log(this)">Clique Aqui</button> e veja o console do navegador.</p>
+
+            <h4>Como Usar</h4>
+            <p>O valor de <code>this</code> pode variar dependendo do contexto de execução:</p>
+            <ul>
+                <li>No contexto global, <code>this</code> refere-se ao objeto global (<code>window</code> no navegador).</li>
+                <li>Dentro de uma função, <code>this</code> refere-se ao objeto que invocou a função.</li>
+                <li>Em um método de objeto, <code>this</code> refere-se ao próprio objeto.</li>
+                <li>Em um construtor, <code>this</code> refere-se ao objeto recém-criado.</li>
+            </ul>
+            
+            <h4>Exemplos</h4>
+            <p>Veja alguns exemplos de como <code>this</code> se comporta em diferentes contextos:</p>
+            <div class="pre">
+                <pre>
+        console.log(this); // No contexto global, refere-se ao objeto global (window)
+
+        function globalFunction() {
+            console.log(this); // No contexto de função, refere-se ao objeto global (window)
+        }
+
+        const obj = {
+            method: function() {
+                console.log(this); // No método de objeto, refere-se ao próprio objeto (obj)
+            }
+        };
+
+        function Constructor() {
+            this.prop = 'value';
+            console.log(this); // No construtor, refere-se ao objeto recém-criado
+        }
+
+        const instance = new Constructor();
+                </pre>
+            </div>
+            
+            
+        </article><!--this-keyword-->
+        <article id="bind">
+            <h2><code>bind</code></h2>
+            <p>O método <code>bind</code> em JavaScript é usado para criar uma nova função que, quando chamada, tem seu <code>this</code> definido para um valor específico. Ele também permite passar argumentos adicionais que serão usados quando a função for chamada.</p>
+            <p>Quando usamos o <code>this</code>, ele se refere ao próprio contexto em que está sendo utilizado. <span class="mark">Sem o uso do <code>bind</code>, o <code>this</code> em uma função de evento, como um botão, referirá ao próprio botão. Com o <code>bind</code>, podemos definir explicitamente que o <code>this</code> deve apontar para outro objeto específico,</span> garantindo que a função utilize o contexto correto.</p>
+            <h4>Como Usar</h4>
+           
+            
+            <p>A sintaxe do <code>bind</code> é a seguinte:</p>
+            
+            <code>function.bind(thisArg[, arg1[, arg2[, ...]]])</code>
+               
+            <p>Onde:</p>
+            <ul>
+                <li><code>thisArg</code>: O valor a ser passado como <code>this</code> para a função alvo quando a função vinculada é chamada.</li>
+                <li><code>arg1, arg2, ...</code>: Argumentos (se houver)que precedem quaisquer argumentos fornecidos quando a função vinculada é chamada.</li>
+            </ul>
+            <p>Para usar o <code>bind</code>, você chama o método em uma função existente e passa o valor desejado de <code>this</code> como o primeiro argumento. Argumentos adicionais podem ser passados após o primeiro argumento.</p>
+            <div class="pre">
+                <pre>
+        const obj = { value: 42 };
+
+        function getValue() {
+            return this.value;
+        }
+
+        const boundGetValue = getValue.bind(obj);
+        console.log(boundGetValue()); // 42
+                </pre>
+            </div>
+            
+            <h4>Exemplo com Argumentos</h4>
+            <p>Você também pode passar argumentos adicionais para a função vinculada:</p>
+            <div class="pre">
+                <pre>
+        const obj = { value: 42 };
+
+        function getValue(prefix) {
+            return prefix + this.value;
+        }
+
+        const boundGetValue = getValue.bind(obj, 'Value: ');
+        console.log(boundGetValue()); // Value: 42
+                </pre>
+            </div>
+            
+            <h4>Considerações</h4>
+            <ul>
+                <li>O <code>bind</code> é útil quando você precisa de uma nova função com um valor específico de <code>this</code>.</li>
+                <li>Ele não chama a função imediatamente, mas retorna uma nova função que pode ser chamada posteriormente.</li>
+                <li>É frequentemente usado em manipuladores de eventos e callbacks para garantir que a função seja executada no contexto correto.</li>
+            </ul>
+
+           
+        </article><!--bind-->
+        <article id="arrow-functions">
+            <h2>Funções de Seta (Arrow Functions)</h2>
+            <p>Relembrando as arrow functions, pois agora em JS avançado precisaremos da principal utilidade delas, o verdadeiro diferencial. As funções de seta são especialmente úteis em situações onde você precisa preservar o valor de <code>this</code> do contexto léxico.</p>
+            <p>Mas o que seria contexto léxico?</p>
+            <p>O contexto léxico refere-se ao escopo em que a função foi definida.</p>
+            
+           
+           
+           
+
+            
+            <h4>Como Usar</h4>
+            <p>Uma função de seta é definida usando a sintaxe <code>() => {}</code>. Veja um exemplo básico:</p>
+            <div class="pre">
+                <pre>
+        const soma = (a, b) => a + b;
+        console.log(soma(2, 3)); // 5
+                </pre>
+            </div>
+            
+            <h4>Diferença entre Função Normal e Função de Seta</h4>
+            <p>Uma das principais diferenças entre funções normais e funções de seta é como o <code>this</code> é tratado. Em funções normais, o valor de <code>this</code> depende de como a função é chamada. Em funções de seta, <code>this</code> é léxico, ou seja, herda o valor de <code>this</code> do escopo onde a função foi definida.</p>
+            <p></p>
+            
+            <h4>Exemplo</h4>
+            <p>Considere o seguinte exemplo onde uma função normal e uma função de seta são usadas em um método de objeto:</p>
+            <div class="pre">
+                <pre>
+        const obj = {
+            valor: 42,
+            funcNormal: function() {
+                setTimeout(function() {
+                    console.log(this.valor); // undefined
+                }, 1000);
+            },
+            funcArrow: function() {
+                setTimeout(() => {
+                    console.log(this.valor); // 42
+                }, 1000);
+            }
+        };
+
+        obj.funcNormal();
+        obj.funcArrow();
+                </pre>
+            </div>
+            <p>No exemplo acima, a função normal dentro de <code>setTimeout</code> não consegue acessar <code>this.valor</code> corretamente, pois <code>this</code> dentro de <code>setTimeout</code> refere-se ao objeto global. Já a função de seta herda o valor de <code>this</code> do escopo léxico, permitindo acessar <code>this.valor</code> corretamente.</p>
+
+            <p><strong>Vamos desenhar para explicar melhor:</strong></p>
+            <p>Como já sabemos, o <code>this</code> indica o próprio objeto onde a função está sendo chamada, nesse caso o objeto <code>obj</code>. Agora veja o desenho abaixo e imagine que cada caixa se trata de um contexto léxico.</p>
+
+            <div style="
+            border: 2px solid #000;
+            padding: 10px;
+            background-color: rgba(240, 33, 33, 0.76);
+            ">
+                obj = {valor: 42,
+                    <p>Função:</p>
+                <div style="
+                border: 2px solid #000;
+                padding: 10px;
+                background-color: rgba(112, 106, 212, 0.76);
+                ">
+                
+                    setTimeout <div style="
+                    border: 2px solid #000;
+                    padding: 10px;
+                    background-color: rgb(70, 182, 109);
+                    ">
+                    Função normal <code>this.valor</code>
+                    </div>
+
+                </div>
+                    <p>Função:</p>
+                <div style="
+                border: 2px solid #000;
+                padding: 10px;
+                background-color: rgba(106, 212, 173, 0.76);
+                ">
+                    setTimeout <div style="
+                    padding: 10px;
+                    ">
+                    Função flecha <code>this.valor</code>
+                    </div>
+
+                </div>
+            }
+            </div>
+            <p>Perceba que na função normal, ela está no seu próprio escopo e foi chamada dentro de <code>setTimeout</code>, logo o <code>this</code> busca o valor dentro de <code>setTimeout</code>.</p>
+            <p>Já a função flecha não possui seu próprio contexto léxico, então o <code>this</code> busca o valor dentro do <code>obj</code> onde o <code>setTimeout</code> foi chamado.</p>
+            
+            <h4>Quando Usar Funções de Seta</h4>
+            <ul>
+                <li>Quando você precisa preservar o valor de <code>this</code> do contexto léxico.</li>
+                <li>Em métodos de objeto, para acessar propriedades do objeto.</li>
+                <li>Em funções curtas e concisas.</li>
+            </ul>
+        </article><!--arrow-functions-->
+        <article id="callback-functions">
+            <h2>Funções de Callback</h2>
+            <p>Uma função de callback é uma função que você passa como argumento para outra função. A função externa então chama (ou "retorna") a função de callback em algum momento para completar uma ação ou rotina. Callbacks são muito usados em JavaScript para coisas que levam tempo, como requisições de rede, timers e eventos de usuário.</p>
+            
+            <h4>Como Usar</h4>
+            <p>Para usar uma função de callback, você simplesmente passa a função como um argumento para outra função. Veja um exemplo básico:</p>
+            <div class="pre">
+                <pre>
+        function saudacao(<abbr title="Argumentos">nome, callback</abbr>) {
+            console.log('Olá, ' + nome + '!');
+            <abbr title="Momento onde a função será chamada">callback();</abbr>
+        }
+
+        function despedida() {
+            console.log('Até logo!');
+        }
+
+        saudacao('Allan', <abbr title="a função sendo aplicada no argumento">despedida</abbr>);
+                </pre>
+            </div>
+            <p>No exemplo acima, a função <code>despedida</code> é passada como um callback para a função <code>saudacao</code>. Quando <code>saudacao</code> é chamada, ela executa o callback após exibir a saudação.</p>
+
+            <p>Talvez ainda não esteja claro a necessidade de callbacks, certo? Vamos considerar operações assíncronas. Imagine a seguinte situação:</p>
+            <p>Seu usuário quer salvar uma lista e, após clicar em "enviar", o site deve exibir toda a lista salva para o usuário. Se você tentar fazer isso sem usar uma função callback, o que acontecerá é que, na hora de exibir a lista, ela aparecerá vazia, pois demora um pouco para salvar na rede. Uma função sem callback exibiria a lista antes mesmo de salvar os itens no array.</p>
+            
+            <h4>Exemplo sem Callback</h4>
+            <div class="pre">
+                <pre>
+            let lista = [];
+
+            function salvarListaSemCallback(itens) {
+            setTimeout(() => {
+                lista = itens;
+            }, 2000); // Simulando delay de rede
+            }
+
+            function exibirLista() {
+            console.log(lista);
+            }
+
+            salvarListaSemCallback(['item1', 'item2', 'item3']);
+            exibirLista(); // Exibe lista vazia
+                </pre>
+            </div>
+
+            <h4>Exemplo com Callback</h4>
+            <div class="pre">
+                <pre>
+            let listaComCallback = [];
+
+            function salvarListaComCallback(itens, callback) {
+            setTimeout(() => {
+                listaComCallback = itens;
+                callback();
+            }, 2000); // Simulando delay de rede
+            }
+
+            function exibirListaComCallback() {
+            console.log(listaComCallback);
+            }
+
+            salvarListaComCallback(['item1', 'item2', 'item3'], exibirListaComCallback); // Exibe lista corretamente após salvar
+                </pre>
+            </div>
+            
+        
+            <h4>Quando Usar Funções de Callback</h4>
+            <ul>
+                <li>Para operações assíncronas, como requisições de rede e timers.</li>
+                <li>Para manipulação de eventos, como cliques de botão e eventos de teclado.</li>
+                <li>Para tratar erros de forma controlada.</li>
+                <li>Para executar uma função após a conclusão de outra função.</li>
+            </ul>
+        </article><!--callback-functions-->
+        <article id="promises">
+            <h2>Promises</h2>
+            <p>Promises são uma maneira de lidar com operações assíncronas em JavaScript. Elas representam um valor que pode estar disponível agora, no futuro ou nunca.  Promises são soluções que ajudam a evitar o "callback hell" e tornam o código assíncrono mais legível e gerenciável.</p>
+
+            <aside>
+                <p>"Callback hell" é um termo usado para descrever a situação em que múltiplas funções de callback são aninhadas umas dentro das outras, resultando em um código difícil de ler e manter. Isso geralmente ocorre quando você tem várias operações assíncronas que dependem umas das outras, levando a uma estrutura de código em forma de pirâmide.</p>
+            </aside>
+
+            <h4>Como Usar</h4>
+            <p>Uma Promise é criada usando o construtor <code>Promise</code>, que recebe uma função com dois parâmetros: <code>resolve</code> e <code>reject</code>. Veja um exemplo básico:</p>
+            <div class="pre">
+                <pre>
+        const minhaPromise = new Promise((resolve, reject) => {
+            const sucesso = true;
+            if (sucesso) {
+                resolve('A operação foi bem-sucedida!');
+            } else {
+                reject('A operação falhou.');
+            }
+        });
+
+        minhaPromise
+            .then(resultado => {
+                console.log(resultado); // A operação foi bem-sucedida!
+            })
+            .catch(erro => {
+                console.error(erro); // A operação falhou.
+            });
+                </pre>
+            </div>
+            
+            <h4>Estados de uma Promise</h4>
+            <ul>
+                <li><code>Pendente (Pending)</code>: Estado inicial, a Promise ainda não foi resolvida nem rejeitada.</li>
+                <li><code>Resolvida (Fulfilled)</code>: A operação foi concluída com sucesso.</li>
+                <li><code>Rejeitada (Rejected)</code>: A operação falhou.</li>
+            </ul>
+            
+          
+            <section id="then-catch">
+                <h3>Métodos <code>.then</code> e <code>.catch</code></h3>
+                <p>Os métodos <code>.then</code> e <code>.catch</code> são usados para lidar com o resultado de uma Promise. Eles permitem que você execute código com base no sucesso ou falha de uma operação assíncrona.</p>
+                
+                <h4><code>.then</code></h4>
+                <p>O método <code>.then</code> é chamado quando a Promise é resolvida com sucesso. Ele recebe uma função como argumento, que será executada com o valor resolvido da Promise:</p>
+                <div class="pre">
+                    <pre>
+            const minhaPromise = new Promise((resolve) => {
+                resolve('Sucesso!');
+            });
+
+            minhaPromise.then(resultado => {
+                console.log(resultado); // Sucesso!
+            });
+                    </pre>
+                </div>
+                
+                <h4><code>.catch</code></h4>
+                <p>O método <code>.catch</code> é chamado quando a Promise é rejeitada. Ele recebe uma função como argumento, que será executada com o motivo da rejeição:</p>
+                <div class="pre">
+                    <pre>
+            const minhaPromise = new Promise((resolve, reject) => {
+                reject('Erro!');
+            });
+
+            minhaPromise.catch(erro => {
+                console.error(erro); // Erro!
+            });
+                    </pre>
+                </div>
+                
+                <h4>Encadeamento de <code>.then</code> e <code>.catch</code></h4>
+                <p>Você pode encadear múltiplos <code>.then</code> e <code>.catch</code> para lidar com operações assíncronas sequenciais e tratar erros:</p>
+                <div class="pre">
+                    <pre>
+            const minhaPromise = new Promise((resolve) => {
+                resolve('Primeira etapa concluída');
+            });
+
+            minhaPromise
+                .then(resultado => {
+                    console.log(resultado); // Primeira etapa concluída
+                    return 'Segunda etapa concluída';
+                })
+                .then(resultado => {
+                    console.log(resultado); // Segunda etapa concluída
+                })
+                .catch(erro => {
+                    console.error(erro);
+                });
+                    </pre>
+                </div>
+            </section>
+
+            <h4>Encadeamento de Promises</h4>
+            <p>Você pode encadear múltiplas Promises usando <code>then</code> e <code>catch</code> para lidar com operações assíncronas sequenciais:</p>
+
+            <div class="pre">
+                <pre>
+        const promise1 = new Promise((resolve) => {
+            setTimeout(() => resolve('Primeira Promise resolvida'), 1000);
+        });
+
+        const promise2 = new Promise((resolve) => {
+            setTimeout(() => resolve('Segunda Promise resolvida'), 2000);
+        });
+
+        promise1
+            .then(resultado1 => {
+                console.log(resultado1);
+                return promise2;
+            })
+            .then(resultado2 => {
+                console.log(resultado2);
+            })
+            .catch(erro => {
+                console.error(erro);
+            });
+                </pre>
+            </div>
+            
+            <h4>Quando Usar Promises</h4>
+            <ul>
+                <li>Para operações assíncronas, como requisições de rede e timers.</li>
+                <li>Para evitar o "callback hell" e tornar o código mais legível.</li>
+                <li>Para lidar com múltiplas operações assíncronas de forma sequencial ou paralela.</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

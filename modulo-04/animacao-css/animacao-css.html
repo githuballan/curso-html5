@@ -15,12 +15,12 @@
                     --larg: calc(var(--contex-width) - 50px);
                 }
          @keyframes exemplo {
+             20% {transform-origin: right top;
+                    transform: rotate(270deg);}
+                30% {transform-origin: left top;
+                transform: rotate(-1deg);}
             
-            /* 50% {transform-origin: right top;
-                transform: rotate(270deg);}
-            100% {transform-origin: left top;
-                transform: rotate(-1deg);} */
-                50%{transform: translateX(var(--larg));}
+                45%{transform: translateX(var(--larg));}
                
             
            
@@ -46,7 +46,7 @@
             
                 display: flex;
                 flex-direction: column;
-                align-content: center;
+                align-content: flex-start;
                 justify-content: center;            
                
         }
@@ -80,69 +80,88 @@
                 <li><strong>to:</strong> Define o estado final da animação.</li>
                 <li><strong>0% - 100%:</strong> Você pode usar porcentagens para definir pontos intermediários na animação. Por exemplo, <code>0%</code> é o início e <code>100%</code> é o final.</li>
             </ul>
-            <article id="animation">
-                <h2>Propriedade animation</h2>
-                <p>A propriedade <code>animation</code> é uma forma abreviada de definir várias propriedades de animação ao mesmo tempo. Ela permite que você controle a reprodução de animações CSS.</p>
-                
-                <ul>
-                    <li><strong>animation-name:</strong> Define o nome da animação, que é especificado usando a regra <code>@keyframes</code>. Exemplo: <code>animation-name: exemplo;</code></li>
+        </article><!--keyframes-->
+        <article id="animation">
+            <h2>Propriedade animation</h2>
+            <p>A propriedade <code>animation</code> é uma forma abreviada de definir várias propriedades de animação ao mesmo tempo. Ela permite que você controle a reprodução de animações CSS.</p>
+            
+            <ul>
+                <li><strong>animation-name:</strong> Define o nome da animação, que é especificado usando a regra <code>@keyframes</code>. Exemplo: <code>animation-name: exemplo;</code></li>
 
-                    <li><strong>animation-duration:</strong> Define a duração da animação. Exemplo: <code>animation-duration: 2s;</code></li>
+                <li><strong>animation-duration:</strong> Define a duração da animação. Exemplo: <code>animation-duration: 2s;</code></li>
 
-                    <li><strong>animation-timing-function:</strong> Define a curva de velocidade da animação. Exemplo: <code>animation-timing-function: ease-in-out;</code>
-                        <ul>
-                          
-                            <li><strong>linear:</strong> A animação tem uma velocidade constante do início ao fim.</li>
-                            <li><strong>ease:</strong> Este é o valor padrão. Ele cria uma transição suave que é ideal para a maioria das animações, proporcionando uma sensação natural de aceleração e desaceleração..A animação começa devagar, acelera no meio e desacelera no final.</li>
-                            <li><strong>ease-in-out:</strong> A animação começa devagar, acelera no meio e desacelera no final.mas de forma mais pronunciada do que ease.</li>
-                            <li><strong>ease-in:</strong> A animação começa devagar e acelera no final.</li>
-                            <li><strong>ease-out:</strong> A animação começa rápida e desacelera no final.Este valor é usado quando se deseja uma animação que tenha uma aceleração e desaceleração mais perceptíveis. É útil para criar um efeito mais dramático e enfatizar o início e o fim da animação.</li>
-                            <li><strong>step-start:</strong> A animação salta imediatamente para o estado final no início.</li>
-                            <li><strong>step-end:</strong> A animação permanece no estado inicial até o final, quando salta para o estado final.</li>
-                            <li><strong>steps(n, start|end):</strong> A animação é dividida em n etapas distintas. Pode começar ou terminar em um estado intermediário.</li>
-                            <li><strong>cubic-bezier(x1, y1, x2, y2):</strong> Permite definir uma curva de velocidade personalizada usando uma função cúbica de Bézier.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>animation-delay:</strong> Define um atraso antes do início da animação. Exemplo: <code>animation-delay: 1s;</code>. Porém, esse pode ser um valor negativo, o que faz com que a animação comece como se já estivesse em andamento por essa quantidade de tempo. Exemplo: em uma animação de 4s com um delay de -2s, a página já inicia na metade da animação.</li>
-
-                    <li><strong>animation-iteration-count:</strong> Define o número de vezes que a animação deve ser reproduzida. Exemplo: <code>animation-iteration-count: infinite;</code>
-                        <ul>
-                            <li><strong>n:</strong> A animação será reproduzida n vezes, onde n é um número inteiro positivo.</li>
-                            <li><strong>infinite:</strong> A animação será reproduzida indefinidamente.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>animation-direction:</strong> Define se a animação deve ser reproduzida para frente, para trás ou alternadamente. Exemplo: <code>animation-direction: alternate;</code></li>
+                <li><strong>animation-timing-function:</strong> Define a curva de velocidade da animação. Exemplo: <code>animation-timing-function: ease-in-out;</code>
                     <ul>
-                        <li><strong>normal:</strong> A animação é reproduzida no sentido normal (do início ao fim).</li>
-                        <li><strong>reverse:</strong> A animação é reproduzida no sentido inverso (do fim ao início).</li>
-                        <li><strong>alternate:</strong> A animação é reproduzida alternadamente no sentido normal e inverso.</li>
-                        <li><strong>alternate-reverse:</strong> A animação é reproduzida alternadamente no sentido inverso e normal.</li>
+                        
+                        <li><strong>linear:</strong> A animação tem uma velocidade constante do início ao fim.</li>
+                        <li><strong>ease:</strong> Este é o valor padrão. Ele cria uma transição suave que é ideal para a maioria das animações, proporcionando uma sensação natural de aceleração e desaceleração..A animação começa devagar, acelera no meio e desacelera no final.</li>
+                        <li><strong>ease-in-out:</strong> A animação começa devagar, acelera no meio e desacelera no final.mas de forma mais pronunciada do que ease.</li>
+                        <li><strong>ease-in:</strong> A animação começa devagar e acelera no final.</li>
+                        <li><strong>ease-out:</strong> A animação começa rápida e desacelera no final.Este valor é usado quando se deseja uma animação que tenha uma aceleração e desaceleração mais perceptíveis. É útil para criar um efeito mais dramático e enfatizar o início e o fim da animação.</li>
+                        <li><strong>step-start:</strong> A animação salta imediatamente para o estado final no início.</li>
+                        <li><strong>step-end:</strong> A animação permanece no estado inicial até o final, quando salta para o estado final.</li>
+                        <li><strong>steps(n, start|end):</strong> A animação é dividida em n etapas distintas. Pode começar ou terminar em um estado intermediário.</li>
+                        <li><strong>cubic-bezier(x1, y1, x2, y2):</strong> Permite definir uma curva de velocidade personalizada usando uma função cúbica de Bézier.</li>
                     </ul>
-                    
-                    <li><strong>animation-fill-mode:</strong> Define o estilo aplicado ao elemento quando a animação não está sendo reproduzida (antes de começar, após terminar ou ambos). Exemplo: <code>animation-fill-mode: forwards;</code>
-                        <ul>
-                            <li><strong>none:</strong> O estilo do elemento não é alterado fora do tempo de execução da animação.</li>
-                            <li><strong>forwards:</strong> O elemento mantém o estilo aplicado no último quadro da animação após a conclusão.</li>
-                            <li><strong>backwards:</strong> O elemento aplica o estilo do primeiro quadro da animação durante o tempo de atraso da animação.</li>
-                            <li><strong>both:</strong> O elemento segue as regras de <code>forwards</code> e <code>backwards</code>, aplicando o estilo do primeiro quadro durante o atraso e mantendo o estilo do último quadro após a conclusão.</li>
-                        </ul>
-                    </li>
+                </li>
 
-                    <li><strong>animation-play-state:</strong> Define se a animação está em execução ou pausada. Exemplo: <code>animation-play-state: paused;</code>
-                        <ul>
-                            <li><strong>running:</strong> A animação está em execução.</li>
-                            <li><strong>paused:</strong> A animação está pausada.</li>
-                        </ul>
-                    </li>
-               
+                <li><strong>animation-delay:</strong> Define um atraso antes do início da animação. Exemplo: <code>animation-delay: 1s;</code>. 
+                    <ul>
+                        <li><strong>Valores positivos:</strong> A animação começa após o tempo especificado.</li>
+                        <li><strong>Valores negativos:</strong> A animação começa como se já estivesse em andamento pelo tempo especificado. Exemplo: em uma animação de 4s com um delay de -2s, a página já inicia na metade da animação.</li>
+                    </ul>
+                </li>
+
+                <li><strong>animation-iteration-count:</strong> Define o número de vezes que a animação deve ser reproduzida. Exemplo: <code>animation-iteration-count: infinite;</code>
+                    <ul>
+                        <li><strong>n:</strong> A animação será reproduzida n vezes, onde n é um número inteiro positivo.</li>
+                        <li><strong>infinite:</strong> A animação será reproduzida indefinidamente.</li>
+                    </ul>
+                </li>
+
+                <li><strong>animation-direction:</strong> Define se a animação deve ser reproduzida para frente, para trás ou alternadamente. Exemplo: <code>animation-direction: alternate;</code></li>
+                <ul>
+                    <li><strong>normal:</strong> A animação é reproduzida no sentido normal (do início ao fim).</li>
+                    <li><strong>reverse:</strong> A animação é reproduzida no sentido inverso (do fim ao início).</li>
+                    <li><strong>alternate:</strong> A animação é reproduzida alternadamente no sentido normal e inverso.</li>
+                    <li><strong>alternate-reverse:</strong> A animação é reproduzida alternadamente no sentido inverso e normal.</li>
+                </ul>
                 
-               
-            </article>
-            
-            <p>Veja um exemplo de animação que faz um elemento se mover para a direita:</p>
-            
+                <li><strong>animation-fill-mode:</strong> Define o estilo aplicado ao elemento quando a animação não está sendo reproduzida (antes de começar, após terminar ou ambos). Exemplo: <code>animation-fill-mode: forwards;</code>
+                    <ul>
+                        <li><strong>none:</strong> O estilo do elemento não é alterado fora do tempo de execução da animação.</li>
+                        <li><strong>forwards:</strong> O elemento mantém o estilo aplicado no último quadro da animação após a conclusão.</li>
+                        <li><strong>backwards:</strong> O elemento aplica o estilo do primeiro quadro da animação durante o tempo de atraso da animação.</li>
+                        <li><strong>both:</strong> O elemento segue as regras de <code>forwards</code> e <code>backwards</code>, aplicando o estilo do primeiro quadro durante o atraso e mantendo o estilo do último quadro após a conclusão.</li>
+                    </ul>
+                    <p>OBS.: Esse estilo só é visto em animações onde o usuário precisa iniciar ou inicia com delay.</p>
+                </li>
+
+                <li><strong>animation-play-state:</strong> Define se a animação está em execução ou pausada. Exemplo: <code>animation-play-state: paused;</code>
+                    <ul>
+                        <li><strong>running:</strong> A animação está em execução.</li>
+                        <li><strong>paused:</strong> A animação está pausada.</li>
+                    </ul>
+                </li>
+                <li><strong>animation:</strong> Esta é uma propriedade abreviada que permite definir várias propriedades de animação em uma única linha. A ordem dos valores é importante e deve seguir esta sequência: 
+                    <code>animation:
+                    <ol>
+                        <li>[animation-name]</li> 
+                        <li>[animation-duration]</li> 
+                        <li>[animation-timing-function]</li> 
+                        <li>[animation-delay]</li> 
+                        <li>[animation-iteration-count]</li> 
+                        <li>[animation-direction]</li> 
+                        <li>[animation-fill-mode]</li> 
+                        <li>[animation-play-state];</li>
+                    </ol>
+                    </code> 
+                    <p>Exemplo: <code>animation: exemplo 2s ease-in-out 1s infinite alternate both running;</code></p>
+                </li>
+            </ul>
+
+             <p>Veja um exemplo de animação que faz um elemento se mover para a direita:</p>
+
             <fieldset>
                 <legend>Exemplo interativo</legend>
                 <p>Experimente alterar os valores abaixo para ver como a animação se comporta.</p>
@@ -155,8 +174,8 @@
                 <div>
                     <strong>animation-timing-function:</strong>
                     <select onchange="document.querySelector('#animado').style.animationTimingFunction = this.value;">
-                        <option value="linear">linear</option>
                         <option value="ease">ease</option>
+                        <option value="linear">linear</option>
                         <option value="ease-in-out">ease-in-out</option>
                         <option value="ease-in">ease-in</option>
                         <option value="ease-out">ease-out</option>
@@ -174,6 +193,15 @@
                     <select onchange="document.querySelector('#animado').style.animationPlayState = this.value;">
                         <option value="running">running</option>
                         <option value="paused">paused</option>
+                    </select>
+                </div>
+                <div>
+                    <strong>animation-direction:</strong>
+                    <select onchange="document.querySelector('#animado').style.animationDirection = this.value;">
+                        <option value="normal">normal</option>
+                        <option value="reverse">reverse</option>
+                        <option value="alternate">alternate</option>
+                        <option value="alternate-reverse">alternate-reverse</option>
                     </select>
                 </div>
                 
@@ -195,38 +223,112 @@
                 <div style="align-self: stretch">
                    
                 </div>
-            </fieldset>
+            </fieldset>   
+        </article><!--animation-->
+        <article id="transition">
+            <h2>Propriedade transition</h2>
+            <p>A propriedade <code>transition</code> é utilizada para criar transições suaves entre os estados de um elemento. Com ela, você pode definir a duração, o tempo de atraso e a curva de velocidade da transição.</p>
             
-            <p><strong>Código</strong>:</p>
+            <ul>
+                <li><strong>transition-property:</strong> Define a(s) propriedade(s) CSS que devem ser animadas. Exemplo: <code>transition-property: all;</code></li>
+
+                <li><strong>transition-duration:</strong> Define a duração da transição. Exemplo: <code>transition-duration: 2s;</code></li>
+
+                <li><strong>transition-timing-function:</strong> Define a curva de velocidade da transição. Exemplo: <code>transition-timing-function: ease-in-out;</code>
+                    <ul>
+                        <li><strong>linear:</strong> A transição tem uma velocidade constante do início ao fim.</li>
+                        <li><strong>ease:</strong> Este é o valor padrão. Ele cria uma transição suave que é ideal para a maioria das animações, proporcionando uma sensação natural de aceleração e desaceleração.</li>
+                        <li><strong>ease-in-out:</strong> A transição começa devagar, acelera no meio e desacelera no final.</li>
+                        <li><strong>ease-in:</strong> A transição começa devagar e acelera no final.</li>
+                        <li><strong>ease-out:</strong> A transição começa rápida e desacelera no final.</li>
+                        <li><strong>step-start:</strong> A transição salta imediatamente para o estado final no início.</li>
+                        <li><strong>step-end:</strong> A transição permanece no estado inicial até o final, quando salta para o estado final.</li>
+                        <li><strong>steps(n, start|end):</strong> A transição é dividida em n etapas distintas. Pode começar ou terminar em um estado intermediário.</li>
+                        <li><strong>cubic-bezier(x1, y1, x2, y2):</strong> Permite definir uma curva de velocidade personalizada usando uma função cúbica de Bézier.</li>
+                    </ul>
+                </li>
+
+                <li><strong>transition-delay:</strong> Define um atraso antes do início da transição. Exemplo: <code>transition-delay: 1s;</code>
+                    <ul>
+                        <li><strong>Valores positivos:</strong> A transição começa após o tempo especificado.</li>
+                        <li><strong>Valores negativos:</strong> A transição começa como se já estivesse em andamento pelo tempo especificado.</li>
+                    </ul>
+                </li>
+
+                <li><strong>transition:</strong> Esta é uma propriedade abreviada que permite definir várias propriedades de transição em uma única linha. A ordem dos valores é importante e deve seguir esta sequência:                    
+                    transition:
+                    <ol>
+                        <li>[transition-property]</li>
+                        <li>[transition-duration]</li>
+                        <li>[transition-timing-function]</li>
+                        <li>[transition-delay];</li>
+                    </ol>
+                    <p>Exemplo: <code>transition: all 2s ease-in-out 1s;</code></p>
+                </li>
+            </ul>
+
+            <p>Veja um exemplo de transição que altera a cor de fundo de um elemento ao passar o mouse sobre ele:</p>
+
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <p>Experimente alterar os valores abaixo e depois altere a cor de fundo para ver como a animação se comporta.</p>
+                <div>
+                    <strong>transition-duration:</strong>
+                    <select onchange="document.querySelector('#transicao').style.transitionDuration = this.value;">
+                        <option value="1s">1s</option>
+                        <option value="3s">3s</option>
+                        <option value="5s">5s</option>
+                    </select>     
+                </div>
+                <div>
+                    <strong>transition-timing-function:</strong>
+                    <select onchange="document.querySelector('#transicao').style.transitionTimingFunction = this.value;">
+                        <option value="ease">ease</option>
+                        <option value="linear">linear</option>
+                        <option value="ease-in-out">ease-in-out</option>
+                        <option value="ease-in">ease-in</option>
+                        <option value="ease-out">ease-out</option>
+                        <option value="step-start">step-start</option>
+                        <option value="step-end">step-end</option>
+                        <option value="steps(4, start)">steps(4, start)</option>
+                        <option value="steps(4, end)">steps(4, end)</option>
+                        <option value="cubic-bezier(0.1, 0.7, 1.0, 0.1)">cubic-bezier(0.1, 0.7, 1.0, 0.1)</option>
+                    </select>
+                </div>
+                
+               
+                    <div id="transicao" style="
+                    border: 1px solid #000;
+                    border-radius: 30px;
+                    width: 100%;
+                    height: 100px;
+                    background-color: #fff;
+                   
+                    transition-property: background-color;
+                    transition-duration: 5s;
+                    transition-timing-function: ease-in-out;
+                    "></div>
+                
+                 <p style="align-self: center">Altere a cor de fundo:</p>
+                <div style="align-self: center">
+                   
+                    <input type="color" oninput="document.querySelector('#transicao').style.backgroundColor = this.value;">
+                </div>
+
+
+            </fieldset>   
+        </article><!--transition-->
             
-            <div class="pre">
-                <pre>
-        @keyframes exemplo {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(100px);
-            }
-        }
-
-        #animado {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            animation: exemplo 2s infinite;
-        }
-                </pre>
-            </div>
-        </article>
-
+           
+       
     </main>
     <footer>
         <a class="buttom buttom-index" href="../../index.html">Índice</a>
     </footer>
-    <script>console.log(document.querySelector('#conter3').offsetWidth);
+    <script>
+    console.log(document.querySelector('#conter3').offsetWidth);
 
-    document.documentElement.style.setProperty('--contex-width', document.querySelector('#conter3').offsetWidth + 'px');</script>
+    document.documentElement.style.setProperty('--contex-width', document.querySelector('#conter3').offsetWidth + 'px');
     </script>
 </body>
 </html>

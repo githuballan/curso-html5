@@ -128,6 +128,7 @@ function excluir(){
 
 function consultatd(tds){
     t= tds.innerHTML;
+    console.log(t);
     if(nome[t]==null){document.getElementById('nomec').innerHTML = "Vazio";
         document.getElementById('numeroRifa').value = t;
 

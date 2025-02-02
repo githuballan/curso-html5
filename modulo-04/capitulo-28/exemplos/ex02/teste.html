@@ -15,7 +15,7 @@
             
 
            
-            width: 270px;
+            width: 80%;
             top: 0px;
             left: 0px;
             background-color: #FBF8F3;
@@ -33,20 +33,21 @@
         
 
     
-        button#botao-menu{
+        #botao-menu{
     
             display: inline-block;
-            position: relative;
-            left: 250px;
+           
+            
         
         
         
            
             justify-content: center;
             align-items: center;
-            width: 30px;  
+            width: 30px;
+            border-radius: 8px;  
             
-            border:2px solid #0000ff;
+          
            
             
     
@@ -68,11 +69,14 @@
 <script>    
 
     function clickMenu(){
+        let botao = document.getElementById('botao-menu');
 
         if (menu.style.display == 'block'){
-            menu.style.display = 'none' 
+            menu.style.display = 'none';
+            botao.style.marginLeft = '0px'; 
             } else {
-            menu.style.display= 'block'; 
+            menu.style.display= 'block';
+            botao.style.marginLeft = '83%'; 
             }
             }
 
