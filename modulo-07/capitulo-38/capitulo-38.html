@@ -459,6 +459,110 @@ x = 3.14; // Isso lançará um erro porque 'x' não foi declarado
                 <li>Para evitar o "callback hell" e tornar o código mais legível.</li>
                 <li>Para lidar com múltiplas operações assíncronas de forma sequencial ou paralela.</li>
             </ul>
+        </article><!--promises-->
+        <article id="async-await">
+            <h2>Async/Await</h2>
+            <p>Async/Await é uma sintaxe introduzida no ECMAScript 2017 (ES8) que facilita o trabalho com operações assíncronas em JavaScript. Ele permite que você escreva código assíncrono de maneira mais síncrona, tornando-o mais legível e fácil de entender.</p>
+
+            <h4>Como Usar</h4>
+            <p>Para usar <code>async</code> e <code>await</code>, você precisa declarar uma função como <code>async</code>. Dentro dessa função, você pode usar a palavra-chave <code>await</code> antes de uma Promise para esperar que ela seja resolvida. Veja um exemplo básico:</p>
+            <div class="pre">
+                <pre>
+        async function minhaFuncao() {
+            const resultado = await minhaPromise();
+            console.log(resultado);
+        }
+
+        function minhaPromise() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve('Operação concluída!'), 2000);
+            });
+        }
+
+        minhaFuncao(); // Após 2 segundos, exibe "Operação concluída!"
+                </pre>
+            </div>
+
+            <h5>Vantagens do Async/Await</h5>
+            <ul>
+                <li>Facilita a leitura e escrita de código assíncrono.</li>
+                <li>Evita o "callback hell" e o encadeamento excessivo de <code>.then</code> e <code>.catch</code>.</li>
+                <li>Permite tratar erros de forma mais simples usando <code>try</code> e <code>catch</code>.</li>
+            </ul>
+            <section id="try-catch"></section>
+                <h4>Bloco <code>try</code></h4>
+                <p>O bloco <code>try</code> é usado para envolver código que pode lançar exceções. Se uma exceção for lançada, o controle é transferido para o bloco <code>catch</code> associado, onde você pode lidar com o erro de forma apropriada.</p>
+                
+                <h4>Como Usar</h4>
+                <p>Para usar um bloco <code>try</code>, você deve segui-lo com um bloco <code>catch</code> que captura e trata qualquer exceção lançada. Veja um exemplo básico:</p>
+                <div class="pre">
+                    <pre>
+            try {
+                // Código que pode lançar uma exceção
+                let resultado = 10 / 0;
+                console.log(resultado);
+            } catch (erro) {
+                // Código para lidar com a exceção
+                console.error('Erro:', erro.message);
+            }
+                    </pre>
+                </div>
+                
+                <h4>Bloco <code>finally</code></h4>
+                <p>Opcionalmente, você pode adicionar um bloco <code>finally</code> após o <code>catch</code>. O código dentro do bloco <code>finally</code> será executado independentemente de uma exceção ter sido lançada ou não:</p>
+                <div class="pre">
+                    <pre>
+            try {
+                // Código que pode lançar uma exceção
+                let resultado = 10 / 0;
+                console.log(resultado);
+            } catch (erro) {
+                // Código para lidar com a exceção
+                console.error('Erro:', erro.message);
+            } finally {
+                // Código que será executado sempre
+                console.log('Bloco finally executado.');
+            }
+                    </pre>
+                </div>
+                
+                <h4>Quando Usar Blocos <code>try</code></h4>
+                <ul>
+                    <li>Para capturar e tratar erros em operações que podem falhar.</li>
+                    <li>Para garantir que o código de limpeza seja executado, independentemente de uma exceção ser lançada.</li>
+                    <li>Para melhorar a robustez e a confiabilidade do seu código.</li>
+                </ul>
+            </section>
+
+            <h4>Tratamento de Erros</h4>
+            <p>Você pode usar blocos <code>try</code> e <code>catch</code> para tratar erros em funções assíncronas:</p>
+            <div class="pre">
+                <pre>
+        async function minhaFuncao() {
+            try {
+                const resultado = await minhaPromise();
+                console.log(resultado);
+            } catch (erro) {
+                console.error('Erro:', erro);
+            }
+        }
+
+        function minhaPromise() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => reject('Algo deu errado!'), 2000);
+            });
+        }
+
+        minhaFuncao(); // Após 2 segundos, exibe "Erro: Algo deu errado!"
+                </pre>
+            </div>
+
+            <h4>Quando Usar Async/Await</h4>
+            <ul>
+                <li>Para operações assíncronas, como requisições de rede e timers.</li>
+                <li>Para tornar o código assíncrono mais legível e fácil de entender.</li>
+                <li>Para tratar erros de forma mais simples e intuitiva.</li>
+            </ul>
         </article>
     </main>
 

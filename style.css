@@ -97,9 +97,12 @@ nav>a{
     display: flex; 
     align-items: center;
     justify-content: space-evenly;
-  
-    
+}
 
+nav>a.buttom:hover{
+    box-shadow: inset 2px 2px #ffffff88;
+    background-color: #88888888;
+    cursor: pointer;
 }
 
 main
@@ -206,12 +209,12 @@ pre{
     
 }
 
+
 .buttom:hover{
     box-shadow: inset 2px 2px #ffffff88;
-    background-color: #888888cf;
+    background-color: #888888ff;
     cursor: pointer;
 }
-
 .buttom:active{
     box-shadow: inset -2px -2px #ffffff88;
     background-color: #00000019;
