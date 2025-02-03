@@ -3,7 +3,7 @@
 @font-face 
 {
     font-family: 'star';
-    src: url('../../fonts/twinkle-star/twinklestar-Regular.ttf'), format ('truetype');
+    src: url('fonts/twinkle-star/twinklestar-Regular.ttf'), format ('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -152,7 +152,8 @@ aside
     margin: 10px;
     text-align: center;
     font-size: 1.2em;
-    font-family: 'star';
+    font-family: 'Times New Roman', Times, serif;
+   
     
 }
 div.overflow-x{

@@ -71,6 +71,81 @@
                 </section>
 
         </article><!--#criacao_objeto -->
+        <article id="copiar_objeto">
+            <h2>Copiando Objetos com Object.assign</h2>
+            <p>Para copiar um objeto em JavaScript, podemos usar o método <code>Object.assign</code>. Este método copia todas as propriedades enumeráveis de um ou mais objetos de origem para um objeto de destino.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+            <pre>
+    let objeto1 = { a: 1, b: 2, c: 3 };
+    let objeto2 = Object.assign({}, objeto1);
+
+    console.log(objeto2); // { a: 1, b: 2, c: 3 }
+            </pre>
+            </div>
+            <p>Resultado:</p>
+            <div class="resp">
+            <script>
+                let objeto3 = { a: 1, b: 2, c: 3 };
+                let objeto4 = Object.assign({}, objeto3);
+
+                console.log(objeto4);
+                document.write(JSON.stringify(objeto4));
+            </script>
+            </div>
+            <section>
+            <h3>Copiando Objetos com Spread Operator</h3>
+            <p>Outra maneira de copiar um objeto é usando o operador spread (<code>...</code>). Este operador permite criar uma cópia superficial de um objeto.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+    let objeto1 = { a: 1, b: 2, c: 3 };
+    let objeto2 = { ...objeto1 };
+
+    console.log(objeto2); // { a: 1, b: 2, c: 3 }
+                </pre>
+            </div>
+            <p>Resultado:</p>
+            <div class="resp">
+                <script>
+                let objeto1 = { a: 1, b: 2, c: 3 };
+                let objeto2 = { ...objeto1 };
+
+                console.log(objeto2);
+                document.write(JSON.stringify(objeto2));
+                </script>
+            </div>
+            </section>
+            <section>
+            <h4 class="mark">Forma errada de copiar objeto:</h4>
+            <p>Se tentarmos copiar um objeto usando a atribuição direta (<code>objeto1 = objeto2</code>), estaremos apenas criando uma referência ao mesmo objeto, e não uma cópia. Qualquer alteração em um dos objetos afetará o outro.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+    let objeto1 = { a: 1, b: 2, c: 3 };
+    let objeto2 = objeto1;
+    objeto2.a = 99;
+
+    console.log(objeto1.a); // 99
+    console.log(objeto2.a); // 99
+                </pre>
+            </div>
+            <p>Resultado:</p>
+            <div class="resp">
+                <script>
+                let objeto5 = { a: 1, b: 2, c: 3 };
+                let objeto6 = objeto5;
+                objeto6.a = 99;
+
+                console.log(objeto5.a);
+                console.log(objeto6.a);
+                document.write("objeto5.a: " + objeto5.a + "<br>");
+                document.write("objeto6.a: " + objeto6.a);
+                </script>
+            </div>
+            </section>
+            
+        </article>
         <article id="objet_com_array">
             <h2>Objeto com array</h2>
             <p>Também é possível criar Arrays dentro de objetos. </p>
@@ -152,7 +227,7 @@ document.write(aluno.media()+"&lt;br>");
                         
                         document.write(aluno.nome+"<br>");
                         document.write(aluno.media()+"<br>");
-                        document.write(tamanho);
+                       
                     
                 </script>
                 
@@ -220,19 +295,21 @@ document.write("Nome: "+aluno.nome+
                         
                         let aluno=turma[1];
 
-                        console.log(aluno);
-                        console.log(aluno.media());
-                        document.write("Nome: "+aluno.nome+
-                            "<br> Nota 1: "+aluno.n1+
-                            "<br> Nota 2: "+aluno.n2+
-                            "<br> Nota 3: "+aluno.n3+
-                            "<br> Nota 4: "+aluno.n4+
-                            "<br> Média: "+aluno.media()
-                        );
-                    }
+                            console.log(aluno);
+                            console.log(aluno.media());
+                            document.write("Nome: "+aluno.nome+
+                                "<br> Nota 1: "+aluno.n1+
+                                "<br> Nota 2: "+aluno.n2+
+                                "<br> Nota 3: "+aluno.n3+
+                                "<br> Nota 4: "+aluno.n4+
+                                "<br> Média: "+aluno.media()
+                            );
+                        }
+                    </script>
                 </script>
             </div><!-- /.resp -->
         </article><!-- /#construtor -->
+
     </main>
     <footer>
         <h1>Materiais utilizados</h1>            

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
+    <title>High order function</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+</head>
+<body>
+    <header>
+        <h1>Programação funcional </h1>
+        <h1>High order function</h1>
+
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <section id="introducao">
+            <h2>Introdução à Programação Funcional</h2>
+            <p>A programação funcional é um paradigma de programação que trata a computação como a avaliação de funções matemáticas e evita estados e dados mutáveis. Ela enfatiza a aplicação de funções, em contraste com a programação imperativa, que enfatiza mudanças no estado do programa.</p>
+            <p>Algumas características importantes da programação funcional incluem:</p>
+            <ul>
+                <li>Funções de primeira classe e de ordem superior</li>
+                <li>Imutabilidade</li>
+                <li>Funções puras</li>
+                <li>Recursão</li>
+                <li>Expressões lambda</li>
+            </ul>
+        </section><!--introducao-->
+        <article id="high-order-function">
+            <h2>High Order Function</h2>
+            <section id="int-hof">
+                <p>Neste capítulo, vamos falar sobre High Order Functions (Funções de Alta Ordem) na programação funcional. High Order Functions são funções que podem receber outras funções como argumentos ou retornar funções como resultado.</p>
+                <p>As três High Order Functions mais comuns são:</p>
+                <ul>
+                    <li><strong>filter</strong>: Cria um novo array com todos os elementos que passam em um teste especificado por uma função.</li>
+                        <li><strong>map</strong>: Aplica uma função a cada elemento de um array e retorna um novo array com os resultados.</li>
+                    <li><strong>reduce</strong>: Aplica uma função a um acumulador e a cada elemento de um array (da esquerda para a direita) para reduzi-lo a um único valor.</li>
+                </ul>
+                <p>Essas funções são muito úteis para manipular e transformar arrays de maneira concisa e expressiva.</p>
+                
+            </section><!-- /#int-hof -->
+            <article id="filter">
+                <h3>Filter</h3>
+                <p>A função <code>filter</code> é uma das High Order Functions mais utilizadas na programação funcional. Ela permite criar um novo array contendo apenas os elementos que passam em um teste especificado por uma função fornecida.</p>
+                <p>O <code>filter</code> não modifica o array original, mas retorna um novo array com os elementos que satisfazem a condição.</p>
+                <p>A sintaxe da função <code>filter</code> é a seguinte:</p>
+                
+            <code>const newArray = arrayOriginal.filter(callback(element[, index[, array]])[, thisArg]);</code>
+                    
+                </div>
+                <p><strong>Exemplo de uso do filter</strong></p>
+                <div class="pre">
+                    <pre>
+            const numeros = [1, 2, 3, 4, 5, 6];
+            const <abbr title="Novo array">numerosPares</abbr> = <abbr title="Array que será testado">numeros</abbr>.filter(<abbr title="variável que receberá os elementos do array que será testado">numero</abbr> => <abbr title="teste que deverá gerar um valor booleano">numero % 2 === 0</abbr>);
+            console.log(numerosPares); // [2, 4, 6]
+                    </pre>
+                </div>
+                <p>No exemplo acima, a função <code>filter</code> é usada para criar um novo array <code>numerosPares</code> que contém apenas os números pares do array original <code>numeros</code>.</p>
+                <p>A função de callback <code>numero => numero % 2 === 0</code> verifica se um número é par (ou seja, se o resto da divisão por 2 é igual a zero).</p>
+                <p>A função <code>filter</code> exige que a função de callback retorne valores booleanos. Se o elemento do <code>arrayOriginal</code> passar no teste e o resultado for <code>true</code>, ele será incluído no novo array, neste caso, <code>numerosPares</code>.</p>
+
+            </article><!-- /#filter -->
+            <article>
+                <h3>Map</h3>
+                <p>A função <code>map</code> é outra High Order Function muito utilizada na programação funcional. Ela permite aplicar uma função a cada elemento de um array e retornar um novo array com os resultados.</p>
+                <p>O <code>map</code> não modifica o array original, assim como filter, mas retorna um novo array com os elementos transformados pela função fornecida.</p>
+                <p>A sintaxe da função <code>map</code> é a seguinte:</p>
+               <code>
+            const newArray = arrayOriginal.map(callback(element[, index[, array]])[, thisArg]);
+               </code>
+                <p><strong>Exemplo de uso do map</strong></p>
+                <div class="pre">
+                    <pre>
+const numeros = [1, 2, 3, 4, 5];
+const numerosDobrados = numeros.map(numero => numero * 2);
+console.log(numerosDobrados); // [2, 4, 6, 8, 10]
+                    </pre>
+                </div>
+                <p>No exemplo acima, a função <code>map</code> é usada para criar um novo array <code>numerosDobrados</code> que contém os números do array original <code>numeros</code> multiplicados por 2.</p>
+                <p>A função de callback <code>numero => numero * 2</code> multiplica cada número por 2 e retorna o resultado.</p>
+                <p>A função <code>map</code> aplica a função de callback a cada elemento do <code>arrayOriginal</code> e retorna um novo array com os resultados.</p>
+
+                <strong><p>Veja outro exmplo:</p></strong>
+                <div class="pre">
+                    <pre>
+function novoAluno(nome, nota) {
+    return { nome, nota };
+};
+
+let alunos = [
+    novoAluno('Mario', 10),
+    novoAluno('José', 5),
+    novoAluno('Maria', 9),
+    novoAluno('João', 6),
+    novoAluno('Pedro', 3),
+];
+let pontinhoExtra = alunos.map(aluno => ({
+    nome: aluno.nome,
+    nota: aluno.nota + 1
+}));
+console.log(pontinhoExtra);
+
+console.log(alunos);
+                </pre>
+                </div>
+                <p>No exemplo acima, a função <code>map</code> é usada para criar um novo array <code>pontinhoExtra</code> que contém os alunos do array original <code>alunos</code> com uma nota extra.</p>
+                <p>A função de callback <code>aluno => ({ nome: aluno.nome, nota: aluno.nota + 1 })</code> retorna um objeto com o nome e a nota do aluno, sendo que a nota é incrementada em 1.</p>
+                <p>A função <code>map</code> aplica a função de callback a cada elemento do <code>arrayOriginal</code> e retorna um novo array com os resultados.</p>
+                <section id="erro-comum">
+                    <h3>Erro Comum ao Usar Map</h3>
+                    <p>Um erro comum ao usar a função <code>map</code> é modificar o array original sem querer. Isso pode acontecer quando os elementos do array são objetos e a função de callback modifica esses objetos diretamente.</p>
+                    <p>Veja o exemplo abaixo:</p>
+                    <div class="pre">
+                        <pre>
+let alunos = [
+    { nome: 'Mario', nota: 10 },
+    { nome: 'José', nota: 5 },
+    { nome: 'Maria', nota: 9 },
+    { nome: 'João', nota: 6 },
+    { nome: 'Pedro', nota: 3 },
+];
+
+let pontinhoExtra = alunos.map(aluno => {
+    aluno.nota += 1;
+    return aluno;
+});
+
+console.log(pontinhoExtra);
+console.log(alunos);
+                        </pre>
+                    </div>
+                    <p>No exemplo acima, a função <code>map</code> é usada para criar um novo array <code>pontinhoExtra</code> que contém os alunos do array original <code>alunos</code> com uma nota extra. No entanto, a função de callback modifica diretamente a propriedade <code>nota</code> dos objetos do array original.</p>
+                    <p>Como resultado, tanto o array <code>pontinhoExtra</code> quanto o array original <code>alunos</code> são modificados, pois ambos referenciam os mesmos objetos.</p>
+                    <p>Para evitar esse problema, é importante criar novos objetos dentro da função de callback, em vez de modificar os objetos existentes. Veja a correção abaixo:</p>
+                    <div class="pre">
+                        <pre>
+let alunos = [
+    { nome: 'Mario', nota: 10 },
+    { nome: 'José', nota: 5 },
+    { nome: 'Maria', nota: 9 },
+    { nome: 'João', nota: 6 },
+    { nome: 'Pedro', nota: 3 },
+];
+
+let pontinhoExtra = alunos.map(aluno => ({
+    <abbr title="O detalhe que faltou">nome:</abbr> aluno.nome,
+    <abbr title="O detalhe que faltou">nota:</abbr> aluno.nota + 1
+}));
+
+console.log(pontinhoExtra);
+console.log(alunos);
+                        </pre>
+                    </div>
+                    <p>Na correção acima, a função de callback retorna novos objetos com as propriedades <code>nome</code> e <code>nota</code> incrementada em 1, sem modificar os objetos do array original.</p>
+                </section>
+
+
+
+
+
+            </article>
+           
+</article><!-- /#high-order-function -->
+    <footer>
+<script src="script.js"></script>
+    </footer>
+</body>
+</html>
