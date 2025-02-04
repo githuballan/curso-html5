@@ -6,7 +6,8 @@
     <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
     <title>High order function</title>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <link rel="shortcut icon" href="../../imagens/Study.ico"type="image/x-icon">
+    <script src="script.js"></script>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
 </head>
 <body>
@@ -66,7 +67,7 @@
                 <p>A função <code>filter</code> exige que a função de callback retorne valores booleanos. Se o elemento do <code>arrayOriginal</code> passar no teste e o resultado for <code>true</code>, ele será incluído no novo array, neste caso, <code>numerosPares</code>.</p>
 
             </article><!-- /#filter -->
-            <article>
+            <article id="Map">
                 <h3>Map</h3>
                 <p>A função <code>map</code> é outra High Order Function muito utilizada na programação funcional. Ela permite aplicar uma função a cada elemento de um array e retornar um novo array com os resultados.</p>
                 <p>O <code>map</code> não modifica o array original, assim como filter, mas retorna um novo array com os elementos transformados pela função fornecida.</p>
@@ -78,7 +79,12 @@
                 <div class="pre">
                     <pre>
 const numeros = [1, 2, 3, 4, 5];
-const numerosDobrados = numeros.map(numero => numero * 2);
+
+function dobrarNumero(numero) {
+    return numero * 2;
+}
+
+const numerosDobrados = numeros.map(dobrarNumero);
 console.log(numerosDobrados); // [2, 4, 6, 8, 10]
                     </pre>
                 </div>
@@ -164,9 +170,121 @@ console.log(alunos);
 
 
 
-            </article>
-           
-</article><!-- /#high-order-function -->
+            </article><!--Map-->
+            <article id="reduce">
+                <h3>Reduce</h3>
+                <p>A função <code>reduce</code> é uma das High Order Functions mais poderosas e versáteis na programação funcional. Ela permite reduzir um array a um único valor, aplicando uma função a um acumulador e a cada elemento do array (da esquerda para a direita).</p>
+                <p>O <code>reduce</code> não modifica o array original, mas retorna um único valor que é o resultado da redução.</p>
+                <p>A sintaxe da função <code>reduce</code> é a seguinte:</p>
+                <code>
+                    const resultado = arrayOriginal.reduce(callback(acumulador, valorAtual[, index[, array]])[, valorInicial]);
+                </code>
+                <p><strong>Exemplo de uso do reduce</strong></p>
+                <div class="pre">
+                    <pre>
+            const numeros = [1, 2, 3, 4, 5];
+
+            function somaNumeros(acumulador, numero) {
+                return acumulador + numero;
+            }
+            const soma = numeros.reduce(somaNumeros, 0);
+            console.log(soma); // 15
+                    </pre>
+                </div>
+                <p>No exemplo acima, a função <code>reduce</code> é usada para somar todos os números do array <code>numeros</code>. A função de callback <code>function(acumulador, numero) { return acumulador + numero; }</code> adiciona cada número ao acumulador, e o valor inicial do acumulador é 0.</p>
+                <p>A função <code>reduce</code> aplica a função de callback a cada elemento do <code>arrayOriginal</code> e retorna o valor final do acumulador.</p>
+                <p><strong>Outro exemplo de uso do reduce</strong></p>
+                <div class="pre">
+                    <pre>
+            const alunos = [
+                { nome: 'Mario', nota: 10 },
+                { nome: 'José', nota: 5 },
+                { nome: 'Maria', nota: 9 },
+                { nome: 'João', nota: 6 },
+                { nome: 'Pedro', nota: 3 },
+            ];
+
+            function calcularMedia(acumulador, aluno, index, array) {
+                acumulador += aluno.nota;
+                if (index === array.length - 1) {
+                    return acumulador / array.length;
+                }
+                return acumulador;
+            }
+
+            const media = alunos.reduce(calcularMedia, 0);
+
+            console.log(media); // 6.6
+                    </pre>
+                </div>
+                <p>No exemplo acima, a função <code>reduce</code> é usada para calcular a média das notas dos alunos. A função de callback adiciona a nota de cada aluno ao acumulador e, se for o último elemento do array, divide o acumulador pelo número total de alunos para obter a média.</p>
+                <p>A função <code>reduce</code> é muito útil para realizar operações acumulativas em arrays, como somar valores, calcular médias, encontrar máximos e mínimos, entre outras.</p>
+            </article><!-- /#reduce -->
+        </article><!-- /#high-order-function -->
+        <article id="fetch">
+            <h2>Fetch API</h2>
+            <p>A Fetch API é uma interface moderna que permite fazer requisições HTTP de forma simples e intuitiva. Ela é usada para buscar recursos na web, como dados de uma API, e funciona de maneira assíncrona, permitindo que o código continue sendo executado enquanto a requisição é processada.</p>
+            <p>A Fetch API substitui a antiga interface <code>XMLHttpRequest</code> e oferece uma maneira mais poderosa e flexível de fazer requisições HTTP.</p>
+            <aside>
+                
+                <p>API (Interface de Programação de Aplicações) é um conjunto de definições e protocolos que permitem a comunicação entre diferentes sistemas de software. As APIs são usadas para integrar diferentes serviços e permitir que eles troquem dados entre si.</p>
+            </aside>
+            <p>A sintaxe básica para usar a Fetch API é a seguinte:</p>
+            <code>
+                fetch(url, options)
+                    .then(response => response.json())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Erro:', error));
+            </code>
+            <p>Vamos detalhar cada parte dessa sintaxe:</p>
+            <ul>
+                <li><code>fetch(url, options)</code>: Faz uma requisição HTTP para a URL especificada. O parâmetro <code>options</code> é opcional e pode ser usado para configurar a requisição, como o método HTTP (GET, POST, etc.), cabeçalhos, corpo da requisição, entre outros.</li>
+                <li><code>.then(response => response.json())</code>: O método <code>then</code> é usado para processar a resposta da requisição. A resposta é convertida para JSON usando o método <code>json()</code>.</li>
+                <li><code>.then(data => console.log(data))</code>: O método <code>then</code> é usado novamente para processar os dados convertidos em JSON. Neste exemplo, os dados são exibidos no console.</li>
+                <li><code>.catch(error => console.error('Erro:', error))</code>: O método <code>catch</code> é usado para capturar e tratar erros que possam ocorrer durante a requisição.</li>
+            </ul>
+            <p><strong>Exemplo de uso da Fetch API</strong></p>
+            <div class="pre">
+                <pre>
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dados recebidos:', data);
+                // Processar os dados recebidos
+            })
+            .catch(error => {
+                console.error('Erro ao buscar os dados:', error);
+            });
+                </pre>
+            </div>
+            <p>No exemplo acima, a Fetch API é usada para fazer uma requisição GET para a URL <code>https://jsonplaceholder.typicode.com/posts</code>. A resposta é convertida para JSON e os dados são exibidos no console. Se ocorrer um erro durante a requisição, ele será capturado e exibido no console.</p>
+            <p>A Fetch API também pode ser usada para fazer requisições POST, enviar dados no corpo da requisição e configurar cabeçalhos. Veja o exemplo abaixo:</p>
+            <div class="pre">
+                <pre>
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: 'foo',
+                body: 'bar',
+                userId: 1
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dados enviados:', data);
+                // Processar a resposta
+            })
+            .catch(error => {
+                console.error('Erro ao enviar os dados:', error);
+            });
+                </pre>
+            </div>
+            <p>No exemplo acima, a Fetch API é usada para fazer uma requisição POST para a URL <code>https://jsonplaceholder.typicode.com/posts</code>. Os dados são enviados no corpo da requisição em formato JSON. A resposta é convertida para JSON e exibida no console. Se ocorrer um erro durante a requisição, ele será capturado e exibido no console.</p>
+        </article> <!-- /#fetch -->    
+       
     <footer>
 <script src="script.js"></script>
     </footer>

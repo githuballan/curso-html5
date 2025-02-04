@@ -18,11 +18,13 @@
         <h1>Array</h1>
     </header>
     <main>
+
         <section id="introducao">
                 
             <p>Os arrays em JavaScript são estruturas de dados utilizadas para armazenar múltiplos valores em uma única variável. Eles permitem que você organize e manipule conjuntos de dados de forma eficiente, acessando cada elemento através de um índice numérico.</p>
             <p>Os índices dos arrays começam sempre do "0" (zero) e vão até o número do último elemento do array menos um. Essa sequência é chamada de índice do array ou, em inglês, array index.</p>
         </section><!-- /#introducao -->
+
         <article id="declarando_array">
             <h2>Declarando Array</h2>
             <p>Existem duas formas de declarar um array:</p>
@@ -57,7 +59,7 @@
         </article><!-- /#declarando_array -->
         
         <article id="metodos">
-            <h2>Trabalhando com os elementos de um Array</h2>
+            <h2>Trabalhando os elementos de um Array</h2>
             <section id="acessando_elementos">
             <h3>Acessando Elementos</h3>
             <p>Os elementos do array são acessados usando índices, que começam em 0.</p>
@@ -152,14 +154,38 @@
                 <p>Atenção: o "O" de indexOf é maiúsculo.</p>
             </div>
             </section><!-- /#indexOf -->
-            <section id="slice">
-            <h3>Copiar array inteiro ou parte</h3>
-            <p><strong>slice():</strong> É usado para copiar uma parte de um array para um novo array sem modificar o array original. Ele aceita dois argumentos opcionais: o índice de início e o índice de fim.</p>
+            <section id="forEach">
+            <h3>forEach</h3>
+            <p>Executa uma função em cada elemento do array.</p>
+            <div class="pre">
+                <pre>
+    frutas.forEach(function(item, indice) {
+        console.log(item, indice);
+    });
+                </pre>
+            </div>
+            <p>No exemplo acima, ele apenas enumerou cada fruta com seu índice.</p>
+            </section><!-- /#forEach -->
+        </article><!--/#metodos-->
+
+        <article id="CopiarArray">
+            <h2>Copia de array</h2>
+            <section id="introducao_slice">
+                
+                <p>O método <strong>slice()</strong> e o operador <strong>spread</strong> são ferramentas essenciais em JavaScript para manipulação de arrays. Ambos permitem criar cópias de arrays, mas de maneiras diferentes e com suas próprias vantagens.</p>
+                <p>O <strong>slice()</strong> é usado para copiar uma parte de um array para um novo array sem modificar o array original. Ele aceita dois argumentos opcionais: o índice de início e o índice de fim.</p>
+                <p>O operador <strong>spread</strong> <code>[...array]</code> permite criar cópias superficiais de arrays de maneira simples e eficiente, além de ser útil para combinar arrays e objetos.</p>
+            </section><!--introducao_slice-->
+            <article id="slice">
+            <h3>slice():</h3> 
+            <p>É usado para copiar uma parte de um array para um novo array sem modificar o array original. Ele aceita dois argumentos opcionais: o índice de início e o índice de fim.</p>
             <p>Para isso, esse método usa dois parâmetros:</p>
             <ol>
                 <li>Número do índice do primeiro elemento que será copiado.</li>
                 <li>Número do índice do último elemento a ser copiado. Entretanto, esse último não está incluído na cópia. Logo, precisará somar 1 no índice do último elemento que desejar copiar.</li>
+                
             </ol>
+            <p><strong>slice()</strong>: Se nenhum parâmetro for fornecido, o método slice criará uma cópia completa do array.</p>
             <div class="mark"><p>O método slice() cria uma cópia superficial do array original. Isso significa que se o array contiver objetos ou outros arrays, somente as referências desses objetos serão copiadas para o novo array. Os objetos em si não são duplicados.</p></div>
             <div class="pre">
                 <pre>
@@ -176,8 +202,22 @@
                 <li>Se usar slice() vazio, ele copiará todo o array.</li>
                 </ul>
             </div>
-
-            <section id="copiar_array">
+            </article><!--slice-->
+            <article id="spread">
+                <h3>operador spread</h3>
+                <p>Para criar uma cópia real do array, além do slice(), você também pode  usar o operador spread <code>[...array]</code>. Veja o exemplo:</p>
+                <div class="pre">
+                    <pre>
+            let array1 = [1, 2, 3];
+            let array2 = [...array1];
+            array2.push(4);
+            console.log(array1); // [1, 2, 3]
+            console.log(array2); // [1, 2, 3, 4]
+                    </pre>
+                </div>
+                <p>No exemplo acima, ao adicionar um elemento em <code>array2</code>, o <code>array1</code> permaneceu inalterado.</p>
+            </article><!--spread-->
+            <article id="erro">
                 <h4>Forma <span class="mark">errada</span> de copiar Arrays:</h4>
                 <p>Se você tentar copiar um array usando <code>array1 = array2</code>, você não estará criando uma cópia do array, mas sim uma referência ao mesmo array. Isso significa que qualquer alteração feita em <code>array2</code> também afetará <code>array1</code>, e vice-versa.</p>
                 <div class="pre">
@@ -190,32 +230,11 @@
                     </pre>
                 </div>
                 <p>No exemplo acima, ao adicionar um elemento em <code>array2</code>, o <code>array1</code> também foi modificado.</p>
-                <p>Para criar uma cópia real do array, além do slice(), você também pode  usar o operador spread <code>[...array]</code>. Veja o exemplo:</p>
-                <div class="pre">
-                    <pre>
-            let array1 = [1, 2, 3];
-            let array2 = [...array1];
-            array2.push(4);
-            console.log(array1); // [1, 2, 3]
-            console.log(array2); // [1, 2, 3, 4]
-                    </pre>
-                </div>
-                <p>No exemplo acima, ao adicionar um elemento em <code>array2</code>, o <code>array1</code> permaneceu inalterado.</p>
-            </section>
-            </section><!-- /#slice -->
-            <section id="forEach">
-            <h3>forEach</h3>
-            <p>Executa uma função em cada elemento do array.</p>
-            <div class="pre">
-                <pre>
-    frutas.forEach(function(item, indice) {
-        console.log(item, indice);
-    });
-                </pre>
-            </div>
-            <p>No exemplo acima, ele apenas enumerou cada fruta com seu índice.</p>
-            </section><!-- /#forEach -->
-        </article><!--/#metodos-->
+            
+            </article><!--erro-->
+            
+        </article><!--/#CopiarArray-->   
+
         <article id="splice">
             <h2>splice</h2>
             <section id="introducao_splice">
@@ -324,12 +343,13 @@ frutas.splice(<output id="indicer"></output>, <output id="quantidader"></output>
                         document.getElementById('resultado').textContent = JSON.stringify(frutas);
                     }
                 </script>
+                <div>
+                    <p>Nota: Cada vez que você modifica o array no exemplo acima, ele retorna ao estado original antes de aplicar as novas modificações. As alterações não são salvas entre as execuções.</p>
+                </div>
             </fieldset>
 
-
             </section><!-- /#splice_adicionar -->
-        </article><!--/#splice-->   
-       
+        </article> <!--splice-->
 
     </main>
     <footer>

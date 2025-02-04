@@ -13,15 +13,28 @@
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        <h1>Capítulo 33</h1>
-        <h1>Objeto</h1>
+        <h1>Capítulo 33 <br> Objetos</h1>
+        
     </header>
     <main>
         <section id="introducao">
-            
-            <p>O objeto funciona de forma muito semelhante a um array, pois também é uma colecão de variáveis. Entretanto, quando se trata de objetos chamamos essas variáveis de propriedades do objeto.
-             </p>
-            <p>Sendo assim, um objeto é uma coleção de propriedades, onde cada propriedade é uma associação entre um nome (chave) e um valor (Assim como as variáveis). Objetos são uma das principais formas de estruturar dados em JavaScript e são extremamente flexíveis.</p>
+            <p>Objetos em JavaScript são coleções de propriedades, semelhantes aos arrays, mas com algumas diferenças importantes. Enquanto arrays utilizam índices numéricos para acessar seus elementos, objetos utilizam chaves (ou nomes) para acessar suas propriedades.</p>
+            <p>Por exemplo, em um array, você acessa um elemento pelo seu índice:</p>
+            <div class="pre">
+                <pre>
+    let array = [10, 20, 30];
+    console.log(array[0]); // 10
+                </pre>
+            </div>
+            <p>Já em um objeto, você acessa uma propriedade pela sua chave:</p>
+            <div class="pre">
+                <pre>
+    let objeto = { nome: "Allan", idade: 25 };
+    console.log(objeto["nome"]); // Allan
+    console.log(objeto.idade); // 25
+                </pre>
+            </div>
+            <p>Objetos são mais flexíveis que arrays, pois permitem associar valores a nomes significativos, tornando o código mais legível e fácil de entender. Além disso, objetos podem conter funções, conhecidas como métodos, que permitem definir comportamentos associados ao objeto.</p>
         </section><!--#introducao-->
         <article id="caracteristicas_objeto">
             <h2>Características de um Objeto</h2>
@@ -309,6 +322,128 @@ document.write("Nome: "+aluno.nome+
                 </script>
             </div><!-- /.resp -->
         </article><!-- /#construtor -->
+        <article id="desestruturacao_objeto">
+            <h2>Desestruturando Objetos</h2>
+            <p>A desestruturação de objetos é uma funcionalidade do ES6 que permite extrair valores de objetos e atribuí-los a variáveis de forma mais concisa e legível. Isso é especialmente útil quando você trabalha com objetos grandes ou complexos.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+            const aluno = { nome: "Allan", idade: 25, curso: "JavaScript" };
+            const { nome, idade, curso } = aluno;
+
+            console.log(nome); // Allan
+            console.log(idade); // 25
+            console.log(curso); // JavaScript
+                </pre>
+            </div>
+        <section>
+            <h3>Desestruturando Objetos Aninhados</h3>
+            <p>Você pode desestruturar objetos aninhados diretamente na declaração.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+        const aluno = { nome: "Allan", endereco: { cidade: "São Paulo", estado: "SP" } };
+        const { nome, endereco: { cidade, estado } } = aluno;
+
+        console.log(nome); // Allan
+        console.log(cidade); // São Paulo
+        console.log(estado); // SP
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h3>Desestruturando com Alias</h3>
+            <p>Você pode renomear variáveis ao desestruturar objetos.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+        const aluno = { nome: "Allan", idade: 25 };
+        const { nome: estudante, idade: anos } = aluno;
+
+        console.log(estudante); // Allan
+        console.log(anos); // 25
+                </pre>
+            </div>
+        </section>
+        <section>
+            <h3>Desestruturando com Valores Padrão</h3>
+            <p>Você pode definir valores padrão para variáveis ao desestruturar objetos.</p>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+        const aluno = { nome: "Allan" };
+        const { nome, idade = 18 } = aluno;
+
+        console.log(nome); // Allan
+        console.log(idade); // 18
+                </pre>
+            </div>
+        </section>
+            <section>
+                <h4>Principais Utilizações</h4>
+                <ul>
+                    <li><strong>Extração de Dados:</strong> Facilita a extração de dados de objetos retornados por APIs ou funções.</li>
+                    <li><strong>Parâmetros de Função:</strong> Permite desestruturar parâmetros de função para acessar diretamente as propriedades necessárias.</li>
+                    <li><strong>Valores Padrão:</strong> É possível definir valores padrão para variáveis ao desestruturar objetos.</li>
+                </ul>
+            </section>
+        </article><!--desestruturacao_objeto-->
+
+        <article id="objeto_aninhado">
+            <h2>Objeto Aninhado</h2>
+            <p>Um objeto aninhado é um objeto que contém outro objeto como uma de suas propriedades. Em outras palavras, é um objeto dentro de outro objeto. Isso permite a criação de estruturas de dados mais complexas e hierárquicas, onde cada nível da hierarquia pode conter seus próprios conjuntos de propriedades e métodos.</p>
+            
+            <strong>Exemplo de Objeto Aninhado</strong>
+            <p>Aqui está um exemplo de um objeto aninhado em JavaScript:</p>
+            <div class="pre">
+                <pre>
+        let aluno = {
+            nome: "Allan",
+            idade: 25,
+            endereco: {
+                rua: "Rua das Flores",
+                numero: 123,
+                cidade: "São Paulo",
+                estado: "SP"
+            },
+            notas: {
+                matematica: 9,
+                portugues: 8,
+                ciencias: 7
+            }
+        };
+                </pre>
+            </div>
+            <p>Neste exemplo, o objeto <code>aluno</code> contém várias propriedades, incluindo <code>nome</code>, <code>idade</code>, <code>endereco</code> e <code>notas</code>. As propriedades <code>endereco</code> e <code>notas</code> são objetos aninhados dentro do objeto <code>aluno</code>.</p>
+            
+            <h3>Acessando Propriedades de Objetos Aninhados</h3>
+            <p>Para acessar as propriedades de um objeto aninhado, você pode usar a notação de ponto (<code>.</code>) ou a notação de colchetes (<code>[]</code>):</p>
+            <div class="pre">
+                <pre>
+        console.log(aluno.nome); // Allan
+        console.log(aluno.endereco.cidade); // São Paulo
+        console.log(aluno.notas.matematica); // 9
+                </pre>
+            </div>
+            
+            <h3>Desestruturando Objetos Aninhados</h3>
+            <p>A desestruturação de objetos aninhados permite extrair valores de objetos aninhados de forma mais concisa e legível:</p>
+            <div class="pre">
+                <pre>
+        const { nome, endereco: { cidade, estado }, notas: { matematica, portugues } } = aluno;
+        
+        console.log(nome); // Allan
+        console.log(cidade); // São Paulo
+        console.log(estado); // SP
+        console.log(matematica); // 9
+        console.log(portugues); // 8
+                </pre>
+            </div>
+            <p>Neste exemplo, as propriedades <code>cidade</code> e <code>estado</code> são extraídas do objeto <code>endereco</code>, e as propriedades <code>matematica</code> e <code>portugues</code> são extraídas do objeto <code>notas</code>, tudo em uma única linha de código.</p>
+            
+            <strong>Utilidade de Objetos Aninhados</strong>
+            <p>Objetos aninhados são úteis para representar dados estruturados e hierárquicos, como informações de um aluno, dados de um endereço, configurações de um aplicativo, entre outros. Eles permitem organizar dados de maneira lógica e acessível, facilitando a manipulação e o acesso às informações necessárias.</p>
+        </article><!--objeto_aninhado-->
 
     </main>
     <footer>

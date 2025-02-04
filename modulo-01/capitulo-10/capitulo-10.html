@@ -2,89 +2,91 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="HTML, links, hyperlinks, atributos, target, rel, download, links internos, links externos, navegação web, tutorial HTML, curso HTML5">
+
+    <meta name="description" content="Aprenda a criar e utilizar links em HTML de maneira eficaz. Explore atributos como target, rel, download e links internos e externos.">
+
     <link rel="stylesheet" href="../../style.css">
-    <title>Capítulo 10</title>
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <title>Links em HTML5</title>
         
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
 <header>    
-       <h1>Capítulo 10</h1>
-       <h1>Links</h1>
+       
+       <h1>Guia Completo sobre Links em HTML5</h1>
+    
     
 </header>
 <main>
-   <section><!--Introdução-->
-    <h2>Introdução</h2>
-    <p>Os links são elementos fundamentais na navegação web, permitindo que os usuários se movam de uma página para outra ou para diferentes seções dentro da mesma página. Neste capítulo, vamos explorar como criar e utilizar links de maneira eficaz.</p>
-        <p>Para criar um HyperLink, utilizamos a tag &lt;a&gt;&lt;/a&gt; da seguinte forma:</p>
+    <section id="introducao">
+        <h2>Introdução aos Links</h2>
+        <p>Os links são elementos fundamentais na navegação web, permitindo que os usuários se movam de uma página para outra ou para diferentes seções dentro da mesma página. Neste capítulo, vamos explorar como criar e utilizar links de maneira eficaz.</p>
+        <p>Para criar um hyperlink, utilizamos a tag <code>&lt;a&gt;&lt;/a&gt;</code> da seguinte forma:</p>
         <div class="pre">
             <pre>
-    &lt;a href="URL do Site que deseja ir"&gt; Nome do HyperLink&lt;/a&gt;
+&lt;a href="URL do Site que deseja ir"&gt; Nome do HyperLink&lt;/a&gt;
             </pre>
         </div>
         <p>Exemplo:</p>
-        <p><a href="https://www.google.com.br/">Google</a></p>
-       
-   </section>
-    <article id="atributos"> <!--Atributos da tag a-->
-        <h2>Atributos da tag &lt;a&gt;</h2>
-        <section> <!--Atributos da tag-->            
-                <h3>Atributo Target:</h3> <p>Esse atributo permite escolher onde a nova página abrirá: </p>
-            
+        <p><a target="_blank" href="https://www.google.com.br/">Google</a></p>
+    </section>
 
-                    <ul>
-                        <li><strong>_blank: </strong> vai abrir o link em uma nova janela em branco</li>
-                        <li><strong>_self: </strong> vai abrir o link na janela ou frame atual (padrão)</li>
-                        <li><strong>_top: </strong> vai desfazer todos os frames e abrir o destino no navegador completo</li>
-                        <li><strong>_parent: </strong> similar ao uso do _top em uma referência à janela mãe</li>
-                        <li><strong>nome-do-frame: </strong> caso esteja usando frames, indicar o nome da janela a abrir</li>
-                    </ul>
-                    <p>Exemplo:</p>
-
-                    <div class="pre">
-                        <pre>
-                            
-        &lt;a href="URL do Site que deseja ir" target="_blank"&gt; Nome do HyperLink&lt;/a&gt;
-                            
-                        </pre>
-                    </div>
-
-                <p>Quando se trata de link externo, é recomendado que use sempre a função _blank para que abra uma nova guia no navegador do cliente e ele não saia da sua página.</p>
-
-                    <p>Exemplo:</p>
-                    <p><a href="https://www.google.com.br/" target="_blank">Google abrindo em outra janela</a></p>
-                    <p>Por padrão, o link sempre abre por cima da janela atual. Então é importante lembrar de sempre usar essa função.</p>
-                    As demais funções são para título de conhecimento.
-                    <span class="mark">OBS.: Sempre que o link nos levar para um outro site, o que chamamos de link externo, devemos indicar a URL completa, incluindo o protocolo http:// ou https:// e o caminho que leve a uma página específica, se for necessário.</span> 
-        </section>
-        <section><!--Atributo rel-->
-        <h3>Atributo rel:</h3>
-            <p>Esse atributo informa ao navegador se esse link é externo, interno ou na mesma página: </p>
-            
-                        
+    <article id="atributos">
+        <h2>Atributos da Tag &lt;a&gt;</h2>
+        
+        <section id="atributo-target">
+            <h3>Atributo Target</h3>
+            <p>Esse atributo permite escolher onde a nova página abrirá:</p>
             <ul>
-                <li><strong>next: </strong>indica que o link é para a próxima parte do documento atual</li>
-                <li><strong>prev: </strong>indica que o link é para a parte anterior do documento atual</li>
-                <li><strong>author: </strong>indica que é um link para o site do autor do artigo atual</li>
-                <li><strong>external: </strong>indica que é um link para outro site que não faz parte do site</li>
+                <li><strong>_blank:</strong> abre o link em uma nova janela em branco</li>
+                <li><strong>_self:</strong> abre o link na janela ou frame atual (padrão)</li>
+                <li><strong>_top:</strong> desfaz todos os frames e abre o destino no navegador completo</li>
+                <li><strong>_parent:</strong> similar ao uso do _top em uma referência à janela mãe</li>
+                <li><strong>nome-do-frame:</strong> caso esteja usando frames, indica o nome da janela a abrir</li>
             </ul>
-
-            <p>Exemplo:</p>  
-
+            <p>Exemplo:</p>
             <div class="pre">
-                <pre>&lt;a href="URL do Site que deseja ir" target="_blank" rel=" Função"&gt; Nome do HyperLink&lt;/a&gt; </pre>
+                <pre>
+&lt;a href="URL do Site que deseja ir" target="_blank"&gt; Nome do HyperLink&lt;/a&gt;
+                </pre>
             </div>
-            <p>A função rel auxilia o navegador a saber o próximo passo do usuário, gerando um processamento mais rápido e deixando o seu site mais ágil.</p>
+            <p>Quando se trata de link externo, é recomendado que use sempre a função <code>_blank</code> para que abra uma nova guia no navegador do cliente e ele não saia da sua página.</p>
+            <p>Exemplo:</p>
+            <p><a href="https://www.google.com.br/" target="_blank">Google abrindo em outra janela</a></p>
+            <p>Por padrão, o link sempre abre por cima da janela atual. Então é importante lembrar de sempre usar essa função.</p>
+            <p class="note">OBS.: Sempre que o link nos levar para um outro site, o que chamamos de link externo, devemos indicar a URL completa, incluindo o protocolo <code>http://</code> ou <code>https://</code> e o caminho que leve a uma página específica, se for necessário.</p>
         </section>
-        <section id="download"><!--Atributo Download-->
-            <h3>Atributo Download</h3> 
-            <p>Esse atributo indica que se trata de um link para download. Para isso, basta fazer o link diretamente para o arquivo que se deseja efetuar o download e adicionar o atributo download com o valor configurado para o nome do arquivo a ser baixado e o atributo type para indicar ao navegador que tipo de arquivo está sendo baixado. </p>
-            
+
+        <section id="atributo-rel">
+            <h3>Atributo Rel</h3>
+            <p>Esse atributo informa ao navegador se esse link é externo, interno ou na mesma página:</p>
+            <ul>
+                <li><strong>next:</strong> indica que o link é para a próxima parte do documento atual</li>
+                <li><strong>prev:</strong> indica que o link é para a parte anterior do documento atual</li>
+                <li><strong>author:</strong> indica que é um link para o site do autor do artigo atual</li>
+                <li><strong>external:</strong> indica que é um link para outro site que não faz parte do site</li>
+            </ul>
+            <p>Exemplo:</p>
+            <div class="pre">
+                <pre>
+&lt;a href="URL do Site que deseja ir" target="_blank" rel=" Função"&gt; Nome do HyperLink&lt;/a&gt;
+                </pre>
+            </div>
+            <p>A função <code>rel</code> auxilia o navegador a saber o próximo passo do usuário, gerando um processamento mais rápido e deixando o seu site mais ágil.</p>
+        </section>
+
+        <section id="atributo-download">
+            <h3>Atributo Download</h3>
+            <p>Esse atributo indica que se trata de um link para download. Para isso, basta fazer o link diretamente para o arquivo que se deseja efetuar o download e adicionar o atributo <code>download</code> com o valor configurado para o nome do arquivo a ser baixado e o atributo <code>type</code> para indicar ao navegador que tipo de arquivo está sendo baixado.</p>
             <p>Aqui vão alguns media types bem usados no nosso dia a dia:</p>
-                        
-            <ul type="square"> 
+            <ul>
                 <li>application/zip</li>
                 <li>text/html</li>
                 <li>text/css</li>
@@ -98,110 +100,119 @@
                 <li>image/jpeg</li>
                 <li>image/png</li>
             </ul>
-
-            <p>Exemplo:</p> 
+            <p>Exemplo:</p>
             <div class="pre">
                 <pre>
-            
 &lt;a href="URL do Site que deseja ir" download="image/jpeg" target="_blank" rel="external"&gt; Nome do HyperLink&lt;/a&gt;
-            
                 </pre>
-            </div>        
+            </div>
         </section>
     </article>
-    <article id="links-internos"><!--Links Internos-->
-        <h2>Links Internos</h2>
-        <p>Não muito diferente da criação de HyperLinks externos, a tag para link interno também é a mesma. No entanto, criar links internos tem algumas facilidades, pois em vez de digitar a URL completa, basta apertar Ctrl + Espaço para encontrar o local da página de destino:</p>
-        <p>Exemplo:</p>
 
+    <article id="links-internos">
+        <h2>Links Internos</h2>
+        <p>Não muito diferente da criação de hyperlinks externos, a tag para link interno também é a mesma. No entanto, criar links internos tem algumas facilidades, pois em vez de digitar a URL completa, basta apertar Ctrl + Espaço para encontrar o local da página de destino:</p>
+        <p>Exemplo:</p>
         <div class="pre">
-            <pre>        
-&lt;a href="CTRL + BARRA DE ESPAÇO"&gt; Nome do HyperLink&lt;/a&gt;        
+            <pre>
+&lt;a href="CTRL + BARRA DE ESPAÇO"&gt; Nome do HyperLink&lt;/a&gt;
             </pre>
         </div>
-
-        <p>É importante ressaltar que o HyperLink sempre pega como referência a localização da página. Sendo assim, quando a página de destino estiver uma ou algumas pastas anteriores à pasta onde está localizada a página atual, será necessário digitar "../" para cada pasta que precisar voltar.</p>
+        <p>É importante ressaltar que o hyperlink sempre pega como referência a localização da página. Sendo assim, quando a página de destino estiver uma ou algumas pastas anteriores à pasta onde está localizada a página atual, será necessário digitar <code>../</code> para cada pasta que precisar voltar.</p>
         <p>Exemplo:</p>
         <p>Para voltar uma pasta:</p>
-
         <div class="pre">
-            <pre>&lt;a href="../CTRL + BARRA DE ESPAÇO"&gt; Nome do HyperLink&lt;/a&gt;</pre>
+            <pre>
+&lt;a href="../CTRL + BARRA DE ESPAÇO"&gt; Nome do HyperLink&lt;/a&gt;
+            </pre>
         </div>
-       
         <p>Para voltar três pastas:</p>
         <div class="pre">
-            <pre>&lt;a href="../../../CTRL + BARRA DE ESPAÇO"&gt; Nome do HyperLink&lt;/a&gt;</pre>
+            <pre>
+&lt;a href="../../../CTRL + BARRA DE ESPAÇO"&gt; Nome do HyperLink&lt;/a&gt;
+            </pre>
         </div>
-
-        <p><b>Curiosidade:</b> Praticamente todos os servidores usam sistema operacional LINUX e esse comando "../" é do LINUX. Talvez seja interessante estudar um pouco de LINUX para ingressar na carreira.</p>        
+        <p><strong>Curiosidade:</strong> Praticamente todos os servidores usam sistema operacional LINUX e esse comando <code>../</code> é do LINUX. Talvez seja interessante estudar um pouco de LINUX para ingressar na carreira.</p>
     </article>
-    <article id="link-contatos"><!--Links para contatos-->
-        <h2>Links para contatos</h2>
-        <p>Existem algumas funcionalidades extras que conseguimos adicionar aos links alterando ou adicionando alguns comandos em href.</p>
+
+    <article id="links-contatos">
+        <h2>Links para Contatos</h2>
+        <p>Existem algumas funcionalidades extras que conseguimos adicionar aos links alterando ou adicionando alguns comandos em <code>href</code>.</p>
         <ul>
-            <li><strong>Número de telefone</strong>: Para abrir o discador padrão no celular</li>
-                <p>Exemplo:</p>
-                        Número: <a href="tel:+5521989898989">+5521989898989</a>
-                    <p>O comando:</p>
-                    <div class="pre">
-                        <pre>&lt;b>Número: &lt;/b> &lt;a <span class="mark">href="tel:+5521989898989"</span>>&lt;/a></pre>
-                    </div>
-
-
-            <li><strong>WhatsApp</strong>: Abre direto na conversa do WhatsApp</li>
-                <p>Exemplo:</p>
-                   WhatsApp: <a href="whatsapp://+5521989898989">+5521989898989</a>
-                <p>O comando:</p>
-                    <div class="pre">
-                        <pre>&lt;a <span class="mark">href="whatsapp://+5521989898989"</span>>&lt;/a></pre>
-                    </div>
-
-            <li><strong>Instagram</strong>: Abre o Instagram direto no perfil do usuário</li>
+            <li><strong>Número de telefone:</strong> Para abrir o discador padrão no celular</li>
             <p>Exemplo:</p>
-                <a href="instagram://user?username=allancmartins">@allancmartins</a>
-                <p>O comando:</p>
-                <div class="pre">
-                    <pre>&lt;a <span class="mark">href="instagram://user?username=allancmartins"</span>>@allancmartins&lt;/a></pre>
-                </div>
-            <li><strong>E-mail: </strong> Abre o programa de envio de e-mail padrão, já na janela de envio.</li>
+            <p>Número: <a href="tel:+5521******">+5521******</a></p>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+&lt;b>Número: &lt;/b> &lt;a href="tel:+5521******"&gt;&lt;/a&gt;
+                </pre>
+            </div>
+
+            <li><strong>WhatsApp:</strong> Abre direto na conversa do WhatsApp</li>
             <p>Exemplo:</p>
-                E-mail: <a href="mailto:allancmartins@gmail.com">allancmartins@gmail.com</a>
-                <p>O comando:</p>
-                <div class="pre">
-                    <pre>&lt;a <span class="mark">href="mailto:allancmartins@gmail.com"</span>>allancmartins@gmail.com&lt;/a></pre>
-                </div>
+            <p>WhatsApp: <a href="whatsapp://+5511******">+55******</a></p>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+&lt;a href="whatsapp://+5521******"&gt;&lt;/a&gt;
+                </pre>
+            </div>
+
+            <li><strong>Instagram:</strong> Abre o Instagram direto no perfil do usuário</li>
+            <p>Exemplo:</p>
+            <p><a href="instagram://user?username=******">@*******</a></p>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+&lt;a href="instagram://user?username=*******"&gt;@******&lt;/a&gt;
+                </pre>
+            </div>
+
+            <li><strong>E-mail:</strong> Abre o programa de envio de e-mail padrão, já na janela de envio.</li>
+            <p>Exemplo:</p>
+            <p>E-mail: <a href="mailto:fulano@gmail.com">******@gmail.com</a></p>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+&lt;a href="mailto:******@gmail.com"&gt;******@gmail.com&lt;/a&gt;
+                </pre>
+            </div>
         </ul>
-        
     </article>
-    <article id="links-dentro-páginas"><!--Links dentro de páginas-->
-            
-        <h2>Links dentro de páginas</h2>
-        <p>É possível criar links que levem para locais específico da própria página, para isso é necessário utilizar identificadores id em cada section ou article do html ou até mesmo div em casos mais pontuais.</p>
-        <p>Quando se usa link para dentro de uma página o nevegador bota o início da section no top da página. Como geralmente a section ou article sempre tem vem seguida de um título, o título fica o topo do html.</p>
-        <p>É possivel ainda criar link diretamente para um local específico dentro de uma outra página mesmo que não seja a atual.</p>
+
+    <article id="links-dentro-paginas">
+        <h2>Links Dentro de Páginas</h2>
+        <p>É possível criar links que levem para locais específicos da própria página. Para isso, é necessário utilizar identificadores <code>id</code> em cada <code>section</code> ou <code>article</code> do HTML ou até mesmo <code>div</code> em casos mais pontuais.</p>
+        <p>Quando se usa link para dentro de uma página, o navegador coloca o início da <code>section</code> no topo da página. Como geralmente a <code>section</code> ou <code>article</code> sempre vem seguida de um título, o título fica no topo do HTML.</p>
+        <p>É possível ainda criar link diretamente para um local específico dentro de uma outra página, mesmo que não seja a atual.</p>
         <p>Veja alguns exemplos:</p>
         <ul>
             <li><strong>Link para outra página</strong></li>
             <p>Exemplo:</p>
-           <a href="../capitulo-07/capitulo-07.html#head">Link para head capitulo-07</a>
-        <p>O comando:</p>
-        <div class="pre">
-            <pre>&lt;a href="../capitulo-07/capitulo-07.html#head">Link para head capitulo-07&lt;/a></pre>
-        </div>
+            <p><a href="../capitulo-07/capitulo-07.html#head">Link para head capitulo-07</a></p>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+&lt;a href="../capitulo-07/capitulo-07.html#head"&gt;Link para head capitulo-07&lt;/a&gt;
+                </pre>
+            </div>
+
             <li><strong>Link para essa página</strong></li>
             <p>Exemplo:</p>
-           <a href="#download">Atributo Download</a>
-        <p>O comando:</p>
-        <div class="pre">
-            <pre>&lt;a <span class="mark">href="#download"</span>>Atributo Download&lt;/a></pre>
-        </div>
+            <p><a href="#atributo-download">Atributo Download</a></p>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>
+&lt;a href="#atributo-download"&gt;Atributo Download&lt;/a&gt;
+                </pre>
+            </div>
         </ul>
-
     </article>
 </main>
 <footer>
     <h1>Materiais utilizados</h1>
-        <strong><a href="../../../material-de-apoio/10 - Ligações em toda parte.pdf" target="_blank"> Material em PDF</a></strong>
+        <p><strong><a href="../../../material-de-apoio/10 - Ligações em toda parte.pdf" target="_blank"> 10 - Ligações em toda parte.pdf</a></strong></p>
 
         <h2>Vídeos</h2>
 

@@ -568,6 +568,69 @@ x = 3.14; // Isso lançará um erro porque 'x' não foi declarado
                 <li>Para tratar erros de forma mais simples e intuitiva.</li>
             </ul>
         </article>
+        <article id="error-handling">
+            <h2>Tratamento de Erros</h2>
+            <p>O tratamento de erros é uma parte essencial do desenvolvimento de software, pois ajuda a garantir que seu código lide com situações inesperadas de maneira controlada. Em JavaScript, você pode usar blocos <code>try</code> e <code>catch</code> para capturar e tratar exceções, além de usar a instrução <code>throw</code> para lançar erros personalizados.</p>
+
+            <h4>Bloco <code>try</code> e <code>catch</code></h4>
+            <p>O bloco <code>try</code> é usado para envolver código que pode lançar exceções. Se uma exceção for lançada, o controle é transferido para o bloco <code>catch</code> associado, onde você pode lidar com o erro de forma apropriada.</p>
+            <div class="pre">
+                <pre>
+        try {
+            // Código que pode lançar uma exceção
+            let resultado = 10 / 0;
+            console.log(resultado);
+        } catch (erro) {
+            // Código para lidar com a exceção
+            console.error('Erro:', erro.message);
+        }
+                </pre>
+            </div>
+
+            <h4>Bloco <code>finally</code></h4>
+            <p>Opcionalmente, você pode adicionar um bloco <code>finally</code> após o <code>catch</code>. O código dentro do bloco <code>finally</code> será executado independentemente de uma exceção ter sido lançada ou não:</p>
+            <div class="pre">
+                <pre>
+        try {
+            // Código que pode lançar uma exceção
+            let resultado = 10 / 0;
+            console.log(resultado);
+        } catch (erro) {
+            // Código para lidar com a exceção
+            console.error('Erro:', erro.message);
+        } finally {
+            // Código que será executado sempre
+            console.log('Bloco finally executado.');
+        }
+                </pre>
+            </div>
+
+            <h4>Uso de <code>if</code> com <code>throw</code></h4>
+            <p>Você pode usar a instrução <code>throw</code> para lançar erros personalizados em seu código. Isso é útil quando você deseja validar condições específicas e lançar um erro se a condição não for atendida:</p>
+            <div class="pre">
+                <pre>
+        function verificarIdade(idade) {
+            if (idade < 18) {
+                throw new Error('Idade deve ser maior ou igual a 18.');
+            }
+            return 'Idade válida';
+        }
+
+        try {
+            console.log(verificarIdade(15)); // Lança um erro
+        } catch (erro) {
+            console.error('Erro:', erro.message);
+        }
+                </pre>
+            </div>
+
+            <h4>Quando Usar Tratamento de Erros</h4>
+            <ul>
+                <li>Para capturar e tratar erros em operações que podem falhar.</li>
+                <li>Para garantir que o código de limpeza seja executado, independentemente de uma exceção ser lançada.</li>
+                <li>Para melhorar a robustez e a confiabilidade do seu código.</li>
+            </ul>
+        </article>
     </main>
 
     <footer>

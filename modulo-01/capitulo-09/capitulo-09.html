@@ -2,176 +2,160 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 09</title>
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <meta name="keywords" content="listas, HTML5, listas ordenadas, listas não ordenadas, listas de definição, listas mistas, listas HTML, personalização de listas, listas com CSS, listas estilizadas, listas com marcadores, listas com números, listas com letras, listas com algarismos romanos, listas hierárquicas, listas aninhadas, listas de tarefas, listas de compras, listas de termos, listas de definições, listas avançadas">
+    
+    <meta name="description" content="Aprenda sobre listas em HTML5, incluindo listas ordenadas, não ordenadas, listas de definição e como personalizá-las com CSS.">
+
+    <title>Listas em HTML5: Ordenadas, Não Ordenadas e Definições</title>
 
     <link rel="stylesheet" href="../../style.css">
+    
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        
-        <h1 id="capitulo">Capítulo 09</h1>
-        <h1>Listas</h1>
+       
+        <h1>Guia Completo de Listas em HTML5: Ordenadas, Não Ordenadas e Definições</h1>
         
     </header>
     <main>
-        
-    <section><!--Introdução-->
+        <section>
             
-            <p>Exstem 2 tipos de listagens as ordenadas (como uma lista de tarefas para fazer em sequência) e as que não possuem ordenação específica (como uma lista de compra de supermercado)</p>
-    </section>
-    <article><!--Listas não ordenadas-->    
-            <h2>Listas não ordenadas</h2>    
-            <p>Para criar uma lista sem ordenação específica utilizamos a tag &lt;ul&gt; (ul=unordenade list)seguido da tag &lt;li&gt; (li=list item).</p>
-                
-            <p>
-            Para isso usamos a tag da seguinte forma:
-            </p>
-            &lt;ul&gt; <br>
-            &lt;li&gt; Café &lt;/li&gt;<br>
-            &lt;li&gt; Açucar&lt;/li&gt;<br>
-            &lt;li&gt; Cebola &lt;/li&gt;<br>
-            &lt;li&gt; Batata &lt;/li&gt;<br>
-            &lt;li&gt; Etc.. &lt;/li&gt;<br>
-            &lt;/ul&gt;<br>
-            <p>
-                Exemplo:
-            </p>
-            <ul>
-            <li>Café</li>
-            <li> Açucar</li>
-            <li>Cebola</li>
-            <li>Batata</li>
-            <li>Etc..</li>
-            </ul><br>
-    
-            <p class="mark">
-            Obs.: Não é necessário fechar a tag &lt;li&gt; com a tag &lt;/li&gt; ela também pode ser escrita da seguinte forma:
-            </p>
-            &lt;ul&gt; <br>
-            &lt;li&gt; Café <br>
-            &lt;li&gt; Açucar<br>
-            &lt;li&gt; Cebola <br>
-            &lt;li&gt; Batata <br>
-            &lt;li&gt; Etc.. <br>
-            &lt;/ul&gt;<br>
-    
-            <h3>Adicionando estilo "Type"</h3>
-            <p>
-    
-            Temos ainda a opção de personalizar a lista trocando o ponto da não ordenada por algum outro formato abaixo:
-            </p>
-            <p>
-               Podemos usar 3 formatos :
-            </p>
-            &lt;ul type="square"&gt; Para quadrado; <br>
-            &lt;ul type="circle"&gt; Para um círculo ou:<br>
-            &lt;ul type="disc"&gt; essa é a padrão <br>
-            <p>
-            Exemplo do tipo square:
-            </p>
-            <ul type="square">
-            <li>Café</li>
-            <li> Açucar</li>
-            <li>Cebola</li>
-            <li>Batata</li>
-            <li>Etc..</li>
-            </ul>
-    
-    </article>
-    <article><!--Lista ordenada-->
-        <h2>Lista ordenada</h2>
-        <p> Para criar uma lista ordanada em HTML, utiliza-se a tag &lt;ol&gt; (ol=ordenade list)seguido da tag &lt;li&gt; (li=list item) pois caso crie um lista muito grande e precise alterar algum item do início, você não precisará vir trocando número por número até o final.</p> 
-        <p>
-        Para isso usamos a tag da seguinte forma:                       
-        </p>
-        &lt;ol&gt; <br>
-        &lt;li&gt; Acordar &lt;/li&gt;<br>
-        &lt;li&gt; Preparar o Café &lt;/li&gt;<br>
-        &lt;li&gt; Tomar Banho &lt;/li&gt;<br>
-        &lt;li&gt; Tomar o café &lt;/li&gt;<br>
-        &lt;li&gt; Etc.. &lt;/li&gt;<br>
-        &lt;/ol&gt;<br>
-        Exemplo:
-        <ol>
-        <li>Acordar</li>
-        <li> Preparar o Café</li>
-        <li>Tomar Banho</li>
-        <li>Tomar o café</li>
-        <li>Etc..</li>
-        </ol><br>
-
-        <section><!--Adicionando estilo "Type"-->
-    
-            <h3>Adicionando estilo "Type"</h3>
-    
-            <p>Temos também a opção de personalizar a lista trocando o numeral por letras ou algarismos romano, no caso da ordenada e até iniciar a lista apartir de outra ordem que não seja o 1º item.</p>
-            Podemos fazer das seguintes forma:
-            &lt;ol type="I"&gt; Para algarismos Romanos Maiúsculos. <br>
-            &lt;ol type="i"&gt; Para algarismos Romanos Minúsculos. <br>
-            &lt;ol type="A"&gt; Para ordem alfabética Maiúscula. <br>
-            &lt;ol type="a"&gt; Para ordem alfabética Minúscula. <br>
-            Exemplo do tipo algarismos Romanos Maiúsculos: <br>
-            <ol type="I">
-                <li>Acordar</li>
-                <li> Preparar o Café</li>
-                <li>Tomar Banho</li>
-                <li>Tomar o café</li>
-                <li>Etc..</li>
-            </ol><br>
-    
+            <p>Existem dois tipos de listas: as ordenadas (como uma lista de tarefas para fazer em sequência) e as não ordenadas (como uma lista de compras de supermercado).</p>
         </section>
-        <section><!--Iniciando em outra ordem "Start"-->
-
-            <h3>Iniciando em outra ordem "Start"</h3>
-
-            <p>Para começar de outra ordem que não seja a primeira basta fazer da seguinte forma:</p>
-            <p>&lt;ol type="I" start="3"&gt; Para algarismos Romanos Maiúsculos iniciando da 3ª ordem.</p>
-            <p>Exemplo começando da ordem 3 em romanos:</p>
-            <ol type="I" start="3">
+        <article id="nao-ordenada">
+            <h2>Listas não ordenadas</h2>
+            <p>Para criar uma lista sem ordenação específica, utilizamos a tag &lt;ul&gt; (ul = unordered list) seguida da tag &lt;li&gt; (li = list item).</p>
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+    &lt;ul&gt;
+        &lt;li&gt;Café&lt;/li&gt;
+        &lt;li&gt;Açúcar&lt;/li&gt;
+        &lt;li&gt;Cebola&lt;/li&gt;
+        &lt;li&gt;Batata&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ul&gt;
+            </pre></div class="pre">
+            <p>Exemplo visual:</p>
+            <ul>
+                <li>Café</li>
+                <li>Açúcar</li>
+                <li>Cebola</li>
+                <li>Batata</li>
+                <li>Etc..</li>
+            </ul>
+            <p class="mark">Obs.: Não é necessário fechar a tag &lt;li&gt; com a tag &lt;/li&gt;, ela também pode ser escrita da seguinte forma:</p>
+            <div class="pre"><pre>
+    &lt;ul&gt;
+        &lt;li&gt;Café
+        &lt;li&gt;Açúcar
+        &lt;li&gt;Cebola
+        &lt;li&gt;Batata
+        &lt;li&gt;Etc..
+    &lt;/ul&gt;
+            </pre></div class="pre">
+            <h3>Adicionando estilo "Type"</h3>
+            <p>Podemos personalizar a lista trocando o marcador padrão por outros formatos:</p>
+            <ul>
+                <li>&lt;ul type="square"&gt; Para quadrado</li>
+                <li>&lt;ul type="circle"&gt; Para círculo</li>
+                <li>&lt;ul type="disc"&gt; Padrão</li>
+            </ul>
+            <p>Exemplo do tipo quadrado:</p>
+            <ul type="square">
+                <li>Café</li>
+                <li>Açúcar</li>
+                <li>Cebola</li>
+                <li>Batata</li>
+                <li>Etc..</li>
+            </ul>
+        </article>
+        <article id="ordenadas">
+            <h2>Listas ordenadas</h2>
+            <p>Para criar uma lista ordenada em HTML, utiliza-se a tag &lt;ol&gt; (ol = ordered list) seguida da tag &lt;li&gt; (li = list item).</p>
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+    &lt;ol&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+            </pre></div class="pre">
+            <p>Exemplo visual:</p>
+            <ol>
                 <li>Acordar</li>
-                <li> Preparar o Café</li>
+                <li>Preparar o Café</li>
                 <li>Tomar Banho</li>
                 <li>Tomar o café</li>
                 <li>Etc..</li>
             </ol>
-        </section>
-        <section><!--Iniciando em outra ordem inversa-->
-            
-                    <h3>Iniciando em outra ordem inversa</h3>
-            
-                    <p>Para criar um lista na ordem decrescente basta adicionar o atributo reversed na tag ol</p>
-                    <p>Exemplo:</p>
-                    <ol reversed >
-                        <li>Acordar</li>
-                        <li> Preparar o Café</li>
-                        <li>Tomar Banho</li>
-                        <li>Tomar o café</li>
-                        <li>Etc..</li>
-                    </ol>
-                    <p>O comando</p>
-                    <div class="pre">
-                        <pre>
-            
-            &lt;ol reversed >
-                &lt;li>Acordar&lt;/li>
-                &lt;li> Preparar o Café&lt;/li>
-                &lt;li>Tomar Banho&lt;/li>
-                &lt;li>Tomar o café&lt;/li>
-                &lt;li>Etc..&lt;/li>
-            &lt;/ol>
-                        </pre>
-                    </div>
-            
-        </section>
-    </article>    
-        <article><!-- Mesclando listas-->
-            
-            <h2> Mesclando listas</h2>
-            <p>Ainda sobre listas, mais uma possibilidade interessante é mesclar listas uma dentro de outra lista. Para exeplificar vamos criar um ídice desse próprio resumo com títulos e subtítulos e subtítulos de subtítulos.</p>
+            <h3>Adicionando estilo "Type"</h3>
+            <p>Podemos personalizar a lista trocando os numerais por letras ou algarismos romanos:</p>
+            <ul>
+                <li>&lt;ol type="I"&gt; Para algarismos romanos maiúsculos</li>
+                <li>&lt;ol type="i"&gt; Para algarismos romanos minúsculos</li>
+                <li>&lt;ol type="A"&gt; Para ordem alfabética maiúscula</li>
+                <li>&lt;ol type="a"&gt; Para ordem alfabética minúscula</li>
+            </ul>
+            <p>Exemplo de algarismos romanos maiúsculos:</p>
+            <ol type="I">
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+            <h3>Iniciando em outra ordem "Start"</h3>
+            <p>Para começar a lista a partir de outra ordem, utilizamos o atributo "start":</p>
+            <div class="pre"><pre>
+    &lt;ol type="I" start="3"&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+            </pre></div class="pre">
+            <p>Exemplo visual:</p>
+            <ol type="I" start="3">
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+            <h3>Iniciando em ordem inversa</h3>
+            <p>Para criar uma lista em ordem decrescente, basta adicionar o atributo "reversed" na tag &lt;ol&gt;:</p>
+            <div class="pre"><pre>
+    &lt;ol reversed&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+            </pre></div class="pre">
+            <p>Exemplo visual:</p>
+            <ol reversed></ol>
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+        </article>
+        <article id="mesclando">
+            <h2>Mesclando listas</h2>
+            <p>É possível mesclar listas, criando uma lista dentro de outra. Exemplo:</p>
             <ol>
-            <li>Módulo</li>
+                <li>Módulo</li>
                 <ol start="5">
                     <li>Capítulo</li>
                     <ul>
@@ -195,265 +179,176 @@
                     </ul>
                 </ol>
             </ol>
-                    
-            <p>O comando fica escrito de seguinte forma:</p>
-
-            <div class="pre">
-                <pre>
-                
-&lt;ol&gt;
-    <li>Módulo</li>
-&lt;ol start="5"&gt;
-    &lt;li&gt; Capítulo&lt;/li&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Caracteres&lt;/li&gt;
-        &lt;li&gt;Parágrafos&lt;/li&gt;
-        &lt;li&gt;Quebras de linha&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;li&gt; Capítulo&lt;/li&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Imagens&lt;/li&gt;
-        &lt;li&gt;Favicon&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/ol&gt;
-etc..
-&lt;/ol&gt;
-                </pre>
-            </div>
-
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+    &lt;ol&gt;
+        &lt;li&gt;Módulo&lt;/li&gt;
+        &lt;ol start="5"&gt;
+            &lt;li&gt;Capítulo&lt;/li&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Caracteres&lt;/li&gt;
+                &lt;li&gt;Parágrafos&lt;/li&gt;
+                &lt;li&gt;Quebras de linha&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;Capítulo&lt;/li&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Imagens&lt;/li&gt;
+                &lt;li&gt;Favicon&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ol&gt;
+    &lt;/ol&gt;
+            </pre></div class="pre">
         </article>
-        <section><!--Lista de definições-->
-            
-                <h2>Lista de definições</h2>
-                A lista de definição funciona como se fosse um dicionário, serve para escrever o que significa determinado termo. Essa lista é bem menos usada que as demais, porém ela é útil e caso alguem pesquise no Google a definição de determinado termo ele prioriza mostrar as página que usam essa lista.
-                Para isso usamos as seguinte Tags: <br>
-                &lt;dl&gt; "Definition List" tag que cria a lista <br>
-                &lt;dt&gt; "Definition Term" tag para escrever o termo <br>
-                &lt;dd&gt; "Definition Definition" tag para o sgnificado.<br>
-                &lt;/dl&gt; finaliza a lista <br>
-                <p>Exemplo:
-                <dl>Lista de definição
-                    <dt>Termo</dt>
-                    <dd>Descrição / significado do termo </dd>
-                    <dt>Termo</dt>
-                    <dd>Descrição / significado do termo </dd>
-                    <dt>Termo</dt>
-                    <dd>Descrição / significado do termo </dd>
-                </dl>
-                Fim da lista.
-            </p>
-                Código fica da seguinte forma:
-                <pre>
-            &lt;dl&gt;Lista de definição
-                    &lt;dt&gt;Termo&lt;/dt&gt;
-                    &lt;dd&gt;Descrição / significado do termo &lt;/dd&gt;
-                    &lt;dt&gt;Termo&lt;/dt&gt;
-                    &lt;dd&gt;Descrição / significado do termo &lt;/dd&gt;
-                    &lt;/dl&gt;
-                    &lt;dt&gt;Termo&lt;/dt&gt;
-                    &lt;dd&gt;Descrição / significado do termo &lt;/dd&gt;
-                &lt;/dl&gt;
-                &lt;/dl&gt;
-                </pre>
-                <p>
-                    Exemplo:
-            
-                </p>
-                Lembra a usabilidade da tag de abreviação só que exposta. <br>
-                &lt;abbr title="significado da sigla" &gt;"Sigla"&lt;/abbr&gt;
-        </section>
-    <article> <!--Matéria avançada-->
-        <h1>Matéria avançada</h1>
-        <section><!--Style, Um pouco de CSS-->
-            <h2>Style, Um pouco de CSS</h2>
-            <p>
-            OBS.: Essa parte está no capítulo 17 do módulo 02 no vídeo <a href="https://youtu.be/pdomr7thueI?si=wJTR0SFf6MyPiyJk" target="_blank">Rodpé, conteúdo periféricos e links</a> Minuto 06:40
-            </p>
-            <p>
-            Agora, vou te mostrar como criar mais personalizações e a criar um ótimo resultado visual.
-            </p>
-            <h3>Dividindo a lista em 02 colunas</h3>
-            <p>
-            Para dividir a lista em mais de um coluna usamos a style columns
-            </p>
-            <p>
-            Exemplo:
-            </p>
-            <ol style="columns: 2;" type="I" >
-            <li>Acordar</li>
-            <li> Preparar o Café</li>
-            <li>Tomar Banho</li>
-            <li>Tomar o café</li>
-            <li>Etc..</li>
-            </ol>
-            <p>
-            Exemplo de código:
-            </p>
-            <pre>
-            &lt;ol style="columns: 2;" type="I" >
-                &lt;li>Acordar&lt;/li>
-                &lt;li> Preparar o Café&lt;/li>
-                &lt;li>Tomar Banho&lt;/li>
-                &lt;li>Tomar o café&lt;/li>
-                &lt;li>Etc..&lt;/li>
-            &lt;/ol>
-            </pre>
-            
-        </section>
-        <section><!--Estilos externo-->
-            
-            <h3> Estilos externo</h3>
-            <p>
-                É possível também usar outros marcadores além dos vistos em type, para isso temos que usar o CSS também
-            </p>
-            <p>
-                Para isso  usaremos a style: <code>list-style-type: <abbr title="Esse código pega na emoji pedia">'código'</abbr></code>
-            </p>
-            <p>
-                Exemplo:
-            <ol style="list-style-type: '\2714'" >
-                <li>Acordar</li>
-                <li> Preparar o Café</li>
-                <li>Tomar Banho</li>
-                <li>Tomar o café</li>
-                <li>Etc..</li>
-            </ol>
-                Exemplo de código:
-            <pre>
-            &lt;ol style="list-style-type: '\2714'" >
-                    &lt;li>Acordar&lt;/li>
-                    &lt;li> Preparar o Café&lt;/li>
-                    &lt;li>Tomar Banho&lt;/li>
-                    &lt;li>Tomar o café&lt;/li>
-                    &lt;li>Etc..&lt;/li>
-                &lt;/ol>
-            </pre>
-                Caso não lembre como usar a emoji pedia reveja o <a href="../Capítulo 05/Capítulo 05 .html" target="_blank">Capítulo 05</a>
-            </p>
-            <h3>Remover o marcador</h3>
-            <p>
-                Para remover o marcador basta escrever "none" onde ficaria o código da emoji pedia.
-            </p>
-                <p>Exemplo:</p>
-                <ol style="list-style-type: none" >
+        <article id="definicao">
+            <h2>Lista de definições</h2>
+            <p>A lista de definição funciona como um dicionário, servindo para descrever o significado de termos. Utilizamos as seguintes tags:</p>
+            <ul>
+                <li>&lt;dl&gt; "Definition List" para criar a lista</li>
+                <li>&lt;dt&gt; "Definition Term" para escrever o termo</li>
+                <li>&lt;dd&gt; "Definition Description" para a descrição</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+    &lt;dl&gt;
+        &lt;dt&gt;Termo&lt;/dt&gt;
+        &lt;dd&gt;Descrição / significado do termo&lt;/dd&gt;
+        &lt;dt&gt;Termo&lt;/dt&gt;
+        &lt;dd&gt;Descrição / significado do termo&lt;/dd&gt;
+    &lt;/dl&gt;
+            </pre></div class="pre">
+            <p>Exemplo visual:</p>
+            <dl>
+                <dt>Termo</dt>
+                <dd>Descrição / significado do termo</dd>
+                <dt>Termo</dt>
+                <dd>Descrição / significado do termo</dd>
+            </dl>
+        </article>
+       
+    </main>
+     <!-- <article>
+            <h2>Matéria avançada</h2>
+            <section>
+                <h3>Style, Um pouco de CSS</h3>
+                <p>Para dividir a lista em mais de uma coluna, usamos a propriedade CSS "columns".</p>
+                <p>Exemplo de código:</p>
+                <div class="pre"><pre>
+    &lt;ol style="columns: 2;" type="I"&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+                </pre></div class="pre">
+                <p>Exemplo visual:</p>
+                <ol style="columns: 2;" type="I">
                     <li>Acordar</li>
-                    <li> Preparar o Café</li>
+                    <li>Preparar o Café</li>
                     <li>Tomar Banho</li>
                     <li>Tomar o café</li>
                     <li>Etc..</li>
                 </ol>
+            </section>
+            <section>
+                <h3>Estilos externos</h3>
+                <p>É possível usar outros marcadores além dos vistos em "type", utilizando CSS:</p>
                 <p>Exemplo de código:</p>
-            <pre>
-            &lt;ol style="list-style-type: none" >
-                    &lt;li>Acordar&lt;/li>
-                    &lt;li> Preparar o Café&lt;/li>
-                    &lt;li>Tomar Banho&lt;/li>
-                    &lt;li>Tomar o café&lt;/li>
-                    &lt;li>Etc..&lt;/li>
-                &lt;/ol>
-            </pre>
-            
-            
-            
-        </section>
-        <section><!--Como deixar o marcador mais perto-->
-            
-            <h3>list-style-position</h3>
-            <p>
-                Por padrão, os bullets de uma lista não são exibidos dentro dos boxes dos itens. Podemos alterar esse comportamento através da propriedade list-style-position.
-            </p>
-            <div class="img">
-                <img src="imagens/Captura de tela 2024-04-08 104715.png" alt="">
-            </div>
-            <p>
-                Para isso  usaremos a style: <code>list-style-position: inside</code>
-            </p>
-            <p>
-                Exemplo:
-            </p>
-            <ol style="list-style-position: inside" >
-                <li>Acordar</li>
-                <li> Preparar o Café</li>
-                <li>Tomar Banho</li>
-                <li>Tomar o café</li>
-                <li>Etc..</li>
-            </ol>
-            <p>
-                Exemplo de código:
-            </p>
-            <pre>
-            &lt;ol style="list-style-position: inside" >
-                    &lt;li>Acordar&lt;/li>
-                    &lt;li> Preparar o Café&lt;/li>
-                    &lt;li>Tomar Banho&lt;/li>
-                    &lt;li>Tomar o café&lt;/li>
-                    &lt;li>Etc..&lt;/li>
-                &lt;/ol>
-            </pre>
-            
-        </section>
-        <section><!--Como espaçar o marcado-->
-            <h3> Como espaçar o marcador</h3>
-            <p>
-                Se não gostou, achou que ficou muito perto. Então vamos definir a ditância manualmente
-            </p>
-            <p>
-                Para isso  usaremos a style: <code>list-style-type: \2714\0020</code>
-            </p>
-            <p>
-                Exemplo:
-            </p>
-            <ol style="list-style-type: '\2714\0020';list-style-position: inside" >
-                <li>Acordar</li>
-                <li> Preparar o Café</li>
-                <li>Tomar Banho</li>
-                <li>Tomar o café</li>
-                <li>Etc..</li>
-            </ol>
-            <p>
-                Exemplo de código:
-            </p>
-            <pre>
-            &lt;ol style="list-style-type: '\2714\0020';list-style-position: inside" >
-                    &lt;li>Acordar&lt;/li>
-                    &lt;li> Preparar o Café&lt;/li>
-                    &lt;li>Tomar Banho&lt;/li>
-                    &lt;li>Tomar o café&lt;/li>
-                    &lt;li>Etc..&lt;/li>
-                &lt;/ol>
-            </pre>
-            <p class="mark">
-                OBS.: 0020 é um hexadecimal para espaço assim como o 00A0 também é.
-            </p>
-            <p class="mark">
-                OBS 02.: Só é possível aumentar o espaço se usar um estilo externo, caso contrário ele apenas substituirá o marcador por um espaço vazio.
-            </p>
-            <p>
-                Exemplo:
-            </p>
-            <ol style="list-style-type: '\0020';list-style-position: inside" >
-                <li>Acordar</li>
-                <li> Preparar o Café</li>
-                <li>Tomar Banho</li>
-                <li>Tomar o café</li>
-                <li>Etc..</li>
-            </ol>
-        </section>
-    </article>  
-        
-    </main>
+                <div class="pre"><pre>
+    &lt;ol style="list-style-type: '\2714'"&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+                </pre></div class="pre">
+                <p>Exemplo visual:</p>
+                <ol style="list-style-type: '\2714'">
+                    <li>Acordar</li>
+                    <li>Preparar o Café</li>
+                    <li>Tomar Banho</li>
+                    <li>Tomar o café</li>
+                    <li>Etc..</li>
+                </ol>
+                <h3>Remover o marcador</h3>
+                <p>Para remover o marcador, basta escrever "none" no "list-style-type".</p>
+                <p>Exemplo de código:</p>
+                <div class="pre"><pre>
+    &lt;ol style="list-style-type: none"&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+                </pre></div class="pre">
+                <p>Exemplo visual:</p>
+                <ol style="list-style-type: none">
+                    <li>Acordar</li>
+                    <li>Preparar o Café</li>
+                    <li>Tomar Banho</li>
+                    <li>Tomar o café</li>
+                    <li>Etc..</li>
+                </ol>
+            </section>
+            <section>
+                <h3>list-style-position</h3>
+                <p>Para exibir os marcadores dentro dos boxes dos itens, utilizamos a propriedade "list-style-position".</p>
+                <p>Exemplo de código:</p>
+                <div class="pre"><pre>
+    &lt;ol style="list-style-position: inside"&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+                </pre></div class="pre">
+                <p>Exemplo visual:</p>
+                <ol style="list-style-position: inside">
+                    <li>Acordar</li>
+                    <li>Preparar o Café</li>
+                    <li>Tomar Banho</li>
+                    <li>Tomar o café</li>
+                    <li>Etc..</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Como espaçar o marcador</h3>
+                <p>Para aumentar a distância entre o marcador e o texto, utilizamos um estilo externo com "list-style-type".</p>
+                <p>Exemplo de código:</p>
+                <div class="pre"><pre>
+    &lt;ol style="list-style-type: '\2714\0020'; list-style-position: inside"&gt;
+        &lt;li&gt;Acordar&lt;/li&gt;
+        &lt;li&gt;Preparar o Café&lt;/li&gt;
+        &lt;li&gt;Tomar Banho&lt;/li&gt;
+        &lt;li&gt;Tomar o café&lt;/li&gt;
+        &lt;li&gt;Etc..&lt;/li&gt;
+    &lt;/ol&gt;
+                </pre></div class="pre">
+                <p>Exemplo visual:</p>
+                <ol style="list-style-type: '\2714\0020'; list-style-position: inside">
+                    <li>Acordar</li>
+                    <li>Preparar o Café</li>
+                    <li>Tomar Banho</li>
+                    <li>Tomar o café</li>
+                    <li>Etc..</li>
+                </ol>
+                <p class="mark">Obs.: 0020 é um hexadecimal para espaço, assim como 00A0.</p>
+            </section>
+        </article> -->
 <footer>
     
         
     <h1>Materiais utilizados</h1>
-        <strong><a href="../../../material-de-apoio/09 - Listas HTML.pdf" target="_blank"> Material em PDF</a></strong>
+        <p><strong><a href="../../material-de-apoio/09 - Listas HTML.pdf" target="_blank">09 - Listas HTML.pdf</a></strong></p>
         <h2>Vídeos</h2>
         <p><a href="https://youtu.be/JlE0pzESf5g?si=UiruQoeM6362h60D" target="_blank">Listas em HTML5</a></p>
     
         <p><a href="https://youtu.be/Ez1kgIyoGuE?si=c0PQJSbDSuJ2eG6E" target="_blank">Listas Mistas e de definição</a></p>
     
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+    
     </body>
 </footer>
 
