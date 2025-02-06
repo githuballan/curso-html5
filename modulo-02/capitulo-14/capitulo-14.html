@@ -3,11 +3,15 @@
 
     <head>
         <meta charset="UTF-8">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Tudo que você precisa aprender sobre grid layout no CSS">
-        <title>Grid</title>
+
+       
+
+        <title>Fontes</title>
         <link rel="stylesheet" href="../../style.css">
-        <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+       <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
          <style>
         @font-face {
             font-family: 'star';
@@ -22,298 +26,417 @@
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
 <header>
-    
-        <h1>Capítulo 14</h1>
-        <h1>Fontes</h1>
-    
+    <h1>Fontes</h1>
 </header>
-    <p>
-        <h2>Fontes Serifadas</h2>
-        Esta é a categoria mais clássica de fontes, As serifas têm a capacidade de guiar nossos olhos graças aos 
-        pequenos prolongamentos que elas criam e fazem as letras “se juntarem” em palavras. Essas fontes são ótimas para serem usadas em títulos. A seguir, vemos quatro exemplos de fontes serifadas. <br>
-        <img src="imagens/fontes-serifadas.png" alt="">
-        <br>
-        OBS.:Serifa: também chamada de apoio ou patilha. São pequenas retas que ornamentam as hastes de alguns tipos. <br>
-    </p>
-    <p>
-        <h2>Fontes não Serifadas</h2>
-        Mias conhecidas como sans-serif são fontes que, como você já pode imaginar, não apresentam serifas. Elas são ótimas para a exibição em telas/monitores pois transmitem a sensação de limpeza, clareza e organização. Veja a seguir alguns exemplos de fontes não serifadas: <br>
-        <img src="imagens/fontes-nao-serifadas.png" alt="">
-    </p>
-    <p>
-    <h2>Fontes Monoespaçadas</h2>
-    . Elas possuem a mesma largura para todas as letras. São muito usada para leitura de códigos de programação. <br>
-    <img src="imagens/fonte-monoespaçada.png" alt="">
-    </p>
-<p>
-    <h2>Fontes Script</h2>
-    Também chamadas de fontes handwriting,são aquelas que tentam imitar a escrita humana. Seu uso deve ser bem controlado e jamais será aplicado a textos muito longos, pois causam cansaço visual e tornam-se difíceis de ler. <br>
-    <img src="imagens/fonte-script.png" alt="">
-</p>
-<p>
-    <h2>Fontes Display</h2>
-    Toda fonte que foge completamente das definições feitas pelas classificações acima são consideradas fontes display. São fontes com bastante efeitos visuais, enfeitadas e até mesmo curiosas. Também são chamadas de fontes comemorativas e algumas delas sequer representam letras, podendo ser desenhos de animais, objetos, pessoas, personagens de quadrinhos, etc. <br>
-    <img src="imagens/fonte-display.png" alt="">
-</p>
-
-<h1>Safe combination</h1>
-<p>
-    Assim como vimos em áudio no <a href="../../modulo-01/capitulo-11/Capítulo 11 .html"> Capítulo 11</a>, as fontes também não são lida em todos os navegadores, então na hora de escolhermos as fontes para nosso site, é necessário fazer a chamada Safe-Combination, traduzindo: Cobinações seguras. Isso nada mais é que, escolhermos mais de uma fonte para cada item do texto e por último sempre colocarmos e família da fonte. <br>
-    Como vimos anteriormente as fontes têm diversos tipos ou famílias como: as fontes serifadas que são idais para títulos, não serifadas para textos e etc. <br>
-    Então para não termo problemas de um navegador não possuir a fonte que escolhermos basta escolher mais de uma na ordem de preferência e <strong> no final colocarmos a família da fonte</strong>. <br>
-    Veja um exemplo: <br>
-    <code>style="font-family: Arial, Helvetica, sans-serif;"</code>
-    <p style="font-family: Verdana, Helvetica, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, dignissimos eligendi mollitia ab perspiciatis quam velit pariatur deleniti quisquam, nesciunt iste voluptatem labore soluta beatae aperiam numquam? Maiores, pariatur! Porro?
-    </p>
-    Como pôde ver o próprio navegador oferece varias safe combination prontas, precisamos apenas colocar na ordem de preferência.
-</p>
-
-<h1>Tamanho de Fontes e Medidas</h1>
-
-<h2>Medidas</h2>
-<p>
-    Existem 2 tipos de medidas de fontes:
-    <h2>Medidas Absolutas</h2>
-    Medidas absolutas são aquelas que independente da plataforma ou do tamanho da tela é terá sempre a mesma medida. <br>
-    Exemplo: <br>
-    <strong>cm:</strong> essa são os centímetros. <br>
-    <strong>px:</strong> esse é a quantidade de pixel usada, OBS.: a medida padrão para a maioria dos celulares e computadores são de 16px. <br>
-    <strong>pt:</strong> essa medida é utilizada por impressaoras. Programas de edição de texto como Word, Write e WordPad usam essa medida <br>
-    <strong>in:</strong> Polegadas <br>
-    
-    <h2>Medidas Relativas</h2>
-    
-    <strong>em:</strong> Essa medida é a que deve ser usada sempre exceto em rara excessões. Ela trabalha em cima da medida "px" sendo "1em" em um computador equivalente a "16px", Já "1.5em" equivale a "24px".
-    <br>
-    vide outras medidas no pdf de apoio.
-    <br>
-    A w3 (orgão que regula as normas que devem ser praticadas em sites afim de evitar problemas) afirma que devemos usar preferencialmente a medida relativa "em". Porém, sem necessário usar absolutas, devemos usar a "px" para layout do site e "pt" para área destinadas a impressão. <br>
-    <Strong>Por que devemos usar a relativa "em"?</Strong> <br>
-    O principal motivo é o tamanho das telas, a medida em trabalha em cima da medida padrão em "px" de cada navegador. Por exemplo em um notebook o padrão e 16px agora em uma tela de 60 polegadas 16px ficaria muito pequeno logo o padrão daquela tela é outro. <br>
-    Por isso é tão importante usarmos sempre o padrão "em" 
-     
-</p>
-<h2> Viewport</h2>
-    <p>
-        No capítulo 20 veremos essa medida mas como faz parte desse assunto resolvi trazer aqui para ficar mais fácil de achar posteriormente.  
-        <strong><a href="../../material-de-apoio/20 - Mini-projeto Cordel.pdf" target="_blank"> PDF do Capítulo 20</a></strong>
-        <a href="https://youtu.be/0bBBaHNkzVE?si=mOf4a-rl6AE69o_p"> Vídeo: Colocando fontes</a>
-    </p>
-    <p>
-        Viewport uma medida de tamanho assim como: "em", "px" e "cm. A diferença é que a viewport vairia de acordo com o tamanho da tela do usuário. Aí você deve pensar "TOOOOOPPPPP responsivo total!" Só que não, infelizmente. 
-    </p>
-    <p>
-        Pois um texto com a letra a 3% da largura da viewportem um celular fica muiti pequeno e em uma tela de 40 pol fica absurdamente grande. Então esse viewport deve ser usada em casos mais específicos como com elementos decorativos, fotos, box, background enfim.
-    </p>
-    <p>
-        Nós usamos viewport desde nosse primeira aula. Na linha 5 do nosso código base, definimos que a viewport terá a largura máxima 
-        baseada na largura do dispositivo e que vai usar uma escala (zoom) inicial da tela 
-        para o valor padrão 1.0 (zoom de 100%). 
-    </p>
-    <p>Exemplo:</p>
-    <p> Comando: 
-        <code> style="font-size: 2vw;"</code>
-        <span style="font-size: 2vw;">    
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi. Magnam, delectus! Incidunt aperiam dicta temporibus aut ducimus cumque harum consequuntur hic, sed voluptatem facilis quaerat voluptas ipsa, commodi consequatur.
-        </span>
-    </p>
-    <p>
-        No exemplo acima usamos "vw" pois significa "Viewport width" largua da tela. mas poderia ser ser também "vh" que significa "Viewport heigth" altura da tela.
-    </p>
-    <p>
-        Note que a letra ficou boa em somente um tamanho de tela ou outro. Nos demais ficaram horríveis pra leitura.
-    </p>
-
-<h2>Estilos das fontes( negrito, itálico...)</h2>
-    <p>
-        Assim como no Word, no CSS Também temos o negrito, itálico e o sublinhado. Para isso usamos os seguintes atributos: 
-    </p>
-    <p>
-        <strong>font-weight</strong>: traduzindo weight e peso, porém nada  mais é que diferentes espessuras da letra. Por aqui podemos afinar mais a letra ou engrossar, dando a ela o estilo negrito. <br>
-        Essas medidas vão de 100 a 900 e ela progide de 100 em 100. <br>
-        Ou podemos selecionar uma de 4 opções:
-        <ul>
-            <li>bold: negrito normal;</li>
-            <li>bolder: super negrito;</li>
-            <li>normal ou;</li>
-            <li>lighter: mais fina que o normal.</li> 
-        </ul>
-    </p>
-    <p>
-        <strong> font-style:</strong> nessa opção podemos escolher:
-        <ul>
-            <li>Italic;</li>
-            <li>normal;</li>
-            <li>oblique: pouco compatível.</li>
-        </ul>
-    </p>
-
-
-<h2>Variação de fontes</h2>
-<p>Essa matéria foi passada no capítulo 20 na aula <a href="https://youtu.be/0bBBaHNkzVE?si=mOf4a-rl6AE69o_p">Colocando fontes</a></p>
-    <h2>font-variant:</h2>
-        <ul>
-            <li><strong>font-variant: small-caps;: </strong><span style="font-variant: small-caps;">Todas as letras ficam maiúsculas porém as que seriam minúsculas permanecem com a altura de minúsculas. </span></li>
-            
-        </ul>
+<main>
+    <article id="tipografia">
         
-
-    <h2>text-transform:</h2>
-        <ul>
-            <li><strong>text-transform: uppercase;:</strong><span style="text-transform: uppercase;"> Deixa tudo em MAIÚSCULO</span></li>
-            <li><strong>text-transform: capitalize;:</strong><span style="text-transform: capitalize;">Toda palavra começa com letra maiúscula</span> </li>
-            <li><strong>text-transform: lowercase;:</strong><span style="text-transform: lowercase;"> Deixa tudo em minúsculo</span></li>
-        </ul>
-
-<p>
-    <h2>shothand</h2>
-    Shothand nada mais é que um forma mais prática definir os estilos completo de uma fonte em um linha. <br>Exemplo: <br>
-    invés de escrever: <br>
-    <pre>
-        p{ 
-            font-family: Arial, Helvetica, Tahoma, sans-serif;
-            font-size: large; 
-            font-style: italic; 
-            font-weight: bold; 
+        <h2>Tipografia</h2>
+        <section id="introducao">
+           
+            <p>Tipografia é a arte de criar e organizar fontes para tornar o texto mais legível e atraente. A escolha da fonte certa é essencial para a comunicação visual. Existem diversos tipos de fontes, cada uma com características próprias. A escolha da fonte certa depende do contexto e do público-alvo.</p>
+            <p>Para entender melhor a tipografia, é importante conhecer a anatomia do tipo. A seguir, veremos os principais elementos de uma fonte:</p>
         
-        }
-    </pre>
-    Podemos escrever tudo na mesma linha: <br>
+                <ul>
+                    <li><strong>Altura-x:</strong> A altura das letras minúsculas, excluindo ascendentes e descendentes.</li>
+                    <li><strong>Ascendente:</strong> Parte da letra que se estende acima da altura-x, como em "b" e "d".</li>
+                    <li><strong>Descendente:</strong> Parte da letra que se estende abaixo da linha de base, como em "p" e "q".</li>
+                    <li><strong>Serifa:</strong> Pequenas linhas ou traços anexados ao final das hastes das letras.</li>
+                    <li><strong>Haste:</strong> Traço principal vertical ou diagonal de uma letra.</li>
+                    <li><strong>Contraste:</strong> Diferença entre as partes mais grossas e mais finas de uma letra.</li>
+                    <li><strong>Espaçamento:</strong> Espaço entre caracteres (kerning) e entre linhas de texto (leading).</li>
+                </ul>
+            </section>
+        </section>
+        
+            <h3>Fontes Serifadas</h3>
+            <p>As fontes serifadas são clássicas e possuem pequenos prolongamentos que ajudam a guiar nossos olhos, tornando a leitura mais fluida. Elas são ideais para títulos. Exemplos de fontes serifadas:</p>
+            <ul>
+                <li>Times New Roman</li>
+                <p style="font-family: 'Times New Roman', serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Georgia</li>
+                <p style="font-family: Georgia, serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Garamond</li>
+                <p style="font-family: Garamond, serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Palatino</li>
+                <p style="font-family: Palatino, serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Baskerville</li>
+                <p style="font-family: Baskerville, serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </ul>
+        </section>
+            <p><strong>OBS:</strong> Serifa são pequenas retas que ornamentam as hastes de alguns tipos de letras.</p>
+        </section>
+        
+        <section>
+            <h3>Fontes Sans-Serif</h3>
+            <p>Também conhecidas como fontes não serifadas, são ideais para exibição em telas, pois transmitem clareza e organização. Exemplos de fontes sans-serif:</p>
+            <ul>
+                <li>Arial</li>
+                <p style="font-family: Arial, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Verdana</li>
+                <p style="font-family: Verdana, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Helvetica</li>
+                <p style="font-family: Helvetica, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Calibri</li>
+                <p style="font-family: Calibri, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Open Sans</li>
+                <p style="font-family: 'Open Sans', sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        </section>
+        
+        <section>
+            <h3>Fontes Monoespaçadas</h3>
+            <p>Fontes monoespaçadas possuem a mesma largura para todas as letras, sendo muito usadas para leitura de códigos de programação.</p>
+            <ul>
+                <li>Courier New</li>
+                <p style="font-family: 'Courier New', monospace;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Lucida Console</li>
+                <p style="font-family: 'Lucida Console', monospace;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Consolas</li>
+                <p style="font-family: Consolas, monospace;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Monaco</li>
+                <p style="font-family: Monaco, monospace;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Andale Mono</li>
+                <p style="font-family: 'Andale Mono', monospace;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        
+        </section>
+        
+        <section>
+            <h3>Fontes Script</h3>
+            <p>Fontes script imitam a escrita humana. Devem ser usadas com moderação, pois podem causar cansaço visual em textos longos.</p>
+            <ul>
+                <li>Brush Script</li>
+                <p style="font-family: 'Brush Script MT', cursive;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Lucida Handwriting</li>
+                <p style="font-family: 'Lucida Handwriting', cursive;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Comic Sans MS</li>
+                <p style="font-family: 'Comic Sans MS', cursive;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Freestyle Script</li>
+                <p style="font-family: 'Freestyle Script', cursive;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Edwardian Script</li>
+                <p style="font-family: 'Edwardian Script ITC', cursive;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        </section>
+        
+        <section>
+            <h3>Fontes Display</h3>
+            <p>Fontes display são decorativas e fogem das classificações tradicionais. São usadas para criar efeitos visuais e podem representar desenhos, objetos, etc.</p>
+            <ul>
+                <li>Impact</li>
+                <p style="font-family: Impact, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Chiller</li>
+                <p style="font-family: Chiller, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Stencil</li>
+                <p style="font-family: Stencil, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Rockwell</li>
+                <p style="font-family: Rockwell, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li>Algerian</li>
+                <p style="font-family: Algerian, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        </section>
+        
+        <section>
+            <h3>Combinações Seguras de Fontes</h3>
+            <p>Para garantir a legibilidade e a harmonia visual, devemos combinar fontes de forma segura. A regra básica é usar uma fonte serifada com uma sans-serif. Exemplos:</p>
+            <ul>
+                <li><strong>Serifada + Sans-serif:</strong></li>
+                <p style="font-family: Georgia, serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <p style="font-family: Arial, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li><strong>Sans-serif + Monoespaçada:</strong></li>
+                <p style="font-family: Verdana, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <p style="font-family: 'Courier New', monospace;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <li><strong>Script + Display:</strong></li>
+                <p style="font-family: 'Brush Script MT', cursive;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <p style="font-family: Impact, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        
+            <p>Exemplo:</p>
+            <code>style="font-family: Arial, Helvetica, sans-serif;"</code>
+            <p style="font-family: Verdana, Helvetica, sans-serif;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, dignissimos eligendi mollitia ab perspiciatis quam velit pariatur deleniti quisquam, nesciunt iste voluptatem labore soluta beatae aperiam numquam? Maiores, pariatur! Porro?</p>
+        </section>
+        
+    </article>
+    <article id="medidas">
+        <h2>Tamanho de Fontes e Unidades de Medidas</h2>
+        <p>Neste artigo, exploraremos os diferentes tamanhos de fontes e medidas utilizadas na tipografia. Entenderemos as diferenças entre medidas absolutas e relativas, bem como a importância do viewport na responsividade. Vamos também aprender sobre os estilos de fontes e como aplicá-los de maneira eficaz em nossos projetos.</p>
+        <section>
+           
+            <h3>Medidas Absolutas</h3>
+            <p>Medidas absolutas são fixas e não se alteram conforme o dispositivo do usuário. Exemplos:</p>
+            <ul>
+                <li><strong>cm:</strong> Centímetros</li>
+                <li><strong>mm:</strong> Milímetros</li>
+                <li><strong>px:</strong> Pixels (padrão de 16px)</li>
+                <li><strong>pt:</strong> Pontos (usado em impressoras)</li>
+                <li><strong>pc:</strong> Picas "lá ele kkk" (1 pica = 12 pontos)</li>
+                <li><strong>in:</strong> Polegadas</li>
+            </ul>
+        
+            <h3>Medidas Relativas</h3>
+            <p>Medidas relativas são proporcionais ao tamanho da fonte padrão. São preferíveis para garantir a responsividade do site. Exemplos:</p>
+            <ul>
+                <li><strong>em:</strong> Medida relativa ao tamanho da fonte padrão (1em = 16px)</li>
+                <li><strong>rem:</strong> Medida relativa ao tamanho da fonte raiz.</li>
+                <p>O tamanho da fonte raiz é o tamanho da fonte definido no elemento <code>html</code> do documento. Ele serve como base para calcular tamanhos de fontes relativos, como <code>rem</code>. Por padrão, o tamanho da fonte raiz é 16 pixels, mas pode ser alterado no CSS para ajustar a escala tipográfica do site.</p>
+                <li><strong>%:</strong> Porcentagem relativa ao elemento pai.</li>
+                <li><strong>vw:</strong> Unidade relativa à largura da viewport (1vw = 1% da largura da viewport).</li>
+                <li><strong>vh:</strong> Unidade relativa à altura da viewport (1vh = 1% da altura da viewport).</li>
+                <li><strong>vmin:</strong> Unidade relativa ao menor valor entre a largura e a altura da viewport.</li>
+                <li><strong>vmax:</strong> Unidade relativa ao maior valor entre a largura e a altura da viewport.</li>
+                <li><strong>ch:</strong> Unidade relativa à largura do caractere "0" da fonte usada.</li>
+                <li><strong>ex:</strong> Unidade relativa à altura da letra "x" da fonte usada.</li>
+                <li><strong>lh:</strong> Unidade relativa à altura da linha. Use com cuidado.</li>
+            </ul>
+       
+            <section>
+                <h3>Medidas Mais Usadas para Fontes</h3>
+                <h4>Medidas Relativas</h4>
+                <p>As medidas relativas são preferíveis para garantir a responsividade do site. Exemplos:</p>
+                <ul>
+                    <li><strong>em:</strong> Medida relativa ao tamanho da fonte padrão (1em = 16px)</li> 
+                    <p><code>p { font-size: 1.5em; }</code></p>
+                    <li><strong>rem:</strong> Medida relativa ao tamanho da fonte raiz</li>
+                     <p><code>h1 { font-size: 2rem; }</code></p>
+                </ul>
+               
+
+                <h4>Medidas Absolutas</h4>
+                <p>As medidas absolutas são fixas e não se alteram conforme o dispositivo do usuário. Exemplos:</p>
+                <ul>
+                    <li><strong>px:</strong> Pixels (padrão de 16px)</li>
+                         <p><code>p { font-size: 16px; }</code></p>
+                    <li><strong>pt:</strong> Pontos usado em impressoras e pelo Microsoft Office</li>
+                        <p><code>h1 { font-size: 24pt; }</code></p>
+                    
+                </ul>
+                <fieldset>
+                    <legend>Exemplo interativo</legend>
+                        <script>
+                        var undMedida=2;
+                        var tamFonte='px';
+                        function mudarFonte(){
+                            undMedida=document.getElementById('undMedida').value;
+                            tamFonte=document.getElementById('tamFonte').value;
+                           console.log(tamFonte+undMedida);
+                            var font=document.getElementById('exemplo01').style.fontSize=tamFonte+undMedida;
+                            document.getElementById('fontsize').innerHTML=font;
+                            document.getElementById('fontfamily').innerHTML=document.getElementById('exemplo01').style.fontFamily;
+                        }
+                    </script>
+
+                    <p>font-family:<select onchange="document.getElementById('exemplo01').style.fontFamily=(this.value)">
+                        <optgroup value="" label="---Fontes Serifadas---"></optgroup>
+                            <option style="font-family: 'Times New Roman', serif" value=" 'Times New Roman', serif">Times New Roman</option>
+                            <option style="font-family: 'Georgia', serif" value="'Georgia', serif">Georgia</option>
+                            <option style="font-family: 'Garamond', serif" value="'Garamond', serif">Garamond</option>
+                            <option style="font-family: 'Palatino', serif" value="'Palatino', serif">Palatino</option>
+                            <option style="font-family: 'Baskerville', serif" value="'Baskerville', serif">Baskerville</option>
+                        </optgroup>
+                        <optgroup value="" label="---Fontes Sans-Serif---"></optgroup>
+                            <option style="font-family: 'Arial', sans-serif" value="'Arial', sans-serif">Arial</option>
+                            <option style="font-family: 'Verdana', sans-serif" value="'Verdana', sans-serif">Verdana</option>
+                            <option style="font-family: 'Helvetica', sans-serif" value="'Helvetica', sans-serif">Helvetica</option>
+                            <option style="font-family: 'Calibri', sans-serif" value="'Calibri', sans-serif">Calibri</option>
+                            <option style="font-family: 'Open Sans', sans-serif" value="'Open Sans', sans-serif">Open Sans</option>
+                        </optgroup>
+                        <optgroup value="" label="---Fontes Monoespaçadas---"></optgroup>
+                            <option style="font-family: 'Lucida Console', monospace" value="'Lucida Console', monospace">Lucida Console</option>
+                            <option style="font-family: 'Courier New', monospace" value="'Courier New', monospace">Courier New</option>
+                            <option style="font-family: 'Consolas', monospace" value="'Consolas', monospace">Consolas</option>
+                            <option style="font-family: 'Monaco', monospace" value="'Monaco', monospace">Monaco</option>
+                            <option style="font-family: 'Andale Mono', monospace" value="'Andale Mono', monospace">Andale Mono</option>
+                        </optgroup>
+                        <optgroup value="" label="---Fontes Script---"></optgroup>
+                            <option style="font-family: 'Brush Script MT', cursive" value="'Brush Script MT', cursive">Brush Script</option>
+                            <option style="font-family: 'Lucida Handwriting', cursive" value="'Lucida Handwriting', cursive">Lucida Handwriting</option>
+                            <option style="font-family: 'Comic Sans MS', cursive" value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                            <option style="font-family: 'Freestyle Script', cursive" value="'Freestyle Script', cursive">Freestyle Script</option>
+                            <option style="font-family: 'Edwardian Script ITC', cursive" value="'Edwardian Script ITC', cursive">Edwardian Script</option>
+                        </optgroup>
+                        <optgroup value="" label="---Fontes Display---"></optgroup>
+                            <option style="font-family: 'Impact', sans-serif" value="'Impact', sans-serif">Impact</option>
+                            <option style="font-family: 'Chiller', sans-serif" value="'Chiller', sans-serif">Chiller</option>
+                            <option style="font-family: 'Stencil', sans-serif" value="'Stencil', sans-serif">Stencil</option>
+                            <option style="font-family: 'Rockwell', sans-serif" value="'Rockwell', sans-serif">Rockwell</option>
+                            <option style="font-family: 'Algerian', sans-serif" value="'Algerian', sans-serif">Algerian</option>
+                        </optgroup>
+                    </select></p>
+                 
+                    <p>font-size:
+                        <select id="tamFonte">
+                            <optgroup value="" label="---Medida relativa ---">
+                                <optgroup value="" label="---em ---">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="7">7</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                </optgroup>
+                            </optgroup>
+                        </select>
+                    
+
+                    <select id="undMedida">
+                        <optgroup value="" label="---Medida Relativas ---">
+                            <option value="em">em</option>
+                            <option value="rem">rem</option>
+                            <option value="vw">vw</option>
+                            <option value="vh">vh</option>
+                            <option value="vmin">vmin</option>
+                            <option value="vmax">vmax</option>
+                            <option value="ch">ch</option>
+                            <option value="ex">ex</option>
+                            <option value="lh">lh</option>
+                        </optgroup>
+                        <optgroup value="" label="---Medida Absolutas ---">
+                            <option value="cm">cm</option>
+                            <option value="mm">mm</option>
+                            <option value="px">px</option>
+                            <option value="pt">pt</option>
+                            <option value="pc">pc</option>
+                            <option value="in">in</option>
+                        </optgroup>
+                    </select></p>
+                    <button onclick="mudarFonte()"> definir fonte</button>
+                    <div>
+<code>
+style{<br>
+    font-size: <output id="fontsize"></output>;<br>
+    font-family: <output id="fontfamily"></output>;<br>
+}</code>
+                   
+                   </div>
+                   
+                    <div>
+                        <p id="exemplo01" style="font-size: 1.5em; font-family: 'Times New Roman', serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                    </div>
+                </fieldset>
+            </section>
+           
+        </section>
+        
+    </article>
+    <section>
+        <h3>Estilos de Fontes</h3>
+        <h3>Negrito</h3>
+        <p><strong>font-weight:</strong> Define a espessura da letra (100 a 900). Opções: bold, bolder, normal, lighter.</p>
+    
+        <h3>Itálico</h3>
+        <p><strong>font-style:</strong> Define o estilo da letra. Opções: italic, normal, oblique.</p>
+    </section>
+    
+    
+    <h3>Variação de Fontes</h3>
+    <p>Essa matéria foi abordada no capítulo 20 na aula <a href="https://youtu.be/0bBBaHNkzVE?si=mOf4a-rl6AE69o_p">Colocando Fontes</a>.</p>
+    
+    <h3>Font Variant</h3>
+    <ul>
+        <li><strong>font-variant: small-caps;</strong> <span style="font-variant: small-caps;">Todas as letras ficam maiúsculas, mas as que seriam minúsculas permanecem com a altura de minúsculas.</span></li>
+    </ul>
+    
+    <h3>Transformação de Texto</h3>
+    <ul>
+        <li><strong>text-transform: uppercase;</strong> <span style="text-transform: uppercase;">Deixa tudo em MAIÚSCULO</span></li>
+        <li><strong>text-transform: capitalize;</strong> <span style="text-transform: capitalize;">Toda palavra começa com letra maiúscula</span></li>
+        <li><strong>text-transform: lowercase;</strong> <span style="text-transform: lowercase;">Deixa tudo em minúsculo</span></li>
+    </ul>
+    
+    <h3>Shorthand de Fontes</h3>
+    <p>Shorthand é uma forma mais prática de definir os estilos completos de uma fonte em uma linha. Exemplo:</p>
+    <div class="pre"><pre>
+    p {
+        font-family: Arial, Helvetica, Tahoma, sans-serif;
+        font-size: large;
+        font-style: italic;
+        font-weight: bold;
+    }
+    </pre></div>
+    <p>Podemos escrever tudo na mesma linha:</p>
     <code>font: italic bold 1em Arial, Helvetica, Tahoma, sans-serif;</code>
-  
     <p style="background-color: yellow;">
-        No entanto ordem dos atributos de uma shorthand em CSS é importante. No caso da propriedade font, devemos informar, na ordem:
-    
+        A ordem dos atributos na shorthand é importante. Para a propriedade font, devemos informar na seguinte ordem:
         <ol>
-            <li>font-style
-            <li>font-variant
-            <li>font-weight
-            <li>font-size/line-height
-            <li>font-family
+            <li>font-style</li>
+            <li>font-variant</li>
+            <li>font-weight</li>
+            <li>font-size/line-height</li>
+            <li>font-family</li>
         </ol>
     </p>
-    <p>
-        <h2>Alinhamentos</h2>
-        Existem quatro tipos de alinhamento de textos:
-        <ul>
-            <li>text-align: left</li>
-            <li>text-align: right;</li>
-            <li>text-align: center;</li>
-            <li>text-align: justify;</li>
-            <li>text-ident: Espaço de início de paragrafo</li>
-        </ul>
-    </p>
-
-    <h1>Google fonts</h1>
-    <p>
-        Além das famílias tipográficas e fontes padronizadas disponíveis para os navegadores, podemos usar fontes externas em nosso projeto sem a necessidade de baixar e instalar nenhuma fonte no computador do visitante. <br>
-        Para isso, usaremos um serviço gratuito chamado Google Fonts, disponível <a href="https://fonts.google.com" target="_blank"> Google fonts.</a> <br>
-        OBS.: Esse site sofre atualizações frequentes. Então não tem um passo a passo pra conseguir a fonte. <br>
-        <mark>Basicamente tem que ir no site achar a fonte desejada, seleciona-la de alguma forma e pegar o @ dela. Para isso as palavras chaves são Embed e em seguida em @import  para ter acesso aos códigos que serão colocados no seu arquivo CSS. O código de cima será colocado na primeira linha das suas declarações de estilo. Já o segundo código, especificado em CSS rules será colocado na propriedade font-family na declaração de todo seletor onde vamos querer aplicar a fonte</mark>
-    </p>
-<h2>Usando fontes Baixadas</h2>
-Ainda em Google Fonts temos a opção de baixar as fontes que desejamos. Esse caso é bom para acelerar a abertura da pagina sem o texto piscar indo buscar a fonte em outro servidor.
-Para isso devemos declarar a fonte em style ou no arquivo CSS da seguinte forma: <br>
-<pre>
+    
+    <h3>Alinhamento de Texto</h3>
+    <p>Existem quatro tipos de alinhamento de textos:</p>
+    <ul>
+        <li>text-align: left;</li>
+        <li>text-align: right;</li>
+        <li>text-align: center;</li>
+        <li>text-align: justify;</li>
+        <li>text-indent: Espaço de início de parágrafo;</li>
+    </ul>
+    
+    <h3>Google Fonts</h3>
+    <p>Além das famílias tipográficas e fontes padronizadas disponíveis para os navegadores, podemos usar fontes externas em nosso projeto sem a necessidade de baixar e instalar nenhuma fonte no computador do visitante. Para isso, usaremos um serviço gratuito chamado Google Fonts, disponível em <a href="https://fonts.google.com" target="_blank">Google Fonts</a>.</p>
+    <p><strong>OBS:</strong> Esse site sofre atualizações frequentes. Basicamente, você deve ir ao site, encontrar a fonte desejada, selecioná-la e pegar o código @import para incluir no seu arquivo CSS.</p>
+    
+    <h3>Usando Fontes Baixadas</h3>
+    <p>Em Google Fonts, temos a opção de baixar as fontes desejadas. Isso é bom para acelerar a abertura da página sem o texto piscar ao buscar a fonte em outro servidor. Devemos declarar a fonte no arquivo CSS da seguinte forma:</p>
+    <div class="pre">><pre>
     @font-face {
-                font-family: '<abbr title="Nome que seja usar na fonte. pode ser qualquer nome">star</abbr>'; 
-                src: url('<abbr title="local do arquivo">../../fonts/twinkle-star/twinklestar-Regular.ttf</abbr>'),
-                format ('<abbr title="Nome da Extenção">truetype</abbr>');
-                font-weight: normal;
-                font-style: normal;
-                }
-</pre>
-o font-weight: normal e o font-style: normal; são apenas para evitar erros
-<strong> Tipos de formatos:</strong>
-<ul>
-    <li>opentype(otf)</li>
-    <li>truetype (ttf)</li>
-    <li>embedded-opentype</li>
-    <li>truetype-aat( Apple advanced typografy)</li>
-    <li>svg</li>
-</ul>
-No geral é bom dar uma pesquisada caso nenhum funcione.
-<br>
-OBS.: se faltar uma virgula ela não carrega tem que seguir exatamente o formato @ font-face acima 
-<p>
-    É possível ainda adicionar mais de um foramto de mesma fonte para que tenha compatibilidade com mais navegadores, basta adicionar "," após o format e por outra url. <br>
-    Veja abaixo:
-    <pre>
-        @font-face {
-                    font-family: '<abbr title="Nome que seja usar na fonte. pode ser qualquer nome">star</abbr>'; 
-                    src: url('<abbr title="local do arquivo">../../fonts/twinkle-star/twinklestar-Regular.ttf</abbr>'),
-                    format ('<abbr title="Nome da Extenção">truetype</abbr>'),
-                    url('<abbr title="local do arquivo">../../fonts/twinkle-star/twinklestar-Regular.ttf</abbr>'),
-                    format ('<abbr title="Nome da Extenção">truetype</abbr>');
-                    font-weight: normal;
-                    font-style: normal;
-                    }
-    </pre>
-</p>
-
-    <h2>Detectando fontes dentro de textos</h2>
-    <p>
-        Para isso usariamos um extensão do google chrome. Mas, infelizmente, a extensão nao funcionou. <br>
-        A extensão se chama <a href="https://chromewebstore.google.com/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh?hl=pt-br" target="_blank">Fonts Ninja</a>
-    </p>
-
-    <h2>Detectando fontes dentro de imagens</h2>
-    <p>
-        Para isso usamos os sites abaixo:
+        font-family: 'star';
+        src: url('../../fonts/twinkle-star/twinklestar-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </pre></div>
+    <p>Os atributos <code>font-weight: normal;</code> e <code>font-style: normal;</code> são apenas para evitar erros.</p>
+    <p><strong>Tipos de formatos:</strong></p>
+    <ul>
+        <li>opentype (otf)</li>
+        <li>truetype (ttf)</li>
+        <li>embedded-opentype</li>
+        <li>truetype-aat (Apple Advanced Typography)</li>
+        <li>svg</li>
+    </ul>
+    <p>É possível adicionar mais de um formato da mesma fonte para compatibilidade com mais navegadores:</p>
+    <div class="pre"><pre>
+    @font-face {
+        font-family: 'star';
+        src: url('../../fonts/twinkle-star/twinklestar-Regular.ttf') format('truetype'),
+             url('../../fonts/twinkle-star/twinklestar-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </pre></div>
+    
+    <h3>Detectando Fontes em Textos</h3>
+    <p>Para isso, usamos uma extensão do Google Chrome chamada <a href="https://chromewebstore.google.com/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh?hl=pt-br" target="_blank">Fonts Ninja</a>.</p>
+    
+    <h3>Detectando Fontes em Imagens</h3>
+    <p>Para isso, usamos os seguintes sites:</p>
+    <ul>
+        <li><a href="https://www.fontsquirrel.com/matcherator" target="_blank">Font Squirrel</a></li>
+        <li><a href="https://www.myfonts.com/pages/whatthefont" target="_blank">My Font Finder</a></li>
+        <li><a href="https://www.whatfontis.com/" target="_blank">What Font Is</a></li>
+    </ul>
+    <footer>
+    
+        <h3>Materiais Utilizados</h3>
+        <p><strong><a href="../../material-de-apoio/14 - Fontes.pdf" target="_blank">14 - Fontes.pdf</a></strong></p>
+    
+        <h3>Vídeos</h3>
         <ul>
-            <li><a href="https://www.fontsquirrel.com/matcherator" target="_blank">Font Squirrel</a></li>
-            <li><a href="https://www.myfonts.com/pages/whatthefont" target="_blank">My font Finder</a></li>
-            <li><a href="https://www.whatfontis.com/" target="_blank">What font is</a></li>
-        </ul> 
-    </p>
-
-    <p>
-        <h1>Materiais utilizados</h1>
-        
-            <strong><a href="../../material-de-apoio/14 - Fontes.pdf" target="_blank"> Material em PDF</a></strong>
-        
-        
-            <h2>Vídeos</h2>
-        
-            <p>
-                <a href="https://youtu.be/m54omTveWa8?si=Szar9M2rXRpybDr5" target="_blank">Primeiros passos em Tipografia</a>
-            </p>
-        
-            <p>
-                <a href="https://youtu.be/YZfzstEquas?si=oo_4lJw1TttGHb_X" target="_blank">Anatopia do Tipo</a>
-            </p>  
-            <p>
-                <a href="https://youtu.be/dMp1UFD8_lE?si=st5G_Bob0bCBi9Uo" target="_blank">Família de Fonte com CSS</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/NGfPXJGiNH8?si=Axy3xjljRGPPg6WH" target="_blank">Tamanho de fontes e suas medidas</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/oHj5ez1bSkc?si=p0jjL_cJnWkbuGTj" target="_blank">Peso, estilo e shothand font</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">Usando Google fonts</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">Usando fontes externa Baixadas</a>
-            <p>
-                    <a href="https://youtu.be/XTtfM0L7Co0?si=04-AhKRJqDaBdzdr" target="_blank">Capturar fontes de Sites</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/i_c5Fzk807M?si=_P6bdD4gBAvpgiXX" target="_blank">Detectando fontes dentro de textos</a>
-            </p>
-            <p>
-                <a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme">Detectando fontes dentro de imagens</a>
-            </p>
-            
-            <p>
-                <a href="https://youtu.be/tJTtp4qyqdE?si=09KPGh0Pf6ui60v_">Alinhamentos de texto com CSS</a>
-            </p>
-
-            </p>
-        </p>
-        
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+            <li><a href="https://youtu.be/m54omTveWa8?si=Szar9M2rXRpybDr5" target="_blank">Primeiros Passos em Tipografia</a></li>
+            <li><a href="https://youtu.be/YZfzstEquas?si=oo_4lJw1TttGHb_X" target="_blank">Anatomia do Tipo</a></li>
+            <li><a href="https://youtu.be/dMp1UFD8_lE?si=st5G_Bob0bCBi9Uo" target="_blank">Família de Fonte com CSS</a></li>
+            <li><a href="https://youtu.be/NGfPXJGiNH8?si=Axy3xjljRGPPg6WH" target="_blank">Tamanho de Fontes e Suas Medidas</a></li>
+            <li><a href="https://youtu.be/oHj5ez1bSkc?si=p0jjL_cJnWkbuGTj" target="_blank">Peso, Estilo e Shorthand Font</a></li>
+            <li><a href="https://youtu.be/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">Usando Google Fonts</a></li>
+            <li><a href="https://youtu.be/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">Usando Fontes Externas Baixadas</a></li>
+            <li><a href="https://youtu.be/XTtfM0L7Co0?si=04-AhKRJqDaBdzdr" target="_blank">Capturar Fontes de Sites</a></li>
+            <li><a href="https://youtu.be/i_c5Fzk807M?si=_P6bdD4gBAvpgiXX" target="_blank">Detectando Fontes em Textos</a></li>
+            <li><a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme" target="_blank">Detectando Fontes em Imagens</a></li>
+            <li><a href="https://youtu.be/tJTtp4qyqdE?si=09KPGh0Pf6ui60v_" target="_blank">Alinhamentos de Texto com CSS</a></li>
+        </ul>
+    
+</main> 
+</footer>
 </body>
 </html>

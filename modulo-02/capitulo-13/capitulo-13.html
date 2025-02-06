@@ -2,10 +2,19 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 13</title>
 
-    <link rel="shortcut icon" href="../../../Imagens/icones/aqua-icone-ok.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="psicologia das cores, representação de cores, cores em CSS, harmonização de cores, círculo cromático, paleta de cores, cores HTML5, cores RGB, cores hexadecimal, cores HSLA">
+
+    <meta name="author" content="Allan Cavalcanti Martins">
+
+    <meta name="description" content="Explore a psicologia das cores e aprenda a representar cores em CSS com RGB, hexadecimal e HSLA. Descubra como harmonizar cores para criar sites visualmente agradáveis.">
+
+    
+    <title>Psicologia das Cores e Representação de Cores em CSS | Curso HTML5</title>
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="../../style.css">
    
@@ -14,148 +23,159 @@
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
-<header>
-    
-        
-        <h1>Capítulo 13 </h1>    
+    <header>
         <h1>Psicologia das Cores</h1>
-</header>
-<main>
-    <section><!--Introdução-->
+    </header>
+    <main>
+        <section>
+            
+        </section>
+        <article id="rep-Cores">
+            <h2>Representação de Cores</h2>
+            <section>
+                <p>Todas as cores em uma tela são representadas por três cores base:</p>
+                <ul>
+                    <li>Vermelho: representado pelo <abbr title="Red">R</abbr>;</li>
+                    <li>Verde: representado pelo <abbr title="Green">G</abbr>;</li>
+                    <li>Azul: representado pelo <abbr title="Blue">B</abbr>.</li>
+                </ul>
+                <p>Essas cores formam a sigla RGB. Note que o verde substitui o amarelo como cor primária, pois tecnicamente as cores são mais precisas usando o verde.</p>
+                <p>Existem três formas de representar cores em CSS:</p>
+            </section>
+            <section>
+                <h3>Por nomes das cores em inglês</h3>
+                <p>Essa forma é menos utilizada devido à limitação de nomes disponíveis em comparação com a vasta quantidade de cores possíveis (65.000.000).</p>
+            </section>
+            <section>
+                <h3>Por código RGB ou RGBA</h3>
+                <p>Nessa forma, cada cor varia sua intensidade de 0 a 255. O valor alpha (transparência) varia de 1 (totalmente opaco) a 0 (totalmente transparente) com precisão de centésimos.</p>
+                <p>Exemplo de representação:</p>
+                <div class="pre">
+                    <pre>rgba(200, 255, 0, 1)</pre>
+                </div>
+            </section>
+            <section>
+                <h3>Hexadecimal</h3>
+                <p>Essa forma usa 6 algarismos hexadecimais (0 a F) para representar as cores, sem o alpha. A ordem é:</p>
+                <p>0;1;2;3;4;5;6;7;8;9;A;B;C;D;E;F</p>
+                <p>Exemplo de representação:</p>
+                <p>#ff00ff</p>
+                <p>Outra forma é usar 3 algarismos hexadecimais, onde o navegador entende como se tivesse repetido os valores:</p>
+                <p>Exemplo: #0f2 é igual a #00ff22</p>
+            </section>
+            <section>
+                <h3>HSLA</h3>
+                <p>HSLA representa cores de forma diferente:</p>
+                <ul>
+                    <li>H: Cor propriamente dita (0 a 360)</li>
+                    <li>S: Saturação (0% a 100%)</li>
+                    <li>L: Luminosidade (0% a 100%)</li>
+                    <li>A: Transparência (0 a 1)</li>
+                </ul>
+                <p>Exemplo de representação:</p>
+                <p>hsla(208, 100%, 97%, 0.644)</p>
                 
-           
-                <picture>
-                    <source media="(max-width: 750px)" srcset="imagens/paleta-de-cores.png" type="image/png">
-                    <source media="(min-width: 1050px)" srcset="imagens/paleta-de-cores-1000.jpeg" type="image/jpeg">
-                    <img src="imagens/paleta-de-cores.png" alt="Paleta de cores">
-                </picture>
+                <p>Obs.: Para alternar a representação de cores, clique na área representada na imagem acima.</p>
+            </section>
             
-    </section>
-    <article><!--Representação de Cores-->
-        <h2>Representação de Cores</h2>
-        <section><!--Introdução-->            
-            <p>Podemos todas as cores são representadas através de qualquer tela por de 3 cores bases que são:</p>
+        </article><!-- /.rep-Cores -->
+        <article id="psicologia-cores">
+            
+            <h2>Psicologia das Cores</h2>
+            <p>As cores têm um impacto psicológico nas pessoas, podendo influenciar o humor, a percepção e a tomada de decisões. Por isso, é importante escolher as cores certas para transmitir a mensagem desejada.</p>
+            <p>Algumas cores e seus significados:</p>
             <ul>
-                <li>Vermelho: representedas pelo <abbr title="Red">R</abbr>;</li>
-                <li>Verde: representedas pelo <abbr title="Green">G</abbr> e;</li>
-                <li>Azul: representedas pelo <abbr title="Blue">B</abbr>.</li>
+                <li>Vermelho: paixão, amor, perigo, energia;</li>
+                <li>Verde: natureza, saúde, esperança, crescimento;</li>
+                <li>Azul: tranquilidade, confiança, segurança, tecnologia;</li>
+                <li>Amarelo: alegria, otimismo, criatividade, calor;</li>
+                <li>Roxo: luxo, espiritualidade, mistério, realeza;</li>
+                <li>Laranja: entusiasmo, energia, diversão, criatividade;</li>
+                <li>Rosa: amor, feminilidade, doçura, romance;</li>
+                <li>Marrom: estabilidade, segurança, natureza, simplicidade;</li>
+                <li>Cinza: neutralidade, equilíbrio, sofisticação, formalidade;</li>
+                <li>Preto: elegância, poder, sofisticação, mistério;</li>
+                <li>Branco: pureza,
+                inocência, limpeza, simplicidade.</li>
             </ul>
-            <p>Formando a sigla RGB, note que não são exatamente as cores primárias porque o amarelo foi substituído pelo verde, como vimo no material de apoio. Por alguma facilidade técnica as cores ficam mais fidedignas utilizando o verde como cor primária.</p>
-            <p>Existem três formas de representarmos as cores em CSS</p>
+            <p>Para mais detalhes, consulte o <a target="_blank" href="../../material-de-apoio/13 - Cores.pdf">material em PDF</a> das páginas 02 a 06.</p>
+        </article><!-- /.psicologia-cores -->
+        <article id="harm-cores">
+            <h2>Harmonização de Cores</h2>
+            <p>Para criar um site visualmente agradável, é importante harmonizar as cores. Existem várias formas de fazer isso:</p>
+            <ul>
+                <li>Usar cores complementares;</li>
+                <li>Usar cores análogas;</li>
+                <li>Usar cores triádicas;</li>
+                <li>Usar cores tetrádicas.</li>
+            </ul>
+            <p>Para mais detalhes, consulte o <a target="_blank" href="../../material-de-apoio/13 - Cores.pdf">material em PDF</a> das páginas 07 a 09.</p>
+            <h3>Círculo Cromático</h3>
+            <p>O círculo cromático é uma ferramenta que ajuda a encontrar combinações harmoniosas de cores, tornando o site visualmente agradável.</p>
+            <img src="imagens/circulo-cromatico.png" alt="Círculo Cromático">
+            <p>Para mais detalhes, consulte o material em PDF das páginas 06 a 11.</p>
+            <h3>Sites para encontrar cores harmônicas</h3>
+            <p>Existem ferramentas online que ajudam na escolha de paletas de cores: </p>
+            <ul>
+                <li><a href="https://color.adobe.com/pt/create/color-wheel" target="_blank">Adobe Color</a>: Excelente site com alguns recursos pagos.</li>
+                <li><a href="https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank">Paletton</a>: Permite escolher o tipo de harmonização e visualizar exemplos.</li>
+                <li><a href="https://coolors.co/2cdac7-4d8b31-0e34a0-d68c45-566e3d" target="_blank">Coolors</a>: Ideal para criar combinações de cores, com opção de travar cores favoritas.</li>
+            </ul>
+            <section id="captura-cores">
+                <h3>Ferramenta para descobrir cores de outros sites</h3>
+                <p>Para capturar o código hexadecimal de uma cor em um site, use a extensão ColorZilla no Google Chrome. Clique na cor desejada para obter o código.</p>
+                <p>Obs.: Um site deve ter no máximo entre 3 e 5 cores, além do preto e branco.</p>
             
-        </section>
-        <section><!--Por nomes-->
-            <h3>Por nomes das cores em inglês</h3>
-            
-            <p>Por nomes não costuma ser muito utilizado por conta das limitações da quantidade de cores possíveis 65.000.000 contra poucos nomes.</p>
-        </section>
-        <section><!--Por código RGB-->
-            
-            <h3>Por código RGB ou <abbr title="Red">R</abbr><abbr title="Green">G</abbr><abbr title="Blue">B</abbr><abbr title="Alpha(Transparência)">A</abbr></h3>
-
-            <p>Nessa cada cor varia sua intensidade de 255 a 0 e no final ainda temos o controle de trasparência denominado de alpha que vai de 1 (totalmento opaco) até 0(totalmente transparente) e e essa pode ser variada com precisão de centézimos. </p>
-            <p>A representação fica Assim:</p>
-
-            <div class="pre">
-                <pre>rgba(<abbr title="Red">200</abbr>, <abbr title="Green">255</abbr>, <abbr title="Blue">0</abbr>, <abbr title="Alpha(Transparência)">1</abbr>)</pre>
-            </div>
-        </section>
-        <section><!--Hexadecimal-->
-            <h3>Hexadecimal:</h3>
-            <p>Nessa forma trabalhamos parecido com o rgba porém sem o alpha, e usamos 6 algarismos Hexadecimais que vai de 0(o menor valor) até f(o maior valor) seguindo  a segunte ordem: </p>
-            <p>0;1;2;3;4;5;6;7;8;9;A;B;C;D;E;F</p>
-            <p>A representação fica Assim:</p>
-            #<abbr title="Red">ff</abbr><abbr title="Green">00</abbr><abbr title="Blue">ff</abbr><abbr title="Alpha(Transparência)">e2</abbr>
-            <p>Outra forma é usando a penas 3 algarismos Hexadecimais. Nesse caso o navegador entederá como se tivesse repetido o 1º, o 2º e o 3º </p>
-            <p>Exemplo:</p>
-            <p>#0f2 é igual #00ff22</p>
-        </section>
-        <section><!--HSLA-->
-            <h3>HSLA</h3>
-
-            <p>Essa é uma forma um pouco diferente das de demais onde: o H representa a cor propriamente dita que vai de 0 até 356( terceiro item da esquerda pra direita na imagem abaixo). O "S" e o "L" são o eixo "Y" e "X" respectivamente (do 1º retângulo da esquerda para a direita) esses valores são em porcentagem, portanto vão de 0 a 100. E por fim o "A" que é a Transparência, esse valor vai de 0 até 1 onde 0 é totalmente transparente e 1 é totalmente opaco, e esse valor é em centézimos. É um modelo excelente para clarear ou saturar cores mais precisamente.</p>
-
-            <p>Exemplo: </p>
-            hsla(<abbr title="Heal">208</abbr>, <abbr title="Saturation">100%</abbr>, <abbr title="Luminosity">97%</abbr>, <abbr title="Alpha(Transparência)">0.644</abbr>);"
-
-
-            <img src="imagens/Captura de tela 2024-03-02 092248.png" alt="Representação de cores HTML5">
-            <br>
-            Obs.: Para alterna a representação de cores, basta clicar na área representada na imagem acima:
-        </section>
-    </article>
-    
-    <h2>Harmonização de Cores</h2>
-    
-    <p>Círculo cromático</p>
-    <img src="imagens/circulo-cromatico.png" alt="circulo-cromatico">
-  
-   <p>O cìrculo cormático é uma imagem onde é possível encontrar todas as 65mi de cores e nele é possivel fazer combinações hamonizções de cores para que o site não fique uma bagunça e desagradável de permanescer</p>
-   <p>Para adiantar, vide o material em PDF. da de página 06 até a pagina 11</p>
-    
-        <h3>Sites para encontrar Cores harmônicas</h3>
-    Além de conhecer todas as Harmonizações, nós podemos contar também com ferramentas maravilhosas para nos ajudar em uma das decisões mais importantes de temos, a escolha das cores.
-   </p><p>
-    Veja abaixo alguns exemplos sites gratuitos:
-    </p>
-        <p>
-            <a href="https://color.adobe.com/pt/create/color-wheel" target="_blank">Site Adobe Color</a> <br>
-        Um dos sites mais famosos porém com alguns recursos pagos, ainda assim é um excelente site para escolher sua paleta de cores. Considerados por muitos o melhor.
-        </p>
-        <p>
-            <a href="https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF"target="_blank"> Site Paletton</a> <br>
-            Nesse Site é possível escolher qual tipo de hamonização deseja usar e além disso podemos ver um exemplo dessa paleta aplicada em um site.
-        </p>
-        <p>
-            <a href="https://coolors.co/2cdac7-4d8b31-0e34a0-d68c45-566e3d"target="_blank">Site Coolors</a> <br>
-            Esse é ideal para criar ideias de combinações de cores pois basta apertar espaço e olhar quais corers mais agrada, com opção de travar as cores que gosta para que venham apenas core que combinem com ela. Ou pode ainda enviar um imagem como base para que ele indique cores que combinam com essa imagem como um logo de uma empresa.
-        </p>
-        <h3>Ferramenta para descobrir Cores de outros sites</h3>
-        <p>
-            Para pegar o código Hexadecimal de uma cor em algum site basta abrir o site com o Google Chrome &rarr; Extensões &rarr; ColorZilla &rarr; Conta gotas. Pronto, ao clicar na cor ele irá capturar o código Hexadecimal da imagem. <br>
-            Com essa ferramenta e os sites é possivel rapidamente definir a paleta de cores para seu site.
-            <br>
-            OBS.: Um site deve ter no MÁXIMO ENTRE 3 E 5 CORES além do preto e branco.
-        </p>
        
-</main>
-<footer>
-    
-    <p>
-    <h1>Materiais utilizados</h1>
-    
-        <strong><a href="../../material-de-apoio/13 - Cores.pdf" target="_blank"> Material em PDF</a></strong>
-    
-    
-        <h2>Vídeos</h2>
-    
-        <p>
-            <a href="https://youtu.be/A8UNBs7nxw4?si=NI7GwkK_U7cAjCZ8" target="_blank">Psicologia das Cores</a>
-        </p>
-    
-        <p>
-            <a href="https://youtu.be/uKjKnztS3cY?si=TSjPnpn3NWUbntIs" target="_blank">Representando Cores com CSS3</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/E2gaDa4ZaTc?si=TS9WtgJiVECi53cP" target="_blank">Harmonia de Cores</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/KC8dm9OvIOU?si=CQzL5gJuYKn2-fC1" target="_blank">Paleta de Cores</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/Swh0Yt2s5Zs?si=I0OJQWOr6koj0U9F" target="_blank">Como Capturar Cores de Tela</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/_P-guJX-TtU?si=EDYu1ZTJeHGRmFdS" target="_blank">Como Criar efeito Degradê no CSS3</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/reFQrqxOzsg?si=kb7ndOBUUxgMpQiU" target="_blank">Criando exemplo real</a>
-        </p>
-    </p>
-    
-    <hr>
-    <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-</footer>
 
+        
+       
+
+
+        <fieldset>
+
+            <legend>Exemplo interativo</legend>
+            
+
+            <div>
+                <div id="transicao" style="
+               
+                border: 1px solid #000;
+                border-radius: 30px;
+                min-width: 300px;
+                max-width: 800px;
+                height: 150px;
+                background-color: #fff;
+               
+                transition-property: background-color;
+                transition-duration: 500ms;
+                transition-timing-function: ease-in-out;
+                "></div>
+            
+            <p>Use o botão abaixo para descobrir uma cor dentro ou fora desta página e testar as diferentes representações de cores como: RGB, HSLA e Hexadecimal.</p>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                    
+
+                <input class="buttom" style="height: 50px; width: 100px; border-radius: 10px;" type="color" oninput="document.querySelector('#transicao').style.backgroundColor = this.value;">
+            </div>
+        </fieldset>
+        </section><!-- /.captura-cores -->   
+    </article><!-- /.harm-cores -->
+    </main>
+    <footer>
+        <h1>Materiais Utilizados</h1>
+        <p><strong><a href="../../material-de-apoio/13 - Cores.pdf" target="_blank">Material em PDF</a></strong></p>
+        <h2>Vídeos</h2>
+        <ul>
+            <li><a href="https://youtu.be/A8UNBs7nxw4?si=NI7GwkK_U7cAjCZ8" target="_blank">Psicologia das Cores</a></li>
+            <li><a href="https://youtu.be/uKjKnztS3cY?si=TSjPnpn3NWUbntIs" target="_blank">Representando Cores com CSS3</a></li>
+            <li><a href="https://youtu.be/E2gaDa4ZaTc?si=TS9WtgJiVECi53cP" target="_blank">Harmonia de Cores</a></li>
+            <li><a href="https://youtu.be/KC8dm9OvIOU?si=CQzL5gJuYKn2-fC1" target="_blank">Paleta de Cores</a></li>
+            <li><a href="https://youtu.be/Swh0Yt2s5Zs?si=I0OJQWOr6koj0U9F" target="_blank">Como Capturar Cores de Tela</a></li>
+            <li><a href="https://youtu.be/_P-guJX-TtU?si=EDYu1ZTJeHGRmFdS" target="_blank">Como Criar efeito Degradê no CSS3</a></li>
+            <li><a href="https://youtu.be/reFQrqxOzsg?si=kb7ndOBUUxgMpQiU" target="_blank">Criando exemplo real</a></li>
+        </ul>
+        
+    </footer>
 </body>
 </html>
