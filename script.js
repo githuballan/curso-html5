@@ -1,5 +1,5 @@
 function exibir(x){
-    k = x.nextElementSibling;
+   let k = x.nextElementSibling;
     
     if(k.style.display === "block")
         {k.style.display = "none";}
@@ -21,5 +21,11 @@ function exibir(x){
 //    }
 
 function toggleMenu(x) {
-    x.classList.toggle("change");
+  x.classList.toggle("change");
 }
+
+function clicante(){
+  let clickHmaburger = document.getElementById('menu-hamburguer');
+  clickHmaburger.click();
+}
+
