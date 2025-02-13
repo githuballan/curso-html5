@@ -181,6 +181,8 @@ header > h1 {
 
 /* Navigation */
 nav {
+    max-height: 90vh;
+    overflow-y: auto;
     border: solid 1px #000;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 0px #0005;
