@@ -59,6 +59,12 @@
    
    
 }
+body{
+    display: block;
+}
+main{
+    display: block;
+}
 </style>
 </head>
 <body>
@@ -71,8 +77,9 @@
         <p><a href="obs.html">obs</a></p> -->
     </header>
 
+    
     <main>
-        <h2  class="buttom" onclick="exibir(this)">Módulo 01 - HTML5 Básico</h2>
+        <h2 id="modulo-01" class="buttom" onclick="exibir(this)">Módulo 01 - HTML5 Básico</h2>
         <ul class="menu"><!--Módulo 01--> 
            
             <li> <!--Início de Html especias-->
@@ -135,7 +142,7 @@
 
         </ul><!--/Módulo 01-->
 
-        <h2 class="buttom" onclick="exibir(this)">Módulo 02 - CSS3 Básico</h2>
+        <h2 id="modulo-02" class="buttom" onclick="exibir(this)">Módulo 02 - CSS3 Básico</h2>
         <ul class="menu"><!--Módulo 02-->
 
             <li><!--Capítulo 12 - Style (início de CSS)-->
@@ -159,43 +166,52 @@
                 </ul>
             </li>
             <li><!--Capítulo 14 -  Fontes-->
-                <h3 class="buttom" onclick="exibir(this)"><a href="modulo-02/capitulo-14/capitulo-14.html">Capítulo 14 -  Fontes</a></h3>
-                <ul id="capitulo-14" class="menu">
-                    <li><strong>Primeiros passos em Tipografia</strong></li>
-                    <li><strong>Anatopia do Tipo</strong></li>
-                    <li><strong>Família de Fonte com CSS</strong></li>
-                    <li><strong>Tamanho de fontes e suas medidas</strong></li>
-                    <li><strong>Peso, estilo e shothand font</strong></li>
-                    <li><strong>Usando Google fonts</strong></li>
-                    <li><strong>Usando fontes externa Baixadas</strong></li>
-                    <li><strong>Capturar fontes de Sites</strong></li>
-                    <li><strong>Detectando fontes dentro de textos</strong></li>
-                    <li><strong>Detectando fontes dentro de imagens</strong></li>
-                    <li><strong>Alinhamentos de texto com CSS</strong></li>
+                <h3 class="buttom" onclick="exibir(this)"><a href="modulo-02/capitulo-14/capitulo-14.html">Tipografia e Fontes no CSS</a></h3>
+                <ul class="menu" id="index-tipo">
+                    <li id="tipografia"><strong><a href="modulo-02/capitulo-14/capitulo-14.html#tipografia">Introdução à Tipografia</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#Combina-seg">Combinações Seguras de Fontes</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#medidas">Unidades de Medida no CSS3</a></strong></li>
+
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#line-height">Line Height (altura da linha)</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#compati-fonte-com-navegador">Compatibilidade de Fontes em Navegadores</a></strong></li>
+                    
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#estilos-de-fonte">Estilos de Fontes no CSS</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#var-font">Variação de Fontes</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#transf-texto">Transformação de Texto</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#shorthand">Shorthand de Fontes</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#alin-texto">Alinhamento de Texto</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#exemplo-interativo">Exemplo interativo</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-14/capitulo-14.html#detec-texto">Detectando Fontes</a></strong></li>
                 </ul>
             </li>
             <li><!--Capítulo 15 - id, class, Pseudo-classes e Pseudo-elementos-->
-                <h3 class="buttom" onclick="exibir(this)"><a href="modulo-02/capitulo-15/capitulo-15.html">Capítulo 15 - id, class, Pseudos</a></h3>
+                <h3 class="buttom" onclick="exibir(this)"><a href="modulo-02/capitulo-15/capitulo-15.html">Seletores CSS</a></h3>
             
                 <ul id="capitulo-15" class="menu">
-                    <li><strong> Usando id com CSS</strong></li>
-                    <li><strong>As diferenças entre id e class</strong></li>
-                    <li><strong>Pseudo-classes em CSS</strong></li>
-                    <li><strong>Pseudo-elementos em CSS</strong></li>
+                    <li><strong><a href="modulo-02/capitulo-15/capitulo-15.html#seletores">O que são Seletores CSS?</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-15/capitulo-15.html#id">Seletor de ID: #</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-15/capitulo-15.html#class">Seletor de Classe: .</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-15/capitulo-15.html#pseudo-classes">Pseudo-classes: :</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-15/capitulo-15.html#pseudo-elementos">Pseudo-elementos: ::</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-15/capitulo-15.html#hierarquia-css">Hierarquia CSS</a></strong></li>
+                   
                 </ul>
             </li>
             <li><!--Capítulo 16 - Modelo de Caixas-->
-                <h3 class="buttom" onclick="exibir(this)"><a href="modulo-02/capitulo-16/capitulo-16.html">Capítulo 16 - Modelo de Caixas</a></h3>
+                <h3 class="buttom" onclick="exibir(this)"><a href="modulo-02/capitulo-16/capitulo-16.html">Modelo de Caixas</a></h3>
 
                 <ul id="capitulo-16" class="menu">
-                    <li><strong>Modelo de Caixas</strong></li>
-                    <li><strong>Modelo de Caixas na prática (parte 1)</strong></li>
-                    <li><strong>Modelo de Caixas na prática (parte 2)</strong></li>
-                    <li><strong>Sombras</strong></li>
-                    <li><strong>Caixas com Vertices Arredondados</strong></li>
-                    <li><strong>Bordas decoradas</strong></li>
-                    <li><strong>Desafio Módulo 02</strong></li>
-                    <li><strong>Unidade de medidas relativas</strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sec-width">width</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sec-height">height</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sec-padding">padding</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sec-border">border</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sec-outline">outline</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sec-margin">margin</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#ferramenta-de-desenvolvedor">Ferramenta de desenvolvedor</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#shorthand">shorthand</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#sombras">sombras</a></strong></li>
+                    <li><strong><a href="modulo-02/capitulo-16/capitulo-16.html#bordas-decoradas">Bordas Decoradas</a></strong></li>
+                   
                 </ul>
             </li>
             <li><!--Capítulo 17 - Projeto Site Android-->
@@ -224,7 +240,7 @@
 
         </ul><!--/Módulo 02-->
 
-        <h2 class="buttom" onclick="exibir(this)">Módulo 03 CSS3 Intermediário e GitHub</h2>
+        <h2 id="modulo-03" class="buttom" onclick="exibir(this)">Módulo 03 CSS3 Intermediário e GitHub</h2>
         <ul class="menu"><!--Módulo 03-->
             
             <li><!--Capítulo 18 - Git e GitHub-->
@@ -290,7 +306,7 @@
             </li> 
         </ul><!--/Módulo 03-->
 
-        <h2 class="buttom" onclick="exibir(this)">Módulo 04 - CSS Avançado</h2>
+        <h2 id="modulo-04" class="buttom" onclick="exibir(this)">Módulo 04 - CSS Avançado</h2>
         <ul class="menu"><!--Módulo 04--> 
             
             <li><!--Capítulo 22 - iframe-->
@@ -427,7 +443,7 @@
             </li> 
         </ul><!--/Módulo 04-->
 
-        <h2 class="buttom" onclick="exibir(this)">Módulo 05 - JavaScript Básico</h2>
+        <h2 id="modulo-05" class="buttom" onclick="exibir(this)">Módulo 05 - JavaScript Básico</h2>
         <ul class="menu"><!--Módulo 05-->
             <li><!--Capítulo 29 - JavaScript Básico-->
                 <h3 class="buttom" onclick="exibir(this)"><a href="modulo-05/capitulo-29/capitulo-29.html">Capítulo 29 - JavaScript Básico</a></h3>
@@ -537,7 +553,7 @@
            
         </ul><!--/Módulo 05-->
 
-        <h2 class="buttom" onclick="exibir(this)">Módulo 06 - JavaScript Intermediário</h2>
+        <h2 id="modulo-06" class="buttom" onclick="exibir(this)">Módulo 06 - JavaScript Intermediário</h2>
         <ul class="menu"><!--Módulo 06-->
             <li><!--Capítulo 34 - Integrando JS ao HTML-->
                 <h3 class="buttom" onclick="exibir(this)"><a href="modulo-06/capitulo-34/capitulo-34.html">Capítulo 34 - Integrando JS ao HTML</a></h3>
@@ -588,7 +604,7 @@
             </li><!--Capítulo 36-->
         </ul><!--Módulo 06-->
 
-        <h2 class="buttom" onclick="exibir(this)">Módulo 07 - JavaScript Avançado</h2>
+        <h2 id="modulo-07" class="buttom" onclick="exibir(this)">Módulo 07 - JavaScript Avançado</h2>
         <ul class="menu"><!--Módulo 07-->
             <li><!--Capítulo 38 - Integrando JS ao HTML-->
                 <h3 class="buttom" onclick="exibir(this)"><a href="modulo-07/capitulo-38/capitulo-38.html">Capítulo 38 - Tratamento de erros</a></h3>

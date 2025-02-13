@@ -2,11 +2,18 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 16</title>
+
+    <meta name="description" content="Os elementos HTML são organizados em caixas, que são retângulos com altura, largura, margens, bordas e preenchimento. O modelo de caixas é a forma como o navegador organiza e exibe os elementos na tela.">
+
+    <meta name="keywords" content="HTML5, modelo de caixas, CSS, width, height, padding, border, outline, margin, box-shadow, bordas arredondadas, bordas decoradas, guia interativo">
 
 
-    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <title>Modelo de Caixas no HTML5 - Guia Interativo</title>
+
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico"type="image/x-icon">
 
     <link rel="stylesheet" href="../../style.css">
 
@@ -26,24 +33,19 @@
     text-align:center;
     vertical-align: center;
    }
-    div>h1
-    {
-        
-        width: 200px;
-        height: 200px; 
-        background-color: #d62727;
-        border-width: 20px;
-        border-style: solid;
-        border-color: #468d46;
-        padding: 50px;
-        outline-width: 30px;
-        outline-style: solid;
-        outline-color: #a1418dbe;
-        margin: 15px;
-        
-    }
-    
-    
+   #teste{
+       margin: 100px;
+   
+   }
+
+   main div {
+    box-sizing:content-box;
+}
+
+input[type="number"] {
+    width: 100%;
+}
+       
 </style>
 
 
@@ -53,260 +55,585 @@
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        
-        <h1 id="capitulo">Capitulo 16</h1>
         <h1>Modelo de Caixas</h1>
     </header>
     <main>
-        <section><!--Guanabara-->
-            <img src="imagens/Captura de tela 2024-03-04 153350.png" alt="Exemplo de box">
-            <br>
-        
-            Leia o PDF!!!
+        <article id="introducao">
             
-                <strong>Height:</strong> Altura de caixa onde encontra-se o texto, Ela se ajusta automaticamente de acordo com o tamanho da fonte. Mas tem como ajusta manualmente. <br>
-                <strong>Width</strong>: Largura das mesmas propriedade do Heigth. O tamanho da caixa não inclui as medidas de padding, border, outline e margin que veremos a seguir <br>
-                <strong>Padding</strong>: esse fica entre o borda e o box (Área ocupada pelo texto). Dando uma certa margem interna para que o texto não fique colado na borda. O padding só ocupa espaço virtual mas não visual.  <br>
-                <strong>Border:</strong> é a borda essa ocupa espaço virtual e pode ter uma espessura, uma cor e um formato. <br>
-                <strong>Outline:</strong> fica entre a margem e a borda, podemos determinar o contorno (outline) que é muito pouco utilizado, mas existe. Ele é apenas visual e não ocupa espaço virtual e pode ultrapassar a margem. Sendo assim ele pode tampar textos em volta. <br>
-                <strong>Margin:</strong> a margem ocupa espaço virtual e pode possuir efeito visual. É ideal para que objetos não fiquem colados na tela dificultando a interatividade.
-        
-        
-           
-                Exemplo de código no head:
-        
-                <div class="pre"> <pre>
-                    &lt;style>
-        
-div>h1
-{
-    text-align: center;
-    width: 200px;
-    height: 200px;
-    background-color: #d62727;
-    border-width: 20px;
-    border-style: solid;
-    border-color: #468d46;
-    padding: 50px;
-    outline-width: 30px;
-    outline-style: solid;
-    outline-color: #a1418dbe;
-    margin: 15px;
-
-}
-                        &lt;style>
-                </div> </pre>
-                Exemplo de código no body:
-        
-                <div class="pre"> <pre>
-                    &lt;div>
-                    &lt;h1>Título para teste de margens&lt;/h1>
-                        &lt;/div>
-                </div> </pre>
-                Exemplo de funcionamento:
-                <div>
-                    <h1>Título para teste de margens</h1>
-                </div>
-        
-                Acima podemos ver um exemplo de todas as partes visíveis de um caixa. <br>
-                <ul>
-                    <li><strong> Vermelho:</strong> É o box própriamente dito. Porém o espaço que há ente o texto e a parte verde é o Padding</li>
-                    <li><strong>Verde:</strong> É a borda.</li>
-                    <li><strong>Rosa:</strong> É o outline. Note que ele cobriu o texto envolta dele. Isso aconteceu porque ele não ocupa um espaço virtual apenas visual. Para evitar isso basta aumentar o tamanho de margem</li>
-                </ul>
-                <p>
-                    Por isso é imortante que a Margem seja sempre maior que o OutLine e que o Padding seja usado apenas como um pequeno espaçamento entre o box (texto) e a margem.
-            
-        <h2>Ferramenta de desenvolvedor</h2>
-            <p>
-                Uma boa forma de visualizar a organização dos boxes e testar a melhores formatos utilizando o Dev Tools do chrome cast.
-                <br>
-                Para isso basta abrir o site que deseja &rarr; botão direto em qualquer lugar da página&rarr; inpesionar.
-                <br> Para melhor vizualizar clique nos 3 pontinhos no lado direito superior&rarr;dock side&rarr;UnDock <br>
-                Agora vai em Style &rarr; proucura o box que deseja fazer os teste em "Element" &rarr; Agora em style estará aberto todas as configurações da box. <br>
-                Para fazer os testes é só selecionar a configuração que deseja testar e modificar os valores. É possível mudar os valores rolando o scroll do mouse.
-                <br>
-                OBS.: Essa modificação não altera o arquivo original!
-        
-        
-            </p>
-        <h2>Shothand</h2>
-            <p>
-                As configurações de borda e contorno também possuem shorthands para simplificar o código anterior. A ordem para as duas configurações é sempre a mesma para as duas shorthands: largura (-width), estilo (-style) e cor (-color)
-            </p>
-        
-                <img src="imagens/shothand-um.png" alt="shothand-um">
-            <p>
-                Todo elemento de caixa possui quatro valores para padding e quatro para margin, sempre nessa mesma ordem: superior (-top), direita (-right), inferior (-bottom), esquerda (-left). Quando colocamos um único valor de dimensão para o preenchimento ou margem, esse mesmo valor é aplicado simetricamente a todas as direções, mas também podemos fazer códigos como:
-            </p>
-            <img src="imagens/shothand-dois.png" alt="shothand-dois">
-            <p>
-                Também existe a opção de indicar cada shorthand das propriedades de preenchimento e borda usando apenas duas medidas:
-            </p>
-                <img src="imagens/shothand-tres.png" alt="shothand-tres">
-            <p>
-        
-            Outro recurso que também será muito usado em nossos exercícios é o de por margens no automático. Isso é, a centralização de blocos. Para que isso seja feito, devemos pedir que o navegador calcule automaticamente as margens da esquerda e da direita para que o bloco seja colocado no meio do navegador, independente do tamanho da janela.
-            Para centralizar uma caixa, use a seguinte declaração: <br>
-            <code>margin: auto;</code>
-            </p>
-        
-        <h1 style="box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.693);">Sombras</h1>
-        <p>
-            Existem 02 efeitos de sombra externa e interna, mas a interna é pouco usada: <br>
-            Sombra externa: <br>
-            Exemplo de código no body:
-                <p>
-                <code>
-                    &lt;h1 style="box-shadow: 5px 5px 4px 4px rgba(0, 0, 0, 0.693);">Sombras
-                        &lt;/h1>
-                </code>
-            </p>
-        
-            <p>O 1º px: Se refere ao deslocamento lateral,onde valores positivos a sombra se deslocará para direita e valores negativos a sombra se descará para esquerda
-            </p>
-            <p>
-                O 2º px: Se refere ao deslocamento vertical ,onde valores positivos a sombra se deslocará para abaixo e valores negativos a sombra se deslocará para acima
-            </p>
-            <p>
-                O 3º px: Se refere ao tamanho da dissipação da sombra, essa é a parte do contorno esfumaçado da sombra
-            </p>
-            <p>
-                O 4º px: Se refere ao tamanho da parte central da sombra. Essa é a parte mais opaca.
-            </p>
-            <p>
-                Por ultimo é a cor da sombra onde é mais comum usar a cor preta com trasparência sempre um pouco maior que 50%
-                </p>
-            Exemplo de funcionamento: É o próprio Titulo
-        
-            </p>
-        
-        <h1>Caixas com Vertices Arredondados</h1>
-            <p>
-                Podemos arredondar os vértices usando uma declaração simples usando a propriedade border-radius. Adicione o seguinte comando ao seletor do artigo do exemplo que estamos criando:
-            </p>
-            <span style=" padding: 5px; background-color: aqua; border-radius: 10px;">Exemplo de Arredondamento 01</span>
-        
-            <p>
-                Na declaração acima, todos os vértices foram levemente arredondados (10px) de forma simétrica. Se for necessário, podemos indicar quatro medidas diferentes, uma para cada vértice. Olhe atentamente para o resultado abaixo e perceba que cada ponta está diferente.
-            </p>
-            <span style=" padding: 5px; background-color: aqua; border-radius: 10px 30px 50px 70px;">Exemplo de Arredondamento 01</span>
-            <p>
-                Assim como fizemos com as margens, também é possível indicar apenas dois valores, o que vai agir em vértices intercalados, partindo do canto superior esquerdo..
-            </p>
-            <span style=" padding: 10px; background-color: aqua; border-radius: 20px 5px;">Exemplo de Arredondamento 01</span>
-        
-        <h2>Bordas Decoradas</h2>
-        <p>
-            É um recurso pouco utilizado. Então se precisar assita o vídeo: <a href="https://youtu.be/n0rjAs_Im4w?si=e-2uOqFvwL2tK2TK" style="text-decoration: none; color: black; background-color: rgba(128, 128, 128, 0.493); border-radius: 5px; padding: 3px; box-shadow: 1px 1px 2px 1px black;">Bordas decoradas</a>
-        </p>
-        </section><hr>
-        <section><!--Programador br-->
-            <section>
-                <header>
-                    <h1>Programador br</h1>
-                    <h1>Unidade de medidas</h1>
-                </header>
-                <article>
-                    
-                    <p>Para definir um tamanho ou uma distância, devemos utilizar as unidades da linguagem CSS. Podemos classificar essas unidades em absolutas e relativas.</p>
-
-                </article>
-                <article>
-                    <h2>Unidade de medidas relativas</h2>
-                    <div class="pre">
-    
-                        <table style="border-collapse: collapse; border: 3px solid #000">
-                            <thead style="border-collapse: collapse; border: 3px solid #000">
-                                <tr>
-                                    <th scope="col">Unidade</th>
-                                    <th scope="col">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>em</td>
-                                    <td>1 em é igual uma vez o  tamanho da fonte do conteiner pai dessa box. Caso não tenha sido alterada o tamanho de fonte padrão equivalerá a 16px.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>rem</td>
-                                    <td> rem é similar ao em porém invés de ser relativa ao conteriner será relativa a tamanho de fonte do html, que caso não tenha sido alterada equivalerá a 16px. </td>
-                                </tr>
-                                <tr>
-                                    <td>ch</td>
-                                    <td>Geralmente, 1 ch é igual a largura do dígito “0” da fonte atual.</td>
-                                </tr>
-                                <tr>
-                                    <td>ex</td>
-                                    <td>Geralmente, 1 ex é igual a altura da letra “x” da fonte atual.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>vw</td>
-                                    <td>1 vw é igual a 1% da largura da área de visualização do navegador (viewport). <span class="mark">É possível colocar essa medida relativa na altura então cuidado</span></td>
-                                </tr>
-                                <tr>
-                                    <td>vh</td>
-                                    <td>1 vh é igual a 1% da altura da área de visualização do navegador (viewport). <span class="mark">É possível colocar essa medida relativa na largura então cuidado</span></td>
-                                </tr>
-                                <tr>
-                                    <td>vmin</td>
-                                    <td>1 vmim é igual ao valor mínimo entre vw e vh</td>
-                                </tr>
-                                <tr>
-                                    <td>vmax</td>
-                                    <td>1 vmax é igual ao valor máximo entre vw e vh.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-    
-                    </div>
-                </article>
-
-
-            </section>
-        </section>
-    </main>
-
-    <footer>
-
-        <p>
-            <h1>Materiais utilizados</h1>
-            
-                <strong><a href="../../material-de-apoio/16 - Modelo de Caixas.pdf" target="_blank"> Material em PDF</a></strong>
-            
-            
-                <h2>Vídeos</h2>
-            
-                <p>
-                    <a href="https://youtu.be/3ZFYXkzXhqE?si=NkuzABwOqo8NVgfd" target="_blank">Modelo de Caixas</a>
-                </p>
-                <p>
-                    <a href="https://youtu.be/rXF1okX0v9E?si=UMeA82uycRa95egE" target="_blank">Modelo de Caixas na prática (parte 1)</a>
-                </p>
-                <p>
-                    <a href="https://youtu.be/-CPoDvZLQ6k?si=3gUvkixiy4iNYXj9" target="_blank">Modelo de Caixas na prática (parte 2)</a>
-                </p>
-                <p>
-                    <a href="https://youtu.be/JACiDRNWjjQ?si=thLqzh4TARfO4tRk" target="_blank">Sombras</a>
-                <p>
-                        <a href="https://youtu.be/PGIrTzQqpqo?si=U5iUDFKw2lHn92Ve" target="_blank">Caixas com Vertices Arredondados</a>
-                </p>
-                <p>
-                    <a href="https://youtu.be/n0rjAs_Im4w?si=e-2uOqFvwL2tK2TK" target="_blank">Bordas decoradas</a>
-                </p>
-                <p>
-                    <a href="https://youtu.be/xS2D9x8odoE?si=lCmt8eTPtgTn9xnY">Desafio Módulo 02</a>
-                </p>
+            <p>Os elementos HTML são organizados em caixas, que são retângulos com altura, largura, margens, bordas e preenchimento. O modelo de caixas é a forma como o navegador organiza e exibe os elementos na tela.</p>
+            <p>As caixas são compostas por cinco partes principais: conteúdo, padding, border, outline e margin. Cada uma dessas partes pode ser estilizada com CSS para criar diferentes efeitos visuais.</p>
+         
+         
+            <p>As propriedades de estilo que afetam as caixas são:</p>
+            <section id="sec-width">
                 
+                <h3>width</h3>
+                <p>Width é a largura da caixa, ou melhor a largura interna da caixa, ou seja, a largura do local que abrigará todo o conteúdo. existem algumas forma de definirmos o width:</p>
+                <ul>
+                    <li><strong>auto:</strong> A largura da caixa é determinada pelo seu conteúdo.</li>
+                    <code>width: auto;</code>
+                    <li><strong>valor fixo:</strong> Define a largura da caixa em pixels, centímetros, porcentagem ou outra unidade de medida.</li>
+                    <code>width: 100px;</code>
+                    <li><strong>porcentagem:</strong> Define a largura da caixa em relação à largura do contêiner pai.</li>
+                    <code>width: 80%;</code>
+                </ul>
+            </section><!--width-->
 
+            <section id="sec-height">
+                <h3>height</h3>
+                <p>Height é a altura da caixa, ou melhor a altura interna da caixa, ou seja, a altura do local que abrigará todo o conteúdo. existem algumas forma de definirmos o height:</p>
+                <ul>
+                    <li><strong>auto:</strong> A altura da caixa é determinada pelo seu conteúdo.</li>
+                    <code>height: auto;</code>
+                    <li><strong>valor fixo:</strong> Define a altura da caixa em pixels, centímetros, porcentagem ou outra unidade de medida.</li>
+                    <code>height: 100px;</code>
+                    <li><strong>porcentagem:</strong> Define a altura da caixa em relação à altura do contêiner pai.</li>
+                    <code>height: 80%;</code>
+                </ul>
+            </section><!--height-->
+
+            <section id="sec-padding">
+                <h3>padding</h3>
+                <p>Padding é o espaço entre o conteúdo da caixa e a borda. Ele é usado para adicionar espaço interno à caixa. O padding pode ser definido para cada lado da caixa (top, right, bottom, left) ou para todos os lados ao mesmo tempo.</p>
+                <p>Exemplo de código:</p>
+                <p class="low"><code>padding: 10px;</code></p>
+                <p>Isso significa que todos os lados da caixa terão 10px de padding. Se quisermos que cada lado tenha um valor diferente, podemos fazer o seguinte:</p>
+            <p class="low"><code>padding-top: 10px;</code> (modifica o padding superior)</p>
+            <p class="low"><code>padding-right: 20px;</code> (modifica o padding direito)</p>
+            <p class="low"><code>padding-bottom: 30px;</code> (modifica o padding inferior)</p>
+            <p class="low"><code>padding-left: 40px;</code> (modifica o padding esquerdo)</p>
+            </section><!--padding-->
+
+            <section id="sec-border">
+                <h3>border</h3>
+                <p>Border é a borda da caixa. Ela é usada para adicionar uma borda ao redor da caixa. A borda pode ser definida para cada lado da caixa (top, right, bottom, left) ou para todos os lados ao mesmo tempo.</p>
+                <p>Exemplo de código:</p>
+                <p class="low"><code>border-width: 1px; border-style: solid; border-color: black;</code></p>
+                <p>Isso significa que todos os lados da caixa terão uma borda de 1px de largura, sólida e preta. Se quisermos que cada lado tenha um valor diferente, podemos fazer o seguinte:</p>
+                <p class="low"><code>border-top-width: 1px; border-top-style: solid; border-top-color: black;</code> (modifica a borda superior)</p>
+                <p class="low"><code>border-right-width: 2px; border-right-style: solid; border-right-color: black;</code> (modifica a borda direita)</p>
+                <p class="low"><code>border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: black;</code> (modifica a borda inferior)</p>
+                <p class="low"><code>border-left-width: 4px; border-left-style: solid; border-left-color: black;</code> (modifica a borda esquerda)</p>
+                <h4>Tipos de Bordas</h4>
+                <p>Além da borda sólida, existem outros tipos de bordas que podem ser aplicadas às caixas. Aqui estão alguns exemplos:</p>
+                <ul>
+                    <li><strong>Dashed:</strong> Uma borda tracejada.</li>
+                    <code>border-style: dashed;</code>
+                    <li><strong>Dotted:</strong> Uma borda pontilhada.</li>
+                    <code>border-style: dotted;</code>
+                    <li><strong>Double:</strong> Uma borda dupla.</li>
+                    <code>border-style: double;</code>
+                    <li><strong>Groove:</strong> Uma borda com efeito de sulco.</li>
+                    <code>border-style: groove;</code>
+                    <li><strong>Ridge:</strong> Uma borda com efeito de crista.</li>
+                    <code>border-style: ridge;</code>
+                    <li><strong>Inset:</strong> Uma borda com efeito de inserção.</li>
+                    <code>border-style: inset;</code>
+                    <li><strong>Outset:</strong> Uma borda com efeito de projeção.</li>
+                    <code>border-style: outset;</code>
+                </ul>
+                <p>Você pode experimentar esses diferentes tipos de bordas para ver como eles afetam a aparência das caixas.</p>
+                <fieldset>
+                    <legend>Exemplo Interativo</legend>
+                    <p>Experimente alterar o tipo de borda abaixo para ver como ele afeta a caixa:</p>
+                    <form id="borderForm">
+                        <label for="borderType">Tipo de Borda:</label>
+                        <select id="borderType" name="borderType" onchange="updateBorderType()">
+                            <option value="solid">Solid</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="dotted">Dotted</option>
+                            <option value="double">Double</option>
+                            <option value="groove">Groove</option>
+                            <option value="ridge">Ridge</option>
+                            <option value="inset">Inset</option>
+                            <option value="outset">Outset</option>
+                        </select>
+                    </form>
+                    <div style="display: flex; justify-content: center;">
+                        <div id="borderExampleBox" style="
+                        width: 200px; 
+                        height: 200px; 
+                        background-color: aquamarine; 
+                        border-width: 10px; 
+                        border-style: solid; 
+                        border-color: hsl(0, 0%, 63%); 
+                        margin-top: 20px;">
+                        </div>
+                    </div>
+                    <script>
+                        function updateBorderType() {
+                            const borderType = document.getElementById('borderType').value;
+                            const box = document.getElementById('borderExampleBox');
+                            box.style.borderStyle = borderType;
+                        }
+                    </script>
+                </fieldset>
+            </section><!--border-->
+
+            <section id="sec-outline">
+            <h3>outline</h3>
+            <p>Outline é uma linha que é desenhada ao redor de um elemento, fora da borda. Ela é usada para destacar um elemento sem afetar o layout da página. Diferente da borda, o outline não ocupa espaço e não afeta o tamanho ou a posição do elemento.</p>
+            <p>Exemplo de código:</p>
+            <p class="low"><code>outline: 2px solid red;</code></p>
+            <p>Isso significa que todos os lados do elemento terão um outline de 2px de largura, sólido e vermelho. Se quisermos que cada lado tenha um valor diferente, podemos fazer o seguinte:</p>
+            <p class="low"><code>outline-width: 2px;</code> (modifica a largura do outline)</p>
+            <p class="low"><code>outline-style: dashed;</code> (modifica o estilo do outline)</p>
+            <p class="low"><code>outline-color: blue;</code> (modifica a cor do outline)</p>
+            <h4>Tipos de Outline</h4>
+            <p>Assim como a borda, o outline também pode ter diferentes estilos. Aqui estão alguns exemplos:</p>
+            <ul>
+                <li><strong>Dashed:</strong> Um outline tracejado.</li>
+                <code>outline: 2px dashed blue;</code>
+                <li><strong>Dotted:</strong> Um outline pontilhado.</li>
+                <code>outline: 2px dotted green;</code>
+                <li><strong>Double:</strong> Um outline duplo.</li>
+                <code>outline: 4px double purple;</code>
+                <li><strong>Groove:</strong> Um outline com efeito de sulco.</li>
+                <code>outline: 4px groove orange;</code>
+                <li><strong>Ridge:</strong> Um outline com efeito de crista.</li>
+                <code>outline: 4px ridge pink;</code>
+                <li><strong>Inset:</strong> Um outline com efeito de inserção.</li>
+                <code>outline: 4px inset brown;</code>
+                <li><strong>Outset:</strong> Um outline com efeito de projeção.</li>
+                <code>outline: 4px outset black;</code>
+            </ul>
+            <p>Você pode experimentar esses diferentes tipos de outline para ver como eles afetam a aparência dos elementos.</p>
+            <fieldset>
+                <legend>Exemplo Interativo</legend>
+                <p>Experimente alterar o tipo de outline abaixo para ver como ele afeta a caixa:</p>
+                <form id="outlineForm">
+                    <label for="outlineType">Tipo de Outline:</label>
+                    <select id="outlineType" name="outlineType" onchange="updateOutlineType()">
+                        <option value="solid">Solid</option>
+                        <option value="dashed">Dashed</option>
+                        <option value="dotted">Dotted</option>
+                        <option value="double">Double</option>
+                        <option value="groove">Groove</option>
+                        <option value="ridge">Ridge</option>
+                        <option value="inset">Inset</option>
+                        <option value="outset">Outset</option>
+                    </select>
+                </form>
+                <div style="display: flex; justify-content: center;">
+                    <div id="outlineExampleBox" style="
+                    width: 200px; 
+                    height: 200px; 
+                    background-color: aquamarine; 
+                    outline-width: 10px; 
+                    outline-style: solid; 
+                    outline-color: hsl(0, 0%, 63%); 
+                    margin-top: 20px;">
+                    </div>
+                </div>
+                <script>
+                    function updateOutlineType() {
+                        const outlineType = document.getElementById('outlineType').value;
+                        const box = document.getElementById('outlineExampleBox');
+                        box.style.outlineStyle = outlineType;
+                    }
+                </script>
+            </fieldset>
+            </section><!--outline-->
+
+            <section id="sec-margin">
+            <h3>margin</h3>
+            <p>Margin é o espaço entre a caixa e os elementos vizinhos. Ela é usada para adicionar espaço externo à caixa. A margem pode ser definida para cada lado da caixa (top, right, bottom, left) ou para todos os lados ao mesmo tempo.</p>
+            <p>Exemplo de código:</p>
+            <p class="low"><code>margin: 10px;</code></p>
+            <p>Isso significa que todos os lados da caixa terão 10px de margem. Se quisermos que cada lado tenha um valor diferente, podemos fazer o seguinte:</p>
+            <p class="low"><code>margin-top: 10px;</code> (modifica a margem superior)</p>
+            <p class="low"><code>margin-right: 20px;</code> (modifica a margem direita)</p>
+            <p class="low"><code>margin-bottom: 30px;</code> (modifica a margem inferior)</p>
+            <p class="low"><code>margin-left: 40px;</code> (modifica a margem esquerda)</p>
+            <h4>Tipos de Margem</h4>
+           <p>Assim como padding, a margem também pode ter diferentes estilos. Aqui estão alguns exemplos:</p>
+            <ul>
+              
+                <li><strong>Valor fixo:</strong> Define a margem usando as unidades de medidas vista em tipografia <a href="../capitulo-14/capitulo-14.html#medidas" target="_blank">Unidades de Medida no CSS3</a>.</li>
+                <code>margin: 10px;</code>
+                <li><strong>Porcentagem:</strong> Define a margem em relação à largura do contêiner pai.</li>
+                <code>margin: 10%;</code>
+            </ul>
+
+             <section id="margin-auto">
+                <h4>margin: auto;</h4>
+                <p>A propriedade <code>margin: auto;</code> é usada para centralizar um elemento horizontalmente dentro do seu contêiner. <mark>Para que isso funcione, o elemento deve ter uma largura definida.</mark> Quando aplicamos <code>margin: auto;</code>, o navegador calcula automaticamente as margens esquerda e direita para que o elemento fique centralizado.</p>
+                <p>Exemplo de código:</p>
+                <div class="pre">
+                    <pre>
+        &lt;style>
+            .centered-box {
+                width: 50%;
+                margin: auto;
+                background-color: lightblue;
+            }
+        &lt;/style>
+
+        &lt;div class="centered-box">
+            Este é um exemplo de uma caixa centralizada.
+        &lt;/div>
+                    </pre>
+                </div>
+                <p>No exemplo acima, a <code>div</code> com a classe <code>centered-box</code> terá uma largura de 50% do contêiner pai e será centralizada horizontalmente devido ao uso de <code>margin: auto;</code>.</p>
+            </section><!--margin-auto-->
+          
+            </section><!--margin-->
             
-            </p>
-            
-            <hr>
-                <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+            <fieldset>
+                <legend>Exemplo Interativo</legend>
+                <p>Experimente alterar os valores abaixo para ver como eles afetam a caixa:</p>
+                <form id="boxForm" style="align-self: self-start;">
+                    <label for="width">width:</label>
+                    <input type="number" id="width" name="width" min="-100" max="300" value="200"><br><br>
+                    <label for="height">height:</label>
+                    <input type="number" id="height" name="height" value="200"><br><br>
+                    <label for="padding">padding:</label>
+                    <input type="number" id="padding" name="padding" value="20"><br><br>
+                    <label for="borderWidth">border-width:</label>
+                    <input type="number" id="borderWidth" name="borderWidth" value="20"><br><br>
+                    <label for="outlineWidth">outline-width:</label>
+                    <input type="number" id="outlineWidth" name="outlineWidth" value="20"><br><br>
+                    <label for="margin">margin:</label>
+                    <input type="number" id="margin" name="margin" value="40"><br><br>
+                    <input type="button" onclick="updateBox()" value="Atualizar">
+                </form>
+                <div style="display: flex; justify-content: center;">
+                 
+                        <div id="box" style="
+                        width: 20vw; 
+                        height: 20vw; 
+                        background-color: #d62727; 
+                        border-width: 20px; 
+                        border-style: solid; 
+                        border-color: #468d46; 
+                        padding: 20px; 
+                        outline-width: 20px; 
+                        outline-style: solid; 
+                        outline-color: #ff3bb16d; 
+                        margin: 40px;">
+                            <div style="background-color: rgba(255, 255, 0, 0.492); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                               Conteúdo
+                            </div>
+                        </div>
+                    
+                </div>
+                 <script>
+                function updateBox() {
+                    const width = document.getElementById('width').value + 'px';
+                    const height = document.getElementById('height').value + 'px';
+                    const padding = document.getElementById('padding').value + 'px';
+                    const borderWidth = document.getElementById('borderWidth').value + 'px';
+                    const outlineWidth = document.getElementById('outlineWidth').value + 'px';
+                    const margin = document.getElementById('margin').value + 'px';
+
+                    const box = document.getElementById('box');
+                    box.style.width = width;
+                    box.style.height = height;
+                    box.style.padding = padding;
+                    box.style.borderWidth = borderWidth;
+                    box.style.outlineWidth = outlineWidth;
+                    box.style.margin = margin;
+                }
+            </script>
+                <section>
+                    <p>Na imagem acima, temos uma caixa com as seguintes partes:</p>
+                    <ul>
+                       
+                        <li><strong>Vermelho </strong> Representa o padding. OBS.: padding não possui cor nem efeito visual, o que vocês estão vendo é apenas o background.</li>
+                        <li><strong>Verde:</strong> Representa a borda da caixa.</li>
+                        <li><strong>Rosa:</strong> Representa o outline.</li>
+                        
+                    </ul>
+                </section>
+            </fieldset>
+           
+        </article><!--introducao-->
+
+        <article id="ferramenta-de-desenvolvedor">
+            <h2>Ferramenta de desenvolvedor</h2>
+            <p>Uma boa forma de visualizar a organização das caixas e testar os melhores formatos é utilizando o Dev Tools do Chrome. Para acessar, clique com o botão direito do mouse sobre o elemento que deseja inspecionar e selecione a opção "Inspecionar".</p>
+            <p>Na aba "Elementos", você pode ver a estrutura de caixas do elemento selecionado. Cada caixa é representada por um retângulo, onde a borda externa é a margem, a borda intermediária é a borda e a borda interna é o padding. O conteúdo é o espaço interno da caixa.</p>
+            <p>recomanedo que assitam esse vídeo: <a href="https://youtu.be/rXF1okX0v9E?t=222" target="_blank">Modelo de Caixas na prática (parte 1)</a> min 03:50.</p>
+        </article><!--ferramenta-de-desenvolvedor-->
+
+        <article id="shorthand">
+            <h2>Shorthand</h2>
+            <p>Shorthand é uma forma de escrever códigos de forma mais compacta, mas que ainda são entendidos pelo navegador.</p>
+            <section id="margin-outline-padding-e-border">
+                <h3>margin, outline, padding e border</h3>
+                <p>Para margin, outline, padding e border os shorthand funciona da mesma forma, pois podemos declarar um único valor para todos os lados. Por exemplo:</p>
+                <p class="low"><code>margin: 10px;</code></p>
+                <p>Isso significa que todos os lados da margem terão 10px de distância. Se quisermos que cada lado tenha um valor diferente, podemos fazer o seguinte:</p>
+                <p class="low"><code>margin: <abbr title="margin-top">10px</abbr> <abbr title="margin-right">20px</abbr> <abbr title="margin-botton">30px</abbr> <abbr title="margin-left">40px</abbr>;</code></p>
+                <p>Isso significa que o lado superior terá 10px, o direito 20px, o inferior 30px e o esquerdo 40px. A ordem é sempre a mesma: superior, direito, inferior e esquerdo. Perceba que ele segue o sentido horário.</p>
+                <p>Outra forma de shorthand é com apenas dois valores:</p>
+                <p class="low"><code>margin: <abbr title="margin-top e margin-bottom">10px</abbr> <abbr title="margin-right e margin-left">20px</abbr>;</code></p>
+                <p>Isso significa que o lado superior e inferior terão 10px, enquanto os lados direito e esquerdo terão 20px.</p>
+            </section><!--margin-outline-padding-e-border-->
+            <section id="padding-e-border">
+                <h3>padding e border</h3>
+                <p>Para padding e border, o shorthand funciona da mesma forma, mas com uma diferença: a ordem dos valores é diferente. Para padding, a ordem é a seguinte: superior, direito, inferior e esquerdo. Para border, a ordem é: largura, estilo e cor.</p>
+                <p>Exemplo de shorthand:</p>
+                <p class="low"><code>padding: 10px 20px 30px 40px;</code></p>
+                <p>Isso significa que o lado superior terá 10px, o direito 20px, o inferior 30px e o esquerdo 40px. A ordem é sempre a mesma: superior, direito, inferior e esquerdo. Perceba que ele segue o sentido horário.</p>
+                <p>Outra forma de shorthand é com apenas dois valores:</p>
+                <p class="low"><code>padding: 10px 20px;</code></p>
+                <p>Isso significa que o lado superior e inferior terão 10px, enquanto os lados direito e esquerdo terão 20px.</p>
+            </section><!--padding-e-border-->
+           
+        </article><!--shorthand-->
+
+        <article id="sombras">
+            <h2>Sombras</h2>
+            <p>Existem dois efeitos de sombra: externa e interna, mas a interna é pouco usada.</p>
+            <h3>Sombra externa:</h3>
+            </div>
+            <p>O 1º px: Refere-se ao deslocamento lateral. Valores positivos deslocam a sombra para a direita e valores negativos para a esquerda.</p>
+            <p>O 2º px: Refere-se ao deslocamento vertical. Valores positivos deslocam a sombra para baixo e valores negativos para cima.</p>
+            <p>O 3º px: Refere-se ao tamanho da dissipação da sombra ou raio de desfoque, que é a parte esfumaçada da sombra.</p>
+            <p>O 4º px: Refere-se ao tamanho da parte central da sombra, que é a parte mais opaca.</p>
+            <p>Por último, a cor da sombra, onde é mais comum usar a cor preta com transparência um pouco maior que 50%.</p>
+            <fieldset>
+                <legend>Exemplo Interativo</legend>
+                <p>Experimente alterar os valores abaixo para ver como eles afetam a sombra da caixa:</p>
+                <form id="shadowForm" style="align-self: self-start; text-align: left;">
+                    <label for="hOffset">Deslocamento lateral:</label>
+                    <input type="number" id="hOffset" name="hOffset" value="5"><br><br>
+                    <label for="vOffset">Deslocamento Vertical:</label>
+                    <input type="number" id="vOffset" name="vOffset" value="5"><br><br>
+                    <label for="blurRadius">Raio de Desfoque:</label>
+                    <input type="number" id="blurRadius" name="blurRadius" value="4"><br><br>
+                    <label for="spreadRadius">Raio de Expansão:</label>
+                    <input type="number" id="spreadRadius" name="spreadRadius" value="4"><br><br>
+                    <label for="shadowColor">Cor da Sombra:</label>
+                    <input type="color" id="shadowColor" name="shadowColor" value="#000000"><br><br>
+                    <input type="button" onclick="updateShadow()" value="Atualizar">
+                </form>
+                <div class="pre">
+                    <pre>
+box-shadow: <output id="1-px"></output> <output id="2-px"></output> <output id="3-px"></output> <output id="4-px"></output> <output id="color"></output>;
+                    </pre>
+                </div>
+                <div style="
+                display: flex;
+                flex-direction: row; 
+                justify-content: center;">
+                    <div id="shadowBox" style="
+                    width: 200px; 
+                    height: 200px; 
+                    background-color: aquamarine; 
+                    box-shadow: 5px 5px 4px 4px rgba(0, 0, 0, 0.693); 
+                    margin-top: 20px;">
+                    </div>
+                </div>
+                <script>
+                    function updateShadow() {
+                        let hOffset = document.getElementById('hOffset').value + 'px';
+                        let vOffset = document.getElementById('vOffset').value + 'px';
+                        let blurRadius = document.getElementById('blurRadius').value + 'px';
+                        let spreadRadius = document.getElementById('spreadRadius').value + 'px';
+                        let shadowColor = document.getElementById('shadowColor').value;
+
+                        let box = document.getElementById('shadowBox');
+                        box.style.boxShadow = `${hOffset} ${vOffset} ${blurRadius} ${spreadRadius} ${shadowColor}`;
+
+                        let one=document.getElementById('1-px').innerHTML=hOffset;
+                        let two=document.getElementById('2-px').innerHTML=vOffset;
+                        let three=document.getElementById('3-px').innerHTML=blurRadius;
+                        let four=document.getElementById('4-px').innerHTML=blurRadius;
+                        let five=document.getElementById('color').innerHTML=shadowColor;
+
+
+                    }
+                </script>
+            </fieldset>
+            <section id="sombra-interna">
+                <h3>Sombra Interna</h3>
+                <p>Para criar sombras internas, usamos a propriedade <code>box-shadow</code> com o valor <code>inset</code>. A sombra interna é desenhada dentro da caixa, criando um efeito de profundidade.</p>
+                <p>Exemplo de código:</p>
+                <p class="low"><code>box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);</code></p>
+                <p>Isso significa que a sombra será desenhada dentro da caixa, com um deslocamento lateral de 5px, um deslocamento vertical de 5px, um raio de desfoque de 10px e uma cor preta com 50% de opacidade.</p>
+                <fieldset>
+                    <legend>Exemplo Interativo</legend>
+                    <p>Experimente alterar os valores abaixo para ver como eles afetam a sombra interna da caixa:</p>
+                    <form id="innerShadowForm" style="align-self: self-start; text-align: left;">
+                        <label for="innerHOffset">Deslocamento lateral:</label>
+                        <input type="number" id="innerHOffset" name="innerHOffset" value="5"><br><br>
+                        <label for="innerVOffset">Deslocamento Vertical:</label>
+                        <input type="number" id="innerVOffset" name="innerVOffset" value="5"><br><br>
+                        <label for="innerBlurRadius">Raio de Desfoque:</label>
+                        <input type="number" id="innerBlurRadius" name="innerBlurRadius" value="10"><br><br>
+                        <label for="innerShadowColor">Cor da Sombra:</label>
+                        <input type="color" id="innerShadowColor" name="innerShadowColor" value="#000000"><br><br>
+                        <input type="button" onclick="updateInnerShadow()" value="Atualizar">
+                    </form>
+                    <div class="pre">
+                        <pre>
+box-shadow: inset <output id="inner-1-px"></output> <output id="inner-2-px"></output> <output id="inner-3-px"></output> <output id="inner-color"></output>;
+                        </pre>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <div id="innerShadowBox" style="
+                        width: 200px; 
+                        height: 200px; 
+                        background-color: aquamarine; 
+                        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5); 
+                        margin-top: 20px;">
+                        </div>
+                    </div>
+                    <script>
+                        function updateInnerShadow() {
+                            let hOffset = document.getElementById('innerHOffset').value + 'px';
+                            let vOffset = document.getElementById('innerVOffset').value + 'px';
+                            let blurRadius = document.getElementById('innerBlurRadius').value + 'px';
+                            let shadowColor = document.getElementById('innerShadowColor').value;
+
+                            let box = document.getElementById('innerShadowBox');
+                            box.style.boxShadow = `inset ${hOffset} ${vOffset} ${blurRadius} ${shadowColor}`;
+
+                            document.getElementById('inner-1-px').innerHTML = hOffset;
+                            document.getElementById('inner-2-px').innerHTML = vOffset;
+                            document.getElementById('inner-3-px').innerHTML = blurRadius;
+                            document.getElementById('inner-color').innerHTML = shadowColor;
+                        }
+                    </script>
+                </fieldset>
+            </section>
+        </article><!--sombras-->
+
+        
+        <article id="bordas-decoradas">
+            <h2>Bordas Decoradas</h2>
+            <p>Além dos tipos de bordas que vimos anteriormente, é possível criar bordas decoradas com CSS. Aqui estão alguns exemplos:</p>
+            <section id="borda-arredondada">
+                <h3>Borda Arredondada</h3>
+                <p>Para criar bordas arredondadas, usamos a propriedade <code>border-radius</code>. Podemos definir um valor para cada canto da caixa ou um valor único para todos os cantos.</p>
+                <p>Exemplo de código:</p>
+                <p class="low"><code>border-radius: 10px;</code></p>
+                <p>Isso significa que todos os cantos da caixa terão um raio de 10px. Se quisermos que cada canto tenha um valor diferente, podemos fazer o seguinte:</p>
+                <p class="low"><code>border-top-left-radius: 10px;</code> (modifica o canto superior esquerdo)</p>
+                <p class="low"><code>border-top-right-radius: 20px;</code> (modifica o canto superior direito)</p>
+                <p class="low"><code>border-bottom-left-radius: 30px;</code> (modifica o canto inferior esquerdo)</p>
+                <p class="low"><code>border-bottom-right-radius: 40px;</code> (modifica o canto inferior direito)</p>
+
+                <fieldset>
+                    <legend>Exemplo Interativo</legend>
+                    <p>Experimente alterar os valores abaixo para ver como eles afetam a borda arredondada da caixa:</p>
+                    <form id="borderRadiusForm" style="align-self: self-start; text-align: left;">
+                        <label for="topLeftRadius">Canto Superior Esquerdo:</label>
+                        <input type="number" id="topLeftRadius" name="topLeftRadius" value="10"><br><br>
+                        <label for="topRightRadius">Canto Superior Direito:</label>
+                        <input type="number" id="topRightRadius" name="topRightRadius" value="10"><br><br>
+                        <label for="bottomLeftRadius">Canto Inferior Esquerdo:</label>
+                        <input type="number" id="bottomLeftRadius" name="bottomLeftRadius" value="10"><br><br>
+                        <label for="bottomRightRadius">Canto Inferior Direito:</label>
+                        <input type="number" id="bottomRightRadius" name="bottomRightRadius" value="10"><br><br>
+                        <input type="button" onclick="updateBorderRadius()" value="Atualizar">
+                    </form>
+                    <div class="pre">
+                        <pre>
+&lt;div style="
+border-radius: <output id="out-topLeftRadius"></output> <output id="out-topRightRadius"></output> <output id="out-bottomLeftRadius"></output> <output id="out-bottomRightRadius"></output>
+width: 200px; 
+height: 200px; 
+background-color: aquamarine; 
+margin-top: 20px;">
+                        </pre>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <div id="borderRadiusBox" style="
+                        width: 200px; 
+                        height: 200px; 
+                        background-color: aquamarine; 
+                        border-radius: 10px; 
+                        margin-top: 20px;">
+                        </div>
+                    </div>
+                   <p>Note que se por 100px para todos formará um círculo. Uma forma mais simples de fazer um circulo é usar <code>border-radius: 50%;</code>.
+                   </p>
+                    <script>
+                        function updateBorderRadius() {
+                            let topLeftRadius = document.getElementById('topLeftRadius').value + 'px';
+                            let topRightRadius = document.getElementById('topRightRadius').value + 'px';
+                            let bottomLeftRadius = document.getElementById('bottomLeftRadius').value + 'px';
+                            let bottomRightRadius = document.getElementById('bottomRightRadius').value + 'px';
+
+                            let box = document.getElementById('borderRadiusBox');
+                            box.style.borderTopLeftRadius = topLeftRadius;
+                            box.style.borderTopRightRadius = topRightRadius;
+                            box.style.borderBottomLeftRadius = bottomLeftRadius;
+                            box.style.borderBottomRightRadius = bottomRightRadius;
+
+                            document.getElementById('out-topLeftRadius').innerHTML = topLeftRadius;
+                            document.getElementById('out-topRightRadius').innerHTML = topRightRadius;
+                            document.getElementById('out-bottomLeftRadius').innerHTML = bottomLeftRadius;
+                            document.getElementById('out-bottomRightRadius').innerHTML = bottomRightRadius+';';
+
+                        }
+                    </script>
+                </fieldset>
+            </section><!--borda-arredondada-->
+            <section id="borda-gradiente">
+                <h3>Borda Gradiente</h3>
+                <p>Para criar bordas com gradientes, usamos a propriedade <code>border-image</code>. Podemos definir um gradiente linear ou radial para a borda da caixa.</p>
+                <p>Exemplo de código:</p>
+                <p class="low"><code>border-image: linear-gradient(to right, red, blue) 1;</code></p>
+                
+                    <h4>Sintaxe</h4>
+                    <p>A propriedade <code>border-image</code> permite aplicar uma imagem ou um gradiente às bordas de um elemento. A sintaxe básica para usar <code>border-image</code> com gradientes é a seguinte:</p>
+                    <p><code>border-image: tipo-de-gradiente(direção, cor1, cor2) tamanho;</code></p>
+                    <p>Vamos detalhar cada parte dessa sintaxe:</p>
+                    <ul>
+                        <li><strong>tipo-de-gradiente:</strong> Pode ser <code>linear-gradient</code> para gradientes lineares ou <code>radial-gradient</code> para gradientes radiais.</li>
+                        <li><strong>direção:</strong> No caso de gradientes lineares, define a direção do gradiente (por exemplo, <code>to right</code> para da esquerda para a direita). Para gradientes radiais, define a forma (por exemplo, <code>circle</code> para circular).</li>
+                        <li><strong>cor1, cor2:</strong> As cores que compõem o gradiente. Pode haver mais de duas cores.</li>
+                        <li><strong>tamanho:</strong> Define a área da borda que será preenchida pelo gradiente. Um valor maior que 1 geralmente é necessário para preencher a borda adequadamente.</li>
+                    </ul>
+                    <h4>linear</h4>
+                    <p><code>border-image: linear-gradient(to right, red, blue) 1;</code></p>
+                    <p>Este exemplo cria uma borda com um gradiente linear de vermelho para azul na horizontal, com um tamanho de 1.</p>
+                    <div>
+                        <div style="
+                        margin: auto;
+                        width: 200px; 
+                        height: 200px; 
+                        background-color: aquamarine; 
+                        border: 20px solid; 
+                        border-image: linear-gradient(to right, red, blue) 99;"></div>
+                    </div>
+                    <h4>radial</h4>
+                    <p><code>border-image: radial-gradient(circle, red, blue) 119;</code></p>
+                    <p>Este exemplo cria uma borda com um gradiente radial de vermelho para azul em forma de círculo, com um tamanho de 119.</p>
+                    <div>
+                        <div style="
+                        margin: auto;
+                        width: 200px;
+                        height: 200px; 
+                        background-color: aquamarine; 
+                        border: 20px dashed; 
+                        border-image: radial-gradient(circle, red, blue) 119;"></div>
+                    </div>
+               
+            </section><!--borda-gradiente-->
+           
+        </article><!--bordas-decoradas-->
+
+        
+    </main>
+    <footer>
+        <h4>Materiais Utilizados</h4>
+        <p><strong><a href="../../material-de-apoio/16 - Modelo de Caixas.pdf" target="_blank">Material em PDF</a></strong></p>
+        <h4>Vídeos</h4>
+        <ul>
+            <li><a href="https://youtu.be/3ZFYXkzXhqE?si=NkuzABwOqo8NVgfd" target="_blank">Modelo de Caixas</a></li>
+            <li><a href="https://youtu.be/rXF1okX0v9E?si=UMeA82uycRa95egE" target="_blank">Modelo de Caixas na prática (parte 1)</a></li>
+            <li><a href="https://youtu.be/-CPoDvZLQ6k?si=3gUvkixiy4iNYXj9" target="_blank">Modelo de Caixas na prática (parte 2)</a></li>
+            <li><a href="https://youtu.be/JACiDRNWjjQ?si=thLqzh4TARfO4tRk" target="_blank">Sombras</a></li>
+            <li><a href="https://youtu.be/PGIrTzQqpqo?si=U5iUDFKw2lHn92Ve" target="_blank">Caixas com Vértices Arredondados</a></li>
+            <li><a href="https://youtu.be/n0rjAs_Im4w?si=e-2uOqFvwL2tK2TK" target="_blank">Bordas decoradas</a></li>
+            <li><a href="https://youtu.be/xS2D9x8odoE?si=lCmt8eTPtgTn9xnY" target="_blank">Desafio Módulo 02</a></li>
+        </ul>
+       
     </footer>
-
 </body>
 </html>
