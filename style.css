@@ -7,27 +7,13 @@
     font-weight: normal;
     font-style: normal;
 }
-@media only screen and (max-width: 1099px) {
+@media only screen and (max-width: 1099px)/* Número mágico, se alterar esse vlaor deverá alterar o valor da função clicante também e obviamente do outro media querry também*/ {
     body {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-
-        /* grid-template-areas:
-        "header header"
-        "nav main"
-        "nav main"
-        "footer footer";
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-        gap: 10px;
-        padding: 0px;
-        justify-items: start;
-        align-items:start;
-        justify-content: center; */
-    
     }
 
     nav{
@@ -37,7 +23,7 @@
         position: fixed;
         left: 50px;
         z-index: 20;
-        box-shadow: 1000px 1000px 500px 1000px rgb(0, 0, 0);
+        box-shadow: 1px 1px 1px 100vmax rgba(0, 0, 0, 0.139);
     }
 
     
@@ -98,6 +84,7 @@
 
 html {
     scroll-behavior: smooth;
+  
 }
 
 .nav-hamburguinho{
@@ -150,6 +137,7 @@ body {
     font-size: large;
     margin: auto;
     text-align: justify;
+   
     
 }
 
@@ -185,7 +173,6 @@ nav {
     overflow-y: auto;
     border: solid 1px #000;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px 0px #0005;
     width: auto;
     background-color: #fbf8f3;
     padding: 10px;
@@ -201,11 +188,12 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    max-width: 80%;
+    max-width: 95%;
     padding: 20px 10px;
     text-align: justify;
     grid-area: main;
-    width: 100%;
+    
+   
 }
 /* Footer */
 footer {

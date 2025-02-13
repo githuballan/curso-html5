@@ -25,7 +25,9 @@ function toggleMenu(x) {
 }
 
 function clicante(){
+    
   let clickHmaburger = document.getElementById('menu-hamburguer');
-  clickHmaburger.click();
+  if(window.innerWidth<1100){
+  clickHmaburger.click();}
 }
 
