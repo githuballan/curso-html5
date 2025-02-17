@@ -11,6 +11,7 @@
 
     <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
 
+    <script src="../../script.js"></script>
 
     <title>Iniciando CSS3</title>
 
@@ -19,46 +20,81 @@
     
 </head>
 <body>
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
         <h1>Introdução ao CSS3</h1>
     </header>
+    <div class="nav-hamburguinho">
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <nav>
+            <ul id="menu-tipo">
+                <li><a href="#inline-style">Estilo CSS3 Inline</a></li>
+                <li><a href="#internal-style">Estilo CSS3 Interno</a></li>
+                <li><a href="#external-style">Estilo CSS3 Externo</a>
+                    <ul>
+                        <li><a onclick="clicante()" href="#creating-css-link">Criando o Link CSS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#style-hierarchy">Hierarquia de Estilos CSS3</a></li>
+            </ul>
+        </nav>
+    </div>
     <main>
         <article id="inline-style">
-            <h2>Estilo CSS3 inline</h2>
+            <h2>Estilo CSS3 Inline</h2>
             <p>O estilo inline é utilizado para modificar o estilo de elementos específicos diretamente no HTML. Esse estilo é usado em casos raros onde você precisa de uma modificação muito pontual, como destacar um trecho específico de um texto.</p>
-            <p>Exemplo:</p>
-            <p style="background-color: antiquewhite; text-align: center; color: rgba(158, 44, 24, 0.945);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veniam rem, qui rerum corrupti nobis dignissimos incidunt, quos nesciunt minima iure maxime alias? Nihil accusamus cupiditate ad commodi velit numquam!</p>
+            <p>Exemplo de uso de estilo inline:</p>
+            <div class="pre"><code>&lt;p style="color: blue; font-size: 20px;"&gt;Este é um texto com estilo inline.&lt;/p&gt;</code></div>
+            <p>Resultado:</p>
+            <p style="color: blue; font-size: 20px;">Este é um texto com estilo inline.</p>
         </article>
         
         <article id="internal-style">
             <h2>Estilo CSS3 Interno</h2>
             <p>O estilo CSS3 interno é definido dentro da tag <code>&lt;style&gt;</code> no cabeçalho da página. Esse estilo é aplicado a toda a página, permitindo que você defina estilos para múltiplos elementos de uma só vez.</p>
-            <p>Por exemplo, todos os elementos <code>&lt;h1&gt;</code> terão o mesmo estilo, todos os elementos <code>&lt;h2&gt;</code> terão outro estilo, e assim por diante.</p>
-            <p>OBS.: Embora seja possível definir estilos no corpo da página, isso não é recomendado, pois o navegador carrega primeiro o cabeçalho. Definir estilos no corpo pode causar um efeito visual desagradável, onde a página aparece sem estilo antes de ser completamente carregada.</p>
-            <p>Veja um exemplo prático neste <a href="exemplo-capitulo-12.html" target="_blank">link</a>.</p>
+            <p>Exemplo de uso de estilo interno:</p>
+            <div class="pre"><code>&lt;style&gt;
+        p {
+        color: green;
+        font-size: 18px;
+        }
+    &lt;/style&gt;</code></div>
+            <p>Resultado:</p>
+            <p style="color: green; font-size: 18px;">Este é um texto com estilo interno.</p>
         </article>
         
         <article id="external-style">
             <h2>Estilo CSS3 Externo</h2>
             <p>O estilo CSS3 externo é definido em um arquivo separado com extensão .css. Esse arquivo é então vinculado ao HTML através da tag <code>&lt;link&gt;</code> no cabeçalho da página.</p>
-            <p>Trabalhar com CSS externo é vantajoso porque permite que você aplique o mesmo estilo a várias páginas do site. Se precisar alterar a formatação, basta modificar o arquivo CSS, e todas as páginas vinculadas a ele serão atualizadas automaticamente.</p>
+            <p>Exemplo de uso de estilo externo:</p>
+            <div class="pre"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></div>
+            <p>Arquivo <code>style.css</code>:</p>
+            <div class="pre"><code>p {
+        color: red;
+        font-size: 16px;
+    }</code></div>
+            <p>Resultado:</p>
+            <p style="color: red; font-size: 16px;">Este é um texto com estilo externo.</p>
             <section id="creating-css-link">
-                <h3>Criando o Link CSS</h3>
-                <p>No cabeçalho da página, adicione a seguinte linha de código:</p>
-                <pre>
-                    &lt;link rel="stylesheet" href="<abbr title="Endereço onde está o arquivo css da página.('ctrl'+espaço)">style.css</abbr>"&gt;
-                </pre>
-                <p>Para criar um arquivo CSS no VS Code, navegue até a pasta de destino, clique com o botão direito e selecione "Novo Arquivo". Nomeie o arquivo com a extensão .css.</p>
-                <p>Abra o arquivo CSS e adicione a seguinte linha no início:</p>
-                <code>@charset "UTF-8";</code>
-                <aside>
-                    <p>Por que usar @charset "UTF-8"?</p>
-                    <p>A declaração <code>@charset "UTF-8";</code> é usada para definir a codificação de caracteres do arquivo CSS. Isso é importante porque garante que todos os caracteres, incluindo acentos e caracteres especiais, sejam exibidos corretamente em diferentes navegadores e sistemas operacionais.</p>
-                    <p>Sem essa declaração, pode haver problemas de exibição, especialmente em idiomas que utilizam caracteres acentuados ou símbolos específicos. Definir a codificação como UTF-8 é uma boa prática para garantir a compatibilidade e a correta renderização do conteúdo.</p>
-                </aside>
-                <p>Em seguida, defina os estilos desejados. Exemplo:</p>
-                <div class="pre"><pre>
-    body {
+            <h3>Criando o Link CSS</h3>
+            <p>No cabeçalho da página, adicione a seguinte linha de código:</p>
+            <div class="pre"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></div>
+            <p>Para criar um arquivo CSS no VS Code, navegue até a pasta de destino, clique com o botão direito e selecione "Novo Arquivo". Nomeie o arquivo com a extensão .css.</p>
+            <p>Abra o arquivo CSS e adicione a seguinte linha no início:</p>
+            <div class="pre"><code>@charset "UTF-8";</code></div>
+            <aside>
+                <h4>Por que usar <code>@charset "UTF-8"</code>?</h4>
+                <p>A declaração <code>@charset "UTF-8";</code> é usada para definir a codificação de caracteres do arquivo CSS. Isso é importante porque garante que todos os caracteres, incluindo acentos e caracteres especiais, sejam exibidos corretamente em diferentes navegadores e sistemas operacionais.</p>
+                <p>Sem essa declaração, pode haver problemas de exibição, especialmente em idiomas que utilizam caracteres acentuados ou símbolos específicos. Definir a codificação como UTF-8 é uma boa prática para garantir a compatibilidade e a correta renderização do conteúdo.</p>
+            </aside>
+            <p>Em seguida, defina os estilos desejados. Exemplo:</p>
+            <div class="pre"><pre><code>
+                    
+                body {
         background-color: rgba(0, 255, 135, 0.03);
         font-size: large;
         margin: 5% 5% 10% 5%;
@@ -73,26 +109,21 @@
     h2 {
         background-color: rgba(0, 235, 255, 0.1);
         font-size: 20px;
-    }
-                </pre></div>
+    }</code></pre></div>
             </section>
         </article>
         
         <article id="style-hierarchy">
             <h2>Hierarquia de Estilos CSS3</h2>
-            <p>Existem três formas de aplicar estilos ao site: inline, interno e externo. É possível usar os três simultaneamente, e por isso existe uma hierarquia entre eles. O HTML prioriza do mais específico para o mais generalizado.</p>
+            <p>Como vimos acima, existem três formas de aplicar estilos na página: inline, interno e externo. É possível usar os três simultaneamente, e por isso existe uma hierarquia entre eles. O HTML prioriza do mais específico para o mais generalizado.</p>
             <p>Ordem de prioridade:</p>
             <ol>
-                <li>Estilo Inline</li>
-                <li>Estilo CSS3 Interno</li>
-                <li>Estilo CSS3 Externo</li>
+            <li>Estilo Inline</li>
+            <li>Estilo CSS3 Interno</li>
+            <li>Estilo CSS3 Externo</li>
             </ol>
-           
-               <p>OBSERVAÇÃO: Se houver estilos concorrentes na mesma folha de estilo e de mesma hierarquia, 
-                o CSS aplicará o que for definido por último.</p> 
-           
+            <p><mark>OBSERVAÇÃO: Se houver estilos concorrentes na mesma folha de estilo e de mesma hierarquia, o CSS aplicará o que for definido por último.</mark></p>
         </article>
-    </main>
     <footer>
         
         <h2>Materiais Utilizados</h2>

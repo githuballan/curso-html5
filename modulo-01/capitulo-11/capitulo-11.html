@@ -19,22 +19,67 @@
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
 
 <header>
-    <h1>Guia Completo de Imagens, Áudios e Vídeos no HTML5</h1>
+    <h1>Imagens, Áudios e Vídeos no HTML5</h1>
 </header>
+<div class="nav-hamburguinho">
+    <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </button>
+    <nav>
+        <ul id="menu-tipo">
+            <li><a href="capitulo-11.html">Voltar ao topo</a></li>
+            <li><a onclick="clicante()" href="#imagens-flexiveis">Imagens Flexíveis</a>
+            <ul>
+                <li><a onclick="clicante()" href="#introducao-imagens-flexiveis">Introdução</a></li>
+                <li><a onclick="clicante()" href="#tag-picture">Tag picture</a></li>
+                <li><a onclick="clicante()" href="#tag-source-media-type">Tag source media type</a></li>
+            </ul>
+            </li>
+            <li><a onclick="clicante()" href="#figcaption">Tag Figure e figcaption</a>
+            <ul>
+                <li><a onclick="clicante()" href="#exemplo-figure-figcaption">Exemplo Figure e figcaption</a></li>
+            </ul>
+            </li>
+            <li><a onclick="clicante()" href="#imagens-responsivas">Imagens Responsivas com CSS</a>
+            <ul>
+                <li><a onclick="clicante()" href="#estilos-imagens-responsivas">Estilos Imagens Responsivas</a></li>
+                <li><a onclick="clicante()" href="#centralizacao-imagens">Centralização de Imagens</a></li>
+            </ul>
+            </li>
+            <li><a onclick="clicante()" href="#audio">Áudios no HTML5</a>
+            <ul>
+                <li><a onclick="clicante()" href="#direitos-autorais-audios">Direitos Autorais de Áudios</a></li>
+                <li><a onclick="clicante()" href="#adicionando-audios-html">Adicionando Áudios no HTML</a></li>
+                <li><a onclick="clicante()" href="#multiplos-formatos-audio">Usando Múltiplos Formatos de Áudio</a></li>
+            </ul>
+            </li>
+            <li><a onclick="clicante()" href="#videos">Vídeos</a>
+            <ul>
+                <li><a onclick="clicante()" href="#direitos-autorais-videos">Direitos Autorais de Vídeos</a></li>
+                <li><a onclick="clicante()" href="#formatos-videos">Principais Formatos de Vídeos para HTML</a></li>
+                <li><a onclick="clicante()" href="#hospedagem-videos">Hospedagem de Vídeos no Próprio Site</a></li>
+                <li><a onclick="clicante()" href="#tag-video">Tag Video</a></li>
+                <li><a onclick="clicante()" href="#atributos-video">Principais Atributos da Tag Video</a></li>
+            </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
 <main>
 
     <article id="imagens-flexiveis"><!--Imagens Flexíveis-->
         <h2>Imagens Flexíveis</h2>
-        <section> <!--Introdução-->
+        <section id="introducao-imagens-flexiveis"> <!--Introdução-->
             <p>No <a href="../Capítulo 06/Capítulo 06 .html" target="_blank">Capítulo 06</a>, aprendemos a adicionar imagens no HTML. No entanto, notamos que as imagens não se adaptam ao tamanho da tela como os textos.</p>
             <p>Para resolver isso, podemos usar a tag <code>&lt;picture&gt;</code>. Com essa tag, é possível adicionar várias imagens com tamanhos diferentes, que se alternam conforme o tamanho da tela do usuário.</p>
-            
         </section>
-        <section> <!--Tag picture-->           
+        <section id="tag-picture"> <!--Tag picture-->           
             <h3>Tag <code>&lt;picture&gt;</code></h3>
             <p>Note que a imagem acima muda conforme a largura da tela. Isso ocorre porque a tag <code>&lt;picture&gt;</code> testa todas as tags <code>&lt;source&gt;</code> de cima para baixo. Se alguma condição for verdadeira, ela exibe a imagem correspondente. Caso contrário, exibe a última imagem fora da tag <code>&lt;source&gt;</code>. Por isso, é importante sempre deixar a última imagem fora da tag <code>&lt;source&gt;</code> para garantir que uma imagem seja carregada.</p>
         </section>
-        <section><!--Tag source media type-->
+        <section id="tag-source-media-type"><!--Tag source media type-->
             <h3>Tag <code>&lt;source&gt;</code> com Atributos <code>media</code> e <code>type</code></h3>
             <p>A tag <code>&lt;source&gt;</code> funciona como uma condição "se" do Excel e se divide em três partes:</p>
             <ul>
@@ -57,60 +102,65 @@
 
     <article id="figcaption"><!--Tag Figure e figcaption-->
         <h2>Tag <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code></h2>
-        <p>A tag <code>&lt;figure&gt;</code> é usada para agrupar elementos de mídia, como imagens, com suas respectivas legendas, utilizando a tag <code>&lt;figcaption&gt;</code>.</p>
-        <p>Exemplo:</p>
-        <figure>
-            <img src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de exemplo">
-            <figcaption>Legenda da imagem com elefante</figcaption>
-        </figure>
-        <p>O código HTML correspondente é:</p>
-       
-            <div class="pre"><pre>
+        <section id="exemplo-figure-figcaption">
+            <p>A tag <code>&lt;figure&gt;</code> é usada para agrupar elementos de mídia, como imagens, com suas respectivas legendas, utilizando a tag <code>&lt;figcaption&gt;</code>.</p>
+            <p>Exemplo:</p>
+            <figure>
+                <img src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de exemplo">
+                <figcaption>Legenda da imagem com elefante</figcaption>
+            </figure>
+            <p>O código HTML correspondente é:</p>
+           
+                <div class="pre"><pre>
 &lt;figure&gt;
     &lt;img src="imagens/foto-p.png" alt="Imagem de exemplo"&gt;
     &lt;figcaption&gt;Legenda da imagem&lt;/figcaption&gt;
 &lt;/figure&gt;
-            </pre></div>
-        </div>
+                </pre></div>
+            </div>
+        </section>
     </article><!--Tag Figure e figcaption-->
 
     <article id="imagens-responsivas">
         <h2>Imagens Responsivas com CSS</h2>
-        <p>Para tornar as imagens responsivas, a melhor prática é definir os seguintes estilos:</p>
-        <ul>
-            <li><strong>max-width: 100%;</strong> Este estilo pode ser definido na folha de estilo geral do site.</li>
-            <li><strong>max-height:</strong> Deve ser definido individualmente para cada imagem, conforme necessário.</li>
-        </ul>
-        <p>Esses estilos garantem que a imagem cresça até a altura máxima sem distorcer e reduza de acordo com o tamanho da tela.</p>
-        <p>Se definir uma altura fixa, a imagem pode ficar esticada em telas menores. Portanto, use <code>max-width: 100%;</code> na folha de estilo geral e defina <code>max-height</code> individualmente para cada imagem.</p>
-        <img src="" alt="">
-        <picture>
-            <source media="(max-width: 300px)" srcset="../../imagens/elephant-1822636_960_720.jpg" type="image/jpeg">
-            <source media="(max-width: 700px)" srcset="../../imagens/elephant-1822636_960_720.jpg" type="image/jpeg">
-            <img src="../../imagens/elephant-1822636_960_720.jpg" alt="Foto Teste">
-        </picture>
-        
-        <h3>Centralização de Imagens</h3>
-        <p>Para centralizar imagens usando CSS, aplique os seguintes estilos:</p>
-        <div class="pre"><pre>
-            <code>
-                img {
-                    display: block;
-                    margin: auto;
-                }
-            </code>
-        </pre></div>
-        <p>O estilo <code>display: block;</code> faz com que a imagem seja tratada como um bloco, e <code>margin: auto;</code> centraliza a imagem horizontalmente dentro de seu contêiner.</p>
+        <section id="estilos-imagens-responsivas">
+            <p>Para tornar as imagens responsivas, a melhor prática é definir os seguintes estilos:</p>
+            <ul>
+                <li><strong>max-width: 100%;</strong> Este estilo pode ser definido na folha de estilo geral do site.</li>
+                <li><strong>max-height:</strong> Deve ser definido individualmente para cada imagem, conforme necessário.</li>
+            </ul>
+            <p>Esses estilos garantem que a imagem cresça até a altura máxima sem distorcer e reduza de acordo com o tamanho da tela.</p>
+            <p>Se definir uma altura fixa, a imagem pode ficar esticada em telas menores. Portanto, use <code>max-width: 100%;</code> na folha de estilo geral e defina <code>max-height</code> individualmente para cada imagem.</p>
+            <img src="" alt="">
+            <picture>
+                <source media="(max-width: 300px)" srcset="../../imagens/elephant-1822636_960_720.jpg" type="image/jpeg">
+                <source media="(max-width: 700px)" srcset="../../imagens/elephant-1822636_960_720.jpg" type="image/jpeg">
+                <img src="../../imagens/elephant-1822636_960_720.jpg" alt="Foto Teste">
+            </picture>
+        </section>
+        <section id="centralizacao-imagens">
+            <h3>Centralização de Imagens</h3>
+            <p>Para centralizar imagens usando CSS, aplique os seguintes estilos:</p>
+            <div class="pre"><pre>
+                <code>
+                    img {
+                        display: block;
+                        margin: auto;
+                    }
+                </code>
+            </pre></div>
+            <p>O estilo <code>display: block;</code> faz com que a imagem seja tratada como um bloco, e <code>margin: auto;</code> centraliza a imagem horizontalmente dentro de seu contêiner.</p>
+        </section>
     </article><!--imagens-responsivas-->
 
     <article id="audio">
         <h2>Áudios no HTML5</h2>
-        <section>
+        <section id="direitos-autorais-audios">
             <h3>Direitos Autorais de Áudios</h3>
             <p>Assim como vimos no capítulo 06 sobre direitos autorais de imagens, os áudios também possuem direitos autorais. Uma forma de baixar áudios ou músicas livres de direitos autorais é usando a ferramenta do YouTube. Para acessá-la, vá ao YouTube &rarr; Conta &rarr; YouTube Studio &rarr; Biblioteca de áudios.</p>
             <p>Nessa biblioteca, você pode fazer downloads de músicas gratuitamente. No entanto, algumas músicas exigem atribuição, ou seja, é necessário dar crédito ao autor. Para evitar isso, filtre os resultados clicando em Atribuições &rarr; Atribuição não necessária.</p>
         </section>
-        <section>
+        <section id="adicionando-audios-html">
             <h3>Adicionando Áudios no HTML</h3>
             <p>No HTML5, são aceitos três formatos de áudios:</p>
             <ul>
@@ -137,7 +187,7 @@
 &lt;audio src="caminho/para/audio.mp3" controls preload="metadata"&gt;&lt;/audio&gt;
             </pre></div>
         </section>
-        <section>
+        <section id="multiplos-formatos-audio">
             <h3>Usando Múltiplos Formatos de Áudio</h3>
             <p>A tag <code>&lt;audio&gt;</code> pode funcionar de forma semelhante à tag <code>&lt;picture&gt;</code>, permitindo que você forneça múltiplos formatos de áudio para evitar incompatibilidades. Se o navegador não suportar o primeiro formato, ele tentará carregar o próximo, e assim por diante. Se nenhum formato for suportado, você pode exibir uma mensagem informando que o áudio não pôde ser carregado e fornecer um link para download.</p>
             <p>Exemplo de uso com múltiplos formatos:</p>
@@ -162,12 +212,12 @@
     <article id="videos">
         <h2>Vídeos</h2>
         
-        <section><!--Direitos Autorais de Vídeos-->
+        <section id="direitos-autorais-videos"><!--Direitos Autorais de Vídeos-->
             <h3>Direitos Autorais de Vídeos</h3>
             <p>Assim como imagens e áudios, vídeos também possuem direitos autorais. Um excelente site para encontrar vídeos livres de direitos autorais é o <a href="https://www.pexels.com/pt-br/videos/" target="_blank">Pexels</a>, o mesmo que utilizamos para imagens.</p>
-       
+        </section>
 
-        <section><!--Formatos de Vídeos para HTML-->
+        <section id="formatos-videos"><!--Formatos de Vídeos para HTML-->
             <h3>Principais Formatos de Vídeos para HTML</h3>
             <p>Os principais formatos de vídeo aceitos pelos navegadores são:</p>
             <ul>
@@ -179,18 +229,18 @@
             <p>Durante o curso, utilizaremos o editor de vídeos gratuito HandBrake, mas também é possível fazer conversões em sites gratuitos.</p>
         </section>
 
-        <section><!--Hospedagem de Vídeos no Próprio Site-->
+        <section id="hospedagem-videos"><!--Hospedagem de Vídeos no Próprio Site-->
             <h3>Hospedagem de Vídeos no Próprio Site</h3>
             <p>Os servidores de hospedagem de sites cobram por tráfego de dados. Portanto, hospedar um vídeo pesado no próprio site pode encarecer significativamente o custo do site.</p>
             <p>Para adicionar um vídeo no próprio site, o processo é bem similar à adição de áudios.</p>
         </section>
 
-        <section><!--Tag Video-->
+        <section id="tag-video"><!--Tag Video-->
             <h3>Tag <code>&lt;video&gt;</code></h3>
             <p>A tag <code>&lt;video&gt;</code> permite usar a tag <code>&lt;source&gt;</code> dentro dela, assim como na tag <code>&lt;audio&gt;</code>, para testar todos os formatos do mais leve para o mais pesado.</p>
             <p>Também podemos usar o atributo <code>media</code> na tag <code>&lt;source&gt;</code> para definir a resolução do vídeo de acordo com o tamanho da tela, organizando dentro dos formatos. No entanto, não é possível definir um <code>poster</code> para cada resolução. Além disso, se o usuário estiver com o smartphone na vertical e o deitar durante a navegação, a resolução não aumentará, pois será necessário atualizar a página com o smartphone deitado.</p>
         </section>
-        <section><!--Atributos da tag video-->
+        <section id="atributos-video"><!--Atributos da tag video-->
             
             <h3>Principais Atributos da Tag <code>&lt;video&gt;</code></h3>
             <ul>

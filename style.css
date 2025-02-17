@@ -172,10 +172,11 @@ nav {
     max-height: 90vh;
     overflow-y: auto;
     border: solid 1px #000;
-    border-radius: 10px;
+    border-radius: 20px;
     width: auto;
     background-color: #fbf8f3;
     padding: 10px;
+    outline: solid 2px #0000002e;
    
    
 }
@@ -188,6 +189,7 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    width: 900px;
     max-width: 95%;
     padding: 20px 10px;
     text-align: justify;

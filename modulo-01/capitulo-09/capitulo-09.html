@@ -5,60 +5,94 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
-
     <meta name="keywords" content="listas, HTML5, listas ordenadas, listas não ordenadas, listas de definição, listas mistas, listas HTML, personalização de listas, listas com CSS, listas estilizadas, listas com marcadores, listas com números, listas com letras, listas com algarismos romanos, listas hierárquicas, listas aninhadas, listas de tarefas, listas de compras, listas de termos, listas de definições, listas avançadas">
     
     <meta name="description" content="Aprenda sobre listas em HTML5, incluindo listas ordenadas, não ordenadas, listas de definição e como personalizá-las com CSS.">
 
-    <title>Listas em HTML5: Ordenadas, Não Ordenadas e Definições</title>
+    <script src="../../script.js"></script>
 
     <link rel="stylesheet" href="../../style.css">
-    
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <title>Listas em HTML5: Ordenadas, Não Ordenadas e Definições</title>
+
+   
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
        
-        <h1>Guia Completo de Listas em HTML5: Ordenadas, Não Ordenadas e Definições</h1>
+        <h1>Listas em HTML5: Ordenadas, Não Ordenadas e Definições</h1>
         
     </header>
+    <div class="nav-hamburguinho">
+       
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <nav>
+            <ul id="menu-tipo" >
+                <li><a href="#topo">Voltar ao topo</a></li>
+                <li><a onclick="clicante()" href="#nao-ordenada">Listas não ordenadas</a></li>
+                <ul>
+                    <li><a onclick="clicante()" href="#estilo-nao-ordenada">Adicionando estilo "Type"</a></li>
+                </ul>
+                <li><a onclick="clicante()" href="#ordenadas">Listas ordenadas</a></li>
+                <ul>
+                    <li><a onclick="clicante()" href="#estilo-ordenada">Adicionando estilo "Type"</a></li>
+                    <li><a onclick="clicante()" href="#start">Iniciando em outra ordem "Start"</a></li>
+                    <li><a onclick="clicante()" href="#reversed">Iniciando em ordem inversa</a></li>
+                </ul>
+                <li><a onclick="clicante()" href="#mesclando">Mesclando listas</a></li>
+                <li><a onclick="clicante()" href="#definicao">Lista de definições</a></li>
+            </ul>
+        </nav>
+    </div>   
     <main>
         <section>
-            
             <p>Existem dois tipos de listas: as ordenadas (como uma lista de tarefas para fazer em sequência) e as não ordenadas (como uma lista de compras de supermercado).</p>
         </section>
+
         <article id="nao-ordenada">
-            <h2>Listas não ordenadas</h2>
-            <p>Para criar uma lista sem ordenação específica, utilizamos a tag &lt;ul&gt; (ul = unordered list) seguida da tag &lt;li&gt; (li = list item).</p>
-            <p>Exemplo de código:</p>
-            <div class="pre"><pre>
-    &lt;ul&gt;
-        &lt;li&gt;Café&lt;/li&gt;
-        &lt;li&gt;Açúcar&lt;/li&gt;
-        &lt;li&gt;Cebola&lt;/li&gt;
-        &lt;li&gt;Batata&lt;/li&gt;
-        &lt;li&gt;Etc..&lt;/li&gt;
-    &lt;/ul&gt;
-            </pre></div class="pre">
-            <p>Exemplo visual:</p>
-            <ul>
+
+            <section id="int-nao-ord">
+                
+                <h2>Listas não ordenadas</h2>
+                <p>Para criar uma lista sem ordenação específica, utilizamos a tag &lt;ul&gt; (ul = unordered list) seguida da tag &lt;li&gt; (li = list item).</p>
+                <p>Exemplo de código:</p>
+                <div class="pre"><pre>
+                        &lt;ul&gt;
+                        &lt;li&gt;Café&lt;/li&gt;
+                        &lt;li&gt;Açúcar&lt;/li&gt;
+                        &lt;li&gt;Cebola&lt;/li&gt;
+                        &lt;li&gt;Batata&lt;/li&gt;
+                        &lt;li&gt;Etc..&lt;/li&gt;
+                        &lt;/ul&gt;
+                </pre></div>
+                <p>Exemplo visual:</p>
+                <ul>
                 <li>Café</li>
                 <li>Açúcar</li>
                 <li>Cebola</li>
                 <li>Batata</li>
                 <li>Etc..</li>
-            </ul>
-            <p class="mark">Obs.: Não é necessário fechar a tag &lt;li&gt; com a tag &lt;/li&gt;, ela também pode ser escrita da seguinte forma:</p>
-            <div class="pre"><pre>
-    &lt;ul&gt;
-        &lt;li&gt;Café
-        &lt;li&gt;Açúcar
-        &lt;li&gt;Cebola
-        &lt;li&gt;Batata
-        &lt;li&gt;Etc..
-    &lt;/ul&gt;
-            </pre></div class="pre">
+                </ul>
+                <p class="mark">Obs.: Não é necessário fechar a tag &lt;li&gt; com a tag &lt;/li&gt;, ela também pode ser escrita da seguinte forma:</p>
+                <div class="pre"><pre>
+                        &lt;ul&gt;
+                        &lt;li&gt;Café
+                        &lt;li&gt;Açúcar
+                        &lt;li&gt;Cebola
+                        &lt;li&gt;Batata
+                        &lt;li&gt;Etc..
+                        &lt;/ul&gt;
+                </pre></div>
+            </section><!-- /#int-nao-ord -->
+
+            <section id="estilo-nao-ordenada">
             <h3>Adicionando estilo "Type"</h3>
             <p>Podemos personalizar a lista trocando o marcador padrão por outros formatos:</p>
             <ul>
@@ -74,28 +108,38 @@
                 <li>Batata</li>
                 <li>Etc..</li>
             </ul>
-        </article>
+            </section><!--estilo-nao-ordenada -->
+
+        </article><!--nao-ordenada -->
+
         <article id="ordenadas">
-            <h2>Listas ordenadas</h2>
-            <p>Para criar uma lista ordenada em HTML, utiliza-se a tag &lt;ol&gt; (ol = ordered list) seguida da tag &lt;li&gt; (li = list item).</p>
-            <p>Exemplo de código:</p>
-            <div class="pre"><pre>
-    &lt;ol&gt;
-        &lt;li&gt;Acordar&lt;/li&gt;
-        &lt;li&gt;Preparar o Café&lt;/li&gt;
-        &lt;li&gt;Tomar Banho&lt;/li&gt;
-        &lt;li&gt;Tomar o café&lt;/li&gt;
-        &lt;li&gt;Etc..&lt;/li&gt;
-    &lt;/ol&gt;
-            </pre></div class="pre">
-            <p>Exemplo visual:</p>
-            <ol>
-                <li>Acordar</li>
-                <li>Preparar o Café</li>
-                <li>Tomar Banho</li>
-                <li>Tomar o café</li>
-                <li>Etc..</li>
-            </ol>
+                
+            <section id="int-ord">
+                
+                    <h2>Listas ordenadas</h2>
+                    <p>Para criar uma lista ordenada em HTML, utiliza-se a tag &lt;ol&gt; (ol = ordered list) seguida da tag &lt;li&gt; (li = list item).</p>
+                    <p>Exemplo de código:</p>
+                    <div class="pre">
+                        <pre>
+                &lt;ol&gt;
+                &lt;li&gt;Acordar&lt;/li&gt;
+                &lt;li&gt;Preparar o Café&lt;/li&gt;
+                &lt;li&gt;Tomar Banho&lt;/li&gt;
+                &lt;li&gt;Tomar o café&lt;/li&gt;
+                &lt;li&gt;Etc..&lt;/li&gt;
+                &lt;/ol&gt;
+                    </pre></div>
+                    <p>Exemplo visual:</p>
+                    <ol>
+                    <li>Acordar</li>
+                    <li>Preparar o Café</li>
+                    <li>Tomar Banho</li>
+                    <li>Tomar o café</li>
+                    <li>Etc..</li>
+                    </ol>
+            </section><!-- /#int-ord -->
+
+            <section id="estilo-ordenada">
             <h3>Adicionando estilo "Type"</h3>
             <p>Podemos personalizar a lista trocando os numerais por letras ou algarismos romanos:</p>
             <ul>
@@ -112,17 +156,20 @@
                 <li>Tomar o café</li>
                 <li>Etc..</li>
             </ol>
+            </section> <!-- /estilo-ordenada -->
+
+            <section id="start">
             <h3>Iniciando em outra ordem "Start"</h3>
             <p>Para começar a lista a partir de outra ordem, utilizamos o atributo "start":</p>
             <div class="pre"><pre>
-    &lt;ol type="I" start="3"&gt;
+        &lt;ol type="I" start="3"&gt;
         &lt;li&gt;Acordar&lt;/li&gt;
         &lt;li&gt;Preparar o Café&lt;/li&gt;
         &lt;li&gt;Tomar Banho&lt;/li&gt;
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
-    &lt;/ol&gt;
-            </pre></div class="pre">
+        &lt;/ol&gt;
+            </pre></div>
             <p>Exemplo visual:</p>
             <ol type="I" start="3">
                 <li>Acordar</li>
@@ -131,99 +178,115 @@
                 <li>Tomar o café</li>
                 <li>Etc..</li>
             </ol>
+            </section><!-- /start -->
+
+            <section id="reversed">
             <h3>Iniciando em ordem inversa</h3>
+
             <p>Para criar uma lista em ordem decrescente, basta adicionar o atributo "reversed" na tag &lt;ol&gt;:</p>
-            <div class="pre"><pre>
-    &lt;ol reversed&gt;
+
+            <div class="pre">
+                <pre>
+        &lt;ol reversed&gt;
         &lt;li&gt;Acordar&lt;/li&gt;
         &lt;li&gt;Preparar o Café&lt;/li&gt;
         &lt;li&gt;Tomar Banho&lt;/li&gt;
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
-    &lt;/ol&gt;
-            </pre></div class="pre">
+        &lt;/ol&gt;
+            </pre>
+            </div>
+            
             <p>Exemplo visual:</p>
-            <ol reversed></ol>
+            <ol reversed>
                 <li>Acordar</li>
                 <li>Preparar o Café</li>
                 <li>Tomar Banho</li>
                 <li>Tomar o café</li>
                 <li>Etc..</li>
             </ol>
-        </article>
+
+            </section> <!-- /reversed -->
+           
+        </article><!-- /ordenadas -->
+
         <article id="mesclando">
             <h2>Mesclando listas</h2>
             <p>É possível mesclar listas, criando uma lista dentro de outra. Exemplo:</p>
             <ol>
-                <li>Módulo</li>
-                <ol start="5">
-                    <li>Capítulo</li>
+            <li>Módulo</li>
+            <ol start="5">
+                <li>Capítulo
                     <ul>
                         <li>Caracteres</li>
                         <li>Parágrafos</li>
                         <li>Quebras de linha</li>
                     </ul>
-                    <li>Capítulo</li>
+                </li>
+                <li>Capítulo
                     <ul>
                         <li>Imagens</li>
                         <li>Favicon</li>
                     </ul>
-                    <li>Capítulo</li>
+                </li>
+                <li>Capítulo
                     <ul>
                         <li>Semântica</li>
                         <li>Hierarquia de Títulos</li>
                     </ul>
-                    <li>Capítulo</li>
+                </li>
+                <li>Capítulo
                     <ul>
                         <li>Formatação de textos</li>
                     </ul>
-                </ol>
+                </li>
             </ol>
             <p>Exemplo de código:</p>
             <div class="pre"><pre>
-    &lt;ol&gt;
+        &lt;ol&gt;
         &lt;li&gt;Módulo&lt;/li&gt;
         &lt;ol start="5"&gt;
             &lt;li&gt;Capítulo&lt;/li&gt;
             &lt;ul&gt;
-                &lt;li&gt;Caracteres&lt;/li&gt;
-                &lt;li&gt;Parágrafos&lt;/li&gt;
-                &lt;li&gt;Quebras de linha&lt;/li&gt;
+            &lt;li&gt;Caracteres&lt;/li&gt;
+            &lt;li&gt;Parágrafos&lt;/li&gt;
+            &lt;li&gt;Quebras de linha&lt;/li&gt;
             &lt;/ul&gt;
             &lt;li&gt;Capítulo&lt;/li&gt;
             &lt;ul&gt;
-                &lt;li&gt;Imagens&lt;/li&gt;
-                &lt;li&gt;Favicon&lt;/li&gt;
+            &lt;li&gt;Imagens&lt;/li&gt;
+            &lt;li&gt;Favicon&lt;/li&gt;
             &lt;/ul&gt;
         &lt;/ol&gt;
-    &lt;/ol&gt;
-            </pre></div class="pre">
-        </article>
+        &lt;/ol&gt;
+            </pre></div>
+        </article><!-- /mesclando -->
+
         <article id="definicao">
             <h2>Lista de definições</h2>
             <p>A lista de definição funciona como um dicionário, servindo para descrever o significado de termos. Utilizamos as seguintes tags:</p>
             <ul>
-                <li>&lt;dl&gt; "Definition List" para criar a lista</li>
-                <li>&lt;dt&gt; "Definition Term" para escrever o termo</li>
-                <li>&lt;dd&gt; "Definition Description" para a descrição</li>
+            <li>&lt;dl&gt; "Definition List" para criar a lista</li>
+            <li>&lt;dt&gt; "Definition Term" para escrever o termo</li>
+            <li>&lt;dd&gt; "Definition Description" para a descrição</li>
             </ul>
             <p>Exemplo de código:</p>
             <div class="pre"><pre>
-    &lt;dl&gt;
+        &lt;dl&gt;
         &lt;dt&gt;Termo&lt;/dt&gt;
         &lt;dd&gt;Descrição / significado do termo&lt;/dd&gt;
         &lt;dt&gt;Termo&lt;/dt&gt;
         &lt;dd&gt;Descrição / significado do termo&lt;/dd&gt;
-    &lt;/dl&gt;
-            </pre></div class="pre">
+        &lt;/dl&gt;
+            </pre></div>
             <p>Exemplo visual:</p>
             <dl>
-                <dt>Termo</dt>
-                <dd>Descrição / significado do termo</dd>
-                <dt>Termo</dt>
-                <dd>Descrição / significado do termo</dd>
+            <dt>Termo</dt>
+            <dd>Descrição / significado do termo</dd>
+            <dt>Termo</dt>
+            <dd>Descrição / significado do termo</dd>
             </dl>
-        </article>
+        </article><!-- /definicao -->
        
     </main>
      <!-- <article>
@@ -240,7 +303,7 @@
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
     &lt;/ol&gt;
-                </pre></div class="pre">
+                </pre></div>
                 <p>Exemplo visual:</p>
                 <ol style="columns: 2;" type="I">
                     <li>Acordar</li>
@@ -262,7 +325,7 @@
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
     &lt;/ol&gt;
-                </pre></div class="pre">
+                </pre></div>
                 <p>Exemplo visual:</p>
                 <ol style="list-style-type: '\2714'">
                     <li>Acordar</li>
@@ -282,7 +345,7 @@
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
     &lt;/ol&gt;
-                </pre></div class="pre">
+                </pre></div>
                 <p>Exemplo visual:</p>
                 <ol style="list-style-type: none">
                     <li>Acordar</li>
@@ -304,7 +367,7 @@
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
     &lt;/ol&gt;
-                </pre></div class="pre">
+                </pre></div>
                 <p>Exemplo visual:</p>
                 <ol style="list-style-position: inside">
                     <li>Acordar</li>
@@ -326,7 +389,7 @@
         &lt;li&gt;Tomar o café&lt;/li&gt;
         &lt;li&gt;Etc..&lt;/li&gt;
     &lt;/ol&gt;
-                </pre></div class="pre">
+                </pre></div>
                 <p>Exemplo visual:</p>
                 <ol style="list-style-type: '\2714\0020'; list-style-position: inside">
                     <li>Acordar</li>
@@ -341,15 +404,14 @@
 <footer>
     
         
-    <h1>Materiais utilizados</h1>
+    <h2>Materiais utilizados</h2>
         <p><strong><a href="../../material-de-apoio/09 - Listas HTML.pdf" target="_blank">09 - Listas HTML.pdf</a></strong></p>
         <h2>Vídeos</h2>
         <p><a href="https://youtu.be/JlE0pzESf5g?si=UiruQoeM6362h60D" target="_blank">Listas em HTML5</a></p>
     
-        <p><a href="https://youtu.be/Ez1kgIyoGuE?si=c0PQJSbDSuJ2eG6E" target="_blank">Listas Mistas e de definição</a></p>
-    
-    
-    </body>
-</footer>
 
+    
+  
+</footer>
+  </body>
 </html>

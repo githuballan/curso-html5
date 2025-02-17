@@ -14,28 +14,53 @@
     <meta name="description" content="Guia completo sobre imagens e favicon no HTML5. Aprenda a usar diferentes formatos de imagem, cuidados com direitos autorais, otimização de tamanho e como adicionar favicon ao seu site.">
     
     <meta name="keywords" content="HTML5, imagens, favicon, formatos de imagem, JPG, PNG, GIF, direitos autorais, otimização de imagens, tag img, tag figure, figcaption, favicon no HTML5, tutorial HTML5, curso HTML5">
-
+<script src="../../script.js"></script>
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     
     <header>
-        <h1>Guia Completo sobre Imagens e Favicon no HTML5: Formatos, Direitos Autorais e Otimização</h1>
+        <h1>Imagens e Favicon no HTML5: Formatos, Direitos Autorais e Otimização</h1>
     
     </header>
+    <div class="nav-hamburguinho">
+       
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <nav>
+            <ul id="menu-tipo" >
+                <li><a href="capitulo-06.html">Voltar ao topo</a></li>
+                <li><a onclick="clicante()" href="#imagem">Extensões de imagens</a></li>
+                <li><a onclick="clicante()" href="#direitos-autorais">Direitos Autorais</a></li>
+                <li><a onclick="clicante()" href="#tamanho-imagem">Tamanho das Imagens</a></li>
+                <li><a onclick="clicante()" href="#tag-para-imagem">Tag para Imagens</a>
+                    <ul>
+                        <li><a onclick="clicante()" href="#tag-img">Tag img</a></li>
+                        <li><a onclick="clicante()" href="#figure">Tag figure e figcaption</a></li>
+                        <li><a onclick="clicante()" href="#link-externo">Imagem de Link Externo</a></li>
+                    </ul>
+                </li>
+                <li><a onclick="clicante()" href="#favicon">Favicon</a></li>
+                <li><a onclick="clicante()" href="#criar-favicon">Como criar seu favicon:</a></li>
+            </ul>
+        </nav>
+    </div>    
 <main>
-    <section id="imagem">
-        <h2>Imagens</h2>
+    <article id="imagem">
+        <h2>Extensões de imagens</h2>
         <p>No HTML usamos basicamente três tipos de imagens: JPG, PNG e GIF. Cada uma tem uma característica única que a torna perfeita para diferentes finalidades:</p>
         <ul>
             <li><strong>JPG:</strong> A principal característica do formato JPG é seu tamanho reduzido, permitindo que a página carregue em alta velocidade. A velocidade de carregamento é uma das principais características que um site deve ter.</li>
             <li><strong>PNG:</strong> Esse formato tem como principal característica a capacidade de a imagem ficar transparente, permitindo efeitos que dão um aspecto mais profissional ao site.</li>
             <li><strong>GIF:</strong> Esse formato é famoso por permitir a exibição de imagens sequenciais, dando animação ao site de forma leve, sem pesar no carregamento.</li>
         </ul>
-    </section>
+    </article>
 
-    <section id="cuidados">
-        <h3>Cuidados</h3>
+    <article id="direitos-autorais">
+        <h2>Direitos Autorais</h2>
         <p>Ao trabalhar com imagens baixadas na internet, é importante nunca usar imagens com direitos autorais, pois isso pode gerar processos que podem facilmente acabar com uma carreira, além de gerar indenizações de alto valor.</p>
         <p>Existem algumas formas de buscar imagens na internet sem direitos autorais ou com permissões bem brandas:</p>
         <ol>
@@ -52,52 +77,64 @@
                 </ul>
             </li>
         </ol>
-        <p>Outro ponto de suma importância ao trabalhar com imagens é sempre reduzir o tamanho delas para o menor possível sem afetar a boa aparência, pois caso contrário, o site pode ficar extremamente pesado e gerar uma experiência de carregamento lenta. <strong>OBS.:</strong> uma página deve levar no máximo 6 segundos para carregar; se levar mais que isso, o usuário desiste.</p>
-        <p>Existem diversos programas de manipulação de imagens, e a grande maioria são pagos. Entretanto, usaremos aqui o GIMP, que tem todas as funcionalidades que precisamos e é gratuito.</p>
-        <h4>Reduzindo Tamanho de Imagens</h4>
+       
+    </article>
+    <section id="tamanho-imagem">
+        <h2>Tamanho das Imagens</h2>
+        <p>É muito importante reduzir o tamanho das imagens para garantir que o site carregue rapidamente. Imagens grandes podem deixar o site lento, o que pode afastar os usuários. <strong>OBS.:</strong> Uma página deve carregar em no máximo 6 segundos; se demorar mais, o usuário pode desistir.</p>
+        <p>Para reduzir o tamanho das imagens, você pode usar programas de edição de imagens. Muitos são pagos, mas o GIMP é uma ótima opção gratuita que oferece todas as funcionalidades necessárias.</p>
+        
         <p><strong>Resolução:</strong> As resoluções ideais são:</p>
         <ul>
-            <li>1200 para imagens que ocupam toda a extensão da tela</li>
-            <li>650 para imagens que apenas acompanham textos</li>
+            <li>1200 pixels de largura para imagens que ocupam toda a extensão da tela</li>
+            <li>650 pixels de largura para imagens que acompanham textos</li>
         </ul>
-    </section>
+    </section><!--tamanho-imagem-->
 
-    <section>
-        <h3>Tag para Imagens</h3>
-        <h4>Tag img</h4>
-        <p>Para carregar uma imagem, usa-se a tag self-close &lt;img&gt; e utilizamos os seguintes atributos:</p>
-        <ul>
-            <li><strong>src:</strong> Onde coloca o endereço da imagem. Para isso, basta apertar Ctrl+Espaço e selecionar a imagem. Caso esteja em uma pasta anterior, basta digitar ../ para voltar uma pasta (pode digitar ../ quantas vezes precisar até chegar na pasta desejada).</li>
-            <li><strong>alt:</strong> Texto alternativo, que aparecerá caso a imagem não carregue. Principalmente, será lido por software de acessibilidade em caso de pessoas com deficiência visual.</li>
-            <li><strong>width:</strong> Define a largura em que a imagem será exibida, e a altura segue a proporção.</li>
-            <li><strong>height:</strong> Define a altura em que a imagem será exibida, e a largura segue a proporção.</li>
-        </ul>
-        <p>Caso use height e width simultaneamente, você ditará as proporções.</p>
+    <article id="tag-para-imagem">
+        <h2>Tag para Imagens</h2>
 
-        <h4>Tag figure</h4>
-        <p>Essa tag trabalha junto com a tag figcaption. A tag figure engloba as tags img e figcaption.</p>
-        <p>A tag figcaption serve para descrever a imagem, mas diferente da tag alt, ela carrega junto com a imagem.</p>
-        <p>Veja um exemplo de código e suas aplicações abaixo:</p>
-        <div class="pre"><pre>
-&lt;figure>
-    &lt;img src="../../imagens/escritorio 500 jpeg.jpg" alt="treino">
-    &lt;figcaption>Imagem de 500px de largura&lt;/figcaption>
-&lt;/figure>
-        </pre></div>
-       
-    </section>
+        <section id="tag-img">
+            <h4>Tag img</h4>
+            <p>A tag <code>&lt;img&gt;</code> é usada para inserir imagens em uma página HTML. Ela é uma tag auto-fechada e possui os seguintes atributos principais:</p>
+            <ul>
+                <li><strong>src:</strong> Especifica o caminho da imagem. Para selecionar a imagem, pressione <code>Ctrl+Espaço</code>. Se a imagem estiver em uma pasta anterior, use <code>../</code> para voltar uma pasta.</li>
+                <li><strong>alt:</strong> Fornece um texto alternativo que será exibido se a imagem não carregar. Esse texto também é lido por softwares de acessibilidade para pessoas com deficiência visual.</li>
+                <li><strong>width:</strong> Define a largura da imagem. A altura será ajustada proporcionalmente.</li>
+                <li><strong>height:</strong> Define a altura da imagem. A largura será ajustada proporcionalmente.</li>
+            </ul>
+            <p>Se você usar <code>height</code> e <code>width</code> simultaneamente, poderá definir as proporções exatas da imagem.</p>
+        </section><!-- /#tag-img -->
 
-    <section>
-        <h4></h4>
-        <aside><strong>Atalho:</strong> Para carregar imagens, primeiro digite "img" e "enter", depois clique entre as primeiras aspas após "src" e aperte "Ctrl" e "Espaço". Abrirá a pasta onde o arquivo HTML que está desenvolvendo está localizado. Após isso, basta selecionar a imagem que será carregada.</aside>
-        <aside><strong>Boas Práticas:</strong> Crie uma pasta somente para imagens na mesma pasta onde está desenvolvendo seu site e renomeie as imagens de acordo com o conteúdo e aplicação delas no site. Isso ajuda a ranquear a imagem quando aparecer em mecanismos de busca.</aside>
+        <section id="figure">
+            <h4>Tag figure e figcaption</h4>
+            <p>A tag <code>&lt;figure&gt;</code> é usada para agrupar uma imagem e sua legenda, que é definida pela tag <code>&lt;figcaption&gt;</code>. A tag <code>&lt;figcaption&gt;</code> descreve a imagem e é exibida junto com ela.</p>
+            <p>Veja um exemplo de código:</p>
+            <div class="pre">
+                <pre>
+                    &lt;figure>
+                        &lt;img src="../../imagens/escritorio 500 jpeg.jpg" alt="treino">
+                        &lt;figcaption>Imagem de 500px de largura&lt;/figcaption>
+                    &lt;/figure>
+                </pre>
+            </div>
+        </section><!-- /#figure -->
 
-        <h4>Imagem de Link Externo</h4>
-        <p>Outra forma de carregar imagens para o site é usando imagens de outros sites. Para isso, basta ir na imagem desejada no tal site, clicar com o botão direito sobre a imagem e clicar em "copiar endereço da imagem". Após isso, basta colar esse endereço entre as aspas em "src=" e preencher o "alt=" normalmente.</p>
-        <p>Porém, esse processo cria uma dependência de um link externo. Logo, se o link externo mudar algo no endereço, o site terá um erro no carregamento daquela imagem.</p>
-    </section>
+        <section id="link-externo">
+            <h4>Imagem de Link Externo</h4>
+            <p>Você também pode usar imagens hospedadas em outros sites. Para isso, clique com o botão direito na imagem desejada, selecione "copiar endereço da imagem" e cole esse endereço no atributo <code>src</code> da tag <code>&lt;img&gt;</code>. Não se esqueça de preencher o atributo <code>alt</code> normalmente.</p>
+            <p>Note que essa prática cria uma dependência de um link externo. Se o endereço da imagem mudar, a imagem não será carregada corretamente no seu site.</p>
+        </section><!-- /#link-externo -->
 
-    <section>
+    </article><!-- /#tag-para-imagem -->
+
+    <section id="asides">
+        
+            <aside><strong>Atalho:</strong> Para carregar imagens, primeiro digite "img" e "enter", depois clique entre as primeiras aspas após "src" e aperte "Ctrl" e "Espaço". Abrirá a pasta onde o arquivo HTML que está desenvolvendo está localizado. Após isso, basta selecionar a imagem que será carregada.</aside>
+            <aside><strong>Boas Práticas:</strong> Crie uma pasta somente para imagens na mesma pasta onde está desenvolvendo seu site e renomeie as imagens de acordo com o conteúdo e aplicação delas no site. Isso ajuda a ranquear a imagem quando aparecer em mecanismos de busca.</aside>
+    </section><!-- /#asides -->
+
+    <section id="favicon">
         <h2>Favicon</h2>
         <p>O Favicon é o símbolo que aparece no site ao lado do título, como na imagem abaixo mostrando o Favicon do Google:</p>
         <figure>
@@ -106,21 +143,25 @@
         </figure>
         <p>Para inserir um favicon em nosso site, é fácil. Basta ir em head e inserir a tag abaixo.</p>
         <p><strong>Sintaxe:</strong><code> &lt;link rel="shortcut icon" href="<abbr title="'Ctrl' e 'Espaço'.">../../imagens/Study.ico</abbr>" type="image/x-icon"></code></p>
-        <p>Obs.: Em hreef basta apertar "Ctrl" e "Espaço" assim como em img para selecionar seu arquivo tipo .ICO</p>
-        <h4>Como criar uma imagem tipo .ICO:</h4>
-        <p>Existem alguns sites próprios para baixar imagens no formato .ICO, ou criar, ou até mesmo transformar imagens de .PNG para o formato .ICO. Alguns desses sites são:</p>
-        <ul>
-            <li><strong><a target="_blank" href="https://favicon.io/">Favicon.IO:</a></strong> Esse site é um dos melhores, pois dá a opção de criar um ICO a partir de uma palavra ou abreviação curta, ou criar um ICO a partir de um PNG ou até utilizar um emoji como favicon.</li>
-            <li><strong><a target="_blank" href="https://www.favicon.cc/">Favicon.cc</a>:</strong> Nesse site você pode criar seu próprio ICO.</li>
-            <li><strong><a target="_blank" href="https://www.iconarchive.com/">IconArchive</a>:</strong> Aqui você já encontra os ICO prontos, basta pesquisar o tema que desejar e baixar o que mais te agradar.</li>
-        </ul>
+       
+        <p class="mark">É importante lembrar que o favicon deve ser um arquivo .ICO, que é um formato de imagem específico para favicons.</p>
+
+        <section id="criar-favicon">
+            <h4>Como criar seu favicon:</h4>
+            <p>Existem alguns sites próprios para baixar imagens no formato .ICO, ou criar, ou até mesmo transformar imagens de .PNG para o formato .ICO. Alguns desses sites são:</p>
+            <ul>
+                <li><strong><a target="_blank" href="https://favicon.io/">Favicon.IO:</a></strong> Esse site é um dos melhores, pois dá a opção de criar um ICO a partir de uma palavra ou abreviação curta, ou criar um ICO a partir de um PNG ou até utilizar um emoji como favicon.</li>
+                <li><strong><a target="_blank" href="https://www.favicon.cc/">Favicon.cc</a>:</strong> Nesse site você pode criar seu próprio ICO.</li>
+                <li><strong><a target="_blank" href="https://www.iconarchive.com/">IconArchive</a>:</strong> Aqui você já encontra os ICO prontos, basta pesquisar o tema que desejar e baixar o que mais te agradar.</li>
+            </ul>
+        </section><!-- /#criar-favicon -->
     </section>
     </main>
     <footer>
         
-            <h1>Materiais utilizados</h1>
+            <h4>Materiais utilizados</h4>
         <p><strong><a href="../../../material-de-apoio/06 - Imagens e Favicon.pdf" target="_blank"> 06 - Imagens e Favicon.pdf</a></strong></p>
-        <h2>Vídeos</h2>
+        <h4>Vídeos</h4>
         <p><a href="https://youtu.be/bDULqeGEvAw?si=mLEQrfien4lYo89V" target="_blank">Direitos Autorais</a></p>
 
         <p><a href="https://youtu.be/xg-vHgLF0mI?si=CNICO5V33dxpsilP" target="_blank">Formatos suportados em HTML5</a></p>

@@ -13,17 +13,41 @@
 
     <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
 
+    <script src="../../script.js"></script>
+
     <title>Links em HTML5</title>
         
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
-<header>    
-       
-       <h1>Guia Completo sobre Links em HTML5</h1>
     
-    
+<header> 
+       <h1>Links em HTML5</h1>
 </header>
+
+<div class="nav-hamburguinho">
+    <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </button>
+    <nav>
+        <ul id="menu-tipo"></ul>
+            <li><a href="capitulo-10.html">Voltar ao topo</a></li>
+            <li><a onclick="clicante()" href="#introducao">Introdução aos Links</a></li>
+            <li><a onclick="clicante()" href="#atributos">Atributos da Tag &lt;a&gt;</a>
+                <ul>
+                    <li><a onclick="clicante()" href="#atributo-target">Atributo Target</a></li>
+                    <li><a onclick="clicante()" href="#atributo-rel">Atributo Rel</a></li>
+                    <li><a onclick="clicante()" href="#atributo-download">Atributo Download</a>
+                </ul>
+            </li>
+            <li><a onclick="clicante()" href="#links-internos">Links Internos</a></li>
+            <li><a onclick="clicante()" href="#links-contatos">Links para Contatos</a></li>
+            <li><a onclick="clicante()" href="#links-dentro-paginas">Links Dentro de Páginas</a></li>
+        </ul>
+    </nav>
+</div>
 <main>
     <section id="introducao">
         <h2>Introdução aos Links</h2>
