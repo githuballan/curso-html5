@@ -11,7 +11,9 @@
 
     <meta name="description" content="Explore a psicologia das cores e aprenda a representar cores em CSS com RGB, hexadecimal e HSLA. Descubra como harmonizar cores para criar sites visualmente agradáveis.">
 
-    
+    <script src="../../script.js"></script>
+
+
     <title>Psicologia das Cores e Representação de Cores em CSS | Curso HTML5</title>
 
     <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
@@ -26,13 +28,33 @@
     <header>
         <h1>Psicologia das Cores</h1>
     </header>
+    <div class="nav-hamburguinho">
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <nav>
+            <ul id="menu-tipo">
+            <li><a onclick="clicante()" href="#rep-Cores">Representação de Cores</a></li>
+            <ul>
+                <li><a onclick="clicante()" href="#formas-rep-Cores-nomes">Por nomes das cores em inglês</a></li>
+                <li><a onclick="clicante()" href="#formas-rep-Cores-rgb">Por código RGB ou RGBA</a></li>
+                <li><a onclick="clicante()" href="#formas-rep-Cores-hex">Hexadecimal</a></li>
+                <li><a onclick="clicante()" href="#formas-rep-Cores-hsla">HSLA</a></li>
+            </ul>
+            <li><a onclick="clicante()" href="#psicologia-cores">Psicologia das Cores</a></li>
+            <li><a onclick="clicante()" href="#harm-cores">Harmonização de Cores</a></li>
+            <li><a onclick="clicante()" href="#captura-cores">Ferramenta para descobrir cores</a></li>
+            </ul>
+        </nav>
+    </div>
     <main>
-        <section>
-            
-        </section>
+      
         <article id="rep-Cores">
             <h2>Representação de Cores</h2>
-            <section>
+
+            <section id="int-rep-Cores">
                 <p>Todas as cores em uma tela são representadas por três cores base:</p>
                 <ul>
                     <li>Vermelho: representado pelo <abbr title="Red">R</abbr>;</li>
@@ -41,30 +63,59 @@
                 </ul>
                 <p>Essas cores formam a sigla RGB. Note que o verde substitui o amarelo como cor primária, pois tecnicamente as cores são mais precisas usando o verde.</p>
                 <p>Existem três formas de representar cores em CSS:</p>
-            </section>
-            <section>
-                <h3>Por nomes das cores em inglês</h3>
+            </section><!-- /#int-rep-Cores -->
+
+            <section id="formas-rep-Cores-nomes">
+                <h4>Por nomes das cores em inglês</h4>
                 <p>Essa forma é menos utilizada devido à limitação de nomes disponíveis em comparação com a vasta quantidade de cores possíveis (65.000.000).</p>
-            </section>
-            <section>
-                <h3>Por código RGB ou RGBA</h3>
-                <p>Nessa forma, cada cor varia sua intensidade de 0 a 255. O valor alpha (transparência) varia de 1 (totalmente opaco) a 0 (totalmente transparente) com precisão de centésimos.</p>
+            </section><!-- /#formas-rep-Cores-nomes -->
+
+            <section id="formas-rep-Cores-rgb">
+                <h4>Por código RGB ou RGBA</h4>
+                <p>O sistema RGB é uma forma de representar cores usando três valores numéricos que variam de 0 a 255. Cada valor representa a intensidade de uma das cores do RGB (vermelho, verde e azul). No sistema RGB, 0 representa a menor intensidade e 255 representa a maior intensidade da cor. Além disso, o valor alpha (transparência) varia de 1 (totalmente opaco) a 0 (totalmente transparente) com precisão de centésimos.</p>
                 <p>Exemplo de representação:</p>
                 <div class="pre">
                     <pre>rgba(200, 255, 0, 1)</pre>
                 </div>
-            </section>
-            <section>
-                <h3>Hexadecimal</h3>
-                <p>Essa forma usa 6 algarismos hexadecimais (0 a F) para representar as cores, sem o alpha. A ordem é:</p>
-                <p>0;1;2;3;4;5;6;7;8;9;A;B;C;D;E;F</p>
-                <p>Exemplo de representação:</p>
-                <p>#ff00ff</p>
-                <p>Outra forma é usar 3 algarismos hexadecimais, onde o navegador entende como se tivesse repetido os valores:</p>
-                <p>Exemplo: #0f2 é igual a #00ff22</p>
-            </section>
-            <section>
-                <h3>HSLA</h3>
+            </section><!-- /#formas-rep-Cores-rgb -->
+
+            <section id="formas-rep-Cores-hex">
+                <h4>Hexadecimal</h4>
+                <p>O sistema hexadecimal é uma forma de representar cores usando uma combinação de seis ou oito caracteres, que vão de 0 a F <span style="text-transform: uppercase">(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f)</span>. Cada par de caracteres representa a intensidade de uma das cores do RGB (vermelho, verde e azul) ou a transparência (alpha). No sistema hexadecimal, 0 representa a menor intensidade e F representa a maior intensidade da cor.</p>
+                <ul>
+                    <li>Com 6 dígitos: Cada cor é representada por dois dígitos hexadecimais, variando de 00 a FF.
+                        <ul>
+                            <li>Os dois primeiros dígitos representam a quantidade de vermelho (Red).</li>
+                            <li>Os dois dígitos do meio representam a quantidade de verde (Green).</li>
+                            <li>Os dois últimos dígitos representam a quantidade de azul (Blue).</li>
+                        </ul>
+                    </li>
+                    <li>Com 3 dígitos: Uma forma abreviada onde cada dígito é duplicado para formar a cor completa.
+                        <ul>
+                            <li>O primeiro dígito representa a quantidade de vermelho (Red).</li>
+                            <li>O segundo dígito representa a quantidade de verde (Green).</li>
+                            <li>O terceiro dígito representa a quantidade de azul (Blue).</li>
+                        </ul>
+                    </li>
+                    <li>Com 8 dígitos: Além das cores RGB, inclui dois dígitos para a transparência (alpha), variando de 00 (totalmente transparente) a FF (totalmente opaco).
+                        <ul>
+                            <li>Os dois primeiros dígitos representam a quantidade de vermelho (Red).</li>
+                            <li>Os dois dígitos seguintes representam a quantidade de verde (Green).</li>
+                            <li>Os dois dígitos seguintes representam a quantidade de azul (Blue).</li>
+                            <li>Os dois últimos dígitos representam a transparência (Alpha).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Exemplos de representação:</p>
+                <div class="pre">
+                    <pre>#C8FF00 (6 dígitos)</pre>
+                    <pre>#CF0 (3 dígitos)</pre>
+                    <pre>#C8FF00FF (8 dígitos)</pre>
+                </div>
+            </section><!-- /#formas-rep-Cores-hex -->
+
+            <section id="formas-rep-Cores-hsla">
+                <h4>HSLA</h4>
                 <p>HSLA representa cores de forma diferente:</p>
                 <ul>
                     <li>H: Cor propriamente dita (0 a 360)</li>
@@ -74,11 +125,40 @@
                 </ul>
                 <p>Exemplo de representação:</p>
                 <p>hsla(208, 100%, 97%, 0.644)</p>
-                
-                <p>Obs.: Para alternar a representação de cores, clique na área representada na imagem acima.</p>
-            </section>
+
+                <fieldset>
+
+                    <legend>Exemplo interativo</legend>
+                    
+        
+                    <div>
+                        <div id="transicao" style="
+                       
+                        border: 1px solid #000;
+                        border-radius: 30px;
+                        min-width: 300px;
+                        max-width: 800px;
+                        height: 150px;
+                        background-color: #fff;
+                       
+                        transition-property: background-color;
+                        transition-duration: 500ms;
+                        transition-timing-function: ease-in-out;
+                        "></div>
+                    
+                    <p>Use o conta gotas para descobrir uma cor dentro ou fora desta página e testar as diferentes representações de cores como: RGB, HSLA e Hexadecimal.</p>
+                    <p>Pode não funcionar igualmente em todos os navegdores.</p>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                            
+        
+                        <input class="buttom" style="height: 50px; width: 100px; border-radius: 10px;" type="color" oninput="document.querySelector('#transicao').style.backgroundColor = this.value;">
+                    </div>
+                </fieldset>
+            </section><!-- /#formas-rep-Cores-hsla -->
+           
             
         </article><!-- /.rep-Cores -->
+
         <article id="psicologia-cores">
             
             <h2>Psicologia das Cores</h2>
@@ -100,27 +180,34 @@
             </ul>
             <p>Para mais detalhes, consulte o <a target="_blank" href="../../material-de-apoio/13 - Cores.pdf">material em PDF</a> das páginas 02 a 06.</p>
         </article><!-- /.psicologia-cores -->
+
         <article id="harm-cores">
             <h2>Harmonização de Cores</h2>
-            <p>Para criar um site visualmente agradável, é importante harmonizar as cores. Existem várias formas de fazer isso:</p>
-            <ul>
-                <li>Usar cores complementares;</li>
-                <li>Usar cores análogas;</li>
-                <li>Usar cores triádicas;</li>
-                <li>Usar cores tetrádicas.</li>
-            </ul>
-            <p>Para mais detalhes, consulte o <a target="_blank" href="../../material-de-apoio/13 - Cores.pdf">material em PDF</a> das páginas 07 a 09.</p>
-            <h3>Círculo Cromático</h3>
-            <p>O círculo cromático é uma ferramenta que ajuda a encontrar combinações harmoniosas de cores, tornando o site visualmente agradável.</p>
-            <img src="imagens/circulo-cromatico.png" alt="Círculo Cromático">
-            <p>Para mais detalhes, consulte o material em PDF das páginas 06 a 11.</p>
-            <h3>Sites para encontrar cores harmônicas</h3>
-            <p>Existem ferramentas online que ajudam na escolha de paletas de cores: </p>
-            <ul>
-                <li><a href="https://color.adobe.com/pt/create/color-wheel" target="_blank">Adobe Color</a>: Excelente site com alguns recursos pagos.</li>
-                <li><a href="https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank">Paletton</a>: Permite escolher o tipo de harmonização e visualizar exemplos.</li>
-                <li><a href="https://coolors.co/2cdac7-4d8b31-0e34a0-d68c45-566e3d" target="_blank">Coolors</a>: Ideal para criar combinações de cores, com opção de travar cores favoritas.</li>
-            </ul>
+
+            <section- id="int-harm-cores">
+                
+                <p>Para criar um site visualmente agradável, é importante harmonizar as cores. Existem várias formas de fazer isso:</p>
+                <ul>
+                    <li>Usar cores complementares;</li>
+                    <li>Usar cores análogas;</li>
+                    <li>Usar cores triádicas;</li>
+                    <li>Usar cores tetrádicas.</li>
+                </ul>
+                <p>Para mais detalhes, consulte o <a target="_blank" href="../../material-de-apoio/13 - Cores.pdf">material em PDF</a> das páginas 07 a 09.</p>
+                <h3>Círculo Cromático</h3>
+                <p>O círculo cromático é uma ferramenta que ajuda a encontrar combinações harmoniosas de cores, tornando o site visualmente agradável.</p>
+                <img src="imagens/circulo-cromatico.png" alt="Círculo Cromático">
+                <p>Para mais detalhes, consulte o material em PDF das páginas 06 a 11.</p>
+                <h3>Sites para encontrar cores harmônicas</h3>
+                <p>Existem ferramentas online que ajudam na escolha de paletas de cores: </p>
+                <ul>
+                    <li><a href="https://color.adobe.com/pt/create/color-wheel" target="_blank">Adobe Color</a>: Excelente site com alguns recursos pagos.</li>
+                    <li><a href="https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank">Paletton</a>: Permite escolher o tipo de harmonização e visualizar exemplos.</li>
+                    <li><a href="https://coolors.co/2cdac7-4d8b31-0e34a0-d68c45-566e3d" target="_blank">Coolors</a>: Ideal para criar combinações de cores, com opção de travar cores favoritas.</li>
+                </ul>
+                
+            </section-><!-- /#int-harm-cores -->
+
             <section id="captura-cores">
                 <h3>Ferramenta para descobrir cores de outros sites</h3>
                 <p>Para capturar o código hexadecimal de uma cor em um site, use a extensão ColorZilla no Google Chrome. Clique na cor desejada para obter o código.</p>
@@ -132,36 +219,13 @@
        
 
 
-        <fieldset>
+       
+            </section><!-- /.captura-cores -->   
 
-            <legend>Exemplo interativo</legend>
-            
-
-            <div>
-                <div id="transicao" style="
-               
-                border: 1px solid #000;
-                border-radius: 30px;
-                min-width: 300px;
-                max-width: 800px;
-                height: 150px;
-                background-color: #fff;
-               
-                transition-property: background-color;
-                transition-duration: 500ms;
-                transition-timing-function: ease-in-out;
-                "></div>
-            
-            <p>Use o botão abaixo para descobrir uma cor dentro ou fora desta página e testar as diferentes representações de cores como: RGB, HSLA e Hexadecimal.</p>
-            <div style="display: flex; justify-content: center; margin-top: 10px;">
-                    
-
-                <input class="buttom" style="height: 50px; width: 100px; border-radius: 10px;" type="color" oninput="document.querySelector('#transicao').style.backgroundColor = this.value;">
-            </div>
-        </fieldset>
-        </section><!-- /.captura-cores -->   
     </article><!-- /.harm-cores -->
+
     </main>
+
     <footer>
         <h1>Materiais Utilizados</h1>
         <p><strong><a href="../../material-de-apoio/13 - Cores.pdf" target="_blank">Material em PDF</a></strong></p>

@@ -3,264 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 19</title>
-    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <title>Background</title>
+    <link rel="shortcut icon" href="../../imagens/Study.ico"type="image/x-icon">
+
+    <meta name="keywords" content="CSS, background, imagens, propriedades, tutorial, como usar background no CSS, tutorial de background CSS, propriedades de background CSS, Background, Background com Imagens, Background-repeat, Background-position, Background-size, Background-attachment, Shorthand de Background, Background-origin, Background-clip, Background com Degradê, Linear Gradient, Radial Gradient, Ocupação por Percentagem, Efeito Parallax">
+
+    <meta name="description" content="Aprenda a utilizar as propriedades de background no CSS para criar designs incríveis com imagens e efeitos de fundo.">
 
     <link rel="stylesheet" href="../../style.css">
 
-
-    <style>
-        
-        div#fora{
-            text-indent: 0px;
-            height: 400px;
-            width: 400px;
-            background-color: yellow;
-            padding: 0px;
-            position: relative;
-
-        }
-        div#interna{
-           
-            height: 150px;
-            width: 150px;
-            background-color: blue;
-            margin: auto;
-
-            position: absolute;
-            left: 50%;
-            top: 50%;
-
-            transform: translate(-50%, -50%);
-
-        }
-
-        div.q1, div.q2, div.q3{
-            height: 300px;
-            width: 300px;
-            display: inline-block;
-            border-radius: 6px;
+    <script src="../../script.js"></script>
 
 
-        }
-        div.q1{
-            background-image: url(imagens/wallpaper001.jpg);
-
-        }
-        div.q2{
-            background-color: aquamarine;
-            
-        }
-        div.q3{ background-color: bisque;
-            
-        }
-    </style>
+   
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-<h1>Background</h1>
+        <h1>Background</h1>
     </header>
+    <div class="nav-hamburguinho">
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <nav>
+            <ul id="menu-tipo">
+                <li><a onclick="clicante()" href="#background-imagens">Background com Imagens</a></li>
+                <ul>
+                    <li><a onclick="clicante()" href="#background-repeat">Background-repeat</a></li>
+                    <li><a onclick="clicante()" href="#background-position">Background-position</a></li>
+                    <li><a onclick="clicante()" href="#background-size">Background-size</a></li>
+                    <li><a onclick="clicante()" href="#background-attachment">Background-attachment</a></li>
+                    <li><a onclick="clicante()" href="#background-shorthand">Shorthand de Background</a></li>
+                    <li><a onclick="clicante()" href="#background-origin">Background-origin</a></li>
+                    <li><a onclick="clicante()" href="#background-clip">Background-clip</a></li>
+                </ul>
+                <li><a onclick="clicante()" href="#background-degrade">Background com Degradê</a></li>
+                <ul>
+                    <li><a onclick="clicante()" href="#linear-degrade">Linear Gradient</a></li>
+                    <li><a onclick="clicante()" href="#radial-degrade">Radial Gradient</a></li>
+                    <li><a onclick="clicante()" href="#percentage-occupation">Ocupação por Percentagem</a></li>
+                </ul>
+                <li><a onclick="clicante()" href="#parallax">Efeito Parallax</a></li>
+            </ul>
+        </nav>
+    </div>
   <main>
-<div ></div>
-    <p>
-        Podemos usar imagens como Plano de Fundo em qualquer elemento caixa desde "body" até uma simples "div". Para isso, usamos a Propriedade de Estilo " background-image " (a mesma usada para degradê) com a função " url "... Após isso é só inserir o endereço da imagem dentro dos (parênteses). Exemplo:
-    </p>
-    <pre>
-    
-    div {
-            background-image: url(imagens/pattern003.png);
-        }
-    </pre>
-<p>    
-        Podemos ainda adicionar uma imagem de outro site como plano de fundo do nosso site. Para isso basta adicionar a URL da imagem no local da URL da imagem. Mas cuidado, caso a imagem do link saia do ar e deixe de existir, isso irá prejudicar o visual do seu site, visto que não teremos mais acesso à essa imagem.
-</p>
-<p class="mark">    
-        Lembre-se, muito cuidado com o tamanho das imagens de fundo que você inserir.
-</p>
-<p>
-    Exemplo em Aula:
-</p>
-<div class="q1"></div><div class="q2"></div><div class="q3"></div>
+    <article id="background-imagens">
+        <h2>Como criar um background com imagens</h2>
+        <p>Para criar um background com imagens no CSS, utilizamos a propriedade <code>background-image</code>. Abaixo, vamos explorar algumas propriedades relacionadas ao background e como utilizá-las.</p>
 
-<h2>
-    Funções background-repeat
-</h2>
-<p>
-    De forma PADRÃO, imagens de fundo sempre serão carregadas no seu tamanho/dimensão total. Se a imagem de fundo que inserirmos tiver uma dimensão menor do que o respectivo elemento caixa, ela simplesmente será  introduzida de forma "repetida", em blocos, para conseguir cobrir toda a área. Já se essa imagem tiver uma dimensão muito grande para o elemento caixa, veremos apenas um pedaço da mesma como background.
-</p>
-<p>
-    Entretanto, podemos usar a função no-repeat para que ela não se repita até cobrir toda a página porém ela ficará do tamnho máximo dela canto superior esquerdo da box. por isso é importante sempre deixar a box no tamanho máximo da imagem. 
-</p>
-<p>Exemplo no head:</p>
-<pre>
-    &lt;style>    
-    div {
-            background-image: url(imagens/pattern003.png);
-            background-repeat: no-repeat ;
-        }
-        &lt;/style>
-</pre>
-<p>
-    Temos ainda alguns efeitos menos usados como o repeat-x, que repete as imagens somente na horizontal(eixo x) ou repeat-y que repete somente no sentido vertical (eixo y).
-</p>
-<p>Exemplo no head:</p>
-<pre>
-    &lt;style>    
-    div {
-            background-image: url(imagens/pattern003.png);
-            background-repeat: repeat-x;
-        }
-        &lt;/style>
-</pre>
-<h2>Background-position</h2>
-
-<p>
-    Também podemos mudar a posição de referência de início das repetições. Por padrão, é considerado o canto esquerdo superior (left top), mas podemos ter várias opções. Use a imagem abaixo como referência sempre que precisar definir a posição do fundo com a propriedade background-position no seu código. 
-
-</p>
-<p>Exemplo:</p>
-<div style="padding-inline: 35%; height: 350px">
-<img style="height: 238px; width: 238px" src="imagens/Backgroung-position.png" alt="">
-</div>
-<p>Exemplo no head:</p>
-
-    <pre>
-        &lt;style>    
+        <section id="background-repeat">
+            <h3>Background-repeat</h3>
+            <p>A propriedade <code>background-repeat</code> define se e como a imagem de fundo será repetida. As opções mais comuns são:</p>
+            <ul>
+                <li><code>repeat</code>: repete a imagem tanto horizontalmente quanto verticalmente (padrão).</li>
+                <li><code>no-repeat</code>: não repete a imagem.</li>
+                <li><code>repeat-x</code>: repete a imagem apenas horizontalmente.</li>
+                <li><code>repeat-y</code>: repete a imagem apenas verticalmente.</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+    &lt;style>
         div {
-                background-image: <br>
-                url(imagens/pattern003.png);
-                background-repeat: repeat-x;
-                background-position: center center;
-            }
-            &lt;/style>
-    </pre>
+            background-image: url('imagens/exemplo.jpg');
+            background-repeat: no-repeat;
+        }
+    &lt;/style>
+                </pre>
+            </div>
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <div>
+                    background-repeat:
+                    <select onchange="document.querySelector('#backgroundRepeat').style.backgroundRepeat = this.value">
+                        <option value="no-repeat">no-repeat</option>
+                        <option value="repeat">repeat</option>
+                        <option value="repeat-x">repeat-x</option>
+                        <option value="repeat-y">repeat-y</option>
+                    </select>
+                </div>
+                <div class="exemplo" id="backgroundRepeat" style="
+                background-image: url('imagens/exemplo1.jpg');
+                background-repeat: no-repeat;
+                background-size: 25%;
+                width: 60vmin;
+                height: 60vmin;
+                border: solid 2px;"></div>
+            </fieldset>
+        </section><!-- /#background-repeat -->
 
-<h2>Background-size</h2>
-<p>
-    Outra coisa que podemos fazer é redimensionar a imagem para forçá-la a caber na caixa. Por padrão, nenhum redimensionamento será aplicado, e a imagem será exibida do seu tamanho natural. Porém, podemos usar a propriedade background-size para alterar esse comportamento. 
-</p>
-<p>
-    Os valores aceitos por essa propriedade são:
-</p>
-<div style="padding-inline: 5%;">
-    <img style="  max-height: 184px; ; 
-    " src="imagens/size.png" alt="">
-    </div>
-    <p>Exemplo no head:</p>
-    <pre>
-    &lt;style>    
-    div {
-            background-image: url(imagens/pattern003.png);
+        <section id="background-position-size-attachment">
+            <section id="background-position">
+            <h3>Background-position</h3>
+            <p>A propriedade <code>background-position</code> define a posição inicial da imagem de fundo. Alguns valores comuns são:</p>
+            <ul>
+                <li><code>left top</code>: canto superior esquerdo (padrão).</li>
+                <li><code>center center</code>: centro do elemento.</li>
+                <li><code>right bottom</code>: canto inferior direito.</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+        &lt;style>
+        div {
+            background-image: url('imagens/exemplo.jpg');
+            background-position: center center;
+        }
+        &lt;/style>
+                </pre>
+            </div>
+            </section><!-- /#background-position -->
+
+            <section id="background-size">
+            <h3>Background-size</h3>
+            <p>A propriedade <code>background-size</code> define o tamanho da imagem de fundo. Alguns valores comuns são:</p>
+            <ul>
+                <li><code>auto</code>: mantém o tamanho original da imagem (padrão).</li>
+                <li><code>cover</code>: redimensiona a imagem para cobrir todo o elemento.</li>
+                <li><code>contain</code>: redimensiona a imagem para caber dentro do elemento.</li>
+                <li><code>percentage</code>: redimensiona a imagem para uma porcentagem específica do elemento.</li>
+                <li><code>length</code>: redimensiona a imagem para um tamanho específico em unidades de comprimento (px, em, etc.).</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+        &lt;style>
+        div {
+            background-image: url('imagens/exemplo.jpg');
             background-size: cover;
         }
         &lt;/style>
-</pre>
-<h2>Background-attachment</h2>
-<p>
-    A última propriedade que podemos configurar é o vínculo (attachment) da imagem de fundo com o resto do documento, principalmente se o conteúdo for maior do que a altura da página e seja necessário vazar uma rolagem vertical.
-</p>
-<p>
-    A propriedade background-attachment aceita os valores: 
-</p>
-<div style="padding-inline: 5%;">
-    <img style="max-height: 72px;" src="imagens/attachment.png" alt="">
-    </div>
-    <p>Exemplo no head:</p>
-    <pre>
-        &lt;style>    
-        div {
-                background-image:
-                url(imagens/pattern003.png);
-                background-size: cover;
-                background-attachment: fixed;
-            }
-            &lt;/style>
-    </pre>
+                </pre>
+            </div>
+            </section><!-- /#background-size -->
 
-<h2>Background Shothands</h2>
-<p>
-    Como percebemos Background tem muita configuração. Sendo assim, existe uma shothand para configuração completa do Background em apenas uma linha. A propriedade abreviada background pode ser declarada agrupando as seguintes configurações e nessa ordem:
-</p>
-<ol>
-    <li>background-color</li>
-    <li>background-color</li>
-    <li>background-position </li>
-    <li>background-repeat </li>
-    <li style="text-decoration:line-through;">background-size</li>
-    <li>background-attachment </li>
-</ol>
-<p mark>
-    Use o background-size separado pois não está funcionando no Shothands.ALERTADO PELO PRÓPRIO GUANBARA EM VÍDEO
-</p>
-<p>Exemplos no head:</p>
-<pre>
-    &lt;style>    
-    div {
-            background: 
-            <abbr title="background-color">black</abbr> <abbr title="background-image">url(imagens/pattern003.png)
-            </abbr> <abbr title="background-position">center center</abbr> <abbr title="background-repeat">no-repeat</abbr> <abbr title="background-attachment">fixed</abbr>; 
+            <section id="background-attachment">
+            <h3>Background-attachment</h3>
+            <p>A propriedade <code>background-attachment</code> define se a imagem de fundo deve rolar com o conteúdo da página ou ficar fixa. Alguns valores comuns são:</p>
+            <ul>
+                <li><code>scroll</code>: a imagem de fundo rola com o conteúdo (padrão).</li>
+                <li><code>fixed</code>: a imagem de fundo fica fixa em relação à janela do navegador.</li>
+                <li><code>local</code>: a imagem de fundo rola com o conteúdo do elemento.</li>
+            </ul>
+            <p>Quando usamos <code>background-attachment: local;</code>, a imagem de fundo se move junto com o conteúdo do elemento. Isso é útil quando queremos que a imagem de fundo acompanhe a rolagem do conteúdo dentro de um elemento específico.</p>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+        &lt;style>
+        .scrollable {
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            background-image: url('imagens/exemplo.jpg');
+            background-attachment: local;
             background-size: cover;
         }
+        .content {
+            height: 400px;
+        }
         &lt;/style>
-</pre>
-<article>    
-    <h2>Background com Degradê</h2>
-    <p>Para criar um efeito degradê com o CSS, Utilizamos o background-image: invés de color. É possível utilizar esse efeito de forma:</p>
-    
-        <section><!--Linear-->
-            <h4>Linear:</h4>
-            <p>Onde o efeito segue em linha utilizando graus para derecionar o início e o fim do efeito ou;</p>
+                </pre>
+            </div>
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+
+                <div>background-attachment:
+                <select onchange="document.querySelector('#backgroundAttachment').style.backgroundAttachment = this.value">
+                <option value="scroll">scroll</option>
+                <option value="fixed">fixed</option>
+                <option value="local">local</option>
+                </select></div>
+
+                <div id="backgroundAttachment" class="scrollable" style=" width: 300px;
+                height: 200px;
+                overflow: auto;
+                background-image: url('imagens/exemplo.jpg');
+                background-attachment: scroll;
+                background-size: cover;">
+                <div id="backgroundAttachment" class="content" style="height: 400px;">
+                    <p style="margin-top: 50px; background-color: aliceblue;">Conteúdo rolável...</p>
+                </div>
+                </div>
+                <p>Movimente a barra lateral do navegador e da janela em todos os exemplos para entender o funcionamento </p>
+            </fieldset>
+            </section><!-- /#background-attachment -->
+        </section><!-- /#background-position-size-attachment -->
+
+        <section id="background-shorthand">
+            <h3>Shorthand de Background</h3>
+            <p>A propriedade <code>background</code> é uma forma abreviada de definir várias propriedades de fundo em uma única linha. A ordem das propriedades no shorthand é importante e deve seguir a seguinte sequência:</p>
+            <ol>
+                <li><code>background-color</code></li>
+                <li><code>background-image</code></li>
+                <li><code>background-position</code></li>
+                <li><code>background-size</code> (deve ser precedido por uma barra "/")</li>
+                <li><code>background-repeat</code></li>
+                <li><code>background-attachment</code></li>
+                <li><code>background-origin</code> (opcional)</li>
+                <li><code>background-clip</code> (opcional)</li>
+            </ol>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+            &lt;style>
+                div {
+                    background: #000 url('imagens/exemplo.jpg') center/cover no-repeat fixed;
+                }
+            &lt;/style>
+                </pre>
+            </div>
+            <p>O exemplo acima define a cor de fundo como preta, a imagem de fundo como 'exemplo.jpg', posicionada no centro, redimensionada para cobrir o elemento, sem repetição, e fixa em relação à janela do navegador.</p>
+            <fieldset> 
+                <legend>Exemplo interativo</legend>
+            
+                <div>
+                    background:
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundColor = this.value">
+                        <option value="repeat">#0F0</option>
+                        <option value="no-repeat">#000</option>
+                        <option value="repeat-x">#FFF</option>
+                        <option value="repeat-y">#00F</option>
+                    </select>
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundImage = this.value">
+                        <option value="repeat">url('imagens/exemplo1.jpg');</option>
+                    </select>
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundPosition = this.value">
+                        <option value="left top">left top</option>
+                        <option value="left center">left center</option>
+                        <option value="left bottom">left bottom</option>
+                        <option value="center top">center top</option>
+                        <option value="center center">center center</option>
+                        <option value="center bottom">center bottom</option>
+                        <option value="right top">right top</option>
+                        <option value="right center">right center</option>
+                        <option value="right bottom">right bottom</option>
+                    </select>
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundSize = this.value">
+                        <option value="auto">auto</option>
+                        <option value="cover">cover</option>
+                        <option value="contain">contain</option>
+                        <option value="50%">50%</option>
+                        <option value="100px">100px</option>
+                    </select>
+                    </select>
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundRepeat = this.value">
+                        <option value="repeat">repeat</option>
+                        <option value="no-repeat">no-repeat</option>
+                        <option value="repeat-x">repeat-x</option>
+                        <option value="repeat-y">repeat-y</option>
+                    </select>
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundAttachment = this.value">
+                        <option value="scroll">scroll</option>
+                        <option value="fixed">fixed</option>
+                        <option value="local">local</option>
+                    </select>
+                </div>
+                <div class="exemplo" id="backgroundShorthand" style="
+                background-image: url('imagens/exemplo1.jpg');
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: 25%;
+                width: 60vmin;
+                height: 60vmin;
+                border: solid 2px;"></div>
+            </fieldset>
+            </fieldset>
+        </section><!-- /#background-shorthand -->
+
+        <section id="background-origin">
+            <h3>Background-origin</h3>
+            <p>A propriedade <code>background-origin</code> especifica a área de posicionamento da imagem de fundo. Ela define a origem da imagem de fundo dentro do elemento. Os valores possíveis são:</p>
+            <ul>
+                <li><code>border-box</code>: A imagem de fundo começa a partir da borda do elemento.</li>
+                <li><code>padding-box</code>: A imagem de fundo começa a partir da borda interna do padding do elemento.</li>
+                <li><code>content-box</code>: A imagem de fundo começa a partir da borda do conteúdo do elemento.</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+    &lt;style>
+        .origin-example {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            padding: 20px;
+            background-image: url('imagens/exemplo.jpg');
+            background-origin: border-box;
+            background-size: cover;
+        }
+    &lt;/style>
+                </pre>
+            </div>
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <div>background-origin:
+                <select onchange="document.querySelector('#backgroundOrigin').style.backgroundOrigin = this.value">
+                    <option value="border-box">border-box</option>
+                    <option value="padding-box">padding-box</option>
+                    <option value="content-box">content-box</option>
+                </select></div>
+                <div id="backgroundOrigin" class="origin-example" style="
+                width: 200px;
+                height: 200px;
+                border: 10px solid black;
+                padding: 20px;
+                background-image: url('imagens/exemplo1.jpg');
+                background-origin: border-box;
+                background-size: cover;"></div>
+            </fieldset>
+        </section><!-- /#background-origin -->
+
+        <section id="background-clip">
+            <h3>Background-clip</h3>
+            <p>A propriedade <code>background-clip</code> define até onde a imagem de fundo ou a cor de fundo deve se estender dentro do elemento. Os valores possíveis são:</p>
+            <ul>
+                <li><code>border-box</code>: A imagem de fundo ou a cor de fundo se estende até a borda do elemento.</li>
+                <li><code>padding-box</code>: A imagem de fundo ou a cor de fundo se estende até a borda interna do padding do elemento.</li>
+                <li><code>content-box</code>: A imagem de fundo ou a cor de fundo se estende até a borda do conteúdo do elemento.</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre">
+                <pre>
+    &lt;style>
+        .clip-example {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            padding: 20px;
+            background-image: url('imagens/exemplo.jpg');
+            background-clip: border-box;
+            background-size: cover;
+        }
+    &lt;/style>
+    box-sizing:content-box;
+    width: 200px;
+    height: 200px;
+    border: solid 20px black;
+    padding: 20px;
+    background-image: url('imagens/exemplo1.jpg');
+    background-clip: padding-box;
+    background-size: cover;
+                </pre>
+            </div>
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <div>background-clip:
+                <select onchange="document.querySelector('#backgroundClip').style.backgroundClip = this.value">
+                    <option value="border-box">border-box</option>
+                    <option value="padding-box">padding-box</option>
+                    <option value="content-box">content-box</option>
+                </select></div>
+                <div id="backgroundClip" class="clip-example" style="
+                width: 200px;
+                height: 200px;
+                border: 10px solid black;
+                padding: 20px;
+                background-image: url('imagens/exemplo.jpg');
+                background-clip: padding-box;
+                background-size: contain;
+                "></div>
+            </fieldset>
+        </section><!-- /#background-clip -->
+
+    </article><!-- /#background-imagens -->
+
+    <article id="background-degrade">
+        <h2>Background degradê</h2>
+        <p>Para criar um efeito degradê com o CSS, utilizamos a propriedade <code>background-image</code> em vez de <code>background-color</code>. Existem dois tipos principais de degradê: linear e radial.</p>
+
+        <section id="linear-degrade">
+            <h3>Linear Gradient</h3>
+            <p>O efeito linear segue uma linha reta, podendo ser direcionado em diferentes ângulos. Utilizamos graus para definir a direção do início e do fim do efeito.</p>
             <p>Exemplo:</p>
-            <div style="background-image: linear-gradient(90deg, #f00, #0f0); height: 100px; border-radius: 5px;" ></div>
+            <div style="background-image: linear-gradient(90deg, #f00, #0f0); height: 100px; border-radius: 5px;"></div>
             <p>O comando:</p>
             <div class="pre">
-                    <pre>style="background-image: linear-gradient(90deg, #00000027, #ffffff);"</pre>
+                <pre>
+    &lt;style>
+        div {
+            background-image: linear-gradient(90deg, #f00, #0f0);
+        }
+    &lt;/style>
+                </pre>
             </div>
-            <p>É possível ainda, adicionar mais de duas cores ao efeito. </p>
-            <p>Exemplo: </p>
-    
-            <div style="background-image: linear-gradient(90deg, #41c518e7, #c91a1ad2,  #00f);height: 100px;"></div>
-            <p>Comando: </p>
-            <div class="pre">
-                <pre>style="background-image: linear-gradient(90deg, #41c518e7, #c91a1ad2,  #ffffff);"</pre>
-            </div>
-        </section>
-        <section><!--Radial-->
-            <h4>Radial:</h4>
-            <p> Onde o efeito degradê parte do centro da imagem para as extremidade;</p>
-    
-            <p>Exemplo: </p>
-            <div style="background-image: radial-gradient(circle, #00f, #0f0); height: 100px; border-radius: 5px;" ></div>
-    
-            <p>Comando: </p>
-            <div class="pre">
-                <pre>style="background-image: radial-gradient(circle, #00000027, #ffffff);"</pre>
-            </div>
-        </section>
-    
-    <h3>Ocupacão porcentagem </h3>
-    
-    <p>É possível escolher o percentual que a cor antes de iniciar o degradê. Veja no exemplos abaixo a cor verde ocupando 50% do espaço. </p>
-        <p>Exemplo:</p>
-       <div style="height: 100px;background-image: linear-gradient(90deg, #0f0 50%, #f0f,  #00f);"></div>
-        <p>Comando:</p>
-        <div class="pre">
-            <pre>style="background-image: linear-gradient(90deg, #567eb9de 50%, #1aafc9d2,  #2ece3b);"</pre>
-        </div>
-    
-    
-        <p>É possível também escolher em qual trecho do bloco iniciará a transição da cor.Para isso o percentual deverá ficar entre vírgulas e entre as cores que escolher Veja no exemplos abaixo usando os dois conhecimentos. </p>
-        <p>Exemplo:</p>
-       <div style="height: 100px;background-image: linear-gradient(90deg, #f00 29%,30%, #0f0 31% ,49%, #00f 50%);"></div>
-        <p>Comando:</p>
-        <div class="pre">
-            <pre>style="height: 100px;background-image: linear-gradient(90deg, #f00 29%,30%, #0f0 31% ,49%, #00f 50%);"</pre>
-        </div>
-        <p>Note que o percentual escolhe o posicionamento de cada cor e cada transição no bloco.</p>
-    
-</article>
 
+
+            <p>É possível adicionar mais de duas cores ao efeito.</p>
+         
+  
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                flex-wrap: wrap;">background-image:
+                  <input type="range" id="deg1" min="1" max="360" value="90" onchange="document.getElementById('graus').value = this.value + 'deg'">
+                 <input type="color" id="color1" onchange="document.getElementById('color01').value = this.value">
+                  <input type="color" id="color2" onchange="document.getElementById('color02').value = this.value">
+                  <input type="color" id="color3" onchange="document.getElementById('color03').value = this.value">
+                  </div>
+                    <button onclick="changeColor()">Aplicar</button>
+                  <script>
+                    {
+                   
+                    function changeColor() {
+                    let deg1 = document.getElementById('deg1').value;
+                    let color1 = document.getElementById('color1').value;
+                    let color2 = document.getElementById('color2').value;
+                    let color3 = document.getElementById('color3').value;
+                        document.getElementById('linearDegrade').style.backgroundImage = `linear-gradient(${deg1}deg, ${color1}, ${color2}, ${color3})`;}
+                        console.log(color1.value);
+                        console.log(color2.value);
+                        console.log(deg1.value);
+
+                    }
+                  </script>
+              <div class="pre">
+                <pre>
+background-image:
+linear-gradient
+(<output id="graus"></output>, 
+<output id="color01"></output>, 
+<output id="color02"></output>, 
+<output id="color03"></output>);
+</pre>
+            </div>
+               
+                <div id="linearDegrade" style="
+                background-image: linear-gradient(90deg, #f00, #0f0);
+                height: 50vmin;
+                width: 50vmin;
+                border-radius: 5px;">
+                </div>
+
+            </fieldset>
+        </section><!-- /#linear-degrade -->
+
+         <section id="radial-degrade">
+            <h3>Radial Gradient</h3>
+            <p>O efeito radial parte do centro da imagem para as extremidades, criando um efeito circular.</p>
+            <p>Exemplo:</p>
+            <div style="background-image: radial-gradient(circle, #00f, #0f0); height: 50vmin; width: 50vmin; border-radius: 5px; margin: auto;"></div>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>background-image: radial-gradient(circle, #00f, #0f0);</pre>
+            </div>
+        </section><!-- /#radial-degrade -->
+
+
+        <section id="percentage-occupation">
+            <h3>Ocupação por Percentagem</h3>
+            <p>É possível definir a porcentagem que cada cor ocupa antes de iniciar o degradê. Veja no exemplo abaixo a cor verde ocupando 50% do espaço.</p>
+            <p>Exemplo:</p>
+            <div style="height: 100px; background-image: linear-gradient(90deg, #0f0 50%, #f0f, #00f);"></div>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>background-image: linear-gradient(90deg, #0f0 50%, #f0f, #00f);</pre>
+            </div>
+            <p>Também é possível definir em qual trecho do bloco iniciará a transição da cor. Para isso, o percentual deve ficar entre vírgulas e entre as cores escolhidas.</p>
+            <p>Exemplo:</p>
+            <div style="height: 100px; background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);"></div>
+            <p>O comando:</p>
+            <div class="pre">
+                <pre>background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);</pre>
+            </div>
+            <p>Note que o percentual escolhe o posicionamento de cada cor e cada transição no bloco.</p>
+
+            <fieldset>
+                <legend>Exemplo interativo</legend>
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                flex-wrap: wrap;">background-image:
+                  <input type="range" style="width: 200px;" id="deg2" min="1" max="360" value="90" onchange="document.getElementById('graus1').value = this.value + 'deg'">
+                 <input type="color" id="color4" value="#ff0000" onchange="document.getElementById('color04').value = this.value"><input type="range" id="porcent01" min="1" max="100" value="29" onchange="document.getElementById('porcent1').value = this.value+'%'">
+                 <input type="range" id="porcent02" min="1" max="100" value="30" onchange="document.getElementById('porcent2').value = this.value+'%'">
+                  <input type="color" value="#00ff00" id="color5" onchange="document.getElementById('color05').value = this.value"><input type="range" id="porcent03" min="1" max="100" value="31" onchange="document.getElementById('porcent3').value = this.value+'%'">
+                  <input type="range" id="porcent04" min="1" max="100" value="49" onchange="document.getElementById('porcent4').value = this.value+'%'">
+                  <input type="color" value="#0000ff" id="color6" onchange="document.getElementById('color06').value = this.value"><input type="range" id="porcent05" min="1" max="100" value="50" onchange="document.getElementById('porcent5').value = this.value+'%'">
+                  </div>
+                    <button onclick="changeColor1()">Aplicar</button>
+                  <script>
+                    {
+                   
+                    function changeColor1() {
+                    let deg2 = document.getElementById('deg2').value;
+                    let color4 = document.getElementById('color4').value;
+                    let color5 = document.getElementById('color5').value;
+                    let color6 = document.getElementById('color6').value;
+
+                    let porcent01 = document.getElementById('porcent01').value;
+                    let porcent02 = document.getElementById('porcent02').value;
+                    let porcent03 = document.getElementById('porcent03').value;
+                    let porcent04 = document.getElementById('porcent04').value;
+                    let porcent05 = document.getElementById('porcent05').value;
+
+                    document.getElementById('linearDegrade1').style.backgroundImage = `linear-gradient(${deg2}deg, ${color4} ${porcent01}%, ${porcent02}%, ${color5} ${porcent03}%, ${porcent04}%, ${color6} ${porcent05}%)`;
+
+                document.getElementById('graus1').value = deg2 + 'deg';
+                document.getElementById('color04').value = color4;
+                document.getElementById('porcent1').value = porcent01+'%';
+                document.getElementById('porcent2').value = porcent02+'%';
+                document.getElementById('color05').value = color5;
+                document.getElementById('porcent3').value = porcent03+'%';
+                document.getElementById('porcent4').value = porcent04+'%';
+                document.getElementById('color06').value = color6;
+                document.getElementById('porcent5').value = porcent05+'%';
+                        
+                       
+                        console.log(color4.value);
+                        console.log(color5.value);
+                        console.log(deg2.value);
+
+                    }}
+                  </script>
+              <div class="pre">
+                <pre>
+background-image: linear-gradient
+(<output id="graus1"></output>, 
+<output id="color04"></output> <output id="porcent1"></output>, <output id="porcent2"></output>,
+<output id="color05"></output> <output id="porcent3"></output>,<output id="porcent4"></output>,
+<output id="color06"></output> <output id="porcent5"></output>);
+</pre>
+            </div>
+               
+                <div id="linearDegrade1" style="
+               background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);
+                height: 50vmin;
+                width: 80%;
+                border-radius: 5px;">
+                </div>
+
+            </fieldset>
+        </section><!-- /#percentage-occupation -->
+
+       
+        
+    </article><!-- /#background-degrade -->
+
+    <article id="parallax">
+        <h2>Efeito Parallax</h2>
+        <p>Efeito Paralax simula uma sensação de você está passando por uma janela, e conforme vai mudando o ângulo de visão você vai conseguindo enxergar mais da paisagem.</p>
+        <p>Veja o efeito Parallax abaixo:</p>
+        <div style="
+        display: inline-block; 
+        width: 50vw; 
+        height: 50vw;
+        background-image: url(imagens/exemplo1.jpg);
+        background-attachment: fixed; 
+        background-size: cover; 
+        box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);"></div>
+        <p>Esse efeito é muito utilizado em sites para dar uma sensação de movimento e profundidade.</p>
+        <p>Para criar esse efeito, basta adicionar a propriedade <code>background-attachment: fixed;</code> à imagem de fundo.</p>
+        <p> Veja o código usado:</p>
+        <div class="pre">
+            <pre>
+    &lt;div style="
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    margin-left: 25vw;
+    background-image: url(imagens/wallpaper002.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);
+    ">
+    &lt;/div>
+            </pre>
+        </div>
+    </article><!-- /#parallax -->
   </main>  
 
   <footer>
@@ -271,7 +592,7 @@
         
         
     <h1>Vídeos</h1>
-    
+    </select>
         <p>
             <a href="https://youtu.be/sms5H5cKDy4?si=ebdDdfpQeSiYhFmC" target="_blank">Download das imagens do capítulo</a>
         </p>
@@ -301,4 +622,4 @@
     
     </footer>
 </body>
-</html>
+</html></select>

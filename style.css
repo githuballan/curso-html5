@@ -90,6 +90,7 @@ html {
 .nav-hamburguinho{
     
     margin-left: 3vw;
+    text-align: left;
 }
 
 #menu-hamburguer {
@@ -308,6 +309,8 @@ div.pre {
     border: 4px ridge #bbb;
     color: #000;
     overflow-x: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 10px;
     padding-bottom: 0px;
     line-height: 1,5;
