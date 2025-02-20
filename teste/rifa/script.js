@@ -131,6 +131,8 @@ function consultatd(tds){
     console.log(t);
     if(nome[t]==null){document.getElementById('nomec').innerHTML = "Vazio";
         document.getElementById('numeroRifa').value = t;
+      document.getElementById('nomeRifa').focus();
+  
 
         dis=document.getElementById('Apagar');
         dis.style.display = "none";
