@@ -42,13 +42,11 @@
     box-sizing:content-box;
 }
 
-input[type="number"] {
-    width: 100%;
-}
+
        
 </style>
 
-
+<script src="../../script.js"></script>
 
 </head>
 
@@ -57,6 +55,28 @@ input[type="number"] {
     <header>
         <h1>Modelo de Caixas</h1>
     </header>
+    <div class="nav-hamburguinho">
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+        <nav>
+            <ul id="menu-tipo">
+                <li><a onclick="clicante()" href="#introducao">Introdução</a></li>
+                <li><a onclick="clicante()" href="#sec-width">Width</a></li>
+                <li><a onclick="clicante()" href="#sec-height">Height</a></li>
+                <li><a onclick="clicante()" href="#sec-padding">Padding</a></li>
+                <li><a onclick="clicante()" href="#sec-border">Border</a></li>
+                <li><a onclick="clicante()" href="#sec-outline">Outline</a></li>
+                <li><a onclick="clicante()" href="#sec-margin">Margin</a></li>
+                <li><a onclick="clicante()" href="#ferramenta-de-desenvolvedor">Ferramenta de Desenvolvedor</a></li>
+                <li><a onclick="clicante()" href="#shorthand">Shorthand</a></li>
+                <li><a onclick="clicante()" href="#sombras">Sombras</a></li>
+                <li><a onclick="clicante()" href="#bordas-decoradas">Bordas Decoradas</a></li>
+            </ul>
+        </nav>
+    </div>
     <main>
         <article id="introducao">
             
@@ -284,19 +304,21 @@ input[type="number"] {
                 <p>Experimente alterar os valores abaixo para ver como eles afetam a caixa:</p>
                 <form id="boxForm" style="align-self: self-start;">
                     <label for="width">width:</label>
-                    <input type="number" id="width" name="width" min="-100" max="300" value="200"><br><br>
+                    <input type="number" id="width" name="width" min="-100" max="300" value="200" onchange="valueMaxMin(500,-100,this)"><br><br>
                     <label for="height">height:</label>
-                    <input type="number" id="height" name="height" value="200"><br><br>
+                    <input type="number" id="height" name="height" value="200" onchange="valueMaxMin(500,-100,this)"><br><br>
                     <label for="padding">padding:</label>
-                    <input type="number" id="padding" name="padding" value="20"><br><br>
+                    <input type="number" id="padding" name="padding" value="20" onchange="valueMaxMin(500,-100,this)"><br><br>
                     <label for="borderWidth">border-width:</label>
-                    <input type="number" id="borderWidth" name="borderWidth" value="20"><br><br>
+                    <input type="number" id="borderWidth" name="borderWidth" value="20" onchange="valueMaxMin(500,-100,this)"><br><br>
                     <label for="outlineWidth">outline-width:</label>
-                    <input type="number" id="outlineWidth" name="outlineWidth" value="20"><br><br>
+                    <input type="number" id="outlineWidth" name="outlineWidth" value="20" onchange="valueMaxMin(500,-100,this)"><br><br>
                     <label for="margin">margin:</label>
-                    <input type="number" id="margin" name="margin" value="40"><br><br>
+                    <input type="number" id="margin" name="margin" value="40" onchange="valueMaxMin(500,-500,this)"><br>
+                    <br>
                     <input type="button" onclick="updateBox()" value="Atualizar">
                 </form>
+                <span class="mark">Experimente usar valores negativos na margem para ver como a caixa se comporta em relação aos elementos vizinhos.</span>
                 <div style="display: flex; justify-content: center;">
                  
                         <div id="box" style="
@@ -358,29 +380,54 @@ input[type="number"] {
 
         <article id="shorthand">
             <h2>Shorthand</h2>
-            <p>Shorthand é uma forma de escrever códigos de forma mais compacta, mas que ainda são entendidos pelo navegador.</p>
-            <section id="margin-outline-padding-e-border">
-                <h3>margin, outline, padding e border</h3>
-                <p>Para margin, outline, padding e border os shorthand funciona da mesma forma, pois podemos declarar um único valor para todos os lados. Por exemplo:</p>
-                <p class="low"><code>margin: 10px;</code></p>
-                <p>Isso significa que todos os lados da margem terão 10px de distância. Se quisermos que cada lado tenha um valor diferente, podemos fazer o seguinte:</p>
-                <p class="low"><code>margin: <abbr title="margin-top">10px</abbr> <abbr title="margin-right">20px</abbr> <abbr title="margin-botton">30px</abbr> <abbr title="margin-left">40px</abbr>;</code></p>
-                <p>Isso significa que o lado superior terá 10px, o direito 20px, o inferior 30px e o esquerdo 40px. A ordem é sempre a mesma: superior, direito, inferior e esquerdo. Perceba que ele segue o sentido horário.</p>
-                <p>Outra forma de shorthand é com apenas dois valores:</p>
-                <p class="low"><code>margin: <abbr title="margin-top e margin-bottom">10px</abbr> <abbr title="margin-right e margin-left">20px</abbr>;</code></p>
-                <p>Isso significa que o lado superior e inferior terão 10px, enquanto os lados direito e esquerdo terão 20px.</p>
-            </section><!--margin-outline-padding-e-border-->
-            <section id="padding-e-border">
-                <h3>padding e border</h3>
-                <p>Para padding e border, o shorthand funciona da mesma forma, mas com uma diferença: a ordem dos valores é diferente. Para padding, a ordem é a seguinte: superior, direito, inferior e esquerdo. Para border, a ordem é: largura, estilo e cor.</p>
-                <p>Exemplo de shorthand:</p>
-                <p class="low"><code>padding: 10px 20px 30px 40px;</code></p>
-                <p>Isso significa que o lado superior terá 10px, o direito 20px, o inferior 30px e o esquerdo 40px. A ordem é sempre a mesma: superior, direito, inferior e esquerdo. Perceba que ele segue o sentido horário.</p>
-                <p>Outra forma de shorthand é com apenas dois valores:</p>
-                <p class="low"><code>padding: 10px 20px;</code></p>
-                <p>Isso significa que o lado superior e inferior terão 10px, enquanto os lados direito e esquerdo terão 20px.</p>
-            </section><!--padding-e-border-->
-           
+            <p>Shorthand é uma forma de escrever códigos CSS de forma mais compacta, facilitando a leitura e a manutenção do código.</p>
+          
+            <p>As propriedades <code>margin</code>, <code>padding</code>, <code>border</code> e <code>outline</code> podem ser escritas de forma abreviada. Vamos ver como isso funciona para cada uma delas:</p>
+            
+            <section id="shorthand-margin">
+            <h4>Margin</h4>
+            <p>A propriedade <code>margin</code> pode ser escrita de forma abreviada para definir as margens de todos os lados de um elemento.</p>
+            <p>Exemplo de código:</p>
+            <p class="low"><code>margin: 10px;</code></p>
+            <p>Isso significa que todos os lados da margem terão 10px de distância.</p>
+            <p>Podemos definir margens diferentes para cada lado usando quatro valores:</p>
+            <p class="low"><code>margin: 10px 20px 30px 40px;</code></p>
+            <p>Isso significa que o lado superior terá 10px, o direito 20px, o inferior 30px e o esquerdo 40px. A ordem é sempre a mesma: superior, direito, inferior e esquerdo (sentido horário).</p>
+            <p>Também podemos usar apenas dois valores:</p>
+            <p class="low"><code>margin: 10px 20px;</code></p>
+            <p>Isso significa que o lado superior e inferior terão 10px, enquanto os lados direito e esquerdo terão 20px.</p>
+            </section><!--shorthand-margin-->
+            
+            <section id="shorthand-padding">
+            <h4>Padding</h4>
+            <p>A propriedade <code>padding</code> funciona de forma semelhante à <code>margin</code>.</p>
+            <p>Exemplo de código:</p>
+            <p class="low"><code>padding: 10px;</code></p>
+            <p>Isso significa que todos os lados do padding terão 10px de distância.</p>
+            <p>Podemos definir padding diferentes para cada lado usando quatro valores:</p>
+            <p class="low"><code>padding: 10px 20px 30px 40px;</code></p>
+            <p>Isso significa que o lado superior terá 10px, o direito 20px, o inferior 30px e o esquerdo 40px.</p>
+            <p>Também podemos usar apenas dois valores:</p>
+            <p class="low"><code>padding: 10px 20px;</code></p>
+            <p>Isso significa que o lado superior e inferior terão 10px, enquanto os lados direito e esquerdo terão 20px.</p>
+            </section><!--shorthand-padding-->
+            
+            <section id="shorthand-border">
+            <h4>Border</h4>
+            <p>A propriedade <code>border</code> pode ser escrita de forma abreviada para definir a largura, estilo e cor da borda.</p>
+            <p>Exemplo de código:</p>
+            <p class="low"><code>border: 1px solid black;</code></p>
+            <p>Isso significa que a borda terá 1px de largura, estilo sólido e cor preta.</p>
+            </section><!--shorthand-border-->
+            
+            <section id="shorthand-outline">
+            <h4>Outline</h4>
+            <p>A propriedade <code>outline</code> funciona de forma semelhante à <code>border</code>.</p>
+            <p>Exemplo de código:</p>
+            <p class="low"><code>outline: 2px dashed red;</code></p>
+            <p>Isso significa que o outline terá 2px de largura, estilo tracejado e cor vermelha.</p>
+            </section><!--shorthand-outline-->
+            
         </article><!--shorthand-->
 
         <article id="sombras">
@@ -398,13 +445,13 @@ input[type="number"] {
                 <p>Experimente alterar os valores abaixo para ver como eles afetam a sombra da caixa:</p>
                 <form id="shadowForm" style="align-self: self-start; text-align: left;">
                     <label for="hOffset">Deslocamento lateral:</label>
-                    <input type="number" id="hOffset" name="hOffset" value="5"><br><br>
+                    <input type="number" id="hOffset" name="hOffset" value="5" onchange="valueMaxMin(500,-500,this)"><br><br>
                     <label for="vOffset">Deslocamento Vertical:</label>
-                    <input type="number" id="vOffset" name="vOffset" value="5"><br><br>
+                    <input type="number" id="vOffset" name="vOffset" value="5" onchange="valueMaxMin(500,-500,this)"><br><br>
                     <label for="blurRadius">Raio de Desfoque:</label>
-                    <input type="number" id="blurRadius" name="blurRadius" value="4"><br><br>
+                    <input type="number" id="blurRadius" name="blurRadius" value="4" onchange="valueMaxMin(500,-500,this)"><br><br>
                     <label for="spreadRadius">Raio de Expansão:</label>
-                    <input type="number" id="spreadRadius" name="spreadRadius" value="4"><br><br>
+                    <input type="number" id="spreadRadius" name="spreadRadius" value="4" onchange="valueMaxMin(500,-500,this)"><br><br>
                     <label for="shadowColor">Cor da Sombra:</label>
                     <input type="color" id="shadowColor" name="shadowColor" value="#000000"><br><br>
                     <input type="button" onclick="updateShadow()" value="Atualizar">
@@ -458,11 +505,11 @@ box-shadow: <output id="1-px"></output> <output id="2-px"></output> <output id="
                     <p>Experimente alterar os valores abaixo para ver como eles afetam a sombra interna da caixa:</p>
                     <form id="innerShadowForm" style="align-self: self-start; text-align: left;">
                         <label for="innerHOffset">Deslocamento lateral:</label>
-                        <input type="number" id="innerHOffset" name="innerHOffset" value="5"><br><br>
+                        <input type="number" id="innerHOffset" name="innerHOffset" value="5" onchange="valueMaxMin(500,-500,this)"><br><br>
                         <label for="innerVOffset">Deslocamento Vertical:</label>
-                        <input type="number" id="innerVOffset" name="innerVOffset" value="5"><br><br>
+                        <input type="number" id="innerVOffset" name="innerVOffset" value="5" onchange="valueMaxMin(500,-500,this)"><br><br>
                         <label for="innerBlurRadius">Raio de Desfoque:</label>
-                        <input type="number" id="innerBlurRadius" name="innerBlurRadius" value="10"><br><br>
+                        <input type="number" id="innerBlurRadius" name="innerBlurRadius" value="10" onchange="valueMaxMin(500,-500,this)"><br><br>
                         <label for="innerShadowColor">Cor da Sombra:</label>
                         <input type="color" id="innerShadowColor" name="innerShadowColor" value="#000000"><br><br>
                         <input type="button" onclick="updateInnerShadow()" value="Atualizar">
@@ -521,13 +568,13 @@ box-shadow: inset <output id="inner-1-px"></output> <output id="inner-2-px"></ou
                     <p>Experimente alterar os valores abaixo para ver como eles afetam a borda arredondada da caixa:</p>
                     <form id="borderRadiusForm" style="align-self: self-start; text-align: left;">
                         <label for="topLeftRadius">Canto Superior Esquerdo:</label>
-                        <input type="number" id="topLeftRadius" name="topLeftRadius" value="10"><br><br>
+                        <input type="number" id="topLeftRadius" name="topLeftRadius" value="10" onchange="valueMaxMin(300,-100,this)"><br><br>
                         <label for="topRightRadius">Canto Superior Direito:</label>
-                        <input type="number" id="topRightRadius" name="topRightRadius" value="10"><br><br>
+                        <input type="number" id="topRightRadius" name="topRightRadius" value="10" onchange="valueMaxMin(300,-100,this)"><br><br>
                         <label for="bottomLeftRadius">Canto Inferior Esquerdo:</label>
-                        <input type="number" id="bottomLeftRadius" name="bottomLeftRadius" value="10"><br><br>
+                        <input type="number" id="bottomLeftRadius" name="bottomLeftRadius" value="10" onchange="valueMaxMin(300,-100,this)"><br><br>
                         <label for="bottomRightRadius">Canto Inferior Direito:</label>
-                        <input type="number" id="bottomRightRadius" name="bottomRightRadius" value="10"><br><br>
+                        <input type="number" id="bottomRightRadius" name="bottomRightRadius" value="10" onchange="valueMaxMin(300,-100,this)"><br><br>
                         <input type="button" onclick="updateBorderRadius()" value="Atualizar">
                     </form>
                     <div class="pre">

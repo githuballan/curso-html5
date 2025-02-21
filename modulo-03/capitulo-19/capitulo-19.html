@@ -22,7 +22,6 @@
     <header>
         <h1>Background</h1>
     </header>
-
     <div class="nav-hamburguinho">
         <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
             <div class="bar1"></div>
@@ -49,11 +48,8 @@
                 </ul>
                 <li><a onclick="clicante()" href="#parallax">Efeito Parallax</a></li>
             </ul>
-                <li><a onclick="clicante()" href="#parallax">Efeito Parallax</a></li>
-            </ul>
         </nav>
     </div>
-    
   <main>
     <article id="background-imagens">
         <h2>Como criar um background com imagens</h2>
@@ -221,7 +217,7 @@
                 </pre>
             </div>
             <p>O exemplo acima define a cor de fundo como preta, a imagem de fundo como 'exemplo.jpg', posicionada no centro, redimensionada para cobrir o elemento, sem repetição, e fixa em relação à janela do navegador.</p>
-            <fieldset style="line-height: 1.5;"> 
+            <fieldset> 
                 <legend>Exemplo interativo</legend>
             
                 <div>
@@ -232,9 +228,12 @@
                         <option value="repeat-x">#FFF</option>
                         <option value="repeat-y">#00F</option>
                     </select><br>
-                    background-image: url('imagens/exemplo1.jpg');
-                    <br>
-                    background-position:<select onchange="document.querySelector('#backgroundShorthand').style.backgroundPosition = this.value">
+                    background-image:
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundImage = this.value">
+                        <option value="repeat">url('imagens/exemplo1.jpg');</option>
+                    </select><br>
+                    background-position:
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundPosition = this.value">
                         <option value="left top">left top</option>
                         <option value="left center">left center</option>
                         <option value="left bottom">left bottom</option>
@@ -245,21 +244,24 @@
                         <option value="right center">right center</option>
                         <option value="right bottom">right bottom</option>
                     </select><br>
-                    background-size:<select onchange="document.querySelector('#backgroundShorthand').style.backgroundSize = this.value">
+                    background-size:
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundSize = this.value">
                         <option value="auto">auto</option>
                         <option value="cover">cover</option>
                         <option value="contain">contain</option>
                         <option value="50%">50%</option>
                         <option value="100px">100px</option>
-                    </select><br>
                     
-                    background-repeat: <select onchange="document.querySelector('#backgroundShorthand').style.backgroundRepeat = this.value">
+                    </select><br>
+                    background-repeat:
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundRepeat = this.value">
                         <option value="repeat">repeat</option>
                         <option value="no-repeat">no-repeat</option>
                         <option value="repeat-x">repeat-x</option>
                         <option value="repeat-y">repeat-y</option>
                     </select><br>
-                    background-attachment:<select onchange="document.querySelector('#backgroundShorthand').style.backgroundAttachment = this.value">
+                    background-attachment:
+                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundAttachment = this.value">
                         <option value="scroll">scroll</option>
                         <option value="fixed">fixed</option>
                         <option value="local">local</option>
@@ -407,10 +409,10 @@
                 align-items: center;
 
                 flex-wrap: wrap;">background-image:
-                  <input type="range" id="deg1" min="1" max="360" value="90" onchange="document.getElementById('graus').value = this.value + 'deg'">
-                 <input type="color" id="color1" value="#ff0000" onchange="document.getElementById('color01').value = this.value">
-                  <input type="color" id="color2" value="#00ff00" onchange="document.getElementById('color02').value = this.value">
-                  <input type="color" id="color3" value="#0000ff" onchange="document.getElementById('color03').value = this.value">
+                  <input type="number" id="deg1" min="1" max="360" value="90" onchange="valueMaxMin(360,1,this); document.getElementById('graus').value = this.value + 'deg'" >
+                 <input type="color" id="color1" onchange="document.getElementById('color01').value = this.value">
+                  <input type="color" id="color2" onchange="document.getElementById('color02').value = this.value">
+                  <input type="color" id="color3" onchange="document.getElementById('color03').value = this.value">
                   </div>
                     <button onclick="changeColor()">Aplicar</button>
                   <script>
@@ -432,15 +434,15 @@
                 <pre>
 background-image:
 linear-gradient
-(<output id="graus">90deg</output>, 
-<output id="color01">#ff0000</output>, 
-<output id="color02">#00ff00</output>, 
-<output id="color03">#0000ff</output>);
+(<output id="graus"></output>, 
+<output id="color01"></output>, 
+<output id="color02"></output>, 
+<output id="color03"></output>);
 </pre>
             </div>
                
                 <div id="linearDegrade" style="
-                background-image: linear-gradient(90deg, #f00, #0f0, #0000ff);
+                background-image: linear-gradient(90deg, #f00, #0f0);
                 height: 50vmin;
                 width: 50vmin;
                 border-radius: 5px;">
@@ -473,24 +475,10 @@ linear-gradient
             <p>Também é possível definir em qual trecho do bloco iniciará a transição da cor. Para isso, o percentual deve ficar entre vírgulas e entre as cores escolhidas.</p>
             <p>Exemplo:</p>
             <div style="height: 100px; background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);"></div>
-
-            <section>
-                 <p>O comando:</p>
+            <p>O comando:</p>
             <div class="pre">
                 <pre>background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);</pre>
             </div>
-                <p>Vamos detalhar cada parte do comando:</p>
-                <ul>
-                    <li><code>90deg</code>: Define o ângulo do degradê. Neste caso, 90 graus, o que significa que o degradê vai da esquerda para a direita.</li>
-                    <li><code>#f00 29%</code>: A cor vermelha (<code>#f00</code>) ocupa 29% do espaço.</li>
-                    <li><code>30%</code>: Define um ponto de transição sem cor específica, criando uma transição suave entre o vermelho e a próxima cor.</li>
-                    <li><code>#0f0 31%</code>: A cor verde (<code>#0f0</code>) começa a partir de 31% do espaço.</li>
-                    <li><code>49%</code>: Define outro ponto de transição sem cor específica, criando uma transição suave entre o verde e a próxima cor.</li>
-                    <li><code>#00f 50%</code>: A cor azul (<code>#00f</code>) começa a partir de 50% do espaço.</li>
-                </ul>
-            </section>
-
-           
             <p>Note que o percentual escolhe o posicionamento de cada cor e cada transição no bloco.</p>
 
             <fieldset>
@@ -502,14 +490,26 @@ linear-gradient
                 align-items: center;
 
                 flex-wrap: wrap;">background-image:
-                  <input type="range" style="width: 200px;" id="deg2" min="1" max="360" value="90" onchange="document.getElementById('graus1').value = this.value + 'deg'">
-                 <input type="color" id="color4" value="#ff0000" onchange="document.getElementById('color04').value = this.value"><input type="range" id="porcent01" min="1" max="100" value="29" onchange="document.getElementById('porcent1').value = this.value+'%'">
-                 <input type="range" id="porcent02" min="1" max="100" value="30" onchange="document.getElementById('porcent2').value = this.value+'%'">
-                  <input type="color" value="#00ff00" id="color5" onchange="document.getElementById('color05').value = this.value"><input type="range" id="porcent03" min="1" max="100" value="31" onchange="document.getElementById('porcent3').value = this.value+'%'">
-                  <input type="range" id="porcent04" min="1" max="100" value="49" onchange="document.getElementById('porcent4').value = this.value+'%'">
-                  <input type="color" value="#0000ff" id="color6" onchange="document.getElementById('color06').value = this.value"><input type="range" id="porcent05" min="1" max="100" value="50" onchange="document.getElementById('porcent5').value = this.value+'%'">
+                  <input type="number" style="width: 50px;" id="deg2" min="1" max="360" value="90" onchange=" valueMaxMin(360,1,this);document.getElementById('graus1').value = this.value + 'deg'">
+
+                 <input type="color" id="color4" value="#ff0000" onchange="document.getElementById('color04').value = this.value">
+                 
+                 <input type="number" style="width: 50px;" id="porcent01" min="1" max="100" value="29" onchange="valueMaxMin(100,1,this);document.getElementById('porcent1').value = this.value+'%'">
+
+                 <input type="number" style="width: 50px;" id="porcent02" min="1" max="100" value="30" onchange="valueMaxMin(100,1,this);document.getElementById('porcent2').value = this.value+'%'">
+                 
+                  <input type="color" value="#00ff00" id="color5" onchange="document.getElementById('color05').value = this.value">
+                  
+                  <input type="number" style="width: 50px;" id="porcent03" min="1" max="100" value="31" onchange="valueMaxMin(100,1,this);document.getElementById('porcent3').value = this.value+'%'">
+
+                  <input type="number" style="width: 50px;" id="porcent04" min="1" max="100" value="49" onchange="valueMaxMin(100,1,this);document.getElementById('porcent4').value = this.value+'%'">
+
+                  <input type="color" value="#0000ff" id="color6" onchange="document.getElementById('color06').value = this.value">
+                  
+                  <input type="number" style="width: 50px;" id="porcent05" min="1" max="100" value="50" onchange="valueMaxMin(100,1,this);document.getElementById('porcent5').value = this.value+'%'">
+
                   </div>
-                    <button onclick="changeColor1()">Aplicar</button>
+                   
                   <script>
                     {
                    
@@ -553,7 +553,7 @@ background-image: linear-gradient
 <output id="color06"></output> <output id="porcent5"></output>);
 </pre>
             </div>
-               
+            <button onclick="changeColor1()">Aplicar</button>
                 <div id="linearDegrade1" style="
                background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);
                 height: 50vmin;
@@ -603,13 +603,13 @@ background-image: linear-gradient
 
   <footer>
 
-    <h4>Materiais utilizados</h4>
+    <h1>Materiais utilizados</h1>
         
             <strong><a href="../../material-de-apoio/19 - Imagens de Fundo.pdf" target="_blank"> Material em PDF</a></strong>
         
         
-    <h4>Vídeos</h4>
-   
+    <h1>Vídeos</h1>
+    </select>
         <p>
             <a href="https://youtu.be/sms5H5cKDy4?si=ebdDdfpQeSiYhFmC" target="_blank">Download das imagens do capítulo</a>
         </p>
@@ -634,8 +634,9 @@ background-image: linear-gradient
         </p>
         
               
-      
+        <hr>
+        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
     
     </footer>
 </body>
-</html>
+</html></select>

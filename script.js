@@ -31,3 +31,13 @@ function clicante(){
   clickHmaburger.click();}
 }
 
+function valueMaxMin(max,min,input){
+    
+    if(input.value > max){
+        input.value = max;
+        
+    }else if(input.value < min){
+        input.value = min;
+    }
+    console.log(input.value);
+}

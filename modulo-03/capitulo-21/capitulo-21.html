@@ -7,161 +7,253 @@
 
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
+    
+
     <link rel="stylesheet" href="../../style.css">
+
+    <script src="../../script.js"></script>
 
 
     <style>
        
-        table{
-            border-collapse: collapse;
-            position: relative;
-            
+       #introducao{
+        td{
+            border:transparent;
+            padding: 1px;
         }
+       }
+       #aplicando-bordas, #tipos-de-bordas{
+        td{
+            border:solid 2px black;
+            padding: 2px 1em;
+        }
+
+       }
+       #zebrado{
+        tbody>tr:nth-child(3n-1) {
+            background-color: rgba(0, 0, 0, 0.158);
+        }
+    }
+
+      
+        td{
+            border:solid 2px black;
+            padding: 2px 1em;
+        }
+
+        table{
+
+            border-collapse: collapse;
+            margin: auto;
+
+            td, th{
+                border:solid 2px black;
+                padding: 2px 1em;
+            }
+            thead, tfoot{
+            background-color: rgb(145, 145, 145);
+            }
+
+           
+
+        }
+
+ 
         thead, tfoot{
             background-color: rgb(145, 145, 145);
         }
-        td, th{
-            border:solid;
-            padding: 1px 1em;
-        }
-        tbody>tr:nth-child(even){
-            background-color: rgba(117, 117, 117, 0.363);
-        }
-       thead>tr>th{
-            position:sticky;
-            top:-3px;
-            background-color:rgb(145, 145, 145);
-        }
-        col.A{
-            background-color: aquamarine;
-        }
-        col.B{
-            background-color: blueviolet;
-        }
-        col.C{
-            background-color: rgb(103, 134, 201);
-        }
 
-        col.D{
-            background-color: rgb(206, 214, 157);
-        }
+       
         div.responsiva{
-            width: 100%;
-            overflow-x: auto;
             margin: auto;
+            width: 95%;
+            overflow-x: auto;
         }
-
 
 
     </style>
+
+<script src="../../script.js"></script>
 
 </head>
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        <h1 id="capitulo"> Capitulo 21</h1>
-        <h1>Tabelas</h1>
+        <h1 id="capitulo"> Capitulo 21 - Tabelas</h1>
     </header>
     <main>
-        <section><!--Tabelas-->
-            <article id="introducao"><!--Introdução-->
-            <h1>Introdução</h1>
-            <p>
-                Tabelas em html são 100% desenhada por comandos, porém de forma muito parecida com as listas.
-            </p>
-            <p> 
-                O comando  usado para fazer tabela é o table assim como o ul de lista. Porém temos ainda o tr e o td. 
-            </p>
-                <ul>
-                    <li> <strong>tr:</strong> o tr representa a linha da tabela cada tr equivale a uma linha e dentro do tr vai o td (fica igual a lista)</li>
-                    <li><strong>td:</strong> Cada td representa uma coluna da linha que ele está incluso e esse td é como o li da lista. Nele vai conter os dados da célula</li>
-                </ul>
-            <p>
-                O que define a quantidade de linha é a quantidade de tr e o que define a quantidade de coluna é o tr que possuir mais td.
-            </p>
-            <p>Exemplo:</p>
-            <div class="responsiva"> 
-                <table style="margin: auto;">
-                <tr>
-                    <td>A1</td>
-                    <td>B1</td>
-                    <td>C1</td>
-                    <td>C1</td>
-                </tr>
-                <tr>
-                    <td>A2</td>
-                    <td>B2</td>
-                    <td>C2</td>
-                    <td>C2</td>
-                </tr>
-                <tr>
-                    <td>A3</td>
-                    <td>B3</td>
-                    <td>C3</td>
-                    <td>C3</td>
-                </tr>
-                <tr>
-                    <td>A4</td>
-                    <td>B4</td>
-                    <td>C4</td>
-                    <td>C4</td>
-                </tr>
-            </table>
-            </div>
-            <p>
-                O comando fica assim:
-            </p>
-            <pre>
+        
+        <article id="introducao">
+            
+        <h2>Introdução</h2>
+            
+            <p>O comando principal para criar uma tabela é <code>&lt;table></code>, similar ao <code>&lt;ul></code> usado para listas. Dentro da tabela, usamos <code>&lt;tr></code> para definir linhas e <code>&lt;td></code> para definir células (colunas) dentro dessas linhas.</p>
+        
+            <ul>
+                <li> <strong>&lt;tr>:</strong> Representa uma linha da tabela. Cada <code>&lt;tr></code> equivale a uma linha e dentro dele colocamos as células <code>&lt;td></code>.</li>
+                <li><strong>&lt;td>:</strong> Representa uma célula dentro de uma linha. Cada <code>&lt;td></code> contém os dados da célula.</li>
+            </ul>
+        
+        <p>Exemplo:</p>
+        <div> 
+            <table style="margin: auto;">
+            <tr>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+                <td>D1</td>
+            </tr>
+            <tr>
+                <td>A2</td>
+                <td>B2</td>
+                <td>C2</td>
+                <td>D2</td>
+            </tr>
+            <tr>
+                <td>A3</td>
+                <td>B3</td>
+                <td>C3</td>
+                <td>D3</td>
+            </tr>
+            <tr>
+                <td>A4</td>
+                <td>B4</td>
+                <td>C4</td>
+                <td>D4</td>
+            </tr>
+        </table>
+        </div>
+        <p>
+            O código HTML para criar essa tabela é:
+        </p>
+        <div class="pre">
+        <pre>
 
 &lt;table>    
 &lt;tr>
     &lt;td>A1&lt;/td>
     &lt;td>B1&lt;/td>
     &lt;td>C1&lt;/td>
-    &lt;td>C1&lt;/td>
+    &lt;td>D1&lt;/td>
 &lt;/tr>
 &lt;tr>
     &lt;td>A2&lt;/td>
     &lt;td>B2&lt;/td>
     &lt;td>C2&lt;/td>
-    &lt;td>C2&lt;/td>
+    &lt;td>D2&lt;/td>
 &lt;/tr>
 &lt;tr>
     &lt;td>A3&lt;/td>
     &lt;td>B3&lt;/td>
     &lt;td>C3&lt;/td>
-    &lt;td>C3&lt;/td>
+    &lt;td>D3&lt;/td>
 &lt;/tr>
 &lt;tr>
     &lt;td>A4&lt;/td>
     &lt;td>B4&lt;/td>
     &lt;td>C4&lt;/td>
-    &lt;td>C4&lt;/td>
+    &lt;td>D4&lt;/td>
 &lt;/tr>
 &lt;/table>
-            </pre>
-            <p class="mark">
-                A w3c permite que não encerre a tag tr com &lt;/tr> nem e td com &lt;/td>. Porém é melhor encerrar para evitar erros.
-            </p>
-            </article> 
-            <article id="estilos"> <!--Estilos para Tabelas-->
+        </pre>
+    </div>
+        <p>Observe que todas as linhas possuem a mesma quantidade de células <code>&lt;td></code>. Se uma linha tiver mais ou menos células, isso pode causar desalinhamento visual na tabela. Veja o exemplo abaixo:</p>
+        <div>
+            <table style="margin: auto;">
+                <tr>
+                    <td>A1</td>
+                    <td>B1</td>
+                    <td>C1</td>
+                    <td>D1</td>
+                </tr>
+                <tr>
+                    <td>A2</td>
+                    <td>B2</td>
+                    <td>C2</td>
+                    <td>D2</td>
+                </tr>
+                <tr>
+                    <td>A3</td>
+                    <td>B3</td>
+                    <td>C3</td>
+                </tr>
+                <tr>
+                    <td>A4</td>
+                    <td>B4</td>
+                    <td>C4</td>
+                    <td>D4</td>
+                    <td>E4</td>
+                </tr>
+            </table>
+        </div>
+        <p>Observe que a terceira linha tem uma célula a menos e a quarta linha tem uma célula(<code>&lt;td></code>) a mais.</p>
+        <p>Portanto, é importante entender que a tag <code>&lt;td></code> representa uma célula dentro de uma linha, e não uma coluna inteira. Embora visualmente pareça que <code>&lt;td></code> define colunas, na verdade, cada <code>&lt;td></code> é uma célula específica dentro de uma linha. Como desenvolvedor web, você deve saber que <code>&lt;td></code> define células de linha, e não colunas completas.</p>
+            <aside>Nota: A W3C permite que as tags <code>&lt;tr></code> e <code>&lt;td></code> não sejam explicitamente fechadas, mas é uma boa prática fechá-las para evitar erros.</aside>
+        
+        </article> <!--Introdução-->
+
+        <article id="estilos">
+
             <h2> Estilos para Tabelas</h2>
+            <p>Existem muitos estilos que podem ser aplicados em tabelas, como bordas, alinhamentos, efeitos zebrados, fixar linha e coluna. Vamos ver cada um deles.</p>
+              
+            <article id="aplicando-bordas">
+                <h3>Aplicando Bordas em Tabelas</h3>
+                <p>Para aplicar bordas em tabelas, você pode usar a propriedade CSS <code>border</code> diretamente nas células da tabela (<code>&lt;td></code>). No entanto, fazer isso manualmente para cada célula pode ser muito trabalhoso. Uma abordagem mais eficiente é definir um estilo CSS que se aplique a todas as células da tabela de uma vez. Veja o exemplo abaixo:</p>
+                    <table style="border-collapse: separate;">
+                        <tr>
+                            <td>A1</td>
+                            <td>B1</td>
+                            <td>C1</td>
+                            <td>D1</td>
+                        </tr>
+                        <tr>
+                            <td>A2</td>
+                            <td>B2</td>
+                            <td>C2</td>
+                            <td>D2</td>
+                        </tr>
+                    </table>
+                <div class="pre">
+                    
+                    <pre>
+&lt;style>
+td{
+border:solid 2px black;
+padding: px 1em;
+}
+&lt;/style>
+
+
+&lt;table style="margin: auto;">
+&lt;tr>
+    &lt;td>A1&lt;/td>
+    &lt;td>B1&lt;/td>
+    &lt;td>C1&lt;/td>
+    &lt;td>D1&lt;/td>
+&lt;/tr>
+&lt;tr>
+    &lt;td>A2&lt;/td>
+    &lt;td>B2&lt;/td>
+    &lt;td>C2&lt;/td>
+    &lt;td>D2&lt;/td>
+&lt;/tr>
+&lt;/table>
+                    </pre>
+                </div>
+
+                
+            </article><!--aplicando-bordas-->
+           
+
+            <article id="tipos-de-bordas">
             <h3>Style border-collapse</h3>
             <ul>
-                <li><strong>border-collapse: collapse</strong></li>
-                <div class="responsiva"> <table>
-                    <tr>
-                        <td>collapse</td>
-                        <td>collapse</td>
-                    </tr>
-                    <tr>
-                        <td>collapse</td>
-                        <td>collapse</td>
-                    </tr>
-                </table>
-            </div>
-                <li><strong>border-collapse: separate</strong></li>
-                <div class="responsiva"> <table style=" border-collapse: separate;">
+                <li><strong>border-collapse: separate;</strong> Esse é o valor padrão.</li>
+                <p><code>&lt;table style=" border-collapse: separate;"></code></p>
+                <div class="responsiva"> 
+                    
+                    <table style=" border-collapse: separate;">
                     <tr>
                         <td>separate</td>
                         <td>separate</td>
@@ -172,32 +264,38 @@
                     </tr>
                 </table>
             </div>
-                <li><strong>Tabela sem estilo aplicado</strong> Uma tabela é natural sem borda e sem collapse</li>
-                <div class="responsiva"> <table style=" border: solid;">
+            
+
+            <li><strong>border-collapse: collapse;</strong></li>
+            <p><code>&lt;table style=" border-collapse: collapse;"></code></p>
+                <div class="responsiva"> 
+                    <table style="border-collapse: collapse">
                     <tr>
-                        <td style=" border: hidden;">separate</td>
-                        <td style=" border: hidden;">separate</td>
+                        <td>collapse</td>
+                        <td>collapse</td>
                     </tr>
                     <tr>
-                        <td style=" border: hidden;">separate</td>
-                        <td style=" border: hidden;">separate</td>
+                        <td>collapse</td>
+                        <td>collapse</td>
                     </tr>
                 </table>
             </div>
             </ul>
+
+            <p>É importante lembrar que, para obter o efeito de colapso das bordas, é necessário declarar a propriedade <code>border</code> com o valor <code>solid</code> para os elementos <code>&lt;td></code> na folha de estilo.</p>
+   
+            </article> <!--tipos-de bordas-->
             
-            </article> 
-            <article id="alinhamentos"> <!--Alinhamentos em tabela-->
-                <h2> Alinhamentos em tabela</h2>
-            <p>
-                Exitem duas formas de alinhar texto em um célula horizontal e vertical. Veja os exemplos abaixo:
-            </p>
+            <article id="alinhamentos"> 
+                <h3> Alinhamentos em tabela</h3>
+                <p>Para alinhar o texto horizontalmente, usamos a propriedade <code>text-align</code> e para alinhar o texto verticalmente, usamos a propriedade <code>vertical-align</code>. Ambas as propriedades devem ser aplicadas diretamente nas células da tabela (<code>&lt;td></code>). Veja os exemplos abaixo:</p>
 
 
 
             <ul>
                 <li><strong>text-align</strong></li>
-                <div class="responsiva"> <table style="height: 350px; width: 350px;">
+                
+                    <table style="height: 250px; width: 250px;">
                     <tr>
                         <td style="text-align: center;">center</td>
                         <td style="text-align: right;">right</td>
@@ -207,9 +305,24 @@
                         <td>nada</td>
                     </tr>
                 </table>
-            </div>
+                <p>Código:</p>
+                <div class="pre">
+                    <pre>
+&lt;table style="height: 250px; width: 250px;">
+    &lt;tr>
+        &lt;td style="text-align: center;">center&lt;/td>
+        &lt;td style="text-align: right;">right&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td style="text-align: left;">left&lt;/td>
+        &lt;td>nada&lt;/td>
+    &lt;/tr>
+&lt;/table>
+                    </pre>
+                </div>
+           
                 <li><strong>vertical-align</strong></li>
-                <div class="responsiva"> <table style="height: 350px;width: 350px;">
+               <table style="height: 250px;width: 250px;">
                     <tr>
                         <td style="vertical-align: top;">top</td>
                         <td style="vertical-align: midle;">midle</td>
@@ -218,489 +331,360 @@
                         <td style="vertical-align: bottom;">bottom</td>
                         <td style="vertical-align: bottom; text-align: right;"> 2 estilos</td>
                     </tr>
-                </table></div>
-            </ul>
-            </article>
-        </section>
-        <section id="tabela-semantica"><!--Tabela Semântica-->
-            <article><!--Introdução-->
-        <h2>Tabela Semântica</h2>
-            <p>
-                O objetivo de trabalhar com trabalhar com tabelas semânticas é organizar melhor sua tabela. A w3c recomenda o uso desse tipo sempre que for usar tabelas grandes, com muitos dados. No entanto é bom usar essa tipo de tabela sempre que possível, pois o google valoriza essa Semântica.
-            </p>
-        
-                São poucas diferenças entre esta e a anterior. Esta possui:
-                <ol>
-                    <li><strong>capition</strong>: Título da tabela</li>
-                    <li><strong>thead</strong>: cabeçalho</li>
-                    <li><strong>tbody</strong>: corpo</li>
-                    <li><strong>tfoot</strong>: Rodapé</li>            
-                </ol> 
-            <p>
-                Essa diferença serve apenas para que o programa não misture informação de dados com títulos e compilados.
-            </p>
-            
-            <p>
-                Temos ainda o th, esse vai no lugar de td em locais de Títulos:
-            </p>
-                <ul>
-                    <li><strong>th:</strong> table head(Títulos da coluna ou da linha)</li>
-                    <span class="mark"> O th não precisa estar somente em thead, avezes ele poderá estar também em tbody ocupando a primeira coluna para ser título da linha.</span>
-                    <li><strong>td:</strong> table data(Dados da tabela)</li>
-                </ul>
-            <h3>Scope</h3>
-                <p>
-                    Scope é um atributo semântico do th, ele serve apenas para informar se o th é título de uma linha, coluna ou grpuo de linha, ou grupo de colunas. É muito importante esse tipo de informação para um  SEO melhor.
-                </p>
-                <ul>
-                    <li><strong>scope="col"</strong> usado para th  de coluna</li>
-                    <li><strong>scope="colgroup"</strong> usado quando o th está mesclado e abrange mais de uma coluna</li>
-                    <li><strong>scope="row"</strong> usado para th  de linha</li>
-                    <li><strong>scope="rowgroup"</strong> usado quando o th está mesclado e abrange mais de uma linha</li>
-                </ul>
-                    
-
-        <p>
-            Exemplo: de tabela semântica:
-        </p>
-        <div class="responsiva">
-            <table>
-            <caption>Caption</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Peixe</th>
-                    <th scope="col">PH min</th>
-                    <th scope="col">PH max</th>
-                    <th scope="col">Valor</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Neon</td>
-                    <td>4,0</td>
-                    <td>6,5</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Acará Bandeira</td>
-                    <td>4,0</td>
-                    <td>7,2</td>
-                    <td>16</td>
-                </tr>
-                <tr>
-                    <td>Rodostumus</td>
-                    <td>4,0</td>
-                    <td>6,8</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Ramirezi</td>
-                    <td>4,0</td>
-                    <td>6,8</td>
-                    <td>20</td>
-                </tr>
-
-            </tbody>
-
-            <tfoot>
-                <tr>
-                    <th  scope="row">PH Limite</th>
-                    <td>4,0</td>
-                    <td>6,5</td>
-                    <td>41</td>
-                </tr>
-
-            </tfoot>
-        </table>
-        </div>
-        <p>
-            Comando:
-        </p>
-        <div class="responsiva">
-            
-            <pre>
-
-&lt;table>
-    &lt;caption>Caption&lt;/caption>
-    &lt;thead>
-        &lt;tr>
-            &lt;th scope="col">Peixe&lt;/th>
-            &lt;th scope="col">PH min&lt;/th>
-            &lt;th scope="col">PH max&lt;/th>
-            &lt;th scope="col">Valor&lt;/th>
-        &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-        &lt;tr>
-            &lt;td>Neon&lt;/td>
-            &lt;&lt;td>4,0&lt;/td>
-            &lt;td>6,5&lt;/td>
-            &lt;td>2&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td>Acará Bandeira&lt;/td>
-            &lt;td>4,0&lt;/td>
-            &lt;td>7,2&lt;/td>
-            &lt;td>16&lt;/td>
-        &lt;/tr>
-    &lt;/tbody>
-    &lt;tfoot>
-        &lt;tr>
-            &lt;th  scope="row">PH Limite&lt;/th>
-            &lt;td>4,0&lt;/td>
-            &lt;td>6,5&lt;/td>
-            &lt;td>41&lt;/td>
-        &lt;/tr>
-    &lt;/tfoot>
+                </table>
+                <p>Código:</p>
+                <div class="pre">
+                    <pre>
+&lt;table style="height: 250px;width: 250px;">
+    &lt;tr>
+        &lt;td style="vertical-align: top;">top&lt;/td>
+        &lt;td style="vertical-align: midle;">midle&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td style="vertical-align: bottom;">bottom&lt;/td>
+        &lt;td style="vertical-align: bottom; text-align: right;"> 2 estilos&lt;/td>
+    &lt;/tr>
 &lt;/table>
-            </pre>
-        </div>
+                    </pre>
+                </div>
+            </ul>
+           <section id="abrindo-mente">
+            <h4>Abrindo a mente</h4>
+            <p>Para aplicar esse estilo em várias células de uma tabela específica, sem afetar todas as demais tabelas, você pode usar um seletor de ID ou classe para a tabela e, em seguida, aplicar o estilo apenas às células dessa tabela. Veja o exemplo abaixo:</p>
 
-            </article> 
-            <article> <!--Efeito zebrado-->
-            <h2>Efeito zebrado</h2>
+            <p>O código CSS para aplicar o estilo apenas às células dessa tabela é:</p>
+            <div class="pre">
+                <pre>
+&lt;style>
+    #tabela-especifica{
+        border-collapse: collapse;
+
+        td{
+        border: solid 2px red;
+        padding: 5px;
+        }
+    }
+&lt;/style>
+...
+&lt;table id="tabela-especifica">
+...
+&lt;/table>
+                </pre>
+            </div>
+           </section>
+            
+            </article><!--Alinhamentos-->
+
+            <article id="efeito-zebrado"> 
+            <h3>Efeito Zebrado</h3>
                 <p>
-                    O Efeito zebrado é feito pela pseudo-classe ":nth-child". Esse pseudo classe tem muitas opções de configurações veja abaixo:
+                    O efeito zebrado em tabelas é uma técnica que utiliza a pseudo-classe <code>:nth-child</code> para aplicar estilos alternados às linhas da tabela, facilitando a leitura dos dados. Abaixo estão algumas formas de usar essa pseudo-classe:
                 </p>
 
                 <ul>
-                    <li><strong>:nth-child(2n)</strong> Assim ela pinta somente a 2ª linha de cada 2, em outras palavras, linha sim linha não. </li>
-                    <li><strong>:nth-child(3n)</strong> Assim ela pinta somente a 3ª linha de cada 3 ( Esse n funciona da mesma forma para qualquer valor de n)</li>
-                    <li><strong>:nth-child(3n-1)</strong> Assim ela pinta somente a 2ª linha de cada 3 ( Ele separa 3 linha retorna uma e pinta Mas não fica igual o 2n porque ele separa de 3 em 3 logo ficará duas juntas sem pintar e uma pintada). Esse recurso é pouco usado e pode ser aplica com outros valores.</li>
-                    <li><strong>:nth-child(ods)</strong> (ods = Impar em inglês) Assim ela pinta somente linhas impares. </li>
-                    <li><strong>:nth-child(even)</strong> (even = Par em inglês) Assim ela pinta somente linhas pares. </li>
-
+                    <li><strong>:nth-child(2n)</strong>: Aplica o estilo a cada segunda linha, ou seja, uma linha sim, outra não.</li>
+                    <li><strong>:nth-child(3n)</strong>: Aplica o estilo a cada terceira linha.</li>
+                    <li><strong>:nth-child(3n-1)</strong>: Divide a tabela em grupos de 3 em 3 linhas, então ele volta 1 linha nesse caso e aplica o estilo, podendo voltar mais que 3 e, nesse caso, ele aplica o estilo no grupo anterior.</li>
+                    <li><strong>:nth-child(odd)</strong>: Aplica o estilo às linhas ímpares.</li>
+                    <li><strong>:nth-child(even)</strong>: Aplica o estilo às linhas pares.</li>
                 </ul>
 
                 <p>
                     Exemplo:
                 </p>
-                <div class="responsiva"> <table>
-                    <caption>Caption</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Peixe</th>
-                            <th scope="col">PH min</th>
-                            <th scope="col">PH max</th>
-                            <th scope="col">Valor</th>
-                        </tr>
-                
-                    </thead>
-                
-                    <tbody>
-                        <tr>
-                            <td>Neon</td>
-                            <td>4,0</td>
-                            <td>6,5</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Acará Bandeira</td>
-                            <td>4,0</td>
-                            <td>7,2</td>
-                            <td>16</td>
-                        </tr>
-                        <tr>
-                            <td>Rodostumus</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Ramirezi</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Neon</td>
-                            <td>4,0</td>
-                            <td>6,5</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Acará Bandeira</td>
-                            <td>4,0</td>
-                            <td>7,2</td>
-                            <td>16</td>
-                        </tr>
-                        <tr>
-                            <td>Rodostumus</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Ramirezi</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Neon</td>
-                            <td>4,0</td>
-                            <td>6,5</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Acará Bandeira</td>
-                            <td>4,0</td>
-                            <td>7,2</td>
-                            <td>16</td>
-                        </tr>
-                        <tr>
-                            <td>Rodostumus</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Ramirezi</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Neon</td>
-                            <td>4,0</td>
-                            <td>6,5</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Acará Bandeira</td>
-                            <td>4,0</td>
-                            <td>7,2</td>
-                            <td>16</td>
-                        </tr>
-                        <tr>
-                            <td>Rodostumus</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Ramirezi</td>
-                            <td>4,0</td>
-                            <td>6,8</td>
-                            <td>20</td>
-                        </tr>
-                
-                    </tbody>
-                
-                
-                    <tfoot>
-                        <tr>
-                            <th  scope="row">PH Limite</th>
-                            <td>4,0</td>
-                            <td>6,5</td>
-                            <td>--</td>
-                        </tr>
-                
-                    </tfoot>
-                </table></div>
-                <p>
-                    O comando no head:
-                </p>
-                <div class="responsiva">
-                    
+                <div class="responsiva"> 
+                    <table id="zebrado">
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>C1</td>
+                        <td>D1</td>
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>C1</td>
+                        <td>D1</td>
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>B2</td>
+                        <td>C2</td>
+                        <td>D2</td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>B3</td>
+                        <td>C3</td>
+                        <td>D3</td>
+                    </tr>
+                    <tr>
+                        <td>A4</td>
+                        <td>B4</td>
+                        <td>C4</td>
+                        <td>D4</td>
+                    </tr>
+                    <tr>
+                        <td>A5</td>
+                        <td>B5</td>
+                        <td>C5</td>
+                        <td>D5</td>
+                    </tr>
+                    <tr>
+                        <td>A6</td>
+                        <td>B6</td>
+                        <td>C6</td>
+                        <td>D6</td>
+                    </tr>
+                </table>
+            </div>
+
+                <p>O estilo CSS para aplicar o efeito zebrado é:</p>
+
+                <div class="pre">
                     <pre>
-                    
-tbody>tr:nth-child(3n-1){
-background-color: rgba(0, 0, 0, 0.158);
+tbody>tr:nth-child(3n-1) {
+    background-color: rgba(0, 0, 0, 0.158);
 }
                     </pre>
                 </div>
+                <fieldset>
+                <legend>Exemplo Interativo</legend>
+                <p>Selecione o estilo de efeito zebrado:</p>
+                <select id="zebraStyle" onchange="applyZebraStyle()">
+                    <option value="3n-1">3n-1</option>
+                    <option value="2n">2n</option>
+                    <option value="3n">3n</option>
+                    <option value="odd">Ímpares</option>
+                    <option value="even">Pares</option>
+                </select>
 
-            </article> 
-            <article> <!--Fixar cabeçalho-->
-            <h2> Fixar cabeçalho</h2>
-            <p>
-                Assim como usamos o congelar no excel para vermos os títulos de cada coluna aqui nós também fazemos isso mas de forma mais complexa.
-            </p>
-            <ol>
-                <li><strong>Table</strong> Em table devemos definir a style <strong>position:relative</strong></li>
-                <li><strong>thead>tr>th</strong> Em thead>tr>th devemos definir a style <strong>position:sticky;</strong> + <strong>top:0;</strong> + <strong>background-color: ;(se for o caso)</strong></li>
-            </ol>
+                <div class="responsiva">
+                    <table id="interactiveTable">
+                        <tr>
+                            <td>A1</td>
+                            <td>B1</td>
+                            <td>C1</td>
+                            <td>D1</td>
+                        </tr>
+                        <tr>
+                            <td>A2</td>
+                            <td>B2</td>
+                            <td>C2</td>
+                            <td>D2</td>
+                        </tr>
+                        <tr>
+                            <td>A3</td>
+                            <td>B3</td>
+                            <td>C3</td>
+                            <td>D3</td>
+                        </tr>
+                        <tr>
+                            <td>A4</td>
+                            <td>B4</td>
+                            <td>C4</td>
+                            <td>D4</td>
+                        </tr>
+                        <tr>
+                            <td>A5</td>
+                            <td>B5</td>
+                            <td>C5</td>
+                            <td>D5</td>
+                        </tr>
+                        <tr>
+                            <td>A6</td>
+                            <td>B6</td>
+                            <td>C6</td>
+                            <td>D6</td>
+                        </tr>
+                    </table>
+                </div>
 
-            <div class="responsiva"> 
+                <script>
+                    function applyZebraStyle() {
+                        const table = document.getElementById('interactiveTable');
+                        const style = document.getElementById('zebraStyle').value;
+                        const rows = table.getElementsByTagName('tr');
+                        
+                        console.log(rows.length);
+
+                        for (let i = 0; i < rows.length; i++) {
+                            rows[i].style.backgroundColor = '';
+                        }
+
+                        for (let i = 0; i < rows.length; i++) {
+                            if (style === 'odd' && i % 2 === 0) {
+                                rows[i].style.backgroundColor = 'rgba(0, 0, 0, 0.158)';
+
+                            } else if (style === 'even' && i % 2 !== 0) {
+                                rows[i].style.backgroundColor = 'rgba(0, 0, 0, 0.158)';
+
+                            } else if ((i + 1) % parseInt(style.split('n')[0]) === parseInt(style.split('n')[1] || 0)) 
+                            {
+                                rows[i].style.backgroundColor = 'rgba(0, 0, 0, 0.158)';
+                            } else if (style === '3n-1' && (i + 1) % 3 === 2) {
+                                rows[i].style.backgroundColor = 'rgba(0, 0, 0, 0.158)';
+                            }
+                        }
+                    }
+                </script>
+               </fieldset>
+            </article> <!--Efeito Zebrado-->
+
+            <article id="fixar-cabecalho"> 
+            <h3>Fixar Cabeçalho</h3>
+            <p>Assim como no Excel, onde podemos congelar a primeira linha da tabela para manter os títulos das colunas visíveis, podemos fazer o mesmo em HTML. Para isso, basta aplicar o estilo <code>position: sticky;</code> e <code>top: 0;</code> na linha que deseja fixar. Veja o exemplo abaixo:</p>
                 <table>
                 <caption>Caption</caption>
-                <thead>
+                <thead style="position: sticky; top: 0;">
                     <tr>
-                        <th scope="col">Peixe</th>
-                        <th scope="col">PH min</th>
-                        <th scope="col">PH max</th>
-                        <th scope="col">Valor</th>
+                        <th scope="col">Aluno</th>
+                        <th scope="col">Nota 1</th>
+                        <th scope="col">Nota 2</th>
+                        <th scope="col">Nota 3</th>
                     </tr>
-
                 </thead>
-
                 <tbody>
                     <tr>
-                        <td>Neon</td>
-                        <td>4,0</td>
-                        <td>6,5</td>
-                        <td>2</td>
+                        <td>João</td>
+                        <td>8.5</td>
+                        <td>7.0</td>
+                        <td>9.0</td>
                     </tr>
                     <tr>
-                        <td>Acará Bandeira</td>
-                        <td>4,0</td>
-                        <td>7,2</td>
-                        <td>16</td>
+                        <td>Maria</td>
+                        <td>9.0</td>
+                        <td>8.5</td>
+                        <td>9.5</td>
                     </tr>
                     <tr>
-                        <td>Rodostumus</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>3</td>
+                        <td>Carlos</td>
+                        <td>7.5</td>
+                        <td>6.0</td>
+                        <td>8.0</td>
                     </tr>
                     <tr>
-                        <td>Ramirezi</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>20</td>
+                        <td>Ana</td>
+                        <td>8.0</td>
+                        <td>7.5</td>
+                        <td>8.5</td>
                     </tr>
-                    <tr>
-                        <td>Neon</td>
-                        <td>4,0</td>
-                        <td>6,5</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Acará Bandeira</td>
-                        <td>4,0</td>
-                        <td>7,2</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td>Rodostumus</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Ramirezi</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>Neon</td>
-                        <td>4,0</td>
-                        <td>6,5</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Acará Bandeira</td>
-                        <td>4,0</td>
-                        <td>7,2</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td>Rodostumus</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Ramirezi</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>Neon</td>
-                        <td>4,0</td>
-                        <td>6,5</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Acará Bandeira</td>
-                        <td>4,0</td>
-                        <td>7,2</td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <td>Rodostumus</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Ramirezi</td>
-                        <td>4,0</td>
-                        <td>6,8</td>
-                        <td>20</td>
-                    </tr>
-
+                    <!-- Adicione mais linhas conforme necessário -->
                 </tbody>
-
-
-                <tfoot>
-                    <tr>
-                        <th  scope="row">PH Limite</th>
-                        <td>4,0</td>
-                        <td>6,5</td>
-                        <td>--</td>
-                    </tr>
-
-                </tfoot>
             </table>
-            </div>
+           
 
-            <p>
-                Veja como ficou em head:
-            </p>
-            <div class="responsiva">
-                
+            
+                <p>O código HTML para criar essa tabela é:</p>
+            
+            <div class="pre">
                 <pre>
-
-&lt;style>
-    table{
-        border-collapse: collapse;
-        <span class="mark">position: relative;</span>
-    }
-    thead, tfoot{
-        background-color: rgb(145, 145, 145);
-    }
-    td, th{
-        border:solid;
-        padding: 1px 1em;
-    }
-    tbody>tr:nth-child(3n-1){
-        background-color: rgba(117, 117, 117, 0.363);
-    }
-    <span class="mark">
-    thead>tr>th{
-            position:sticky;
-            top:0;
-            background-color:rgb(145, 145, 145);
-        }
-    </span>
-&lt;/style>
-                </pre>
+    &lt;thead style="position: sticky; top: 0;"></pre>
             </div>
+            <p>Neste exemplo, o estilo foi aplicado diretamente na tag <code>&lt;thead></code>, mas você também pode aplicar o estilo na tag <code>&lt;tr></code> para obter o mesmo efeito.</p>
 
             <p class="mark">
-                OBS.: Caso fique espaço entre o navegador o thead você pode substituir o o top:0; por top:-2px; ou mais até sumir o espaço.
+                OBS.: Caso fique um espaço entre o navegador e o <code>&lt;thead></code>, você pode ajustar o valor de <code>top</code> com valores negativos como: <code>top: -2px;</code> até que o espaço desapareça.
             </p>
+            </article> <!--Fixar cabeçalho-->
 
+            <article id="tabela-responsiva">
+                <h3>Tabela Responsiva</h3>
+                <p>
+                Criar tabelas responsivas é uma tarefa simples. Basta envolver a tabela em uma <code>&lt;div></code> e aplicar a classe <code>responsiva</code> a essa <code>&lt;div></code>. No estilo CSS, defina a propriedade <code>overflow-x: auto;</code> para a <code>&lt;div></code>. Veja o exemplo abaixo:
+                </p>
+    
+                <div style="overflow-x: auto; max-width: 400px; margin: auto;">
+                <table>
+                    <tr>
+                    <td>A1</td>
+                    <td>B1</td>
+                    <td>C1</td>
+                    <td>D1</td>
+                    <td>E1</td>
+                    <td>F1</td>
+                    <td>G1</td>
+                    <td>I1</td>
+                    <td>J1</td>
+                    <td>K1</td>
+                    <td>L1</td>
+                    </tr>
+                    <tr>
+                    <td>A2</td>
+                    <td>B2</td>
+                    <td>C2</td>
+                    <td>D2</td>
+                    <td>E2</td>
+                    <td>F2</td>
+                    <td>G2</td>
+                    <td>I2</td>
+                    <td>J2</td>
+                    <td>K2</td>
+                    <td>L2</td>
+                    </tr>
+                    <tr>
+                    <td>A3</td>
+                    <td>B3</td>
+                    <td>C3</td>
+                    <td>D3</td>
+                    <td>E3</td>
+                    <td>F3</td>
+                    <td>G3</td>
+                    <td>I3</td>
+                    <td>J3</td>
+                    <td>K3</td>
+                    <td>L3</td>
+                    </tr>
+                    <tr>
+                    <td>A4</td>
+                    <td>B4</td>
+                    <td>C4</td>
+                    <td>D4</td>
+                    <td>E4</td>
+                    <td>F4</td>
+                    <td>G4</td>
+                    <td>I4</td>
+                    <td>J4</td>
+                    <td>K4</td>
+                    <td>L4</td>
+                    </tr>
+                </table>
+                </div>
+    
+                <p>O código HTML para criar essa tabela é:</p>
+                <div class="pre">
+                <pre>
+    &lt;div style="overflow-x: auto; max-width: 400px; margin: auto;">
+        &lt;table>
+            ...
+        &lt;/table>
+    &lt;/div>
+                </pre>
+                </div>
+    
+               
+                     
+                <p>OBS.: A largura (<code>width</code>) foi definida para exemplificar como a tabela se ajusta.</p>
+    
+                <p>Quando você usa uma tabela dentro de um contêiner, a propriedade `position: sticky` pode parar de funcionar. Isso ocorre porque o elemento pai do elemento sticky precisa ter uma altura definida para que o comportamento sticky funcione corretamente. Se o contêiner não tiver uma altura definida ou se houver overflow, o navegador pode não conseguir calcular corretamente a posição sticky.</p>
+               
+                
+            </article><!--tabela-responsiva-->
+        
+        </article> <!--estilos-->
 
-            </article> 
-            <article> <!--Mesclagem de células-->
+        
+
+        <article id="mescla-celula">
             <h2>Mesclagem de células</h2>
-            <p>
-                Mesclagem de célula é bem simples, para isso usaremos dois atributos que serão adicionados ao td ou th. Veja os atributos abaixo:
+            <p>Mesclar células em uma tabela é uma tarefa simples que pode ser realizada usando dois atributos: <code>colspan</code> e <code>rowspan</code>. Esses atributos são adicionados à tag <code>&lt;td></code>. Veja a explicação abaixo:</p>
                 <ul>
-                    <li><strong>colspan="2"</strong> Nesse atributo ele mesclaria duas colunas , a atual e a próxima a direita. SE quisesse poderia mesclar mais também só aumentar o número</li>
-                    <li><strong>rowspan="3"</strong> Nesse atributo ele mesclaria 3 linhas , a atual e as próximas duas abaixo. SE quisesse poderia mesclar mais também só aumentar o número</li>
+                    <li><strong>colspan="2"</strong>: Este atributo mescla a célula atual com a próxima célula à direita, formando uma única célula que ocupa o espaço de duas colunas. Você pode aumentar o número para mesclar mais colunas.</li>
+                    <li><strong>rowspan="3"</strong>: Este atributo mescla a célula atual com as próximas duas células abaixo, formando uma única célula que ocupa o espaço de três linhas. Você pode aumentar o número para mesclar mais linhas.</li>
                 </ul>
-            </p>
-            <p>
-                Exemplo:
-            </p>
+           
+           
+                <p> Exemplo:</p>
+            
             <div class="responsiva"> 
                 <table style="margin: auto; height: 200px; width: 500px; text-align: center;">
                 <tr>
@@ -730,10 +714,10 @@ background-color: rgba(0, 0, 0, 0.158);
                 </table>
             </div>
 
-            <p>
-                Comando:
-            </p>
-<div class="responsiva">
+            
+                <p>Comando: </p>
+           
+<div class="pre">
     
                 <pre>
 
@@ -766,7 +750,130 @@ background-color: rgba(0, 0, 0, 0.158);
                     </pre>
 </div>
 
-            <h3>Desafio 01</h3>
+
+<script>
+    {
+       
+
+        function modificarTable(){
+            let celula= document.getElementById('celula').value;;
+            let efeito= document.getElementById('efeito').value;
+            let span= document.getElementById('span').value;
+
+
+            console.log(celula+efeito);
+            
+            if(efeito=='none'||efeito=='table-cell'){
+            document.getElementById(celula).style.display=efeito;
+            }else if(efeito=='colspan'){
+                document.getElementById(celula).colSpan=span;
+        }else if(efeito=='rowspan'){
+            document.getElementById(celula).rowSpan=span;
+        }
+        }
+    }
+</script>
+
+<h4>Teste o funcionamento</h4>
+
+<fieldset id="modificar">
+    <legend>Exemplo Interativo</legend>
+    
+    <div>
+        <label for="celula">Selecione a célula:</label>
+        <select id="celula">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="B3">B3</option>
+            <option value="B4">B4</option>
+            <option value="B5">B5</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+            <option value="C3">C3</option>
+            <option value="C4">C4</option>
+            <option value="C5">C5</option>
+            <option value="D1">D1</option>
+            <option value="D2">D2</option>
+            <option value="D3">D3</option>
+            <option value="D4">D4</option>
+            <option value="D5">D5</option>
+            <option value="E1">E1</option>
+            <option value="E2">E2</option>
+            <option value="E3">E3</option>
+            <option value="E4">E4</option>
+            <option value="E5">E5</option>
+        </select>
+        
+    </div>
+
+    <div>
+        <label for="colspan">Selecione a ação:</label>
+        <select id="efeito" onchange=" console.log(this.value);if(this.value=='colspan'||this.value=='rowspan'){document.getElementById('span').style.display='block'}else{document.getElementById('span').style.display='none'}">
+            <option value="">--</option>
+            <option value="colspan">colspan</option>
+            <option value="rowspan">rowspan</option>
+            <option value="none">Apagar</option>
+            <option value="table-cell">Repor célula</option>
+        </select></div>
+    
+    <input style="display: none;" type="number" id="span" min="1" max="5" value="1" onchange="valueMaxMin(5,1,this)">
+
+    <button onclick="modificarTable()">Aplicar</button>
+
+    
+    
+
+
+    
+            <table style="margin: auto;">
+            <tr>
+                <td id="A1">A1</td>
+                <td id="B1">B1</td>
+                <td id="C1">C1</td>
+                <td id="D1">D1</td>
+                <td id="E1">E1</td>
+            </tr>
+            <tr>
+                <td id="A2">A2</td>
+                <td id="B2">B2</td>
+                <td id="C2">C2</td>
+                <td id="D2">D2</td>
+                <td id="E2">E2</td>
+            </tr>
+            <tr>
+                <td id="A3">A3</td>
+                <td id="B3">B3</td>
+                <td id="C3">C3</td>
+                <td id="D3">D3</td>
+                <td id="E3">E3</td>
+            </tr>
+            <tr>
+                <td id="A4">A4</td>
+                <td id="B4">B4</td>
+                <td id="C4">C4</td>
+                <td id="D4">D4</td>
+                <td id="E4">E4</td>
+            </tr>
+            <tr>
+                <td id="A5">A5</td>
+                <td id="B5">B5</td>
+                <td id="C5">C5</td>
+                <td id="D5">D5</td>
+                <td id="E5">E5</td>
+            </tr>
+        </table>
+        <p>Para retornar a estado inicial atualize a página.</p>
+               
+</fieldset>
+
+
+            <h3>Teste seus conhecimentos:</h3>
+            <h4>Desafio 01</h4>
 
             <div class="responsiva"> <table style="text-align: center;">
                 <tr>
@@ -805,7 +912,7 @@ background-color: rgba(0, 0, 0, 0.158);
                     
                 </tr>
             </table></div>
-            <h3>Desafio 02</h3>
+            <h4>Desafio 02</h4>
             <div class="responsiva"> <table>
                 <tr>
                     <td>1</td>
@@ -837,7 +944,7 @@ background-color: rgba(0, 0, 0, 0.158);
                 </tr>
             </table></div>
 
-            <h3>Desafio 03</h3>
+            <h4>Desafio 03</h4>
             <div class="responsiva"> 
             <table style="text-align: center;">
                 <thead>
@@ -903,273 +1010,322 @@ background-color: rgba(0, 0, 0, 0.158);
 
                 </tbody>
             </table></div>
-            </article>
-        </section>
-        <section><!--Tag para Colunas-->
-            <article> <!--Tag para Colunas-->       
-        <h1>Tag para Colunas</h1>
-        <p>
-            Como já vimos anterior é possível criar uma tabela zebrada usando a pseudo-classe :nth-child(even). Ou podemos ainda fazer diretamente na linha usando style na tag tr. Bem simples
-        </p>
-        <p>
-            Mas quando o assunto é coluna precisamos mudar td por td o que é inviável. Por isso existe a tag <code>&lt;colgroup></code>.
-        </p>
-        <p>
-            Essa tag funciona da seguinte forma:
-        </p>
-       
-            
-        <p>
-            Comando no body:
-        </p>
-            <div class="responsiva">
-    
-                <pre>
-    
-&lt;table>
-    <span class="mark">
-    &lt;colgroup>
-            &lt;col class="A">
-            &lt;col class="B">
-            &lt;col class="C">
-            &lt;col class="D">
-    &lt;/colgroup>
-    </span>
+        </article> <!--Mesclagem de células-->
 
+        <article id="tabela-semantica">
+            
+            <h2>Tabela Semântica</h2>
+            <p>O objetivo de trabalhar com tabelas semânticas é organizar melhor os dados. A W3C recomenda o uso desse tipo de tabela sempre que for trabalhar com tabelas grandes e com muitos dados. Além disso, o Google valoriza essa semântica, o que pode melhorar o SEO do seu site.</p>
+            <p>As tabelas semânticas possuem algumas diferenças em relação às tabelas comuns. Elas incluem:</p>
+            <ol>
+                <li><strong>&lt;caption></strong>: Título da tabela</li>
+                <li><strong>&lt;thead></strong>: Cabeçalho da tabela</li>
+                <li><strong>&lt;tbody></strong>: Corpo da tabela</li>
+                <li><strong>&lt;tfoot></strong>: Rodapé da tabela</li>
+            </ol>
+            <p>Essas diferenças ajudam a separar visualmente e semanticamente os dados dos títulos e resumos, facilitando a leitura e a interpretação da tabela.</p>
+            <p>Além disso, temos a tag <code>&lt;th></code>, que é usada no lugar de <code>&lt;td></code> para definir títulos de colunas ou linhas:</p>
+            <ul>
+                <li><strong>&lt;th></strong>: Table Header (Títulos das colunas ou das linhas)</li>
+                <li><strong>&lt;td></strong>: Table Data (Dados da tabela)</li>
+            </ul>
+            <p>O <code>&lt;th></code> não precisa estar apenas no escopo da tag <code>&lt;thead></code>; ele pode estar no <code>&lt;tbody></code> para ser o título de uma linha também.</p>
+            <h3>Scope</h3>
+            <p>O atributo <code>scope</code> é usado no <code>&lt;th></code> para indicar se ele é o título de uma linha, coluna ou grupo de linhas ou colunas. Isso é importante para melhorar o SEO e a acessibilidade da tabela.</p>
+            <ul>
+                <li><strong>scope="col"</strong>: Usado para títulos de colunas</li>
+                <li><strong>scope="colgroup"</strong>: Usado quando o título abrange mais de uma coluna</li>
+                <li><strong>scope="row"</strong>: Usado para títulos de linhas</li>
+                <li><strong>scope="rowgroup"</strong>: Usado quando o título abrange mais de uma linha</li>
+            </ul>
+            <p>Exemplo de tabela semântica:</p>
+            <div class="responsiva">
+                <table>
+                <caption>Alunos e suas notas</caption>
+                <thead>
+                    <tr>
+                        <th colspan="4" scope="colgroup" style="text-align: center;">Turma Bravo</th>
+                    </tr>
+
+                    <tr>
+                    <th scope="col">Aluno</th>
+                    <th scope="col">Nota 1</th>
+                    <th scope="col">Nota 2</th>
+                    <th scope="col">Média</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>João</td>
+                    <td>8,5</td>
+                    <td>7,0</td>
+                    <td>7,75</td>
+                    </tr>
+                    <tr>
+                    <td>Maria</td>
+                    <td>9,0</td>
+                    <td>8,5</td>
+                    <td>8,75</td>
+                    </tr>
+                    <tr>
+                    <td>Carlos</td>
+                    <td>7,5</td>
+                    <td>6,0</td>
+                    <td>6,75</td>
+                    </tr>
+                    <tr>
+                    <td>Ana</td>
+                    <td>8,0</td>
+                    <td>7,5</td>
+                    <td>7,75</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                    <th scope="row">Média da Turma</th>
+                    <td colspan="3">7,75</td>
+                    </tr>
+                </tfoot>
+                </table>
+            </div>
+            <p>Código HTML:</p>
+            <div class="pre">
+                <pre>
+    &lt;table>
+        &lt;caption>Alunos e suas notas&lt;/caption>
+        &lt;thead>
+        &lt;tr>
+            &lt;th colspan="4" scope="colgroup">Turma Bravo&lt;/th>
+        &lt;tr>
+            &lt;th scope="col">Aluno&lt;/th>
+            &lt;th scope="col">Nota 1&lt;/th>
+            &lt;th scope="col">Nota 2&lt;/th>
+            &lt;th scope="col">Média&lt;/th>
+        &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+        &lt;tr>
+            &lt;td>João&lt;/td>
+            &lt;td>8,5&lt;/td>
+            &lt;td>7,0&lt;/td>
+            &lt;td>7,75&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>Maria&lt;/td>
+            &lt;td>9,0&lt;/td>
+            &lt;td>8,5&lt;/td>
+            &lt;td>8,75&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>Carlos&lt;/td>
+            &lt;td>7,5&lt;/td>
+            &lt;td>6,0&lt;/td>
+            &lt;td>6,75&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>Ana&lt;/td>
+            &lt;td>8,0&lt;/td>
+            &lt;td>7,5&lt;/td>
+            &lt;td>7,75&lt;/td>
+        &lt;/tr>
+        &lt;/tbody>
+        &lt;tfoot>
+        &lt;tr>
+            &lt;th scope="row">Média da Turma&lt;/th>
+            &lt;td colspan="3">7,75&lt;/td>
+        &lt;/tr>
+        &lt;/tfoot>
+    &lt;/table>
+                </pre>
+            </div>
+            
+        </article><!--tabela-semantica-->
+
+        <article id="tag-col">       
+            <h2>Tag para Colunas</h2>
+            
+            <p>Quando queremos aplicar estilos a colunas inteiras em uma tabela, a tag <code>&lt;colgroup></code> é muito útil. Ela nos permite definir estilos para colunas específicas sem precisar aplicar estilos individualmente a cada célula (<code>&lt;td></code>).</p>
+            
+            
+            <p>Vamos ver como usar a tag <code>&lt;colgroup></code> na prática. </p>
+           
+            
+            <h3>Exemplo de Uso</h3>
+            
+            <p>Primeiro, vamos definir a estrutura da tabela no corpo do HTML:</p>
+            
+            <div class="pre">
+            <pre>
+
+&lt;table>
+    &lt;colgroup>
+        &lt;col class="A" style="background-color: aquamarine;">
+        &lt;col class="B" style="background-color: blueviolet;">
+        &lt;col class="C" style="background-color: rgb(103, 134, 201);">
+        &lt;col class="D" style="background-color: rgb(206, 214, 157);">
+    &lt;/colgroup>
     &lt;tr>
         &lt;td>A1&lt;/td>
         &lt;td>B1&lt;/td>
         &lt;td>C1&lt;/td>
-        &lt;td>C1&lt;/td>
+        &lt;td>D1&lt;/td>
     &lt;/tr>
     &lt;tr>
         &lt;td>A2&lt;/td>
         &lt;td>B2&lt;/td>
         &lt;td>C2&lt;/td>
-        &lt;td>C2&lt;/td>
+        &lt;td>D2&lt;/td>
     &lt;/tr>
     &lt;tr>
         &lt;td>A3&lt;/td>
         &lt;td>B3&lt;/td>
         &lt;td>C3&lt;/td>
-        &lt;td>C3&lt;/td>
+        &lt;td>D3&lt;/td>
     &lt;/tr>
     &lt;tr>
         &lt;td>A4&lt;/td>
         &lt;td>B4&lt;/td>
         &lt;td>C4&lt;/td>
-        &lt;td>C4&lt;/td>
+        &lt;td>D4&lt;/td>
     &lt;/tr>
 &lt;/table>
-                </pre>
-    
+            </pre>
             </div>
-        <p>
-            Comandono head:
-        </p>
-             <div class="responsiva">
-            
-                <pre>
-<span class="mark">
-col.A{
-    background-color: aquamarine;
-}
-col.B{
-    background-color: blueviolet;
-}
-col.C{
-    background-color: rgb(103, 134, 201);
-}
-col.D{
-    background-color: rgb(206, 214, 157);
-}
-</span>
-                </pre>
-            
-             </div>
 
-        <p>
-            Funcionamento:
-        </p>
-        <div class="responsiva"> 
-        <table>
-            <colgroup>
-                <col class="A">
-                <col class="B">
-                <col class="C">
-                <col class="D">
-            </colgroup>
-            <tr>
+            <h4>Resultado</h4>
+
+            <p>O resultado final será uma tabela com colunas coloridas de acordo com os estilos definidos:</p>
+            
+            <div class="responsiva"> 
+            <table>
+                <colgroup>
+                <col class="A" style="background-color: aquamarine;">
+                <col class="B" style="background-color: blueviolet;">
+                <col class="C" style="background-color: rgb(103, 134, 201);">
+                <col class="D" style="background-color: rgb(206, 214, 157);">
+                </colgroup>
+                <tr>
                 <td>A1</td>
                 <td>B1</td>
                 <td>C1</td>
-                <td>C1</td>
-            </tr>
-            <tr>
+                <td>D1</td>
+                </tr>
+                <tr>
                 <td>A2</td>
                 <td>B2</td>
                 <td>C2</td>
-                <td>C2</td>
-            </tr>
-            <tr>
+                <td>D2</td>
+                </tr>
+                <tr>
                 <td>A3</td>
                 <td>B3</td>
                 <td>C3</td>
-                <td>C3</td>
-            </tr>
-            <tr>
+                <td>D3</td>
+                </tr>
+                <tr>
                 <td>A4</td>
                 <td>B4</td>
                 <td>C4</td>
-                <td>C4</td>
-            </tr>
-        </table>
-        </div>
+                <td>D4</td>
+                </tr>
+            </table>
+            </div>
 
-            </article>
-            <article> <!--Atributo para col-->
-            <h2>Atributo para col</h2>
+            <article id="atributo-para-col"> 
+            <h3>Atributo para col</h3>
             <p>
-                Assim com td e th possuem colspan ou rowspan para mesclar células. Em col temos o atributo span que serve para usar o mesmo efeito em uma ou mais colunas ao lado direito. o comando é simples:
+                Assim como as tags <code>&lt;td></code> e <code>&lt;th></code> possuem os atributos <code>colspan</code> e <code>rowspan</code> para mesclar células, a tag <code>&lt;col></code> possui o atributo <code>span</code>. Esse atributo permite aplicar o mesmo estilo a várias colunas adjacentes.
             </p>
-            <div class="responsiva">
+            <p>
+                O uso do atributo <code>span</code> é simples. Veja o exemplo abaixo:
+            </p>
+            <div class="pre">
                 <pre>
-    
 &lt;table>
-<span class="mark">
     &lt;colgroup>
-        &lt;col class="A">
-        &lt;col class="B" span="2">
-
-        &lt;col class="D">
+        &lt;col class="A" style="background-color: aquamarine;">
+        &lt;col class="B" span="2" style="background-color: blueviolet;">
+        &lt;col class="C" style="background-color: rgb(103, 134, 201);">
+        &lt;col class="D" style="background-color: rgb(206, 214, 157);">
     &lt;/colgroup>
+    &lt;tr>
+        &lt;td>A1&lt;/td>
+        &lt;td>B1&lt;/td>
+        &lt;td>C1&lt;/td>
+        &lt;td>D1&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>A2&lt;/td>
+        &lt;td>B2&lt;/td>
+        &lt;td>C2&lt;/td>
+        &lt;td>D2&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>A3&lt;/td>
+        &lt;td>B3&lt;/td>
+        &lt;td>C3&lt;/td>
+        &lt;td>D3&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>A4&lt;/td>
+        &lt;td>B4&lt;/td>
+        &lt;td>C4&lt;/td>
+        &lt;td>D4&lt;/td>
+    &lt;/tr>
+&lt;/table>
                 </pre>
             </div>
-            <p>
-                Nesse caso acima o efeito da coluna "B" expandiu para a "C" com isso foi necessário excluir ela.
-            </p>
-            <span class="mark">
-                OBS.: Caso esqueça de excluir um ao usar span o programa empurraria todos os estilos e o seu último estilo configurado ficaria sem efeito.
-            </span>
-
-            </article>
-        </section>
-        <section><!--Tabela responsiva-->
-            <h1>Tabela responsiva</h1>
-            <p>
-                Criar tabelas responsivas é bem fácil de fazer. Basicamente precisa por a tabela em uma div e uma class para essa div(normal) e em style no head colocar overflow-x: auto para essa div. Veja um exemplo abaixo:
-            </p>
-
-            <div class="responsiva">
+            <h4>Resultado</h4>
+            <p>Repare que a coluna com a classe "B" expandiu para duas colunas, aplicando o estilo de fundo azul-violeta a ambas. A coluna com a classe "D" não teve seu estilo aplicado, pois a coluna "B" ocupou seu espaço.</p>
+            <div class="responsiva"> 
                 <table>
-                        <tr>
+                    <colgroup>
+                        <col class="A" style="background-color: aquamarine;">
+                        <col class="B" span="2" style="background-color: blueviolet;">
+                        <col class="C" style="background-color: rgb(103, 134, 201);">
+                        <col class="D" style="background-color: rgb(206, 214, 157);">
+                    </colgroup>
+                    <tr>
                         <td>A1</td>
                         <td>B1</td>
                         <td>C1</td>
                         <td>D1</td>
-                        <td>E1</td>
-                        <td>F1</td>
-                        <td>G1</td>
-                        <td>I1</td>
-                        <td>J1</td>
-                        <td>K1</td>
-                        <td>L1</td>
                     </tr>
                     <tr>
                         <td>A2</td>
                         <td>B2</td>
                         <td>C2</td>
                         <td>D2</td>
-                        <td>E2</td>
-                        <td>F2</td>
-                        <td>G2</td>
-                        <td>I2</td>
-                        <td>J2</td>
-                        <td>K2</td>
-                        <td>L2</td>
                     </tr>
                     <tr>
                         <td>A3</td>
                         <td>B3</td>
                         <td>C3</td>
                         <td>D3</td>
-                        <td>E3</td>
-                        <td>F3</td>
-                        <td>G3</td>
-                        <td>I3</td>
-                        <td>J3</td>
-                        <td>K3</td>
-                        <td>L3</td>
                     </tr>
                     <tr>
                         <td>A4</td>
                         <td>B4</td>
                         <td>C4</td>
                         <td>D4</td>
-                        <td>E4</td>
-                        <td>F4</td>
-                        <td>G4</td>
-                        <td>I4</td>
-                        <td>J4</td>
-                        <td>K4</td>
-                        <td>L4</td>
                     </tr>
                 </table>
             </div>
-            <p>
-                Comando body:
-            </p>
-            <div class="responsiva">
-                
-                <pre>
-                
-&lt;div class="responsiva">
-        &lt;table>
-        .
-        .
-        .
-        &lt;/table>
-&lt;/div>
-                </pre>
-            </div>
+            </article><!--atributo-para-col-->
 
-            <p>
-                Comando Head:
-            </p>    
-            <div class="responsiva">
-                <pre>
-    
-&lt;style>
-    div.responsiva{
-        width: 500px;
-        overflow-x: auto;
-    }
-&lt;/style>
-                </pre>
-    
-            </div>
-            <p>
-                <span class="mark">
-                    OBS.: Essa width foi só para exemplificar como fica sem precisar reduzir a tela, mas o ideal seria usar width: 80%; .
-                </span>
-            </p>
-            <p>
-                <span class="mark">
-                    Quando usa a tabela responsiva ela para de congelar a primeira linha (thead) pois agora ela está dentro de uma div. Para que ela volte a funcionar é preciso colocar um height definido assim como o width  e usar overflow-y também.
-                </span>
-            </p>
-            
-        </section>
+        </article><!--tag-col-->
+
+        
     </main>
     <footer>
 
-        <h1>Materiais utilizados</h1>
+        <h4>Materiais utilizados</h4>
             
                
         <p><a href="../../material-de-apoio/21 - Tabelas.pdf">Material de Apoio</a></p>
             
             
-        <h1>Vídeos</h1>
+        <h4>Vídeos</h4>
         
         <p style="text-transform: capitalize;">
             <a href="https://youtu.be/lIiZu-94PBk?si=yFsUPUkbn9oKQHHJ" target="_blank" >primeira tabela</a>
@@ -1220,11 +1376,6 @@ col.D{
         </p>       
 
 
-
-            
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-        
     </footer>
 
 </body>
