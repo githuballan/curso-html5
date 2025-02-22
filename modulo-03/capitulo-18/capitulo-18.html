@@ -7,172 +7,213 @@
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
     <link rel="stylesheet" href="../../style.css">
+    <style>
+          .video_iframe {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video_iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+
+    <script src="../../script.js"></script>
 </head>
 <body>
+    
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
 <header>
-<h1 id="capitulo"> Capítulo 18</h1>
+<h1> Git e GitHub</h1>
 </header>
-<main>
-<h1>Git</h1>
-    <p>
-        GitHub é  um dos Sistema de Controle de Versões (do inglês Version Control System - VCS), mais famosos que existe foi feito por Linus Torvalds, o mesmo criador do núcleo Linux.
-    </p>
-    <p>
-        O Git é totalmente focado no nosso computador. Ele cria uma pasta local que fica oculta na pasta do projeto que desejamos "salvar as versões". Nessa pasta ele salva todas a modificações que fazemos nos projetos.
-    </p>
-    <p>
-        A grande vantagem de usar um sistema de controle de versões como o Git é poder voltar a qualquer momento para qualquer versão anterior do projeto de forma imediata, tudo 100% transparente para o programador. Dessa forma caso cometa alguma "cagada" no projeto, você pode simplesmente voltar para versão anterior a "cagada". É como fazer o mega "CTRL+Z"
-    </p>
-    <p>
-        Assista os primeiros passos com GitHub 4 pimeiro vídeos desse módulo
-    </p>
-<h1>GitHub</h1>
-    <p>
-        GitHub nada mais é que o Git on line, porém não tão simple. O GitHub trabalha junto com o Git pegando os versionamentos locais(que você criou com o Git) e jogando para a nuvem em sua conta. Entretanto ele faz mais que isso pois além dele garantir que você não perca seu projeto caso aconteça algo com sua máquina, ele também permite que vocé trabalhe com mais de uma pessoa no projeto cada um em sua máquina. 
-    </p>
-    <p>
-    Existe ainda um recurso chamado GitHub Pages, que vai permitir a hospedagem gratuita de sites simples, que usem HTML + CSS + JS e disponibilize o acesso através de uma URL. 
-</p>
-<h2>Criando novas versões</h2>
-    <p>
-        Apartir de agora( Depois de instalados, criado conta e adicionado os arquivos ao repositório) Sempre que fizer uma modificação no VSCode, ele irá mostrar um M ao lado do arquivo. Isso é i Git avisando que foi feita uma modificação naquele arquivo e que precisa ser salva uma nova versão.
-    </p>
-    <p>
-        Para isso basta ir no app GitHub &rarr; abrir o arquivo modificado &rarr; ir em commit to master &rarr; Digitar um título e uma breve descrição do que foi feito&rarr; e clicar em Commit to master.
-    </p>
-    <p>
-        Pronto agora você acabou de criar um versão atualizada da página no seu repositório LOCAL. Agora precisa atualizar o seu reposiório REMOTO.
-    </p>
-    <p>
-        Para isso basta ir em GitHub e &rarr; Push Origin. isso salvará sua nova versão no GitHub(na nuvem) 
-    </p>
-
-<h2>Modificar de privado para público e vice versa</h2>
-    <p>
-        Ao clicar em Push Origin a primeira vez ele perguntará se o arquivo será público ou privado caso posteriormente queira modificar essa opcão basta abrir o site GitHub na sua conta &rarr; repositories&rarr;selecionar o repositório que deseja modificar&rarr; Settings &rarr; desce a página até Danger Zone &rarr; Change repository visibility &rarr; clicar em Change visibility. 
-    </p>
-<h2>Como apagar repositório local</h2>
-    <p>
-        Para apagar o repositório local basta: <br>
-        Abrir o GitHub&rarr; selecionar o repositório que deseja apagar em "Current repository"&rarr;Clicar na aba "Repository"&rarr; e Remove.
-    </p>
-    <p>
-        Dessa forma você apagará o repositório LOCAL. 
-    </p>
-<h2>Como apagar repositório remoto</h2>
-    <p>
-        Para apagar o repositório Remoto basta: <br>
-        Abrir o site GitHub na sua conta &rarr; repositories&rarr;selecionar o repositório que deseja apagar&rarr; Settings &rarr; desce a página até Danger Zone &rarr; Clicar em "Delete this repository"
+<div class="nav-videos">
     
-    </p>
+    <a id="menu-videos" class="buttom buttom-videos" onclick="exibir(this)">Vídeos</a>
+    <nav>
+        <ul>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)"onclick="clicador('menu-videos'); iframeload(this)"  data-video-src="https://www.youtube.com/embed/GDGMf2bnHlE?si=9Z2Q4tjhU1BOvnNK" >O que é Git e GitHub?</a></li>
 
-<h1>GitHub Pages</h1>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/NgWExh3bswg?si=qDfOCrvND2uWoFVi">Instalando GitHub</ins></li>
+            
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos'); iframeload(this)" data-video-src="https://www.youtube.com/embed/1QTi8nIlK1o?si=uxBFWHYJd4lOrb4x" >Criando conta no GitHub</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/P0Hvrf8T3zo?si=JOy84pg33Whld0pW" >Primeiro Repositório Git e GitHub</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/Sbcu_GuySjo?si=_e6MGy-QMiSauGyQ" >Gerenciando Repositórios GitHub</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/_jI3782DGDc?si=pMKPHyIH1OkXyJ1r" >Hospedando site gratuitamente com GitHub Pages</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/ejQwG2cvWxg?si=VeSjmQu3j-4vTCUG" >Manutenção em sites Hospedados no GitHub</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/g5orqzMzwkY?si=_GGm_e_uQkju_aL3" >Recursos Sociais do GitHub</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/sRBSr9X5nAQ?si=v57dsU_RjqUsSoua" >Clonagem de repositórios</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://www.youtube.com/embed/c-MATEcIuPQ?si=P3dL4BO9m-ibJSpC"  >GitHub em vários PCs</a></li>
+            <li><ins class="link-vid-sqn" onclick="clicador('menu-videos') ;iframeload(this)" data-video-src="https://youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA&si=eUActL_Y08fT2Ot1" target="_blank">Curso completo e Avançado de GitHub</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</div>
+
+<div class="nav-hamburguinho">
+       
+    <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </button>
+<nav>
+    <ul>
+        <li><a onclick="clicante('menu-hamburguer')" href="#git">Git</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#github">GitHub</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#criando-novas-versoes">Criando novas versões</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#modificar-de-privado-para-publico-e-vice-versa">Modificar de privado para público e vice-versa</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#como-apagar-repositorio-local">Como apagar repositório local</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#como-apagar-repositorio-remoto">Como apagar repositório remoto</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#github-pages">GitHub Pages</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#hospedagem-gratuita">Hospedagem gratuita</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#hospedar-varios-projetos">Hospedar vários projetos</a></li>
+        <li><a onclick="clicante('menu-hamburguer')" href="#clonando-projeto-no-github">Clonando projeto no GitHub</a></li>
+    </ul>
+</nav>
+</div>
+
+<main>
+<div id="config_iframe" style="position: static; top: 0px; min-width: 20%;width: 100%;  margin: auto; background-color: #d1d9e4;
+border-radius: 5px;
+box-shadow: 1px 1px 4px 0px #00000055; padding: 4px;" >
+    
+        <div class="video_iframe"  style=" border: solid;">
+            <iframe width="867" height="490" src="https://www.youtube.com/embed/1QTi8nIlK1o" title="Criando conta no GitHub - @Curso em Vídeo HTML5 e CSS3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    <button style="width: 50px;" onclick="if(document.getElementById('config_iframe').style.position=='sticky'){document.getElementById('config_iframe').style.position='static';this.innerHTML='Fixar'}else{document.getElementById('config_iframe').style.position='sticky';this.innerHTML='Soltar'}">Fixar</button>
+    <input style="width:calc(100% - 60px)" type="range" id="range" value="100" min="30" max="100" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
+</div>
+    <h2>Git</h2>
+
+  
     <p>
-        O recurso do GitHub Pages não está ativo por padrão em nossos repositórios 
-remotos, mas é muito fácil de habilitar. Isso só pode ser feito diretamente no site do 
-GitHub, individualmente para cada repositório que queremos usar para hospedar projetos HTML.
+        Git é um dos sistemas de controle de versões (Version Control System - VCS) mais famosos, criado por Linus Torvalds, o mesmo criador do núcleo Linux.
     </p>
     <p>
-    Abra seu perfil no site do GitHub &rarr; abra o repositório que quer habilitar a hospedagem &rarr; clique sobre a aba Settings e role a tela até a área GitHub Pages.
+        O Git é totalmente focado no nosso computador. Ele cria uma pasta local oculta na pasta do projeto, onde salva todas as modificações feitas nos arquivos.
+    </p>
+    <p>
+        A grande vantagem de usar um sistema de controle de versões como o Git é poder voltar a qualquer momento para qualquer versão anterior do projeto de forma imediata, tudo 100% transparente para o programador. Dessa forma, caso cometa algum erro no projeto, você pode simplesmente voltar para a versão anterior. É como fazer um mega "CTRL+Z".
+    </p>
+    <p>
+        Assista aos primeiros passos com GitHub nos quatro primeiros vídeos deste módulo.
+    </p>
+    <h2>GitHub</h2>
+    <p>
+        GitHub é uma plataforma online que trabalha junto com o Git, permitindo que você armazene seus versionamentos locais na nuvem. Além de garantir que você não perca seu projeto caso algo aconteça com sua máquina, ele também permite que você trabalhe com outras pessoas no mesmo projeto, cada uma em sua máquina.
+    </p>
+    <p>
+        Existe ainda um recurso chamado GitHub Pages, que permite a hospedagem gratuita de sites simples, que usem HTML, CSS e JavaScript, disponibilizando o acesso através de uma URL.
+    </p>
+    <h3>Criando novas versões</h3>
+    <p>
+        A partir de agora, sempre que fizer uma modificação no VSCode, ele mostrará um "M" ao lado do arquivo. Isso é o Git avisando que foi feita uma modificação naquele arquivo e que precisa ser salva uma nova versão.
+    </p>
+    <p>
+        Para isso, basta ir no app GitHub, abrir o arquivo modificado, ir em "Commit to master", digitar um título e uma breve descrição do que foi feito, e clicar em "Commit to master".
+    </p>
+    <p>
+        Pronto, agora você acabou de criar uma versão atualizada da página no seu repositório local. Agora precisa atualizar o seu repositório remoto.
+    </p>
+    <p>
+        Para isso, basta ir em GitHub e clicar em "Push Origin". Isso salvará sua nova versão no GitHub (na nuvem).
+    </p>
+    <h3>Modificar de privado para público e vice-versa</h3>
+    <p>
+        Ao clicar em "Push Origin" pela primeira vez, ele perguntará se o arquivo será público ou privado. Caso posteriormente queira modificar essa opção, basta abrir o site do GitHub na sua conta, ir em "Repositories", selecionar o repositório que deseja modificar, ir em "Settings", descer a página até "Danger Zone" e clicar em "Change repository visibility".
+    </p>
+    <h3>Como apagar repositório local</h3>
+    <p>
+        Para apagar o repositório local, basta abrir o GitHub, selecionar o repositório que deseja apagar em "Current repository", clicar na aba "Repository" e selecionar "Remove".
+    </p>
+    <p>
+        Dessa forma, você apagará o repositório local.
+    </p>
+    <h3>Como apagar repositório remoto</h3>
+    <p>
+        Para apagar o repositório remoto, basta abrir o site do GitHub na sua conta, ir em "Repositories", selecionar o repositório que deseja apagar, ir em "Settings", descer a página até "Danger Zone" e clicar em "Delete this repository".
+    </p>
+    <h2>GitHub Pages</h2>
+    <p>
+        O recurso do GitHub Pages não está ativo por padrão em nossos repositórios remotos, mas é muito fácil de habilitar. Isso só pode ser feito diretamente no site do GitHub, individualmente para cada repositório que queremos usar para hospedar projetos HTML.
+    </p>
+    <p>
+        Abra seu perfil no site do GitHub, abra o repositório que quer habilitar a hospedagem, clique sobre a aba "Settings" e role a tela até a área "GitHub Pages".
     </p>
     <p>
         Na área de opções, existem duas maneiras de habilitar o GitHub Pages:
     </p>
     <h3>Hospedagem gratuita</h3>
     <p>
-    Na primeira, clique no botão None e escolha a opção master branch. Com essa maneira, você vai precisar ter um arquivo index.html com o código da página principal que será exibida ao acessar o site. Essa técnica é mais usada quando queremos hospedar um site único e receber uma URL para apresentar o projeto a outra pessoa. 
+        Na primeira, clique no botão "None" e escolha a opção "master branch". Com essa maneira, você vai precisar ter um arquivo index.html com o código da página principal que será exibida ao acessar o site. Essa técnica é mais usada quando queremos hospedar um site único e receber uma URL para apresentar o projeto a outra pessoa.
     </p>
     <h3>Hospedar vários projetos</h3>
     <p>
-        A segunda maneira é clicando sobre o botão Choose a theme, que vai permitir escolher um tema para exibir o conteúdo do arquivo README.md como uma página. Essa segunda técnica é mais usada quando vamos hospedar vários projetos em um mesmo repositório ou quando vamos guardar informações sobre um projeto que não é um site, como download de instaladores e coisas do tipo. 
-
+        A segunda maneira é clicando sobre o botão "Choose a theme", que vai permitir escolher um tema para exibir o conteúdo do arquivo README.md como uma página. Essa segunda técnica é mais usada quando vamos hospedar vários projetos em um mesmo repositório ou quando vamos guardar informações sobre um projeto que não é um site, como download de instaladores e coisas do tipo.
     </p>
     <h2>Clonando projeto no GitHub</h2>
-
     <p>
-        Falando assim parece que você esta preste a cometer um crime, porém essa clonagem é para aprendizados. Fazendo clonagem de pojeto é possível estudar, aprender comandos novo e muito mais. para isso assista o último vídeo.
+        Clonar um projeto no GitHub é uma prática comum e útil para aprendizado. Fazendo a clonagem de um projeto, é possível estudar, aprender novos comandos e muito mais. Para isso, assista ao último vídeo.
     </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+    
 </main>
 <footer>
 
-<h1>Materiais utilizados</h1>
+<h4>Materiais utilizados</h4>
     
         <strong><a href="../../material-de-apoio/18 - Aprendendo Git e GitHub.pdf" target="_blank"> Material em PDF</a></strong>
     
     
-<h1>Vídeos</h1>
+<h4>Vídeos</h4>
 
     <p>
-        <a href="https://youtu.be/GDGMf2bnHlE?si=9Z2Q4tjhU1BOvnNK" target="_blank">O que é Git e GitHub?</a>
+        <a href="https://www.youtube.com/embed/GDGMf2bnHlE?si=9Z2Q4tjhU1BOvnNK" target="tela">O que é Git e GitHub?</a>
+    </p>
+
+    
+    <p>
+        <a href="https://www.youtube.com/embed/NgWExh3bswg?si=qDfOCrvND2uWoFVi" target="tela">Instalando GitHub</a>
+    </p>
+    <p>
+        <a href="https://www.youtube.com/embed/1QTi8nIlK1o?si=uxBFWHYJd4lOrb4x" target="tela">Criando conte no GitHub</a>
+    </p>
+    <p>
+        <a href="https://www.youtube.com/embed/P0Hvrf8T3zo?si=JOy84pg33Whld0pW" target="tela">Primeiro Repositório Git e GitHub</a>
+    </p>
+    <p>
+        <a href="https://www.youtube.com/embed/Sbcu_GuySjo?si=_e6MGy-QMiSauGyQ" target="tela">Gerenciando Repositórios GitHub</a>
     </p>
 
     <p>
-    <p>
-        <a href="https://youtu.be/NgWExh3bswg?si=qDfOCrvND2uWoFVi" target="_blank">Instalando GitHub</a>
+        <a href="https://www.youtube.com/embed/_jI3782DGDc?si=pMKPHyIH1OkXyJ1r" target="tela">Hospedando site gratuitamente com GitHub Pages</a>
     </p>
     <p>
-        <a href="https://youtu.be/1QTi8nIlK1o?si=uxBFWHYJd4lOrb4x" target="_blank">Criando conte no GitHub</a>
+        <a href="https://www.youtube.com/embed/ejQwG2cvWxg?si=VeSjmQu3j-4vTCUG" target="tela">Manutenção em sites Hospedados no GitHub</a>
     </p>
     <p>
-        <a href="https://youtu.be/P0Hvrf8T3zo?si=JOy84pg33Whld0pW" target="_blank">Primeiro Repositório Git e GitHub</a>
+        <a href="https://www.youtube.com/embed/g5orqzMzwkY?si=_GGm_e_uQkju_aL3" target="tela">Recursos Sociais do GitHub</a>
     </p>
     <p>
-        <a href="https://youtu.be/Sbcu_GuySjo?si=_e6MGy-QMiSauGyQ" target="_blank">Gerenciando Repositórios GitHub</a>
-    </p>
-
-    <p>
-        <a href="https://youtu.be/_jI3782DGDc?si=pMKPHyIH1OkXyJ1r" target="_blank">Hospedando site gratuitamente com GitHub Pages</a>
-    </p>
-    <p>
-        <a href="https://youtu.be/ejQwG2cvWxg?si=VeSjmQu3j-4vTCUG" target="_blank">Manutenção em sites Hospedados no GitHub</a>
-    </p>
-    <p>
-        <a href="https://youtu.be/g5orqzMzwkY?si=_GGm_e_uQkju_aL3" target="_blank">Recursos Sociais do GitHub</a>
-    </p>
-    <p>
-        <a href="https://youtu.be/sRBSr9X5nAQ?si=v57dsU_RjqUsSoua" target="_blank">Clonagem de repositórios</a>
+        <a href="https://www.youtube.com/embed/sRBSr9X5nAQ?si=v57dsU_RjqUsSoua" target="tela">Clonagem de repositórios</a>
    
     <p>
-        <a href="https://youtu.be/c-MATEcIuPQ?si=P3dL4BO9m-ibJSpC" target="_blank" >GitHub em vários PCs</a>
+        <a href="https://www.youtube.com/embed/c-MATEcIuPQ?si=P3dL4BO9m-ibJSpC" target="tela" >GitHub em vários PCs</a>
     </p>
     <p>
         <a href="https://youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA&si=eUActL_Y08fT2Ot1" target="_blank">Curso completo e Avançado de GitHub</a>
 </p>
-    </p>
     
-    <hr>
-    <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-
 </footer>
 </body>
 </html>

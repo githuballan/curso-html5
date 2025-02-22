@@ -2,10 +2,21 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capítulo 21</title>
 
-    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="tabelas HTML, criar tabelas HTML, estilos para tabelas HTML, bordas em tabelas HTML, alinhamento de texto em tabelas HTML, efeito zebrado em tabelas HTML, fixar cabeçalho em tabelas HTML, tabelas responsivas HTML, mesclar células em tabelas HTML, tabelas semânticas HTML, colgroup em tabelas HTML, colspan e rowspan em tabelas HTML">
+
+    <meta name="description" content="Aprenda tudo sobre tabelas HTML5! Descubra como criar, estilizar e tornar suas tabelas responsivas e semânticas. Domine bordas, alinhamentos, efeitos zebrados, mesclagem de células e muito mais.">
+
+   
+    <title>Explore o Poder das Tabelas HTML5 com Exemplos Práticos</title>
+   
+
+
+    
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico"type="image/x-icon">
 
     
 
@@ -79,8 +90,38 @@
 <body>
     <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        <h1 id="capitulo"> Capitulo 21 - Tabelas</h1>
+        <h1>Tabelas HTML5</h1>
     </header>
+    <div class="nav-hamburguinho">
+       
+        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+    <nav>
+        <ul>
+            <li><a onclick="clicante()" href="#introducao">Introdução</a></li>
+            <li><a onclick="clicante()" href="#estilos">Estilos para Tabelas</a></li>
+                <ul>
+                    <li><a onclick="clicante()" href="#aplicando-bordas">Aplicando Bordas em Tabelas</a></li>
+                    <li><a onclick="clicante()" href="#tipos-de-bordas">Style border-collapse</a></li>
+                    <li><a onclick="clicante()" href="#alinhamentos">Alinhamentos em tabela</a></li>
+                    <li><a onclick="clicante()" href="#efeito-zebrado">Efeito Zebrado</a></li>
+                    <li><a onclick="clicante()" href="#fixar-cabecalho">Fixar Cabeçalho</a></li>
+                    <li><a onclick="clicante()" href="#tabela-responsiva">Tabela Responsiva</a></li>
+                </ul>    
+            <li><a onclick="clicante()" href="#mescla-celula">Mesclagem de células</a></li>
+            <li><a onclick="clicante()" href="#tabela-semantica">Tabela Semântica</a></li>
+                <ul>
+                    <li><a onclick="clicante()" href="#scope">Scope</a></li>
+                </ul>    
+            <li><a onclick="clicante()" href="#tag-col">Tag para Colunas</a></li>
+            <li><a onclick="clicante()" href="#atributo-para-col">Atributo para col</a></li>
+        </ul>
+    </nav>
+</div>
+
     <main>
         
         <article id="introducao">
@@ -1030,115 +1071,118 @@ tbody>tr:nth-child(3n-1) {
                 <li><strong>&lt;td></strong>: Table Data (Dados da tabela)</li>
             </ul>
             <p>O <code>&lt;th></code> não precisa estar apenas no escopo da tag <code>&lt;thead></code>; ele pode estar no <code>&lt;tbody></code> para ser o título de uma linha também.</p>
-            <h3>Scope</h3>
-            <p>O atributo <code>scope</code> é usado no <code>&lt;th></code> para indicar se ele é o título de uma linha, coluna ou grupo de linhas ou colunas. Isso é importante para melhorar o SEO e a acessibilidade da tabela.</p>
-            <ul>
-                <li><strong>scope="col"</strong>: Usado para títulos de colunas</li>
-                <li><strong>scope="colgroup"</strong>: Usado quando o título abrange mais de uma coluna</li>
-                <li><strong>scope="row"</strong>: Usado para títulos de linhas</li>
-                <li><strong>scope="rowgroup"</strong>: Usado quando o título abrange mais de uma linha</li>
-            </ul>
-            <p>Exemplo de tabela semântica:</p>
-            <div class="responsiva">
-                <table>
-                <caption>Alunos e suas notas</caption>
-                <thead>
-                    <tr>
-                        <th colspan="4" scope="colgroup" style="text-align: center;">Turma Bravo</th>
-                    </tr>
-
-                    <tr>
-                    <th scope="col">Aluno</th>
-                    <th scope="col">Nota 1</th>
-                    <th scope="col">Nota 2</th>
-                    <th scope="col">Média</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>João</td>
-                    <td>8,5</td>
-                    <td>7,0</td>
-                    <td>7,75</td>
-                    </tr>
-                    <tr>
-                    <td>Maria</td>
-                    <td>9,0</td>
-                    <td>8,5</td>
-                    <td>8,75</td>
-                    </tr>
-                    <tr>
-                    <td>Carlos</td>
-                    <td>7,5</td>
-                    <td>6,0</td>
-                    <td>6,75</td>
-                    </tr>
-                    <tr>
-                    <td>Ana</td>
-                    <td>8,0</td>
-                    <td>7,5</td>
-                    <td>7,75</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                    <th scope="row">Média da Turma</th>
-                    <td colspan="3">7,75</td>
-                    </tr>
-                </tfoot>
-                </table>
-            </div>
-            <p>Código HTML:</p>
-            <div class="pre">
-                <pre>
-    &lt;table>
-        &lt;caption>Alunos e suas notas&lt;/caption>
-        &lt;thead>
-        &lt;tr>
-            &lt;th colspan="4" scope="colgroup">Turma Bravo&lt;/th>
-        &lt;tr>
-            &lt;th scope="col">Aluno&lt;/th>
-            &lt;th scope="col">Nota 1&lt;/th>
-            &lt;th scope="col">Nota 2&lt;/th>
-            &lt;th scope="col">Média&lt;/th>
-        &lt;/tr>
-        &lt;/thead>
-        &lt;tbody>
-        &lt;tr>
-            &lt;td>João&lt;/td>
-            &lt;td>8,5&lt;/td>
-            &lt;td>7,0&lt;/td>
-            &lt;td>7,75&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td>Maria&lt;/td>
-            &lt;td>9,0&lt;/td>
-            &lt;td>8,5&lt;/td>
-            &lt;td>8,75&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td>Carlos&lt;/td>
-            &lt;td>7,5&lt;/td>
-            &lt;td>6,0&lt;/td>
-            &lt;td>6,75&lt;/td>
-        &lt;/tr>
-        &lt;tr>
-            &lt;td>Ana&lt;/td>
-            &lt;td>8,0&lt;/td>
-            &lt;td>7,5&lt;/td>
-            &lt;td>7,75&lt;/td>
-        &lt;/tr>
-        &lt;/tbody>
-        &lt;tfoot>
-        &lt;tr>
-            &lt;th scope="row">Média da Turma&lt;/th>
-            &lt;td colspan="3">7,75&lt;/td>
-        &lt;/tr>
-        &lt;/tfoot>
-    &lt;/table>
-                </pre>
-            </div>
-            
+            <article id="scope">
+                
+                <h3>Scope</h3>
+                <p>O atributo <code>scope</code> é usado no <code>&lt;th></code> para indicar se ele é o título de uma linha, coluna ou grupo de linhas ou colunas. Isso é importante para melhorar o SEO e a acessibilidade da tabela.</p>
+                <ul>
+                    <li><strong>scope="col"</strong>: Usado para títulos de colunas</li>
+                    <li><strong>scope="colgroup"</strong>: Usado quando o título abrange mais de uma coluna</li>
+                    <li><strong>scope="row"</strong>: Usado para títulos de linhas</li>
+                    <li><strong>scope="rowgroup"</strong>: Usado quando o título abrange mais de uma linha</li>
+                </ul>
+                <p>Exemplo de tabela semântica:</p>
+                <div class="responsiva">
+                    <table>
+                    <caption>Alunos e suas notas</caption>
+                    <thead>
+                        <tr>
+                            <th colspan="4" scope="colgroup" style="text-align: center;">Turma Bravo</th>
+                        </tr>
+                        <tr>
+                        <th scope="col">Aluno</th>
+                        <th scope="col">Nota 1</th>
+                        <th scope="col">Nota 2</th>
+                        <th scope="col">Média</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>João</td>
+                        <td>8,5</td>
+                        <td>7,0</td>
+                        <td>7,75</td>
+                        </tr>
+                        <tr>
+                        <td>Maria</td>
+                        <td>9,0</td>
+                        <td>8,5</td>
+                        <td>8,75</td>
+                        </tr>
+                        <tr>
+                        <td>Carlos</td>
+                        <td>7,5</td>
+                        <td>6,0</td>
+                        <td>6,75</td>
+                        </tr>
+                        <tr>
+                        <td>Ana</td>
+                        <td>8,0</td>
+                        <td>7,5</td>
+                        <td>7,75</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                        <th scope="row">Média da Turma</th>
+                        <td colspan="3">7,75</td>
+                        </tr>
+                    </tfoot>
+                    </table>
+                </div>
+                <p>Código HTML:</p>
+                <div class="pre">
+                    <pre>
+                    &lt;table>
+                        &lt;caption>Alunos e suas notas&lt;/caption>
+                        &lt;thead>
+                        &lt;tr>
+                &lt;th colspan="4" scope="colgroup">Turma Bravo&lt;/th>
+                        &lt;tr>
+                &lt;th scope="col">Aluno&lt;/th>
+                &lt;th scope="col">Nota 1&lt;/th>
+                &lt;th scope="col">Nota 2&lt;/th>
+                &lt;th scope="col">Média&lt;/th>
+                        &lt;/tr>
+                        &lt;/thead>
+                        &lt;tbody>
+                        &lt;tr>
+                &lt;td>João&lt;/td>
+                &lt;td>8,5&lt;/td>
+                &lt;td>7,0&lt;/td>
+                &lt;td>7,75&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                &lt;td>Maria&lt;/td>
+                &lt;td>9,0&lt;/td>
+                &lt;td>8,5&lt;/td>
+                &lt;td>8,75&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                &lt;td>Carlos&lt;/td>
+                &lt;td>7,5&lt;/td>
+                &lt;td>6,0&lt;/td>
+                &lt;td>6,75&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                &lt;td>Ana&lt;/td>
+                &lt;td>8,0&lt;/td>
+                &lt;td>7,5&lt;/td>
+                &lt;td>7,75&lt;/td>
+                        &lt;/tr>
+                        &lt;/tbody>
+                        &lt;tfoot>
+                        &lt;tr>
+                &lt;th scope="row">Média da Turma&lt;/th>
+                &lt;td colspan="3">7,75&lt;/td>
+                        &lt;/tr>
+                        &lt;/tfoot>
+                    &lt;/table>
+                    </pre>
+                </div>
+                
+            </article>
+            <!-- /#scope -->
         </article><!--tabela-semantica-->
 
         <article id="tag-col">       
@@ -1371,9 +1415,7 @@ tbody>tr:nth-child(3n-1) {
             <a href="https://youtu.be/-0CgGstWMcA?si=N4b_oV6E5B0IneNk" target="_blank">Tabelas Responsivas</a>
         </p>       
 
-        <p>
-            <a href="XXXXXXXXXXXX" target="_blank">XXXXXXXXXXXX</a>
-        </p>       
+            
 
 
     </footer>

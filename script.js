@@ -24,11 +24,16 @@ function toggleMenu(x) {
   x.classList.toggle("change");
 }
 
-function clicante(){
+function clicante(id){
     
-  let clickHmaburger = document.getElementById('menu-hamburguer');
+  let ondeClickar = document.getElementById(id);
   if(window.innerWidth<1100){
-  clickHmaburger.click();}
+  ondeClickar.click();}
+}
+
+function clicador(id){
+  let ondeClickar = document.getElementById(id);
+  ondeClickar.click();
 }
 
 function valueMaxMin(max,min,input){
@@ -40,4 +45,12 @@ function valueMaxMin(max,min,input){
         input.value = min;
     }
     console.log(input.value);
+}
+
+function iframeload(x){
+    let endereco = x.getAttribute('data-video-src');
+    let iframe=document.getElementsByTagName('iframe')[0];
+    iframe.src = endereco;
+    console.log(endereco);
+    console.log(iframe);
 }

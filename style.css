@@ -16,7 +16,7 @@
 
     }
 
-    nav{
+    .nav-hamburguinho>nav{
         
         display: none;
         top: 15px;
@@ -82,15 +82,32 @@
     box-sizing: border-box
 }
 
-/* html {
+html {
     scroll-behavior: smooth;
   
-} */
+}
 
 button{
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.link-vid-sqn{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #3131ef;
+}
+
+.nav-videos>nav{
+    display: none;
+    margin-top: 50px;
+    position: fixed;
+    right: 10px;
+    z-index: 20;
+    box-shadow: 1px 1px 1px 100vmax rgba(0, 0, 0, 0.139);
+    top: 15px;
 }
 
 .nav-hamburguinho{
@@ -364,6 +381,14 @@ pre {
 .buttom-index {
     background-color: #aaaaaa;
     bottom: 15px;
+    position: fixed;
+    right: 10px;
+    z-index: 20;
+}
+
+.buttom-videos {
+    background-color: #aaaaaa;
+    top: 15px;
     position: fixed;
     right: 10px;
     z-index: 20;
