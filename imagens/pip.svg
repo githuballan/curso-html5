@@ -1,0 +1,22 @@
+<svg id="pip" width="30" height="20" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tela -->
+    <rect 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="100" 
+    fill="#555" 
+    stroke-width="2"
+    rx="15" 
+    ry="15"/>
+  
+    <rect 
+    x="15" 
+    y="43" 
+    width="70" 
+    height="44" 
+    fill="#fff" 
+    stroke-width="2"
+    rx="5" 
+    ry="5"/>
+</svg>
