@@ -6,20 +6,6 @@ function exibir(x){
         else{k.style.display = "block";}
 };
 
-// function navload(){
-   
-//     fetch('../../index.html')
-//         .then(response => response.text())
-//         .then(data => {
-//             let parser = new DOMParser();
-//             let doc = parser.parseFromString(data, 'text/html');
-//             let content = doc.querySelector('#index-tipo'); // Adjust the selector as needed
-//             console.log(content);
-//             document.querySelector('#inde').innerHTML = content.innerHTML;
-//         })
-//         .catch(error => console.error('Error fetching the page:', error));
-//    }
-
 function toggleMenu(x) {
   x.classList.toggle("change");
 }
@@ -57,19 +43,20 @@ function iframeload(x){
     console.log(iframe);
 }
 
-window.addEventListener('load', function() {
+// function createNavVideos() {
+//   document.getElementById('nav-videos').innerHTML = `<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" id="botao_menu-videos" class="buttom-videos" onclick="exibir(this)">`;
+
+// }
+
+function createLinkToVideos() {
   // Seleciona todos os elementos <li> dentro da <ul>
   const itemName = document.querySelectorAll('ul#name li');
-
   const itemAdress = document.querySelectorAll('ul#adress li');
 
-  // Verifica se as listas têm o mesmo comprimento
   if (itemName.length !== itemAdress.length) {
     console.error('As listas de títulos e endereços não têm o mesmo comprimento.');
     return;
 }
-
-  console.log(itemName);
   var ul = document.getElementById('lista_videos');
   
   // Itera sobre cada elemento <li> e faz algo com ele
@@ -77,43 +64,73 @@ window.addEventListener('load', function() {
       var li = document.createElement('li');
       li.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this)" data-video-src="${itemAdress[index].textContent}">${item.textContent}</ins>`;
       ul.appendChild(li);
+    
   });
+}
+
+function createIndexButton(){
+  document.getElementById('button_index').innerHTML = `<a class="buttom buttom-index" href="../../index.html">Índice</a>`;
+
+  console.log(document.getElementById('button_index'));
+}
+
+window.addEventListener('load', () => {
+  createIndexButton();
+  createLinkToVideos();
 });
 
 
 
-function botao_pip(){
-  document.getElementById('config_iframe').style.position='fixed';
-  document.getElementById('config_iframe').style.left='15px';
-  document.getElementById('config_iframe').style.bottom='5px';
-  document.getElementById('config_iframe').style.top='unset';
-  document.getElementById('config_iframe').style.width='45vmin';
-  document.getElementById('botao_fixa_solta').style.display='none';
-  document.getElementById('botao_fixa_solta').innerHTML='Fixar';
-  document.getElementById('range_video').style.display='none';
-  document.getElementById('pip').style.display='none';
-  document.getElementById('pipout').style.display='inline-block';
+
+function botaoPip() {
+  const configIframe = document.getElementById('config_iframe');
+  const botaoFixaSolta = document.getElementById('botao_fixa_solta');
+  const rangeVideo = document.getElementById('range_video');
+  const pip = document.getElementById('pip');
+  const pipOut = document.getElementById('pipout');
+
+  configIframe.style.position = 'fixed';
+  configIframe.style.left = '15px';
+  configIframe.style.bottom = '5px';
+  configIframe.style.top = 'unset';
+  configIframe.style.width = '45vmin';
+
+  botaoFixaSolta.style.display = 'none';
+  botaoFixaSolta.innerHTML = 'Fixar';
+
+  rangeVideo.style.display = 'none';
+  pip.style.display = 'none';
+  pipOut.style.display = 'inline-block';
 }
  
 
-function botao_getout_pip(){
-  document.getElementById('config_iframe').style.position='static';
-    document.getElementById('config_iframe').style.width='100%';
-    document.getElementById('pip').style.display='inline-block';
-    document.getElementById('botao_fixa_solta').style.display='inline-block';
-    document.getElementById('range_video').style.display='inline-block';
-    document.getElementById('pip').style.display='inline-block';
-    document.getElementById('pipout').style.display='none';
+function botaoGetOutPip() {
+  const configIframe = document.getElementById('config_iframe');
+  const pip = document.getElementById('pip');
+  const botaoFixaSolta = document.getElementById('botao_fixa_solta');
+  const rangeVideo = document.getElementById('range_video');
+  const pipOut = document.getElementById('pipout');
+
+  configIframe.style.position = 'static';
+  configIframe.style.width = '100%';
+  pip.style.display = 'inline-block';
+  botaoFixaSolta.style.display = 'inline-block';
+  rangeVideo.style.display = 'inline-block';
+  pipOut.style.display = 'none';
 }
 
-function botao_fixa_solta(x){
-  if(document.getElementById('config_iframe').style.position=='sticky'){
-    document.getElementById('config_iframe').style.position='static';
-    x.innerHTML='Fixar'}else{
-      document.getElementById('config_iframe').style.position='sticky';
-      document.getElementById('config_iframe').style.top='0px';x.innerHTML='Soltar'}
-}
+function toggleIframePosition(button) {
+  const configIframe = document.getElementById('config_iframe');
 
+  if (configIframe.style.position === 'sticky') {
+    configIframe.style.position = 'static';
+    button.innerHTML = 'Fixar';
+  } else {
+    configIframe.style.position = 'sticky';
+    configIframe.style.top = '0px';
+    button.innerHTML = 'Soltar';
+  }
+}
 
        
   

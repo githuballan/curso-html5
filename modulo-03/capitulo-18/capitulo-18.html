@@ -13,8 +13,10 @@
    
 </head>
 <body>
+
+    <div id="button_index"></div>
     
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+   
 <header>
     
   
@@ -57,15 +59,11 @@
 <div class="nav-videos">
      <img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" id="botao_menu-videos" class=" buttom-videos" onclick="exibir(this)">
    
-    <nav>
-        <ul id="lista_videos">
-
-        </ul>
-    </nav>
+    <nav id="lista_videos"></nav>
 
 </div>
 
-</div>
+
 
 <div class="nav-hamburguinho">
        
@@ -100,14 +98,14 @@
             <iframe width="867" height="490" src="https://www.youtube.com/embed/1QTi8nIlK1o" title="Criando conta no GitHub - @Curso em Vídeo HTML5 e CSS3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-    <button  id="botao_fixa_solta" onclick="botao_fixa_solta(this)">Fixar</button>
+    <button  id="botao_fixa_solta" onclick="toggleIframePosition(this)">Fixar</button>
 
     <input itemid="range_video" style="width:calc(100% - 100px); display: inline-block" type="range" id="range_video" value="100" min="30" max="100" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
 
-    <img id="pip" src="../../imagens/pip.svg"onclick="botao_pip()" alt="botão pip
+    <img id="pip" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
    ">
     
-    <img id="pipout" src="../../imagens/pipout.svg" onclick="botao_getout_pip()" alt="botão pipout">
+    <img id="pipout" src="../../imagens/pipout.svg" onclick="botaoGetOutPip()" alt="botão pipout">
     
         
     </div>
