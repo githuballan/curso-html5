@@ -16,7 +16,7 @@
 
     }
 
-    .nav-hamburguinho>nav{
+    #menu_acesso_rapido>nav{
         
         display: none;
         top: 7px;
@@ -58,7 +58,7 @@
         display: none;
     }
 
-    .nav-hamburguinho{
+    #menu_acesso_rapido{
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -90,14 +90,14 @@
     cursor: pointer;
 }
 
-.video_iframe {
+#video_iframe {
     position: relative;
     padding-bottom: 56.25%; /* Proporção 16:9 */
     overflow: hidden;
     background: #000;
 }
 
-.video_iframe iframe {
+#video_iframe iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -111,7 +111,7 @@
     height: 30px;
 }
 
-ul#adress, ul#name{
+#video_list, #shortcuts{
     display: none;
 }
 
@@ -150,7 +150,7 @@ button{
     color: #3131ef;
 }
 
-.nav-videos>nav{
+#lista_videos{
     display: none;
     margin-top: 50px;
     position: fixed;
@@ -160,7 +160,7 @@ button{
     top: 15px;
 }
 
-.nav-hamburguinho{
+#menu_acesso_rapido{
     
     margin-left: 3vw;
     text-align: left;

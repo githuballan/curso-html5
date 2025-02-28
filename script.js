@@ -43,40 +43,79 @@ function iframeload(x){
     console.log(iframe);
 }
 
-// function createNavVideos() {
-//   document.getElementById('nav-videos').innerHTML = `<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" id="botao_menu-videos" class="buttom-videos" onclick="exibir(this)">`;
 
-// }
 
 function createLinkToVideos() {
-  // Seleciona todos os elementos <li> dentro da <ul>
-  const itemName = document.querySelectorAll('ul#name li');
-  const itemAdress = document.querySelectorAll('ul#adress li');
 
-  if (itemName.length !== itemAdress.length) {
-    console.error('As listas de títulos e endereços não têm o mesmo comprimento.');
-    return;
-}
-  var ul = document.getElementById('lista_videos');
+  const navVideos= document.getElementById('nav_videos');
+ 
+navVideos.innerHTML = `
+<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" id="botao_menu-videos" class="buttom-videos" onclick="exibir(this)">
+
+<nav id="lista_videos"></nav>
+`;
+
+  // Seleciona todos os elementos <li> dentro da <ul>
+  const videoList = document.getElementById('video_list');
+ let item = videoList.getElementsByTagName('li');
+ let itemArray = [...item];
+ 
+
+  var navList = document.getElementById('lista_videos');
+ 
   
-  // Itera sobre cada elemento <li> e faz algo com ele
-      itemName.forEach((item, index) => {
-      var li = document.createElement('li');
-      li.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this)" data-video-src="${itemAdress[index].textContent}">${item.textContent}</ins>`;
-      ul.appendChild(li);
+  itemArray.forEach((item) => {
+      let newLi = document.createElement('li');
+     
+      newLi.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this)" data-video-src="${item.getAttribute('data-adress')}">${item.textContent}</ins>`;
+      navList.appendChild(newLi);
     
   });
+}
+
+function createMenuAcessoRapido(){
+  var MenuAcessoRapido=document.getElementById('menu_acesso_rapido');
+  MenuAcessoRapido.innerHTML = `<button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </button>
+    <nav id="shortcuts_list"></nav>
+    `;
+    
+    
+    const itemShortcutsName = document.getElementById('shortcuts');
+    var itemShortcutsNameArray = [...itemShortcutsName.getElementsByTagName('li')];
+   
+    let shortcutsList = document.getElementById('shortcuts_list');
+   
+   
+    // Itera sobre cada elemento <li> e faz algo com ele
+    itemShortcutsNameArray.forEach((item) => {
+        let newLi = document.createElement('li');
+        newLi.innerHTML = `<a onclick="clicante('menu-hamburguer')" href="${item.getAttribute('data-adress')}">${item.textContent}</a>`;
+        shortcutsList.appendChild(newLi);
+      
+    });
 }
 
 function createIndexButton(){
   document.getElementById('button_index').innerHTML = `<a class="buttom buttom-index" href="../../index.html">Índice</a>`;
 
-  console.log(document.getElementById('button_index'));
+  
 }
+
+function createTelaVideo(){
+  document.getElementById('video_iframe').innerHTML = `
+  `;
+};//Lembrar de colocar o src do iframe igual ao primeiro video da lista usando o array de videos
+
 
 window.addEventListener('load', () => {
   createIndexButton();
+  // createTelaVideo();
   createLinkToVideos();
+  createMenuAcessoRapido();
 });
 
 
