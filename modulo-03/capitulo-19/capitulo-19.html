@@ -10,47 +10,53 @@
 
     <meta name="description" content="Aprenda a utilizar as propriedades de background no CSS para criar designs incríveis com imagens e efeitos de fundo.">
 
+     <script src="../../script.js"></script>
+
     <link rel="stylesheet" href="../../style.css">
 
-    <script src="../../script.js"></script>
+   
 
 
    
 </head>
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
         <h1>Background</h1>
     </header>
-    <div class="nav-hamburguinho">
-        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
-        <nav>
-            <ul id="menu-tipo">
-                <li><a onclick="clicante()" href="#background-imagens">Background com Imagens</a></li>
-                <ul>
-                    <li><a onclick="clicante()" href="#background-repeat">Background-repeat</a></li>
-                    <li><a onclick="clicante()" href="#background-position">Background-position</a></li>
-                    <li><a onclick="clicante()" href="#background-size">Background-size</a></li>
-                    <li><a onclick="clicante()" href="#background-attachment">Background-attachment</a></li>
-                    <li><a onclick="clicante()" href="#background-shorthand">Shorthand de Background</a></li>
-                    <li><a onclick="clicante()" href="#background-origin">Background-origin</a></li>
-                    <li><a onclick="clicante()" href="#background-clip">Background-clip</a></li>
-                </ul>
-                <li><a onclick="clicante()" href="#background-degrade">Background com Degradê</a></li>
-                <ul>
-                    <li><a onclick="clicante()" href="#linear-degrade">Linear Gradient</a></li>
-                    <li><a onclick="clicante()" href="#radial-degrade">Radial Gradient</a></li>
-                    <li><a onclick="clicante()" href="#percentage-occupation">Ocupação por Percentagem</a></li>
-                </ul>
-                <li><a onclick="clicante()" href="#parallax">Efeito Parallax</a></li>
+    
+    <div id="button_index"></div>
+    <ul id="video_list">
+            <li data-adress="https://www.youtube.com/embed/sms5H5cKDy4?si=ebdDdfpQeSiYhFmC">Download das imagens do capítulo</li>
+            <li data-adress="https://www.youtube.com/embed/9hV5oXi80-A?si=AQGxE97hkO2jixlo">Colocando imagem no fundo do site</li>
+            <li data-adress="https://www.youtube.com/embed/_5KoMUMCTG0?si=l7poKNC25Q2uA9Ks">Imagens que se repetem</li>
+            <li data-adress="https://www.youtube.com/embed/RpcmGqvzWxQ?si=JqS9ufOKsIjUXetV">Configurando Posição de imagem no fundo do Site</li>
+            <li data-adress="https://www.youtube.com/embed/lNaoi5AUCsc?si=GKyK2J28iM-414t7">Mudando tamanho da imagem no fundo do Site</li>
+            <li data-adress="https://www.youtube.com/embed/PzJwwA6LVts?si=eBmYX11oaHBymdHu">Background-attachment e Shothands</li>
+            <li data-adress="https://www.youtube.com/embed/-w0Qo_qQiRg?si=8L5-zMN2mbkjMf5I">Centralizando Box vertical e horizontal</li>
+    </ul>
+    <ul id="shortcuts">
+        <li data-adress="#background-imagens">Background com Imagens </li>
+            <ul>
+                <li data-adress="#background-repeat">Background-repeat </li>
+                <li data-adress="#background-position">Background-position </li>
+                <li data-adress="#background-size">Background-size </li>
+                <li data-adress="#background-attachment">Background-attachment </li>
+                <li data-adress="#background-shorthand">Shorthand de Background </li>
+                <li data-adress="#background-origin">Background-origin </li>
+                <li data-adress="#background-clip">Background-clip </li>
             </ul>
-        </nav>
-    </div>
-  <main>
+            <li data-adress="#background-degrade">Background com Degradê </li>
+            <ul>
+                <li data-adress="#linear-degrade">Linear Gradient </li>
+                <li data-adress="#radial-degrade">Radial Gradient </li>
+                <li data-adress="#percentage-occupation">Ocupação por Percentagem </li>
+            </ul>
+            <li data-adress="#parallax">Efeito Parallax </li>
+    </ul>
+    <div id="nav_videos"></div>
+    <div id="menu_acesso_rapido"></div>
+    <main> 
+        <div id="config_iframe"></div>
     <article id="background-imagens">
         <h2>Como criar um background com imagens</h2>
         <p>Para criar um background com imagens no CSS, utilizamos a propriedade <code>background-image</code>. Abaixo, vamos explorar algumas propriedades relacionadas ao background e como utilizá-las.</p>
@@ -602,41 +608,7 @@ background-image: linear-gradient
   </main>  
 
   <footer>
-
-    <h1>Materiais utilizados</h1>
-        
             <strong><a href="../../material-de-apoio/19 - Imagens de Fundo.pdf" target="_blank"> Material em PDF</a></strong>
-        
-        
-    <h1>Vídeos</h1>
-    </select>
-        <p>
-            <a href="https://youtu.be/sms5H5cKDy4?si=ebdDdfpQeSiYhFmC" target="_blank">Download das imagens do capítulo</a>
-        </p>
-    
-        <p>
-            <a href="https://youtu.be/9hV5oXi80-A?si=AQGxE97hkO2jixlo" target="_blank">Colocando imagem no fundo do site</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/_5KoMUMCTG0?si=l7poKNC25Q2uA9Ks" target="_blank">Imagens que se repetem</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/RpcmGqvzWxQ?si=JqS9ufOKsIjUXetV" target="_blank">Configurando Posição de imagem no fundo do Site</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/lNaoi5AUCsc?si=GKyK2J28iM-414t7" target="_blank">Mudando tamanho da imagem no fundo do Site</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/PzJwwA6LVts?si=eBmYX11oaHBymdHu" target="_blank">Background-attachment e Shothands</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/-w0Qo_qQiRg?si=8L5-zMN2mbkjMf5I" target="_blank">Centralizando Box vertical e horizontal</a>
-        </p>
-        
-              
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-    
     </footer>
 </body>
 </html></select>

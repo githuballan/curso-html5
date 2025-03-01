@@ -22,8 +22,7 @@
 
     <link rel="stylesheet" href="../../style.css">
 
-    <script src="../../script.js"></script>
-
+    
 
     <style>
        
@@ -88,42 +87,53 @@
 
 </head>
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+  
     <header>
         <h1>Tabelas HTML5</h1>
     </header>
-    <div class="nav-hamburguinho">
-       
-        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
-    <nav>
-        <ul>
-            <li><a onclick="clicante()" href="#introducao">Introdução</a></li>
-            <li><a onclick="clicante()" href="#estilos">Estilos para Tabelas</a></li>
-                <ul>
-                    <li><a onclick="clicante()" href="#aplicando-bordas">Aplicando Bordas em Tabelas</a></li>
-                    <li><a onclick="clicante()" href="#tipos-de-bordas">Style border-collapse</a></li>
-                    <li><a onclick="clicante()" href="#alinhamentos">Alinhamentos em tabela</a></li>
-                    <li><a onclick="clicante()" href="#efeito-zebrado">Efeito Zebrado</a></li>
-                    <li><a onclick="clicante()" href="#fixar-cabecalho">Fixar Cabeçalho</a></li>
-                    <li><a onclick="clicante()" href="#tabela-responsiva">Tabela Responsiva</a></li>
-                </ul>    
-            <li><a onclick="clicante()" href="#mescla-celula">Mesclagem de células</a></li>
-            <li><a onclick="clicante()" href="#tabela-semantica">Tabela Semântica</a></li>
-                <ul>
-                    <li><a onclick="clicante()" href="#scope">Scope</a></li>
-                </ul>    
-            <li><a onclick="clicante()" href="#tag-col">Tag para Colunas</a></li>
-            <li><a onclick="clicante()" href="#atributo-para-col">Atributo para col</a></li>
-        </ul>
-    </nav>
 </div>
-
-    <main>
-        
+<div id="button_index"></div>
+<ul id="video_list">
+        <li data-adress="https://www.youtube.com/embed/lIiZu-94PBk?si=yFsUPUkbn9oKQHHJ" target="_blank" >primeira tabela</li>
+        <li data-adress="https://www.youtube.com/embed/9IF4xvg5rWI?si=gZDcySKp5LPSKH8A" target="_blank">Tabelas</li>
+        <li data-adress="https://www.youtube.com/embed/djvX6p9l-Rk?si=1r_6Ca3-OE_wkn1l" target="_blank">Alinhando conteúdos</li>
+        <li data-adress="https://www.youtube.com/embed/XmrNuqmmckM?si=gN9ctuOwE-enaZ74" target="_blank">Tabelas Grandes</li>
+        <li data-adress="https://www.youtube.com/embed/ZnjU3PzhGi0?si=4iqnWPoWLmbUrEZq" target="_blank">Scope e Capition</li>
+        <li data-adress="https://www.youtube.com/embed/IYUiFRE5hpI?si=qGaocQpdYtVmxf25" target="_blank">Zebrando Tabelas</li>
+        <li data-adress="https://www.youtube.com/embed/k277B58kC9c?si=u2x1nHCJvbzcAb7d" target="_blank">Cabeçalho Fixo</li>
+        <li data-adress="https://www.youtube.com/embed/olZgL09uDAU?si=lAf8Aa8WXjxG1ppe" target="_blank">Mesclar Celula</li>
+        <li data-adress="https://www.youtube.com/embed/MnznvoNuy-I?si=J9E_DcfEyqXfSUSb" target="_blank">Desafios</li>
+        <li data-adress="https://www.youtube.com/embed/JJXLr02Gx_c?si=VczYegdaI1F46DVI" target="_blank">Exemplo com todo ensinamento até aqui</li>
+        <li data-adress="https://www.youtube.com/embed/muKp1-jcs3Q?si=wfQ-P0GTxWL5VSFo" target="_blank">Escopo de grupo</li>
+        <li data-adress="https://www.youtube.com/embed/V2gVaqTSRmo?si=hmKBsPjQpDJzfDj5" target="_blank">Desafio 02</li>
+        <li data-adress="https://www.youtube.com/embed/1Ro7rjINNb0?si=M3cVjEDiByUaXecz" target="_blank">Colgroup</li>
+        <li data-adress="https://www.youtube.com/embed/-0CgGstWMcA?si=N4b_oV6E5B0IneNk" target="_blank">Tabelas Responsivas</li>
+</ul>
+<ul id="shortcuts">
+        <li  data-adress="#introducao">Introdução</li>
+        <li  data-adress="#estilos">Estilos para Tabelas</li>
+            <ul>
+                <li  data-adress="#aplicando-bordas">Aplicando Bordas em Tabelas</li>
+                <li  data-adress="#tipos-de-bordas">Style border-collapse</li>
+                <li  data-adress="#alinhamentos">Alinhamentos em tabela</li>
+                <li  data-adress="#efeito-zebrado">Efeito Zebrado</li>
+                <li  data-adress="#fixar-cabecalho">Fixar Cabeçalho</li>
+                <li  data-adress="#tabela-responsiva">Tabela Responsiva</li>
+            </ul>    
+        <li  data-adress="#mescla-celula">Mesclagem de células</li>
+        <li  data-adress="#tabela-semantica">Tabela Semântica</li>
+            <ul>
+                <li  data-adress="#scope">Scope</li>
+            </ul>    
+        <li  data-adress="#tag-col">Tag para Colunas</li>
+        <li  data-adress="#atributo-para-col">Atributo para col</li>
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+<main> 
+    <div id="config_iframe"></div>
+    
+    
         <article id="introducao">
             
         <h2>Introdução</h2>
@@ -1366,56 +1376,12 @@ tbody>tr:nth-child(3n-1) {
         <h4>Materiais utilizados</h4>
             
                
-        <p><a href="../../material-de-apoio/21 - Tabelas.pdf">Material de Apoio</a></p>
+        <p href="../../material-de-apoio/21 - Tabelas.pdf">Material de Apoio</a></p>
             
             
         <h4>Vídeos</h4>
         
-        <p style="text-transform: capitalize;">
-            <a href="https://youtu.be/lIiZu-94PBk?si=yFsUPUkbn9oKQHHJ" target="_blank" >primeira tabela</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/9IF4xvg5rWI?si=gZDcySKp5LPSKH8A" target="_blank">Tabelas</a>
-        </p>
         
-        <p>
-            <a href="https://youtu.be/djvX6p9l-Rk?si=1r_6Ca3-OE_wkn1l" target="_blank">Alinhando conteúdos</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/XmrNuqmmckM?si=gN9ctuOwE-enaZ74" target="_blank">Tabelas Grandes</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/ZnjU3PzhGi0?si=4iqnWPoWLmbUrEZq" target="_blank">Scope e Capition</a>
-        </p>            
-        <p>
-            <a href="https://youtu.be/IYUiFRE5hpI?si=qGaocQpdYtVmxf25" target="_blank">Zebrando Tabelas</a>
-        </p>
-        <p>
-            <a href="https://youtu.be/k277B58kC9c?si=u2x1nHCJvbzcAb7d" target="_blank">Cabeçalho Fixo</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/olZgL09uDAU?si=lAf8Aa8WXjxG1ppe" target="_blank">Mesclar Celula</a>
-        </p>     
-        <p>
-            <a href="https://youtu.be/MnznvoNuy-I?si=J9E_DcfEyqXfSUSb" target="_blank">Desafios</a>
-        </p>     
-        <p>
-            <a href="https://youtu.be/JJXLr02Gx_c?si=VczYegdaI1F46DVI" target="_blank">Exemplo com todo ensinamento até aqui</a>
-        </p>     
-        <p>
-            <a href="https://youtu.be/muKp1-jcs3Q?si=wfQ-P0GTxWL5VSFo" target="_blank">Escopo de grupo</a>
-        </p>     
-        <p>
-            <a href="https://youtu.be/V2gVaqTSRmo?si=hmKBsPjQpDJzfDj5" target="_blank">Desafio 02</a>
-        </p>     
-        <p>
-            <a href="https://youtu.be/1Ro7rjINNb0?si=M3cVjEDiByUaXecz" target="_blank">Colgroup</a>
-        </p>     
-        <p>
-            <a href="https://youtu.be/-0CgGstWMcA?si=N4b_oV6E5B0IneNk" target="_blank">Tabelas Responsivas</a>
-        </p>       
-
-            
 
 
     </footer>

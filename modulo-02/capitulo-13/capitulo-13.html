@@ -28,29 +28,35 @@
     <header>
         <h1>Psicologia das Cores</h1>
     </header>
-    <div class="nav-hamburguinho">
-        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
-        <nav>
-            <ul id="menu-tipo">
-            <li><a onclick="clicante()" href="#rep-Cores">Representação de Cores</a></li>
-            <ul>
-                <li><a onclick="clicante()" href="#formas-rep-Cores-nomes">Por nomes das cores em inglês</a></li>
-                <li><a onclick="clicante()" href="#formas-rep-Cores-rgb">Por código RGB ou RGBA</a></li>
-                <li><a onclick="clicante()" href="#formas-rep-Cores-hex">Hexadecimal</a></li>
-                <li><a onclick="clicante()" href="#formas-rep-Cores-hsla">HSLA</a></li>
-            </ul>
-            <li><a onclick="clicante()" href="#psicologia-cores">Psicologia das Cores</a></li>
-            <li><a onclick="clicante()" href="#harm-cores">Harmonização de Cores</a></li>
-            <li><a onclick="clicante()" href="#captura-cores">Ferramenta para descobrir cores</a></li>
-            </ul>
-        </nav>
-    </div>
-    <main>
-      
+    <div id="button_index"></div>
+<ul id="video_list">
+        <li data-adress="https://www.youtube.com/embed/A8UNBs7nxw4?si=NI7GwkK_U7cAjCZ8">Psicologia das Cores</li>
+        <li data-adress="https://www.youtube.com/embed/uKjKnztS3cY?si=TSjPnpn3NWUbntIs">Representando Cores com CSS3</li>
+        <li data-adress="https://www.youtube.com/embed/E2gaDa4ZaTc?si=TS9WtgJiVECi53cP">Harmonia de Cores</li>
+        <li data-adress="https://www.youtube.com/embed/KC8dm9OvIOU?si=CQzL5gJuYKn2-fC1">Paleta de Cores</li>
+        <li data-adress="https://www.youtube.com/embed/Swh0Yt2s5Zs?si=I0OJQWOr6koj0U9F">Como Capturar Cores de Tela</li>
+        <li data-adress="https://www.youtube.com/embed/_P-guJX-TtU?si=EDYu1ZTJeHGRmFdS">Como Criar efeito Degradê no CSS3</li>
+        <li data-adress="https://www.youtube.com/embed/reFQrqxOzsg?si=kb7ndOBUUxgMpQiU">Criando exemplo real</li>
+</ul>
+<ul id="shortcuts">
+   
+        <li data-adress="#rep-Cores">Representação de Cores</li>
+        <ul>
+            <li data-adress="#formas-rep-Cores-nomes">Por nomes das cores em inglês</li>
+            <li data-adress="#formas-rep-Cores-rgb">Por código RGB ou RGBA</li>
+            <li data-adress="#formas-rep-Cores-hex">Hexadecimal</li>
+            <li data-adress="#formas-rep-Cores-hsla">HSLA</li>
+        </ul>
+        <li data-adress="#psicologia-cores">Psicologia das Cores</li>
+        <li data-adress="#harm-cores">Harmonização de Cores</li>
+        <li data-adress="#captura-cores">Ferramenta para descobrir cores</li>
+        
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+<main> 
+    <div id="config_iframe"></div>
+          
         <article id="rep-Cores">
             <h2>Representação de Cores</h2>
 
@@ -229,16 +235,7 @@
     <footer>
         <h1>Materiais Utilizados</h1>
         <p><strong><a href="../../material-de-apoio/13 - Cores.pdf" target="_blank">Material em PDF</a></strong></p>
-        <h2>Vídeos</h2>
-        <ul>
-            <li><a href="https://youtu.be/A8UNBs7nxw4?si=NI7GwkK_U7cAjCZ8" target="_blank">Psicologia das Cores</a></li>
-            <li><a href="https://youtu.be/uKjKnztS3cY?si=TSjPnpn3NWUbntIs" target="_blank">Representando Cores com CSS3</a></li>
-            <li><a href="https://youtu.be/E2gaDa4ZaTc?si=TS9WtgJiVECi53cP" target="_blank">Harmonia de Cores</a></li>
-            <li><a href="https://youtu.be/KC8dm9OvIOU?si=CQzL5gJuYKn2-fC1" target="_blank">Paleta de Cores</a></li>
-            <li><a href="https://youtu.be/Swh0Yt2s5Zs?si=I0OJQWOr6koj0U9F" target="_blank">Como Capturar Cores de Tela</a></li>
-            <li><a href="https://youtu.be/_P-guJX-TtU?si=EDYu1ZTJeHGRmFdS" target="_blank">Como Criar efeito Degradê no CSS3</a></li>
-            <li><a href="https://youtu.be/reFQrqxOzsg?si=kb7ndOBUUxgMpQiU" target="_blank">Criando exemplo real</a></li>
-        </ul>
+       
         
     </footer>
 </body>

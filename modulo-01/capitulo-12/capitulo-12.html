@@ -20,30 +20,32 @@
     
 </head>
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
         <h1>Introdução ao CSS3</h1>
     </header>
-    <div class="nav-hamburguinho">
-        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
-        <nav>
-            <ul id="menu-tipo">
-                <li><a onclick="clicante()" href="#inline-style">Estilo CSS3 Inline</a></li>
-                <li><a onclick="clicante()" href="#internal-style">Estilo CSS3 Interno</a></li>
-                <li><a onclick="clicante()" href="#external-style">Estilo CSS3 Externo</a>
-                    <ul>
-                        <li><a onclick="clicante()" href="#creating-css-link">Criando o Link CSS</a></li>
-                    </ul>
-                </li>
-                <li><a onclick="clicante()" href="#style-hierarchy">Hierarquia de Estilos CSS3</a></li>
+    <div id="button_index"></div>
+    <ul id="video_list">
+
+       
+            <li data-adress="https://www.youtube.com/embed/byqhpuVpvEI?si=pOwxXeQnyZjXHJF2">Estilo CSS3 Inline</li>
+            <li data-adress="https://www.youtube.com/embed/fzyab4P2pn8?si=qLmcBvbmPKlPb-9c">Estilo CSS3 Interno</li>
+            <li data-adress="https://www.youtube.com/embed/-i1JVMspDJQ?si=A1Jz0NZcAUSTZO-B">Estilo CSS3 Externo</li>
+       
+    </ul>
+    <ul id="shortcuts">
+        <li data-adress="#inline-style">Estilo CSS3 Inline</li>
+        <li data-adress="#internal-style">Estilo CSS3 Interno</li>
+        <li data-adress="#external-style">Estilo CSS3 Externo
+            <ul>
+                <li data-adress="#creating-css-link">Criando o Link CSS</li>
             </ul>
-        </nav>
-    </div>
-    <main>
+        </li>
+        <li data-adress="#style-hierarchy">Hierarquia de Estilos CSS3</li>
+    </ul>
+    <div id="nav_videos"></div>
+    <div id="menu_acesso_rapido"></div>
+    <main> 
+        <div id="config_iframe"></div>
         <article id="inline-style">
             <h2>Estilo CSS3 Inline</h2>
             <p>O estilo inline é utilizado para modificar o estilo de elementos específicos diretamente no HTML. Esse estilo é usado em casos raros onde você precisa de uma modificação muito pontual, como destacar um trecho específico de um texto.</p>
@@ -129,11 +131,7 @@
         <h2>Materiais Utilizados</h2>
         <p><strong><a href="../../../material-de-apoio/12 - Trabalhando com estilos.pdf" target="_blank">12 - Trabalhando com estilos.pdf</a></strong></p>
         <h4>Vídeos:</h4>
-        <ul>
-            <li><a href="https://youtu.be/byqhpuVpvEI?si=pOwxXeQnyZjXHJF2" target="_blank">Estilo CSS3 Inline</a></li>
-            <li><a href="https://youtu.be/fzyab4P2pn8?si=qLmcBvbmPKlPb-9c" target="_blank">Estilo CSS3 Interno</a></li>
-            <li><a href="https://youtu.be/-i1JVMspDJQ?si=A1Jz0NZcAUSTZO-B" target="_blank">Estilo CSS3 Externo</a></li>
-        </ul>
+       
     </footer>
 </body>
 </html>

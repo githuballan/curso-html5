@@ -90,14 +90,14 @@
     cursor: pointer;
 }
 
-#video_iframe {
+#tela_iframe {
     position: relative;
     padding-bottom: 56.25%; /* Proporção 16:9 */
     overflow: hidden;
     background: #000;
 }
 
-#video_iframe iframe {
+#tela_iframe iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -117,11 +117,10 @@
 
 
 #config_iframe{
-    position: static; 
+    position: static;
     top: 0px; 
     min-width: 200px;
-    width: 100%;  
-    margin: auto; 
+    width: 100%;
     background-color: #d1d9e4;
     border-radius: 5px;
     box-shadow: 1px 1px 4px 0px #00000055; 

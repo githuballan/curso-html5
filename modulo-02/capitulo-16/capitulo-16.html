@@ -49,35 +49,39 @@
 <script src="../../script.js"></script>
 
 </head>
-
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
         <h1>Modelo de Caixas</h1>
     </header>
-    <div class="nav-hamburguinho">
-        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
-        <nav>
-            <ul id="menu-tipo">
-                <li><a onclick="clicante()" href="#introducao">Introdução</a></li>
-                <li><a onclick="clicante()" href="#sec-width">Width</a></li>
-                <li><a onclick="clicante()" href="#sec-height">Height</a></li>
-                <li><a onclick="clicante()" href="#sec-padding">Padding</a></li>
-                <li><a onclick="clicante()" href="#sec-border">Border</a></li>
-                <li><a onclick="clicante()" href="#sec-outline">Outline</a></li>
-                <li><a onclick="clicante()" href="#sec-margin">Margin</a></li>
-                <li><a onclick="clicante()" href="#ferramenta-de-desenvolvedor">Ferramenta de Desenvolvedor</a></li>
-                <li><a onclick="clicante()" href="#shorthand">Shorthand</a></li>
-                <li><a onclick="clicante()" href="#sombras">Sombras</a></li>
-                <li><a onclick="clicante()" href="#bordas-decoradas">Bordas Decoradas</a></li>
-            </ul>
-        </nav>
-    </div>
-    <main>
+        <div id="button_index"></div>
+        <ul id="video_list">
+
+          
+                <li data-adress="https://www.youtube.com/embed/3ZFYXkzXhqE?si=NkuzABwOqo8NVgfd">Modelo de Caixas</li>
+                <li data-adress="https://www.youtube.com/embed/rXF1okX0v9E?si=UMeA82uycRa95egE">Modelo de Caixas na prática (parte 1)</li>
+                <li data-adress="https://www.youtube.com/embed/-CPoDvZLQ6k?si=3gUvkixiy4iNYXj9">Modelo de Caixas na prática (parte 2)</li>
+                <li data-adress="https://www.youtube.com/embed/JACiDRNWjjQ?si=thLqzh4TARfO4tRk">Sombras</li>
+                <li data-adress="https://www.youtube.com/embed/PGIrTzQqpqo?si=U5iUDFKw2lHn92Ve">Caixas com Vértices Arredondados</li>
+                <li data-adress="https://www.youtube.com/embed/n0rjAs_Im4w?si=e-2uOqFvwL2tK2TK">Bordas decoradas</li>
+                <li data-adress="https://www.youtube.com/embed/xS2D9x8odoE?si=lCmt8eTPtgTn9xnY">Desafio Módulo 02</li>
+        </ul>
+        <ul id="shortcuts">
+            <li data-adress="#introducao">Introdução</li>
+            <li data-adress="#sec-width">Width</li>
+            <li data-adress="#sec-height">Height</li>
+            <li data-adress="#sec-padding">Padding</li>
+            <li data-adress="#sec-border">Border</li>
+            <li data-adress="#sec-outline">Outline</li>
+            <li data-adress="#sec-margin">Margin</li>
+            <li data-adress="#ferramenta-de-desenvolvedor">Ferramenta de Desenvolvedor</li>
+            <li data-adress="#shorthand">Shorthand</li>
+            <li data-adress="#sombras">Sombras</li>
+            <li data-adress="#bordas-decoradas">Bordas Decoradas</li>
+        </ul>
+        <div id="nav_videos"></div>
+        <div id="menu_acesso_rapido"></div>
+        <main> 
+            <div id="config_iframe"></div>
         <article id="introducao">
             
             <p>Os elementos HTML são organizados em caixas, que são retângulos com altura, largura, margens, bordas e preenchimento. O modelo de caixas é a forma como o navegador organiza e exibe os elementos na tela.</p>
@@ -375,7 +379,7 @@
             <h2>Ferramenta de desenvolvedor</h2>
             <p>Uma boa forma de visualizar a organização das caixas e testar os melhores formatos é utilizando o Dev Tools do Chrome. Para acessar, clique com o botão direito do mouse sobre o elemento que deseja inspecionar e selecione a opção "Inspecionar".</p>
             <p>Na aba "Elementos", você pode ver a estrutura de caixas do elemento selecionado. Cada caixa é representada por um retângulo, onde a borda externa é a margem, a borda intermediária é a borda e a borda interna é o padding. O conteúdo é o espaço interno da caixa.</p>
-            <p>recomanedo que assitam esse vídeo: <a href="https://youtu.be/rXF1okX0v9E?t=222" target="_blank">Modelo de Caixas na prática (parte 1)</a> min 03:50.</p>
+            <p>recomanedo que assitam esse vídeo: <a href="https://www.youtube.com/embed/rXF1okX0v9E?t=222" target="_blank">Modelo de Caixas na prática (parte 1)</a> min 03:50.</p>
         </article><!--ferramenta-de-desenvolvedor-->
 
         <article id="shorthand">
@@ -670,16 +674,7 @@ margin-top: 20px;">
     <footer>
         <h4>Materiais Utilizados</h4>
         <p><strong><a href="../../material-de-apoio/16 - Modelo de Caixas.pdf" target="_blank">Material em PDF</a></strong></p>
-        <h4>Vídeos</h4>
-        <ul>
-            <li><a href="https://youtu.be/3ZFYXkzXhqE?si=NkuzABwOqo8NVgfd" target="_blank">Modelo de Caixas</a></li>
-            <li><a href="https://youtu.be/rXF1okX0v9E?si=UMeA82uycRa95egE" target="_blank">Modelo de Caixas na prática (parte 1)</a></li>
-            <li><a href="https://youtu.be/-CPoDvZLQ6k?si=3gUvkixiy4iNYXj9" target="_blank">Modelo de Caixas na prática (parte 2)</a></li>
-            <li><a href="https://youtu.be/JACiDRNWjjQ?si=thLqzh4TARfO4tRk" target="_blank">Sombras</a></li>
-            <li><a href="https://youtu.be/PGIrTzQqpqo?si=U5iUDFKw2lHn92Ve" target="_blank">Caixas com Vértices Arredondados</a></li>
-            <li><a href="https://youtu.be/n0rjAs_Im4w?si=e-2uOqFvwL2tK2TK" target="_blank">Bordas decoradas</a></li>
-            <li><a href="https://youtu.be/xS2D9x8odoE?si=lCmt8eTPtgTn9xnY" target="_blank">Desafio Módulo 02</a></li>
-        </ul>
+       
        
     </footer>
 </body>

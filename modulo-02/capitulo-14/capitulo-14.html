@@ -29,44 +29,51 @@
     </head>
     
     <body>
-        <a class="buttom buttom-index" href="../../index.html">Índice</a>
         <header>
         <h1>Tipografia e Fontes no CSS</h1>
         </header>
-        <div class="nav-hamburguinho">
-       
-            <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </button>
-            <nav>
-                <ul id="menu-tipo" >
-                    <li><a href="capitulo-14.html">Voltar ao topo</a>
-                    <li><a onclick="clicante()" href="#tipografia">Introdução à Tipografia</a>
-                    <ul>
-                        <li><a onclick="clicante()" href="#serif">Fontes Serifadas</a></li>
-                        <li><a onclick="clicante()" href="#sans-serif">Fontes Sans-Serif</a></li>
-                        <li><a onclick="clicante()" href="#mono">Fontes Monoespaçadas</a></li>
-                        <li><a onclick="clicante()" href="#script">Fontes Script</a></li>
-                        <li><a onclick="clicante()" href="#diplay">Fontes Display</a></li>
-                        <li><a onclick="clicante()" href="#Combina-seg">Combinações Seguras de Fontes</a></li>
-                        <li><a onclick="clicante()" href="#medidas">Unidades de Medida no CSS3</a></li>
-                        <li><a onclick="clicante()" href="#line-height">Line Height (altura da linha)</a></li>
-                    </ul>    
-                    <li><a onclick="clicante()" href="#compati-fonte-com-navegador">Compatibilidade de Fontes em Navegadores</a></li>                    
-                    <li><a onclick="clicante()" href="#google-fonts">Google Fonts</a></li>
-                    <li><a onclick="clicante()" href="#estilos-de-fonte">Estilos de Fontes no CSS</a></li>
-                    <li><a onclick="clicante()" href="#var-font">Variação de Fontes</a></li>
-                    <li><a onclick="clicante()" href="#transf-texto">Transformação de Texto</a></li>
-                    <li><a onclick="clicante()" href="#shorthand">Shorthand de Fontes</a></li>
-                    <li><a onclick="clicante()" href="#alin-texto">Alinhamento de Texto</a></li>
-                    <li><a onclick="clicante()" href="#text-shadow">Sombras em Texto</a></li>
-                    <li><a onclick="clicante()" href="#detec-texto">Detectando Fontes</a></li>
-                </ul>
-            </nav>
-        </div>
-        <main>
+        <div id="button_index"></div>
+        <ul id="video_list">
+                <li data-adress="https://www.youtube.com/embed/m54omTveWa8?si=Szar9M2rXRpybDr5">Primeiros Passos em Tipografia</li>
+                <li data-adress="https://www.youtube.com/embed/YZfzstEquas?si=oo_4lJw1TttGHb_X">Anatomia do Tipo</li>
+                <li data-adress="https://www.youtube.com/embed/dMp1UFD8_lE?si=st5G_Bob0bCBi9Uo">Família de Fonte com CSS</li>
+                <li data-adress="https://www.youtube.com/embed/NGfPXJGiNH8?si=Axy3xjljRGPPg6WH">Tamanho de Fontes e Suas Medidas</li>
+                <li data-adress="https://www.youtube.com/embed/oHj5ez1bSkc?si=p0jjL_cJnWkbuGTj">Peso, Estilo e Shorthand Font</li>
+                <li data-adress="https://www.youtube.com/embed/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b">Usando Google Fonts</li>
+                <li data-adress="https://www.youtube.com/embed/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d">Usando Fontes Externas Baixadas</li>
+                <li data-adress="https://www.youtube.com/embed/XTtfM0L7Co0?si=04-AhKRJqDaBdzdr">Capturar Fontes de Sites</li>
+                <li data-adress="https://www.youtube.com/embed/i_c5Fzk807M?si=_P6bdD4gBAvpgiXX">Detectando Fontes em Textos</li>
+                <li data-adress="https://www.youtube.com/embed/i_c5Fzk807M?si=XtKC-dGkFGe9hCme">Detectando Fontes em Imagens</li>
+                <li data-adress="https://www.youtube.com/embed/tJTtp4qyqdE?si=09KPGh0Pf6ui60v_">Alinhamentos de Texto com CSS</li>
+            
+        </ul>
+        <ul id="shortcuts">
+                <li data-adress="#tipografia">Introdução à Tipografia</li>
+                <ul>
+                    <li data-adress="#serif">Fontes Serifadas</li>
+                    <li data-adress="#sans-serif">Fontes Sans-Serif</li>
+                    <li data-adress="#mono">Fontes Monoespaçadas</li>
+                    <li data-adress="#script">Fontes Script</li>
+                    <li data-adress="#diplay">Fontes Display</li>
+                    <li data-adress="#Combina-seg">Combinações Seguras de Fontes</li>
+                    <li data-adress="#medidas">Unidades de Medida no CSS3</li>
+                    <li data-adress="#line-height">Line Height (altura da linha)</li>
+                </ul>    
+                <li data-adress="#compati-fonte-com-navegador">Compatibilidade de Fontes em Navegadores</li>
+                <li data-adress="#google-fonts">Google Fonts</li>
+                <li data-adress="#estilos-de-fonte">Estilos de Fontes no CSS</li>
+                <li data-adress="#var-font">Variação de Fontes</li>
+                <li data-adress="#transf-texto">Transformação de Texto</li>
+                <li data-adress="#shorthand">Shorthand de Fontes</li>
+                <li data-adress="#alin-texto">Alinhamento de Texto</li>
+                <li data-adress="#text-shadow">Sombras em Texto</li>
+                <li data-adress="#detec-texto">Detectando Fontes</li>
+        </ul>
+        <div id="nav_videos"></div>
+        <div id="menu_acesso_rapido"></div>
+        <main> 
+            <div id="config_iframe"></div>
+            
             <article id="tipografia">
 
                 <h2>Introdução à Tipografia</h2>
@@ -303,7 +310,7 @@ p {
                         <section id="fon-online">
                             
                             <h4>Fontes Online</h4>
-                            <p>Vídeo recomendado: <a href="https://youtu.be/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">Usando Google Fonts</a></p>
+                            <p>Vídeo recomendado: <a href="https://www.youtube.com/embed/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">Usando Google Fonts</a></p>
                             <p>Podemos usar fontes web como Google Fonts, amplamente suportadas pelos navegadores modernos. Isso permite usar fontes externas sem a necessidade de baixar e instalar no computador do visitante. Para isso, utilize o serviço gratuito Google Fonts, disponível em <a href="https://fonts.google.com" target="_blank">Google Fonts</a>. Outra solução é incluir diferentes formatos de fontes (e.g., TTF, OTF, WOFF) para garantir a compatibilidade.</p>
                             
                             <h4>Exemplo de Código</h4>
@@ -322,7 +329,7 @@ body {
                         </section><!-- /#fon-online -->
                         <section id="font-baixada">
                             <h4>Usando Fontes Baixadas</h4>
-                            <p>Vídeo recomendado:<a href="https://youtu.be/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">Usando Fontes Externas Baixadas</a></p>
+                            <p>Vídeo recomendado:<a href="https://www.youtube.com/embed/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">Usando Fontes Externas Baixadas</a></p>
                             <p>Também temos a opção de baixar as fontes desejadas. Isso é bom para acelerar a abertura da página sem o texto piscar ao buscar a fonte em outro servidor. Devemos declarar a fonte no arquivo CSS da seguinte forma:</p>
                             <div class="pre"><pre>
 @font-face {
@@ -688,19 +695,7 @@ p {
             <p><strong><a href="../../material-de-apoio/14 - Fontes.pdf" target="_blank">14 - Fontes.pdf</a></strong></p>
         
             <h4>Vídeos:</h4>
-            <ul>
-                <li><a href="https://youtu.be/m54omTveWa8?si=Szar9M2rXRpybDr5" target="_blank">Primeiros Passos em Tipografia</a></li>
-                <li><a href="https://youtu.be/YZfzstEquas?si=oo_4lJw1TttGHb_X" target="_blank">Anatomia do Tipo</a></li>
-                <li><a href="https://youtu.be/dMp1UFD8_lE?si=st5G_Bob0bCBi9Uo" target="_blank">Família de Fonte com CSS</a></li>
-                <li><a href="https://youtu.be/NGfPXJGiNH8?si=Axy3xjljRGPPg6WH" target="_blank">Tamanho de Fontes e Suas Medidas</a></li>
-                <li><a href="https://youtu.be/oHj5ez1bSkc?si=p0jjL_cJnWkbuGTj" target="_blank">Peso, Estilo e Shorthand Font</a></li>
-                <li><a href="https://youtu.be/FLuQonci9wU?si=RIp-cmtUIHrsRQ9b" target="_blank">Usando Google Fonts</a></li>
-                <li><a href="https://youtu.be/3YIXnxA1kqg?si=E_xKTbGyZlg64u_d" target="_blank">Usando Fontes Externas Baixadas</a></li>
-                <li><a href="https://youtu.be/XTtfM0L7Co0?si=04-AhKRJqDaBdzdr" target="_blank">Capturar Fontes de Sites</a></li>
-                <li><a href="https://youtu.be/i_c5Fzk807M?si=_P6bdD4gBAvpgiXX" target="_blank">Detectando Fontes em Textos</a></li>
-                <li><a href="https://youtu.be/i_c5Fzk807M?si=XtKC-dGkFGe9hCme" target="_blank">Detectando Fontes em Imagens</a></li>
-                <li><a href="https://youtu.be/tJTtp4qyqdE?si=09KPGh0Pf6ui60v_" target="_blank">Alinhamentos de Texto com CSS</a></li>
-            </ul>
+            
         
 
         </footer>

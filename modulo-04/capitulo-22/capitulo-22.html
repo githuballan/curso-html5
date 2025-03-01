@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
     <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
 <style>
     iframe.tela{
         width: 70%;
@@ -15,12 +16,7 @@
         display: block;
         margin: auto;
     }
-    .desvantagens{
-        background-color: rgba(255, 0, 0, 0.226);
-    }
-    .vantagens{
-        background-color: rgba(0, 0, 255, 0.247);
-    }
+    
     table{
         margin: 20px;
         border-collapse: collapse;
@@ -37,225 +33,160 @@
 </style>
 </head>
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
     <header>
-        <h1 id="capitulo">Capítulo 22</h1>
-    </header>
-    <main>
         <h1>iframe</h1>
-        <p>
-            Iframe o significado em, grosso modo, inline frame, traduzindo seria algo como quadro em linha. Iframe é o link dos vídeos que pegamos no youtube. É como se tivesse uma janela para exibir outro site dentro do seu site.
-        </p>
-        <p>
-            Porém nem todos o sites liberam o uso de seus links por iframe por questões de segurança. Sim iframe apresentava problemas na segurança do site em versões anteriores do html. Mas no HTML 5 isso não é uma problema pois temos como nos previnir de possíveis ataques.
-            
-        </p>
-        <p>
-            Exemplo:
-        </p>
-        <p>
-            Lorem ipsum dolor sit <iframe src="../../index.html" frameborder="1"><a href="../../indice de links .html"> Índice</a></iframe> amet consectetur adipisicing elit... 
-        </p>
-        <p>
-            Veja que ele ficou exatamente um quadro na linha.
-        </p>
-        <p>
-            O comando do iframe é parecido com o âncora (link).Porém o que fica entre as tag no âncora é o nome do link ja no iframe ele só exibirá o que está entre as tag se o navegador no for compatível com iframe. 
-        </p>
-        <p>
-            Por isso é muito comum colocarmos um link para o site do iframe entre essas tag, pois assim caso não apareça não perderá o sentido no texto. Veja como ficou o exemplo de cima abaixo:
-        </p>
-        <p>Lorem ipsum dolor sit <code>&lt;iframe src="<span class="mark">"../../indice de links .html"</span>" frameborder="1">&lt;a href="../../indice de links .html"> Índice&lt;/a>&lt;/iframe></code>amet consectetur adipisicing elit... </p>
-    <h2>Navegação no iframe</h2>
-        <p>
-            Uma forma interessante de se trabalhar com iframe é utilizando ele como um mini navegador. No caso você não vai digitar uma url, mas pode colocar link que invés de abrir em outra pag com o atributo target:"_blank", ele abrirá dentro do iframe:
-            </p>
-            <p>
-                Veja um exemplo abaxo:
-            </p>
+    </header>
+    <div id="button_index"></div>
+<ul id="video_list">
+
+
+<li data-adress="https://www.youtube.com/embed/zHKHMmEG9vE?si=8R1Rl5TuZy-IDnt9">Abertura do Módulo 04</li>
+<li data-adress="https://www.youtube.com/embed/GWULnkTnapM?si=HQfB5JuPN_w9CyKo">1º iframe</li>
+<li data-adress="https://www.youtube.com/embed/eAxGt3ObQ24?si=3oruG1BUoZucheTV">Configurando iframe</li>
+<li data-adress="https://www.youtube.com/embed/G8H5jhabq8k?si=mgIcQSpYQOtWSiBF">Conteúdo Local no iframe</li>
+<li data-adress="https://www.youtube.com/embed/y6CKgnBYs5E?si=tyaYs9XPuhLF8oAV">Navegando no iframe</li>
+<li data-adress="https://www.youtube.com/embed/8Jb75kIqUQs?si=iQTZyz2RvJ0u5H5S">Conteúdo estático no iframe</li>
+<li data-adress="https://www.youtube.com/embed/_bYRQTnFXF8?si=wmP6SNGu3rmvOLNR">Inconvenientes do iframe</li>
+<li data-adress="https://www.youtube.com/embed/mRhjlDN4Ezo?si=pyI4mjUHd_fBh6YM">Deixando o iframe mais seguro</li>
+<li data-adress="https://www.youtube.com/embed/mRhjlDN4Ezo?si=pyI4mjUHd_fBh6YM">Dicas para iframes</li>
+
+</ul>
+<ul id="shortcuts">
+    <li data-adress="#introducao">Introdução ao Iframe</li>
+    <li data-adress="#exemplo">Exemplo de Uso</li>
+    <li data-adress="#navegacao">Navegação no Iframe</li>
+    <li data-adress="#inicializacao">Inicialização do Iframe</li>
+    <li data-adress="#seguranca">Segurança</li>
+    <li data-adress="#utilidades">Melhores Utilidades do Iframe</li>
+    <li data-adress="#observacoes">Observações</li>
+    <li data-adress="#desvantagens">Desvantagens do Uso de Iframe</li>
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+    <main>
+        <div id="config_iframe"></div>
+        <article id="introducao">
+            <h2>Introdução ao Iframe</h2>
+            <p>Iframe, ou "inline frame", é um elemento HTML que permite a incorporação de outro documento HTML dentro de uma página web. Um exemplo comum é a incorporação de vídeos do YouTube.</p>
+            <p>Por questões de segurança, nem todos os sites permitem que seus conteúdos sejam exibidos em iframes. Embora o uso de iframes apresentasse problemas de segurança em versões anteriores do HTML, o HTML5 introduziu mecanismos para mitigar esses riscos.</p>
+        </article>
+        <article id="exemplo">
+            <h2>Exemplo de Uso</h2>
+            <p>Vamos ver um exemplo de uso do iframe:</p>
+            <p>O código abaixo incorpora um documento HTML dentro da página atual:</p>
+            <p>Lorem ipsum dolor sit <iframe src="../../index.html" frameborder="1"><a href="../../indice de links .html">Índice</a></iframe> amet consectetur adipisicing elit...</p>
+            <p>Note que o iframe aparece como um quadro embutido na linha do texto.</p>
+            <p>O comando do iframe é semelhante ao de um link (âncora). No entanto, o conteúdo entre as tags do iframe só será exibido se o navegador não suportar iframes. Por isso, é comum colocar um link para o site do iframe entre essas tags, garantindo que o texto ainda faça sentido caso o iframe não seja exibido.</p>
+            <p>Veja como ficou o exemplo acima:</p>
+            <p>Lorem ipsum dolor sit <code>&lt;iframe src="<span class="mark">"../../index.html"</span>" frameborder="1">&lt;a href="../../indice de links .html">Índice&lt;/a>&lt;/iframe></code> amet consectetur adipisicing elit...</p>
+        </article>
+        <article id="navegacao">
+            <h2>Navegação no Iframe</h2>
+            <p>Uma maneira interessante de usar iframes é como um mini navegador. Você pode criar links que abrem dentro do iframe, em vez de abrir em uma nova aba com o atributo <code>target="_blank"</code>:</p>
+            <p>Veja o exemplo abaixo:</p>
             <ul>
             <li><a href="../../modulo-03/capitulo-19/capitulo-19.html" target="tela">Capítulo 19</a></li>
             <li><a href="../../modulo-03/capitulo-20/capitulo-20.html" target="tela">Capítulo 20</a></li>
-            <li><a href="../../modulo-03/capitulo-21/capitulo-21.html" target="tela">Capítulo 21</a></li>        
+            <li><a href="../../modulo-03/capitulo-21/capitulo-21.html" target="tela">Capítulo 21</a></li>
             </ul>
-
-            <iframe class="tela" name="tela"srcdoc="<br><br><br><br><br><br><br><br><br><br><h1><center><strong>O site será carregado aqui</strong></center></h1>" frameborder="1"></iframe>
-            <p>
-                o Funcionamento é bem simples para isso basta colocar um atributo "name=""" no iframe e colocar um nome qualquer em name para referêciar esse iframe. o nome usado no exemplo acima foi tela. 
-            </p>
-            <p>
-                Feito isso no link que queremo que abra no Iframe basta colocar em target o name que colocou no iframe.
-            </p>
-            <p>
-                Veja o código usado exemplo acima:
-            </p>
-
-<p>Código no link:</p>
-<strong>&lt;a href="../../../modulo-03/capitulo-19/capitulo-19.html" <span class="mark">target="tela"</span>>Capítulo 19</a></strong>
-<p>Código no iframe:</p>
-    <strong>&lt;iframe class="tela" <span class="mark">name="tela"</span>src="" frameborder="1">&lt;/iframe></strong>
-
-<table style="border: solid;">
-    <thead>
-        <tr>               
-            <th>
-                Para o quadro do iframe não iniciar em branco é possivel fazer 3 coisas:
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <ol>
-                    <li><strong>Colocar um url</strong></li>
-                    <p>Colocar o url de um dos links no src do iframe para ja iniciar com um deles abertos e depois se clicar em outro o outro o substituirá</p>
-                </ol>    
-            </td>
-            </tr>
-        <tr>
+            <iframe class="tela" name="tela" srcdoc="<br><br><br><br><br><br><br><br><br><br><h1><center><strong>O site será carregado aqui</strong></center></h1>" frameborder="1"></iframe>
+            <p>Para isso funcionar, adicione um atributo <code>name</code> ao iframe e use esse nome no atributo <code>target</code> dos links. No exemplo acima, o nome usado foi "tela".</p>
+            <p>Veja o código usado no exemplo acima:</p>
+            <p>Código do link:</p>
+            <strong>&lt;a href="../../../modulo-03/capitulo-19/capitulo-19.html" <span class="mark">target="tela"</span>>Capítulo 19&lt;/a></strong>
+            <p>Código do iframe:</p>
+            <strong>&lt;iframe class="tela" <span class="mark">name="tela"</span> src="" frameborder="1">&lt;/iframe></strong>
+        </article>
+        <article id="inicializacao">
+            <h2>Inicialização do Iframe</h2>
+            <table style="border: solid;">
+            <thead>
+                <tr>
+                <th>Para o iframe não iniciar em branco, você pode fazer uma das seguintes opções:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                 <td>
-                <ol start="2">
-                    <li> <strong>Colocar Frases texto ou até imagem</strong></li>
-                    <p>Para isso basta apagar o src="" e escrever srcdoc="" no lugar, assim poderá esccrever qualquer coisa ali como se fosse um site usando tag e tudo mais. A única observação é que para carregar imagem, no src de img devemos usar aspas simples &rarr;'&larr; e não funciona a tag style. </p>
-                    <p>
-                    Exemplo: &lt;img src='endereço' alt="">
-                    </p>
-                </ol>
-                </td>   
-            </tr>
-            <tr> 
-                <td>
-                    <ol start="3">
-                        <li><strong>Criar uma página para somente isso</strong></li>
-                        <p>
-                            Sim, a melhor opção é essa, criar uma pagina simples e bem feita assim poderá usar em mais de um iframe desse tipo e pesará bem menos que uma imagem.
-                        </p>
+                    <ol>
+                    <li><strong>Colocar uma URL</strong></li>
+                    <p>Adicione a URL de um dos links no atributo <code>src</code> do iframe para que ele já inicie com esse conteúdo. Ao clicar em outro link, o conteúdo será substituído.</p>
                     </ol>
                 </td>
-            </tr>
-         </tbody>
-</table>
-<h1>Segurança</h1>
-<p>
-    O iframe possui algumas falhas de segurança como podemos ver na aba desvantagens abaixo. Porém tem como impedir links externos tenham acesso a nossos dados com alguns atributos simples como :
-    <ul>
-        <li><Strong>sandbox="sandbox"</Strong> Esse atributo impede que qualquer informação seja enviada para o iframe. Entretanto se o usário precisar interagir com o iframe ele não consiguirá nem fazer um login. Ele conseguirá digitar mas não conseguirá enviar esses dados.
-        <p>Porém é possivel liberar alguma permições como:
-        </p>
-        <table>
-            <tr>
-                <th>sandbox="sandbox"</th>
-                <td>Bloqueia tudo. Recomendado usar esse sempre que levar para link externo</td>
-            </tr>
-            <tr>
-                <th scope="row">sandbox="allow-same-origin"</th>
-                <td>Permite ao usuário interagir com conteúdos de mesma origem, ou seja link do mesmo site.</td>
-            </tr>
-            <tr>
-                <th scope="row">sandbox="allow-forms"</th>
-                <td>Permite o preenchmento e envio de formulários dentro do iframe</td>
-            </tr>
-            <tr>
-                <th scope="row">sandbox="allow-scripts"</th>
-                <td>Permite a execução de java script dentro do iframe [arriscado, tenha muita confiança nesse site]</td>
-            </tr>
-        </table>
-        </li>
-        <li><strong>referrerpolicy="no-referrer"</strong></li> isso impede que os sites dentro do iframe colete qualquer dado do usuário como cookies ou qualquer outra coisa por mais simples que seja.
-    </ul>
-
-    <h1>Melhores utilidade do iframe</h1>
-    <p>
-        Como ja vimos anteriormente o iframe pode ser usado para incorporar vídeos do youtube e do vímeo. No entanto temos outros serviços do Google que permitem a incorporação de de conteúdo via iframe e alguns deles são:
-    </p>
-        <ul>
-            <li><strong>Google Maps</strong> Aqueles mapa do Google Maps que aparecem em alguns sites para clicar é iframe para isso basta ir no site Google Maps &rarr; ir na localização que deseja no mapa &rarr; clicar em compartilhar &rarr; e clicar em incorporar. Assim irá aparecer um iframe igual ao que aparece no youtube.</li>
-            <li><strong>Waze</strong> Sim o waze também da pra incorporar o procedimento é igual ao do Google maps. Mas o waze tem a vantagem de mostrar o trânsito no local em tempo real, além de outros alertas.</li>
-            <li><strong>Documentos Google</strong> Também é possível incorporar Documentos Google no iframe, esse ainda não testei mas parece ser interessante. O exemplo em aula foi uma apresentação de slide(PowerPoint)</li>
-        </ul>
-</p>
-<h1>Obeservações</h1>
-    <p class="mark">Um dos principais uso de iframe é para dar uma prévia de um link do próprio site.</p>
-
-        <div class="desvantagens">
-            <h2>Desvantagens do uso de iframe</h2>
-            <ul>          
-                <li><strong>Navegadores imcompatíveis</strong> Muitos navegadores são imcompatíveis com iframe, principalmente navegadores Mobile.</li>
-                <li> <strong>Link fora do ar</strong> Caso o link para o iframe saia do ar ele não aparecerá o que está entre a as tag iframe. ele só faz isso caso o navegador seja incompatível</li>
-                <li><strong> Segurança</strong> Caso seu iframe tenha um link para um site externo e esse site for invadido e comecem a roubar dados do dele, o seu site também terá seus dados roubados. O iframe cria uma ligação direta com o outro site.</li>
-                <li><strong>SEO</strong> O Google já anunciou que as vezes tem alguns problemas para indexar iframes ao site. Isso é, ele não consegue verificar o que há no iframe, sendo assim, mesmo que o conteúdo seja relevante ele não exibirá nas pesquisas dele, pois ele não reconheceu que seu site possui aquele conteúdo</li>
-                <li><strong>Acessibilidade</strong> Pessoas com deficiência visual utilizam leitores de telas e esses leitores costumam apresentar erro ao ler o que está no iframe</li>
-                <li><strong>Navegação Prejudicada</strong> Como vimos, é possível navega em site pelo iframe, porém temos alguns problemas como quando precisa voltar a página do iframe nem sempe o botão de volta do navegador funciona no iframe e quando funciona pode confundir o usuário que esta tentando voltar a página interia e ele fica o iframe. Outro problema é abrir link no Iframe que pode tanto abri em uma no guia ou no próprio iframe.</li>
-                <li><strong></strong></li>
+                </tr>
+                <tr>
+                <td>
+                    <ol start="2">
+                    <li><strong>Adicionar texto ou imagem</strong></li>
+                    <p>Substitua o <code>src=""</code> por <code>srcdoc=""</code> e escreva o conteúdo desejado. Você pode usar tags HTML, incluindo imagens. Para imagens, use aspas simples no atributo <code>src</code> da tag <code>img</code>.</p>
+                    <p>Exemplo: &lt;img src='endereço' alt=""></p>
+                    </ol>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <ol start="3">
+                    <li><strong>Criar uma página dedicada</strong></li>
+                    <p>A melhor opção é criar uma página simples e bem feita, que pode ser usada em vários iframes e será mais leve que uma imagem.</p>
+                    </ol>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </article>
+        <article id="seguranca">
+            <h2>Segurança</h2>
+            <p>O iframe possui algumas falhas de segurança, mas podemos mitigar esses riscos com alguns atributos:</p>
+            <ul>
+            <li><strong>sandbox="sandbox"</strong> - Esse atributo bloqueia todas as interações com o iframe. No entanto, você pode liberar algumas permissões específicas:
+                <table>
+                <tr>
+                    <th>sandbox="sandbox"</th>
+                    <td>Bloqueia tudo. Recomendado para links externos.</td>
+                </tr>
+                <tr>
+                    <th scope="row">sandbox="allow-same-origin"</th>
+                    <td>Permite interações com conteúdos da mesma origem.</td>
+                </tr>
+                <tr>
+                    <th scope="row">sandbox="allow-forms"</th>
+                    <td>Permite o preenchimento e envio de formulários.</td>
+                </tr>
+                <tr>
+                    <th scope="row">sandbox="allow-scripts"</th>
+                    <td>Permite a execução de JavaScript (use com cautela).</td>
+                </tr>
+                </table>
+            </li>
+            <li><strong>referrerpolicy="no-referrer"</strong> - Impede que sites dentro do iframe coletem dados do usuário, como cookies.</li>
             </ul>
-        </div>
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </article>
+        <article id="utilidades">
+            <h2>Melhores Utilidades do Iframe</h2>
+            <p>O iframe pode ser usado para incorporar vídeos do YouTube e Vimeo, além de outros serviços do Google:</p>
+            <ul>
+            <li><strong>Google Maps</strong> - Para incorporar um mapa, vá ao Google Maps, selecione a localização, clique em compartilhar e depois em incorporar.</li>
+            <li><strong>Waze</strong> - Similar ao Google Maps, mas com informações de trânsito em tempo real.</li>
+            <li><strong>Documentos Google</strong> - Você pode incorporar documentos do Google, como apresentações de slides.</li>
+            </ul>
+             <p class="mark">Um dos principais usos do iframe é para dar uma prévia de um link do próprio site.</p>
+        </article>
+        <article id="desvantagens">
+            <div>
+            <h3>Desvantagens do Uso de Iframe</h3>
+            <ul>
+                <li><strong>Navegadores incompatíveis</strong> - Alguns navegadores, especialmente em dispositivos móveis, podem não suportar iframes.</li>
+                <li><strong>Link fora do ar</strong> - Se o link do iframe estiver fora do ar, ele não exibirá o conteúdo entre as tags iframe.</li>
+                <li><strong>Segurança</strong> - Se o site externo do iframe for comprometido, seu site também pode ser afetado.</li>
+                <li><strong>SEO</strong> - O Google pode ter dificuldades para indexar o conteúdo do iframe, afetando a visibilidade nas pesquisas.</li>
+                <li><strong>Acessibilidade</strong> - Leitores de tela podem ter problemas para ler o conteúdo do iframe.</li>
+                <li><strong>Navegação Prejudicada</strong> - A navegação dentro do iframe pode ser confusa, especialmente com o botão de voltar do navegador.</li>
+            </ul>
+            </div>
+        </article>
     </main>
     <footer>
-
-        <h1>Materiais utilizados</h1>
-            
-                <p><a href="../../material-de-apoio/22 - Inline Frames.pdf" target="_blank">Material de Apoio</a></p>
-            
-        <h1>Vídeos</h1>
-        <p>
-            <a href="https://youtu.be/zHKHMmEG9vE?si=8R1Rl5TuZy-IDnt9" target="_blank">Abertura do Módulo 04</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/GWULnkTnapM?si=HQfB5JuPN_w9CyKo" target="_blank">1º iframe</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/eAxGt3ObQ24?si=3oruG1BUoZucheTV" target="_blank">Configurando iframe</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/G8H5jhabq8k?si=mgIcQSpYQOtWSiBF" target="_blank">Conteúdo Local no iframe</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/y6CKgnBYs5E?si=tyaYs9XPuhLF8oAV" target="_blank">Navegando no iframe</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/8Jb75kIqUQs?si=iQTZyz2RvJ0u5H5S" target="_blank">Conteúdo estático no iframe</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/_bYRQTnFXF8?si=wmP6SNGu3rmvOLNR" target="_blank">Inconvenientes do iframe</a>
-        </p>       
-        <p>
-            <a href="https://youtu.be/mRhjlDN4Ezo?si=pyI4mjUHd_fBh6YM" target="_blank">Deixando o iframe mais seguro</a>
-        </p>  
-        <p>
-            <a href="https://youtu.be/mRhjlDN4Ezo?si=pyI4mjUHd_fBh6YM" target="_blank">Dicas para iframes</a>
-        </p>       
-
-
-
-            
-        <hr>
-        <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-        
-        </footer>
+        <p><a href="../../material-de-apoio/22 - Inline Frames.pdf" target="_blank">Material de Apoio</a></p>
+    </footer>
 </body>
 </html>
