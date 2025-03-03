@@ -14,60 +14,47 @@
     <link rel="stylesheet" href="../../style.css">
 
     <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <script src="../../script.js"></script>
 </head>
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
-
 <header>
     <h1>Imagens, Áudios e Vídeos no HTML5</h1>
 </header>
-<div class="nav-hamburguinho">
-    <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </button>
-    <nav>
-        <ul id="menu-tipo">
-            <li><a href="capitulo-11.html">Voltar ao topo</a></li>
-            <li><a onclick="clicante()" href="#imagens-flexiveis">Imagens Flexíveis</a>
-            <ul>
-                <li><a onclick="clicante()" href="#introducao-imagens-flexiveis">Introdução</a></li>
-                <li><a onclick="clicante()" href="#tag-picture">Tag picture</a></li>
-                <li><a onclick="clicante()" href="#tag-source-media-type">Tag source media type</a></li>
-            </ul>
-            </li>
-            <li><a onclick="clicante()" href="#figcaption">Tag Figure e figcaption</a>
-            <ul>
-                <li><a onclick="clicante()" href="#exemplo-figure-figcaption">Exemplo Figure e figcaption</a></li>
-            </ul>
-            </li>
-            <li><a onclick="clicante()" href="#imagens-responsivas">Imagens Responsivas com CSS</a>
-            <ul>
-                <li><a onclick="clicante()" href="#estilos-imagens-responsivas">Estilos Imagens Responsivas</a></li>
-                <li><a onclick="clicante()" href="#centralizacao-imagens">Centralização de Imagens</a></li>
-            </ul>
-            </li>
-            <li><a onclick="clicante()" href="#audio">Áudios no HTML5</a>
-            <ul>
-                <li><a onclick="clicante()" href="#direitos-autorais-audios">Direitos Autorais de Áudios</a></li>
-                <li><a onclick="clicante()" href="#adicionando-audios-html">Adicionando Áudios no HTML</a></li>
-                <li><a onclick="clicante()" href="#multiplos-formatos-audio">Usando Múltiplos Formatos de Áudio</a></li>
-            </ul>
-            </li>
-            <li><a onclick="clicante()" href="#videos">Vídeos</a>
-            <ul>
-                <li><a onclick="clicante()" href="#direitos-autorais-videos">Direitos Autorais de Vídeos</a></li>
-                <li><a onclick="clicante()" href="#formatos-videos">Principais Formatos de Vídeos para HTML</a></li>
-                <li><a onclick="clicante()" href="#hospedagem-videos">Hospedagem de Vídeos no Próprio Site</a></li>
-                <li><a onclick="clicante()" href="#tag-video">Tag Video</a></li>
-                <li><a onclick="clicante()" href="#atributos-video">Principais Atributos da Tag Video</a></li>
-            </ul>
-            </li>
-        </ul>
-    </nav>
-</div>
-<main>
+<div id="button_index"></div>
+<ul id="video_list">
+    <li data-adress="https://www.youtube.com/embed/E01LDVj0Rpg?si=26P9cDMPqnL6rFdW">Imagens Dinâmicas</li>
+    <li data-adress="https://www.youtube.com/embed/cAgkwPWE4hU?si=EfhEOe1zEu5xUndN">Elemento Picture</li>
+    <li data-adress="https://www.youtube.com/embed/4OZYsFl-J9s?si=0rQZznlIxDfGPkvy">Áudios</li>
+    <li data-adress="https://www.youtube.com/embed/DjOSM72cYac?si=ilRDg0BL4U34MxwU">Vídeos em HTML5</li>
+    <li data-adress="https://www.youtube.com/embed/TCeyIwFGkYo?si=JnebY35gwTJD9EOR">Vídeos em Hospedagem Própria</li>
+    <li data-adress="https://www.youtube.com/embed/3hng-hmSv2Y?si=prK7KhjmJYmXw-2O">Vídeos em Hospedagem Externa</li>
+</ul>
+<ul id="shortcuts">
+    <li data-adress="#imagens-flexiveis">Imagens Flexíveis</li>
+    <li data-adress="#introducao-imagens-flexiveis">Introdução</li>
+    <li data-adress="#tag-picture">Tag picture</li>
+    <li data-adress="#tag-source-media-type">Tag source media type</li>
+    <li data-adress="#figcaption">Tag Figure e figcaption</li>
+    <li data-adress="#exemplo-figure-figcaption">Exemplo Figure e figcaption</li>
+    <li data-adress="#imagens-responsivas">Imagens Responsivas com CSS</li>
+    <li data-adress="#estilos-imagens-responsivas">Estilos Imagens Responsivas</li>
+    <li data-adress="#centralizacao-imagens">Centralização de Imagens</li>
+    <li data-adress="#audio">Áudios no HTML5</li>
+    <li data-adress="#direitos-autorais-audios">Direitos Autorais de Áudios</li>
+    <li data-adress="#adicionando-audios-html">Adicionando Áudios no HTML</li>
+    <li data-adress="#multiplos-formatos-audio">Usando Múltiplos Formatos de Áudio</li>
+    <li data-adress="#videos">Vídeos</li>
+    <li data-adress="#direitos-autorais-videos">Direitos Autorais de Vídeos</li>
+    <li data-adress="#formatos-videos">Principais Formatos de Vídeos para HTML</li>
+    <li data-adress="#hospedagem-videos">Hospedagem de Vídeos no Próprio Site</li>
+    <li data-adress="#tag-video">Tag Video</li>
+    <li data-adress="#atributos-video">Principais Atributos da Tag Video</li>
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+<main> 
+    <div id="config_iframe"></div>
 
     <article id="imagens-flexiveis"><!--Imagens Flexíveis-->
         <h2>Imagens Flexíveis</h2>
@@ -287,15 +274,7 @@
     <p>
         <strong><a href="../../../material-de-apoio/11 - Imagens dinâmicas, áudios e vídeos.pdf" target="_blank">11 - Imagens dinâmicas, áudios e vídeos.pdf</a></strong>
     </p>
-    <h3>Vídeos</h3>
-    <ul>
-        <li><a href="https://youtu.be/E01LDVj0Rpg?si=26P9cDMPqnL6rFdW" target="_blank">Imagens Dinâmicas</a></li>
-        <li><a href="https://youtu.be/cAgkwPWE4hU?si=EfhEOe1zEu5xUndN" target="_blank">Elemento Picture</a></li>
-        <li><a href="https://youtu.be/4OZYsFl-J9s?si=0rQZznlIxDfGPkvy" target="_blank">Áudios</a></li>
-        <li><a href="https://youtu.be/DjOSM72cYac?si=ilRDg0BL4U34MxwU" target="_blank">Vídeos em HTML5</a></li>
-        <li><a href="https://youtu.be/TCeyIwFGkYo?si=JnebY35gwTJD9EOR" target="_blank">Vídeos em Hospedagem Própria</a></li>
-        <li><a href="https://youtu.be/3hng-hmSv2Y?si=prK7KhjmJYmXw-2O" target="_blank">Vídeos em Hospedagem Externa</a></li>
-    </ul>
+   
 </footer>
 </body>
 </html>

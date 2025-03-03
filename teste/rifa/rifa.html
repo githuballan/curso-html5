@@ -47,7 +47,7 @@
             }
             #numeroRifa{
                 width: 50px;
-                margin-left: 46px;
+                margin-left: 5px;
                 margin-top: 5px;
             }
 
@@ -125,15 +125,19 @@
            <form action="" method="dialog" autocomplete="off">
                <fieldset >
                 <legend>Ficha de Cadastro</legend>
-                        <label>Nome da Rifa:</label>
-                        <input type="text" id="nomeRifa" required autocomplete="off"><br>
-                        <label for="numeroRifa">Número:</label>
-                        <input onchange="limite()" type="number" id="numeroRifa" min="1" max="100" required><br>
+                        <div style="width: 230px;">
+                            <label>Nome:</label>
+                            <input type="text" id="nomeRifa" required autocomplete="off">
+                        </div>
+                        <div style="width: 230px;">
+                            
+                            <label for="numeroRifa">Número:</label>
+                            <input onchange="limite()" type="number" id="numeroRifa" min="1" max="100" required> </div>
+                            
+                                <div id="aviso"></div>
+                            
+                            <button class="buttom" id="btCadastrar" onclick="Cadastrar()">Cadastrar</button>
                        
-                            <div id="aviso"></div>
-                        
-                        <button class="buttom" id="btCadastrar" onclick="Cadastrar()">Cadastrar</button>
-                   
                </fieldset>    
            </form>
            <div class="apg">
@@ -281,7 +285,7 @@
 
             </ul>
             <div style="margin-top: 50px;">
-            <button  class="int" onclick="apagMemoria()">Apagar tudo</button>
+            <button id="apagar-tudo"  class="int" onclick="apagMemoria()">Apagar tudo</button>
             </div>
         </section><!--Rifa-->
     <script src="script.js"></script>

@@ -157,6 +157,7 @@ button{
     z-index: 20;
     box-shadow: 1px 1px 1px 100vmax rgba(0, 0, 0, 0.139);
     top: 15px;
+    flex-direction: column;
 }
 
 #menu_acesso_rapido{
@@ -230,7 +231,7 @@ body {
     font-family: Arial, Helvetica, Tahoma, sans-serif;
     font-size: large;
     margin: auto;
-    text-align: justify;
+    text-align: left;
    
     
 }

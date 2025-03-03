@@ -5,315 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capítulo 25</title>
     
-    <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
+    <link rel="shortcut icon" href="../../imagens/Study.ico"type="image/x-icon">
 
-    <link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
+    <link rel="stylesheet" href="../../style.css">
+
+    <script src="../../script.js"></script>
 </head>
 <body>
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+   
 <header>
-    <h1 id="capitulo"> Capítulo 25</h1>
     <h1 id="capitulo">Media Queries</h1>
-
 </header>
-<main>
-    <p>
-        Para estudar esse cáptulo será necessário utilizar uma extensão do google chrome que simula a tela de um celular no navegador.
-    </p>
-    <p>
-        Media Query é a capacidade do site de alterna entre diferenetes folhas de estilo dependendo do tipo de dispositivo com as Media types que está visualizado, e de algumas outras caractiriscas que veremos no decorrer do capítulo. Pelo que entendi é como se fosse uma picture e source media das folhas de estilos.
-    </p>
-        Como já vimos anteriormente, as folhas de estilos são criadas a em arquivo CSS e são linkadas no  head com o comando:
-    <p>
-
-    <pre>
-
-&lt;link rel="stylesheet" href="../../modulo-01/capitulo-12/style.css">
-    </pre>
-    <p>
-        Porém quando usamos media query, essas folhas são usadas de acordo com a tela ou modo saída da página. Veja algumas configurações disponíveis abaixo:
-    </p>
-        Existem as seguintes configurações de folha de estilo:
-    </p>
-    <ul>
-        <li><strong>media="print"</strong>: Modo impressora. Desse modo podemos ocultar alguns menus e outros itens da página desnecessários para impressão. Veja o comando abaixo:</li>
-            <pre>
-&lt;link rel="stylesheet" href="estilos/impressora.css" media="print">
-            </pre>
-        <li><strong>media="screen"</strong>: Modo Tela. Esse modo posui mais funções, mas veremos isso mais a frente. Veja o código do screen abaixo:</li>
-            <pre>
-&lt;link rel="stylesheet" href="estilos/tela.css" media="screen">
-            </pre>
-            <li><strong>media="all"</strong> Configuração geral que se aplica a todos os dispositivos. Hierarquicamente é como se o all fosse a folha de CSS e o screen fosse a style feita no head do html </li>
-           
-            <li><strong>media="handheld"</strong>: Modo dispositivos de mão</li>
-    </ul>
-
-    <a href="exercicios/ex01/ex01.html" target="_blank"> Exemplo de media="print"</a>
-    <br>
+<div id="button_index"></div>
+<ul id="video_list">
+    <li data-adress="https://www.youtube.com/embed/9rY8V2rvP2o?si=psIPSGsXJ5ObNFai">O que são Media Queries em CSS</li>
+    <li data-adress="https://www.youtube.com/embed/DMYlN21ajtU?si=CXydeW8EOgdWIR8B">Criando um site com versão para impressora</li>
+    <li data-adress="https://www.youtube.com/embed/VGD5Uy1C8Cw?si=u-J9sIcmE8SyvL8x">Múltiplas Media Features com CSS</li>
+    <li data-adress="https://www.youtube.com/embed/IRCDwdZLlX4?si=uqRjomoBebR6HWCX">Seguindo a orientação do dispositivo</li>
+    <li data-adress="https://www.youtube.com/embed/DkA_OQgjjKg?si=BoOtjLNJQOT-pgv-">Reunindo tudo em um único CSS</li>
+    <li data-adress="https://www.youtube.com/embed/q6SZKTHUQiw?si=1wUdR6wVK64doZBf">Mobile First</li>
+    <li data-adress="https://www.youtube.com/embed/wU80w4xbNxQ?si=XYJZUkqQZHIn_G3u">Iniciando um site mobile first</li>
+    <li data-adress="https://www.youtube.com/embed/S8YXMqDsbhA?si=G1OgN7NNHctbAu5d">Device breakpoints</li>
+    <li data-adress="https://www.youtube.com/embed/Zp3fnf99kTg?si=iR6GkbkRZajDVDA1">Menu responsivo com HTML5 e CSS3</li>
+    <li data-adress="https://www.youtube.com/embed/67W4NdxW1kw?si=CCCCQ-JeT4UkYHB-">Configurando o layout do projeto</li>
+    <li data-adress="https://www.youtube.com/embed/Dd6Z3gkud18?si=bflQQJYQ2hKn_3Mz">Criando um menu hambúrguer</li>
+    <li data-adress="https://www.youtube.com/embed/T1rfhkmcH00?si=7xl4pvlXpQbAW73-">Media Queries para outros dispositivos</li>
     
-
-    <h2>media="screen"</h2>
-    <p>
-        O media screen ainda tem mais 2 adicionais que são os formatos de tela se são modo paisagem (como um notebook) ou modo retrato, como um celular ou tablet (nesse caso as tela também deitam mas gralmente a pessoas consomem conteúdo com a tela em pé mesmo)
-    </p>
-    <p>
-        Para cada um desses dois formatos de tela nós iremos usar um arquivo de CSS. E para referenciarmos cada um informando qual usar de acordo com o foramato da tela do usuário usaremos os seguintes comandos:
-    </p>
-    <ul>
-        <li><strong>Modo retrato:</strong> Veja o código abaixo</li>
-        &lt;link rel="stylesheet" href="estilos/retrato.css" media="screen<span class="mark"> and (orientaion: <abbr title="Retrato em inglês">portrait</abbr>)</span>">
-
-        <li><strong>Modo paisagem:</strong> Veja o código abaixo</li>
-        &lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen<span class="mark"> and (orientation: <abbr title="Paisagem em inglês">landscape</abbr>)</span>"> 
-    <p>
-        Veja o exemplo no link abaixo:
-    </p>
-    <p><a href="exercicios/ex02/ex02.html"> Site de Maya</a></p>
-    <li><strong> Pela largura da tela: </strong>Veja o código abaixo:</li>
-    <pre>
-@media screen and (max-width: 550px)
-    </pre>
-    <p>
-        Veja o exemplo no link abaixo:
-    </p>
-
-    <p>
-        <a href="exercicios/ex01/ex01.html" target="_blank">Exemplo media width</a>
-    </p>
 </ul>
-   <h2> Modo tudo em uma folha de css</h2>
-   <p>Além dessa forma de criar várias folhas de de css temos ums opção de fazer tudo em apenas uma folha ou até mesmo no head do html usando style. </p>
-   <p>
-    Para isso basta criar a regra (@) em style escrevendo tudo de media para frente de declaração que fazemos para link as folhas separadas. WHAT'S? . Veja o exemplo abaixo:
-   </p>
+<ul id="shortcuts">
+    <li data-adress="#introducao">Introdução</li>
+    <li data-adress="#media-screen">media="screen"</li>
+    <li data-adress="#folha-unica">Modo tudo em uma folha de CSS</li>
+    <li data-adress="#mobile-first">Conceito Mobile First</li>
+    <li data-adress="#device-breakpoint">Tipical Device Breakpoint</li>
+   
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+<main> 
+    <div id="config_iframe"></div>
+    <article id="introducao">
+        <h2>Introdução</h2>
+        <p>Media Query é uma técnica que permite ao site alternar entre diferentes folhas de estilo dependendo do tipo de dispositivo que está sendo usado para visualizá-lo, além de outras características que veremos ao longo deste capítulo.</p>
+        <p>Essa técnica é fundamental para que o site seja responsivo, ou seja, que se adapte a qualquer tipo de tela, seja ela de um celular, tablet, notebook ou desktop. Um site responsivo proporciona uma melhor experiência de usuário, independentemente do dispositivo utilizado.</p>
+        <p>Como já vimos anteriormente, as folhas de estilo são criadas em um arquivo CSS e são linkadas no head da página com o comando:</p>
+        <code>&lt;link rel="stylesheet" href="../../"..."/style.css"></code>
+        <p>Porém, quando usamos media queries, essas folhas de estilo são aplicadas de acordo com a tela ou modo de saída da página. Vamos ver algumas configurações disponíveis:</p>
+        <ul>
+            <li><strong>media="print"</strong>: Este modo é utilizado para impressão. Podemos ocultar menus e outros itens desnecessários para impressão. Veja o comando abaixo:</li>
+            <code>&lt;link rel="stylesheet" href="estilos/impressora.css" media="print"></code>
+            <li><strong>media="screen"</strong>: Este modo é utilizado para telas. Possui mais funções, que veremos mais à frente. Veja o código do screen abaixo:</li>
+            <code>&lt;link rel="stylesheet" href="estilos/tela.css" media="screen"></code>
+            <li><strong>media="all"</strong>: Configuração geral que se aplica a todos os dispositivos. Hierarquicamente, é como se o "all" fosse a folha de CSS principal e o "screen" fosse um estilo específico feito no head do HTML.</li>
+            <li><strong>media="handheld"</strong>: Este modo é utilizado para dispositivos de mão, como celulares e tablets.</li>
+        </ul>
+        <p>Vamos ver um exemplo prático de media query para impressão:</p>
+        <p><a href="exercicios/ex01/ex01.html" target="_blank">Exemplo de media="print"</a></p>
+    </article> <!-- introducao -->
+
+    <article id="media-screen">
+        <h2>media="screen"</h2>
+        <p>O atributo <strong>media="screen"</strong> é utilizado para aplicar estilos específicos para telas, como as de computadores, tablets e celulares. Além disso, podemos especificar o formato da tela, como modo paisagem (horizontal) ou modo retrato (vertical).</p>
+        <p>Vamos ver como podemos usar diferentes arquivos CSS para cada formato de tela, garantindo que o conteúdo seja exibido da melhor forma possível para o usuário.</p>
+        <ul>
+            <li><strong>Modo retrato:</strong> Este é o formato vertical, comum em celulares e tablets. Veja o código abaixo:</li>
+            <code>&lt;link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation: portrait)"></code>
+            <li><strong>Modo paisagem:</strong> Este é o formato horizontal, comum em notebooks e quando os usuários giram seus dispositivos móveis. Veja o código abaixo:</li>
+            <code>&lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"></code>
+            <li><strong>Pela largura da tela:</strong> Podemos também aplicar estilos com base na largura da tela. Isso é útil para ajustar o layout em diferentes dispositivos. Veja o código abaixo:</li>
+            <code>@media screen and (max-width: 550px) {...}</code>
+        </ul>
+        <p>Por exemplo, você pode usar o código acima para aplicar estilos específicos quando a largura da tela for menor que 550 pixels, como em celulares. Isso ajuda a garantir que seu site seja responsivo e ofereça uma boa experiência de usuário em qualquer dispositivo.</p>
+    </article> <!-- media-screen -->
+
+    <article id="folha-unica">
+        <h2>Modo tudo em uma folha de CSS</h2>
+        <p>Além dessa forma de criar várias folhas de CSS, temos a opção de fazer tudo em apenas uma folha ou até mesmo no head do HTML usando style.</p>
+        <p>Para isso, basta criar a regra (@) em style escrevendo tudo de media para frente da declaração que fazemos para linkar as folhas separadas. Veja o exemplo abaixo:</p>
+        <code>&lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"></code>
+        <p>Agora basta por @, remover o sinal de igual e as aspas dessa parte marcada e por em uma folha de estilo única ou em style no head do HTML.</p>
+        <p>Exemplo na folha de estilo (style.css):</p>
+        <code>@media screen and (orientation: landscape){}</code>
+        <p>Mas qual opção é melhor?</p>
+        <p>Tudo vai depender do tamanho do projeto. Basicamente, quanto maior o projeto, maior a folha, então nesse caso é melhor deixar separado para não ficar muito bagunçado. Já projetos menores dá para fazer até no próprio head.</p>
+        
+    </article> <!-- folha-unica -->
+
+    <article id="mobile-first">
+        <h2>Conceito Mobile First</h2>
+        <section>
+            <p>Mobile First é um conceito criado visando priorizar a visualização de sites em dispositivos móveis. Isso não é a mesma coisa que criar um site responsivo para celular, isso significa criar um site para celular e deixá-lo responsivo para notebook e outras telas. Por isso o nome Mobile First.</p>
+            <p>Mas por que isso é importante? A resposta é simples: por onde você mais acessa a internet, pelo celular ou pelo notebook? Talvez você, especificamente, esteja acessando mais pelo notebook por estar estudando, mas a maioria esmagadora das pessoas acessa a web pelo celular. Por isso, o conceito de Mobile First foi criado. Se a maior parte dos usuários consome conteúdo por uma tela de smartphone, então essa deve ser a prioridade na hora de fazer o site.</p>
+            <p>Quando criamos um site primeiro para desktop ou notebook e depois adaptamos para smartphone, essa adaptação pode não ficar tão boa. Mesmo que o site seja responsivo, isso ainda não é tudo. Existem vários fatores que influenciam na usabilidade do site. Um dos principais é a diferença entre a utilização de um mouse e uma tela touchscreen. Isso vai desde o tamanho dos botões até as interações do CSS3.</p>
+            <p>Por exemplo, em um desktop, você pode ter menus que aparecem quando o usuário passa o mouse sobre eles. No celular, isso não funciona da mesma forma, pois não há "passar o mouse". Além disso, o tamanho dos botões e links precisa ser maior para facilitar o toque com os dedos.</p>
+            <p>Se o conteúdo é confortável de consumir pelo celular, isso te dá um grande destaque. Seus usuários de smartphone ficarão mais tempo navegando no seu site, o que é ótimo para o SEO (Search Engine Optimization). Por outro lado, se o site é difícil de usar no celular, os visitantes podem sair rapidamente, prejudicando sua posição nos resultados de busca.</p>
+        </section>
+        <aside>
+            <p>O criador desse conceito foi o chefe de produtos do Google, Luke Wroblewski, em 2009. A partir de 2018, o Google passou a priorizar sites que aplicam esse conceito Mobile First, pois a quantidade de acessos por smartphones é muito superior aos acessos por notebook e outros dispositivos.</p>
+        </aside>
+        <section>
+            <h4>Principais Vantagens do Mobile First</h4>
+            <ul>
+                <li><strong>Maior divulgação do site:</strong> Ferramentas de busca vão valorizá-lo.</li>
+                <li><strong>Melhor experiência do usuário:</strong> O usuário terá acesso ao conteúdo que foi pensado para ser consumido de forma mais confortável e sem confusões.</li>
+                <li><strong>Aumento na credibilidade:</strong> Os visitantes terão a percepção (ainda que inconsciente) de que quem criou o site se preocupou com a sua experiência.</li>
+                <li><strong>Otimização do carregamento:</strong> Uma vez que sofremos com conexões lentas e dispositivos populares sem tanto poder de processamento.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Mudança na prática</h3>
+            <p>Trabalhar com o conceito Mobile First traz algumas mudanças importantes na nossa abordagem. Vamos ver as principais diferenças:</p>
+            <ul>
+            <li><strong>Teste em celular:</strong> Normalmente, quando criamos uma página no VS Code, escrevemos o código e verificamos como ficou no navegador do computador. Com o Mobile First, faremos isso usando a tela de um celular. Você pode usar extensões no navegador que simulam a tela de um celular, como o modo de desenvolvedor do Google Chrome.</li>
+            <p>Porém, essas extensões não são perfeitas. Por isso, é essencial publicar o site no GitHub e verificar regularmente suas atualizações diretamente no seu celular. Isso garante que você veja exatamente como os usuários vão visualizar seu site.</p>
+            <li><strong>Media Query:</strong> Até agora, usamos media queries para adaptar o conteúdo do site para o celular, e o "ALL" era baseado na tela de um notebook. Com o Mobile First, o "ALL" será baseado no celular, e usaremos media queries para adaptar o site para outras telas, como tablets e desktops.</li>
+            </ul>
+            <p>Por exemplo, antes você poderia ter um media query assim:</p>
+            <code>@media screen and (max-width: 600px) {...}</code>
+            <p>Isso adaptava o site para telas menores que 600px, como celulares. Agora, com o Mobile First, você pode começar com o estilo para celular e adicionar media queries para telas maiores:</p>
+            <code>@media screen and (min-width: 601px) {...}</code>
+            <p>Isso significa que o estilo padrão será para celulares, e você adiciona regras específicas para telas maiores. Essa abordagem garante que o site funcione bem em dispositivos móveis, que são a maioria dos acessos hoje em dia.</p>
+        </section>
+    </article> <!-- mobile-first -->
+
+    <article id="device-breakpoint">
+        <h2>Tipical Device Breakpoint</h2>
+        <section>
+            <p>Os breakpoints de dispositivos são pontos de interrupção que definem a largura em pixels de diferentes dispositivos, como TVs, celulares, tablets, desktops e outros. No entanto, medir em pixels pode se tornar obsoleto rapidamente, pois a densidade de pixels das telas aumenta com o tempo. Por exemplo, uma tela de celular 4K tem tantos pixels quanto uma tela de um dispositivo quatro vezes maior com resolução HD.</p>
+            <p>Para nos mantermos atualizados sobre os tamanhos de tela, é importante consultar fontes confiáveis, como o site da <a href="https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp">W3Schools</a>, que fornece informações sobre os tamanhos de tela recomendados para configurar cada dispositivo.</p>
+        </section>
+        <section>
+            <h3>Tamanhos de tela atuais</h3>
+            <p>De acordo com a W3C, os tamanhos de tela atuais para cada dispositivo são:</p>
+            <ul>
+                <li><strong>Celulares e menores:</strong> até 600px</li>
+                <code>@media only screen and (max-width: 600px) {...}</code>
+                <li><strong>Tablets em modo retrato e celulares grandes:</strong> 601px a 768px</li>
+                <code>@media only screen and (min-width: 601px) and (max-width: 768px) {...}</code>
+                <li><strong>Tablets em modo paisagem:</strong> 769px a 992px</li>
+                <code>@media only screen and (min-width: 769px) and (max-width: 992px) {...}</code>
+                <li><strong>Desktops:</strong> 993px a 1200px</li>
+                <code>@media only screen and (min-width: 993px) and (max-width: 1200px) {...}</code>
+                <li><strong>Telas extra grandes:</strong> acima de 1200px</li>
+                <code>@media only screen and (min-width: 1201px) {...}</code>
+            </ul>
+            <p>Esses breakpoints ajudam a criar layouts responsivos que se adaptam a diferentes tamanhos de tela, proporcionando uma melhor experiência de usuário em qualquer dispositivo.</p>
+        </section>
+    </article> <!-- device-breakpoint -->
+</main>
+
+<footer>
+    <h4>Materiais de apoio</h4>
+    <a href="../../material-de-apoio/25 - Media Queries.pdf" target="_blank">25 - Media Queries.pdf</a>
     
-   <pre>
-
-&lt;link rel="stylesheet" href="estilos/paisagem.css" <span class="mark">media="screen and (orientation: landscape)"></span>
-
-    </pre>
-		<p>
-            Agora basta por @, remover o sinal de igual e a aspas, dessa parte marcada e por em uma folha de estilo única ou em style no head do html.
-        </p>
-        <p>
-            Exemplo na style:
-        </p>
-        <pre>
-
-    @media screen and (orientation: landscape)
-
-        </pre>
-        <p>
-            Mas qual opção é melhor?
-        </p>
-        <p>
-            Tudo vai depender do tamanho do projeto. Basicamente quanto maior o projeto maior a folha então nessa caso é melhor deixar separado para não ficar muito bagunçado. Já projetos menores dá pra fazer até no próprio head.
-        </p>
-        <p>Veja o exemplo:</p>
-        <p>
-            <a href="exercicios/ex03/ex03.html" target="_blank"> Exemplo no head</a>
-        </p>
-
-    <article>
-        
-        <h2>
-            Conceito Mobile First
-        </h2>
-        <section>
-            
-            <p>
-            Mobile First foi um Conceito criado visando priorizar a visualisação de sites em dispositivos móveis. Isso não é a mesma coisa que criar um site responsivo para celular, isso significa criar um site para celular e deixa-lo responsivo para notebook e outra telas. Por isso o nome Mobile First.
-            </p>
-            
-        </section>
-        <section>
-            <h3>
-                Google
-            </h3>
-            <p>
-                O criador desse conceito foi o chefe de produtos Google,(Luke Wroblewski) em 2009. Apartir de 2018 a Google passou a priorizar sites que aplicam esse conceito Mobile First, pois a quantidade de acessos por smartphones é muito superior aos acessos por notebook e outros dispositivos.
-            </p>
-           
-        </section>
-        <section>
-            <h3>
-                Principais Vantagens do Mobile First
-            </h3>
-            <ul>
-                <li>
-                    <strong>Maior divulgação do site: </strong>pois como vimos anteriormente, ferramentas de busca vão valorizá-lo. 
-                </li>
-                <li>
-                    <strong>Melhor experiência do usuário: </strong>que vai ter acesso ao conteúdo que foi pensado para que pudesse ser consumido de forma mais confortável e sem confusões.
-                </li>
-                <li>
-                    <strong>Aumento na credibilidade: </strong>os visitantes vão ter a percepção (ainda que inconsciente) de que quem criou o site se preocupou com a sua experiência.
-                </li>
-                <li>
-                    <strong>Otimização do carregamento: </strong>uma vez que sofremos com conexões lentas e dispositivos populares sem tanto poder de processamento.
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h3>
-                Mudança na prática
-            </h3>
-            <p>
-                As principais diferenças de trabalhar usando o conceito Mobile First são:
-            </p>
-            <ul>
-                <li><strong>Teste em celular: </strong> Toda página que criamos no VS Code vamos escrevendo o Código em verificando como ficou no navegador, mas apartir de agora faremos isso usando a tela de um celular através de alguma extensão no navegador que faça essa simulação </li>
-                <li><strong>Media Query: </strong> Até aqui usamos o media query para adaptar o conteúdo do site para o celular e o "ALL" era baseado na tela de um notebook. Apartir de agora o "ALL" será baseado no celular e outros media query para outras telas</li>
-            </ul>
-        </section>
-    </article>
-
-    <article>
-        <h2> Tipical Device Breakpoint</h2>
-        <section>
-            <p>
-                Tipical Device Breakpoint é sobre a largura em pixels de cada dispositivo como: Tv, Celular, Tablet, Desktop e outros.O problema é que medir em pixel fica defesado muito rápido, pois conforme vai passando o tempo o px vão diminuindo e um tela de celular com 4k tem tanto pixel quanto a tela de um dispositivo 4 vezes maior com a tela em hd.
-            </p>
-            <p>
-                Para nos matermos sempre atualizados em relação a esses tamanhos devemos acessar o site da <a href="https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp">w3schools</a> para vermos quais temanhos de tela usar para configurar para cada dispositivo.
-            </p>
-        </section>
-        <section>
-            <h3>
-                Tamanhos de tela atuais
-            </h3>
-            <p>
-                Os tamanhos de telas atuais para cada dispositivo segundo a W3C são:
-            </p>
-            <ul>
-                <li><strong>Celulares e menores</strong>: 600px</li>
-                <pre>
-@media only screen and (max-width: 600px) {...}
-
-                </pre>
-                <li><strong> Tablet em pé e celulares grandes: </strong> 601px</li>
-                <pre>
-
-@media only screen and (min-width: 601px) {...}
-
-                </pre>
-                <li><strong> Tablet em deitado: </strong> 768px</li>
-                <pre>
-
-@media only screen and (min-width: 768px) {...}
-
-                </pre>
-                <li><strong>Desktop: </strong> 992px</li>
-                <pre>
-
-@media only screen and (min-width: 992px) {...}
-
-                </pre>
-                <li><strong>Telas extra grandes: </strong> 1200px</li>
-                <pre>
-
-@media only screen and (min-width: 1200px) {...}
-
-                </pre>
-            </ul>
-        </section>
-    </article>
-    <article>
-        <h2>Menu hamburguinho</h2>
-        <section>
-            <h3>Símbolo hamburguinho on-line</h3>
-            <p>Para usar o símbolo do hamburguinho precisamos ou usar icone online do google igual fazemos com google fontes ou baixar mas professor não ensinou como baixar.</p>
-            <p>
-                Para isso precisamos ir no site <a href="https://fonts.google.com/icons">Google icons</a> ou pesquiser por esse palavra chave no Google &rarr; pesquisar pelo símbolo chamado "Menu"&rarr; Variable icon font e copiar o code que contido em style &rarr; inserting the icon &rarr; copiar e colar o códgio onde for usar o hamburguinhona página.
-            </p>
-            
-        </section>
-        <section>
-            <h3>Símbolo hamburguinho off-line</h3>
-           
-            <p>Também é possivel usar essa símbolo off-line baixando o arquivo dele com extenção ".svg". E para aplica-lo basta usar a taga img e tratar com uma imagem.</p>
-            <p></p>
-            <img style="width: 5vw;" src="exercicios/ex01/menu.svg" alt="">
-        </section>
-    </article>
-    <a href="exercicios/ex01/ex01.html" target="_blank">Exemplo responsivo com hamburguinho</a>
-
-    <a href="../projeto-login/projeto-login.html" target="_blank">Projeto Login</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </main>
-    <footer>
-
-        <h1>Materiais utilizados</h1>
-            
-               <a href="../../material-de-apoio/25 - Media Queries.pdf" target="_blank">Material de apoio</a>
-            
-            
-        <h1>Vídeos</h1>
-        
-        <p>
-            <a href="https://youtu.be/9rY8V2rvP2o?si=psIPSGsXJ5ObNFai" target="_blank">O que são Media Queries em CSS</a>
-        </p>    
-        <p>
-            <a href="https://youtu.be/DMYlN21ajtU?si=CXydeW8EOgdWIR8B" target="_blank">Criando um site com versão para impressora </a>
-        </p>    
-        <p>
-            <a href="https://youtu.be/VGD5Uy1C8Cw?si=u-J9sIcmE8SyvL8x" target="_blank">Múltiplas Media Features com CSS </a>
-        </p>    
-        <p>
-            <a href="https://youtu.be/IRCDwdZLlX4?si=uqRjomoBebR6HWCX" target="_blank">Seguindo a orientação do dispositivo</a>
-        </p>    
-        <p>
-            <a href="https://youtu.be/DkA_OQgjjKg?si=BoOtjLNJQOT-pgv-" target="_blank">Reunindo tudo em um único CSS</a>
-        </p>    
-        <p>
-            <a href="https://youtu.be/q6SZKTHUQiw?si=1wUdR6wVK64doZBf" target="_blank">Mobile First</a>
-        </p>    
-
-        <p>
-            <a href="https://youtu.be/wU80w4xbNxQ?si=XYJZUkqQZHIn_G3u" target="_blank">Iniciando um site mobile first</a>
-        </p>    
-        <p>
-            <a href="https://youtu.be/S8YXMqDsbhA?si=G1OgN7NNHctbAu5d" target="_blank">Device breakpoints</a>
-        </p>    
-
-        <p>
-            <a href="https://youtu.be/Zp3fnf99kTg?si=iR6GkbkRZajDVDA1" target="_blank">Menu responsivo com HTML5 e CSS3</a>
-        </p>   
-
-        <p>
-            <a href="https://youtu.be/67W4NdxW1kw?si=CCCCQ-JeT4UkYHB-" target="_blank">Configurando o layout do projeto</a>
-        </p>    
-        
-        <p>
-            <a href="https://youtu.be/Dd6Z3gkud18?si=bflQQJYQ2hKn_3Mz" target="_blank">Criando um menu hambúrguer</a>
-        </p>
-        
-        <p>
-            <a href="https://youtu.be/T1rfhkmcH00?si=7xl4pvlXpQbAW73-" target="_blank">Media Queries para outros dispositivos</a>
-        </p>
-        
-                 
-            <hr>
-            <iframe id="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
-           
-        
-        </footer>
-</body>
+</footer>
 </html>

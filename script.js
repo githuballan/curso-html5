@@ -43,10 +43,22 @@ function iframeload(x){
     let endereco = x.getAttribute('data-video-src');
     iframe=document.getElementById('iframev');
     iframe.src = endereco;
-   
+
+    const configIframe = document.getElementById('config_iframe');
+
+    console.log(configIframe.style.position==='' || configIframe.style.position==='static');
+
+
+    
 }
 
-
+function toggleFixarSoltarAposRolarPag(){
+  let botao=document.getElementById('botao_fixa_solta');
+  const configIframe = document.getElementById('config_iframe');
+  if(configIframe.style.position==='' || configIframe.style.position==='static'){
+    toggleIframePosition(botao);
+  }
+}
 
 function createLinkToVideos() {
 
@@ -70,7 +82,7 @@ navVideos.innerHTML = `
   itemArray.forEach((item) => {
       let newLi = document.createElement('li');
      
-      newLi.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this)" data-video-src="${item.getAttribute('data-adress')}">${item.textContent}</ins>`;
+      newLi.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this);toggleFixarSoltarAposRolarPag()" data-video-src="${item.getAttribute('data-adress')}">${item.textContent}</ins>`;
       navList.appendChild(newLi);
   });
   // iframeload
@@ -121,7 +133,7 @@ function createIndice(h){
 
   let wayHref=h.firstElementChild.getAttribute('href');
 
-  console.log(nextElementIrmão.firstElementChild);
+  console.log(wayHref);
 
   var itemShortcutsNameArray = [...itemShortcutsName.getElementsByTagName('li')];
  
@@ -140,6 +152,7 @@ function createIndice(h){
   console.log(shortcutsList);
   //if(shortcutsList.style.display === 'none'){shortcutsList.innerHTML='';}//não dá certo pois ele apaga a ul com os li data-adress então depois fica sem ter de onde pegar informação para criar o indice
 }
+
 
 
 function createIndexButton(){
@@ -180,7 +193,6 @@ window.addEventListener('load', () => {
   createTelaVideo();
   createLinkToVideos();
   createMenuAcessoRapido();
-  
 });
 
 

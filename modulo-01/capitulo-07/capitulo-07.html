@@ -23,31 +23,30 @@
     <header>
     <h1>Tags Semânticas no HTML5</h1>
     </header>
-    <div class="nav-hamburguinho">
-       
-        <button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
-        <nav>
+    
             <ul id="menu-tipo" >
-                <li><a onclick="clicante()" href="capitulo-07.html">Voltar ao topo</a></li>
-                <li><a onclick="clicante()" href="#introducao">Introdução</a></li>
-                <li><a onclick="clicante()" href="#tags">Tags Semânticas e Não Semânticas</a></li>
-                <li><a onclick="clicante()" href="#principais-tag">Elementos do Head</a>
-                    <ul>
-                         <li><a onclick="clicante()" href="#title">Tag title</a></li>
-                        <li><a onclick="clicante()" href="#metatag">Metatags</a></li>
-                       
-                    </ul>
-                </li>
-                <li><a onclick="clicante()" href="#body">Elementos do Body</a></li>
-                <li><a onclick="clicante()" href="#minor-tags">Tags de Menor Valor</a></li>
+               
             </ul>
-        </nav>
-    </div>
-<main>
+            <div id="button_index"></div>
+            <ul id="video_list">
+                <li data-adress="https://www.youtube.com/embed/aiOEBhozEOg?si=rrhuMAixTGID6E-X">Hierarquia de Títulos</li>
+                
+                <li data-adress="https://www.youtube.com/embed/TBplwrsUj4s?si=mEFU7wJglpb_toMV">Boas práticas para escrever HTML</li>               
+            </ul>
+            <ul id="shortcuts">
+                <li data-adress="capitulo-07.html">Voltar ao topo</li>
+                <li data-adress="#introducao">Introdução</li>
+                <li data-adress="#tags">Tags Semânticas e Não Semânticas</li>
+                <li data-adress="#principais-tag">Elementos do Head</li>
+                <li data-adress="#title">Tag title</li>
+                <li data-adress="#metatag">Metatags</li>
+                <li data-adress="#body">Elementos do Body</li>
+                <li data-adress="#minor-tags">Tags de Menor Valor</li>
+            </ul>
+            <div id="nav_videos"></div>
+            <div id="menu_acesso_rapido"></div>
+            <main> 
+                <div id="config_iframe"></div>
     <section id="introducao">
         <h2>Tags Semânticas</h2>
         <p>As tags semânticas são tags que possuem significado, ou seja, elas têm um significado para o navegador e para os mecanismos de busca. Elas são importantes para a acessibilidade e para o SEO (Search Engine Optimization).</p>
@@ -268,16 +267,10 @@
 </main>
 <footer>
     
-    <hr>
-    <h2>Materiais de apoio</h2>
+  
+    <h4>Materiais de apoio</h4>
     
     <p><strong><a href="../../material-de-apoio/07 - Hierarquia de títulos.pdf" target="_blank">07 - Hierarquia de títulos.pdf</a></strong></p>
-    <h4>Vídeos</h4>
-    
-    <p><a href="https://youtu.be/aiOEBhozEOg?si=rrhuMAixTGID6E-X" target="_blank">Hierarquia de Títulos</a></p>
-
-    <p><a target="_blank" href="https://youtu.be/TBplwrsUj4s?si=mEFU7wJglpb_toMV">Boas práticas para escrever HTML</a> Canal Rocketseat.</p>
-  
 </footer>
 <script src="script.js"></script>
 </body>

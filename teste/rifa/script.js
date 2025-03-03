@@ -190,10 +190,10 @@ function apagMemoria(){
         nome.shift();
     }
     localStorage.clear();
-
+   
     console.log(nome);
-
-    
+    listar();
+   
     
 
 }

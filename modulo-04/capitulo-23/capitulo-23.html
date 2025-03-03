@@ -8,17 +8,29 @@
     <link rel="shortcut icon" href="../../icones/aqua-icone-ok.ico"type="image/x-icon">
 
     <link rel="stylesheet" href="../../style.css">
+
+    <script src="../../script.js"></script>
 </head>
 <body>
-
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
-
 <header>
-<h1 id="capitulo"> Capítulo 23</h1>
-
+<h1 id="capitulo"> CSS calc()</h1>
 </header>
    
-<main>
+<div id="button_index"></div>
+<ul id="video_list">
+    <li data-adress="https://www.youtube.com/embed/7Stho56BUAw">Aprenda CSS Calc em 6 minutos</li>
+   
+</ul>
+<ul id="shortcuts">
+    <li data-adress="#calc">Função calc()</li>
+    <li data-adress="#operadores">Operadores suportados</li>
+    <li data-adress="#sintaxe">Sintaxe</li>
+    <li data-adress="#variaveis">Variáveis em CSS</li>
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+<main> 
+    <div id="config_iframe"></div>
     <article id="calc">
         <h2>Função <code>calc()</code> no CSS</h2>
         <p>A função <code>calc()</code> no CSS permite realizar cálculos matemáticos para definir valores de propriedades CSS. Isso é útil quando você precisa combinar diferentes unidades ou ajustar tamanhos de elementos de forma dinâmica.</p>
@@ -70,41 +82,23 @@
             </ul>
             <p class="mark">Note que a multiplicação e a divisão só podem ser usadas com números, não com unidades diferentes.</p>
         </section><!-- /#operadores -->
+        <section id="sintaxe">
+            <h3>Sintaxe</h3>
+            <p>A função <code>calc()</code> no CSS deve ser usada com cuidado para evitar erros de sintaxe. Aqui estão algumas regras importantes a serem seguidas:</p>
+            <ul>
+                <li><strong>Espaços ao redor dos operadores:</strong> Sempre deve haver um espaço antes e depois dos operadores matemáticos (+, -, *, /). Por exemplo, <code>calc(100% - 50px)</code> é correto, enquanto <code>calc(100%-50px)</code> é incorreto.</li>
+                <li><strong>Unidades consistentes:</strong> Certifique-se de que as unidades usadas nos cálculos sejam compatíveis. Por exemplo, você pode combinar porcentagens com pixels, mas não pode combinar pixels com em sem o uso correto de parênteses. Pois lembre-se de que "em" é uma unidade relativa ao tamanho da fonte do elemento pai.</li>
+                <li><strong>Uso de parênteses:</strong> Use parênteses para agrupar expressões complexas e garantir que os cálculos sejam realizados na ordem correta. Por exemplo, <code>calc((100% - 50px) / 2)</code>.</li>
+            </ul>
+            <p><strong>Principais erros:</strong></p>
+            <ul>
+                <li>Esquecer de adicionar espaços ao redor dos operadores.</li>
+                <li>Combinar unidades incompatíveis.</li>
+                <li>Adicionar um espaço entre a palavra <code>calc</code> e o parêntese de abertura <code>(</code>.</li>
+                <li>Não fechar corretamente a função <code>calc()</code> com parênteses.</li>
+            </ul>
+        </section>
 
-        <section id="var-css">                
-            <h3>Usando Variáveis CSS com <code>calc()</code></h3>
-            <p>Você pode usar variáveis CSS (custom properties) junto com a função <code>calc()</code> para criar estilos dinâmicos e reutilizáveis. As variáveis CSS são definidas usando a sintaxe <code>--nome-da-variavel</code> e podem ser acessadas usando a função <code>var()</code>.</p>
-            <p><strong>Exemplo de uso</strong></p>
-            <p>Vamos ver um exemplo de como usar variáveis CSS com a função <code>calc()</code>:</p>
-            <div class="pre">
-                <pre>
-            &lt;style>
-                :root {
-                    --spacing: 20px;
-                    --box-width: calc(100% - var(--spacing) * 2);
-                }
-                .box {
-                    width: var(--box-width);
-                    height: 200px;
-                    margin: var(--spacing);
-                    background-color: lightcoral;
-                }
-            &lt;/style>
-                </pre>
-            </div>
-            <p>Exemplo de código no body:</p>
-            <div class="pre">
-                <pre>
-            &lt;div class="box">Conteúdo da caixa&lt;/div>
-                </pre>
-            </div>
-            <p>Exemplo de funcionamento:</p>
-            <div style="background-color: lime;">
-            <div class="box">Conteúdo da caixa</div>
-            </div>
-            <p>No exemplo acima, a largura da caixa é calculada como 100% da largura do elemento pai menos duas vezes o valor da variável <code>--spacing</code>.</p>
-            
-        </section><!-- /#var-css -->
     </article>
     <article id="variaveis">
         <h2>Variáveis em CSS</h2>
@@ -148,12 +142,7 @@
 
     <footer>
 
-        <h1>Materiais utilizados</h1>
-            
-                <strong>ACABOU O PDF </strong>
-            
-            
-        <h1>Vídeos</h1>
+       
         <p><strong>Projeto redes sociais</strong></p>
         <p>
             <a href="https://youtu.be/hPze5_OYqBw?si=oKLKFx_cKxMITE-P" target="_blank">Apresentação do projeto redes sociais</a>

@@ -8,73 +8,25 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-        
-       .menu{
+        .menu{
         display: none;
-       }
+        }
+        h2, h3{
+            margin: 0px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0px;
+            padding-left: 5px;
+            margin: 0px;
+        
+        }
+       
     </style>
-    
-<style>
-@media all
-{
-    body{
-        padding-bottom: 50px;
-    }
-    main{
-        margin: auto;
-    }
-    main>ul{
-        list-style-type: none;
-        padding: 0px;
-        padding-left: 5px;
-       
-    }
-
-}
-
-@media screen and (orientation: portrait)
-{
-    body{
-        padding-left: 0px;
-        margin-left: 0px;
-        text-align: left;
-    }
-
-    main{
-        margin: 0px;
-        padding: 0px;
-        text-align: left;
-    }
-
-   main>ul{
-        list-style-type: none;
-        padding: 0px;
-        padding-left: 5px;
-       
-    }
-}
-
-@media screen and (orientation: landscape)
-{
-   
-   
-}
-body{
-    display: block;
-}
-main{
-    display: block;
-}
-</style>
 </head>
 <body>
     <header>
         <h1>Índice do Curso de HTML5 e CSS3</h1>
-
-        
-        <!-- <p><a href="modulo-04/grid/exemplos/ex02/teste.html" target="_blank">Novo índice</a></p>
-
-        <p><a href="obs.html">obs</a></p> -->
     </header>
 
     
@@ -83,46 +35,73 @@ main{
         <ul class="menu"><!--Módulo 01--> 
            
             <li> <!--Início de Html especias-->
-                <h3><strong><a href="modulo-01/capitulo-05/capitulo-05.html">Início de Html</a></strong></h3>
-               
+                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-01/capitulo-05/capitulo-05.html">Início de Html</a></h3>
+                <ul class="menu">
+   
+                    <ul class="menu">
+                        <li data-adress="#bem-vindo">Boas vindas</li>
+                        <li data-adress="#conhecendo-o-site">Conhecendo o site</li>
+                        <li data-adress="#primeiras-aulas">Primeiras Aulas</li>
+                        <li data-adress="#matrial-pdf">Material de Apoio</li>
+                    </ul>
+                </ul>
             </li>
             <li><!--Imagens-->
-                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><strong><a href="modulo-01/capitulo-06/capitulo-06.html">Imagens</a></strong></h3>
+                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-01/capitulo-06/capitulo-06.html">Imagens</a></h3>
 
                 <ul class="menu">
-                    <li><strong><a href="modulo-01/capitulo-06/capitulo-06.html#imagem">Imagens</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-06/capitulo-06.html#imagem">Cuidados</a></strong></li>
+                    <ul class="menu">
+                        <li data-adress="#imagem">Extensões de imagens</li>
+                        <li data-adress="#direitos-autorais">Direitos Autorais</li>
+                        <li data-adress="#tamanho-imagem">Tamanho das Imagens</li>
+                        <li data-adress="#tag-para-imagem">Tag para Imagens</li>
+                        <li data-adress="#asides">Atalhos e Boas Práticas</li>
+                        <li data-adress="#favicon">Favicon</li>
+                    </ul>
                 </ul>
             </li>
 
             <li><!--Capítulo 07- Semântica-->
-                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><strong><a href="modulo-01/capitulo-07/capitulo-07.html">Tags Semânticas no HTML5</a></strong></h3>
+                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-01/capitulo-07/capitulo-07.html">Tags Semânticas no HTML5</a></h3>
+
                 <ul id="capitulo-7" class="menu">
    
-                    <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#introducao">Introdução</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#tags">Tags Semânticas e Não Semânticas</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#principais-tag">Elementos do Head</a></strong>
-                        <ul>
-                            <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#title">Tag title</a></strong></li>
-                            <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#metatag">Metatags</a></strong></li>
-                        </ul>
-                    </li>
-                    <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#body">Elementos do Body</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-07/capitulo-07.html#minor-tags">Tags de Menor Valor</a></strong></li>
+                    <ul class="menu">
+                        <li data-adress="capitulo-07.html">Voltar ao topo</li>
+                        <li data-adress="#introducao">Introdução</li>
+                        <li data-adress="#tags">Tags Semânticas e Não Semânticas</li>
+                        <li data-adress="#principais-tag">Elementos do Head</li>
+                        <li data-adress="#title">Tag title</li>
+                        <li data-adress="#metatag">Metatags</li>
+                        <li data-adress="#body">Elementos do Body</li>
+                        <li data-adress="#minor-tags">Tags de Menor Valor</li>
+                    </ul>
                 </ul>
 
             </li>
             
             <li><!--Capítulo 08 Formatações de textos-->
-                    <h3><a href="modulo-01/capitulo-08/capitulo-08.html">Formatação de texto Html</a></h3>
+                    <a href="modulo-01/capitulo-08/capitulo-08.html"><h3 class="buttom" >Formatação de texto Html</h3></a>
                 
             </li>   
             <li><!--Capítulo 09 - Listas-->
                 <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-01/capitulo-09/capitulo-09.html">Listas</a></h3>
                 <ul id="listas" class="menu">
-    <li><a href="modulo-01/capitulo-09/capitulo-09.html">Voltar ao topo</a></li>
-    <li><a href="modulo-01/capitulo-09/capitulo-09.html#nao-ordenada">Listas não ordenadas</a></li>
-        <ul>
+                    <ul class="menu">
+                        <li data-adress="#nao-ordenada">Listas não ordenadas</li>
+                        <ul>
+                            <li data-adress="#estilo-nao-ordenada">Adicionando estilo "Type"</li>
+                        </ul>
+                        <li data-adress="#ordenadas">Listas ordenadas</li>
+                        <ul>
+                            <li data-adress="#estilo-ordenada">Adicionando estilo "Type"</li>
+                            <li data-adress="#start">Iniciando em outra ordem "Start"</li>
+                            <li data-adress="#reversed">Iniciando em ordem inversa</li>
+                        </ul>
+                        <li data-adress="#mesclando">Mesclando listas</li>
+                        <li data-adress="#definicao">Lista de definições</li>
+                    </ul>
+                <ul>
             <li><a href="modulo-01/capitulo-09/capitulo-09.html#estilo-nao-ordenada">Adicionando estilo "Type"</a></li>
         </ul>
     <li><a href="modulo-01/capitulo-09/capitulo-09.html#ordenadas">Listas ordenadas</a></li>
@@ -133,62 +112,54 @@ main{
         </ul>
     <li><a href="modulo-01/capitulo-09/capitulo-09.html#mesclando">Mesclando listas</a></li>
     <li><a href="modulo-01/capitulo-09/capitulo-09.html#definicao">Lista de definições</a></li>
-</ul>
+                </ul>
             </li>    
             <li><!--Capítulo 10 - HyperLinks-->
-                <h3  class="buttom" onclick="exibir(this)"><a href="modulo-01/capitulo-10/capitulo-10.html">Links em HTML5</a></h3>         
+                <h3  class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-01/capitulo-10/capitulo-10.html">Links em HTML5</a></h3>         
                 <ul id="capitulo-10" class="menu">
-                    <li><strong><a href="modulo-01/capitulo-10/capitulo-10.html">HyperLinks Externos</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-10/capitulo-10.html#atributos">Atributos da tag &lt;a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-10/capitulo-10.html#links-internos">Links Internos</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-10/capitulo-10.html#links-contatos">Links para contatos</a></strong></li>
-                    <li><strong><a href="modulo-01/capitulo-10/capitulo-10.html#links-dentro-paginas">Links dentro de páginas</a></strong></li>
+                    <ul class="menu">
+
+                        <li data-adress="#introducao">Introdução aos Links</li>
+                        <li data-adress="#atributos">Atributos da Tag &lt;a&gt;</li>
+                        <li data-adress="#atributo-target">Atributo Target</li>
+                        <li data-adress="#atributo-rel">Atributo Rel</li>
+                        <li data-adress="#atributo-download">Atributo Download</li>
+                        <li data-adress="#links-internos">Links Internos</li>
+                        <li data-adress="#links-contatos">Links para Contatos</li>
+                        <li data-adress="#links-dentro-paginas">Links Dentro de Páginas</li>
+                    
+                    </ul>
                 </ul>
             </li> 
             <li><!--Capítulo 11 - Imagens, Áudios e Vídeos-->
                 <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-01/capitulo-11/capitulo-11.html">Imagens, Áudios e Vídeos no HTML5</a></h3>
             
                 <ul id="capitulo-11" class="menu">
-    <li><a href="modulo-01/capitulo-11/capitulo-11.html">Voltar ao topo</a></li>
-    <li><a href="modulo-01/capitulo-11/capitulo-11.html#imagens-flexiveis">Imagens Flexíveis</a>
-        <ul>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#introducao-imagens-flexiveis">Introdução</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#tag-picture">Tag picture</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#tag-source-media-type">Tag source media type</a></li>
-        </ul>
-    </li>
-    <li><a href="modulo-01/capitulo-11/capitulo-11.html#figcaption">Tag Figure e figcaption</a>
-        <ul>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#exemplo-figure-figcaption">Exemplo Figure e figcaption</a></li>
-        </ul>
-    </li>
-    <li><a href="modulo-01/capitulo-11/capitulo-11.html#imagens-responsivas">Imagens Responsivas com CSS</a>
-        <ul>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#estilos-imagens-responsivas">Estilos Imagens Responsivas</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#centralizacao-imagens">Centralização de Imagens</a></li>
-        </ul>
-    </li>
-    <li><a href="modulo-01/capitulo-11/capitulo-11.html#audio">Áudios no HTML5</a>
-        <ul>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#direitos-autorais-audios">Direitos Autorais de Áudios</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#adicionando-audios-html">Adicionando Áudios no HTML</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#multiplos-formatos-audio">Usando Múltiplos Formatos de Áudio</a></li>
-        </ul>
-    </li>
-    <li><a href="modulo-01/capitulo-11/capitulo-11.html#videos">Vídeos</a>
-        <ul>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#direitos-autorais-videos">Direitos Autorais de Vídeos</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#formatos-videos">Principais Formatos de Vídeos para HTML</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#hospedagem-videos">Hospedagem de Vídeos no Próprio Site</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#tag-video">Tag Video</a></li>
-            <li><a href="modulo-01/capitulo-11/capitulo-11.html#atributos-video">Principais Atributos da Tag Video</a></li>
-        </ul>
-    </li>
-</ul>
-
-                </li>
+                    <ul id="shortcuts">
+                        <li data-adress="#imagens-flexiveis">Imagens Flexíveis</li>
+                        <li data-adress="#introducao-imagens-flexiveis">Introdução</li>
+                        <li data-adress="#tag-picture">Tag picture</li>
+                        <li data-adress="#tag-source-media-type">Tag source media type</li>
+                        <li data-adress="#figcaption">Tag Figure e figcaption</li>
+                        <li data-adress="#exemplo-figure-figcaption">Exemplo Figure e figcaption</li>
+                        <li data-adress="#imagens-responsivas">Imagens Responsivas com CSS</li>
+                        <li data-adress="#estilos-imagens-responsivas">Estilos Imagens Responsivas</li>
+                        <li data-adress="#centralizacao-imagens">Centralização de Imagens</li>
+                        <li data-adress="#audio">Áudios no HTML5</li>
+                        <li data-adress="#direitos-autorais-audios">Direitos Autorais de Áudios</li>
+                        <li data-adress="#adicionando-audios-html">Adicionando Áudios no HTML</li>
+                        <li data-adress="#multiplos-formatos-audio">Usando Múltiplos Formatos de Áudio</li>
+                        <li data-adress="#videos">Vídeos</li>
+                        <li data-adress="#direitos-autorais-videos">Direitos Autorais de Vídeos</li>
+                        <li data-adress="#formatos-videos">Principais Formatos de Vídeos para HTML</li>
+                        <li data-adress="#hospedagem-videos">Hospedagem de Vídeos no Próprio Site</li>
+                        <li data-adress="#tag-video">Tag Video</li>
+                        <li data-adress="#atributos-video">Principais Atributos da Tag Video</li>
+                    </ul>
+                </ul>
+            </li>
             
-            <h3> <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank"> Playlist Módulo 01</a></h3>
+           
 
         </ul><!--/Módulo 01-->
 
@@ -292,31 +263,6 @@ main{
                    
                 </ul>
             </li>
-            <li><!--Capítulo 17 - Projeto Site Android-->
-                <h3 class="buttom" onclick="exibir(this); createIndice(this)">Projeto Site Android - Curso em Vídeo</h3>
-
-                <ul id="capitulo-17" class="menu">
-                    <li><strong><a href="../../material-de-apoio/17 - Primeiro mini-projeto.pdf" target="_blank"> Primeiro mini-projeto.pdf</a></strong></li>
-                    <li><strong><a href="https://youtu.be/cKEA0-MOhOs?si=IJpaSJjEe_QTgFdL" target="_blank">Criando projeto do Zero</a></strong></li>
-                    <li><strong><a href="https://youtu.be/YB9c1Zg_Ln4?si=cD_h8jwHV4dxtySZ" target="_blank">Navegando pelo projeto pronto</a></strong></li>
-                    <li><strong><a href="https://youtu.be/Zju-c3YWgSg?si=TWFGbiHgwNZYDwRA" target="_blank">Planejando a Estrutura de site</a></strong></li>
-                    <li><strong><a href="https://youtu.be/D7jnoo7UHKE?si=26X-uMF0fyrwDJJP" target="_blank">Transformando o Layout em Código</a></strong></li>
-                    <li><strong><a href="https://youtu.be/I_vi2q6sC1k?si=hbKoArPehONK093O" target="_blank">Organizando o Conteúdo</a></strong></li>
-                    <li><strong><a href="https://youtu.be/3S5ts5bzvzM?si=7KhRJj8SiF2HGGDG" target="_blank">Uso de variáreis em CSS</a></strong></li>
-                    <li><strong><a href="https://youtu.be/WcGPSeuJDJ0?si=Mbwq8goQ5K9TYvGf" target="_blank">Responsividade para Sites</a></strong></li>
-                    <li><strong><a href="https://youtu.be/rAdHLNBTCgs?si=MLyIQuuUlz9EPncY" target="_blank">Transformando Layout em Código</a></strong></li>
-                    <li><strong><a href="https://youtu.be/I_vi2q6sC1k?si=wrJHK9y-y-NfnduT" target="_blank">Responsividade na prática</a></strong></li>
-                    <li><strong><a href="https://youtu.be/TrfhQwSYCEk?si=QXVUOwkA754H2C77" target="_blank">Configurando header e Menu do Site</a></strong></li>
-                    <li><strong><a href="https://youtu.be/WcGPSeuJDJ0?si=fwWJRLR6LEtakZsO" target="_blank">Responsividade</a></strong></li>
-                    <li><strong><a href="https://youtu.be/_KglicHxv3g?si=l-cSW3owZuO_pN5X" target="_blank">Melhorando o Formato do Conteúdo</a></strong></li>
-                    <li><strong><a href="https://youtu.be/pdomr7thueI?si=PpxkTwh7uxX4Leqr" target="_blank">Rodapé, Conteúdo, Priféricos e Links</a></strong></li>
-                    <li><strong><a href="https://youtu.be/u9NE0jInb_c?si=1KobG2mT5b9GjLbK" target="_blank">Tornando um vídeo externo Responsivo</a></strong></li>
-                    </ul>
-            </li>
-            
-
-            <h3> <a href="https://youtube.com/playlist?list=PLHz_AreHm4dlUpEXkY1AyVLQGcpSgVF8s&si=TrJZDbicytO-Hp2C" target="_blank"> Playlist Módulo 02</a></h3>
-
         </ul><!--/Módulo 02-->
 
         <h2 id="modulo-03" class="buttom" onclick="exibir(this)">Módulo 03 CSS3 Intermediário e GitHub</h2>
@@ -419,17 +365,16 @@ main{
                 </ul>
             </li>
 
-            <li><!--Capítulo 23 - Projeto redes sociais-->
-                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-04/capitulo-23/capitulo-23.html">Capítulo 23 - Variáveis em CSS</a></h3>
+            <li><!--Variáveis em CSS-->
+                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-04/capitulo-23/capitulo-23.html">Variáveis em CSS</a></h3>
             
                 <ul class="menu">
-                    <li><strong>Apresentação do projeto redes sociais</strong></li>
-                    <li><strong>Início do projeto, baixando arquivos</strong></li>
-                    <li><strong>Criando página inicial</strong></li>
-                    <li><strong>Posicionando conteúdo do site</strong></li>
-                    <li><strong>Criando os botões para redes sociais</strong></li>
-                    <li><strong>Criando as páginas de cada rede social</strong></li>
-                    <li><strong>Personalizando o Projeto</strong></li>
+                    <ul class="menu">
+                        <li data-adress="#calc">Função calc()</li>
+                        <li data-adress="#operadores">Operadores suportados</li>
+                        <li data-adress="#sintaxe">Sintaxe</li>
+                        <li data-adress="#variaveis">Variáveis em CSS</li>
+                    </ul>
             
                 </ul>
             </li>
@@ -451,21 +396,17 @@ main{
             </li>
 
             <li><!--Capítulo 25-->
-                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-04/capitulo-25/capitulo-25.html">Capítulo 25 - Media Queries</a></h3>
+                <h3 class="buttom" onclick="exibir(this); createIndice(this)"><a href="modulo-04/capitulo-25/capitulo-25.html">Media Queries</a></h3>
 
                 <ul class="menu">
-                    <li><strong>O que são Media Queries em CSS</strong></li>
-                    <li><strong>Criando um site com versão para impressora </strong></li>
-                    <li><strong>Múltiplas Media Features com CSS </strong></li>
-                    <li><strong>Seguindo a orientação do dispositivo</strong></li>
-                    <li><strong>Reunindo tudo em um único CSS</strong></li>
-                    <li><strong>Mobile First</strong></li>
-                    <li><strong>Iniciando um site mobile first</strong></li>
-                    <li><strong>Device breakpoints</strong></li>
-                    <li><strong>Menu responsivo com HTML5 e CSS3</strong></li>
-                    <li><strong>Configurando o layout do projeto</strong></li>
-                    <li><strong>Criando um menu hambúrguer</strong></li>
-                    <li><strong>Media Queries para outros dispositivos</strong></li>
+                    <ul class="menu">
+                        <li data-adress="#introducao">Introdução</li>
+                        <li data-adress="#media-screen">media="screen"</li>
+                        <li data-adress="#folha-unica">Modo tudo em uma folha de CSS</li>
+                        <li data-adress="#mobile-first">Conceito Mobile First</li>
+                        <li data-adress="#device-breakpoint">Tipical Device Breakpoint</li>
+                       
+                    </ul>
                 
                 </ul>
             </li>
