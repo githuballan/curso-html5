@@ -187,12 +187,36 @@ function createTelaVideo(){
 
 }}
 
+function head(){
+  let head = document.getElementsByTagName('head')[0];
+console.log(head);
+
+ let metaAuthor = document.createElement('meta');
+ metaAuthor.name = 'author';
+ metaAuthor.content = 'Allan Cavalcanti';
+  head.appendChild(metaAuthor);
+
+  let metaCopyright = document.createElement('meta');
+  metaCopyright.name = 'copyright';
+  metaCopyright.content = '&copy; 2025 Allan Cavalcanti. Todos os direitos reservados.';
+  head.appendChild(metaCopyright);
+
+}
+
+function footer(){
+  let footer = document.getElementsByTagName('footer')[0];
+  console.log(footer);
+  footer.innerHTML = `<p>&copy; 2025 Allan Cavalcanti. Todos os direitos reservados. <a href="../../termos-de-uso.md">Termos de Uso</a></p>`;
+
+}
 
 window.addEventListener('load', () => {
   createIndexButton();
   createTelaVideo();
   createLinkToVideos();
   createMenuAcessoRapido();
+  footer();
+  head();
 });
 
 

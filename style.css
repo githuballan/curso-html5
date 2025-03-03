@@ -115,6 +115,10 @@
     display: none;
 }
 
+footer{
+    font-size: smaller;
+    text-align: center;
+}
 
 #config_iframe{
     position: static;
