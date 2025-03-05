@@ -256,12 +256,13 @@ header {
 }
 
 header > h1 {
-    background-color: rgba(240, 248, 255, 0);
+   
     background-image: none;
     box-shadow: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.5em;
     margin-top: 0px;
+    text-align: center;
 
     
 }
@@ -513,14 +514,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.2em;
 }
 
-h1 {
+/* h1 {
     background-image: radial-gradient(circle, #7bd768, #bad5dd);
     border-radius: 5px;
     box-shadow: 1px 1px 5px 0px #0005;
     font-size: 1.5em;
     padding: 5px;
     text-align: center;
-}
+} */
 
 h2 {
     background-image: linear-gradient(90deg, #D1D9E4 50%, #CCE8C5);

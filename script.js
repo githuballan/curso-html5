@@ -1,7 +1,6 @@
 var itemArray = [];
 
 
-
 function exibir(x){
    let k = x.nextElementSibling;
     
@@ -26,7 +25,6 @@ function clicante(id){
   if(window.innerWidth<1100){
     clicador(id);}
 }
-
 
 function valueMaxMin(max,min,input){
     
@@ -153,8 +151,6 @@ function createIndice(h){
   //if(shortcutsList.style.display === 'none'){shortcutsList.innerHTML='';}//não dá certo pois ele apaga a ul com os li data-adress então depois fica sem ter de onde pegar informação para criar o indice
 }
 
-
-
 function createIndexButton(){
   let index = document.getElementById('button_index')
   if(index!==null){
@@ -219,9 +215,6 @@ window.addEventListener('load', () => {
   head();
 });
 
-
-
-
 function botaoPip() {
   const configIframe = document.getElementById('config_iframe');
   const botaoFixaSolta = document.getElementById('botao_fixa_solta');
@@ -242,7 +235,6 @@ function botaoPip() {
   pip.style.display = 'none';
   pipOut.style.display = 'inline-block';
 }
- 
 
 function botaoGetOutPip() {
   const configIframe = document.getElementById('config_iframe');
@@ -257,6 +249,7 @@ function botaoGetOutPip() {
   botaoFixaSolta.style.display = 'inline-block';
   rangeVideo.style.display = 'inline-block';
   pipOut.style.display = 'none';
+  rangeVideo.value=100;
 }
 
 function toggleIframePosition(button) {

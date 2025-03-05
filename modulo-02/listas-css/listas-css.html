@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Lista com estilo</title>
+    <link rel="stylesheet" href="../../style.css">
+
+    <script src="../../script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Listas com estilo</h1>
+    </header>
+    <div id="button_index"></div>
+    <ul id="video_list">
+        <li data-adress="https://www.youtube.com/embed/KCSGfh2XD4w?list=PL-u8JWLN6xasK6rdmAu4YYofbKVashSVT">List Style</li>
+        <li data-adress="https://www.youtube.com/embed/isHVo3e2fcE?list=PL-u8JWLN6xasK6rdmAu4YYofbKVashSVT">List Style Image</li>
+        <li data-adress="https://www.youtube.com/embed/tew42z3TAB4?list=PL-u8JWLN6xasK6rdmAu4YYofbKVashSVT">List Style Position</li>
+        <li data-adress="https://www.youtube.com/embed/JXodWInL0Zs?list=PL-u8JWLN6xasK6rdmAu4YYofbKVashSVT">List Style Type</li>
+    </ul>
+    <ul id="shortcuts">
+        <li data-adress="#dividindo-listas-em-colunas-com-css">Dividindo Listas em Colunas com CSS</li>
+        <li data-adress="#type">Tipos de list-style-type</li>
+        <li data-adress="#usando-marcadores-personalizados">Usando Marcadores Personalizados</li>
+        <li data-adress="#position">Tipos de list-style-position</li>
+        <li data-adress="#imagens-como-marcadores">Usando Imagens como Marcadores</li>
+        <li data-adress="#removendo-marcadores">Removendo Marcadores</li>
+        <li data-adress="#aumentando-a-distancia-do-marcador">Aumentando a Distância do Marcador</li>
+    </ul>
+    <div id="nav_videos"></div>
+    <div id="menu_acesso_rapido"></div>
+    <main> 
+        <div id="config_iframe"></div>
+
+        <article id="dividindo-listas-em-colunas-com-css">
+            <h2>Dividindo Listas em Colunas com CSS</h2>
+            <p>Você sabia que pode dividir uma lista em várias colunas usando CSS? Isso é especialmente útil quando você tem uma lista longa e deseja economizar espaço na página. Para fazer isso, basta utilizar a propriedade "columns".</p>
+            <p>Veja um exemplo de código:</p>
+            <div class="pre"><pre>
+&lt;ol style="columns: 2;" type="I"&gt;
+    &lt;li&gt;Acordar&lt;/li&gt;
+    &lt;li&gt;Preparar o Café&lt;/li&gt;
+    &lt;li&gt;Tomar Banho&lt;/li&gt;
+    &lt;li&gt;Tomar o café&lt;/li&gt;
+    &lt;li&gt;Etc..&lt;/li&gt;
+&lt;/ol&gt;
+            </pre></div>
+            <p>Veja como fica visualmente:</p>
+            <ol style="columns: 2;" type="I">
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+        </article><!-- dividindo-listas-em-colunas-com-css -->
+
+        <article id="type">
+            <h2>Tipos de list-style-type</h2>
+            <p>As listas são uma parte essencial do design da web, mas nem sempre são visualmente atraentes. Felizmente, você pode estilizar suas listas com CSS para torná-las mais atraentes e personalizadas.</p>
+            <p>Abaixo estão alguns exemplos de diferentes tipos de "list-style-type" que você pode usar em suas listas:</p>
+            <ul>
+                <li style="list-style-type: disc;">Disc</li>
+                <code>style="list-style-type: disc;"</code>
+                <li style="list-style-type: circle;">Circle</li>
+                <code>style="list-style-type: circle;"</code>
+                <li style="list-style-type: square;">Square</li>
+                <code>style="list-style-type: square;"</code>
+                <li style="list-style-type: decimal;">Decimal</li>
+                <code>style="list-style-type: decimal;"</code>
+                <li style="list-style-type: decimal-leading-zero;">Decimal Leading Zero</li>
+                <code>style="list-style-type: decimal-leading-zero;"</code>
+                <li style="list-style-type: lower-roman;">Lower Roman</li>
+                <code>style="list-style-type: lower-roman;"</code>
+                <li style="list-style-type: upper-roman;">Upper Roman</li>
+                <code>style="list-style-type: upper-roman;"</code>
+                <li style="list-style-type: lower-alpha;">Lower Alpha</li>
+                <code>style="list-style-type: lower-alpha;"</code>
+                <li style="list-style-type: upper-alpha;">Upper Alpha</li>
+                <code>style="list-style-type: upper-alpha;"</code>
+                <li style="list-style-type: none;">None</li>
+                <code>style="list-style-type: none;"</code>
+            </ul>
+            
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+&lt;ol <mark>style="list-style-type: lower-roman;"</mark>&gt;
+    &lt;li&gt;Acordar&lt;/li&gt;
+    &lt;li&gt;Preparar o Café&lt;/li&gt;
+    &lt;li&gt;Tomar Banho&lt;/li&gt;
+    &lt;li&gt;Tomar o café&lt;/li&gt;
+    &lt;li&gt;Etc..&lt;/li&gt;
+&lt;/ol&gt;
+            </pre></div>
+            <p>Veja o resultado:</p>
+            <ol style="list-style-type: lower-roman;">
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+
+            <article id="usando-marcadores-personalizados">
+                        <h3>Usando Marcadores Personalizados</h3>
+                        <p>Além dos marcadores padrão, você pode usar outros símbolos com CSS para deixar suas listas mais interessantes e personalizadas. Por exemplo, você pode usar um símbolo de checkmark (✔) para indicar tarefas concluídas.</p>
+                        <p>Exemplo de código:</p>
+                        <p>Abaixo estão alguns exemplos de diferentes tipos de marcadores personalizados que você pode usar em suas listas:</p>
+                        <ul>
+                            <li style="list-style-type: '\2713';">Checkmark</li>
+                            <code>style="list-style-type: '\2713';"</code>
+                            <li style="list-style-type: '\27A2';">THREE-D TOP-LIGHTED RIGHTWARDS ARROWHEAD</li>
+                            <code>style="list-style-type: '\27A2';"</code>
+                            <li style="list-style-type: '\2714';">Heavy Checkmark</li>
+                            <code>style="list-style-type: '\2714';"</code>
+                            <li style="list-style-type: '\2716';">Heavy Multiplication</li>
+                            <code>style="list-style-type: '\2716';"</code>
+                            <li style="list-style-type: '\272A';">Circled White Star</li>
+                            <code>style="list-style-type: '\272A';"</code>
+                            <li style="list-style-type: '\2730';">Shadowed White Star</li>
+                            <code>style="list-style-type: '\2730';"</code>
+                        </ul>
+                        <p>Para consultar os códigos de marcadores personalizados, você pode visitar o site <a href="https://www.w3schools.com/charsets/ref_utf_dingbats.asp" target="_blank">W3Schools - UTF-8 Dingbats</a>. Lá você encontrará uma lista completa de caracteres que podem ser usados como marcadores em suas listas.</p>
+                        <div class="pre"><pre>
+            &lt;ul <mark>style="list-style-type: '\2714'"</mark>&gt;
+                &lt;li&gt;Acordar&lt;/li&gt;
+                &lt;li&gt;Preparar o Café&lt;/li&gt;
+                &lt;li&gt;Tomar Banho&lt;/li&gt;
+                &lt;li&gt;Tomar o café&lt;/li&gt;
+                &lt;li&gt;Etc..&lt;/li&gt;
+            &lt;/ul&gt;
+                        </pre></div>
+                        <p>Veja o resultado:</p>
+                        <ul style="list-style-type: '\2714'">
+                            <li>Acordar</li>
+                            <li>Preparar o Café</li>
+                            <li>Tomar Banho</li>
+                            <li>Tomar o café</li>
+                            <li>Etc..</li>
+                        </ul>
+            </article>        <!-- usando-marcadores-personalizados -->
+
+        </article><!-- /#type -->
+
+        <article id="position">
+
+            <h2>Tipos de list-style-position</h2>
+            <p>Abaixo estão os diferentes valores que você pode usar para a propriedade "list-style-position":</p>
+            <ul>
+                <li style="list-style-position: inside;">Inside</li>
+                <li style="list-style-position: outside;">Outside</li>
+            </ul>
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+&lt;ol <mark>style="list-style-position: inside;"</mark>&gt;
+    &lt;li&gt;Acordar&lt;/li&gt;
+    &lt;li&gt;Preparar o Café&lt;/li&gt;
+    &lt;li&gt;Tomar Banho&lt;/li&gt;
+    &lt;li&gt;Tomar o café&lt;/li&gt;
+    &lt;li&gt;Etc..&lt;/li&gt;
+&lt;/ol&gt;
+            </pre></div>
+            <p>Veja o resultado:</p>
+            <ol style="list-style-position: inside;">
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+
+        </article><!-- /#position -->
+        
+        <article id="imagens-como-marcadores">
+        <h2>Usando Imagens como Marcadores</h2>
+        <p>Você pode usar imagens personalizadas como marcadores em suas listas com a propriedade "list-style-image". Isso permite que você adicione um toque único ao design da sua página.</p>
+        <p>Exemplo de código:</p>
+        <div class="pre"><pre>
+        &lt;ul style="list-style-image: url('...img.ico')"&gt;
+            &lt;li&gt;Acordar&lt;/li&gt;
+            &lt;li&gt;Preparar o Café&lt;/li&gt;
+            &lt;li&gt;Tomar Banho&lt;/li&gt;
+            &lt;li&gt;Tomar o café&lt;/li&gt;
+            &lt;li&gt;Etc..&lt;/li&gt;
+        &lt;/ul&gt;
+        </pre></div>
+        <p>Veja como fica:</p>
+        <ul style="list-style-image: url('../../imagens/Study.ico')">
+            <li>Acordar</li>
+            <li>Preparar o Café</li>
+            <li>Tomar Banho</li>
+            <li>Tomar o café</li>
+            <li>Etc..</li>
+        </ul>
+        <p>Ao usar imagens como marcadores, certifique-se de que elas sejam leves, pequenas e sem muitos detalhes para garantir uma boa performance e clareza visual.</p>
+        </article><!-- imagens-como-marcadores -->
+        
+        <article id="removendo-marcadores">
+            <h2>Removendo Marcadores</h2>
+            <p>Quer remover os marcadores da lista? Isso pode ser útil quando você deseja que a lista pareça mais limpa ou quando os marcadores não se encaixam no design da sua página. É simples, basta usar "none" na propriedade "list-style-type".</p>
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+&lt;ol style="list-style-type: none"&gt;
+    &lt;li&gt;Acordar&lt;/li&gt;
+    &lt;li&gt;Preparar o Café&lt;/li&gt;
+    &lt;li&gt;Tomar Banho&lt;/li&gt;
+    &lt;li&gt;Tomar o café&lt;/li&gt;
+    &lt;li&gt;Etc..&lt;/li&gt;
+&lt;/ol&gt;
+            </pre></div>
+            <p>Veja como fica:</p>
+            <ol style="list-style-type: none">
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+        </article><!-- removendo-marcadores -->
+
+      
+        <article id="aumentando-a-distancia-do-marcador">
+            <h2>Aumentando a Distância do Marcador</h2>
+            <p>Para aumentar a distância entre o marcador e o texto, você pode usar um estilo externo com "list-style-type". Seguido de uma belíssima "gambiarra". Mas isso pode ajudar a melhorar a legibilidade da lista.</p>
+            <p>Exemplo de código:</p>
+            <div class="pre"><pre>
+&lt;ol style="list-style-type: '\2714\0020\0020\0020\0020\0020\0020\0020\0020\0020\0020"&gt;
+    &lt;li&gt;Acordar&lt;/li&gt;
+    &lt;li&gt;Preparar o Café&lt;/li&gt;
+    &lt;li&gt;Tomar Banho&lt;/li&gt;
+    &lt;li&gt;Tomar o café&lt;/li&gt;
+    &lt;li&gt;Etc..&lt;/li&gt;
+&lt;/ol&gt;
+            </pre></div>
+            <p>Veja como fica:</p>
+            <ol style="list-style-type: '\2714\0020\0020\0020\0020\0020\0020\0020\0020\0020\0020'" list-style-position: inside>
+                <li>Acordar</li>
+                <li>Preparar o Café</li>
+                <li>Tomar Banho</li>
+                <li>Tomar o café</li>
+                <li>Etc..</li>
+            </ol>
+            <p class="mark">Obs.: 0020 é um código hexadecimal para espaço, assim como 00A0.</p>
+        </article><!-- aumentando-a-distancia-do-marcador -->
+
+    </main>
+    <footer>
+
+    </footer>
+    
+       
+</body>
+</html>
