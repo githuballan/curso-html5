@@ -9,11 +9,21 @@
     <meta name="keywords" content="CSS, background, imagens, propriedades, tutorial, como usar background no CSS, tutorial de background CSS, propriedades de background CSS, Background, Background com Imagens, Background-repeat, Background-position, Background-size, Background-attachment, Shorthand de Background, Background-origin, Background-clip, Background com Degradê, Linear Gradient, Radial Gradient, Ocupação por Percentagem, Efeito Parallax">
 
     <meta name="description" content="Aprenda a utilizar as propriedades de background no CSS para criar designs incríveis com imagens e efeitos de fundo.">
+    
+    <link rel="stylesheet" href="../../style.css">
 
      <script src="../../script.js"></script>
 
-    <link rel="stylesheet" href="../../style.css">
-
+  
+    <style>
+        .linear{
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+    </style>
    
 
 
@@ -53,8 +63,8 @@
             </ul>
             <li data-adress="#parallax">Efeito Parallax </li>
     </ul>
-    <div id="nav_videos"></div>
-    <div id="menu_acesso_rapido"></div>
+    <nav id="nav_videos"></nav>
+    <nav id="menu_acesso_rapido"></nav>
     <main> 
         <div id="config_iframe"></div>
     <article id="background-imagens">
@@ -84,8 +94,8 @@
             <fieldset>
                 <legend>Exemplo interativo</legend>
                 <div>
-                    background-repeat:
-                    <select onchange="document.querySelector('#backgroundRepeat').style.backgroundRepeat = this.value">
+                    <label for="backgroundRepeat5">background-repeat:</label>
+                    <select id="backgroundRepeat5" onchange="document.querySelector('#backgroundRepeat').style.backgroundRepeat = this.value">
                         <option value="no-repeat">no-repeat</option>
                         <option value="repeat">repeat</option>
                         <option value="repeat-x">repeat-x</option>
@@ -177,8 +187,8 @@
             <fieldset>
                 <legend>Exemplo interativo</legend>
 
-                <div>background-attachment:
-                <select onchange="document.querySelector('#backgroundAttachment').style.backgroundAttachment = this.value">
+                <div><label for="backgroundAttachment1">background-attachment:</label>
+                <select id="backgroundAttachment1" onchange="document.querySelector('#backgroundAttachment').style.backgroundAttachment = this.value">
                 <option value="scroll">scroll</option>
                 <option value="fixed">fixed</option>
                 <option value="local">local</option>
@@ -227,19 +237,8 @@
                 <legend>Exemplo interativo</legend>
             
                 <div>
-                    background-color:
-                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundColor = this.value">
-                        <option value="repeat">#0F0</option>
-                        <option value="no-repeat">#000</option>
-                        <option value="repeat-x">#FFF</option>
-                        <option value="repeat-y">#00F</option>
-                    </select><br>
-                    background-image:
-                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundImage = this.value">
-                        <option value="repeat">url('imagens/exemplo1.jpg');</option>
-                    </select><br>
-                    background-position:
-                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundPosition = this.value">
+                    <label for="backgroundPosition">background-position:</label>
+                    <select id="backgroundPosition" onchange="document.querySelector('#backgroundShorthand').style.backgroundPosition = this.value">
                         <option value="left top">left top</option>
                         <option value="left center">left center</option>
                         <option value="left bottom">left bottom</option>
@@ -250,24 +249,23 @@
                         <option value="right center">right center</option>
                         <option value="right bottom">right bottom</option>
                     </select><br>
-                    background-size:
-                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundSize = this.value">
+                    <label for="backgroundSize">background-size:</label>
+                    <select id="backgroundSize" onchange="document.querySelector('#backgroundShorthand').style.backgroundSize = this.value">
                         <option value="auto">auto</option>
                         <option value="cover">cover</option>
                         <option value="contain">contain</option>
                         <option value="50%">50%</option>
                         <option value="100px">100px</option>
-                    
                     </select><br>
-                    background-repeat:
-                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundRepeat = this.value">
+                    <label for="backgroundRepeat4">background-repeat:</label>
+                    <select id="backgroundRepeat4" onchange="document.querySelector('#backgroundShorthand').style.backgroundRepeat = this.value">
+                         <option value="no-repeat">no-repeat</option>
                         <option value="repeat">repeat</option>
-                        <option value="no-repeat">no-repeat</option>
                         <option value="repeat-x">repeat-x</option>
                         <option value="repeat-y">repeat-y</option>
                     </select><br>
-                    background-attachment:
-                    <select onchange="document.querySelector('#backgroundShorthand').style.backgroundAttachment = this.value">
+                    <label for="backgroundAttachment2">background-attachment:</label>
+                    <select id="backgroundAttachment2" onchange="document.querySelector('#backgroundShorthand').style.backgroundAttachment = this.value">
                         <option value="scroll">scroll</option>
                         <option value="fixed">fixed</option>
                         <option value="local">local</option>
@@ -311,8 +309,9 @@
             </div>
             <fieldset>
                 <legend>Exemplo interativo</legend>
-                <div>background-origin:
-                <select onchange="document.querySelector('#backgroundOrigin').style.backgroundOrigin = this.value">
+                <div>
+                    <label for="backgroundOrigin">background-origin:</label>
+                    <select id="backgroundOrigin" onchange="document.querySelector('#backgroundOrigin').style.backgroundOrigin = this.value">
                     <option value="border-box">border-box</option>
                     <option value="padding-box">padding-box</option>
                     <option value="content-box">content-box</option>
@@ -362,12 +361,14 @@
             </div>
             <fieldset>
                 <legend>Exemplo interativo</legend>
-                <div>background-clip:
-                <select onchange="document.querySelector('#backgroundClip').style.backgroundClip = this.value">
-                    <option value="border-box">border-box</option>
-                    <option value="padding-box">padding-box</option>
-                    <option value="content-box">content-box</option>
-                </select></div>
+                <div>
+                    <label for="backgroundClipSelect">background-clip:</label>
+                    <select id="backgroundClipSelect" onchange="document.querySelector('#backgroundClip').style.backgroundClip = this.value">
+                        <option value="border-box">border-box</option>
+                        <option value="padding-box">padding-box</option>
+                        <option value="content-box">content-box</option>
+                    </select>
+                </div>
                 <div id="backgroundClip" class="clip-example" style="
                 width: 200px;
                 height: 200px;
@@ -406,55 +407,7 @@
             <p>É possível adicionar mais de duas cores ao efeito.</p>
          
   
-            <fieldset>
-                <legend>Exemplo interativo</legend>
-                <div style="
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                flex-wrap: wrap;">background-image:
-                  <input type="number" id="deg1" min="1" max="360" value="90" onchange="valueMaxMin(360,1,this); document.getElementById('graus').value = this.value + 'deg'" >
-                 <input type="color" id="color1" onchange="document.getElementById('color01').value = this.value">
-                  <input type="color" id="color2" onchange="document.getElementById('color02').value = this.value">
-                  <input type="color" id="color3" onchange="document.getElementById('color03').value = this.value">
-                  </div>
-                    <button onclick="changeColor()">Aplicar</button>
-                  <script>
-                    {
-                   
-                    function changeColor() {
-                    let deg1 = document.getElementById('deg1').value;
-                    let color1 = document.getElementById('color1').value;
-                    let color2 = document.getElementById('color2').value;
-                    let color3 = document.getElementById('color3').value;
-                        document.getElementById('linearDegrade').style.backgroundImage = `linear-gradient(${deg1}deg, ${color1}, ${color2}, ${color3})`;}
-                        console.log(color1.value);
-                        console.log(color2.value);
-                        console.log(deg1.value);
-
-                    }
-                  </script>
-              <div class="pre">
-                <pre>
-background-image:
-linear-gradient
-(<output id="graus"></output>, 
-<output id="color01"></output>, 
-<output id="color02"></output>, 
-<output id="color03"></output>);
-</pre>
-            </div>
-               
-                <div id="linearDegrade" style="
-                background-image: linear-gradient(90deg, #f00, #0f0);
-                height: 50vmin;
-                width: 50vmin;
-                border-radius: 5px;">
-                </div>
-
-            </fieldset>
+         
         </section><!-- /#linear-degrade -->
 
          <section id="radial-degrade">
@@ -485,36 +438,55 @@ linear-gradient
             <div class="pre">
                 <pre>background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);</pre>
             </div>
-            <p>Note que o percentual escolhe o posicionamento de cada cor e cada transição no bloco.</p>
+            <ul>
+                <li><strong>background-image:</strong> Propriedade CSS usada para definir uma imagem de fundo para um elemento.</li>
+                <li><strong>linear-gradient(90deg, ...):</strong> Função CSS que cria uma transição gradual entre duas ou mais cores ao longo de uma linha reta. O parâmetro <code>90deg</code> especifica a direção do gradiente (90 graus, ou seja, da esquerda para a direita).</li>
+                <li><strong>#f00 29%:</strong> Cor vermelha (hexadecimal <code>#f00</code>) que ocupa até 29% do gradiente.</li>
+                <li><strong>30%:</strong> Ponto de transição sem cor definida, que será interpolada automaticamente pelo navegador entre as cores adjacentes.</li>
+                <li><strong>#0f0 31%:</strong> Cor verde (hexadecimal <code>#0f0</code>) que começa a partir de 31% do gradiente.</li>
+                <li><strong>49%:</strong> Outro ponto de transição sem cor definida, interpolado automaticamente.</li>
+                <li><strong>#00f 50%:</strong> Cor azul (hexadecimal <code>#00f</code>) que começa a partir de 50% do gradiente.</li>
+            </ul>
+
+           
+
 
             <fieldset>
                 <legend>Exemplo interativo</legend>
                 <div style="
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
 
-                flex-wrap: wrap;">background-image:
-                  <input type="number" style="width: 50px;" id="deg2" min="1" max="360" value="90" onchange=" valueMaxMin(360,1,this);document.getElementById('graus1').value = this.value + 'deg'">
+                    flex-wrap: wrap;">background-image: linear-gradient
 
-                 <input type="color" id="color4" value="#ff0000" onchange="document.getElementById('color04').value = this.value">
-                 
-                 <input type="number" style="width: 50px;" id="porcent01" min="1" max="100" value="29" onchange="valueMaxMin(100,1,this);document.getElementById('porcent1').value = this.value+'%'">
+                    <input type="number" aria-label="direção do gradiente" style="width: 50px;" id="deg2" min="1" max="360" value="90" onchange=" valueMaxMin(360,1,this);document.getElementById('graus1').value = this.value + 'deg'">
 
-                 <input type="number" style="width: 50px;" id="porcent02" min="1" max="100" value="30" onchange="valueMaxMin(100,1,this);document.getElementById('porcent2').value = this.value+'%'">
-                 
-                  <input type="color" value="#00ff00" id="color5" onchange="document.getElementById('color05').value = this.value">
-                  
-                  <input type="number" style="width: 50px;" id="porcent03" min="1" max="100" value="31" onchange="valueMaxMin(100,1,this);document.getElementById('porcent3').value = this.value+'%'">
+                    <div class="linear">
+                        <input type="color" aria-label="Primeira cor do gradiente" id="color4" value="#ff0000" onchange="document.getElementById('color04').value = this.value">
+                        
+                        <input type="number" aria-label="Percentual que a cor ocupará no gradiente" style="width: 50px;" id="porcent01" min="1" max="100" value="29" onchange="valueMaxMin(100,1,this);document.getElementById('porcent1').value = this.value+'%'">
 
-                  <input type="number" style="width: 50px;" id="porcent04" min="1" max="100" value="49" onchange="valueMaxMin(100,1,this);document.getElementById('porcent4').value = this.value+'%'">
+                        <input type="number" aria-label="Ponto de transição sem cor definida" style="width: 50px;" id="porcent02" min="1" max="100" value="30" onchange="valueMaxMin(100,1,this);document.getElementById('porcent2').value = this.value+'%'">
+                    </div>
+                    <div class="linear">
+                        <input aria-label="Segunda cor do gradiente" type="color" value="#00ff00" id="color5" onchange="document.getElementById('color05').value = this.value">
+                    
+                        <input type="number" aria-label="Percentual que a cor ocupará no gradiente" style="width: 50px;" id="porcent03" min="1" max="100" value="31" onchange="valueMaxMin(100,1,this);document.getElementById('porcent3').value = this.value+'%'">
 
-                  <input type="color" value="#0000ff" id="color6" onchange="document.getElementById('color06').value = this.value">
-                  
-                  <input type="number" style="width: 50px;" id="porcent05" min="1" max="100" value="50" onchange="valueMaxMin(100,1,this);document.getElementById('porcent5').value = this.value+'%'">
+                        <input type="number" aria-label="Ponto de transição sem cor definida" style="width: 50px;" id="porcent04" min="1" max="100" value="49" onchange="valueMaxMin(100,1,this);document.getElementById('porcent4').value = this.value+'%'">
+                    </div>
+                    <div class="linear">
+        
+                        <input aria-label="terceira cor do gradiente" type="color" value="#0000ff" id="color6" onchange="document.getElementById('color06').value = this.value">
 
-                  </div>
+                        <input type="number" aria-label="Percentual que a cor ocupará no gradiente" style="width: 50px;" id="porcent05" min="1" max="100" value="50" onchange="valueMaxMin(100,1,this);document.getElementById('porcent5').value = this.value+'%'">
+
+                        <button onclick="changeColor1()">Aplicar</button>
+                    </div>
+
+                </div>
                    
                   <script>
                     {
@@ -559,7 +531,7 @@ background-image: linear-gradient
 <output id="color06"></output> <output id="porcent5"></output>);
 </pre>
             </div>
-            <button onclick="changeColor1()">Aplicar</button>
+            
                 <div id="linearDegrade1" style="
                background-image: linear-gradient(90deg, #f00 29%, 30%, #0f0 31%, 49%, #00f 50%);
                 height: 50vmin;
@@ -578,14 +550,18 @@ background-image: linear-gradient
         <h2>Efeito Parallax</h2>
         <p>Efeito Paralax simula uma sensação de você está passando por uma janela, e conforme vai mudando o ângulo de visão você vai conseguindo enxergar mais da paisagem.</p>
         <p>Veja o efeito Parallax abaixo:</p>
-        <div style="
-        display: inline-block; 
-        width: 50vw; 
-        height: 50vw;
-        background-image: url(imagens/exemplo1.jpg);
-        background-attachment: fixed; 
-        background-size: cover; 
-        box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);"></div>
+<div style="text-align: center;">
+    
+            <div style="
+            display: inline-block;
+            width: 50vw;
+            height: 50vw;
+            background-image: url(imagens/exemplo1.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            box-shadow: inset 3px 3px 3px 5px rgba(0, 0, 0, 0.295);"></div>
+    
+</div>
         <p>Esse efeito é muito utilizado em sites para dar uma sensação de movimento e profundidade.</p>
         <p>Para criar esse efeito, basta adicionar a propriedade <code>background-attachment: fixed;</code> à imagem de fundo.</p>
         <p> Veja o código usado:</p>
@@ -607,7 +583,7 @@ background-image: linear-gradient
     </article><!-- /#parallax -->
 
     <section id="materiais-apoio">
-        <h4>Materiais de apoio</h4>
+        <h3>Materiais de apoio</h3>
 
         <p><strong><a href="../../material-de-apoio/19 - Imagens de Fundo.pdf" target="_blank"> Imagens de Fundo.pdf</a></strong></p>
     </section><!-- /#materiais-apoio -->

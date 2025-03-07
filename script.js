@@ -42,6 +42,7 @@ function iframeload(x){
     iframe=document.getElementById('iframev');
     iframe.src = endereco;
 
+    //Verificar se o botão fixar está em fixar, caso não esteja, ele fixa quando o vídeo é trocado
     const configIframe = document.getElementById('config_iframe');
 
     console.log(configIframe.style.position==='' || configIframe.style.position==='static');
@@ -58,14 +59,35 @@ function toggleFixarSoltarAposRolarPag(){
   }
 }
 
+function createGoogleTagScript() {
+  const googleTagScript = `
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z9YVPY1GML');
+      </script>
+  `;
+
+  const headElement = document.getElementsByTagName('head')[0];
+
+  if (headElement) {
+      headElement.insertAdjacentHTML('afterend', googleTagScript);
+  }
+  console.log('Google Tag adicionado.');
+}
+
 function createLinkToVideos() {
 
   const navVideos= document.getElementById('nav_videos');
  if(navVideos!==null){
 navVideos.innerHTML = `
-<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" id="botao_menu-videos" class="buttom-videos" onclick="exibir(this)">
+<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" aria-label="Abrir menu de vídeos" id="botao_menu-videos" class="buttom-videos"
+style=" width: 45px; height: 30px;" onclick="exibir(this)">
 
-<nav id="lista_videos"></nav>
+<ul id="lista_videos"></ul>
 `;
 
   // Seleciona todos os elementos <li> dentro da <ul>
@@ -84,18 +106,43 @@ navVideos.innerHTML = `
       navList.appendChild(newLi);
   });
   // iframeload
-  iframeload(navList.firstElementChild.firstElementChild);
+  // iframeload(navList.firstElementChild.firstElementChild);
+}}
+
+function createTelaVideo(){
+  const configIframe = document.getElementById('config_iframe');
+  if(configIframe!==null){
+  let tela=document.createElement('div');
+  tela.id = 'tela_iframe';
+  configIframe.appendChild(tela);
+  tela.innerHTML = `<iframe id="iframev" width="867" height="490" src="../../inicio-iframe.html" title="Criando conta no GitHub - @Curso em Vídeo HTML5 e CSS3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  let controle=document.createElement('div');
+  controle.id = 'controles_iframe';
+  configIframe.appendChild(controle);
+  controle.innerHTML = `
+  <button  id="botao_fixa_solta" onclick="toggleIframePosition(this)">Fixar</button>
+
+    <input itemid="range_video" style="width:calc(100% - 130px); display: inline-block" type="range" id="range_video" value="100" min="30" max="100" aria-label="Ajustar tamanho do vídeo" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
+
+    <img id="pip" aria-label="Modo pictur-in-picture" style=" width: 50px; height: 30px; margin: 10px 0px -5px 0px;" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
+   ">
+    
+    <img id="pipout" aria-label="Sair do modo pictur-in-picture"  style=" width: 50px; height: 30px;" src="../../imagens/pipout.svg" onclick="botaoGetOutPip()" alt="botão pipout">
+</div>
+  `;
+//Lembrar de colocar o src do iframe igual ao primeiro video da lista usando o array de videos
+
 }}
 
 function createMenuAcessoRapido(){
   var MenuAcessoRapido=document.getElementById('menu_acesso_rapido');
   if(MenuAcessoRapido!==null){
-  MenuAcessoRapido.innerHTML = `<button id="menu-hamburguer" onclick="toggleMenu(this); exibir(this)">
+  MenuAcessoRapido.innerHTML = `<button id="menu-hamburguer" aria-label="Abrir menu de acesso rápido" onclick="toggleMenu(this); exibir(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </button>
-    <nav id="shortcuts_list"></nav>
+    <ul id="shortcuts_list"></ul>
     `;
     
     
@@ -158,30 +205,7 @@ function createIndexButton(){
 }
 }
 
-function createTelaVideo(){
-  const configIframe = document.getElementById('config_iframe');
-  if(configIframe!==null){
-  let tela=document.createElement('div');
-  tela.id = 'tela_iframe';
-  configIframe.appendChild(tela);
-  tela.innerHTML = `<iframe id="iframev" width="867" height="490" src="https://www.youtube.com/embed/1QTi8nIlK1o" title="Criando conta no GitHub - @Curso em Vídeo HTML5 e CSS3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-  let controle=document.createElement('div');
-  controle.id = 'controles_iframe';
-  configIframe.appendChild(controle);
-  controle.innerHTML = `
-  <button  id="botao_fixa_solta" onclick="toggleIframePosition(this)">Fixar</button>
 
-    <input itemid="range_video" style="width:calc(100% - 100px); display: inline-block" type="range" id="range_video" value="100" min="30" max="100" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
-
-    <img id="pip" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
-   ">
-    
-    <img id="pipout" src="../../imagens/pipout.svg" onclick="botaoGetOutPip()" alt="botão pipout">
-</div>
-  `;
-//Lembrar de colocar o src do iframe igual ao primeiro video da lista usando o array de videos
-
-}}
 
 function head(){
   let head = document.getElementsByTagName('head')[0];
@@ -213,6 +237,7 @@ window.addEventListener('load', () => {
   createMenuAcessoRapido();
   footer();
   head();
+  createGoogleTagScript();
 });
 
 function botaoPip() {

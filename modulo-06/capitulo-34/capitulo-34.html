@@ -385,11 +385,51 @@
 </div><!-- /#vo -->
            </div>
         </article><!-- /#Elementos-pai-filho-->
-                    
+           
+        
+        <article id="insertAdjacentHTML"></article>
+            <h2>Função insertAdjacentHTML</h2>
+            <p>A função <code>insertAdjacentHTML</code> é uma maneira conveniente de inserir HTML em uma posição específica em relação a um elemento existente no DOM. Ela permite que você insira HTML como uma string, que é então analisada e convertida em nós DOM.</p>
+            <h3>Sintaxe</h3>
+            <pre><code>element.insertAdjacentHTML(position, text);</code></pre>
+            <h3>Parâmetros</h3>
+            <ul>
+                <li><strong>position</strong>: Uma string que especifica a posição em relação ao elemento. Pode ser um dos seguintes valores:
+                    <ul>
+                        <li><code>"beforebegin"</code>: Antes do próprio elemento.</li>
+                        <li><code>"afterbegin"</code>: Dentro do elemento, antes de seu primeiro filho.</li>
+                        <li><code>"beforeend"</code>: Dentro do elemento, após seu último filho.</li>
+                        <li><code>"afterend"</code>: Após o próprio elemento.</li>
+                    </ul>
+                </li>
+                <li><strong>text</strong>: Uma string contendo o HTML a ser inserido.</li>
+            </ul>
+            <h3>Exemplo</h3>
+            <pre><code>document.getElementById("myElement").insertAdjacentHTML("beforeend", "&lt;p>Novo parágrafo&lt;/p>");</code></pre>
+            <h3>Outras Funções Semelhantes</h3>
+            <p>Além de <code>insertAdjacentHTML</code>, existem outras funções que permitem manipular o DOM de maneira semelhante:</p>
+            <ul>
+                <li><strong>insertAdjacentElement</strong>: Insere um elemento em uma posição específica em relação ao elemento de referência.
+                    <h4>Sintaxe:</h4>
+                    <pre><code>element.insertAdjacentElement(position, element);</code></pre>
+                </li>
+                <li><strong>insertAdjacentText</strong>: Insere texto em uma posição específica em relação ao elemento de referência.
+                    <h4>Sintaxe:</h4>
+                    <pre><code>element.insertAdjacentText(position, text);</code></pre>
+                </li>
+            </ul>
+            <h3>Exemplo de Uso de insertAdjacentElement</h3>
+            <pre><code>var newElement = document.createElement("div");
+        document.getElementById("myElement").insertAdjacentElement("afterend", newElement);</code></pre>
+            <h3>Exemplo de Uso de insertAdjacentText</h3>
+            <pre><code>document.getElementById("myElement").insertAdjacentText("beforebegin", "Texto inserido");</code></pre>
+            <p>Essas funções são muito úteis para manipular o DOM de maneira eficiente e precisa, permitindo que você insira novos elementos ou texto em posições específicas em relação a elementos existentes.</p>
+        </article>
+
+
     </main>
     <footer>
-        <h1>Materiais utilizados</h1>            
-        <p><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank">Apostila</a></p>  
+       
     </footer>
 
     <script src="script.js"></script>

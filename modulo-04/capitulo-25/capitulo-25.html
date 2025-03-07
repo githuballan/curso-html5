@@ -56,13 +56,17 @@
         <p>Media Query é uma técnica que permite ao site alternar entre diferentes folhas de estilo dependendo do tipo de dispositivo que está sendo usado para visualizá-lo, além de outras características que veremos ao longo deste capítulo.</p>
         <p>Essa técnica é fundamental para que o site seja responsivo, ou seja, que se adapte a qualquer tipo de tela, seja ela de um celular, tablet, notebook ou desktop. Um site responsivo proporciona uma melhor experiência de usuário, independentemente do dispositivo utilizado.</p>
         <p>Como já vimos anteriormente, as folhas de estilo são criadas em um arquivo CSS e são linkadas no head da página com o comando:</p>
-        <code>&lt;link rel="stylesheet" href="../../"..."/style.css"></code>
+        <div class="pre">
+            <pre>&lt;link rel="stylesheet" href="../../"..."/style.css"></pre>
+        </div>
         <p>Porém, quando usamos media queries, essas folhas de estilo são aplicadas de acordo com a tela ou modo de saída da página. Vamos ver algumas configurações disponíveis:</p>
         <ul>
             <li><strong>media="print"</strong>: Este modo é utilizado para impressão. Podemos ocultar menus e outros itens desnecessários para impressão. Veja o comando abaixo:</li>
-            <code>&lt;link rel="stylesheet" href="estilos/impressora.css" media="print"></code>
+            <div class="pre">
+                <pre>&lt;link rel="stylesheet" href="estilos/impressora.css" media="print"></pre></div>
             <li><strong>media="screen"</strong>: Este modo é utilizado para telas. Possui mais funções, que veremos mais à frente. Veja o código do screen abaixo:</li>
-            <code>&lt;link rel="stylesheet" href="estilos/tela.css" media="screen"></code>
+            <div class="pre">
+                <pre>&lt;link rel="stylesheet" href="estilos/tela.css" media="screen"></pre></div>
             <li><strong>media="all"</strong>: Configuração geral que se aplica a todos os dispositivos. Hierarquicamente, é como se o "all" fosse a folha de CSS principal e o "screen" fosse um estilo específico feito no head do HTML.</li>
             <li><strong>media="handheld"</strong>: Este modo é utilizado para dispositivos de mão, como celulares e tablets.</li>
         </ul>
@@ -76,11 +80,14 @@
         <p>Vamos ver como podemos usar diferentes arquivos CSS para cada formato de tela, garantindo que o conteúdo seja exibido da melhor forma possível para o usuário.</p>
         <ul>
             <li><strong>Modo retrato:</strong> Este é o formato vertical, comum em celulares e tablets. Veja o código abaixo:</li>
-            <code>&lt;link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation: portrait)"></code>
+            <div class="pre">
+            <pre>&lt;link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation: portrait)"></pre></div>
             <li><strong>Modo paisagem:</strong> Este é o formato horizontal, comum em notebooks e quando os usuários giram seus dispositivos móveis. Veja o código abaixo:</li>
-            <code>&lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"></code>
+            <div class="pre">
+            <pre>&lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"></pre></div>
             <li><strong>Pela largura da tela:</strong> Podemos também aplicar estilos com base na largura da tela. Isso é útil para ajustar o layout em diferentes dispositivos. Veja o código abaixo:</li>
-            <code>@media screen and (max-width: 550px) {...}</code>
+            <div class="pre">
+            <pre>@media screen and (max-width: 550px) {...}</pre></div>
         </ul>
         <p>Por exemplo, você pode usar o código acima para aplicar estilos específicos quando a largura da tela for menor que 550 pixels, como em celulares. Isso ajuda a garantir que seu site seja responsivo e ofereça uma boa experiência de usuário em qualquer dispositivo.</p>
     </article> <!-- media-screen -->
@@ -89,10 +96,10 @@
         <h2>Modo tudo em uma folha de CSS</h2>
         <p>Além dessa forma de criar várias folhas de CSS, temos a opção de fazer tudo em apenas uma folha ou até mesmo no head do HTML usando style.</p>
         <p>Para isso, basta criar a regra (@) em style escrevendo tudo de media para frente da declaração que fazemos para linkar as folhas separadas. Veja o exemplo abaixo:</p>
-        <code>&lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"></code>
+        <div class="pre"><pre>&lt;link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)"></pre></div>
         <p>Agora basta por @, remover o sinal de igual e as aspas dessa parte marcada e por em uma folha de estilo única ou em style no head do HTML.</p>
         <p>Exemplo na folha de estilo (style.css):</p>
-        <code>@media screen and (orientation: landscape){}</code>
+        <div class="pre"><pre>@media screen and (orientation: landscape){}</pre></div>
         <p>Mas qual opção é melhor?</p>
         <p>Tudo vai depender do tamanho do projeto. Basicamente, quanto maior o projeto, maior a folha, então nesse caso é melhor deixar separado para não ficar muito bagunçado. Já projetos menores dá para fazer até no próprio head.</p>
         
@@ -128,9 +135,13 @@
             <li><strong>Media Query:</strong> Até agora, usamos media queries para adaptar o conteúdo do site para o celular, e o "ALL" era baseado na tela de um notebook. Com o Mobile First, o "ALL" será baseado no celular, e usaremos media queries para adaptar o site para outras telas, como tablets e desktops.</li>
             </ul>
             <p>Por exemplo, antes você poderia ter um media query assim:</p>
-            <code>@media screen and (max-width: 600px) {...}</code>
+            <div class="pre">
+                <pre>@media screen and (max-width: 600px) {...}</pre>
+            </div>
             <p>Isso adaptava o site para telas menores que 600px, como celulares. Agora, com o Mobile First, você pode começar com o estilo para celular e adicionar media queries para telas maiores:</p>
-            <code>@media screen and (min-width: 601px) {...}</code>
+            <div class="pre">
+                <pre>@media screen and (min-width: 601px) {...}</pre>
+            </div>
             <p>Isso significa que o estilo padrão será para celulares, e você adiciona regras específicas para telas maiores. Essa abordagem garante que o site funcione bem em dispositivos móveis, que são a maioria dos acessos hoje em dia.</p>
         </section>
     </article> <!-- mobile-first -->
@@ -146,15 +157,15 @@
             <p>De acordo com a W3C, os tamanhos de tela atuais para cada dispositivo são:</p>
             <ul>
                 <li><strong>Celulares e menores:</strong> até 600px</li>
-                <code>@media only screen and (max-width: 600px) {...}</code>
+                <div class="pre"><pre>@media only screen and (max-width: 600px) {...}</pre></div>
                 <li><strong>Tablets em modo retrato e celulares grandes:</strong> 601px a 768px</li>
-                <code>@media only screen and (min-width: 601px) and (max-width: 768px) {...}</code>
+                <div class="pre"><pre>@media only screen and (min-width: 601px) and (max-width: 768px) {...}</pre></div>
                 <li><strong>Tablets em modo paisagem:</strong> 769px a 992px</li>
-                <code>@media only screen and (min-width: 769px) and (max-width: 992px) {...}</code>
+                <div class="pre"><pre>@media only screen and (min-width: 769px) and (max-width: 992px) {...}</pre></div>
                 <li><strong>Desktops:</strong> 993px a 1200px</li>
-                <code>@media only screen and (min-width: 993px) and (max-width: 1200px) {...}</code>
+                <div class="pre"><pre>@media only screen and (min-width: 993px) and (max-width: 1200px) {...}</pre></div>
                 <li><strong>Telas extra grandes:</strong> acima de 1200px</li>
-                <code>@media only screen and (min-width: 1201px) {...}</code>
+                <div class="pre"><pre>@media only screen and (min-width: 1201px) {...}</pre></div>
             </ul>
             <p>Esses breakpoints ajudam a criar layouts responsivos que se adaptam a diferentes tamanhos de tela, proporcionando uma melhor experiência de usuário em qualquer dispositivo.</p>
         </section>

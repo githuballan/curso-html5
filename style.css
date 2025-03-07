@@ -1,12 +1,7 @@
 @charset "UTF-8";
 
-/* Font Face */
-@font-face {
-    font-family: 'star';
-    src: url('fonts/twinkle-star/twinklestar-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+
+
 @media only screen and (max-width: 1099px)/* Número mágico, se alterar esse vlaor deverá alterar o valor da função clicante também e obviamente do outro media querry também*/ {
     body {
         display: flex;
@@ -16,8 +11,26 @@
 
     }
 
-    #menu_acesso_rapido>nav{
-        
+    input{
+        min-width: 44px;
+        min-height: 44px;
+        font-size: medium;
+    }
+
+    select{
+        min-width: 44px;
+        min-height: 44px;
+        font-size: medium;
+    }
+
+    button{
+        min-width: 44px;
+        min-height: 44px;
+        font-size: medium;
+    }
+
+    #shortcuts_list{
+       
         display: none;
         top: 7px;
         position: fixed;
@@ -67,7 +80,7 @@
         grid-area: nav;
     }
 
-    nav{
+    #shortcuts_list{
         margin-top: 25px;
         display: block;
         position: sticky;
@@ -77,6 +90,10 @@
 
 
 }/*    media maior que 1099px*/
+#pip{
+    width: 45px;
+    height: 30px;
+}
 
 #pipout{
     display: none;
@@ -106,10 +123,7 @@
     border: 0;
 }
 
-#botao_menu-videos{
-    width: 45px; 
-    height: 30px;
-}
+
 
 #video_list, #shortcuts{
     display: none;
@@ -139,11 +153,33 @@ html {
     scroll-behavior: smooth;
   
 }
+select, input{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 32px; /* Largura mínima */
+    min-height: 32px; /* Altura mínima */
+    padding: 5px 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Borda arredondada */
+    border: 1px solid #000;
+}
+
+input[type="range"] {
+     padding: 0px; /*Sem essa config o range para antes */
+}
 
 button{
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
+   
+    min-width: 32px; /* Largura mínima */
+    min-height: 32px; /* Altura mínima */
+    padding: 5px 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Borda arredondada */
+     
 }
 
 .link-vid-sqn{
@@ -162,6 +198,7 @@ button{
     box-shadow: 1px 1px 1px 100vmax rgba(0, 0, 0, 0.139);
     top: 15px;
     flex-direction: column;
+    
 }
 
 #menu_acesso_rapido{
@@ -268,7 +305,7 @@ header > h1 {
 }
 
 /* Navigation */
-nav {
+#shortcuts_list, #lista_videos {
     max-height: 90vh;
     overflow-y: auto;
     border: solid 1px #000;
@@ -280,7 +317,7 @@ nav {
    
    
 }
-nav li{
+#shortcuts_list li{
     margin-left: 0px;
 }
 
@@ -459,11 +496,11 @@ pre {
 
 /* Lists */
 ul {
-    padding-inline-start: 25px;
+    padding-inline-start: 10px;
 }
 
 li {
-    margin-left: 2em;
+    margin-left: 1em;
     margin-top: 15px;
 }
 
