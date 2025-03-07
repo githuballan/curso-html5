@@ -1,7 +1,7 @@
 # Termos de Uso
 
 ## 1. Aceitação dos Termos
-Ao acessar e utilizar o site [Hello World](http://www.helloworld.com.br), você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso. Se você não concorda com estes termos, por favor, não utilize o site.
+Ao acessar e utilizar o site [Hello World](http://www.guiadehtmlcssjs.com.br), você concorda em cumprir e estar vinculado aos seguintes termos e condições de uso. Se você não concorda com estes termos, por favor, não utilize o site.
 
 ## 2. Modificações dos Termos
 Reservamo-nos o direito de modificar estes termos a qualquer momento, sem aviso prévio. É sua responsabilidade revisar os termos periodicamente. O uso contínuo do site após quaisquer modificações constitui aceitação dos novos termos.
@@ -28,6 +28,6 @@ O site pode conter links para sites de terceiros que não são controlados por A
 Qualquer disputa decorrente ou relacionada a estes termos será resolvida de acordo com as leis do Brasil, e você concorda em submeter-se à jurisdição exclusiva dos tribunais localizados em Rio de Janeiro/RJ.
 
 ## 10. Contato
-Se você tiver alguma dúvida sobre estes termos, entre em contato conosco pelo e-mail: [allancmartins@gmail.com](mailto:allancmartins@gmail.com).
+Se você tiver alguma dúvida sobre estes termos, entre em contato conosco pelo e-mail: [allancmartins@hotmail.com](mailto:allancmartins@hotmail.com).
 
 Data de vigência: 03/03/2025

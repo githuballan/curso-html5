@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../style.css">
+
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <script src="../../script.js"></script>
+
+    <title>Transformações CSS: Aprenda a Manipular Elementos com Estilo</title>
+
+
+    <meta name="description" content="Domine a propriedade transform no CSS com exemplos interativos. Aprenda a mover, redimensionar e girar elementos sem afetar o fluxo do documento.">
+        
+    <meta name="keywords" content="transform CSS, transform translate, transform scale, transform rotate, transform origin, transform skew, transformações CSS, exemplos de transform CSS, tutorial de transform CSS, propriedades de transform CSS, funções de transform CSS, exemplo de transform origin, exemplo de transform rotate, exemplo de transform scale, exemplo de transform translate, exemplo de transform skew, múltiplas propriedades de transform CSS">
+
+    <style>/*Transform*/
+        /*Configurações Básicas*/
+        .conteiner-float{
+            width: 200px;
+            height: 138px;
+            border: 2px solid #0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+
+        <header>
+            <h1>Propriedade CSS Transform</h1>
+        </header>
+
+        <div id="button_index"></div>
+
+        <ul id="video_list">  
+             <li data-adress="https://www.youtube.com/embed/H3vi1jLohVY">propriedade transform-Serliv</li>
+
+            <li data-adress="https://www.youtube.com/embed/VwilZMUnddY?si=eazwDTFN5_Deax9b">position relative vs transform translate</li>
+        </ul>
+
+        <ul id="shortcuts">
+            <li data-adress="#translate">Transform: Translate</li>
+            <li data-adress="#scale">Transform: Scale</li>
+            <li data-adress="#rotate">Transform: Rotate</li>
+            <li data-adress="#orign">Transform: Origin</li>
+            <li data-adress="#skew">Transform: Skew</li>
+            <li data-adress="#mais-de-uma-transform">Usando mais de uma Transform</li>
+            matrix
+            <li data-adress="#matrix">Transform: Matrix</li>
+        </ul>
+
+        <div id="nav_videos"></div>
+
+        <div id="menu_acesso_rapido"></div>
+
+        <main> 
+
+            <div id="config_iframe"></div>
+
+                <h2>Transform</h2>
+
+                    <section class="introducao">
+                        <p>Vamos falar sobre a propriedade <code>transform</code> no CSS. Ela é uma ferramenta poderosa para posicionar elementos, mas ao contrário de outras propriedades, ela usa suas próprias medidas como referência. Isso é ótimo para evitar truques como margens negativas.</p>
+                        <p>Existem seis tipos principais de transformações que você pode aplicar, cada uma alterando o elemento de uma maneira única. Vamos conhecê-las:</p>
+                        <ul>
+                            <li><strong>transform: translate</strong> - Move o elemento de acordo com os eixos X e Y. É como um <code>position: relative</code>, mas sem alterar o espaço físico ao redor.</li>
+                            <li><strong>transform: scale</strong> - Redimensiona o elemento, alterando sua largura e altura. Você pode esticar ou encolher o elemento em proporções diferentes.</li>
+                            <li><strong>transform: rotate</strong> - Rotaciona o elemento em torno de um ponto fixo. Você pode girar o elemento em graus, como <code>rotate(180deg)</code>.</li>
+                            <li><strong>transform: skew</strong> - Inclina o elemento em um ângulo, distorcendo-o ao longo dos eixos X e Y.</li>
+                            <li><strong>transform: matrix</strong> - Aplica uma transformação complexa usando uma matriz de seis valores. É mais avançado e permite combinações de transformações.</li>
+                            <li><strong>transform: scale(0.5) translate(-100%, -100%)</strong> - Você pode combinar várias transformações em uma única propriedade. A ordem das transformações importa e pode afetar o resultado final.</li>
+                        </ul>
+                        <p>Vamos explorar cada uma dessas transformações com exemplos práticos para que você possa ver como elas funcionam na prática.</p>
+                    </section><!-- /.introducao -->
+
+                    <article id="translate">
+                        <h3>Transform: Translate</h3>
+                        <section>
+                            <h4>Como funciona a função translate</h4>
+                            <p>A função <code>transform: translate</code> move um elemento de acordo com os eixos X e Y. A sintaxe básica é <code>transform: translate(x, y)</code>, onde <code>x</code> e <code>y</code> são os valores de deslocamento nos eixos horizontal e vertical, respectivamente. Esses valores podem ser em unidades de medida CSS, como pixels (px), porcentagens (%), ems, etc.</p>
+                            <p>Por exemplo, <code>transform: translate(50px, 100px)</code> moverá o elemento 50 pixels para a direita e 100 pixels para baixo. Se você usar porcentagens, como <code>transform: translate(50%, 10%)</code>, o elemento será movido 50% da largura do seu próprio tamanho para a direita e 10% da altura do seu próprio tamanho para baixo.</p>
+                            <p>É importante notar que a transformação <code>translate</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                        </section>
+                     
+                
+                    <h4>Erro comum de sintaxe</h4>
+                    <p>Não pode haver espaços entre a função <code>translate</code> e os parênteses.</p>
+                       
+                    <fieldset>
+                        <legend>Exemplo Interativo</legend>
+                        <div>
+                            <label for="deslocX">Deslocamento horizontal (X):</label>
+                            <input type="number" onchange="valueMaxMin(200,-200,this)" id="deslocX" value="0">
+                            <select id="UMX" aria-label="Unidade de medida do deslocamento horizontal">
+                                <option value="%">%</option>
+                                <option value="px">px</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="y">Deslocamento vertical (Y):</label>
+                            <input type="number" oninput="valueMaxMin(200,-200,this)" id="deslocY" value="0">
+                            <select id="UMY" aria-label="Unidade de medida do deslocamento vertical">
+                                <option value="%">%</option>
+                                <option value="px">px</option>
+                            </select>
+                        </div>
+                        <p style="font-size: smaller;color: red;">Somente valores entre -200 e 200</p>
+
+                            <button onclick="
+                            document.getElementById('img-translate').style.transform = 
+                            'translate('+
+                            document.getElementById('deslocX').value + 
+                            document.getElementById('UMX').value+', '+
+                            document.getElementById('deslocY').value+
+                            document.getElementById('UMY').value+
+                            ')';
+                            document.getElementById('translate-output').value= document.getElementById('img-translate').style.transform"> Aplicar</button>
+                            <div class="pre">
+                                <pre>transform: <output id="translate-output"></output>;</pre>
+                            </div>
+
+                            <div class="conteiner-float">
+                                <img  id="img-translate" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                            </div>
+                    </fieldset>
+                        
+                        
+                    </article><!-- /#translate-->
+
+                    <article id="scale">
+                        <h3>transform scale</h3>
+                        <section>
+                            <h4>Como funciona a função scale</h4>
+                            <p>A função <code>transform: scale</code> redimensiona um elemento, alterando sua largura e altura. A sintaxe básica é <code>transform: scale(sx, sy)</code>, onde <code>sx</code> e <code>sy</code> são os fatores de escala nos eixos horizontal e vertical, respectivamente. Esses valores são multiplicadores, onde 1 significa 100% do tamanho original.</p>
+                            <p>Por exemplo, <code>transform: scale(2, 0.5)</code> dobrará a largura do elemento e reduzirá sua altura pela metade. Se você usar apenas um valor, como <code>transform: scale(1.5)</code>, o elemento será redimensionado uniformemente em ambos os eixos.</p>
+                            <p>É importante notar que a transformação <code>scale</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                        </section>
+                        <fieldset>
+                            <legend>Exemplo Interativo</legend>
+                            <div>
+                                <label for="fator-x">Fator de escala (X):</label>
+                                <input type="number" onchange="valueMaxMin(5,-5,this)" id="fator-x" value="0">
+                               
+                            </div>
+    
+                            <div>
+                                <label for="fator-y">Fator de escala (Y):</label>
+                                <input type="number" oninput="valueMaxMin(5,-5,this)" id="fator-y" value="0">
+                             
+                            </div>
+                            <p style="font-size: smaller;color: red;">Somente valores entre -5 e 5</p>
+    
+                                <button onclick="
+                                document.getElementById('img-scale').style.transform = 
+                                'scale('+
+                                document.getElementById('fator-x').value +', '+ 
+                                document.getElementById('fator-y').value+
+                                ')';
+                                document.getElementById('scale-output').value= document.getElementById('img-scale').style.transform"> Aplicar</button>
+                                <div class="pre">
+                                    <pre>transform: <output id="scale-output"></output>;</pre>
+                                </div>
+    
+                                <div class="conteiner-float">
+                                    <img  id="img-scale" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                </div>
+                        </fieldset>
+                     
+        
+                    </article><!-- /#scale -->
+
+                    <article id="rotate">
+                        <h3>transform: rotate</h3>
+                    <section>
+                        <h4>Como funciona a função rotate</h4>
+                        <p>A função <code>transform: rotate</code> gira um elemento em torno de um ponto fixo. A sintaxe básica é <code>transform: rotate(angle)</code>, onde <code>angle</code> é o valor do ângulo de rotação. Esse valor pode ser em graus (deg), radianos (rad), gradians (grad) ou voltas (turn).</p>
+                        <ul>
+                            <li><strong>graus (deg)</strong> - A unidade mais comum para rotação. Um círculo completo é 360 graus.</li>
+                            <li><strong>radianos (rad)</strong> - Uma unidade baseada no raio de um círculo. Um círculo completo é 2π radianos.</li>
+                            <li><strong>gradians (grad)</strong> - Uma unidade onde um círculo completo é 400 gradians. Usada em alguns campos de engenharia.</li>
+                            <li><strong>voltas (turn)</strong> - Uma unidade onde uma volta completa é 1 turn. Um círculo completo é 1 turn.</li>
+                        </ul>
+                        <p>Por exemplo, <code>transform: rotate(45deg)</code> girará o elemento 45 graus no sentido horário. Se você usar um valor negativo, como <code>transform: rotate(-45deg)</code>, o elemento será girado no sentido anti-horário.</p>
+                        <p>É importante notar que a transformação <code>rotate</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                    </section>
+                    <fieldset>
+                        <legend>Exemplo Interativo</legend>
+                        <div>
+                            <label for="angulo">Ângulo de rotação:</label>
+                            <input type="number" onchange="valueMaxMin(360,-360,this)" id="angulo" value="0">
+                            <select id="UMAngulo" aria-label="Unidade de medida do ângulo de rotação">
+                                <option value="deg">graus (deg)</option>
+                                <option value="rad">radianos (rad)</option>
+                                <option value="grad">gradians (grad)</option>
+                                <option value="turn">voltas (turn)</option>
+                            </select>
+                        </div>
+                        <p style="font-size: smaller;color: red;">Somente valores entre -360 e 360</p>
+
+                            <button onclick="
+                            document.getElementById('img-rotate').style.transform = 
+                            'rotate('+
+                            document.getElementById('angulo').value + 
+                            document.getElementById('UMAngulo').value+
+                            ')';
+                            document.getElementById('rotate-output').value= document.getElementById('img-rotate').style.transform"> Aplicar</button>
+                            <div class="pre">
+                                <pre>transform: <output id="rotate-output"></output>;</pre>
+                            </div>
+
+                            <div class="conteiner-float">
+                                <img  id="img-rotate" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                            </div>
+                    </fieldset>
+        
+                    </article><!-- /#rotate -->
+
+                    <article id="orign">
+                        <h3>transform: origin</h3>
+                    <section>
+                        <h4>Como funciona a função origin</h4>
+                        <p>A função <code>transform-origin</code> define a origem das transformações aplicadas a um elemento. A sintaxe básica é <code>transform-origin: x y</code>, onde <code>x</code> e <code>y</code> são os valores que determinam a posição da origem das transformações nos eixos horizontal e vertical, respectivamente. Esses valores podem ser em unidades de medida CSS, como pixels (px), porcentagens (%), ou palavras-chave como <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>, e <code>center</code>.</p>
+                        <p>Por exemplo, <code>transform-origin: 50% 50%</code> define a origem das transformações no centro do elemento. Já <code>transform-origin: left top</code> define a origem no canto superior esquerdo do elemento.</p>
+                        <p>É importante notar que a transformação <code>transform-origin</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                    </section>
+                    <fieldset>
+                        <legend>Exemplo Interativo</legend>
+                        <div>
+                            <label for="origemX">Origem horizontal (X):</label>
+                            <input type="number" onchange="valueMaxMin(100,0,this)" id="origemX" value="50">
+                            <select id="UMOrigemX" aria-label="Unidade de medida da origem horizontal">
+                                <option value="%">%</option>
+                                <option value="px">px</option>
+                                <!-- <option value="left">left</option>
+                                <option value="right">right</option>
+                                <option value="center">center</option>
+                                <option value="top">top</option>
+                                <option value="bottom">bottom</option> -->
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="origemY">Origem vertical (Y):</label>
+                            <input type="number" oninput="valueMaxMin(100,0,this)" id="origemY" value="50">
+                            <select id="UMOrigemY" aria-label="Unidade de medida da origem vertical">
+                                <option value="%">%</option>
+                                <option value="px">px</option>
+                            </select>
+                        </div>
+                        <p style="font-size: smaller;color: red;">Somente valores entre 0 e 100</p>
+
+                            <button onclick="
+                            document.getElementById('img-origin').style.transformOrigin = 
+                            document.getElementById('origemX').value + 
+                            document.getElementById('UMOrigemX').value+' '+
+                            document.getElementById('origemY').value+
+                            document.getElementById('UMOrigemY').value;
+                            document.getElementById('origin-output').value= document.getElementById('img-origin').style.transformOrigin"> Aplicar</button>
+                            <div class="pre">
+                                <pre>
+transform-origin: <output id="origin-output"></output>;
+transform:rotate(90deg);
+                            </pre>
+                            </div>
+
+                            <div class="conteiner-float">
+                                <img style="transform:rotate(45deg);"  id="img-origin" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                            </div>
+                        
+        
+                    </article><!-- /#orign -->
+
+                    <article id="skew">
+                        <h3>skew</h3>
+                      
+                    <section>
+                        <h4>Como funciona a função skew</h4>
+                        <p>A função <code>transform: skew</code> inclina um elemento em um ângulo, distorcendo-o ao longo dos eixos X e Y. A sintaxe básica é <code>transform: skew(ax, ay)</code>, onde <code>ax</code> e <code>ay</code> são os ângulos de inclinação nos eixos horizontal e vertical, respectivamente. Esses valores podem ser em graus (deg).</p>
+                        <p>Por exemplo, <code>transform: skew(30deg, 20deg)</code> inclinará o elemento 30 graus ao longo do eixo X e 20 graus ao longo do eixo Y. Se você usar apenas um valor, como <code>transform: skew(30deg)</code>, o elemento será inclinado apenas ao longo do eixo X.</p>
+                        <p>É importante notar que a transformação <code>skew</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                    </section>
+                       
+                    <fieldset>
+                        <legend>Exemplo Interativo</legend>
+                        <div>
+                            <label for="anguloX">Ângulo de inclinação horizontal (X):</label>
+                            <input type="number" onchange="valueMaxMin(90,-90,this)" id="anguloX" value="0">
+                            <select id="UMAnguloX" aria-label="Unidade de medida do ângulo de inclinação horizontal">
+                                <option value="deg">graus (deg)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="anguloY">Ângulo de inclinação vertical (Y):</label>
+                            <input type="number" oninput="valueMaxMin(90,-90,this)" id="anguloY" value="0">
+                            <select id="UMAnguloY" aria-label="Unidade de medida do ângulo de inclinação vertical">
+                                <option value="deg">graus (deg)</option>
+                            </select>
+                        </div>
+                        <p style="font-size: smaller;color: red;">Somente valores entre -90 e 90</p>
+
+                            <button onclick="
+                            document.getElementById('img-skew').style.transform = 
+                            'skew('+
+                            document.getElementById('anguloX').value + 
+                            document.getElementById('UMAnguloX').value+', '+
+                            document.getElementById('anguloY').value+
+                            document.getElementById('UMAnguloY').value+
+                            ')';
+                            document.getElementById('skew-output').value= document.getElementById('img-skew').style.transform"> Aplicar</button>
+                            <div class="pre">
+                                <pre>transform: <output id="skew-output"></output>;</pre>
+                            </div>
+
+                            <div class="conteiner-float">
+                                <img  id="img-skew" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                            </div>
+                    </fieldset>
+                    
+        
+                    </article><!-- /#skew -->
+                    
+                    <article id="mais-de-uma-transform">
+                        <h3>Usando mais de uma transform</h3>
+                        <section>
+                            <h4>Como usar mais de uma propriedade transform</h4>
+                            <p>Você pode combinar várias transformações em uma única propriedade <code>transform</code>. Basta separar cada transformação com um espaço. A ordem das transformações é importante e pode afetar o resultado final.</p>
+                            <p>Por exemplo, <code>transform: rotate(45deg) scale(1.5) translate(50px, 100px)</code> primeiro girará o elemento 45 graus, depois redimensionará o elemento em 1.5 vezes o seu tamanho original e, por fim, moverá o elemento 50 pixels para a direita e 100 pixels para baixo.</p>
+                            <p>É importante notar que a transformação <code>transform</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                        </section>
+                        <p>Exemplo:</p>
+                        <div class="conteiner-float">
+                            <img style="transform-origin: right top;
+            transform:scale(.5,.3)translate(50%, 50%)rotate(180deg) ;" class="div-img-mais" src="../../imagens/elephant-1822636_960_720.jpg" alt="Logo fire fox para exemplo">
+                    </div>
+                    <p>O comando:</p>
+                    <div class="pre">
+                        <pre>
+        
+
+transform-origin: right top;
+transform:scale(.5,.3)translate(50%, 50%)rotate(180deg) ;
+border: 1px solid ;
+        
+                        </pre>
+                    </div>
+                   
+                    </article><!-- /#mais-de-uma-transform -->
+
+                    <article id="matrix">
+                        <h3>Transform: Matrix</h3>
+                        <section>
+                            <h4>Como funciona a função matrix</h4>
+                            <p>A função <code>transform: matrix</code> permite aplicar uma transformação complexa a um elemento usando uma matriz de seis valores. A sintaxe básica é <code>transform: matrix(a, b, c, d, e, f)</code>, onde cada valor representa uma parte da transformação:</p>
+                            <ul>
+                                <li><strong>a</strong> - Escala horizontal (similar a <code>scaleX</code>)</li>
+                                <li><strong>b</strong> - Inclinação horizontal (similar a <code>skewY</code>)</li>
+                                <li><strong>c</strong> - Inclinação vertical (similar a <code>skewX</code>)</li>
+                                <li><strong>d</strong> - Escala vertical (similar a <code>scaleY</code>)</li>
+                                <li><strong>e</strong> - Deslocamento horizontal (similar a <code>translateX</code>)</li>
+                                <li><strong>f</strong> - Deslocamento vertical (similar a <code>translateY</code>)</li>
+                            </ul>
+                            <p>Por exemplo, <code>transform: matrix(1, 0.5, -0.5, 1, 100, 50)</code> aplicará uma transformação que inclui inclinação, escala e deslocamento ao elemento.</p>
+                            <p>É importante notar que a transformação <code>matrix</code> não afeta o fluxo do documento. Isso significa que o espaço original ocupado pelo elemento permanece o mesmo, e outros elementos ao redor não são reposicionados.</p>
+                        </section>
+                        <fieldset>
+                            <legend>Exemplo Interativo</legend>
+                            <div>
+                                <label for="a">Escala horizontal (a):</label>
+                                <input type="number" onchange="valueMaxMin(5,-5,this)" id="a" value="1">
+                            </div>
+                            <div>
+                                <label for="b">Inclinação horizontal (b):</label>
+                                <input type="number" oninput="valueMaxMin(5,-5,this)" id="b" value="0">
+                            </div>
+                            <div>
+                                <label for="c">Inclinação vertical (c):</label>
+                                <input type="number" oninput="valueMaxMin(5,-5,this)" id="c" value="0">
+                            </div>
+                            <div>
+                                <label for="d">Escala vertical (d):</label>
+                                <input type="number" onchange="valueMaxMin(5,-5,this)" id="d" value="1">
+                            </div>
+                            <div>
+                                <label for="e">Deslocamento horizontal (e):</label>
+                                <input type="number" onchange="valueMaxMin(200,-200,this)" id="e" value="0">
+                            </div>
+                            <div>
+                                <label for="f">Deslocamento vertical (f):</label>
+                                <input type="number" oninput="valueMaxMin(200,-200,this)" id="f" value="0">
+                            </div>
+                            <p style="font-size: smaller;color: red;">Somente valores entre -5 e 5 para 'a', 'b', 'c' e 'd' e entre -200 e 200 para 'e' e 'f'</p>
+    
+                                <button onclick="
+                                document.getElementById('img-matrix').style.transform = 
+                                'matrix('+
+                                document.getElementById('a').value +', '+
+                                document.getElementById('b').value +', '+
+                                document.getElementById('c').value +', '+
+                                document.getElementById('d').value +', '+
+                                document.getElementById('e').value +', '+
+                                document.getElementById('f').value +
+                                ')';
+                                document.getElementById('matrix-output').value= document.getElementById('img-matrix').style.transform"> Aplicar</button>
+                                <div class="pre">
+                                    <pre>transform: <output id="matrix-output"></output>;</pre>
+                                </div>
+    
+                                <div class="conteiner-float">
+                                    <img id="img-matrix" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                </div>
+                        </fieldset></div>
+
+
+
+                    </article><!-- /#matrix -->
+
+                    
+         </main>
+       
+        <footer>
+           
+        </footer>
+
+    </body>
+</html>
