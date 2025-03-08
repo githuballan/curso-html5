@@ -16,7 +16,7 @@
 
     <meta name="description" content="Domine a propriedade transform no CSS com exemplos interativos. Aprenda a mover, redimensionar e girar elementos sem afetar o fluxo do documento.">
         
-    <meta name="keywords" content="transform CSS, transform translate, transform scale, transform rotate, transform origin, transform skew, transformações CSS, exemplos de transform CSS, tutorial de transform CSS, propriedades de transform CSS, funções de transform CSS, exemplo de transform origin, exemplo de transform rotate, exemplo de transform scale, exemplo de transform translate, exemplo de transform skew, múltiplas propriedades de transform CSS">
+    <meta name="keywords" content="transform CSS, transform translate, transform scale, transform rotate, transform origin, transform skew, transformações CSS, exemplos de transform CSS, tutorial de transform CSS, propriedades de transform CSS, funções de transform CSS, funcionamento de transform origin, funcionamento de transform rotate, funcionamento de transform scale, funcionamento de transform translate, funcionamento de transform skew, múltiplas propriedades de transform CSS">
 
     <style>/*Transform*/
         /*Configurações Básicas*/
@@ -25,6 +25,19 @@
             height: 138px;
             border: 2px solid #0f0;
         }
+        .conteiner-float>img{
+            width: 200px;
+            
+        }
+
+        .aviso-valores-input{
+            color: rgb(0, 0, 0);
+            font-size: smaller;
+            
+        }
+        .aviso-valores-input::before{
+                content: "⚠️";
+            }
     </style>
 </head>
 
@@ -103,14 +116,14 @@
                         </div>
 
                         <div>
-                            <label for="y">Deslocamento vertical (Y):</label>
+                            <label for="deslocY">Deslocamento vertical (Y):</label>
                             <input type="number" oninput="valueMaxMin(200,-200,this)" id="deslocY" value="0">
                             <select id="UMY" aria-label="Unidade de medida do deslocamento vertical">
                                 <option value="%">%</option>
                                 <option value="px">px</option>
                             </select>
                         </div>
-                        <p style="font-size: smaller;color: red;">Somente valores entre -200 e 200</p>
+                        <p class="aviso-valores-input">Somente valores entre -200 e 200</p>
 
                             <button onclick="
                             document.getElementById('img-translate').style.transform = 
@@ -126,7 +139,7 @@
                             </div>
 
                             <div class="conteiner-float">
-                                <img  id="img-translate" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                <img  id="img-translate" src="../../imagens/elephant-1822636_960_720.webp" alt="Imagem de elefante na mata sendo usada como exemplo">
                             </div>
                     </fieldset>
                         
@@ -154,7 +167,7 @@
                                 <input type="number" oninput="valueMaxMin(5,-5,this)" id="fator-y" value="0">
                              
                             </div>
-                            <p style="font-size: smaller;color: red;">Somente valores entre -5 e 5</p>
+                            <p class="aviso-valores-input">Somente valores entre -5 e 5</p>
     
                                 <button onclick="
                                 document.getElementById('img-scale').style.transform = 
@@ -168,7 +181,7 @@
                                 </div>
     
                                 <div class="conteiner-float">
-                                    <img  id="img-scale" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                    <img  id="img-scale" src="../../imagens/elephant-1822636_960_720.webp" alt="Imagem de elefante na mata sendo usada como exemplo">
                                 </div>
                         </fieldset>
                      
@@ -201,7 +214,7 @@
                                 <option value="turn">voltas (turn)</option>
                             </select>
                         </div>
-                        <p style="font-size: smaller;color: red;">Somente valores entre -360 e 360</p>
+                        <p class="aviso-valores-input">Somente valores entre -360 e 360</p>
 
                             <button onclick="
                             document.getElementById('img-rotate').style.transform = 
@@ -215,7 +228,7 @@
                             </div>
 
                             <div class="conteiner-float">
-                                <img  id="img-rotate" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                <img  id="img-rotate" src="../../imagens/elephant-1822636_960_720.webp" alt="Imagem de elefante na mata sendo usada como exemplo">
                             </div>
                     </fieldset>
         
@@ -253,7 +266,7 @@
                                 <option value="px">px</option>
                             </select>
                         </div>
-                        <p style="font-size: smaller;color: red;">Somente valores entre 0 e 100</p>
+                        <p class="aviso-valores-input">Somente valores entre 0 e 100</p>
 
                             <button onclick="
                             document.getElementById('img-origin').style.transformOrigin = 
@@ -270,7 +283,7 @@ transform:rotate(90deg);
                             </div>
 
                             <div class="conteiner-float">
-                                <img style="transform:rotate(45deg);"  id="img-origin" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                <img style="transform:rotate(45deg);"  id="img-origin" src="../../imagens/elephant-1822636_960_720.webp" alt="Imagem de elefante na mata sendo usada como exemplo">
                             </div>
                         
         
@@ -303,7 +316,7 @@ transform:rotate(90deg);
                                 <option value="deg">graus (deg)</option>
                             </select>
                         </div>
-                        <p style="font-size: smaller;color: red;">Somente valores entre -90 e 90</p>
+                        <p class="aviso-valores-input">Somente valores entre -90 e 90</p>
 
                             <button onclick="
                             document.getElementById('img-skew').style.transform = 
@@ -319,7 +332,7 @@ transform:rotate(90deg);
                             </div>
 
                             <div class="conteiner-float">
-                                <img  id="img-skew" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                <img  id="img-skew" src="../../imagens/elephant-1822636_960_720.webp" alt="Imagem de elefante na mata sendo usada como exemplo">
                             </div>
                     </fieldset>
                     
@@ -337,7 +350,7 @@ transform:rotate(90deg);
                         <p>Exemplo:</p>
                         <div class="conteiner-float">
                             <img style="transform-origin: right top;
-            transform:scale(.5,.3)translate(50%, 50%)rotate(180deg) ;" class="div-img-mais" src="../../imagens/elephant-1822636_960_720.jpg" alt="Logo fire fox para exemplo">
+            transform:scale(.5,.3)translate(50%, 50%)rotate(180deg) ;" class="div-img-mais" src="../../imagens/elephant-1822636_960_720.webp" alt="Logo fire fox para exemplo">
                     </div>
                     <p>O comando:</p>
                     <div class="pre">
@@ -395,7 +408,7 @@ border: 1px solid ;
                                 <label for="f">Deslocamento vertical (f):</label>
                                 <input type="number" oninput="valueMaxMin(200,-200,this)" id="f" value="0">
                             </div>
-                            <p style="font-size: smaller;color: red;">Somente valores entre -5 e 5 para 'a', 'b', 'c' e 'd' e entre -200 e 200 para 'e' e 'f'</p>
+                            <p class="aviso-valores-input">Somente valores entre -5 e 5 para 'a', 'b', 'c' e 'd' e entre -200 e 200 para 'e' e 'f'</p>
     
                                 <button onclick="
                                 document.getElementById('img-matrix').style.transform = 
@@ -413,7 +426,7 @@ border: 1px solid ;
                                 </div>
     
                                 <div class="conteiner-float">
-                                    <img id="img-matrix" src="../../imagens/elephant-1822636_960_720.jpg" alt="Imagem de elefante na mata sendo usada como exemplo">
+                                    <img id="img-matrix" src="../../imagens/elephant-1822636_960_720.webp" alt="Imagem de elefante na mata sendo usada como exemplo">
                                 </div>
                         </fieldset></div>
 

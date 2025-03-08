@@ -1,5 +1,67 @@
 var itemArray = [];
+function createLinkToVideos() {
 
+  const navVideos= document.getElementById('nav_videos');
+ if(navVideos!==null){
+navVideos.innerHTML = `
+<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" aria-label="Abrir menu de vídeos" id="botao_menu-videos" class="buttom-videos"
+style=" width: 45px; height: 30px;" onclick="exibir(this)">
+
+<ul id="lista_videos"></ul>
+`;
+
+  // Seleciona todos os elementos <li> dentro da <ul>
+  const videoList = document.getElementById('video_list');
+  let item = videoList.getElementsByTagName('li');
+  var itemArray = [...item];
+ 
+
+  var navList = document.getElementById('lista_videos');
+ 
+  
+  itemArray.forEach((item) => {
+      let newLi = document.createElement('li');
+     
+      newLi.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this);toggleFixarSoltarAposRolarPag()" data-video-src="${item.getAttribute('data-adress')}">${item.textContent}</ins>`;
+      navList.appendChild(newLi);
+  });
+  // iframeload
+  // iframeload(navList.firstElementChild.firstElementChild);
+}}
+
+function createTelaVideo(){
+  const configIframe = document.getElementById('config_iframe');
+  if(configIframe!==null){
+  let tela=document.createElement('div');
+  tela.id = 'tela_iframe';
+  configIframe.appendChild(tela);
+  tela.innerHTML = `<iframe id="iframev" width="867" height="490" src="../../inicio-iframe.html" title="Criando conta no GitHub - @Curso em Vídeo HTML5 e CSS3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  let controle=document.createElement('div');
+  controle.id = 'controles_iframe';
+  configIframe.appendChild(controle);
+  controle.innerHTML = `
+  <button  id="botao_fixa_solta" onclick="toggleIframePosition(this)">Fixar</button>
+
+    <input itemid="range_video" style="width:calc(100% - 130px); display: inline-block" type="range" id="range_video" value="100" min="30" max="100" aria-label="Ajustar tamanho do vídeo" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
+
+    <img id="pip" aria-label="Modo pictur-in-picture" style=" width: 50px; height: 30px; margin: 10px 0px -5px 0px;" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
+   ">
+    
+    <img id="pipout" aria-label="Sair do modo pictur-in-picture"  style=" width: 50px; height: 30px;" src="../../imagens/pipout.svg" onclick="botaoGetOutPip()" alt="botão pipout">
+</div>
+  `;
+//Lembrar de colocar o src do iframe igual ao primeiro video da lista usando o array de videos
+
+}}
+window.addEventListener('load', () => {
+  createTelaVideo();
+  createIndexButton();
+  createLinkToVideos();
+  createMenuAcessoRapido();
+  footer();
+  head();
+  createGoogleTagScript();
+});
 
 function exibir(x){
    let k = x.nextElementSibling;
@@ -78,61 +140,6 @@ function createGoogleTagScript() {
   }
   console.log('Google Tag adicionado.');
 }
-
-function createLinkToVideos() {
-
-  const navVideos= document.getElementById('nav_videos');
- if(navVideos!==null){
-navVideos.innerHTML = `
-<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" aria-label="Abrir menu de vídeos" id="botao_menu-videos" class="buttom-videos"
-style=" width: 45px; height: 30px;" onclick="exibir(this)">
-
-<ul id="lista_videos"></ul>
-`;
-
-  // Seleciona todos os elementos <li> dentro da <ul>
-  const videoList = document.getElementById('video_list');
-  let item = videoList.getElementsByTagName('li');
-  var itemArray = [...item];
- 
-
-  var navList = document.getElementById('lista_videos');
- 
-  
-  itemArray.forEach((item) => {
-      let newLi = document.createElement('li');
-     
-      newLi.innerHTML = `<ins class="link-vid-sqn" onclick="clicador('botao_menu-videos'); iframeload(this);toggleFixarSoltarAposRolarPag()" data-video-src="${item.getAttribute('data-adress')}">${item.textContent}</ins>`;
-      navList.appendChild(newLi);
-  });
-  // iframeload
-  // iframeload(navList.firstElementChild.firstElementChild);
-}}
-
-function createTelaVideo(){
-  const configIframe = document.getElementById('config_iframe');
-  if(configIframe!==null){
-  let tela=document.createElement('div');
-  tela.id = 'tela_iframe';
-  configIframe.appendChild(tela);
-  tela.innerHTML = `<iframe id="iframev" width="867" height="490" src="../../inicio-iframe.html" title="Criando conta no GitHub - @Curso em Vídeo HTML5 e CSS3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-  let controle=document.createElement('div');
-  controle.id = 'controles_iframe';
-  configIframe.appendChild(controle);
-  controle.innerHTML = `
-  <button  id="botao_fixa_solta" onclick="toggleIframePosition(this)">Fixar</button>
-
-    <input itemid="range_video" style="width:calc(100% - 130px); display: inline-block" type="range" id="range_video" value="100" min="30" max="100" aria-label="Ajustar tamanho do vídeo" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
-
-    <img id="pip" aria-label="Modo pictur-in-picture" style=" width: 50px; height: 30px; margin: 10px 0px -5px 0px;" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
-   ">
-    
-    <img id="pipout" aria-label="Sair do modo pictur-in-picture"  style=" width: 50px; height: 30px;" src="../../imagens/pipout.svg" onclick="botaoGetOutPip()" alt="botão pipout">
-</div>
-  `;
-//Lembrar de colocar o src do iframe igual ao primeiro video da lista usando o array de videos
-
-}}
 
 function createMenuAcessoRapido(){
   var MenuAcessoRapido=document.getElementById('menu_acesso_rapido');
@@ -230,15 +237,7 @@ function footer(){
 
 }
 
-window.addEventListener('load', () => {
-  createIndexButton();
-  createTelaVideo();
-  createLinkToVideos();
-  createMenuAcessoRapido();
-  footer();
-  head();
-  createGoogleTagScript();
-});
+
 
 function botaoPip() {
   const configIframe = document.getElementById('config_iframe');
