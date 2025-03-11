@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+:root{
+    --width: 100%;
+}
 
 
 @media only screen and (max-width: 1099px)/* Número mágico, se alterar esse vlaor deverá alterar o valor da função clicante também e obviamente do outro media querry também*/ {
@@ -50,7 +53,9 @@
         z-index: 20;
         }
 
-       
+        #config_iframe{
+            min-height: 200px;
+        }
 }/*    media até 1099px*/
 
 @media only screen and (min-width: 1100px) {
@@ -87,6 +92,9 @@
         top: 15px;
     }
 
+    #config_iframe{
+        min-height: 550px;
+    }
 
 
 }/*    media maior que 1099px*/

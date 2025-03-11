@@ -4,10 +4,9 @@ function createLinkToVideos() {
   const navVideos= document.getElementById('nav_videos');
  if(navVideos!==null){
 navVideos.innerHTML = `
-<img src="../../icones/YouTube_icon_(2013-2017).png" alt="Play" aria-label="Abrir menu de vídeos" id="botao_menu-videos" class="buttom-videos"
-style=" width: 45px; height: 30px;" onclick="exibir(this)">
-
-<ul id="lista_videos"></ul>
+<img src="../../icones/YouTube_icon_(2013-2017).webp" alt="Play" aria-label="Abrir menu de vídeos" id="botao_menu-videos" class="buttom-videos"
+style=" width: 48px; height: 34px;" onclick="exibir(this)">
+<nav id="lista_videos"></nav>
 `;
 
   // Seleciona todos os elementos <li> dentro da <ul>
@@ -31,6 +30,7 @@ style=" width: 45px; height: 30px;" onclick="exibir(this)">
 
 function createTelaVideo(){
   const configIframe = document.getElementById('config_iframe');
+  configIframe.style.minHeight = "50px"; //para não dar erro no console ao usar o range pois foi definida uma altura mínima no  style do config_iframe na folha de estilo css afim de não criar modificçãoes no layout no carregamento da página.
   if(configIframe!==null){
   let tela=document.createElement('div');
   tela.id = 'tela_iframe';
@@ -63,6 +63,24 @@ window.addEventListener('load', () => {
   createGoogleTagScript();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const version = new Date().getTime(); // Usando timestamp como versão
+
+  // Atualizar links de CSS
+  const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+  cssLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.setAttribute('href', `${href}?v=${version}`);
+  });
+
+  // Atualizar links de JavaScript
+  const scripts = document.querySelectorAll('script[src]');
+  scripts.forEach(script => {
+      const src = script.getAttribute('src');
+      script.setAttribute('src', `${src}?v=${version}`);
+  });
+});
+
 function exibir(x){
    let k = x.nextElementSibling;
     
@@ -74,6 +92,7 @@ function exibir(x){
 function toggleMenu(x) {
   x.classList.toggle("change");
 }
+
 function clicador(id){
   let ondeClickar = document.getElementById(id);
   if (ondeClickar) {
@@ -149,7 +168,7 @@ function createMenuAcessoRapido(){
         <div class="bar2"></div>
         <div class="bar3"></div>
     </button>
-    <ul id="shortcuts_list"></ul>
+    <nav id="shortcuts_list"></nav>
     `;
     
     
@@ -212,8 +231,6 @@ function createIndexButton(){
 }
 }
 
-
-
 function head(){
   let head = document.getElementsByTagName('head')[0];
 console.log(head);
@@ -236,8 +253,6 @@ function footer(){
   footer.innerHTML = `<p>&copy; 2025 Allan Cavalcanti. Todos os direitos reservados. <a href="../../termos-de-uso.md">Termos de Uso</a></p>`;
 
 }
-
-
 
 function botaoPip() {
   const configIframe = document.getElementById('config_iframe');

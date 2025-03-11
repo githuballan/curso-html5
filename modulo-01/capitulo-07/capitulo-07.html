@@ -83,163 +83,174 @@
             <article id="head">
                 <h2>Elementos do Head</h2>
                 <section id="head-intro">
-                    <p>O <code>head</code> é a parte onde ficam todas as configurações iniciais de um HTML. Aqui declaramos configurações que fornecem informações importantes para os motores de busca, entre outras configurações.</p>
+                    <p>O <code>head</code> é a seção do HTML onde colocamos todas as configurações iniciais do documento. Aqui, declaramos informações importantes para os motores de busca e outras configurações essenciais que ajudam a definir como a página será exibida e interpretada.</p>
+                    <p>Por exemplo, dentro do <code>head</code>, você pode definir o título da página, que é exibido na aba do navegador, e incluir metatags que fornecem informações sobre o conteúdo da página. Essas metatags são cruciais para o SEO, pois ajudam os motores de busca a entenderem melhor o conteúdo e a relevância da sua página.</p>
+                    <p>Vamos ver um exemplo simples de como o <code>head</code> pode ser estruturado:</p>
+                    <div class="pre"><pre>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+    &lt;meta name="description" content="Descrição da página para SEO"&gt;
+    &lt;meta name="keywords" content="palavras-chave, separadas, por, vírgulas"&gt;
+&lt;/head&gt;</pre></div>
+                    <p>Como você pode ver, o <code>head</code> é essencial para configurar corretamente a sua página e garantir que ela seja bem interpretada tanto pelos navegadores quanto pelos motores de busca.</p>
                 </section>
                
                 <section id="title">
-                    <h4>&lt;title&gt;xxx&lt;/title&gt;</h4>
+                    <h3>&lt;title&gt;xxx&lt;/title&gt;</h3>
                     <p>A tag <code>&lt;title&gt;</code> define o título que será exibido na aba do navegador. Veja o exemplo abaixo:</p>
                     <div class="img">
                         <figcaption><img src="imagens/title-no-navegador.png" alt="Exibição do title no navegador">
                         <legend>Exibição do título na aba do navegador</legend>
                         </figcaption>
                     </div>
-                    <p>Além disso, o título é um dos elementos mais importantes para os mecanismos de busca (SEO). Ele ajuda a determinar a relevância da página nos resultados de pesquisa. Veja como o título aparece nos resultados de busca:</p>
+                    <p>Além disso, o título é um dos elementos mais importantes para os mecanismos de busca (SEO). Ele ajuda a determinar a relevância da página nos resultados de pesquisa. Veja como o título aparece (em azul) nos resultados de busca:</p>
                     <div class="img">
-                        <figcaption><img src="imagens/title-no-google.png" alt="Exibição do title no Google">
+                        <figcaption><img src="imagens/title-no-google.webp" alt="Exibição do title no Google">
                         <legend>Exibição do título nos resultados de busca do Google</legend>
                         </figcaption>
                     </div>
                     <p>Portanto, é essencial que o título seja descritivo e contenha palavras-chave relevantes para melhorar o ranqueamento da página.</p>
-                   
                 </section>
                 
                 <section id="metatag">
+
                     <h3>Metatags</h3>
+
                     <section id="metatag-intro">
-                        <p>Metatags servem para fazermos as configurações do próprio documento no documento.</p>
-                    </section>
+                        <p>As metatags são usadas para configurar o próprio documento HTML. Elas fornecem informações importantes para os motores de busca e ajudam a definir como o conteúdo deve ser exibido.</p>
+                    </section><!--metatag-intro-->
+
                     <section id="charset">
                         <h4>Charset</h4>
-                        <p>Essa configuração <code>meta</code> define qual padrão de caracteres usaremos em nossa página. No Brasil, devemos usar sempre o UTF-8, pois é o que engloba acentuações, til, cedilha, etc.</p>
-                        <p>Quando usamos o charset errado, o navegador não interpreta esses caracteres e a página fica cheia de erros no texto.</p>
-                        <p>O comando:</p>
-                        <pre>&lt;meta charset="UTF-8"&gt;</pre>
-                    </section>
+                        <p>A metatag <code>charset</code> define o padrão de caracteres usado na página. No Brasil, devemos usar sempre o UTF-8, pois ele suporta acentuações, til, cedilha, etc.</p>
+                        <p>Quando usamos o charset errado, o navegador não interpreta esses caracteres corretamente, resultando em erros no texto.</p>
+                        <p>O código:</p>
+                        <div class="pre"><pre>&lt;meta charset="UTF-8"&gt;</pre></div>
+                    </section><!--charset-->
+
                     <section id="viewport">
                         <h4>Viewport</h4>
-                        <p>Essa <code>meta</code> pega a largura do navegador e adapta o conteúdo do site a essa largura, tornando o site mais responsivo.</p>
+                        <p>A metatag <code>viewport</code> ajusta a largura do navegador para adaptar o conteúdo do site, tornando-o mais responsivo.</p>
                         <p>Esse é um dos principais diferenciais do HTML5.</p>
-                        <p>O comando:</p>
+                        <p>O código:</p>
                         <div class="pre"><pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre></div>
-                    </section>
+                    </section><!--viewport-->
+
                     <section id="description">
                         <h4>Description</h4>
-                        <p>A meta tag <code>description</code> é crucial para o SEO, pois ela define a descrição que aparece nos resultados de busca, logo abaixo do título do site. Veja o exemplo abaixo:</p>
+                        <p>A metatag <code>description</code> é crucial para o SEO, pois define a descrição que aparece nos resultados de busca, logo abaixo do título do site. Veja o exemplo abaixo:</p>
                         <div class="img">
-                            <figcaption><img src="imagens/title-no-google.png" alt="Exibição da descrição no Google">
+                            <figcaption><img src="imagens/title-no-google.webp" alt="Exibição da descrição no Google">
                             <legend>Exibição da descrição nos resultados de busca do Google</legend>
                             </figcaption>
                         </div>
-                        <p>É importante criar uma descrição atraente e relevante para aumentar a chance de cliques no seu site. Veja como usar essa meta tag:</p>
+                        <p>É importante criar uma descrição atraente e relevante para aumentar a chance de cliques no seu site. Veja como usar essa metatag:</p>
                         <div class="pre">
                             <pre>&lt;meta name="description" content="Tudo que você precisa conhecer sobre tags semânticas do HTML5"&gt;</pre>
                         </div>
-                        <p class="mark">As três meta tags que vimos até agora (charset, viewport e description) são incluídas automaticamente quando iniciamos um documento HTML5 digitando "!". As próximas meta tags não são adicionadas por padrão, mas é uma excelente prática incluí-las em todos os sites que criarmos.</p>
-                    </section>
+                        
+                    </section><!--description-->
+
                     <section id="keyword">
                         <h4>Keywords</h4>
-                        <p>Essa tag é responsável pelas palavras-chave que puxarão essa página para ser exibida no Google.</p>
-                        <p>Essa e a meta description são técnicas diretamente ligadas a SEO e super importantes para um bom ranqueamento do site.</p>
+                        <p>A metatag <code>keywords</code> define as palavras-chave que ajudarão a página a ser exibida nos resultados de busca.</p>
+                        <p>Essa metatag, junto com a <code>description</code>, é uma técnica diretamente ligada ao SEO e super importante para um bom ranqueamento do site.</p>
                         <div class="pre">
                             <pre>&lt;meta name="keywords" content="Peixes, neon, betta, filtros, ph, kh, dureza, aquarismo, aquainfo"&gt;</pre>
                         </div>
-                    </section>
+                    </section><!--keyword-->
+
                     <section id="author">
                         <h4>Author</h4>
-                        <p>A meta tag <code>author</code> define o autor do documento. Embora não tenha um impacto direto no SEO, é uma boa prática incluí-la para fornecer informações adicionais sobre o autor do conteúdo.</p>
+                        <p>A metatag <code>author</code> define o autor do documento. Embora não tenha um impacto direto no SEO, é uma boa prática incluí-la para fornecer informações adicionais sobre o autor do conteúdo.</p>
                         <div class="pre">
                             <pre>&lt;meta name="author" content="Seu Nome"&gt;</pre>
                         </div>
-                    </section>
+                    </section><!--author-->
+
                     <section id="robots">
                         <h4>Robots</h4>
-                        <p>A meta tag <code>robots</code> é usada para controlar o comportamento dos mecanismos de busca em relação à indexação e ao seguimento de links na página. Ela pode ser usada para permitir ou impedir a indexação da página e o seguimento de links.</p>
+                        <p>A metatag <code>robots</code> é usada para controlar o comportamento dos mecanismos de busca em relação à indexação e ao seguimento de links na página. Ela pode ser usada para permitir ou impedir a indexação da página e o seguimento de links.</p>
                         <div class="pre">
                             <pre>&lt;meta name="robots" content="index, follow"&gt;</pre>
                         </div>
-                    </section>
-                    <section id="canonical">
-                        <h4>Canonical</h4>
-                        <p>A tag <code>link rel="canonical"</code> é usada para indicar a URL canônica de uma página. Isso ajuda a evitar problemas de conteúdo duplicado, informando aos mecanismos de busca qual é a versão principal da página.</p>
-                        <div class="pre">
-                            <pre>&lt;link rel="canonical" href="https://www.exemplo.com/pagina-principal"&gt;</pre>
-                        </div>
-                    </section>
-
-                 
-                
-                    
-                   
-                    
-                 
-                    
-                   
-                    
-                
+                    </section><!--robots-->
                 </section><!--metatag-->
+
             </article><!--head-->
             
             <article id="body">
                 <h2>Elementos do Body</h2>
+                <section id="body-intro">
+                    <p>O <code>body</code> é a parte do HTML onde colocamos todo o conteúdo visível da página. É aqui que declaramos os elementos que serão exibidos no navegador, como textos, imagens, links, vídeos e muito mais. Pense no <code>body</code> como o palco onde toda a ação acontece.</p>
+                    <p>Por exemplo, se você quiser adicionar um parágrafo ou uma imagem, ou um link. Cada um desses elementos é colocado dentro do <code>body</code> para que possam ser exibidos ao usuário.</p>
+                    <p>Vamos ver um exemplo simples:</p>
+                    <div class="pre"><pre>&lt;body&gt;
+    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+    &lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;
+    &lt;a href="https://www.exemplo.com"&gt;Visite nosso site&lt;/a&gt;
+&lt;/body&gt;</pre></div>
+                    <p>Como você pode ver, o <code>body</code> é essencial para estruturar e organizar o conteúdo que será apresentado ao usuário. É importante lembrar que tudo o que você deseja que apareça na página deve estar dentro do <code>body</code>.</p>
+                </section>
                 <section id="header">
-                    <h4>Header</h4>
+                    <h3>Header</h3>
                     <p><strong>Cabeçalho:</strong> A porta de entrada do site, a primeira coisa que o cliente vê ao carregar a página. Deve ser sempre bem feito.</p>
-                    <p>Entretanto, é possível usar essa tag em <code>article</code> no meio da tag <code>main</code> ou <code>section</code>, dependendo da necessidade.</p>
+                    <p>Embora o <code>&lt;header&gt;</code> seja geralmente usado no topo da página, você pode utilizá-lo em outras partes do documento, como dentro de um <code>&lt;article&gt;</code>, <code>&lt;main&gt;</code> ou <code>&lt;section&gt;</code>, conforme a necessidade. Por exemplo, em um blog, cada post pode ter seu próprio <code>&lt;header&gt;</code> com o título e a data de publicação. Isso ajuda a organizar o conteúdo e a torná-lo mais acessível e compreensível tanto para os usuários quanto para os mecanismos de busca.</p>
                 </section>
                 <section id="main">
-                    <h4>Main</h4>
-                    <p><strong>Principal:</strong> É onde fica o conteúdo principal do site, o foco.</p>
+                    <h3>Main</h3>
+                    <p>A tag <code>&lt;main&gt;</code> é usada para envolver o conteúdo principal do site, ou seja, o foco principal da página. Ela ajuda os mecanismos de busca e tecnologias assistivas a entenderem qual é a parte mais importante do conteúdo. Por exemplo, em um site de notícias, a tag <code>&lt;main&gt;</code> pode envolver os artigos e reportagens, enquanto em um blog, ela pode envolver as postagens.</p>
                 </section>
                 <section id="footer">
-                    <h4>Footer</h4>
-                    <p><strong>Rodapé:</strong> Uma das principais tags semânticas de uma página, pois define o local do rodapé e deixamos algumas informações que não possuem relação com o conteúdo principal.</p>
+                    <h3>Footer</h3>
+                    <p>O rodapé é uma das principais tags semânticas de uma página. Ele define a área do rodapé, onde geralmente colocamos informações adicionais que não estão diretamente relacionadas ao conteúdo principal, como links para políticas de privacidade, informações de contato, ou direitos autorais.</p>
                 </section>
                 <section id="titles">
-                    <h4>Títulos</h4>
+                    <h3>Títulos</h3>
                     <p>Os títulos são elementos de texto que indicam a importância de uma seção ou de um conteúdo específico. Eles são usados para estruturar o conteúdo da página e facilitar a leitura e a compreensão do usuário.</p>
                     <p>Os títulos são divididos em seis níveis de importância, de <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>. O <code>&lt;h1&gt;</code> é o mais importante e o <code>&lt;h6&gt;</code> é o menos importante. Eles são usados para organizar o conteúdo da página em seções e subseções, facilitando a navegação e a compreensão do usuário. Eles também são importantes para o SEO, pois os mecanismos de busca usam os títulos para determinar a importância daquele assunto na página.</p>
                     <p>Quando um usuário pesquisa por uma palavra-chave e seu título <code>&lt;h1&gt;</code> contém ou é exatamente essa palavra-chave, o mecanismo de busca tende a ranquear melhor sua página nos resultados. Isso ocorre porque o <code>&lt;h1&gt;</code> é considerado o título mais importante da página.</p>
-                    <p>No entanto, não é recomendável usar <code>&lt;h1&gt;</code> em todos ou em muitos títulos na página. Os mecanismos de busca valorizam o <code>&lt;h1&gt;</code> porque ele deve representar o tema principal da página. Se você usar mais de um <code>&lt;h1&gt;</code>, a importância do título principal é diluída, prejudicando muito o ranqueamento. Então use apenas um h1 por página!</p>
+                    <p>No entanto, não é recomendável usar <code>&lt;h1&gt;</code> em todos ou em muitos títulos na página. Os mecanismos de busca valorizam o <code>&lt;h1&gt;</code> porque ele deve representar o tema principal da página. Se você usar mais de um <code>&lt;h1&gt;</code>, a importância do título principal é diluída, prejudicando muito o ranqueamento. Então use apenas um <code>&lt;h1&gt;</code> por página!</p>
                    
                 </section>
                 <section id="nav">
-                    <h4>Nav</h4>
-                    <p>É como um contêiner que indica aos mecanismos de busca que todos os itens ali dentro são itens de navegação do site.</p>
+                    <h3>Nav</h3>
+                    <p>A tag <code>&lt;nav&gt;</code> é usada para definir um bloco de links de navegação. Ela ajuda os mecanismos de busca e os leitores a entenderem que os links dentro desse bloco são parte da navegação do site. Por exemplo, você pode usar a tag <code>&lt;nav&gt;</code> para agrupar links para as principais seções do seu site, como "Início", "Sobre", "Serviços" e "Contato". Isso torna a navegação mais clara e acessível para todos.</p>
                 </section>
                 <section id="article">
-                    <h4>Article</h4>
+                    <h3>Article</h3>
                     <p>Consulte o site <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/article">MDN web docs</a> para mais informações sobre essa e todas as outras tags semânticas.</p>
                     <p>Um dos elementos que mais geram confusão no uso. Essa tag foi criada no HTML5</p>
                     <p>Porém, as mais confusas são <code>article</code> e <code>section</code>. Tentando explicar <code>article</code> de forma simplificada: essa tag deve ser usada sempre que for um assunto independente. Essa é a palavra-chave para definir <code>article</code>: <strong>assunto independente</strong>.</p>
                     <p>Se você escreve um trecho do seu site e consegue retirá-lo dali e o site continua fazendo sentido, provavelmente está falando de um <code>article</code>.</p>
-                    <p>Outra forma de identificá-lo é que o <code>article</code> geralmente vem com um título de alto valor dentro da página, como um <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> ou <code>&lt;h4&gt;</code>.</p>
+                    <p>Outra forma de identificá-lo é que o <code>article</code> geralmente vem com um título de alto valor dentro da página, como um <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> ou <code>&lt;h3&gt;</code>.</p>
                 </section>
                 <section id="section">
-                    <h4>Section</h4>
+                    <h3>Section</h3>
                     <p>Outro elemento que gera muita confusão na hora de criar um site.</p>
-                    <p>Por mais que em teoria ele seja o oposto ao <code>article</code>, ele se confunde muito com o próprio <code>article</code>. A <code>section</code> deve ser sempre aquele trecho que pertence a algum outro trecho no site. Ela também vem acompanhada de títulos, porém de menor relevância, como um <code>&lt;h4&gt;</code> em diante.</p>
+                    <p>Por mais que em teoria ele seja o oposto ao <code>article</code>, ele se confunde muito com o próprio <code>article</code>. A <code>section</code> deve ser sempre aquele trecho que pertence a algum outro trecho no site. Ela também vem acompanhada de títulos, porém de menor relevância, como um <code>&lt;h3&gt;</code> em diante.</p>
                     <p>A section como o próprio nome diz é uma seção uma parte semantica de um texto.</p>
                     <p>A <code>section</code> nunca deve ser usada no lugar de <code>div</code>, pois <code>div</code> não é semântica.</p>
                 </section>
                 <section id="article-vs-section">
     
-                    <h3>Diferenciando Article de Section</h3>
+                    <h4>Diferenciando Article de Section</h4>
                     <p>Imagine uma redação com título, introdução, desenvolvimento com três argumentos e conclusão. A introdução, o desenvolvimento e a conclusão são as três <code>&lt;section&gt;</code> da redação, enquanto o <code>&lt;article&gt;</code> seria a redação inteira, incluindo o título.</p>
                     <p>Agora, imagine um texto extenso. Esse texto também teria essas três <code>&lt;section&gt;</code>. Entretanto, os argumentos poderiam ser considerados <code>&lt;article&gt;</code> dentro do <code>&lt;article&gt;</code> principal, que seria o próprio texto, além de estarem na <code>&lt;section&gt;</code> de desenvolvimento.</p>
     
                 </section>
                 <section id="aside">
-                    <h4>Aside</h4>
+                    <h3>Aside</h3>
                     <p>É um assunto paralelo.</p>
                     <p>A tag <code>&lt;aside&gt;</code> é usada para definir um conteúdo que está relacionado ao conteúdo principal, mas que não é parte dele. Esse conteúdo é geralmente exibido em uma barra lateral ou em uma seção separada do conteúdo principal. Exemplos comuns de uso da tag <code>&lt;aside&gt;</code> incluem barras laterais com links para artigos relacionados, anúncios, biografias de autores, ou qualquer outro conteúdo que complemente o principal.</p>
                     <p>Veja alguns exemplos aqui nessa página: <a href="#seo">1º aside</a> <a href="#atalho">2º aside</a></p>
                     <p>Outros exemplos estão os pdf de Professor Gustavo Guanabara sempre que aparece o personagem abaixo é um aside.</p>
-                    <div class="img"><img src="Captura de tela 2025-02-03 205832.png" alt="png"></div>
+                    <div class="img"><img src="imagens/Captura de tela 2025-02-03 205832.webp" alt="Exemplo de aside"></div>
                 </section>
 
                 <section id="minor-tags">
-                    <h4>Tags de Menor Valor</h4>
+                    <h3>Tags de Menor Valor</h3>
                     <ul>
                         <li><strong>&lt;p&gt;</strong>: Parágrafo</li>
                         <li><strong>&lt;button&gt;</strong>: Essa tag diz que aquele link é um botão e é ótima para usar o CSS</li>
@@ -249,28 +260,28 @@
                     </ul>
                 </section>
                 <aside id="atalho">
-                <strong>Atalho:</strong> <br>
-                Para ganhar velocidade: Quando quiser usar uma tag sobre uma frase já digitada, como em negrito, basta apertar "Ctrl + Shift + P", digitar "abb" e selecionar "Wrap with abbreviation". Depois, digite a tag que desejar, como &lt;b&gt;, apenas a letra "b" e "Enter". <br>
-                Ou, se já tiver usado esse atalho recentemente, basta digitar "Ctrl + Shift + P" &rarr; "Enter" &rarr; a letra da tag que deseja usar &rarr; "Enter".
+                <strong>Atalho:</strong> 
+                <p>Para ganhar velocidade na escrita de código, você pode usar um atalho muito útil. Quando quiser aplicar uma tag a uma frase já digitada, como por exemplo, colocar em negrito, basta apertar <code>Ctrl + Shift + P</code>, digitar <code>abb</code> e selecionar <code>Wrap with abbreviation</code>. Depois, digite a tag que desejar, como <code>&lt;strong&gt;</code>, apenas "strong" e pressione <code>Enter</code>.</p> 
+                <p>Se já tiver usado esse atalho recentemente, o processo é ainda mais rápido: digite <code>Ctrl + Shift + P</code> &rarr; <code>Enter</code> &rarr; a letra da tag que deseja usar &rarr; <code>Enter</code>.</p>
                 </aside>
             </article><!--body-->
         </article><!--principais-tag-->
         <section id="conclusao">
             
-            <p>As tags semânticas são essenciais para a estruturação e organização do conteúdo de uma página web. Elas fornecem significado ao conteúdo, facilitando a compreensão e a navegação do usuário, além de melhorar a acessibilidade e o SEO. Ao utilizar as tags semânticas corretamente, você estará criando páginas mais bem estruturadas, organizadas e otimizadas para os mecanismos de busca, o que contribuirá para uma melhor experiência do usuário e um melhor posicionamento nos resultados de pesquisa.</p>
-            <p>É importante lembrar que as tags HTML não se limitam apenas às mencionadas aqui. Existem muitas outras, cada uma com seu próprio grau de importância e funcionalidade. Conhecer e utilizar essas tags corretamente pode fazer uma grande diferença na estrutura e na acessibilidade do seu site.</p>
+            <p>As tags semânticas são essenciais para a estruturação e organização do conteúdo de uma página web. Elas fornecem significado ao conteúdo, facilitando a compreensão e a navegação do usuário, além de melhorar a acessibilidade e o SEO. Ao utilizar as tags semânticas corretamente, você estará criando páginas mais bem organizadas e otimizadas para os mecanismos de busca, o que contribuirá para um melhor posicionamento nos resultados de pesquisa.</p>
+            <p>É importante lembrar que as tags HTML não se limitam apenas às mencionadas aqui. Conhecer e utilizar essas tags corretamente fará uma grande diferença na estrutura e na acessibilidade do seu site.</p>
 
         </section>
 
 
         <section id="materiais-apoio">
 
-            <h4>Materiais de apoio</h4>
+            <h3>Materiais de apoio</h3>
 
             <p><strong><a href="../../material-de-apoio/07 - Hierarquia de títulos.pdf" target="_blank">07 - Hierarquia de títulos.pdf</a></strong></p>
             
         </section><!-- /#materiais-apoio -->
-</main>
+            </main>
 <footer>
     
   
