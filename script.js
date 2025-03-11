@@ -5,8 +5,13 @@ function createLinkToVideos() {
  if(navVideos!==null){
 navVideos.innerHTML = `
 <img src="../../icones/YouTube_icon_(2013-2017).webp" alt="Play" aria-label="Abrir menu de vídeos" id="botao_menu-videos" class="buttom-videos"
-style=" width: 48px; height: 34px;" onclick="exibir(this)">
-<nav id="lista_videos"></nav>
+style=" width: 48px; height: 34px;" onclick="
+        if(document.getElementById('lista_videos').style.display === 'block')
+        {document.getElementById('lista_videos').style.display = 'none';}
+        else{document.getElementById('lista_videos').style.display = 'block';}" >
+ <nav id="lista_videos">
+    <ul id="lista"></ul>
+  </nav>
 `;
 
   // Seleciona todos os elementos <li> dentro da <ul>
@@ -15,7 +20,7 @@ style=" width: 48px; height: 34px;" onclick="exibir(this)">
   var itemArray = [...item];
  
 
-  var navList = document.getElementById('lista_videos');
+  var navList = document.getElementById('lista');
  
   
   itemArray.forEach((item) => {
@@ -163,12 +168,19 @@ function createGoogleTagScript() {
 function createMenuAcessoRapido(){
   var MenuAcessoRapido=document.getElementById('menu_acesso_rapido');
   if(MenuAcessoRapido!==null){
-  MenuAcessoRapido.innerHTML = `<button id="menu-hamburguer" aria-label="Abrir menu de acesso rápido" onclick="toggleMenu(this); exibir(this)">
+  MenuAcessoRapido.innerHTML = `<button id="menu-hamburguer" aria-label="Abrir menu de acesso rápido" onclick="toggleMenu(this); 
+  
+        if(document.getElementById('shortcuts_list').style.display === 'block')
+        {document.getElementById('shortcuts_list').style.display = 'none';}
+        else{document.getElementById('shortcuts_list').style.display = 'block';}" 
+        ">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </button>
-    <nav id="shortcuts_list"></nav>
+    <nav id="shortcuts_list">
+    <ul id="list"></ul>
+    </nav>
     `;
     
     
@@ -176,7 +188,7 @@ function createMenuAcessoRapido(){
 
     var itemShortcutsNameArray = [...itemShortcutsName.getElementsByTagName('li')];
    
-    let shortcutsList = document.getElementById('shortcuts_list');
+    let shortcutsList = document.getElementById('list');
    
    
     // Itera sobre cada elemento <li> e faz algo com ele
