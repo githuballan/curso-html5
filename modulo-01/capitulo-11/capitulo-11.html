@@ -63,8 +63,13 @@
             <p>Para resolver isso, podemos usar a tag <code>&lt;picture&gt;</code>. Com essa tag, é possível adicionar várias imagens com tamanhos diferentes, que se alternam conforme o tamanho da tela do usuário.</p>
         </section>
         <article id="tag-picture"> <!--Tag picture-->           
-        <h2>Como Usar a Tag <code>&lt;picture&gt;</code></h2>
-        <p>Vamos aprender a usar a tag <code>&lt;picture&gt;</code> no HTML5. Esta tag é muito útil quando queremos que nossas imagens se adaptem ao tamanho da tela do usuário, tornando nosso site mais responsivo e agradável de navegar.</p>
+        <h3>Quando Usar a Tag <code>&lt;picture&gt;</code></h3>
+        <p>A tag <code>&lt;picture&gt;</code> é especialmente útil nas seguintes situações:</p>
+        <ul>
+            <li><strong>Poupar dados e acelerar o carregamento:</strong> Em dispositivos com telas pequenas, como smartphones, não há necessidade de carregar imagens grandes e pesadas. Usar a tag <code>&lt;picture&gt;</code> permite carregar versões menores das imagens, economizando dados e acelerando o carregamento da página.</li>
+            <li><strong>Adaptar imagens a diferentes resoluções:</strong> Em telas de alta resolução, como monitores Retina, é importante fornecer imagens de maior qualidade para evitar que fiquem pixeladas. A tag <code>&lt;picture&gt;</code> permite definir diferentes versões da imagem para diferentes resoluções, garantindo uma melhor experiência visual.</li>
+            <li><strong>Mostrar imagens específicas para diferentes orientações de tela:</strong> Em dispositivos que podem ser usados tanto na orientação vertical quanto horizontal, como tablets, a tag <code>&lt;picture&gt;</code> permite definir imagens diferentes para cada orientação, melhorando a usabilidade e a apresentação do conteúdo.</li>
+        </ul>
 
         <p>A tag <code>&lt;picture&gt;</code> permite que você defina várias versões de uma imagem e escolha qual delas será exibida com base no tamanho da tela ou outras condições. Isso é feito usando a tag <code>&lt;source&gt;</code> dentro da tag <code>&lt;picture&gt;</code>. Vamos ver como isso funciona na prática.</p>
 
@@ -86,7 +91,7 @@
             <li><code>&lt;img&gt;</code>: A imagem padrão que será exibida se nenhuma das condições definidas nas tags <code>&lt;source&gt;</code> for atendida.</li>
         </ul>
 
-        <h3>Exemplo Prático</h3>
+        <h4>Exemplo</h4>
         <p>Vamos ver um exemplo prático para entender melhor. Suponha que temos três versões de uma imagem: uma pequena, uma média e uma grande. Queremos que a versão pequena seja exibida em telas de até 750 pixels de largura, a versão média em telas de até 1050 pixels, e a versão grande em telas maiores que 1050 pixels.</p>
 
         <div class="pre"><pre>
@@ -99,15 +104,14 @@
 
         <p>Com esse código, garantimos que a imagem exibida será a mais adequada para o tamanho da tela do usuário, melhorando a experiência de navegação e otimizando o carregamento do site.</p>
 
-        <p>Espero que esta explicação tenha sido clara e útil para você. Pratique bastante e logo você estará dominando o uso da tag <code>&lt;picture&gt;</code> no HTML5.</p>
         </article><!--Tag picture-->
         <section id="tag-source-media-type"><!--Tag source media type-->
             <h3>Atributos da Tag <code>&lt;source&gt;</code>  <code>media</code> e <code>type</code></h3>
-            <p>A tag <code>&lt;source&gt;</code> funciona como uma condicional:</p>
+            <p>A tag <code>&lt;picture&gt;</code> funciona como uma condicional, onde as tags <code>&lt;source&gt;</code> definem a imagem a ser exibida se a condição especificada for atendida:</p>
             <ul>
-                <li><strong>1ª parte:</strong> O teste verifica a largura da tela. Por exemplo, <code>media="(max-width: 750px)"</code> testa se a tela tem até 750 pixels de largura. Se for verdadeiro, exibe a imagem configurada em <code>srcset="imagens/foto-p.png"</code>. Caso contrário, passa para o próximo teste.</li>
-                <li><strong>2ª parte:</strong> Indica qual imagem deve ser carregada. Aqui, não funciona o atalho "CTRL + ESPAÇO". Para evitar erros, use a tag <code>&lt;img&gt;</code> para obter o caminho da imagem e copie para a tag <code>&lt;source&gt;</code>. Evite nomes de arquivos ou pastas com espaços, acentuação ou letras maiúsculas.</li>
-                <li><strong>3ª parte:</strong> Define o tipo da imagem com o atributo <code>type="image/png"</code>. É importante especificar a extensão da imagem para evitar erros.</li>
+                <li><strong>Teste de largura:</strong> Verifica a largura da tela. Por exemplo, <code>media="(max-width: 750px)"</code> testa se a tela tem até 750 pixels de largura. Se for verdadeiro, exibe a imagem configurada em <code>srcset="imagens/foto-p.png"</code>. Caso contrário, passa para o próximo teste.</li>
+                <li><strong>Imagem a ser carregada:</strong> Indica qual imagem deve ser carregada. Use a tag <code>&lt;img&gt;</code> para obter o caminho da imagem e copie para a tag <code>&lt;source&gt;</code>. Evite nomes de arquivos ou pastas com espaços, acentuação ou letras maiúsculas.</li>
+                <li><strong>Tipo de imagem:</strong> Define o tipo da imagem com o atributo <code>type="image/png"</code>. Especificar a extensão da imagem é importante para evitar erros.</li>
             </ul>
             <p>Veja abaixo o código completo com as duas tags:</p>
            
@@ -119,6 +123,8 @@
 &lt;/picture&gt;
                 </pre></div>
             </div>
+            <p>A tag <code>&lt;img&gt;</code> será exibida apenas se nenhuma das condições definidas nas tags <code>&lt;source&gt;</code> forem atendidas. Neste exemplo, a imagem será exibida se a largura da tela for superior a 1050 pixels.</p>
+            <p>Alternativamente, você pode usar o atributo <code>min-width</code> para definir uma condição de largura mínima. Por exemplo, ao usar <code>min-width: 1051px</code>, a imagem será exibida para telas com largura superior a 1050 pixels, obtendo o mesmo efeito.</p>
         </section>
 
         <fieldset id="exemplo-interativo">

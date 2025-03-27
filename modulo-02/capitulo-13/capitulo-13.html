@@ -72,21 +72,79 @@
             </section><!-- /#int-rep-Cores -->
 
             <section id="formas-rep-Cores-nomes">
-                <h4>Por nomes das cores em inglês</h4>
+                <h3>Por nomes das cores em inglês</h3>
                 <p>Essa forma é menos utilizada devido à limitação de nomes disponíveis em comparação com a vasta quantidade de cores possíveis (65.000.000).</p>
             </section><!-- /#formas-rep-Cores-nomes -->
 
             <section id="formas-rep-Cores-rgb">
-                <h4>Por código RGB ou RGBA</h4>
+                <h3>Por código RGB ou RGBA</h3>
                 <p>O sistema RGB é uma forma de representar cores usando três valores numéricos que variam de 0 a 255. Cada valor representa a intensidade de uma das cores do RGB (vermelho, verde e azul). No sistema RGB, 0 representa a menor intensidade e 255 representa a maior intensidade da cor. Além disso, o valor alpha (transparência) varia de 1 (totalmente opaco) a 0 (totalmente transparente) com precisão de centésimos.</p>
-                <p>Exemplo de representação:</p>
-                <div class="pre">
-                    <pre>rgba(200, 255, 0, 1)</pre>
-                </div>
+
+                <fieldset>
+                    <legend>Exeplo interativo</legend>
+                    <div>
+                        <div id="transicao-rgb" style="
+                       
+                        border: 1px solid #000;
+                        border-radius: 30px;
+                        min-width: 300px;
+                        max-width: 800px;
+                        height: 150px;
+                        background-color: #fff;
+                       
+                        transition-property: background-color;
+                        transition-duration: 500ms;
+                        transition-timing-function: ease-in-out;
+                        "></div>
+                    </div>
+                    <p>Use os controles deslizantes para alterar a cor de fundo.</p>
+                    <div style="
+                    display: flex;
+                    flex-wrap: wrap; 
+                    justify-content: center; 
+                    margin-top: 10px;">
+<div>
+    
+                            <label for="red">Red:</label>
+                            <input id="red" type="range" min="0" max="255" value="255" oninput="
+                            document.querySelector('#transicao-rgb').style.backgroundColor = 'rgba(' + this.value + ', ' + document.querySelector('#green').value + ', ' + document.querySelector('#blue').value + ', ' + document.querySelector('#alpha').value + ')';
+                            document.querySelector('#rgba').textContent =  document.querySelector('#transicao-rgb').style.backgroundColor;
+                            ">
+</div>
+<div>
+    
+                            <label for="green">Green:</label>
+                            <input id="green" type="range" min="0" max="255" value="255" oninput="document.querySelector('#transicao-rgb').style.backgroundColor = 'rgba(' + document.querySelector('#red').value + ', ' + this.value + ', ' + document.querySelector('#blue').value + ', ' + document.querySelector('#alpha').value + ')';
+                            document.querySelector('#rgba').textContent =  document.querySelector('#transicao-rgb').style.backgroundColor;">
+</div>
+<div>
+    
+                            <label for="blue">Blue:</label>
+                            <input id="blue" type="range" min="0" max="255" value="255" oninput="document.querySelector('#transicao-rgb').style.backgroundColor = 'rgba(' + document.querySelector('#red').value + ', ' + document.querySelector('#green').value + ', ' + this.value + ', ' + document.querySelector('#alpha').value + ')';
+                            document.querySelector('#rgba').textContent =  document.querySelector('#transicao-rgb').style.backgroundColor;">
+</div>
+<div>
+    
+                            <label for="alpha">Alpha:</label>
+                            <input id="alpha" type="range" min="0" max="1" step="0.01" value="1" oninput="document.querySelector('#transicao-rgb').style.backgroundColor = 'rgba(' + document.querySelector('#red').value + ', ' + document.querySelector('#green').value + ', ' + document.querySelector('#blue').value + ', ' + this.value + ')';
+                            document.querySelector('#rgba').textContent =  document.querySelector('#transicao-rgb').style.backgroundColor;">
+    
+</div>
+                    </div>
+
+                    <div class="pre" style=" flex-shrink: 1; width: 80%;">
+                        <pre>background-color: <output id="rgba">rgb(255, 255, 255)</output>;</pre>
+                    </div>
+
+                </fieldset>
+
+
+               
+                
             </section><!-- /#formas-rep-Cores-rgb -->
 
             <section id="formas-rep-Cores-hex">
-                <h4>Hexadecimal</h4>
+                <h3>Hexadecimal</h3>
                 <p>O sistema hexadecimal é uma forma de representar cores usando uma combinação de seis ou oito caracteres, que vão de 0 a F <span style="text-transform: uppercase">(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f)</span>. Cada par de caracteres representa a intensidade de uma das cores do RGB (vermelho, verde e azul) ou a transparência (alpha). No sistema hexadecimal, 0 representa a menor intensidade e F representa a maior intensidade da cor.</p>
                 <ul>
                     <li>Com 6 dígitos: Cada cor é representada por dois dígitos hexadecimais, variando de 00 a FF.
@@ -121,45 +179,114 @@
             </section><!-- /#formas-rep-Cores-hex -->
 
             <section id="formas-rep-Cores-hsla">
-                <h4>HSLA</h4>
-                <p>HSLA representa cores de forma diferente:</p>
+                <h3>HSLA</h3>
+                
+               
+
                 <ul>
-                    <li>H: Cor propriamente dita (0 a 360)</li>
-                    <li>S: Saturação (0% a 100%)</li>
-                    <li>L: Luminosidade (0% a 100%)</li>
-                    <li>A: Transparência (0 a 1)</li>
+                    <li>H: Cor propriamente dita (0 a 360). É um valor numérico em graus (de 0 a 360) que corresponde a uma posição no círculo cromático:</li> <img src="imagens/R.webp" alt="Circulo hsl">
+                    <li>S: Representa a saturação da cor, ou seja, o quão pura ela é. É um valor percentual onde:                   
+                        <ul>
+                            <li> 0%: Cor completamente desaturada (tons de cinza) </li>
+                                
+                            <li>100%: Cor totalmente saturada (viva e intensa). </li>
+                           
+                        </ul> 
+                        <img src="imagens/saturacao.png" width="150px" alt="Circulo hsl">
+                    </li>
+                    <li>L:  Representa a luminosidade da cor, ou seja, o quão clara ou escura ela é. Também é um valor percentual onde:
+                        <ul>
+                            <li>0%: Preto (sem luz).</li>
+                            <li>50%: Cor normal.</li>
+                            <li>100%: Branco (máxima luz).</li>
+                        </ul>
+                        <img  src="imagens/luminosidade.png" width="150px" alt="Circulo hsl"></li>
+                    <li>A:  Representa a transparência da cor. É um valor decimal entre 0 e 1:
+                        <ul>
+                            <li>0: Totalmente transparente.</li>
+                            <li>1: Totalmente opaco.</li>
+                        </ul>
+                        <img src="imagens/apha.png" width="150px" alt="Circulo hsl"></li>
                 </ul>
                 <p>Exemplo de representação:</p>
-                <p>hsla(208, 100%, 97%, 0.644)</p>
+                <div class="pre">
+                    <pre>hsla(350, 50%, 50%, 0.99)</pre></div>
 
-                <fieldset>
+                    <div id="transicao-hsl" style="
+                    margin: auto;   
+                    border: 1px solid #000;
+                    border-radius: 30px;
+                    min-width: 300px;
+                    max-width: 500px;
+                    height: 150px;
+                    background-color: hsla(350, 50%, 50%, 0.99);
+                    "></div>
+
+                <!-- <fieldset>
 
                     <legend>Exemplo interativo</legend>
                     
         
                     <div>
-                        <div id="transicao" style="
+                        <div id="transicao-hsl" style="
                        
                         border: 1px solid #000;
                         border-radius: 30px;
                         min-width: 300px;
                         max-width: 800px;
                         height: 150px;
-                        background-color: #fff;
-                       
-                        transition-property: background-color;
-                        transition-duration: 500ms;
-                        transition-timing-function: ease-in-out;
+                        background-color: hsla(350, 50%, 50%, 0.99);
                         "></div>
                     
-                    <p>Use o conta gotas para descobrir uma cor dentro ou fora desta página e testar as diferentes representações de cores como: RGB, HSLA e Hexadecimal.</p>
-                    <p>Pode não funcionar igualmente em todos os navegdores.</p>
-                    <div style="display: flex; justify-content: center; margin-top: 10px;">
-                            
-        
-                        <input class="buttom" style="height: 50px; width: 100px; border-radius: 10px;" type="color" oninput="document.querySelector('#transicao').style.backgroundColor = this.value;">
+                    <p>Use os controles deslizantes para alterar a cor de fundo.</p>
+                    <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 10px;">
+<div>
+    
+                            <label for="hue">Hue:</label>
+                            <input id="hue" type="number" min="0" max="360" oninput="valueMaxMin(360,0,this);changeColorHsla();">
+
+                            <label for="saturation">Saturation</label>
+                            <input id="saturation" type="number" min="0" max="100"  oninput="valueMaxMin(100,0,this);">
+
+                            <label for="lightness">lightness</label>
+                            <input id="lightness" type="number" min="0" max="100"  oninput="valueMaxMin(100,0,this);">
+
+                            <label for="alpha-hsla">alpha</label>
+                            <input id="alpha-hsla" type="number" min="0" max="1"  oninput="valueMaxMin(1,0,this);">
+
+                            <button onclick="changeColorHsla()">Input</button>
+
+
                     </div>
-                </fieldset>
+
+                    <script>
+                       
+                        function changeColorHsla(){
+                            let hue = document.querySelector('#hue').value||360;
+                        let saturation = document.querySelector('#saturation').value||100;
+                        let lightness = document.querySelector('#lightness').value||100;
+                        let alphaHsla = document.querySelector('#alpha-hsla').value||0.5;
+                        let transicaoHsla = document.querySelector('#transicao-hsl');
+
+
+
+                            console.log(hue);
+                            console.log(saturation);
+                            console.log(lightness);
+                            console.log(alphaHsla);
+
+                            document.querySelector('#transicao-hsl').style.backgroundColor =` hsla(${hue}, ${saturation}%, ${lightness}%, ${alphaHsla});`;
+
+                            console.log( transicaoHsla);
+
+                        }
+
+                    </script>
+                </fieldset> -->
             </section><!-- /#formas-rep-Cores-hsla -->
            
             
@@ -198,11 +325,19 @@
                     <li>Usar cores análogas;</li>
                     <li>Usar cores triádicas;</li>
                     <li>Usar cores tetrádicas.</li>
+
                 </ul>
+
+                <p>Obs.: Um site deve ter no máximo entre 3 e 5 cores, além do preto e branco.</p>
                 <p>Para mais detalhes, consulte o <a target="_blank" href="../../material-de-apoio/13 - Cores.pdf">material em PDF</a> das páginas 07 a 09.</p>
                 <h3>Círculo Cromático</h3>
                 <p>O círculo cromático é uma ferramenta que ajuda a encontrar combinações harmoniosas de cores, tornando o site visualmente agradável.</p>
-                <img src="imagens/circulo-cromatico.png" alt="Círculo Cromático">
+<div style="display: flex;
+">
+    
+                    <img style="margin: auto; width: 400px;" src="imagens/circulo-cromatico.webp" alt="Círculo Cromático">
+    
+</div>
                 <p>Para mais detalhes, consulte o material em PDF das páginas 06 a 11.</p>
                 <h3>Sites para encontrar cores harmônicas</h3>
                 <p>Existem ferramentas online que ajudam na escolha de paletas de cores: </p>
@@ -217,7 +352,7 @@
             <section id="captura-cores">
                 <h3>Ferramenta para descobrir cores de outros sites</h3>
                 <p>Para capturar o código hexadecimal de uma cor em um site, use a extensão ColorZilla no Google Chrome. Clique na cor desejada para obter o código.</p>
-                <p>Obs.: Um site deve ter no máximo entre 3 e 5 cores, além do preto e branco.</p>
+               
             
        
 
@@ -228,7 +363,7 @@
        
             </section><!-- /.captura-cores -->   
 
-    </article><!-- /.harm-cores -->
+        </article><!-- /.harm-cores -->
 
     <section id="materiais-apoio">
         <h3>Materiais de apoio</h3>
