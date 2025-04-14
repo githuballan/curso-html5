@@ -35,7 +35,8 @@ style=" width: 48px; height: 34px;" onclick="
 
 function createTelaVideo(){
   const configIframe = document.getElementById('config_iframe');
-  configIframe.style.minHeight = "50px"; //para não dar erro no console ao usar o range pois foi definida uma altura mínima no  style do config_iframe na folha de estilo css afim de não criar modificçãoes no layout no carregamento da página.
+  configIframe.style.minHeight = "50px"; 
+  //para não dar erro no console ao usar o range pois foi definida uma altura mínima no  style do config_iframe na folha de estilo css afim de não criar modificçãoes no layout no carregamento da página.
   if(configIframe!==null){
   let tela=document.createElement('div');
   tela.id = 'tela_iframe';
@@ -59,6 +60,7 @@ function createTelaVideo(){
 
 }}
 window.addEventListener('load', () => {
+  createGoogleTagScript();
   createTelaVideo();
   createIndexButton();
   createLinkToVideos();
@@ -87,11 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function exibir(x){
+    console.log(x);
    let k = x.nextElementSibling;
     
     if(k.style.display === "block")
         {k.style.display = "none";}
         else{k.style.display = "block";}
+
 };
 
 function toggleMenu(x) {
@@ -146,23 +150,27 @@ function toggleFixarSoltarAposRolarPag(){
 }
 
 function createGoogleTagScript() {
-  const googleTagScript = `
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-Z9YVPY1GML');
-      </script>
-  `;
+    const googleTagScript = `
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Z9YVPY1GML');
+        </script>
+    `;
 
-  const headElement = document.getElementsByTagName('head')[0];
+    document.addEventListener('DOMContentLoaded', () => {
+        const bodyElement = document.getElementsByTagName('body')[0];
 
-  if (headElement) {
-      headElement.insertAdjacentHTML('afterend', googleTagScript);
-  }
-  console.log('Google Tag adicionado.');
+        if (bodyElement) {
+            bodyElement.insertAdjacentHTML('afterbegin', googleTagScript);
+            console.log('Google Tag adicionado.');
+        } else {
+            console.error('Elemento <body> não encontrado.');
+        }
+    });
 }
 
 function createMenuAcessoRapido(){

@@ -81,14 +81,14 @@
                 <p>O sistema RGB é uma forma de representar cores usando três valores numéricos que variam de 0 a 255. Cada valor representa a intensidade de uma das cores do RGB (vermelho, verde e azul). No sistema RGB, 0 representa a menor intensidade e 255 representa a maior intensidade da cor. Além disso, o valor alpha (transparência) varia de 1 (totalmente opaco) a 0 (totalmente transparente) com precisão de centésimos.</p>
 
                 <fieldset>
-                    <legend>Exeplo interativo</legend>
+                    <legend>Exemplo interativo</legend>
                     <div>
                         <div id="transicao-rgb" style="
                        
                         border: 1px solid #000;
                         border-radius: 30px;
-                        min-width: 300px;
-                        max-width: 800px;
+                        width: 50vw;
+                        max-width: 500px;
                         height: 150px;
                         background-color: #fff;
                        
@@ -132,12 +132,12 @@
 </div>
                     </div>
 
-                    <div class="pre" style=" flex-shrink: 1; width: 80%;">
-                        <pre>background-color: <output id="rgba">rgb(255, 255, 255)</output>;</pre>
+                   
                     </div>
 
                 </fieldset>
-
+ <div class="pre">
+                        background-color:<output id="rgba">rgb(255, 255, 255, 0.000)</output>;
 
                
                 
@@ -195,7 +195,8 @@
                             <li>240: Azul.</li>
                             <li>360: Volta ao vermelho.</li>
                         </ul>
-                    </li> <img src="imagens/R.webp" alt="Circulo hsl">
+                        <img src="imagens/R.webp" alt="Circulo hsl">
+                    </li> 
                     <li>S: Representa a saturação da cor, ou seja, o quão pura ela é. É um valor percentual onde:                   
                         <ul>
                             <li> 0%: Cor completamente desaturada (tons de cinza) </li>

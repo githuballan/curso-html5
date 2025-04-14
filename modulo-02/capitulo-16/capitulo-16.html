@@ -476,8 +476,7 @@
                     <input type="button" onclick="updateShadow()" value="Atualizar">
                 </form>
                 <div class="pre">
-                    <pre>
-box-shadow: <output id="1-px"></output> <output id="2-px"></output> <output id="3-px"></output> <output id="4-px"></output> <output id="color"></output>;
+                    <pre><output id="codeShadow"></output>
                     </pre>
                 </div>
                 <div style="
@@ -492,7 +491,7 @@ box-shadow: <output id="1-px"></output> <output id="2-px"></output> <output id="
                     margin-top: 20px;">
                     </div>
                 </div>
-                <script>
+              <script>
                     function updateShadow() {
                         let hOffset = document.getElementById('hOffset').value + 'px';
                         let vOffset = document.getElementById('vOffset').value + 'px';
@@ -503,6 +502,10 @@ box-shadow: <output id="1-px"></output> <output id="2-px"></output> <output id="
                         let box = document.getElementById('shadowBox');
                         box.style.boxShadow = `${hOffset} ${vOffset} ${blurRadius} ${spreadRadius} ${shadowColor}`;
 
+                        let codeShadow = document.getElementById('codeShadow');
+                        codeShadow.textContent = `box-shadow: ${box.style.boxShadow};`;
+
+
                         let one=document.getElementById('1-px').innerHTML=hOffset;
                         let two=document.getElementById('2-px').innerHTML=vOffset;
                         let three=document.getElementById('3-px').innerHTML=blurRadius;
@@ -511,7 +514,7 @@ box-shadow: <output id="1-px"></output> <output id="2-px"></output> <output id="
 
 
                     }
-                </script>
+               </script>  
             </fieldset>
             <section id="sombra-interna">
                 <h3>Sombra Interna</h3>
