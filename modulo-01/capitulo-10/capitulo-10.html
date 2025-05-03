@@ -17,17 +17,20 @@
 
     <title>Links em HTML5</title>
         
-</head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z9YVPY1GML');
+    </script>
+    
+</head> 
 <body>
 
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Z9YVPY1GML');
-      </script>
+      
       
 <header> 
        <h1>Links em HTML5</h1>
@@ -161,6 +164,14 @@
             </pre>
         </div>
         <p><strong>Curiosidade:</strong> Praticamente todos os servidores usam sistema operacional LINUX e esse comando <code>../</code> é do LINUX. Talvez seja interessante estudar um pouco de LINUX para ingressar na carreira.</p>
+        <article id="link-absoluto">
+            
+            <h4>URLs relativas à raiz</h4>
+            <p>Utilize URLs relativas à raiz para criar links internos no site. Essas URLs começam com uma barra (/) e permitem acessar recursos a partir da raiz do projeto, independentemente da localização do arquivo atual.</p>
+            <p>Para evitar erros, é altamente recomendável utilizar URLs relativas à raiz, garantindo maior consistência e facilidade de manutenção no projeto.</p>
+        </article>
+        <!-- /#link-absoluto -->
+
     </article>
 
     <article id="links-contatos">
