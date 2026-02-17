@@ -1,3 +1,4 @@
+
 var itemArray = [];
 function createLinkToVideos() {
 
@@ -48,9 +49,9 @@ function createTelaVideo(){
   controle.innerHTML = `
   <button  id="botao_fixa_solta" onclick="toggleIframePosition(this)">Fixar</button>
 
-    <input itemid="range_video" style="width:calc(100% - 130px); display: inline-block" type="range" id="range_video" value="100" min="30" max="100" aria-label="Ajustar tamanho do vídeo" oninput="document.getElementById('config_iframe').style.width=this.value+'%'">
+    
 
-    <img id="pip" aria-label="Modo pictur-in-picture" style=" width: 50px; height: 30px; margin: 10px 0px -5px 0px;" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
+    <img id="pip" aria-label="Modo pictur-in-picture" style=" float: right; width: 50px; height: 30px; margin: 10px 0px -5px 0px;" src="../../imagens/pip.svg"onclick="botaoPip()" alt="botão pip
    ">
     
     <img id="pipout" aria-label="Sair do modo pictur-in-picture"  style=" width: 50px; height: 30px;" src="../../imagens/pipout.svg" onclick="botaoGetOutPip()" alt="botão pipout">
@@ -59,21 +60,181 @@ function createTelaVideo(){
 //Lembrar de colocar o src do iframe igual ao primeiro video da lista usando o array de videos
 
 }}
+
+
+/**
+ * Adiciona uma barra de pesquisa ao elemento <header> da página, composta por um campo de texto e um botão com ícone de lupa.
+ * Também cria uma <div> para exibir os resultados da pesquisa no início do <main>, caso ainda não exista.
+ * 
+ * - O campo de pesquisa permite ao usuário digitar termos relacionados a HTML5, CSS3 e JavaScript.
+ * - O botão de pesquisa e a tecla Enter no campo disparam a função global `pesquisaGlobal()`.
+ * - Garante que os elementos sejam criados apenas se o <header> existir e evita duplicidade da <div> de resultados.
+ * 
+ * Observação: A função depende da existência de uma função global chamada `pesquisaGlobal`.
+ */
+function adicionarBarraPesquisaNoHeader() {
+  const header = document.querySelector('header');
+  if (header) {
+    const containerPesquisa = document.createElement('div');
+    containerPesquisa.id = 'container-barra-pesquisa';
+    containerPesquisa.style.height = '50px';
+    containerPesquisa.style.display = 'flex';
+    containerPesquisa.style.alignItems = 'center';
+    
+    const novoElemento = document.createElement('div');
+    novoElemento.id = 'barra-pesquisa';
+    novoElemento.innerHTML = `
+    <a class="buttom-index" href="../../index.html">
+      <img src="../../imagens/favicon.png" alt="Favicon" style=";margin-right:8px;vertical-align:middle;">
+    </a>
+      <input type="text" id="campo-pesquisa" placeholder="HTML5, CSS3 e JavaScript" />            
+      <button id="botao-pesquisa" type="submit" aria-label="Pesquisar">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <circle cx="10" cy="10" r="7" stroke="#005fa3" stroke-width="2"/>
+        <line x1="16" y1="16" x2="21" y2="21" stroke="#005fa3" stroke-width="2"/>
+      </svg>
+      </button>
+      `;
+    containerPesquisa.appendChild(novoElemento);
+    header.appendChild(containerPesquisa);
+
+    const main = document.querySelector('main');
+    if (main && !main.querySelector('#resultados-pesquisa')) {
+      const divResultados = document.createElement('div');
+      divResultados.id = 'resultados-pesquisa';
+      main.insertBefore(divResultados, main.firstChild);
+    }
+
+    const botao = novoElemento.querySelector('#botao-pesquisa');
+    const campo = novoElemento.querySelector('#campo-pesquisa');
+    if (botao && campo) {
+      botao.addEventListener('click', function(e) {
+        e.preventDefault();
+        pesquisaGlobal();
+      });
+      campo.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          pesquisaGlobal();
+        }
+      });
+    }
+  }
+}
+
+let ultimoScroll = window.scrollY;
+window.addEventListener('scroll', function() {
+  const barra = document.getElementById('barra-pesquisa');
+  if (!barra) return;
+  const scrollAtual = window.scrollY;
+  // Se rolou para cima e passou de 80px, mostra a barra
+  if (scrollAtual < ultimoScroll && scrollAtual > 80) {
+    barra.classList.add('mostrar');
+  } else {
+    barra.classList.remove('mostrar');
+  }
+  ultimoScroll = scrollAtual;
+});
+
+function pesquisaGlobal() {
+  const campo = document.getElementById('campo-pesquisa');
+  const resultados = document.getElementById('resultados-pesquisa');
+  const termo = campo.value.trim().toLowerCase();
+  resultados.innerHTML = '<span style="color: #888">Pesquisando...</span>';
+
+  fetch('../../pesquisa-lista.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Arquivo JSON não encontrado');
+      return response.json();
+    })
+    .then(data => {
+      // Garante que data é um array
+      if (!Array.isArray(data)) {
+        resultados.innerHTML = '<span style="color: red">Formato do JSON inválido.</span>';
+        return;
+      }
+      // Filtra resultados
+      const encontrados = data.filter(item => {
+        return (
+          (item.modulo && item.modulo.toLowerCase().includes(termo)) ||
+          (item.capitulo && item.capitulo.toLowerCase().includes(termo)) ||
+          (item.titulo && item.titulo.toLowerCase().includes(termo))
+        );
+      });
+      if (encontrados.length === 0) {
+        resultados.innerHTML = '<span style="color: #888">Nenhum resultado encontrado.</span>';
+        return;
+      }
+      // Monta lista de resultados
+      resultados.innerHTML = '<ul style="margin: 10px 0; padding-left: 20px">' + encontrados.map(item =>
+        `<li><a href="${item.url}">${item.titulo ? item.titulo + ' - ' : ''}${item.capitulo}</a></li>`
+      ).join('') + '</ul>';
+    })
+    .catch(err => {
+      resultados.innerHTML = '<span style="color: red">Erro ao buscar resultados: ' + err.message + '</span>';
+    });
+}
+
+// Adiciona evento ao botão de pesquisa
+function adicionaEventosAoBotaoPesquisa() {
+  const botao = document.getElementById('botao-pesquisa');
+  const campo = document.getElementById('campo-pesquisa');
+  if (botao && campo) {
+    botao.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Faz a tela subir para o topo
+      pesquisaGlobal();
+    });
+    campo.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Faz a tela subir para o topo
+        pesquisaGlobal();
+      }
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  adicionarBarraPesquisaNoHeader();
+  adicionaEventosAoBotaoPesquisa();
+});
+
 window.addEventListener('load', () => {
   createGoogleTagScript();
   createTelaVideo();
-  createIndexButton();
+  //createIndexButton();
   createLinkToVideos();
   createMenuAcessoRapido();
   footer();
   head();
   createGoogleTagScript();
+  
+
+});
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'z') {
+        document.getElementsByClassName('reset')[0].click();
+    }
+    // Adiciona atalho Ctrl + Z para clicar em todo os botoões de resetar
 });
 
 document.addEventListener('DOMContentLoaded', function() {
   const version = new Date().getTime(); // Usando timestamp como versão
 
   // Atualizar links de CSS
+  /**
+   * Seleciona todos os elementos <link> do documento que possuem o atributo rel="stylesheet".
+   * 
+   * @constant
+   * @type {NodeListOf<HTMLLinkElement>}
+   * 
+   * @description
+   * Esta constante armazena uma lista de todos os elementos de link de folha de estilo CSS presentes no documento HTML.
+   * Pode ser utilizada para manipular dinamicamente os estilos da página, como adicionar, remover ou modificar folhas de estilo.
+   */
   const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
   cssLinks.forEach(link => {
       const href = link.getAttribute('href');
@@ -186,6 +347,7 @@ function createMenuAcessoRapido(){
         <div class="bar2"></div>
         <div class="bar3"></div>
     </button>
+   
     <nav id="shortcuts_list">
     <ul id="list"></ul>
     </nav>
@@ -244,12 +406,12 @@ function createIndice(h){
   //if(shortcutsList.style.display === 'none'){shortcutsList.innerHTML='';}//não dá certo pois ele apaga a ul com os li data-adress então depois fica sem ter de onde pegar informação para criar o indice
 }
 
-function createIndexButton(){
-  let index = document.getElementById('button_index')
-  if(index!==null){
-  index.innerHTML = `<a class="buttom buttom-index" href="../../index.html">Índice</a>`;  
-}
-}
+// function createIndexButton(){
+//   let index = document.getElementById('button_index')
+//   if(index!==null){
+//   index.innerHTML = `<a class="buttom buttom-index" href="../../index.html">Índice</a>`;  
+// }
+// }
 
 function head(){
   let head = document.getElementsByTagName('head')[0];
@@ -277,7 +439,7 @@ function footer(){
 function botaoPip() {
   const configIframe = document.getElementById('config_iframe');
   const botaoFixaSolta = document.getElementById('botao_fixa_solta');
-  const rangeVideo = document.getElementById('range_video');
+  
   const pip = document.getElementById('pip');
   const pipOut = document.getElementById('pipout');
 
@@ -290,7 +452,6 @@ function botaoPip() {
   botaoFixaSolta.style.display = 'none';
   botaoFixaSolta.innerHTML = 'Fixar';
 
-  rangeVideo.style.display = 'none';
   pip.style.display = 'none';
   pipOut.style.display = 'inline-block';
 }
@@ -299,16 +460,16 @@ function botaoGetOutPip() {
   const configIframe = document.getElementById('config_iframe');
   const pip = document.getElementById('pip');
   const botaoFixaSolta = document.getElementById('botao_fixa_solta');
-  const rangeVideo = document.getElementById('range_video');
+  
   const pipOut = document.getElementById('pipout');
 
   configIframe.style.position = 'static';
   configIframe.style.width = '100%';
   pip.style.display = 'inline-block';
   botaoFixaSolta.style.display = 'inline-block';
-  rangeVideo.style.display = 'inline-block';
+ 
   pipOut.style.display = 'none';
-  rangeVideo.value=100;
+
 }
 
 function toggleIframePosition(button) {
@@ -323,3 +484,7 @@ function toggleIframePosition(button) {
     button.innerHTML = 'Soltar';
   }
 }
+
+// Função de pesquisa global
+
+console.log("Script carregado com sucesso!");

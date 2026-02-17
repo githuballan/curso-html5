@@ -38,27 +38,11 @@
             text-align: center;
             word-spacing: -20px;            
         }
-        .int-ex1{
-            display:inline-block
-        }
+      
         /*fim Exemplo in-line block ex1*/
 
         /*Exemplo Position Relative ex2*/        
-        .int-red-ex2{
-            position: relative;
-            top:200px;
-            left:75px;
-        }
-
-        .int-green-ex2{
-            position: relative;
-            top:50px;
-            left:50px;
-        }
-        .int-blue-ex2{
-            position: relative;
-           
-        }
+        
         div.int-green-ex2:hover{
             background-color: #000;
         }
@@ -207,6 +191,7 @@
          /* fim Exemplo Transform*/
     </style>
     
+    <script src="../../script.js"></script>
 
 
     <!-- Google tag (gtag.js) -->
@@ -219,425 +204,315 @@
     </script>
     
 </head> 
-<li data-adress="https://www.youtube.com/embed/AFpGChcoV68">Transform translate-Serliv</li>
+
 <body>
-    <a class="buttom-index buttom" href="../../index.html">Índice</a>
+   
     <header>
         <h1>Position</h1>
     </header>
-    <main>
+
+    <ul id="video_list">
+    <li data-adress="https://www.youtube.com/embed/XCvSUC0zECI?si=j3UfBQT6GpQbMHam">Position - Serliv</li>
+   
+</ul>
+<ul id="shortcuts">
+    <li data-adress="#inline-block">Display inline-block</li>
+    <li data-adress="#position-static">Position Static</li>
+    <li data-adress="#position-relative">Position Relative</li>
+    <li data-adress="#position-absolute">Position Absolute</li>
+    <li data-adress="#position-fixed">Position Fixed</li>
+    <li data-adress="#position-sticky">Position Sticky</li>
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+
+    <main> 
+        <div id="config_iframe"></div>
         <article id="inline-block">
             <h2>Display inline-block</h2>
-            <p>Quando aplicamos o display inline-block em um elemento que é naturalmente block, como uma div, ela deixa de se comportar como um bloco e passa a se comportar como uma palavra (na verdade, palavras são naturalmente inline-block, mas para fins de entendimento isso basta).</p>
-            <p>Isso quer dizer que os comandos aplicados a textos funcionarão em divs que estiverem com display inline-block.</p>
-            <p>Exemplos: text-align, center;</p>
-            <div class="conteiner conteiner-ex1">
-            <div class="int int-red int-ex1"></div>
-            <div class="int int-green int-ex1"></div>
-            <div class="int int-blue int-ex1"></div>
-            </div>
+            <p>Antes de aprender sobre <strong>position</strong>, é essencial compreender algumas propriedades de <strong>display</strong>. Embora sejam conceitos distintos, o display influencia diretamente no comportamento dos elementos em relação ao posicionamento.</p>
+            
+            <p>A propriedade <strong>display</strong> define como um elemento é renderizado na página, ou seja, como ele irá interagir com os demais elementos da página: se ele ocupa toda a largura disponível (block), flui junto com o texto (inline), ou combina essas características (inline-block). Essa escolha afeta como o elemento interage com outros elementos e como o posicionamento se aplica a ele.</p>
+            
+            <p>Vale ressaltar que <strong>display não altera o comportamento do position</strong>, mas define a base sobre a qual o position atuará. Ou seja, o tipo de display de um elemento determina seu comportamento padrão, e o position modifica esse comportamento conforme necessário. Além disso, essa propriedade é complexa e possui uma série de valores que podem ser aplicados além dos que serão abordados aqui.</p>
+            <p>Veja abaixo as 3 formas de display que aprenderemos nessa matéria:</p>
+           
+          
+            <ul>
+            <li><strong>Display block:</strong> como o nome sugere, é um bloco que, naturalmente, possui altura e largura definidas pelo conteúdo ou pelo CSS. Além disso, força uma quebra de linha antes e depois do elemento, ocupando toda a faixa horizontal disponível da tela, independentemente de sua largura(width) ser menor que o espaço disponível.</li>
+            <li><strong>Display inline:</strong> o elemento flui junto com o texto, como uma palavra, ocupando apenas o espaço necessário</li>
+            <li><strong>Display inline-block:</strong> combina os dois: o elemento pode ser dimensionado com largura e altura (como um bloco), mas flui horizontalmente com outros elementos.</li>
+            </ul>
+
+           
+            
+          
+           <fieldset>
+                    <legend>Exemplo Interativo</legend>
+                <p>Clique nos botões abaixo para alternar o display dos elementos:</p>
+                <div style="margin: 15px 0;">
+                    <button onclick="alterarDisplay('inline')">Display: inline</button>
+                    <button onclick="alterarDisplay('block')">Display: block</button>
+                    <button onclick="alterarDisplay('inline-block')">Display: inline-block</button>
+                </div>
+                <div class="conteiner" id="conteiner-interativo">
+                    <div class="int int-red" id="box-interativa-1">RED</div>
+                    <div class="int int-green" id="box-interativa-2">GREEN</div>
+                    <div class="int int-blue" id="box-interativa-3">BLUE</div>
+                </div>
+                <div class="pre">
+                    <pre><strong>Display:</strong> <span id="display-atual">inline-block</span></pre>
+                </div>
+              
+            </fieldset>
+
+            <script>
+            function alterarDisplay(valor) {
+                const boxes = document.querySelectorAll('#conteiner-interativo .int');
+                boxes.forEach(box => {
+                    box.style.display = valor;
+                });
+                document.getElementById('display-atual').textContent = valor;
+            }
+            </script>
+            
+              
             <div class="obs">
-            <p>As divs não ficam uma sob a outra quando usamos word-spacing com valores negativos. O máximo que acontece é ficarem coladas.</p>
+            <h4>Observações importantes:</h4>
+            <p>Quando usamos <strong>inline</strong> ou <strong>inline-block</strong>, é possível notar que ficam espaços em branco indesejados entre os elementos. Isso acontece porque o espaçamento equivale a um caractere e, como tal, os espaços em branco no HTML são renderizados normalmente. Uma solução comum é usar <strong>word-spacing: -20px</strong> (ou valores negativos) para "colar" os elementos. No entanto, eles nunca se sobrepõem, apenas ficam justapostos.</p>
+            <p>Perceba também que quando usamos <strong>inline</strong>, o elemento desconsidera completamente a largura e altura definidas pelo CSS. Neste caso, está definido 100px para cada dimensão.</p>
+            <p>Além disso, você pode aplicar as mesmas propriedades de alinhamento de texto, como <strong>text-align: center</strong>, que usaria em textos normais, para alterar o alinhamento dos elementos inline ou inline-block.</p>
             </div>
         </article><!-- /#inline-block -->
         <article id="position-static">
             <h2>Position Static</h2>
-            <p>Static é o valor padrão da propriedade position. O box de um elemento com position: static é colocado na sua posição natural. Isso significa que, se for um box em display block, ele ficará colado ao lado esquerdo da tela e um embaixo do outro, e se for inline-block, ele ficará um ao lado do outro.</p>
-            <p>Não podemos alterar a posição dos boxes dos elementos HTML com position: static.</p>
-            <p>Exemplo Display block:</p>
-            <div class="conteiner">
-            <div class="int int-red"></div>
-            <div class="int int-green"></div>
-            <div class="int int-blue"></div>
-            </div>
-            <p>Exemplo Display inline-block:</p>
-            <div class="conteiner">
-            <div class="int int-red int-ex1"></div>
-            <div class="int int-green int-ex1"></div>
-            <div class="int int-blue int-ex1"></div>
-            </div>
+           
+           <p> Position static é o posicionamento padrão de todos os elementos HTML. Quando você não define nenhuma propriedade de position em um elemento, ele automaticamente recebe position: static. Nesse caso, o elemento segue o fluxo normal do documento, ou seja, aparece exatamente onde deveria estar de acordo com a ordem em que foi escrito no HTML.</p>
+           <p>As propriedades left, top, right e bottom não funcionam com position static, pois não há nada a deslocar — o elemento já está em seu lugar natural. Esse é o comportamento mais previsível e é a base sobre a qual todos os outros tipos de posicionamento funcionam.</p>
+           <fieldset>            
+                <legend>Exemplo</legend>
+                <div class="conteiner">
+                <div class="int int-red"></div>
+                <div class="int int-green"></div>
+                <div class="int int-blue"></div>
+                </div>
+                <div class="pre">
+                    <pre>position: static;</pre>
+                </div>
+          </fieldset>
+
         </article><!-- /#position-static -->
+         <article id="position-fixed">
+            <h2>Position fixed</h2>
+            <p>O position fixed é um tipo de posicionamento que fixa o elemento em uma posição específica na tela, independentemente do scroll. Isso significa que, mesmo quando o usuário rola a página para baixo ou para cima, o elemento permanece visível e fixo em sua posição original.</p>
+            <p>Esse tipo de posicionamento é comumente usado para criar elementos como barras de navegação, botões de ação ou rodapés que devem permanecer visíveis o tempo todo, independentemente da posição do usuário na página.</p>
+
+            <p><strong>Exemplo</strong>: clique em "Ativar" para visualizar o elemento com position fixed e, em seguida, role a página para observar seu comportamento. Note que o elemento permanece fixo na tela, independentemente do scroll.</p>
+             <div style="position: fixed;display:none; top: 50%; left: 50%" class="int int-green" id="int-fixed"></div>
+
+             <button onclick="toggleDisplay(this)">Ativar</button>
+            <script>
+               
+                const box = document.querySelector('#int-fixed');
+              function toggleDisplay(button) {
+                    if (box.style.display === 'none') {
+                        box.style.display = 'block';
+                        button.textContent = 'Desativar';
+                    } else {
+                        box.style.display = 'none';
+                        button.textContent = 'Ativar';
+                    }
+                }
+             
+            </script>
+            
+            
+        </article><!-- /#position-fixed -->
+        <article id="position-sticky">
+            <h2>Position Sticky</h2>
+            <p>O position sticky é um tipo de posicionamento que combina características do position relative e do position fixed. Ele permite que um elemento se comporte como relativo até atingir um determinado ponto de rolagem, momento em que ele se torna fixo na tela.</p>
+            <p>Isso significa que o elemento com position sticky permanecerá em sua posição normal no fluxo do documento até que o usuário role a página para um ponto específico, definido pelas propriedades top, right, bottom ou left. Quando esse ponto é alcançado, o elemento "gruda" na posição definida e permanece visível enquanto o usuário continua rolando a página.</p>
+            <p>Exemplo: role a página para baixo e observe o comportamento do elemento verde.</p>
+             
+            <div class="conteiner" style="height: 600px;">           
+                <div style="position: sticky; top: 0;" class="int int-green"></div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ipsa sequi, fuga quaerat, necessitatibus iure totam dolorum magnam illo blanditiis corporis eum sed quas fugiat expedita, placeat nihil quod id!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem praesentium quam sit quasi quibusdam consequuntur iste nam nostrum labore similique nihil ex perferendis quod, maiores tenetur, earum eum perspiciatis. Explicabo.lorem ipsum dolor sit amet consectetur adipisicing elit. Rem praesentium quam sit quasi quibusdam consequuntur iste nam nostrum labore similique nihil ex perferendis quod, maiores tenetur, earum eum perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dicta eveniet quisquam vero vitae perspiciatis optio, architecto tempora explicabo adipisci ullam atque commodi similique eius nihil voluptate est aspernatur quam.
+            </div>
+            <div class="obs">
+                <p>Diferente do position fixed, o position sticky só se torna fixo quando atinge o ponto definido pelas propriedades top, right, bottom ou left.</p> 
+                <p>Além disso, o position sticky é afetado pelo fluxo normal do documento. Isso significa que, quando está dentro de um contêiner, o elemento permanecerá visível apenas dentro dos limites desse contêiner. Quando o contêiner sair da tela durante o scroll, o elemento sticky também desaparecerá.</p>
+            </div>
+            
+        </article><!-- /#position-sticky -->
         <article id="position-relative">
             <h2>Position Relative</h2>
             <p>O box de um elemento com position: relative é colocado em uma posição relativa a sua posição natural(static). As propriedades left, top, right e bottom são utilizadas para determinar o deslocamento entre a posição desejada e a posição natural.</p> 
 
             <p>O espaço que essa box ocuparia, se ele estivesse em sua posição natural, não poderá ser ocupado por nenhum outro elemento. E a box será projatada para uma posição em primeiro plano acima e será exibida por cima de qualquer outro elemento</p>
-            <p>Exemplo:</p>
-            <div class="pre">
-                <pre>
+            
+         
+            <fieldset>
+                <legend>Exemplo Interativo - Position Relative</legend>
+                <div style="margin: 15px 0;">
+                    <label>Display: 
+                        <select id="displaySelect">
+                            <option value="inline-block" selected>Inline-block</option>
+                            <option value="block">Block</option>
+                        </select> (Todas as caixas)
+                    </label>
+                      <br>
+                    <label>Position: 
+                        <select id="positionSelect">
+                            <option value="static">Static</option>
+                            <option value="relative" selected>Relative</option>
+                        </select> (Somente a caixa verde)
+                    </label>
+                  
+                   
+                </div>
+                <div style="margin: 15px 0;">
+                    <label>Top: <input type="number" id="topInput" value="0"> px</label>
+                    <label>Left: <input type="number" id="leftInput" value="0"> px</label>
+                </div>
+                <div style="margin: 15px 0;">
+                    <button onclick="atualizarTodos()">Atualizar</button>
+                    <button class="reset" onclick="resetarValores()">Resetar</button>
+                </div>
+                <div class="conteiner" id="conteiner-ex2-interativo">
+                    <div class="int int-red int-red-ex2" id="box-ex2-interativa-red"></div>
+                    <div class="int int-green" id="box-ex2-interativa-green"></div>
+                    <div class="int int-blue int-blue-ex2" id="box-ex2-interativa-blue"></div>
+                </div>
+                <div class="pre">
+                    <pre id="cssDisplay"></pre>
+                </div>
 
-.conteiner{
-    height: 400px;
-    width: 400px;
-    border: 2px solid #0f0;
-}
+                  <script>
+            const valoresIniciais = {
+                position: 'relative',
+                display: 'block',
+                top: '0',
+                left: '0'
+            };
 
-.int-red-ex2{
-    position: relative;
-    top:200px;
-    left:75px;
-}
-
-.int-green-ex2{
-    position: relative;
-    top:50px;
-    left:50px;
-}
-.int-blue-ex2{
-    position: relative;
-    
-}
-div.int-green-ex2:hover{
-    background-color: #000;
-}
-
-                </pre>
-            </div>
-            <p>Como ficaria o exemplo acima:</p>
-            <div class="conteiner">
-                <div class="int int-red int-red-ex2"></div>
-                <div class="int int-green int-green-ex2"></div>
-                <div class="int int-blue int-blue-ex2"></div>
-            </div><!-- /#conteiner -->
-            <div class="obs">
-                <h3>Observações</h3>
-                <ul>
-                    <li><strong>Espaço "físico": </strong>O espaço "físico" permanece no seu lugar natural. A única coisa que mudou de lugar foi sua projeção, sua visão.</li>
-                    <li><strong>Interações: </strong> As interações como cliques,  ou efeitos ao passar o mouse, permanecem na sua projeção, pois ela se projeta por inteiro, exceto o seu espaço "físico".</li>
-                    <li><strong>Hierarquia: </strong> As projeções se projetam uma por cima da outra, o que define qual aparecerá por cima é ordem que estão sendo mencionadas no conteiner. Sendo a última a que ficará em por cima de todas e a primeira a que ficará por baixo de todas</li>
+            function atualizarValores() {
+                const top = document.getElementById('topInput').value;
+                const left = document.getElementById('leftInput').value;
+                const box = document.getElementById('box-ex2-interativa-green');
                 
+                box.style.top = top + 'px';
+                box.style.left = left + 'px';
+                
+                atualizarCSS();
+            }
+
+            function atualizarPosition() {
+                const position = document.getElementById('positionSelect').value;
+                document.getElementById('box-ex2-interativa-green').style.position = position;
+                atualizarCSS();
+            }
+
+            function atualizarDisplay() {
+                const display = document.getElementById('displaySelect').value;
+                document.getElementById('box-ex2-interativa-green').style.display = display;
+                 document.getElementById('box-ex2-interativa-red').style.display = display;
+                  document.getElementById('box-ex2-interativa-blue').style.display = display;
+                atualizarCSS();
+            }
+
+            function atualizarTodos() {
+                atualizarPosition();
+                atualizarDisplay();
+                atualizarValores();
+            }
+
+            function resetarValores() {
+                document.getElementById('positionSelect').value = valoresIniciais.position;
+                document.getElementById('displaySelect').value = valoresIniciais.display;
+                document.getElementById('topInput').value = valoresIniciais.top;
+                document.getElementById('leftInput').value = valoresIniciais.left;
+                
+                atualizarTodos();
+            }
+
+            function atualizarCSS() {
+                const position = document.getElementById('positionSelect').value;
+                const display = document.getElementById('displaySelect').value;
+                const top = document.getElementById('topInput').value;
+                const left = document.getElementById('leftInput').value;
+                
+                const css = `position: ${position};\ndisplay: ${display};\ntop: ${top}px;\nleft: ${left}px;`;
+                document.getElementById('cssDisplay').textContent = css;
+            }
+
+            atualizarCSS();
+            </script>
+            </fieldset>
+
+          
+            <div class="obs">
+                <h3>Observações importantes</h3>
+                <ul>
+                    <li><strong>Espaço físico: </strong>O espaço físico permanece em sua posição original. Apenas a projeção visual do elemento é deslocada.</li>
+                    <li><strong>Interações: </strong>As interações como cliques ou efeitos ao passar o mouse funcionam na projeção visual do elemento, não em seu espaço físico original.</li>                
+                </ul>
+                <h3>Problemas desse posicionamento</h3>
+                <ul>
+                    <li><strong>Espaço em branco: </strong>Como o espaço natural não é ocupado por outro elemento, ficará um espaço vazio no bloco, o que pode ficar esteticamente feio ou estranho.</li>
+                    <li><strong>Sensível a modificações: </strong>Como esse posicionamento projeta sua imagem para outro plano, ele poderá gerar efeitos estranhos caso seja feita qualquer modificação no futuro. Por exemplo, se mudar o tamanho do contêiner, o bloco pode se sobrepor a outro bloco, sair da tela ou ficar mal posicionado.</li>
+    
                 </ul>
             </div><!-- /#obs -->
             <section id="problemas">
                 
-                            <h3>Problemas desse posicionamento</h3>
-                            <ul>
-                                <li><strong>Espaço em branco: </strong>Como o espaço natural não é ocupado por outro elemento. Ficará um espaço vazio no bloco o que pode ficar estéticamente feio ou estranho.</li>
-                                <li><strong>Sensível a modificações: </strong> Como esse posicionamento é projeta sua imagem para outro plano ele poderá gerar efeitos estranho caso seja feita qualquer modificação no futuro. Exemplo se mudar o tamanho do conteiner o bloco pode ir para cima de outro bloco, sair da tela, fica mal posicionado e etc.. </li>
-                
-                            </ul>
+                            
             </section><!-- /#problemas -->
 
         </article><!-- /#position-relative -->
         <article id="position-absolute">
             <h2>Position: absolute;</h2>
-            <section id="introducao">
-                <p>Existem dois casos quando usamos o position absolute em uma div interna a um conteiner:
-                </p>
-                <p>1º caso o conteiner tem um position definida como static. Ou não declarou position pois static é o padrão.</p>
-                <p>2º caso o conteiner possui uma position diferente de static.</p>
-            </section><!-- /#introducao -->
-            <section id="conteiner-sem-position-definida">
+          
+                <p>O <strong>position: absolute</strong> funciona de forma diferente dependendo do contexto em que está inserido. Especificamente, o comportamento de um elemento com posicionamento absoluto varia conforme a propriedade <strong>position</strong> de seu contêiner pai.</p>
                 
-                <h3>Conteiner sem position definida </h3>
-                <p>O bloco com position: absolute  terá seu posicionamento relativo à página. Quando digo página não é body, nem html, mas literalmente a toda a extenção da página.</p>
-                <p>Exemplo de style: </p>
-                    <div class="pre">
-                <pre>
-html{
-    padding:50px;
-}
-
-body{
-    padding: 50px;
-}
-div.conteiner{
-    position: <abbr title="Posicionamento padrão">static;</abbr>
-}
-div.int{
-    postion: absolute;
-    left: 0px;
-}
-
-                </pre>
-                    </div>
-                <p>Como ficaria o exemplo acima:</p>
-                <div class="conteiner conteiner-ex3">
+                <p>Existem dois cenários principais:</p>
                 
-                    <div class="int int-green int-green-ex3"></div>
+                <ul>
+                    <li><strong>Contêiner sem position definida (ou com position: static):</strong> Quando o elemento está dentro de um contêiner que não possui position definida, o elemento absoluto se posiciona em relação à página inteira, não ao contêiner que o envolve.</li>
+                    <li><strong>Contêiner com position definida (diferente de static):</strong> Quando o contêiner pai possui uma propriedade position como <strong>relative</strong>, <strong>absolute</strong>, <strong>fixed</strong> ou <strong>sticky</strong>, o elemento absoluto se posiciona em relação aos limites desse contêiner, não da página.</li>
+                </ul>
                 
-                </div>
-            </section><!-- /#conteiner-sem-position-definida -->
-            <section id="coteiner-com-position-diferente-de-static">
-                <h3>Coteiner com position diferente de static</h3>
-           
-                <p>Caso o bloco possua um conteiner  qualquer que o englobe com position diferente de static. O box absolute terá suas medições relativas a esse conteiner onde ele se encontra.</p>
-                <p>Exemplo style:</p>
-                <div class="pre">
-    <pre>
+                <p>Vejamos agora esse comportamento na prática:</p>
 
-    div.conteiner{
-        position: <abbr title="Qualquer position diferente de static">relative;</abbr>
-    }
-    div.int-green-ex4{
-        position: absolute;
-        left: 10px;
-    }
-    div.int-blue-ex4{
-        position: relative;
-        left: 0px;
-    }
-
-    </pre>
-                </div>
-                <p>Como ficaria o exemplo acima:</p>
-                <div class="conteiner conteiner-ex4">
-                    <div class="int int-red"></div>
-                    <div class="int int-green int-green-ex4"></div>
+                <h3>Conteiner com position: static</h3>
+          
+        
+             <div style="position: static;" class="conteiner conteiner-ex4">
+                    <div  class="int int-red"></div>
+                    <div style="position: absolute;" class="int int-green int-green-ex4"></div>
                     <div class="int int-blue int-blue-ex4"></div>
                 </div>
-                <p>Vale ressaltar que se fosse o conteiner "avô" com position diferente de static e o "pai" com position static. O bloco teria sua referência no conteiner "avô."</p>
-            </section><!-- /#coteiner-com-position-diferente-de-static -->
-            <section id="observacaoes-absolute">
-                <h3>Observações</h3>
-                    <ul>
-                        <li><strong>Absolute vs Relative: </strong>O conteiner absolute fica em baixo do relative caso estejam aparecendo no mesmo local da tela. </li>
-                        <li><strong>Projeta por inteiro: </strong>Diferentemente do relativo o posicionamento absoluto porjeta seu espaço "físico" junto com sua projeção visual. Isso significa que não ficará aquele espaço vazio indesjado no meio do conteiner.</li>
-                        <li><strong>Referência no posicionamento: </strong>se desloca  relativo a qualquer conteiner que estiver contido desde que o position seja deferente de static.</li>
-                        <li><strong>Hierarquia de conteiner: </strong> Caso esteja dentro de mais de um conteiner diferente de static ele irá se referenciar por aquele que estiver mais próximo. Exemplo entre o "pai" e o "avô" a referência seria o "pai"</li>
-                        <li><strong>Hierarquia entre blocos</strong> Assim como os blocos de posicionamento relativo que se projetam uma por cima do outro, o que define qual aparecerá por cima aqui também é ordem que estão sendo mencionados no conteiner. Sendo o último o que ficará em por cima de todas e o primeiro o que ficará por baixo de todos</li>
-                    </ul>
+                <p>Nesse exemplo, o box verde, que tem position: absolute, se posiciona em relação à página inteira, não ao contêiner que o envolve. Isso significa que ele pode se sobrepor a outros elementos da página ou ficar fora do contêiner, dependendo de onde for posicionado.</p>
+                <h3>Conteiner com position: relative</h3>
+                <div style="position: relative;" class="conteiner conteiner-ex4">
+                    <div  class="int int-red"></div>
+                    <div style="position: absolute;" class="int int-green int-green-ex4"></div>
+                    <div class="int int-blue int-blue-ex4"></div>
+                </div>
+                <p>Nesse exemplo, o box verde, que tem position: absolute, se posiciona em relação ao contêiner que o envolve, que tem position: relative. Isso significa que ele ficará dentro dos limites do contêiner e não se sobreporá a outros elementos da página, a menos que seja posicionado de forma a fazê-lo.</p>
+                <p>Observe que os demais elementos dentro do contêiner não reconhecem o espaço ocupado pela caixa com position absolute, pois ela foi removida do fluxo normal do documento.</p>
+           
+            
                 
             </section><!-- /#observacaoes-absolute -->  
         </article><!-- /#position-absolute -->  
-        <article id="position-fixed">
-            <h2>Position fixed</h2>
-            <p>O posicionamento fixed é muito parecido com o posicionamento absoluto, quando o absoluto possui conteiner com posicionamento estático. A diferença é que o posicionamento fixo usa a viewport como referência. </p>
-            <a class="buttom buttom-index" href="../../index.html">Índice</a>
-
-            <p>Exemplo no canto inferior direito da tela.</p>
-            
-        </article><!-- /#position-fixed -->
-        <article id="position-sticky">
-            <h2>Position Sticky</h2>
-            <p>Essa position funciona como o congelar do excel para correr a planilha sem perder de vista os títulos de cada coluna. Inclusive já usamos essa position no capitulo sobre tabelas.</p>
-            <p>Essa position é muito usada em site de loja quando passar pelo preço ele gruda no topo da página com a opção de comprar sempre visível.</p>
-            <p>Exemplo: os títulos desse sites estão com position Sticky.</p>
-            
-        </article><!-- /#position-sticky -->
-        <article id="float">
-            <h2>Float</h2>
-            <p>Antigamente essa porpriedade era usada como usamos o grid e o flex-box hoje em dia. </p>
-            <section id="aplicabilidade">
-                <h3>Aplicabilidade do float atualmente</h3>
-    
-                <p>Efeitos como os usados no exemplo abaixo são os mais o comuns, hoje em dia, como uma imagem  lateral ao texto ou a primeira letra do texto maior que as demais </p>
-                 <div class="conteiner">
-    
-                        <div class="int int-green int-green-ex6"></div>
-                        <p id="p-exemplo-float">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero maiores quidem nesciunt corrupti quaerat, adipisci exercitationem earum excepturi ipsam cupiditate recusandae, porro dignissimos? Repellendus officiis velit error magnam et.</p>
-                    </div>
-                    <p>O comando</p>
-                    <div class="pre">
-                        <pre>
-    .int-green-ex6{
-        float:right;
-        margin: 10px;
-    }
-    
-    p#p-exemplo-float::first-letter{
-        font-size: 3em;
-        float: inline-start;
-    }
-    p#p-exemplo-float{
-        text-indent: 0;
-    }
-    
-                        </pre>
-                    </div>
-                <div class="obs">
-                    <p>Por algum bug essa primeira letra maior só funciona se text-indent for igual a zero(0). Caso contrário o texto "indenta" antes e depois da letra.</p>
-                </div>
-    
-            </section><!-- /#aplicabilidade -->
-            <section id="funcionamento-float">
-                
-                <h3>Como funciona o float</h3>
-                <p>A propriedade float faz literalmente o bloco flutuar sobre o conteiner a ponto do conteiner perder sua referência.</p>
-                <p>Veja um exemplo abaixo:</p>
-                 <div class="conteiner-ex8">
-                    <div class="int int-red int-red-ex8"></div>
-                    <div class="int int-green int-green-ex8"></div>
-                    <div class="int int-blue int-blue-ex8"></div>
-                </div>
-                
-                <br><br><br><br><br><br> <!--Esses br foram necessário pois o texto subiu para dentro do exemplo de float acima-->
-               <p>o comando:</p>
-               <div class="pre">
-                <pre>
-
-.conteiner-ex8{
-    border: 2px solid #0f0;
-    
-}
-.int-red-ex8{
-    float:right;
-
-}
-.int-green-ex8{
-    float: left;
-
-}
-
-.int-blue-ex8{
-    float: left;
-                    }
-                </pre>
-               </div>
-                <p>Por causa dessa característica de de perder sua referência, todas as box de um conteiner deverão ser float também. Caso contrário as boxes float iram sobrepor as demais.</p>
-                <p>Exemplo:</p>
-                <div class="conteiner-ex8">
-                    <div class="int int-red int-red-ex9"></div>
-                    <div class="int int-green int-green-ex9"></div>
-                    <div class="int int-blue int-blue-ex9"></div>
-                </div>
-                <p>O comando:</p>
-                <div class="pre">
-                    <pre>
-
-&lt;head>
-    &lt;style>
-        
-        .int-green-ex9{
-        float: left;
-        margin-left: 10px;
-        }
-
-    &lt;/style>
-&lt;/head>
-&lt;body>
-    &lt;div class="conteiner-ex8">
-        &lt;div class="int int-red int-red-ex9">&lt;/div>
-        &lt;div class="int int-green int-green-ex9">&lt;/div>
-        &lt;div class="int int-blue int-blue-ex9">&lt;/div>
-    &lt;/div>
-&lt;/body>
-                    </pre>
-                </div>
-                <p>Note que o box verde é o segundo no conteiner porém ele está por cima do azul. Isso aconteceu porque o verde "flutuou" com isso o conteiner e o azul perderam sua referência, então o azul subiu e o conteiner readaptou sua altura para enquadrar apenas as box vermelha e a azul.</p>
-                <div class="obs">
-                    <h4>Gambiarra</h4>
-                    <p>Existe um bug que faz o conteiner considerar  os espaços ocupados pelas box que estiverem como float. Para isso basta usar o <strong>overflow:auto;</strong> no conteiner.</p>
-                    <p>Digo bug pois o overflow auto obviamente não foi criado para essa finalidade.</p>
-                    <p>Exemplo:</p>
-                    <div class="conteiner-ex10">
-                        <div class="int int-red int-red-ex8"></div>
-                        <div class="int int-green int-green-ex8"></div>
-                        <div class="int int-blue int-blue-ex8"></div>
-                    </div>
-                    <p>o comando:</p>
-                    <div class="pre">
-                        <pre>
-.conteiner-ex10{
-overflow: auto;
-border: 2px solid #0f0;
-}
-                        </pre>
-                    </div>
-                </div>
-            </section><!-- /#funcionamento-float -->
-            <section id="clear">
-                <h3>Clear</h3>
-                <p>Essa propriedade foi desenvolvida para trabalhar junto com float, pois sua finalidade é justamente fazer com que as boxes float reconheçam as que não são float. Fazendo assim que a float não sobreponha a elas.</p>
-                <p>Essa porpriedade funciona da seguinte forma:</p>
-                <ul>
-                    <li><strong>Clear: left; </strong> Faz com que todas as float left reconheçam essa box. Porém as float right não reconhecem. </li>
-                    <li><strong>Clear: right; </strong>Faz com que todas as float right reconheçam essa box. Porém as float left não reconhecem.</li>
-                    <li><strong>Clear: both; </strong>Faz com que todas as float left e float right reconheçam essa box.</li>
-                </ul>
-                <p>Exemplo:</p>
-                <div class="conteiner-ex11">
-                    <div class="int int-red int-red-ex11"></div>
-                    <div class="int int-green int-green-ex11"></div>
-                    <div class="int int-blue int-blue-ex11"></div>
-                </div>
-                <p>O comando:</p>
-                <div class="pre">
-                    <pre>
-
-.conteiner-ex11{
-    overflow: auto;
-    border: 2px solid #0f0;
-    }
-
-    .int-red-ex11{
-    float: left;
-}
-.int-green-ex11{
-    float: left;
-}
-.int-blue-ex11{
-    clear:left;
-    display: inline-block;
-}
-                    </pre>
-                </div>
-                <p>Vale ressaltar que uma box pode ser clear ou float, ela não funciona com as duas ao mesmo tempo pois a clear perde a funcionalidade.</p>
-
-                <div class="obs">
-                    <h4>Curiosidade</h4>
-                    <p>Como toda box se alinha naturalmente a esquerda e a clear left faz as box float left reconhcerem a box clear left. Se usarmos a propriedade display: inline-box junto com clear left, essa box em questão se comportará como um float left. </p>
-                </div>
-                <h4>Layout de sites antigos usando float</h4>
-                <p>Como foi dito no início dessa position, a melhor forma de fazer layout antigamente era usando float. Isso funcionava como uma flex box. Veja o exemplo abaixo:</p>
-                <div class="conteiner">
-                    <div class="int int-red int-red-ex13"> HEADER</div>
-                    <div class="int int-green int-green-ex13">NAV</div>
-                    <div class="int int-blue int-blue-ex13">MAIN</div>
-                    <div class="int int-yellow int-yellow-ex13">FOOTER</div>
-                </div>
-                <p>O comando:</p>
-                <div class="pre">
-                    <pre>
-
-.conteiner{
-    height: 400px;
-    width: 350px;
-    border: 2px solid #0f0;
-    margin: auto;
-}
-
-.int-red-ex13{
-    width: 346px;
-}
-.int-green-ex13{
-    float:left;
-    height: 200px;
-}
-.int-blue-ex13{
-    float:left;
-    height: 200px;
-    width: 246px; 
-}
-.int-yellow-ex13{
-    clear:both;
-    width: 346px; 
-}   
-                    </pre>
-                </div>
-    
-            </section><!-- /#clear -->
-    
-        </article><!-- /#float -->
-      
-
+       
     </main>
     <!-- 
         div.conteiner.>div.int.int-red+div.int.int-green+div.int.int-blue
     -->
     <footer>
-       
-            <h1>Materiais utilizados</h1>
-            <p><strong><a href="../../material-de-apoio/apostila-html5-css-jquery.pdf" target="_blank"> Material em PDF</a></strong></p>
-            <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform" target="_blank"><strong>Propriedade Transform MDN</strong></a></p>
-            <p><a href="../../material-de-apoio/Aula 07 - CSS - tranformação e transição.pdf"><strong> Traformação e transição</strong></a></p>
-            <h2>Vídeos</h2>
-            <p>Curso particular</p>
-            <p><a href="https://youtu.be/VwilZMUnddY?si=eazwDTFN5_Deax9b" target="_blank"><strong>Transform translate-Serliv</strong></a></p>
-            <p><a href="https://youtu.be/eQdTJa0HbtE?si=VjEehtuYTPBBFEuI" target="_blank"><strong>Float atualmente - Serliv</strong></a></p>
-            <p><a href="https://youtu.be/KCNY1Q8H7jY?si=_5jmakUkdiEuwVes" target="_blank"><strong>Float - Serliv</strong></a></p>
-            <hr>
-            <iframe class="índice" src="../../index.html" frameborder="0"><a href="../../index.html"> Índice</a></iframe>
+        
     </footer>
     
 </body>

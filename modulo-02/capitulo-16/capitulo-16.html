@@ -106,7 +106,7 @@
         </ul>
         <div id="nav_videos"></div>
         <div id="menu_acesso_rapido"></div>
-        <main> 
+    <main> 
             <div id="config_iframe"></div>
         <article id="introducao">
             
@@ -347,6 +347,7 @@
                     <input type="number" id="margin" name="margin" value="40" onchange="valueMaxMin(500,-500,this)"><br>
                     <br>
                     <input type="button" onclick="updateBox()" value="Atualizar">
+                     <input type="button" onclick="resetBox()" value="Resetar" class="reset">
                 </form>
                 <span class="mark">Experimente usar valores negativos na margem para ver como a caixa se comporta em relação aos elementos vizinhos.</span>
                 <div style="display: flex; justify-content: center;">
@@ -370,6 +371,15 @@
                     
                 </div>
                  <script>
+                    function resetBox() {
+                        document.getElementById('width').value = 200;
+                        document.getElementById('height').value = 200;
+                        document.getElementById('padding').value = 20;
+                        document.getElementById('borderWidth').value = 20;
+                        document.getElementById('outlineWidth').value = 20;
+                        document.getElementById('margin').value = 40;
+                        updateBox();
+                    }
                 function updateBox() {
                     const width = document.getElementById('width').value + 'px';
                     const height = document.getElementById('height').value + 'px';
@@ -485,6 +495,7 @@
                     <label for="shadowColor">Cor da Sombra:</label>
                     <input type="color" id="shadowColor" name="shadowColor" value="#000000"><br><br>
                     <input type="button" onclick="updateShadow()" value="Atualizar">
+                    <input type="button" onclick="resetShadow()" value="Resetar" class="reset">
                 </form>
                 <div class="pre">
                     <pre><output id="codeShadow"></output>
@@ -503,6 +514,16 @@
                     </div>
                 </div>
               <script>
+              
+                    function resetShadow() {
+                        document.getElementById('hOffset').value = 5;
+                        document.getElementById('vOffset').value = 5;
+                        document.getElementById('blurRadius').value = 4;
+                        document.getElementById('spreadRadius').value = 4;
+                        document.getElementById('shadowColor').value = '#000000';
+                        updateShadow();
+                    }
+                    
                     function updateShadow() {
                         let hOffset = document.getElementById('hOffset').value + 'px';
                         let vOffset = document.getElementById('vOffset').value + 'px';
@@ -520,7 +541,7 @@
                         let one=document.getElementById('1-px').innerHTML=hOffset;
                         let two=document.getElementById('2-px').innerHTML=vOffset;
                         let three=document.getElementById('3-px').innerHTML=blurRadius;
-                        let four=document.getElementById('4-px').innerHTML=blurRadius;
+                        let four=document.getElementById('4-px').innerHTML=spreadRadius;
                         let five=document.getElementById('color').innerHTML=shadowColor;
 
 

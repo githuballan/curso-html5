@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo 26</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" href="../../imagens/Study.ico" type="image/x-icon">
+
+    <style>
+        /*configurações gerais dos exemplos*/
+        .conteiner{
+            height: 400px;
+            width: 350px;
+            border: 2px solid #0f0;
+            margin: auto;
+        }
+        .int{/*interno*/
+            border-radius: 5px;
+            border: 2px solid #000;
+            height: 100px;
+            width: 100px;
+            
+        }
+        .int-red{
+            background-color: red;
+        }
+        .int-green{
+            background-color: green;
+        }
+        .int-blue{
+            background-color: blue;
+        }
+        .int-yellow{
+            background-color: yellow;
+        }
+        /* fim configurações gerais dos exemplos*/
+
+        /*Exemplo Position float ex06*/
+        .int-green-ex6{
+            float:right;
+            margin: 10px;
+        }
+
+        p#p-exemplo-float::first-letter{
+            font-size: 3em;
+            float: inline-start;   
+        }
+        p#p-exemplo-float{
+            text-indent: 0;
+        }
+        /*fim Exemplo Position float ex06*/
+
+        /*Exemplo Position clear*/
+        .conteiner-ex11{
+            overflow: auto;
+            border: 2px solid #0f0;
+        }
+        .int-red-ex11{
+            float: left;
+        }
+        .int-green-ex11{
+            float: left;
+        }
+        .int-blue-ex11{
+           clear:left;
+           display: inline-block;
+        }
+
+       
+        /* fim Exemplo Position clear*/
+    </style>
+    
+    <script src="../../script.js"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z9YVPY1GML');
+    </script>
+    
+</head> 
+<body>
+   
+    <header>
+        <h1>Position</h1>
+    </header>
+
+    <ul id="video_list">
+    <li data-adress="https://www.youtube.com/embed/eQdTJa0HbtE?si=VjEehtuYTPBBFEuI">Float atualmente - Serliv</li>
+    <li data-adress="https://www.youtube.com/embed/KCNY1Q8H7jY?si=_5jmakUkdiEuwVes">Float - Serliv</li>
+</ul>
+<ul id="shortcuts">
+  
+    <li data-adress="#float">Float</li>
+    <li data-adress="#clear">Clear</li>
+   
+</ul>
+<div id="nav_videos"></div>
+<div id="menu_acesso_rapido"></div>
+
+<main> 
+    <div id="config_iframe"></div>
+        
+        <article id="float">
+            <section id="introducao">
+            <h2>Float</h2> 
+          
+                <p>O float é uma propriedade que tem a função de fazer um elemento flutuar para a direita ou para a esquerda, permitindo que outros elementos se posicionem ao seu redor. Ele é comumente usado para criar layouts de texto e imagens, onde o conteúdo pode ser alinhado à esquerda ou à direita, enquanto o restante do conteúdo flui ao redor dele.</p>
+                <p>O float é frequentemente utilizado para criar layouts de colunas, onde um elemento pode ser flutuado para a esquerda e outro para a direita, permitindo que o conteúdo seja organizado de forma mais flexível. No entanto, é importante notar que o uso excessivo do float pode levar a problemas de layout, como elementos sobrepostos ou colapsados, especialmente quando não são usados corretamente.</p>
+           
+                <h3>Aplicabilidade do float atualmente</h3>
+    
+                    <p>O float é uma propriedade que tem sido amplamente utilizada no desenvolvimento web para criar layouts de texto e imagens. No entanto, com o avanço das tecnologias de layout, como Flexbox e Grid, o uso do float tem se tornado menos comum para a criação de layouts complexos.</p>
+                    <p>Atualmente, o float é mais comumente usado para criar layouts simples de texto ou para alinhar pequenos blocos de conteúdo à esquerda ou à direita. Ele continua sendo útil pela simplicidade do código.</p>
+                    <p>Exemplo:</p>
+
+                 <div class="conteiner">
+    
+                        <div class="int int-green int-green-ex6"></div>
+                        <p id="p-exemplo-float">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero maiores quidem nesciunt corrupti quaerat, adipisci exercitationem earum excepturi ipsam cupiditate recusandae, porro dignissimos? Repellendus officiis velit error magnam et.</p>
+                    </div>
+
+                    <div class="pre">
+                        <pre>
+ 
+        float:right;
+       
+    p::first-letter{
+        font-size: 3em;
+        float: inline-start;
+    }
+    p{
+        text-indent: 0;
+    }
+    
+                        </pre>
+                    </div>
+    
+            </section><!-- /#introducao -->
+            <section id="peculiaridade-float">
+                
+                <h3>Peculiaridade do float</h3>
+                <p>O float tem uma característica peculiar: ele perde sua referência no fluxo normal do documento. Isso significa que o contêiner e os elementos posicionados abaixo do elemento flutuante não o reconhecem, podendo causar problemas de layout com sobreposição de elementos.</p>
+                <p>Veja os exemplos abaixo:</p>
+                <p><strong>1º Exemplo:</strong> O elemento flutuante se sobrepõe aos outros elementos dentro do contêiner.</p>
+              
+            
+                <div style=" border: 2px solid #0f0;">
+                    <div class="int int-red"></div>
+                    <div style="float: left; margin-left: 10px;" class="int int-green"></div>
+                    <div class="int int-blue"></div>
+                </div>
+                  <div class="pre">
+                    <pre>
+&lt;div style=" border: 2px solid #0f0;">
+    &lt;div class="int int-red">&lt;/div>
+    &lt;div style="float: left; margin-left: 10px;" class="int int-green">&lt;/div>
+    &lt;div class="int int-blue">&lt;/div>
+&lt;/div>
+                    </pre>
+                </div>
+
+              <p><strong>2º Exemplo:</strong> Como todos os elementos possuem a propriedade float, o próprio contêiner não reconhece a altura deles. Isso gera problemas no layout dos elementos em volta do contêiner.</p>
+                <div style=" border: 2px solid #0f0;">
+                    <div style="float: right;" class="int int-red"></div>
+                    <div style="float: left;" class="int int-green"></div>
+                    <div style="float: right;" class="int int-blue"></div>
+                </div>
+                <div class="pre">
+                    <pre>
+&lt;div style=" border: 2px solid #0f0;">
+    &lt;div style="float: right;" class="int int-red">&lt;/div>
+    &lt;div style="float: left;" class="int int-green">&lt;/div>
+    &lt;div style="float: right;" class="int int-blue">&lt;/div>
+&lt;/div>
+                    </pre>
+                </div>
+              
+                <div class="obs">
+                    <h4>Gambiarra</h4>
+                    <p>Existe um bug que faz o conteiner considerar  os espaços ocupados pelas box que estiverem como float. Para isso basta usar o <strong>overflow:auto;</strong> no conteiner.</p>
+                </div>
+                    <p>Exemplo:</p>
+                    <div style="border: solid 2px #0f0; overflow: auto;">
+                        <div style="float: right" class="int int-green"></div>
+                        <div style="float: right" class="int int-red"></div>
+                        <div style="float: right" class="int int-blue"></div>
+                    </div>
+                    
+                    <div class="pre">
+                        <pre>
+&lt;div style="border: solid 2px #0f0; <strong>overflow: auto;</strong>">
+    &lt;div style="float: right" class="int int-green">&lt;/div>
+    &lt;div style="float: right" class="int int-red">&lt;/div>
+    &lt;div style="float: right" class="int int-blue">&lt;/div>
+&lt;/div>
+                        </pre>
+                    </div>
+                </div>
+            </section><!-- /#peculiaridade-float -->
+            <section id="clear">
+                <h2>Clear</h2>
+                <p>Essa propriedade foi desenvolvida para trabalhar junto com float, pois sua finalidade é fazer com que os elementos flutuantes respeitem os elementos que não possuem float. Assim, evita-se que elementos flutuantes se sobreponham a eles.</p>
+                <p>Essa propriedade funciona da seguinte forma:</p>
+                <ul>
+                    <li><strong>Clear: left;</strong> Faz com que o elemento não flutue à esquerda de elementos com <code>float: left</code>. Elementos com <code>float: right</code> não são afetados.</li>
+                    <li><strong>Clear: right;</strong> Faz com que o elemento não flutue à direita de elementos com <code>float: right</code>. Elementos com <code>float: left</code> não são afetados.</li>
+                    <li><strong>Clear: both;</strong> Faz com que o elemento respeite tanto elementos <code>float: left</code> quanto <code>float: right</code>, posicionando-se abaixo de todos eles.</li>
+                </ul>
+                <fieldset>
+                    <legend>Exemplo interativo</legend>
+
+                     <div style="margin: 20px 0; padding: 20px; border: 1px solid #ccc;">
+                    <h4>Controles Interativos</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                        <div>
+                            <label><strong>Elemento Vermelho:</strong></label>
+                            <select id="float-red">
+                                <option value="">Sem float</option>
+                                <option value="left">Float left</option>
+                                <option value="right">Float right</option>
+                            </select>
+                            <select id="clear-red">
+                                <option value="">Sem clear</option>
+                                <option value="left">Clear left</option>
+                                <option value="right">Clear right</option>
+                                <option value="both">Clear both</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label><strong>Elemento Verde:</strong></label>
+                            <select id="float-green">
+                                <option value="">Sem float</option>
+                                <option value="left">Float left</option>
+                                <option value="right">Float right</option>
+                            </select>
+                            <select id="clear-green">
+                                <option value="">Sem clear</option>
+                                <option value="left">Clear left</option>
+                                <option value="right">Clear right</option>
+                                <option value="both">Clear both</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label><strong>Elemento Azul:</strong></label>
+                            <select id="float-blue">
+                                <option value="">Sem float</option>
+                                <option value="left">Float left</option>
+                                <option value="right">Float right</option>
+                            </select>
+                            <select id="clear-blue">
+                                <option value="">Sem clear</option>
+                                <option value="left">Clear left</option>
+                                <option value="right">Clear right</option>
+                                <option value="both">Clear both</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <button id="apply-btn" style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Aplicar</button>
+                        <button id="reset-btn" style="padding: 8px 16px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Reset</button>
+                    </div>
+                    </div>
+                    <div style="width: 100%;" class="conteiner-ex11">
+                        <div class="int int-red int-red-ex11"></div>
+                        <div class="int int-green int-green-ex11"></div>
+                        <div class="int int-blue int-blue-ex11"></div>
+                    </div>
+                    <div class="pre">
+                    <pre id="code-ex11"></pre>
+                    </div>
+
+                    <style>
+                        #float-red, #float-green, #float-blue,
+                        #clear-red, #clear-green, #clear-blue {
+                            display: block;
+                            margin: 5px 0;
+                            padding: 5px;
+                        }
+                    </style>
+
+                    <script>
+                        const container = document.querySelector('.conteiner-ex11');
+                        const redBox = document.querySelector('.int-red-ex11');
+                        const greenBox = document.querySelector('.int-green-ex11');
+                        const blueBox = document.querySelector('.int-blue-ex11');
+                        const codeDisplay = document.getElementById('code-ex11');
+
+                        const floatRed = document.getElementById('float-red');
+                        const floatGreen = document.getElementById('float-green');
+                        const floatBlue = document.getElementById('float-blue');
+                        const clearRed = document.getElementById('clear-red');
+                        const clearGreen = document.getElementById('clear-green');
+                        const clearBlue = document.getElementById('clear-blue');
+                        const applyBtn = document.getElementById('apply-btn');
+                        const resetBtn = document.getElementById('reset-btn');
+
+                        function updateStyles() {
+                            redBox.style.float = floatRed.value || 'none';
+                            redBox.style.clear = clearRed.value || 'none';
+                            greenBox.style.float = floatGreen.value || 'none';
+                            greenBox.style.clear = clearGreen.value || 'none';
+                            blueBox.style.float = floatBlue.value || 'none';
+                            blueBox.style.clear = clearBlue.value || 'none';
+
+                            updateCode();
+                        }
+
+                        function updateCode() {
+                            let code = '&lt;div style="border: 2px solid #0f0;">\n';
+
+                            code += `    &lt;div class="int int-red"`;
+                            if (floatRed.value) code += ` style="float: ${floatRed.value};`;
+                            if (clearRed.value) code += `${floatRed.value ? ' ' : 'style="'}clear: ${clearRed.value};`;
+                            code += `"`;
+                            code += `&gt;&lt;/div>\n`;
+
+                            code += `    &lt;div class="int int-green"`;
+                            if (floatGreen.value) code += ` style="float: ${floatGreen.value};`;
+                            if (clearGreen.value) code += `${floatGreen.value ? ' ' : 'style="'}clear: ${clearGreen.value};`;
+                            code += `"`;
+                            code += `&gt;&lt;/div>\n`;
+
+                            code += `    &lt;div class="int int-blue"`;
+                            if (floatBlue.value) code += ` style="float: ${floatBlue.value};`;
+                            if (clearBlue.value) code += `${floatBlue.value ? ' ' : 'style="'}clear: ${clearBlue.value};`;
+                            code += `"`;
+                            code += `&gt;&lt;/div>\n&lt;/div>`;
+
+                            codeDisplay.innerHTML = code;
+                        }
+
+                        applyBtn.addEventListener('click', updateStyles);
+
+                        resetBtn.addEventListener('click', () => {
+                            floatRed.value = '';
+                            floatGreen.value = '';
+                            floatBlue.value = '';
+                            clearRed.value = '';
+                            clearGreen.value = '';
+                            clearBlue.value = '';
+                            updateStyles();
+                        });
+
+                        updateCode();
+                    </script>
+
+                </fieldset>
+                <p>O comando:</p>
+               
+                <p>Vale ressaltar que uma box pode ser clear ou float, ela não funciona com as duas ao mesmo tempo pois a clear perde a funcionalidade.</p>
+
+              
+                <h3>Layout de sites antigos usando float</h3>
+                <p>Antigamente, a melhor forma de criar layouts era usando float, que funcionava de maneira similar ao Flexbox e Grid atuais. Veja o exemplo abaixo:</p>
+                <div style="height: 400px; width: 350px; border: 2px solid #0f0; margin: auto;">
+                    <div class="int int-red" style=" width: 346px;"> HEADER</div>
+                    <div class="int int-green " style="float:left; height: 200px;">NAV</div>
+                    <div class="int int-blue  " style="float:left; height: 200px; width: 246px; ">MAIN</div>
+                    <div class="int int-yellow" style=" clear:both; width: 346px; ">FOOTER</div>
+                </div>
+                
+                <div class="pre">
+                    <pre>
+&lt;div style="height: 400px; width: 350px; border: 2px solid #0f0; margin: auto;">
+    &lt;div class="int int-red" style=" width: 346px;"> HEADER&lt;/div>
+    &lt;div class="int int-green " style="float:left; height: 200px;">NAV&lt;/div>
+    &lt;div class="int int-blue  " style="float:left; height: 200px; width: 246px; ">MAIN&lt;/div>
+    &lt;div class="int int-yellow" style=" clear:both; width: 346px; ">FOOTER&lt;/div>
+&lt;/div>
+                    </pre>
+                </div>
+    
+            </section><!-- /#clear -->
+    
+        </article><!-- /#float -->
+      
+
+    </main>
+    <!-- 
+        div.conteiner.>div.int.int-red+div.int.int-green+div.int.int-blue
+    -->
+    <footer>
+            <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform" target="_blank"><strong>Propriedade Transform MDN</strong></a></p>
+            <p><a href="../../material-de-apoio/Aula 07 - CSS - tranformação e transição.pdf"><strong> Traformação e transição</strong></a></p>
+        
+            <p><a href="https://youtu.be/VwilZMUnddY?si=eazwDTFN5_Deax9b" target="_blank"><strong>Transform translate-Serliv</strong></a></p>
+            <p><a href="https://youtu.be/eQdTJa0HbtE?si=VjEehtuYTPBBFEuI" target="_blank"><strong>Float atualmente - Serliv</strong></a></p>
+            <p><a href="https://youtu.be/KCNY1Q8H7jY?si=_5jmakUkdiEuwVes" target="_blank"><strong>Float - Serliv</strong></a></p>
+            <hr>
+    </footer>
+    
+</body>
+</html>

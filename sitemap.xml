@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Página inicial -->
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/index.html</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Módulo 01 -->
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-05/capitulo-05.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-06/capitulo-06.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-07/capitulo-07.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-08/capitulo-08.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-09/capitulo-09.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-10/capitulo-10.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-01/capitulo-11/capitulo-11.html</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Módulo 02 -->
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-02/capitulo-12/capitulo-12.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-02/capitulo-13/capitulo-13.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-02/capitulo-14/capitulo-14.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-02/capitulo-15/capitulo-15.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-02/capitulo-16/capitulo-16.html</loc>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Módulo 03 -->
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-03/capitulo-18/capitulo-18.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-03/capitulo-19/capitulo-19.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-03/capitulo-20/capitulo-20.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-03/capitulo-21/capitulo-21.html</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-03/capitulo-extra/html-mais-rapido.html</loc>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Módulo 04 -->
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/capitulo-22/capitulo-22.html</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/capitulo-25/capitulo-25.html</loc>
+        <priority>0.5</priority>
+    </url>
+     <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/transform/transform.html</loc>
+        <priority>0.5</priority>
+    </url>
+    <!-- <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/capitulo-26.5-position/capitulo-26.5-position.html</loc>
+        <priority>0.5</priority>
+    </url>
+   
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/capitulo-27/capitulo-27.html</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/capitulo-28/capitulo-28.html</loc>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-04/animacao-css/animacao-css.html</loc>
+        <priority>0.5</priority>
+    </url> -->
+
+    <!-- Módulo 05 -->
+    <!-- <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-05/capitulo-29/capitulo-29.html</loc>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-05/capitulo-30/capitulo-30.html</loc>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-05/capitulo-31/capitulo-31.html</loc>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-05/capitulo-32/capitulo-32.html</loc>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://guiadehtmlcssjs.com.br/modulo-05/capitulo-33/capitulo-33.html</loc>
+        <priority>0.4</priority>
+    </url> -->
+</urlset>

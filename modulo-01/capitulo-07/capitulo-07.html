@@ -29,7 +29,7 @@
 </head> 
 <body>
      
-    <a class="buttom buttom-index" href="../../index.html">Índice</a>
+    
     <header>
     <h1>Tags Semânticas no HTML5</h1>
     </header>
@@ -168,7 +168,7 @@
                         <p>A metatag <code>keywords</code> define as palavras-chave que ajudarão a página a ser exibida nos resultados de busca.</p>
                         <p>Essa metatag, junto com a <code>description</code>, é uma técnica diretamente ligada ao SEO e super importante para um bom ranqueamento do site.</p>
                         <div class="pre">
-                            <pre>&lt;meta name="keywords" content="Peixes, neon, betta, filtros, ph, kh, dureza, aquarismo, aquainfo"&gt;</pre>
+                            <pre>&lt;meta name="keywords" content="html, javascript,css,"&gt;</pre>
                         </div>
                     </section><!--keyword-->
 
@@ -248,8 +248,18 @@
     
                     <h4>Diferenciando Article de Section</h4>
                     <p>Imagine uma redação com título, introdução, desenvolvimento com três argumentos e conclusão. A introdução, o desenvolvimento e a conclusão são as três <code>&lt;section&gt;</code> da redação, enquanto o <code>&lt;article&gt;</code> seria a redação inteira, incluindo o título.</p>
-                    <p>Agora, imagine um texto extenso. Esse texto também teria essas três <code>&lt;section&gt;</code>. Entretanto, os argumentos poderiam ser considerados <code>&lt;article&gt;</code> dentro do <code>&lt;article&gt;</code> principal, que seria o próprio texto, além de estarem na <code>&lt;section&gt;</code> de desenvolvimento.</p>
-    
+                    <p>Exemplo:</p>
+                    <div class="pre">
+                        <pre>&lt;article&gt;
+    &lt;h1&gt;Título da Redação&lt;/h1&gt;
+    &lt;section&gt;Introdução&lt;/section&gt;
+    &lt;section&gt;Desenvolvimento&lt;/section&gt;
+    &lt;section&gt;Conclusão&lt;/section&gt;
+&lt;/article&gt;</pre>
+                    </div>
+
+                    <p>Perceba que a section serve para organizar o conteúdo em um sentido estrutural como uma organização lógica. </p>
+                   
                 </section>
                 <section id="aside">
                     <h3>Aside</h3>
