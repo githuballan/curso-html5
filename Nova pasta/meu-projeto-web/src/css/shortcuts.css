@@ -1,0 +1,33 @@
+:root {
+    --shortcut-bg-color: #f0f0f0;
+    --shortcut-border-color: #ccc;
+    --shortcut-hover-bg-color: #e0e0e0;
+    --shortcut-active-bg-color: #d0d0d0;
+}
+
+.shortcut {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid var(--shortcut-border-color);
+    border-radius: 5px;
+    background-color: var(--shortcut-bg-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shortcut:hover {
+    background-color: var(--shortcut-hover-bg-color);
+}
+
+.shortcut:active {
+    background-color: var(--shortcut-active-bg-color);
+}
+
+.shortcut-icon {
+    margin-right: 5px;
+}
+
+.shortcut-label {
+    font-weight: bold;
+}

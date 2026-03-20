@@ -1,0 +1,67 @@
+# pesquisa.css
+
+# Styles specific to the search functionality
+
+# Search bar container
+#barra-pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px auto;
+    border-radius: 8px;
+    padding: 10px 16px;
+    max-width: 420px;
+}
+
+#campo-pesquisa {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.2s;
+    cursor: text;
+}
+
+#campo-pesquisa:focus {
+    border: 1.5px solid #0078d7;
+}
+
+#botao-pesquisa {
+    padding: 5px;
+    background-image: linear-gradient(90deg, #D1D9E4 50%, #CCE8C5);
+    box-shadow: 1px 1px 4px 0px #00000055;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+#botao-pesquisa:hover {
+    transform: scale(1.05);
+}
+
+#barra-pesquisa {
+    top: -70px; /* Escondido acima do topo */
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: top 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+#barra-pesquisa.mostrar {
+    top: 0px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    background-image: linear-gradient(90deg, #D1D9E4 50%, #CCE8C5);
+    max-width: 500px;
+    width: 100vw;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}

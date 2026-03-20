@@ -1,0 +1,67 @@
+:root {
+    --menu-width: 250px;
+    --menu-background: #f0f0f0;
+    --menu-border-color: #ccc;
+    --menu-item-color: #333;
+    --menu-item-hover-color: #ddd;
+}
+
+#menu-hamburguer {
+    cursor: pointer;
+    border: solid 0px #000;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    background-color: rgba(240, 240, 240, 0);
+}
+
+#menu-hamburguer .bar1, 
+#menu-hamburguer .bar2, 
+#menu-hamburguer .bar3 {
+    width: 20px;
+    height: 5px;
+    background-color: #333;
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+    width: 120%;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+    width: 120%;
+}
+
+#shortcuts_list {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    z-index: 20;
+    box-shadow: 1px 1px 1px 100vmax rgba(0, 0, 0, 0.139);
+    background-color: var(--menu-background);
+    border: 1px solid var(--menu-border-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#shortcuts_list li {
+    color: var(--menu-item-color);
+    padding: 5px;
+}
+
+#shortcuts_list li:hover {
+    background-color: var(--menu-item-hover-color);
+    cursor: pointer;
+}

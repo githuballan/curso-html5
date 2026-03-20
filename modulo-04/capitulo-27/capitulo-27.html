@@ -9,7 +9,7 @@
     <style>
        #conteiner{/*article flex boxes*/
             display:flex;
-            background-color: #990000;
+            background-color: coral;
            
             flex-wrap: wrap;
         }
@@ -42,12 +42,11 @@
         div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{/*article flex boxes*/
             flex: auto;
             
-            background-color: #0000ee;
-            border: solid;
-            border-radius: 5px;
-            border:#000000;        
-            margin:3px;
-            color:#ffffff;
+             background-color: aquamarine;
+              border-radius: 20px;
+        text-align: center;
+        border:1px solid #000000;
+            color:#000;
             padding: 1%;
             
 
@@ -367,6 +366,7 @@
     }
 
     </style>
+    <script src="../../script.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9YVPY1GML"></script>
@@ -381,10 +381,69 @@
 <body>
     
     <header>
-        <h1>Capítulo 27</h1>
         <h1>Flex Box</h1>
-    </header>
-    <main>
+     </header>
+
+        <div id="button_index"></div>
+
+       <ul id="video_list">  
+             <li data-adress="https://www.youtube.com/embed/rqvn_c2n9Eg?si=94_Kalx5Jv9lW44Y">O que vamos aprender no módulo 5</li>
+
+            <li data-adress="https://www.youtube.com/embed/YeGn9nGies0?si=52Lpoi7ZUmbtuIHN">Primeiros passos com Flexbox CSS</li>
+
+            <li data-adress="https://www.youtube.com/embed/qtGI16QcV1U?si=ppK0u59K3zKED-Nu">
+Direções e Eixos Flexbox CSS</li>
+            <li data-adress="https://www.youtube.com/embed/KRk3tjIZeFI?si=ZhUj1EOrzInMXEtj">Empacotamento e fluxo no Flexbox CSS</li>
+            <li data-adress="https://www.youtube.com/embed/KKdr1KZeFqk?si=zh-Wfn63JgWsWaqF">
+Alinhamento nos eixos Flexbox</li>
+            <li data-adress="https://www.youtube.com/embed/gfimpySRhUI?si=-DTpGk_KnWef7iHF">Centralização absoluta com Flexbox</li>
+            <li data-adress="https://www.youtube.com/embed/qMTX98pCwXA?si=3dBFRmDQGXk7ryuq">Alinhamento de elementos empacotados no Flexbox</li>
+            <li data-adress="https://www.youtube.com/embed/D7jeyyfigBM?si=OdSNbGE7Ivft5uMI">
+Anatomia dos itens Flexbox</li>
+            <li data-adress="https://www.youtube.com/embed/J8iyHpOoLSU?si=7anmSiiiIcsupkgj">
+Propriedade flex-basis em Flexbox</li>
+            <li data-adress="https://www.youtube.com/embed/Le_rq-Cz_mo?si=xe9ayFdsRlXK_RN8">
+Controle do tamanho de itens flexíveis</li>
+            <li data-adress="https://www.youtube.com/embed/JSf4HuF52g0?si=Xrs_cKnvP2Qbj4B3">A propriedade flex</li>
+            <li data-adress="https://www.youtube.com/embed/VlAv9_R_rNY?si=4z_bImpuvvxPT4Hf">Criando um menu com Flexbox (parte 1)</li>
+            <li data-adress="https://www.youtube.com/embed/MXYtSrkHdCs?si=TRYDxwFCeZ7Q3Lj0">Criando um menu com Flexbox (parte 2)</li>
+            <li data-adress="https://www.youtube.com/embed/hlp3C9QI3Qk?si=BPnOy5ziJG5_fXdA">
+Menu Responsivo com Flexbox e Media Queries na Prática</li>
+            <li data-adress="https://www.youtube.com/embed/VBGMnFHRqcY?si=0V5LBCWa5empqHPQ">Conteúdo flexível apenas com Flexbox (parte 1)</li>
+            <li data-adress="https://www.youtube.com/embed/U9-L5yXiNyE?si=V5ym9CHxBK8PKeqN">
+Conteúdo flexível apenas com Flexbox (parte 2)</li>
+            <li data-adress="https://www.youtube.com/embed/Homo-ORr-9o?si=xBVhb0LCAol6-PSO">Jogo que vai te ensinar Flexbox CSS</li>
+            <li data-adress="https://www.youtube.com/embed/ue1VadygZT8?si=zrbUC27YcXWb1x9A">Flexbox Froggy: resposta de todos os desafios</li>
+        </ul>
+
+        <ul id="shortcuts">
+            <li data-adress="#Introdução">Introdução</li>
+            <li data-adress="#Eixos-axis">Eixos (axis)</li>
+            <li data-adress="#Flex-direction">Flex-direction</li>
+            <li data-adress="#flex-wrap">Flex-wrap</li>
+            <li data-adress="#flex-flow">Flex-flow</li>
+            <li data-adress="#alinhamentos-nos-eixos">Alinhamentos nos eixos</li>
+            <li data-adress="#justify-content">Justify-content</li>
+            <li data-adress="#align-items">Align-items</li>
+            <li data-adress="#align-content">Align-content</li>
+            <li data-adress="#centralizacao">Centralização</li>
+            <li data-adress="#autonomia-itens">Autonomia dos itens</li>
+            <li data-adress="#order">Order</li>
+            <li data-adress="#align-self">Align-self</li>
+            <li data-adress="#flex-basis">Flex-basis</li>
+            <li data-adress="#flex-grow">Flex-grow</li>
+            <li data-adress="#flex-shrink">Flex-shrink</li>
+            <li data-adress="#propriedade-flex">Propriedade flex</li>
+        </ul>
+
+        <div id="nav_videos"></div>
+
+        <div id="menu_acesso_rapido"></div>
+
+        <main> 
+
+            <div id="config_iframe"></div>
+
         <section  id="Introdução">
             <h2>O que são flex Box?</h2>
             <p>Flex box são caixas flexíveis.</p>
@@ -398,57 +457,14 @@
             </ul>
         <p>Exemplo:</p>
                 <div id="conteiner">
-                    <div id="item01">BOX 01</div>
-                    <div id="item02">BOX 02</div>
-                    <div id="item03">BOX 03</div>
-                    <div id="item04">BOX 04</div>
-                    <div id="item04">BOX 05</div>
-                    <div id="item04">BOX 06</div>
+                    <div id="item01">Bloco 01</div>
+                    <div id="item02">Bloco 02</div>
+                    <div id="item03">Bloco 03</div>
+                    <div id="item04">Bloco 04</div>
+                    <div id="item04">Bloco 05</div>
+                    <div id="item04">Bloco 06</div>
                 </div>
-                <p>Comando no body:</p>
-
-                        <div class="pre">
-                
-                    <pre>
-                
-&lt;div id="conteiner">
-    &lt;div id="item01">BOX 01&lt;/div>
-    &lt;div id="item02">BOX 02&lt;/div>
-    &lt;div id="item03">BOX 03&lt;/div>
-    &lt;div id="item04">BOX 04&lt;/div>
-    &lt;div id="item04">BOX 05&lt;/div>
-    &lt;div id="item04">BOX 06&lt;/div>
-&lt;/div>
-                    </pre>
-                </div>
-                    <p>Comando no head:</p>
-                    <div class="pre">
-                    <pre>
-                       
-                
-&lt;style>
-    div#conteiner{
-        display:flex;
-        background-color: #990000;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-
-    div#item01, div#item02, div#item03, div#item04,div#item05, div#item06{
-        flex:auto;
-        background-color: #0000ee; 
-        border: solid;
-        border-radius: 5px;
-        border:#000000;        
-        margin:3px;
-        color:#ffffff;
-        padding: 1%;
-        
-    }
-        
-&lt;/style>
-                </pre>
-                        </div>
+              
            
         </section><!--Introdução-->
         <article id="Eixos-axis">
@@ -624,367 +640,344 @@
         <article id="alinhamentos-nos-eixos">
             <h2>Alinhamentos nos eixos (Conteiner)</h2>
             <article id="justify-content">
-                <h3>Alinhamento no eixo main-axis (justify-content)</h3>
-                <p>A propriedade <strong>justify-content</strong> é utilizada para alinhar os itens flexíveis ao longo do eixo principal (main-axis) do contêiner. Ela define como o espaço disponível nesse eixo deve ser distribuído entre os itens.</p>
-                <div class="overflow-x">
-                    <table><!--justify-content-->
-                    <thead>
-                        <tr>
-                            <th scope="col">justify-content:</th>
-                            <th scope="col">Explicação / Exemplo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">flex-start</th>
-                                <td>Agrupa as boxes internas juntas no início da flex-direction deixando um espaço restante vazio no final</td>
-                               
-                            </tr>
-                            <tr>
-                                <td>
-                                <div class="contex1">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div>
-                            </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">flex-end</th>
-                                <td>Agrupa as boxes internas juntas no final da flex-direction deixando um espaço restante vazio no início. Não, não é igual ao flex direction: row-reverse; confira a ordem das caixas e verá que no reverse a ordem é invertida.</td>
-                            </tr>
-                            <tr>
-                                <td><div class="contex2">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div></td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">center</th>
-                                <td>Agrupa as boxes internas juntas no centro e deixa o espaço vazio dividido por igual nas duas extremidade.</td>
-                            </tr>
-                            <tr>
-                                
-                                <td><div class="contex3">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div></td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">space-between</th>
-                                <td>Cola as duas box mais extremas nas extremidades e divide o restante do espaço vazio por igual entre elas</td>
-                            </tr>
-                            <tr>
-                               
-                                <td><div class="contex4">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div></td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">space-evenly</th>
-                                <td>Divide o espaço vazio por igual  entre as box inclusives entre a box e a extremidade</td>
-                            </tr>
-                            <tr>
-                                
-                                <td><div class="contex5">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div></td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">space-around</th>
-                                <td>Divide todo o espaço vazio pela quantidade de caixas, depois divide por dois e coloca esse valor restante (espaço) de cada lado de cada caixa.</td>
-                            </tr>
-                            <tr>
-                                
-                                <td>
-                                <div class="contex6">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div>
-                            </td>
-                            </tr>
-                    </tbody>
-                    </table>
-                </div>
+            <h3>Alinhamento no eixo main-axis (justify-content)</h3>
+            <p>A propriedade <strong>justify-content</strong> é utilizada para alinhar os itens flexíveis ao longo do eixo principal (main-axis) do contêiner. Ela define como o espaço disponível nesse eixo deve ser distribuído entre os itens.</p>
+            <div class="overflow-x">
+                <table><!--justify-content-->
+                <thead>
+                <tr>
+                    <th scope="col">justify-content:</th>
+                    <th scope="col">Explicação / Exemplo</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">flex-start</th>
+                    <td>Agrupa os blocos internos juntos no início da flex-direction deixando um espaço restante vazio no final</td>
+                       
+                    </tr>
+                    <tr>
+                    <td>
+                    <div class="contex1">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">flex-end</th>
+                    <td>Agrupa os blocos internos juntos no final da flex-direction deixando um espaço restante vazio no início. Não, não é igual ao flex direction: row-reverse; confira a ordem dos blocos e verá que no reverse a ordem é invertida.</td>
+                    </tr>
+                    <tr>
+                    <td><div class="contex2">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div></td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">center</th>
+                    <td>Agrupa os blocos internos juntos no centro e deixa o espaço vazio dividido por igual nas duas extremidade.</td>
+                    </tr>
+                    <tr>
+                    
+                    <td><div class="contex3">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div></td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">space-between</th>
+                    <td>Cola os dois blocos mais extremos nas extremidades e divide o restante do espaço vazio por igual entre eles</td>
+                    </tr>
+                    <tr>
+                       
+                    <td><div class="contex4">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div></td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">space-evenly</th>
+                    <td>Divide o espaço vazio por igual  entre os blocos inclusives entre o bloco e a extremidade</td>
+                    </tr>
+                    <tr>
+                    
+                    <td><div class="contex5">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div></td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">space-around</th>
+                    <td>Divide todo o espaço vazio pela quantidade de blocos, depois divide por dois e coloca esse valor restante (espaço) de cada lado de cada bloco.</td>
+                    </tr>
+                    <tr>
+                    
+                    <td>
+                    <div class="contex6">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
             </article><!--justify-content-->
             <article id="align-items">
-    
-                <h3>Alinhamento no cross-axis (align-items)</h3>
-                <p>A propriedade <strong>align-items</strong> é utilizada para alinhar os itens flexíveis ao longo do eixo transversal (cross-axis) do contêiner. Ela define como os itens são distribuídos ao longo do eixo transversal, permitindo que você controle o alinhamento vertical dos itens dentro do contêiner</p>
-    
+        
+            <h3>Alinhamento no cross-axis (align-items)</h3>
+            <p>A propriedade <strong>align-items</strong> é utilizada para alinhar os itens flexíveis ao longo do eixo transversal (cross-axis) do contêiner. Ela define como os itens são distribuídos ao longo do eixo transversal, permitindo que você controle o alinhamento vertical dos itens dentro do contêiner</p>
+        
             
             <div class="overflow-x">
-                <table><!--align-items-->
-                    <thead>
-                        <tr>
-                            <th scope="col">align-items</th>
-                            <th scope="col">Explicação / Exemplo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">stretch</th>
-                            <td>Esse é o comando padrão, ele não separa os elementos ele apenas estica todas as box internas para que se adequem ao conteiner. <span class="mark">Esse comando não funciona caso  a box interna possua altura ou largura definida. Nesse caso do exemplo não pode ter heigth definida, se fosse column não poderia ter width definida</span></td>
-                        </tr>
-                        <tr>
-                           
-                            <td>
-                                <div class="contex7">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">flex-start</th>
-                            <td>Faz as box interna grudarem no início da cross-axis. <span class="mark">Caso as box internas tenham heigth ou width definida. Esse se tornará o alinhamento padrão</span></td>
-                        </tr>
-                        <tr>
-                            
-                            <td>
-                     </div>           <div class="contex8">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">flex-end</th>
-                            <td>Faz as box interna grudarem no final da cross-axis</td>
-                        </tr>
-                        <tr>
-                           
-                            <td>
-                  </div>              <div class="contex9">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">center</th>
-                            <td> Centraliza as box interna no meio da cross-axis</td>
-                        </tr>
-                        <tr>
-                           
-                            <td>
-                                <div class="contex10">
-                                    <div class="intex">Bloco 01</div>
-                                    <div class="intex">Bloco 02</div>
-                                    <div class="intex">Bloco 03</div>
-                                    <div class="intex">Bloco 04</div>
-                                    <div class="intex">Bloco 05</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table><!--align-items-->
+                <thead>
+                <tr>
+                    <th scope="col">align-items</th>
+                    <th scope="col">Explicação / Exemplo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="rowgroup" rowspan="2">stretch</th>
+                    <td>Esse é o comando padrão, ele não separa os elementos ele apenas estica todos os blocos internos para que se adequem ao conteiner. <span class="mark">Esse comando não funciona caso  o bloco interno possua altura ou largura definida. Nesse caso do exemplo não pode ter heigth definida, se fosse column não poderia ter width definida</span></td>
+                </tr>
+                <tr>
+                   
+                    <td>
+                    <div class="contex7">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup" rowspan="2">flex-start</th>
+                    <td>Faz os blocos internos grudarem no início da cross-axis. <span class="mark">Caso os blocos internos tenham heigth ou width definida. Esse se tornará o alinhamento padrão</span></td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                 </div>           <div class="contex8">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup" rowspan="2">flex-end</th>
+                    <td>Faz os blocos internos grudarem no final da cross-axis</td>
+                </tr>
+                <tr>
+                   
+                    <td>
+              </div>              <div class="contex9">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup" rowspan="2">center</th>
+                    <td> Centraliza os blocos internos no meio da cross-axis</td>
+                </tr>
+                <tr>
+                   
+                    <td>
+                    <div class="contex10">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                    </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             </div>
             </article><!--align-items-->    
             <article id="align-content">
-                <h3>Alinhamento de conteúdo empacotado (align-content)</h3>
-                <p>A propriedade <strong>align-content</strong> é utilizada para alinhar as linhas de itens flexíveis dentro de um contêiner flexível quando há espaço extra no eixo transversal (cross-axis). Ela é aplicada somente quando os itens flexíveis são empacotados em várias linhas, ou seja, quando a propriedade <strong>flex-wrap</strong> está definida como <strong>wrap</strong> ou <strong>wrap-reverse</strong>. A <strong>align-content</strong> define como o espaço extra entre as linhas de itens flexíveis deve ser distribuído, permitindo um controle mais preciso sobre o layout do contêiner.</p>
+            <h3>Alinhamento de conteúdo empacotado (align-content)</h3>
+            <p>A propriedade <strong>align-content</strong> é utilizada exclusivamente quando o contêiner é <strong>pequeno</strong> demais para abrigar todos os itens em uma única linha, forçando a quebra de linhas. Ela funciona apenas quando a propriedade <strong>flex-wrap</strong> está definida como <strong>wrap</strong> ou <strong>wrap-reverse</strong>. Nesse cenário, <strong>align-content</strong> controla como o espaço extra disponível no eixo transversal (cross-axis) é distribuído <strong>entre as múltiplas linhas</strong> de itens flexíveis, permitindo um alinhamento preciso de grupos de itens em vez de itens individuais.</p>
                
-                <div class="overflow-x">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>align-content</th>
-                                <th>Explicação / Exemplo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">stretch</th>
-                                <td>Esse é o comando padrão, ele não separa os elementos ele apenas estica todas as box internas para que se adequem ao conteiner. Esse comando não funciona caso a box interna possua altura ou largura definida. Nesse caso do exemplo não pode ter heigth definida, se fosse column não poderia ter width definida. <p>Note que a explicação foi similar ao align-items: stretch; pois a única e primordial diferença é que, aqui houve uma quebra, um empacotamento dos itens, com isso as box internas se esticaram ocupando todo o espaço que sobrou no eixo cross-axis. E se não houvesse necessidade do empacotamento os itens se esticariam até a outra extremidade do conteiner.</p></td>
-                            </tr>
-                            <tr>
-                                
-                                <td>
-                                    <div class="contex12">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">flex-start</th>
-                                <td>Agrupa todos os itens no início do eixo cross-axis </td>
-                            </tr>
-                            <tr>
-                                
-                                <td>
-                                    <div class="contex13">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2"></th>
-                                <td>Agrupa todos os itens no final do eixo cross-axis</td>
-                            </tr>
-                            <tr>
-                                
-                                <td>
-                                    <div class="contex14">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">center</th>
-                                <td>Agrupa todos os itens no centro do eixo cross-axis</td>
-                            </tr>
-                            <tr>
-                               
-                                <td>
-                                    <div class="contex15">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">space-between</th>
-                                <td>Cola a primeira  box ou inhas de boxes no início do cross-axis, ultima box ou linhas de boxes no final da cross-axis e divide o restante do espaço vazio por igual entre elas ou as demais linhas de boxes. </td>
-                            </tr>
-                            <tr>
-                               
-                                <td>
-                                    <div class="contex16">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">space-evenly</th>
-                                <td>Divide o espaço vazio por igual entre as linhas de boxes inclusives entre as boxes e as extremidades no sentido do cross-axis</td>
-                            </tr>
-                            <tr>
-                               
-                                <td>
-                                    <div class="contex17">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="rowgroup" rowspan="2">space-arround</th>
-                                <td>Divide todo o espaço vazio pela quantidade de linhas de boxes, depois divide por dois e coloca esse valor restante (espaço) de cada lado de cada linha de boxes. Basicamente ele divide o espaço vazio pela quantidade de linhas de boxes e centraliza cada linha de box dentro desse valor resultante.</td>
-                            </tr>
-                            <tr>
-                               
-                                <td>
-                                    <div class="contex18">
-                                        <div class="intex">Bloco 01</div>
-                                        <div class="intex">Bloco 02</div>
-                                        <div class="intex">Bloco 03</div>
-                                        <div class="intex">Bloco 04</div>
-                                        <div class="intex">Bloco 05</div>
-                                        <div class="intex">Bloco 06</div>
-                                    </div>
-                                </td>
-                            </tr>
-                         </tbody>
-                    </table>
-                </div>
-            </article><!--align-content-->
-            <article><!--Centralização-->
-                <h3>Centralização</h3>
-                <p>A centralização de itens usando flex box se torna muito mais fácil que os métodos vistos até aqui. Veja o exemplo abaixo:</p>
-
-                <div class="contex11">
-
-                    <div class="intex">Bloco</div>
+            <div class="overflow-x">
+                <table>
+                <thead>
+                    <tr>
+                    <th>align-content</th>
+                    <th>Explicação / Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">stretch</th>
+                    <td>Esse é o comando padrão, ele não separa os elementos ele apenas estica todos os blocos internos para que se adequem ao conteiner. Esse comando não funciona caso o bloco interno possua altura ou largura definida. Nesse caso do exemplo não pode ter heigth definida, se fosse column não poderia ter width definida.</td>
+                    </tr>
+                    <tr>
                     
-                </div>
+                    <td>
+                        <div class="contex12">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">flex-start</th>
+                    <td>Agrupa todos os itens no início do eixo cross-axis </td>
+                    </tr>
+                    <tr>
+                    
+                    <td>
+                        <div class="contex13">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2"></th>
+                    <td>Agrupa todos os itens no final do eixo cross-axis</td>
+                    </tr>
+                    <tr>
+                    
+                    <td>
+                        <div class="contex14">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">center</th>
+                    <td>Agrupa todos os itens no centro do eixo cross-axis</td>
+                    </tr>
+                    <tr>
+                       
+                    <td>
+                        <div class="contex15">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">space-between</th>
+                    <td>Cola o primeiro  bloco ou linhas de blocos no início do cross-axis, ultimo bloco ou linhas de blocos no final da cross-axis e divide o restante do espaço vazio por igual entre eles ou as demais linhas de blocos. </td>
+                    </tr>
+                    <tr>
+                       
+                    <td>
+                        <div class="contex16">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">space-evenly</th>
+                    <td>Divide o espaço vazio por igual entre as linhas de blocos inclusives entre os blocos e as extremidades no sentido do cross-axis</td>
+                    </tr>
+                    <tr>
+                       
+                    <td>
+                        <div class="contex17">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="rowgroup" rowspan="2">space-arround</th>
+                    <td>Distribui o espaço vazio de forma igual ao redor de cada linha de blocos. O espaço é dividido pela quantidade de linhas, e cada linha recebe espaço igual acima e abaixo dela. Nas extremidades (início e fim do contêiner), o espaço é metade do que fica entre as linhas.</td>
+                    </tr>
+                    <tr>
+                       
+                    <td>
+                        <div class="contex18">
+                        <div class="intex">Bloco 01</div>
+                        <div class="intex">Bloco 02</div>
+                        <div class="intex">Bloco 03</div>
+                        <div class="intex">Bloco 04</div>
+                        <div class="intex">Bloco 05</div>
+                        <div class="intex">Bloco 06</div>
+                        </div>
+                    </td>
+                    </tr>
+                 </tbody>
+                </table>
+            </div>
+            </article><!--align-content-->
+            <article id="centralizacao">
+            <h3>Centralização</h3>
+            <p>A centralização de itens usando flex box se torna muito mais fácil que os métodos vistos até aqui. Veja o exemplo abaixo:</p>
+
+            <div class="contex11">
+
+                <div class="intex">Bloco</div>
+                
+            </div>
 
 
-                <p>
-                    Veja o comando no head:
-                </p>
-                <div class="pre">
-                    <pre>
-
-div.contex11{
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: coral;
-    width: 300px;
-    height: 300px;
-    align-items: center;
-    justify-content: center;
-}
-
-div.intex{
-    background-color: aquamarine;
-    height: 100px;
-    width: 100px;
-    min-width: 100px;
-    border-radius: 20%;
-}
-
-
-                    </pre>
-                </div>
-            </article>
+            <p>
+                Veja o comando no head:
+            </p>
+           
+            </article><!--Centralização-->
         </article><!--alinhamentos-nos-eixos-->
         <article id="autonomia-itens">
             <h2>Autonomia dos itens flex-box</h2>
